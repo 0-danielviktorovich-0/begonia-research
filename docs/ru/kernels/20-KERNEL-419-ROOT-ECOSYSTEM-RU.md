@@ -1,7 +1,7 @@
 # 20 — Происхождение ядер 4.14/4.19 и экосистема root: KernelSU, Non-KSU, Magisk, APatch, SUSFS
 
 **Begonia / Redmi Note 8 Pro (MediaTek MT6785)**  
-Дата проверки: **2026-11-21**. Независимое дополнение к [03-KERNEL-HISTORY.md](03-KERNEL-HISTORY.md), [16-ROOT-METHODS.md](16-ROOT-METHODS.md) и [19-ROM-TERMS-GLOSSARY-RU.md](19-ROM-TERMS-GLOSSARY-RU.md). Все проверки выполнены **без телефона**, по исходным файлам, веткам и документации. Исходные версии не скачивались и не запускались.
+Дата проверки: **2026-11-21**. Независимое дополнение к [03-KERNEL-HISTORY.md](../../en/kernels/03-KERNEL-HISTORY.md), [16-ROOT-METHODS.md](../../en/android/16-ROOT-METHODS.md) и [19-ROM-TERMS-GLOSSARY-RU.md](../android/19-ROM-TERMS-GLOSSARY-RU.md). Все проверки выполнены **без телефона**, по исходным файлам, веткам и документации. Исходные версии не скачивались и не запускались.
 
 Статусы доказательств: **[V]** — непосредственно получен/прочитан файл или метаданные upstream 2026-11-21; **[D]** — утверждение разработчика/README/поста (не тестировалось на устройстве); **[I]** — логический вывод; **[U]** — не удалось проверить. **Важно:** подтверждённое наличие исходников / успешно компилируемый kernel ≠ подтверждённая стабильная работа с экраном, камерой, зарядкой и мобильной связью на конкретном begonia.
 
@@ -19,11 +19,11 @@
 
 ## 2. Где брать исходники ядер begonia — версии и доказательства
 
-Новый реестр наблюдений: [kernel-root-provenance.csv](kernel-root-provenance.csv). См. также существующую [kernel-matrix.csv](kernel-matrix.csv) и [03](03-KERNEL-HISTORY.md) для исторических веток.
+Новый реестр наблюдений: [kernel-root-provenance.csv](../../../data/matrices/kernel-root-provenance.csv). См. также существующую [kernel-matrix.csv](../../../data/matrices/kernel-matrix.csv) и [03](../../en/kernels/03-KERNEL-HISTORY.md) для исторических веток.
 
 | Источник/ветка | На самом деле в Makefile (2026-11-21) | Роль / статус | Уверенность |
 |---|---|---|---|
-| [Xiaomi MiCode](https://github.com/MiCode/Xiaomi_Kernel_OpenSource) `begonia-p-oss`, `q-oss`, `r-oss` | 4.14.94 / 4.14.141 / 4.14.186 | Исторические исходники производителя для Android 9/10/11. Не новый Linux API и не полный vendor source | [V,R] high (история в [03 §1](03-KERNEL-HISTORY.md)) |
+| [Xiaomi MiCode](https://github.com/MiCode/Xiaomi_Kernel_OpenSource) `begonia-p-oss`, `q-oss`, `r-oss` | 4.14.94 / 4.14.141 / 4.14.186 | Исторические исходники производителя для Android 9/10/11. Не новый Linux API и не полный vendor source | [V,R] high (история в [03 §1](../../en/kernels/03-KERNEL-HISTORY.md)) |
 | [AgentFabulous/begonia](https://github.com/AgentFabulous/begonia) `android-11.0` | 4.14.253 | Ранний объединяющий community-форк для begonia, Android 11. Важен для изучения истории драйверов/bootloader | [V,R] high |
 | [Saikrishna1504/kernel_xiaomi_mt6785](https://github.com/Saikrishna1504/kernel_xiaomi_mt6785) `main` и `kaeru` | **4.14.357-openela** | **Активная база Power**; HEAD `a63454e153cd`, авторская дата коммита 2026-10-31. Это **НЕ 4.19** | [V] high |
 | [F640/kernel_xiaomi_mt6785_begonia_power_kernel](https://github.com/F640/kernel_xiaomi_mt6785_begonia_power_kernel) `bka`, `ksu`, `susfs` | `bka`: **4.14.356-openela-rc1**; `ksu`/`susfs`: **4.14.355-openela** | Множество экспериментальных веток: название `ksu` говорит о назначении, **реальную `CONFIG_KSU` всё равно проверять**. Не 4.19 по проверенным веткам | [V] high |
@@ -108,10 +108,10 @@ Nova-Kernels/kernel_xiaomi_mt6785 (4.14.356)
 
 | Цель | Что брать в первую очередь | Нужны ли Magisk/KernelSU? |
 |---|---|---|
-| Ubuntu Touch 24.04 / Halium 10, микрофон/RTC/энергосбережение | [UT device+kernel overlays](05-UBUNTU-TOUCH.md), [Droidian adaptation](06-DROIDIAN-POSTMARKETOS.md), HAL audio policy, MTK kernel drivers | **Нет**, root доступ в Linux/ADB/SSH решается другими средствами. KSU patch сам по себе не исправляет аппаратную ошибку |
+| Ubuntu Touch 24.04 / Halium 10, микрофон/RTC/энергосбережение | [UT device+kernel overlays](../../en/linux/05-UBUNTU-TOUCH.md), [Droidian adaptation](../../en/linux/06-DROIDIAN-POSTMARKETOS.md), HAL audio policy, MTK kernel drivers | **Нет**, root доступ в Linux/ADB/SSH решается другими средствами. KSU patch сам по себе не исправляет аппаратную ошибку |
 | Новый Halium 11 | Android 11 vendor blobs + kernel tree + device tree + RIL/audio/graphics adaptation | **Нет**; root framework Android не является Halium dependency |
 | Android кастомная ROM, kernel tuning | 4.14/4.19 kernel fork + device/vendor/DTB, отдельные KSU и Non-KSU build outputs | **Опционально**, как функциональность для пользователя/разработчика |
-| postmarketOS/mainline | [Dinolek MT6785 mainline-based](03-KERNEL-HISTORY.md), DTS, regulators, audio/Wi-Fi/battery/modem драйверы | **Нет**, в чистом Linux `root` уже системная модель привилегий; Android KSU не применяется |
+| postmarketOS/mainline | [Dinolek MT6785 mainline-based](../../en/kernels/03-KERNEL-HISTORY.md), DTS, regulators, audio/Wi-Fi/battery/modem драйверы | **Нет**, в чистом Linux `root` уже системная модель привилегий; Android KSU не применяется |
 
 **Рекомендация для будущего проекта:** хранить в *информационном репозитории* таблицу источников и pinned commits; код порта/патчсеты держать в отдельных Git-ветках/форках, с CI и тест-протоколами. Не смешивать KSU/SUSFS, переход на 4.19, обновление vendor и новый Ubuntu Touch в одном эксперименте.
 
@@ -124,7 +124,7 @@ Nova-Kernels/kernel_xiaomi_mt6785 (4.14.356)
 5. **SUSFS**: fork/branch/patch revision и формат менеджера/пользовательского модуля; потенциальные конфликты `fs` с современными Android-ядрами.
 6. **Security / updates**: статус OpenELA и бэкпортов CVE для выбранной 4.14/4.19, CONFIG_SECURITY_SELINUX, CONFIG_KPROBES/KALLSYMS, vendor-module ABI, доверие к сторонним builder-пайплайнам.
 
-**Для будущих экспериментов на реальном телефоне:** сначала [18-DEVICE-PREFLIGHT-READONLY.md](18-DEVICE-PREFLIGHT-READONLY.md), резервные копии и идентификация текущего ROM. Не ставить root/ядро просто потому, что оно обозначено “KSU” и “begonia”.
+**Для будущих экспериментов на реальном телефоне:** сначала [18-DEVICE-PREFLIGHT-READONLY.md](../../en/recovery/18-DEVICE-PREFLIGHT-READONLY.md), резервные копии и идентификация текущего ROM. Не ставить root/ядро просто потому, что оно обозначено “KSU” и “begonia”.
 
 ## Primary sources and audit trail
 

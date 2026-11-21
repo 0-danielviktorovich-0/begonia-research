@@ -4,11 +4,11 @@ Dimension: REQUIREMENTS rows 25/31-adjacent (owner request 2026-11-21: «как�
 поставить рут: патч ядра, напрямую, Magisk, KernelSU…»). Conventions: **[V]** verified against the
 cited source, **[I]** inferred (reasoning stated), **[NF]** not found (search list given);
 confidence high/medium/low; observation stamps ISO 8601 UTC. Cross-refs:
-[07-RECOVERY-SAFETY.md](07-RECOVERY-SAFETY.md) (unlock/AVB), [03-KERNEL-HISTORY.md](03-KERNEL-HISTORY.md) (§2.3 kernel zips),
+[07-RECOVERY-SAFETY.md](../recovery/07-RECOVERY-SAFETY.md) (unlock/AVB), [03-KERNEL-HISTORY.md](../kernels/03-KERNEL-HISTORY.md) (§2.3 kernel zips),
 [10-GUIDE-INDEX.md](10-GUIDE-INDEX.md) (§2 root threads), [13-NETHUNTER-WIFI-EXTRAS.md](13-NETHUNTER-WIFI-EXTRAS.md) (§2 NetHunter kernel needs).
 
 
-> **Independent update (2026-11-21):** Compare the root engines, Git source provenance and KSU/non-KSU defconfigs in [20-KERNEL-419-ROOT-ECOSYSTEM-RU.md](20-KERNEL-419-ROOT-ECOSYSTEM-RU.md). The distinct mount/backend technologies (NoMount, SUSFS, Mountify, OverlayFS, Magic Mount, Hybrid Mount) and their actual trade-offs are examined in [21-NOMOUNT-MOUNT-BACKENDS-RU.md](21-NOMOUNT-MOUNT-BACKENDS-RU.md). The broad support claims in the historical matrix below are developer reports, **not tested compatibility across all begonia Android versions**. Root-hiding does **not** guarantee banking app compatibility or Play Integrity.
+> **Independent update (2026-11-21):** Compare the root engines, Git source provenance and KSU/non-KSU defconfigs in [20-KERNEL-419-ROOT-ECOSYSTEM-RU.md](../../ru/kernels/20-KERNEL-419-ROOT-ECOSYSTEM-RU.md). The distinct mount/backend technologies (NoMount, SUSFS, Mountify, OverlayFS, Magic Mount, Hybrid Mount) and their actual trade-offs are examined in [21-NOMOUNT-MOUNT-BACKENDS-RU.md](../../ru/kernels/21-NOMOUNT-MOUNT-BACKENDS-RU.md). The broad support claims in the historical matrix below are developer reports, **not tested compatibility across all begonia Android versions**. Root-hiding does **not** guarantee banking app compatibility or Play Integrity.
 
 ---
 
@@ -20,15 +20,15 @@ confidence high/medium/low; observation stamps ISO 8601 UTC. Cross-refs:
 | **KernelSU / KernelSU-Next (+ SUSFS)** | kernel (integrated or LKM) + manager APK; SUSFS hides mounts | a kernel **built with KSU** (GKI/LKM variants exist for some kernels) or patched source; unlocked BL | needs a KSU-enabled begonia kernel; proven datapoint: Evolution X 11.6.2 ships root via dedicated kernel + KSU manager | **Alive: KSU-Next v3.4.2 (2026-10-13)**, SUSFS LKM integration 2026-10-12, commits 2026-11-17 [V, high]; Android 17 (zygote_next, GKI 6.18) implications tracked by community [V, medium] | kernel rebuild/flash; mismatched kernel = brick risk same as any boot flash; SUSFS adds hide-ability but needs matching kernel source | [KernelSU-Next repo](https://github.com/KernelSU-Next/KernelSU-Next) (v3.4.2, SUSFS LKM commit), [Evolution X recipe t.me/RedmiNote8ProUpdates/1613](https://t.me/RedmiNote8ProUpdates/1613) ("flash this kernel and use this manager": kernel + [KernelSU_v3.0.0-30-legacy APK](https://github.com/rsuntk/KernelSU/releases/download/v3.0.0-30-legacy/KernelSU_v3.0.0-30-legacy_32334-release.apk)) [V-quote] |
 | **APatch** | kernel image patch (KernelPatch core) — root at kernel level | boot.img patch via APatch app (no TWRP needed), ARM64 only | architecture-independent in principle; **no begonia-specific APatch guide found** [NF, searched list §5] | active project [V, high]; ARM64 ✓ (begonia is aarch64) [V] | kpatch on MTK 4.14 kernels unproven for begonia — treat as experimental until a device datapoint appears | [bmax121/APatch](https://github.com/bmax121/APatch), [4PDA APatch t=1082492](https://4pda.to/forum/index.php?showtopic=1082492) |
 | **SukiSU-Ultra** | kernel-level root, KPM modules (ported from APatch) | kernel with SukiSU integration or GKI/LKM path | same as KSU — kernel-dependent; begonia datapoint not found [NF] | active ("SukiSU Nova" site, KPM support) [V, medium] | same kernel-match risks | [sukisu.org](https://sukisu.org/), [XDA comparison thread](https://xdaforums.com/t/comparison-kernelsu-vs-magisk-vs-apatch-which-root-solution-is-best-in-2025.4752338/), [4PDA SukiSU t=1108076](https://4pda.to/forum/index.php?showtopic=1108076) |
-| **Custom kernels with root features** | whole kernel (prebuilt zip via TWRP/AnyKernel) | matching ROM base + firmware; unlocked BL | MIUI 12.0/A10-era (Akame), A11/12 (Coconut), A16 (Suzaku-based ROMs) | see [03 §2.3](03-KERNEL-HISTORY.md); **Suzaku V2**: "KernelSU 35053 + SUS-FS 2.2.0" claims [V-quotes, medium — repo not public [NF]]; **AkameKernel**: NetHunter feature set, stale (2023-03) [V, high] | kernel/ROM/base mismatch; front-camera-revision warning on some non-CFW A10 kernels [V-verbatim in 03 §3.2] | [03 §2.3 kernel zips table](03-KERNEL-HISTORY.md), [AkameKernel](https://github.com/Anonym3310/AkameKernel-begonia), [cvnertnc/Begonia-Kernel-Builder](https://github.com/cvnertnc/Begonia-Kernel-Builder) (KSU-Next+SUSFS CI, self-archived 2026-09-16 — fork-and-run template [V, high]) |
-| **mtkclient-assisted (direct)** | N/A for root itself — this is the **prerequisite chain**: BROM-mode BL unlock (`mtk da seccfg unlock`) without Xiaomi wait-time | Linux/macOS host, USB-C cable; no testpoint needed on begonia | only device/security states for which the BROM/DA exploit method is compatible; do not assume all ROMs or preloader revisions | verified path per [pmOS wiki + 07](07-RECOVERY-SAFETY.md) [V, high]; no public MT6785 exploit-root (mtk-su targets older MTK chips) [NF — searched: 'mtk-su MT6785', 'mediatek mt6785 exploit root'] | unlock wipes data; seccfg corruption risk handled by mtkclient backups | [mtkclient README-USAGE](https://github.com/bkerler/mtkclient/blob/main/README-USAGE.md#unlock-bootloader), [07 §unlock](07-RECOVERY-SAFETY.md) |
+| **Custom kernels with root features** | whole kernel (prebuilt zip via TWRP/AnyKernel) | matching ROM base + firmware; unlocked BL | MIUI 12.0/A10-era (Akame), A11/12 (Coconut), A16 (Suzaku-based ROMs) | see [03 §2.3](../kernels/03-KERNEL-HISTORY.md); **Suzaku V2**: "KernelSU 35053 + SUS-FS 2.2.0" claims [V-quotes, medium — repo not public [NF]]; **AkameKernel**: NetHunter feature set, stale (2023-03) [V, high] | kernel/ROM/base mismatch; front-camera-revision warning on some non-CFW A10 kernels [V-verbatim in 03 §3.2] | [03 §2.3 kernel zips table](../kernels/03-KERNEL-HISTORY.md), [AkameKernel](https://github.com/Anonym3310/AkameKernel-begonia), [cvnertnc/Begonia-Kernel-Builder](https://github.com/cvnertnc/Begonia-Kernel-Builder) (KSU-Next+SUSFS CI, self-archived 2026-09-16 — fork-and-run template [V, high]) |
+| **mtkclient-assisted (direct)** | N/A for root itself — this is the **prerequisite chain**: BROM-mode BL unlock (`mtk da seccfg unlock`) without Xiaomi wait-time | Linux/macOS host, USB-C cable; no testpoint needed on begonia | only device/security states for which the BROM/DA exploit method is compatible; do not assume all ROMs or preloader revisions | verified path per [pmOS wiki + 07](../recovery/07-RECOVERY-SAFETY.md) [V, high]; no public MT6785 exploit-root (mtk-su targets older MTK chips) [NF — searched: 'mtk-su MT6785', 'mediatek mt6785 exploit root'] | unlock wipes data; seccfg corruption risk handled by mtkclient backups | [mtkclient README-USAGE](https://github.com/bkerler/mtkclient/blob/main/README-USAGE.md#unlock-bootloader), [07 §unlock](../recovery/07-RECOVERY-SAFETY.md) |
 
 ---
 
 ## 2. Method details (begonia-specific)
 
 ### 2.1 Magisk — the historical default, still first-line
-- **The verbatim begonia recipe** (captured full-text 2026-11-21 with owner login, [archive/human-4pda-90018812-spoilers-full.html](archive/human-4pda-90018812-spoilers-full.html), [07 §N.1](07-RECOVERY-SAFETY.md)):
+- **The verbatim begonia recipe** (captured full-text 2026-11-21 with owner login, [archive/human-4pda-90018812-spoilers-full.html](../../../archive/human-4pda-90018812-spoilers-full.html), [07 §N.1](../recovery/07-RECOVERY-SAFETY.md)):
   MIUI10/11-era flow — MTK drivers → fastboot → `fastboot flash recovery recovery.img` (TWRP 3.3.1-9)
   → in TWRP: mount data/system/vendor/nvdata → **delete `system_root/system/recovery_fromboot.p`**
   → **flash Close AVB2.0** → flash `SuperSu_installer.zip` (contains **Magisk 19.4**, patches boot) →
@@ -73,7 +73,7 @@ confidence high/medium/low; observation stamps ISO 8601 UTC. Cross-refs:
 - **No public exploit-root for MT6785** [NF, medium-high] (searched: 'mtk-su MT6785', 'mediatek
   mt6785 exploit root 2026', cache greps). mtkclient's role is the unlock prerequisite, not root:
   [mtk da seccfg unlock](https://github.com/bkerler/mtkclient/blob/main/README-USAGE.md#unlock-bootloader) —
-  no Xiaomi wait-time, works cable-only ([07 §unbrick/unlock](07-RECOVERY-SAFETY.md)) [V, high].
+  no Xiaomi wait-time, works cable-only ([07 §unbrick/unlock](../recovery/07-RECOVERY-SAFETY.md)) [V, high].
 - Old SuperSU-era zips: the captured guide's `SuperSu_installer.zip` actually carried **Magisk 19.4**
   [V-cache]; plain SuperSU is obsolete — do not use on modern ROMs [I, high].
 
@@ -91,7 +91,7 @@ confidence high/medium/low; observation stamps ISO 8601 UTC. Cross-refs:
 | [@Saikrishna1504](https://t.me/Saikrishna1504) | maintainer personal: v4.19 kernel port testing ([post 1657](https://t.me/RedmiNote8ProUpdates/1657)) | 2026-11-17 [V] |
 
 Web preview note: `t.me/s/<channel>` is readable as guest — no joining required
-(snapshot: [archive/human-tg-redminote8proupdates-preview.html](archive/human-tg-redminote8proupdates-preview.html)).
+(snapshot: [archive/human-tg-redminote8proupdates-preview.html](../../../archive/human-tg-redminote8proupdates-preview.html)).
 
 ---
 
@@ -101,7 +101,7 @@ Web preview note: `t.me/s/<channel>` is readable as guest — no joining require
   or via the ROM's own instructions.
 - **Modern A16 custom ROMs** → the ROM's bundled kernel root path (Evolution X-style: KSU-enabled
   kernel + matching manager); do NOT mix kernels across ROM bases.
-- **Kernel-level root and filesystem experiments** → KernelSU-Next+SUSFS, APatch-class and NoMount each need a compatible build plus rollback. **None guarantees undetectability, banking-app support or Play Integrity.** For mount providers and their tradeoffs see [21-NOMOUNT-MOUNT-BACKENDS-RU.md](21-NOMOUNT-MOUNT-BACKENDS-RU.md); NoVA offers a concrete control case with/without KSU.
+- **Kernel-level root and filesystem experiments** → KernelSU-Next+SUSFS, APatch-class and NoMount each need a compatible build plus rollback. **None guarantees undetectability, banking-app support or Play Integrity.** For mount providers and their tradeoffs see [21-NOMOUNT-MOUNT-BACKENDS-RU.md](../../ru/kernels/21-NOMOUNT-MOUNT-BACKENDS-RU.md); NoVA offers a concrete control case with/without KSU.
 - **Never** flash boot.img/recovery from a different firmware generation (MIUI10↔11 hard-brick rule) [V-verbatim].
 
 ## 5. Not-found ledger (searched, 2026-11-21)

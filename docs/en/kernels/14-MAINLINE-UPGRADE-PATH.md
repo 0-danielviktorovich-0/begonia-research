@@ -1,8 +1,8 @@
 # 14 — Mainline upgrade path & open-driver development (begonia / MT6785)
 
-> **Newly checked exception (2026-11-21):** [criollojoel10/begonia-pmos-tianma](https://github.com/criollojoel10/begonia-pmos-tianma) reports working built-in Wi-Fi on an actual begonia with Linux 6.16.4 (27 Sep 2026), using **ported MediaTek vendor driver `wlan_gen4m` and WMT firmware**. This is not upstream mt76, and it does not mean the standard Dinolek/Nura image supports WLAN. The analysis below about missing `CONFIG_MT7663S`, SDIO/DTS and upstream-native WLAN still applies to the **unmodified mainline approach**, not every downstream vendor-driver port. Compare [22](22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md).
+> **Newly checked exception (2026-11-21):** [criollojoel10/begonia-pmos-tianma](https://github.com/criollojoel10/begonia-pmos-tianma) reports working built-in Wi-Fi on an actual begonia with Linux 6.16.4 (27 Sep 2026), using **ported MediaTek vendor driver `wlan_gen4m` and WMT firmware**. This is not upstream mt76, and it does not mean the standard Dinolek/Nura image supports WLAN. The analysis below about missing `CONFIG_MT7663S`, SDIO/DTS and upstream-native WLAN still applies to the **unmodified mainline approach**, not every downstream vendor-driver port. Compare [22](../../ru/kernels/22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md).
 
-Researched 2026-11-21 (JST). Research-only: nothing flashed, nothing downloaded except small text artifacts (defconfigs, Makefiles). Companion files: kernel landscape → [03-KERNEL-HISTORY.md](03-KERNEL-HISTORY.md) §4; per-component status + driver gaps → [04-HARDWARE-DRIVERS.md](04-HARDWARE-DRIVERS.md); pmOS/Droidian/UT ports → [06-DROIDIAN-POSTMARKETOS.md](06-DROIDIAN-POSTMARKETOS.md). Per repo single-source rule, already-recorded facts are linked, not restated.
+Researched 2026-11-21 (JST). Research-only: nothing flashed, nothing downloaded except small text artifacts (defconfigs, Makefiles). Companion files: kernel landscape → [03-KERNEL-HISTORY.md](03-KERNEL-HISTORY.md) §4; per-component status + driver gaps → [04-HARDWARE-DRIVERS.md](04-HARDWARE-DRIVERS.md); pmOS/Droidian/UT ports → [06-DROIDIAN-POSTMARKETOS.md](../linux/06-DROIDIAN-POSTMARKETOS.md). Per repo single-source rule, already-recorded facts are linked, not restated.
 
 Legend: **[V]** verified directly this session (URL fetched); **[I]** inferred (basis given); confidence high/medium/low per claim.
 
@@ -17,7 +17,7 @@ The owner enabled a kernel config on this device once and the feature still did 
 | **DT nodes / pinctrl / regulators** | IR blaster: pmOS 6.16 config has `CONFIG_IR_PWM_TX=m` **enabled**, yet IR is broken because **no IR node exists in begonia's mainline DTS** — the driver has nothing to bind to | [04-HARDWARE-DRIVERS.md](04-HARDWARE-DRIVERS.md) §6 [V] |
 | Same class, found this session | begonia mainline DTS: `mmc@11240000` carries **`no-sdio;`** and the board dtsi has **no WLAN device node at all** — enabling `CONFIG_MT7663S` would produce a driver with no device | local copy of [mt6785-xiaomi-begonia-common.dtsi](https://github.com/Dinolek/mt6785-mainline/blob/7.1/arch/arm64/boot/dts/mediatek/mt6785-xiaomi-begonia-common.dtsi), branch `7.1` [V] |
 | **Firmware files** | WiFi-class chips need userspace firmware blobs; for the suspected MT7663: `mediatek/mt7663pr2h.bin` + `mt7663pr2h_rebb.bin` ship in [linux-firmware](https://archlinux.org/packages/core/any/linux-firmware-mediatek/files/) (Arch package file list, 2026-10 build) [V] — and even with firmware present, loading can fail (Debian bug [#1146149](https://lists.debian.org/debian-kernel/2026/08/msg00470.html), 2026-08: "Failed to get patch semaphore / failed to load mediatek/mt7663pr2h_rebb.bin") [V] |
-| **Userspace glue** | pmOS user Halhadus: *"you can enable kernel configs to use USB Ethernet, Phosh working good"* — config + module + interface config all needed; another user on the same wiki could not get USB networking at all | pmOS wiki users section, cached, quoted in [06 §1.6](06-DROIDIAN-POSTMARKETOS.md) [V-cache] |
+| **Userspace glue** | pmOS user Halhadus: *"you can enable kernel configs to use USB Ethernet, Phosh working good"* — config + module + interface config all needed; another user on the same wiki could not get USB networking at all | pmOS wiki users section, cached, quoted in [06 §1.6](../linux/06-DROIDIAN-POSTMARKETOS.md) [V-cache] |
 
 **Rule for every claim below:** "just enable X" means enable config **+ write DT node/pinctrl + provide firmware + wire userspace**. Any single layer missing = broken, exactly the pmOS-broken list.
 
@@ -35,7 +35,7 @@ All three in-tree `arch/arm64/configs/defconfig` files are near-identical, arm64
 | same repo, branch `6.16` | [defconfig](https://raw.githubusercontent.com/Dinolek/mt6785-mainline/6.16/arch/arm64/configs/defconfig) | 43,393 B |
 | [kalpakprod/mt6785-linux](https://github.com/kalpakprod/mt6785-linux) branch `main` (Linux 7.3.4, created 2026-11-15, per [03 §4.3](03-KERNEL-HISTORY.md)) | [defconfig](https://raw.githubusercontent.com/kalpakprod/mt6785-linux/main/arch/arm64/configs/defconfig) | 48,971 B |
 
-Per-subsystem verdict vs the pmOS-broken list ([06 §1.5](06-DROIDIAN-POSTMARKETOS.md), [04](04-HARDWARE-DRIVERS.md)) — identical in **all three** configs [V]:
+Per-subsystem verdict vs the pmOS-broken list ([06 §1.5](../linux/06-DROIDIAN-POSTMARKETOS.md), [04](04-HARDWARE-DRIVERS.md)) — identical in **all three** configs [V]:
 
 | pmOS-broken item | In-tree defconfig evidence | Verdict |
 |---|---|---|
@@ -68,9 +68,9 @@ SoC-side MT6785 enablement (clocks, pinctrl, power domains, display) is carried 
 
 ### Option A — Ubuntu Touch stays Halium-based (pragmatic UT path)
 
-- Current: Halium 10.0, kernel 4.14.141, noble 24.04 — see [03 §3](03-KERNEL-HISTORY.md) and [05-UBUNTU-TOUCH.md](05-UBUNTU-TOUCH.md). Most phone features work; broken: mic (UT matrix), RTC, VoLTE-global, auto-brightness-global ([CONTEXT.md](_context/CONTEXT.md) device cache).
+- Current: Halium 10.0, kernel 4.14.141, noble 24.04 — see [03 §3](03-KERNEL-HISTORY.md) and [05-UBUNTU-TOUCH.md](../linux/05-UBUNTU-TOUCH.md). Most phone features work; broken: mic (UT matrix), RTC, VoLTE-global, auto-brightness-global ([CONTEXT.md](../../../_context/CONTEXT.md) device cache).
 - **Newer Halium exists and the mapping is official**: [docs.ubports.com — Introduction to porting](https://docs.ubports.com/en/latest/porting/introduction/Intro.html) table (fetched 2026-11-21) [V]: Android 9→Halium 9.0, **10→10.0, 11→11.0, 12→12.0, 13→13.0**; "Since 20.04, Ubuntu Touch ports are normally based on Halium 9.0 or later. Older versions … deprecated." The Halium project is alive (GitHub org [Halium](https://api.github.com/orgs/Halium/repos): `libhybris` pushed 2026-10-27, `android` 2026-09-22, `android-headers` 2026-08-25 [V]).
-- Begonia-specific raw material for a Halium-11 move already exists: [rubencarneiro/linux-android-begonia](https://github.com/rubencarneiro/linux-android-begonia) carries a **`halium-11` branch** (branch list verified in [06 §2.2](06-DROIDIAN-POSTMARKETOS.md)) and the Android-11-era kernel line exists in [AgentFabulous/begonia `android-11.0`](https://github.com/AgentFabulous/begonia) ([03 §2.1](03-KERNEL-HISTORY.md)); the vendor side would be the final MIUI 12.5 (Android 11) firmware — availability recorded in [02-FIRMWARE-HISTORY.md](02-FIRMWARE-HISTORY.md).
+- Begonia-specific raw material for a Halium-11 move already exists: [rubencarneiro/linux-android-begonia](https://github.com/rubencarneiro/linux-android-begonia) carries a **`halium-11` branch** (branch list verified in [06 §2.2](../linux/06-DROIDIAN-POSTMARKETOS.md)) and the Android-11-era kernel line exists in [AgentFabulous/begonia `android-11.0`](https://github.com/AgentFabulous/begonia) ([03 §2.1](03-KERNEL-HISTORY.md)); the vendor side would be the final MIUI 12.5 (Android 11) firmware — availability recorded in [02-FIRMWARE-HISTORY.md](../android/02-FIRMWARE-HISTORY.md).
 - **What it buys vs Halium-10:** newer vendor interface, potentially fixes Droidian-style gaps (mic contradiction [04 C4](04-HARDWARE-DRIVERS.md)), but nothing mainline; kernel stays 4.14/4.19 forever. Effort: **medium** (kernel rebase + device tree/vendor swap + retest ~10 items). No verified evidence anyone runs begonia UT on halium-11 today — not found (searched: UBports forum, GitLab porting group pages) [V-weak-negative].
 
 ### Option B — UT on a mainline kernel
@@ -92,7 +92,7 @@ Ordered by impact/effort ratio; every row = config **+ DT/pinctrl + firmware + u
 
 | Component | Route | RE needed? |
 |---|---|---|
-| Touchscreen | solved — pmOS ships `firmware-xiaomi-begonia-touchscreen` + mainline `novatek-nvt-ts-spi` ([06 §1.3](06-DROIDIAN-POSTMARKETOS.md), [04 §2](04-HARDWARE-DRIVERS.md)) | none |
+| Touchscreen | solved — pmOS ships `firmware-xiaomi-begonia-touchscreen` + mainline `novatek-nvt-ts-spi` ([06 §1.3](../linux/06-DROIDIAN-POSTMARKETOS.md), [04 §2](04-HARDWARE-DRIVERS.md)) | none |
 | Charger/USB-PD, NFC, sensors, display/touch/backlight | all mainline already ([04](04-HARDWARE-DRIVERS.md) §1–2, 9, 13, 15–16) | none |
 | Wi-Fi/BT firmware | extract from vendor firmware partitions once chip confirmed (mt7663 blobs also in linux-firmware §1.3) | light (extraction, not Ghidra) |
 | Audio machine driver | pure kernel work against MT6359 + AFE registers; vendor kernel source ([AgentFabulous/begonia](https://github.com/AgentFabulous/begonia)) is the reference | none (source available) |
@@ -119,7 +119,7 @@ Other mainline-MTK handset/enablement efforts to learn from (all fetched or sear
 - Mailing list: [linux-mediatek](https://lore.kernel.org/linux-mediatek/) (`linux-mediatek@lists.infradead.org`) — the SoC section lists it plus maintainers **Matthias Brugger** (Google/`matthias.bgg`), **AngeloGioacchino Del Regno** (Collabora), and MediaTek's **Eddie Huang**, **Sean Wang** [V, high for names+addresses as printed].
 - `mt76` wireless: section lists Felix Fietkau (`nbd@nbd.name`) et al. — my MAINTAINERS parse was noisy on this section; **medium confidence**, re-check the file before mailing [I].
 - ASoC (sound/soc/mediatek): maintained under the ASoC tree (Mark Brown) — parsed section was mangled; **medium confidence**, verify in MAINTAINERS before first post [I].
-- pmOS aports workflow: fork [gitlab.postmarketos.org/postmarketOS/pmaports](https://gitlab.postmarketos.org/postmarketOS/pmaports), device lives in `device/testing/`, merge request per device — begonia precedent MR !1909 ([06 §1.7](06-DROIDIAN-POSTMARKETOS.md)).
+- pmOS aports workflow: fork [gitlab.postmarketos.org/postmarketOS/pmaports](https://gitlab.postmarketos.org/postmarketOS/pmaports), device lives in `device/testing/`, merge request per device — begonia precedent MR !1909 ([06 §1.7](../linux/06-DROIDIAN-POSTMARKETOS.md)).
 
 ---
 
@@ -128,13 +128,13 @@ Other mainline-MTK handset/enablement efforts to learn from (all fetched or sear
 **Ranked: A now · C in parallel (WiFi first) · B long-term or never.** (Assessment — medium confidence.)
 
 **Option A (keep UT usable, low risk) — first 3 work items:**
-1. No action needed to *keep* what works: pin current noble 24.04; file/track mic + RTC against the UT stack (matrix rows in [CONTEXT.md](_context/CONTEXT.md) cache; issue links in [04](04-HARDWARE-DRIVERS.md)).
-2. Evaluate a Halium-11 move only if a concrete gain appears: test-tree = `rubencarneiro/linux-android-begonia` branch `halium-11` ([06 §2.2](06-DROIDIAN-POSTMARKETOS.md)) + Android-11 vendor from [02-FIRMWARE-HISTORY.md](02-FIRMWARE-HISTORY.md); budget a full 10-row feature retest.
+1. No action needed to *keep* what works: pin current noble 24.04; file/track mic + RTC against the UT stack (matrix rows in [CONTEXT.md](../../../_context/CONTEXT.md) cache; issue links in [04](04-HARDWARE-DRIVERS.md)).
+2. Evaluate a Halium-11 move only if a concrete gain appears: test-tree = `rubencarneiro/linux-android-begonia` branch `halium-11` ([06 §2.2](../linux/06-DROIDIAN-POSTMARKETOS.md)) + Android-11 vendor from [02-FIRMWARE-HISTORY.md](../android/02-FIRMWARE-HISTORY.md); budget a full 10-row feature retest.
 3. Keep the UT kernel repo (`kernel-xiaomi-mt6785`, halium-10.0) as the known-good reference ([03 §3](03-KERNEL-HISTORY.md)); don't rebase what already ships stable.
 
 **Option C (mainline, the actual upgrade) — first 3 work items:**
 1. **Identify the WLAN/BT combo chip on-device** (Android SDIO VID/PID or `/vendor/firmware/WIFI_RAM_CODE*` names) — unblocks everything in §1.3; log result into [04 §8](04-HARDWARE-DRIVERS.md) (unknown today).
-2. **WiFi bring-up spike on pmOS/Dinolek 6.16**: enable `CONFIG_MT7663S` (+ `MT76_SDIO`), add wlan DT node replacing `no-sdio;` on `mmc@11240000`, ship firmware via a pmOS `firmware-xiaomi-begonia` package (pattern: `firmware-xiaomi-begonia-touchscreen`, [06 §1.3](06-DROIDIAN-POSTMARKETOS.md)); expected failure modes per Section 0 (pinctrl, regulators, firmware load).
+2. **WiFi bring-up spike on pmOS/Dinolek 6.16**: enable `CONFIG_MT7663S` (+ `MT76_SDIO`), add wlan DT node replacing `no-sdio;` on `mmc@11240000`, ship firmware via a pmOS `firmware-xiaomi-begonia` package (pattern: `firmware-xiaomi-begonia-touchscreen`, [06 §1.3](../linux/06-DROIDIAN-POSTMARKETOS.md)); expected failure modes per Section 0 (pinctrl, regulators, firmware load).
 3. **Audio spike**: draft an MT6785 AFE/machine driver against upstream `mt6359` codec + `mt6797` AFE template; first milestone = `aplay` through `SND_SIMPLE_CARD`-style card registration on a pmOS rootfs. This is the longest pole; consider engaging linux-mediatek early (maintainers §3).
 
 **Option B (UT on mainline) — gate, don't build:** revisit only after C delivers WiFi + audio + (hard) modem; no MTK precedent exists (§2-B).
@@ -146,7 +146,7 @@ Other mainline-MTK handset/enablement efforts to learn from (all fetched or sear
 - Halium "what ships today" was verified via the official UT porting-intro table + GitHub org activity; the Halium project's own docs pages returned 404s to plain fetches (docs.halium.org device pages render via JS/Sphinx paths differ) — treat "Halium 11/12/13 are valid current targets" as **high** (UT docs) and "Halium project healthy" as **high** (repo activity).
 - MAINTAINERS section parse was noisy for `mt76` and ASoC maintainers (medium confidence, flagged inline).
 - pmOS mt6768 APKBUILD raw fetch hit an Anubis bot-check on gitlab.postmarketos.org; cited from the package index pages instead [V-index].
-- No live XDA consulted (blocked per [CONTEXT.md](_context/CONTEXT.md)); not needed for this file.
+- No live XDA consulted (blocked per [CONTEXT.md](../../../_context/CONTEXT.md)); not needed for this file.
 - "Linux Edрота" (owner phrase, voice-input artifact) — interpretations logged in the session summary for owner confirmation; deliverable assumes it meant "a generic published Linux option" and covers all candidates (pmOS §2-C, generic mainline, EDK2/UEFI via Mu-Silicium per [03 §5](03-KERNEL-HISTORY.md) — Linux Boot ❔ in the only UEFI experiment).
 
 ## Sources (appended to sources.jsonl)

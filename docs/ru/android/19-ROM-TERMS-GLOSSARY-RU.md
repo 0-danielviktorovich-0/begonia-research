@@ -13,7 +13,7 @@
 | Что в нижних слоях? | Android kernel+HAL, Halium+libhybris, native/mainline Linux | Ядро и способ доступа к аппаратуре |
 | Какая версия *чего*? | Android 16, MIUI 12.5/Android 11 vendor, Linux 4.14 или 6.16, Ubuntu Touch 24.04 | Четыре **независимых номера**; не переносить их друг на друга |
 
-**Типичная ошибка:** «ROM на Android 16 — значит ядро Linux 6.x и драйверы 2026 года». Нет: Android userspace, vendor blobs и версия ядра могут быть из принципиально разных поколений. [02 §1.3 и §4](02-FIRMWARE-HISTORY.md), [03](03-KERNEL-HISTORY.md), [11](11-BLOBS-FIRMWARE-SOURCES.md).
+**Типичная ошибка:** «ROM на Android 16 — значит ядро Linux 6.x и драйверы 2026 года». Нет: Android userspace, vendor blobs и версия ядра могут быть из принципиально разных поколений. [02 §1.3 и §4](../../en/android/02-FIRMWARE-HISTORY.md), [03](../../en/kernels/03-KERNEL-HISTORY.md), [11](../../en/kernels/11-BLOBS-FIRMWARE-SOURCES.md).
 
 ## 1. Историческая классификация 4PDA (begonia-specific)
 
@@ -35,7 +35,7 @@
 
 - Куратор TTTT555 назвал Non-CFW потомками CFW, приспособленными к более поздним штатным загрузчикам, с унификацией recovery и более удобной установкой: [4PDA](https://4pda.to/forum/index.php?showtopic=974421&st=7200).
 - Современная [шапка 4PDA 974421](https://4pda.to/forum/index.php?showtopic=974421) прямо помечает Non-CFW как стандартные кастомные прошивки и выделяет их как актуальную категорию.
-- Внимание: Non-CFW **не гарантирует** совместимости с любым vendor, recovery или ядром. Шапка отдельно разделяет MIUI 11/12 Android 10 vendor-base и MIUI 12.5 Android 11 vendor-base. См. [02 §1.3](02-FIRMWARE-HISTORY.md), [10 §2](10-GUIDE-INDEX.md).
+- Внимание: Non-CFW **не гарантирует** совместимости с любым vendor, recovery или ядром. Шапка отдельно разделяет MIUI 11/12 Android 10 vendor-base и MIUI 12.5 Android 11 vendor-base. См. [02 §1.3](../../en/android/02-FIRMWARE-HISTORY.md), [10 §2](../../en/android/10-GUIDE-INDEX.md).
 
 ### GSI (Generic System Image)
 
@@ -43,7 +43,7 @@
 
 - При типичной установке GSI меняют системный слой, а существующие vendor и ядро остаются; иногда нужны отдельные vendor-патчи, vbmeta-настройки и другие изменения. Это не гарантия «меняется только system» для каждого стороннего ZIP.
 - GSI **не противоположность** Non-CFW: один термин про универсальность `system`, другой — про историческую низкоуровневую базу begonia.
-- [Официальное определение Google](https://developer.android.com/topic/generic-system-image) и [02 §2](02-FIRMWARE-HISTORY.md): ранние GSI для begonia сталкивались с проблемами звука, связи и анимаций.
+- [Официальное определение Google](https://developer.android.com/topic/generic-system-image) и [02 §2](../../en/android/02-FIRMWARE-HISTORY.md): ранние GSI для begonia сталкивались с проблемами звука, связи и анимаций.
 - Не путать **Android GSI** с **Halium GSI** в документации UBports: это разные образы/окружения, хотя оба используют идею универсального системного слоя.
 
 ### «Другое» на 4PDA
@@ -54,12 +54,12 @@
 
 | Термин | Суть | Пример/оговорка |
 |---|---|---|
-| **Stock / MIUI / factory ROM** | Система и фирменные образы Xiaomi для конкретного региона/варианта | Заводская база для отката; последние линии begonia — MIUI 12.5 / Android 11 [02 §1](02-FIRMWARE-HISTORY.md) |
+| **Stock / MIUI / factory ROM** | Система и фирменные образы Xiaomi для конкретного региона/варианта | Заводская база для отката; последние линии begonia — MIUI 12.5 / Android 11 [02 §1](../../en/android/02-FIRMWARE-HISTORY.md) |
 | **Custom ROM** | Любая сторонняя модифицированная Android-система; широкое слово | Может быть CFW, Non-CFW, device-specific или GSI-derived |
-| **Native ROM / device-specific build** | Android собран с адаптациями именно для `begonia`: device tree, vendor configuration, kernel | Например, [crDroid для begonia](https://crdroid.net/begonia) (конкретные ветки и доступность — [02 §7.4](02-FIRMWARE-HISTORY.md)) |
+| **Native ROM / device-specific build** | Android собран с адаптациями именно для `begonia`: device tree, vendor configuration, kernel | Например, [crDroid для begonia](https://crdroid.net/begonia) (конкретные ветки и доступность — [02 §7.4](../../en/android/02-FIRMWARE-HISTORY.md)) |
 | **AOSP** | Android Open Source Project, исходная открытая платформа Android | Не равен «все драйверы открыты» |
 | **LineageOS-based / crDroid / Evolution X** | Различные проекты пользовательской системы на Android; имя проекта не определяет vendor/kernel поколения | Важен **конкретный build** и его manifest/device/kernel/vendor refs |
-| **OEM port** | Перенесённая с другого производителя/устройства фирменная Android-оболочка | Например, OriginOS, ColorOS, EMUI, ROGUI; больше закрытых компонентов и совместимость не гарантирована — [02 §3.7](02-FIRMWARE-HISTORY.md) |
+| **OEM port** | Перенесённая с другого производителя/устройства фирменная Android-оболочка | Например, OriginOS, ColorOS, EMUI, ROGUI; больше закрытых компонентов и совместимость не гарантирована — [02 §3.7](../../en/android/02-FIRMWARE-HISTORY.md) |
 | **GSI-based adaptation** | GSI, дополненная устройственно-специфическими патчами | Может быть визуально похожа на native ROM, но сборочная архитектура другая |
 
 **OFFICIAL/UNOFFICIAL** в названии конкретной ROM означает признание **её собственного проекта**, а не Xiaomi, Android или LineageOS. «Official AxionOS» и «official crDroid» — разные статусы разных команд. `OFFICIAL` в 4PDA-посте перепроверять по сайту самой ROM.
@@ -92,7 +92,7 @@ BROM → preloader → LK → kernel; vbmeta/AVB, модем, PMIC,
 2. **Firmware bundle / firmware package** на Xiaomi: набор низкоуровневых образов модема, загрузчиков, DSP, доверенного окружения и т.п., иногда предлагаемый отдельно от полной MIUI.
 3. **Peripheral firmware**: микрокод Wi-Fi, BT, тачскрина, DSP и т.п., который загружается при запуске устройства/драйвера.
 4. **Vendor blobs / vendor.img**: закрытые HAL-библиотеки, параметры, иногда прошивки периферии; это **не** весь firmware-пакет и не всё ядро.
-5. **Kernel source / kernel image**: код и собранное ядро Linux. Условные `Q-OSS` и `R-OSS` связаны с поколениями исходников Xiaomi Android 10/11 (сопоставление в [03 §1](03-KERNEL-HISTORY.md)), но OSS-тег **не** гарантирует отсутствие закрытых модулей или совместимость с любой Android 16 ROM.
+5. **Kernel source / kernel image**: код и собранное ядро Linux. Условные `Q-OSS` и `R-OSS` связаны с поколениями исходников Xiaomi Android 10/11 (сопоставление в [03 §1](../../en/kernels/03-KERNEL-HISTORY.md)), но OSS-тег **не** гарантирует отсутствие закрытых модулей или совместимость с любой Android 16 ROM.
 
 **Следствие:** «поставить последние драйверы» нельзя одной операцией. Нужно установить, какой компонент живёт в каком разделе, кому принадлежит его интерфейс и совместимы ли ядро, HAL, DTB/DTBO, прошивки модема и пользовательская система.
 
@@ -102,11 +102,11 @@ BROM → preloader → LK → kernel; vbmeta/AVB, модем, PMIC,
 |---|---|---|---|
 | [Ubuntu Touch begonia](https://devices.ubuntu-touch.io/device/begonia/) | Ubuntu Touch 24.04 | **Halium 10** и Android-vendor ядро (4.14.141) + proprietary HAL | Очень многое работает; официальный статус говорит, что микрофон записи не работает; VoLTE экспериментален |
 | [Droidian begonia](https://github.com/begonia-linux/adaptation-xiaomi-begonia) | Linux / Droidian | Android-derived kernel + libhybris / vendor | В README портера микрофон работает, полезно как эталон для UT; не независимая аппаратная проверка |
-| [postmarketOS begonia](https://wiki.postmarketos.org/wiki/Xiaomi_Redmi_Note_8_Pro_(xiaomi-begonia)) | Alpine-based mobile Linux | Mainline-**based fork** для MT6785 + открытые драйверы | Больше свободы, но по [06](06-DROIDIAN-POSTMARKETOS.md) всё ещё отсутствует целый ряд функций (связь, камера, аудио и пр.) |
+| [postmarketOS begonia](https://wiki.postmarketos.org/wiki/Xiaomi_Redmi_Note_8_Pro_(xiaomi-begonia)) | Alpine-based mobile Linux | Mainline-**based fork** для MT6785 + открытые драйверы | Больше свободы, но по [06](../../en/linux/06-DROIDIAN-POSTMARKETOS.md) всё ещё отсутствует целый ряд функций (связь, камера, аудио и пр.) |
 
 **Halium 10 ≠ Ubuntu Touch 10 ≠ Android 10 в интерфейсе пользователя.** Halium 10 обозначает поколение аппаратной совместимости (Android 10 vendor interface); запущенная система при этом может быть Ubuntu Touch 24.04.
 
-**Mainline-based fork ≠ upstream Linux support.** Ядро из ветки Dinolek/MT6785 может быть основано на новой Linux-версии и содержать устройство-specific изменения, ещё не включённые в официальное дерево Linux. См. [03 §4](03-KERNEL-HISTORY.md), [14](14-MAINLINE-UPGRADE-PATH.md).
+**Mainline-based fork ≠ upstream Linux support.** Ядро из ветки Dinolek/MT6785 может быть основано на новой Linux-версии и содержать устройство-specific изменения, ещё не включённые в официальное дерево Linux. См. [03 §4](../../en/kernels/03-KERNEL-HISTORY.md), [14](../../en/kernels/14-MAINLINE-UPGRADE-PATH.md).
 
 ## 5. Загрузчики и специальные разделы — кратко
 
@@ -134,7 +134,7 @@ BROM → preloader → LK → kernel; vbmeta/AVB, модем, PMIC,
 4. **«Версия ОС = версия Linux-ядра»** — неверно: Ubuntu Touch 24.04 работает на Linux 4.14, если порт построен на Halium 10.
 5. **«Есть официальная страница recovery, значит бинарник новый и подходит к Android 16»** — неверно. См. [независимый аудит recovery (PR #1)](https://github.com/0-danielviktorovich-0/begonia-research/pull/1), отдельную ветку [PR #1](https://github.com/0-danielviktorovich-0/begonia-research/pull/1): сайт TWRP обновлён в 2026, а официальный последний образ датируется 2022; OrangeFox begonia официально не поддерживается, последний перечисленный beta рассчитан на CFW.
 6. **«mtkclient всегда гарантирует unbrick»** — неверно: зависит от конкретного аппаратного/программного состояния и сохранённых заводских данных.
-7. **«Достаточно включить CONFIG_… в ядре»** — неверно: для реального драйвера также нужны DT nodes/pinctrl/regulators, firmware, совместимый интерфейс и userspace. Подробно в [14 §0](14-MAINLINE-UPGRADE-PATH.md).
+7. **«Достаточно включить CONFIG_… в ядре»** — неверно: для реального драйвера также нужны DT nodes/pinctrl/regulators, firmware, совместимый интерфейс и userspace. Подробно в [14 §0](../../en/kernels/14-MAINLINE-UPGRADE-PATH.md).
 8. **«OSS = все драйверы открыты»** — неверно: vendor blobs могут остаться проприетарными.
 9. **«Mainline fork = полностью upstream ядро»** — неверно; проверить, какие MT6785-патчи реально попали в kernel.org.
 
@@ -176,6 +176,6 @@ For a true image, never fill unknowns by copying data from a nearby ROM name or 
 - [XDA Megathread](https://xdaforums.com/t/guide-info-psa-redmi-note-8-pro-megathread-cfw.4056527/), архивные копии в `archive/` и `_cache/`.
 - [Kshitij Gupta, historical CFW engineering article](https://medium.com/swlh/modding-the-redmi-note-8-pro-an-adventure-e473e84d4d14).
 - [Android Developers: GSI](https://developer.android.com/topic/generic-system-image), [UBports: Introduction to porting](https://docs.ubports.com/en/latest/porting/introduction/Intro.html), [UBports begonia feature matrix](https://devices.ubuntu-touch.io/device/begonia/).
-- Развернутые аппаратные и version-specific сведения лежат в [02](02-FIRMWARE-HISTORY.md), [03](03-KERNEL-HISTORY.md), [05](05-UBUNTU-TOUCH.md), [06](06-DROIDIAN-POSTMARKETOS.md), [07](07-RECOVERY-SAFETY.md) и [11](11-BLOBS-FIRMWARE-SOURCES.md).
+- Развернутые аппаратные и version-specific сведения лежат в [02](../../en/android/02-FIRMWARE-HISTORY.md), [03](../../en/kernels/03-KERNEL-HISTORY.md), [05](../../en/linux/05-UBUNTU-TOUCH.md), [06](../../en/linux/06-DROIDIAN-POSTMARKETOS.md), [07](../../en/recovery/07-RECOVERY-SAFETY.md) и [11](../../en/kernels/11-BLOBS-FIRMWARE-SOURCES.md).
 
 **Достоверность:** высокая для общих определений и первичных руководств Google/UBports; высокая для того, как в 2021 году куратор сообщества определял CFW/Non-CFW, но прямой доступ к его сообщению в этой среде ограничен 403; рабочая пригодность конкретных ROM/recovery **не проверялась на устройстве**. Сведения привязаны к опубликованным источникам, не служат гарантией успешной прошивки.

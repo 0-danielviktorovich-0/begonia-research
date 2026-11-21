@@ -1,6 +1,6 @@
 # 18 — Read-only device preflight before any Redmi Note 8 Pro porting experiment
 
-Research/audit worksheet for the owner's **currently unknown custom ROM** on Redmi Note 8 Pro (`begonia` / possible `begoniain`). Companion: [17-INDEPENDENT-AUDIT.md](17-INDEPENDENT-AUDIT.md), [07-RECOVERY-SAFETY.md](07-RECOVERY-SAFETY.md), [11-BLOBS-FIRMWARE-SOURCES.md](11-BLOBS-FIRMWARE-SOURCES.md).
+Research/audit worksheet for the owner's **currently unknown custom ROM** on Redmi Note 8 Pro (`begonia` / possible `begoniain`). Companion: [17-INDEPENDENT-AUDIT.md](../research/17-INDEPENDENT-AUDIT.md), [07-RECOVERY-SAFETY.md](07-RECOVERY-SAFETY.md), [11-BLOBS-FIRMWARE-SOURCES.md](../kernels/11-BLOBS-FIRMWARE-SOURCES.md).
 
 **Mode: observation only.** Do not unlock/relock, wipe, run a flash utility, patch vbmeta, repartition, install recovery, or reboot into an unsafe image as part of this worksheet. No phone has been connected for this report. If the phone cannot be identified confidently, stop before the first write.
 
@@ -92,7 +92,7 @@ Fill in only from observed outputs or validated vendor documentation; `unknown` 
 
 ## F. Safe first engineering experiment
 
-Once preflight and backup gates are satisfied, first benchmark the existing custom Android ROM (no change yet), then plan a reproducible Ubuntu Touch 24.04 / Halium 10 base from [05-UBUNTU-TOUCH.md](05-UBUNTU-TOUCH.md).
+Once preflight and backup gates are satisfied, first benchmark the existing custom Android ROM (no change yet), then plan a reproducible Ubuntu Touch 24.04 / Halium 10 base from [05-UBUNTU-TOUCH.md](../linux/05-UBUNTU-TOUCH.md).
 
 **Recommended debug hypothesis:** the UBports device status reports *microphone recording broken* while *voice in calls works*. Droidian's community adaptation reports microphone support on the same handset. Treat this as a potential route/HAL/config discrepancy, not evidence of hardware damage. Inventory UT's 2026-10 audio-policy/fast-output overlay and compare with Droidian's adaptation before binary reverse engineering. Do not assume a single copied blob fixes two different audio stacks.
 
