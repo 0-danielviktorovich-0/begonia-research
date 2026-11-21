@@ -4,6 +4,12 @@
 
 **Observed:** 2026-11-21. **Evidence:** public GitHub metadata, trees, Makefiles, selected diffs/patches and manifests read directly; original Telegram announcement available in the [project's post record](23-419-TELEGRAM-OUTREACH.md). **No code compiled, firmware flashed, camera APK run, or boot image tested**. Public files and upstream claims are not hardware-validation results.
 
+## 2026-11-22 hardware update (new evidence, distinct from 2026-11-21 source audit)
+
+A Redmi Note 8 Pro (`begonia`) **successfully booted Axion 2.9 NOESIS**, and a device-side `uname -r` reading recorded **`4.19.325-cip136-st20-PoWeR+`**. This is **direct device-observed evidence that a 4.19 kernel actually boots**, not merely a developer announcement or a 4.19-targeting `BoardConfig.mk`. See the [dated installation and verification record](../recovery/07-RECOVERY-SAFETY.md) and the [kernel source-versus-device-evidence CSV](../../../data/matrices/kernel-root-provenance.csv).
+
+**Boundary:** it does **not** establish public availability of the matching 4.19 source, the author's exact unreleased patchset, reproducibility, or compatibility with every device variant. The remaining findings below describe the **2026-11-21 public-source audit**; historical “author-reported only” statements in that section should be read with this subsequent hardware observation.
+
 ## 1. Executive finding
 
 The developer's [GitHub account](https://github.com/Saikrishna1504) has **over 100 publicly indexed repositories** (103 returned by repository search pages 1–2 during this audit), but many are unrelated coursework or other phones. The critical begonia assets are a **device tree, proprietary vendor tree, separate firmware bundle, kernel source, boot-image/prebuilt kernel tree, MediaTek hardware adaptation, SELinux policies, recovery source, OTA metadata, IMS/camera patches and historical manifests**.
@@ -116,6 +122,6 @@ The [axion device tree](https://github.com/Saikrishna1504/device_redmi_begonia/t
 
 **Author-reported only:** working Linux 4.19 on real begonia with video fix, VoWiFi/ViLTE and MIUI Camera on custom Android; the attached image and full source-to-binary chain have not been independently checked here.
 
-**Not established:** exact published Linux 4.19 kernel patchset and `vendor/begonia.config`, successful end-to-end reproduction/boot on the owner’s device, hardware support of all panel revisions, full legality of distributing third-party binaries, current OTA/certified payment compatibility.
+**Not established:** exact published Linux 4.19 kernel patchset and `vendor/begonia.config`, independent source-built reproduction of the device-observed kernel, hardware support of all panel revisions, full legality of distributing third-party binaries, current OTA/certified payment compatibility.
 
 **No phone operations or binary copying were undertaken.** Use [18](../recovery/18-DEVICE-PREFLIGHT-READONLY.md) before any hands-on work.
