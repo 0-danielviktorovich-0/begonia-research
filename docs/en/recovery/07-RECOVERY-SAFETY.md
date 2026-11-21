@@ -259,7 +259,7 @@ fastboot) — consistent with [mtkclient](https://github.com/bkerler/mtkclient) 
 
 ## N.2 Live flash session: MIUI-era A14 LOS → Axion 2.9 NOESIS (owner device, 2026-11-22T00:45+09:00)
 
-The audit's conditional-unbrick discipline (§N.1, [17](17-INDEPENDENT-AUDIT.md) A03) held in practice:
+The audit's conditional-unbrick discipline (§N.1, [17](../research/17-INDEPENDENT-AUDIT.md) A03) held in practice:
 read-only preflight first ([18](18-DEVICE-PREFLIGHT-READONLY.md) pattern via adb), then one write step at a time.
 
 - Preflight found: A14 LOS-lineage ROM on **4.14.336-perf** (2024-07-16 build), vendor fp spoofing
@@ -278,10 +278,10 @@ read-only preflight first ([18](18-DEVICE-PREFLIGHT-READONLY.md) pattern via adb
   `twrp_begonia` → `omni_begonia`!)** → **Format Data** (in omni recovery: "Wipe data/factory reset") →
   boot. First boot OK; on-device verification: Android 16, `ro.axion.build.version=2.9`, build
   `BP4A.251205.006`, kernel **`4.19.325-cip136-st20-PoWeR+`** — a real 4.19 on the device, see the
-  device-verified row in [kernel-root-provenance.csv](kernel-root-provenance.csv).
+  device-verified row in [kernel-root-provenance.csv](../../../data/matrices/kernel-root-provenance.csv).
 - Operational gotchas recorded for the next session: the device drops off USB entirely on every
   transition into recovery (fix: replug + re-enumerate); in sideload mode `adb shell` is unavailable
   (only `adb sideload`) — exit sideload before any shell work; the new recovery's product string is
   `omni_begonia`, so don't mistake it for a wrong flash.
-- Root on this ROM: not applied yet; the Evolution X KSU recipe ([16 §2.2](16-ROOT-METHODS.md)) is
+- Root on this ROM: not applied yet; the Evolution X KSU recipe ([16 §2.2](../android/16-ROOT-METHODS.md)) is
   ROM-specific — for Axion, check the ROM's own notes before flashing any kernel.
