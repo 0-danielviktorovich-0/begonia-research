@@ -1,8 +1,10 @@
 # begonia-research — Xiaomi Redmi Note 8 Pro (begonia) research knowledge base
 
-Research DB for porting Linux to the Xiaomi Redmi Note 8 Pro (`begonia`, MTK Helio G90T / MT6785):
-firmware, kernels, hardware drivers, Ubuntu Touch, Droidian, postmarketOS, bootloader/recovery —
-built as a reusable foundation for AI-assisted development (Ubuntu Touch first, then modern Halium/mainline).
+Research DB for the Xiaomi Redmi Note 8 Pro (`begonia`, MTK Helio G90T / MT6785) — built so an agent (or human)
+unfamiliar with the device can start work from this repo alone. Dual purpose: **Linux porting** (Ubuntu Touch,
+Droidian, postmarketOS, Halium/mainline — the north star is a modern Ubuntu Touch) AND the full **Android custom
+ecosystem** (ROMs, kernels, recoveries — TWRP/OrangeFox/others —, firmware, vendor trees): every instruction,
+artifact and forum finding for this device belongs here, with links to its sources/open code.
 
 **Research run: 2026-11-21 (single-day multi-agent run: 6 core researchers + augmentation waves).**
 Status: core files 02–07 delivered; augmentation (per-ROM sources, host toolbox, guide index) in flight;

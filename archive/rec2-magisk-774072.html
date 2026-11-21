@@ -1,0 +1,2556 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.13" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Magisk root thread (4PDA topic 774072) (offline extract)</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      color: light-dark(#1a1a1a, #fdfdfd);
+      background-color: #fdfdfd;
+      background-color: light-dark(#fdfdfd, #1a1a1a);
+      color-scheme: light dark;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        color-scheme: light only;
+      }
+      html, body, pre, code {
+        background-color: transparent;
+      }
+      body, a, a:visited, blockquote {
+        color: black;
+      }
+      pre, code {
+        padding: 0;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a, a:visited {
+      color: inherit;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid;
+      border-color: #e6e6e6;
+      border-color: light-dark(#e6e6e6, #4c4c4c);
+      color: #606060;
+      color: light-dark(#606060, #b6b6b6);
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid currentColor;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid currentColor;
+      border-bottom: 1px solid currentColor;
+    }
+    th {
+      border-top: 1px solid currentColor;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Magisk root thread (4PDA topic 774072) (offline
+extract)</h1>
+</header>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a href="https://4pda.to/"><img
+src="https://4pda.to/s/QBvwTo0Sg7Yu99XlUmM92x8cRfPHWHoZctz08xTSoK2z2R6XwZtz0uw.png"
+alt="4PDA" /></a></td>
+<td><img src="https://4pda.to/s/QBvw5VM6509k3UZu6drE8DyrsX.gif" /></td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://4pda.to/forum/index.php?act=Help">Помощь</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?act=boardrules">Правила</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=317">Поиск</a></p>
+<p>Искать только в этом форуме</p>
+<p>Результаты в виде тем</p>
+<p><a href="https://4pda.to/forum/index.php?act=search">Дополнительные
+параметры</a></p>
+<p><a href="https://4pda.to/forum/index.php?showtopic=774072#"
+title="Закрыть окно">[X]</a></p>
+<p>Помощник</p>
+<p><img
+src="https://4pda.to/s/QBvwVEgr0Wz1yP0HDDz0OO3uOIcUgz2G09wcejfkhutegeEwWDh.gif"
+alt="Загрузка. Пожалуйста, подождите…" />Загрузка. Пожалуйста,
+подождите…</p>
+<p><strong>Здравствуйте, гость</strong> ( <a
+href="https://4pda.to/forum/index.php?act=auth&amp;return=https%3A%2F%2F4pda.to%2Fforum%2Findex.php%3Fshowtopic%3D774072">Вход</a>
+| <a
+href="https://4pda.to/forum/index.php?act=auth&amp;return=https%3A%2F%2F4pda.to%2Fforum%2Findex.php%3Fshowtopic%3D774072#reg">Регистрация</a>
+)</p>
+<p><a href="https://4pda.to/forum/?showforum=281&amp;utm_source=ftmenu"
+title="Android">Android</a> <a
+href="https://4pda.to/forum/?showforum=295&amp;utm_source=ftmenu"
+title="iOS">iOS</a> <a
+href="https://4pda.to/forum/?showforum=442&amp;utm_source=ftmenu"
+title="Другие платформы">Другие</a> <a
+href="https://4pda.to/forum/?utm_source=ftmenu"
+title="Полезные ссылки">Полезное</a> <a
+href="https://4pda.to/devdb/?utm_source=ftmenu"
+title="DevDB - каталог устройств">Устройства</a> <a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Fdevfaq.ru%2F%3Futm_source%3Dftmenu"
+title="DevFAQ - база знаний об устройствах">База знаний</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=282&amp;utm_source=ftmenu"
+title="Первая помощь по Android">Первая помощь</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=283&amp;utm_source=ftmenu"
+title="FAQ по Android">FAQ</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showtopic=112220&amp;utm_source=ftmenu"
+title="Программы для Android">Программы</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=213&amp;utm_source=ftmenu"
+title="Игры для Android">Игры</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=139&amp;utm_source=ftmenu"
+title="Устройства Apple">Устройства</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=142&amp;utm_source=ftmenu"
+title="Первая помощь по iPod Touch, iPhone и iPad">Первая помощь</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=144&amp;utm_source=ftmenu"
+title="FAQ по iPod Touch, iPhone iPad">FAQ</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=140&amp;utm_source=ftmenu"
+title="Программы для iPod Touch, iPhone b iPad">Программы</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=141&amp;utm_source=ftmenu"
+title="Игры для iPod Touch, iPhone и iPad">Игры</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=4&amp;utm_source=ftmenu"
+title="Обсуждение кнопочных телефонов (раскладушек, слайдеров, моноблоков), программ, игр.">Кнопочные
+телефоны</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=48&amp;utm_source=ftmenu"
+title="Раздел для увлекающихся Фотографией. Делимся опытом съемки, выбора фотоаппарата.">Фото</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=103&amp;utm_source=ftmenu"
+title="Вопросы, ответы и советы по плеерам, медиа-приставкам, ТВ и проекторам.">Мультимедийные
+устройства</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=279&amp;utm_source=ftmenu"
+title="Обсуждение устройств для чтения электронных книг.">Электронные
+книги</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=645&amp;utm_source=ftmenu"
+title="Обсуждение игровых консолей и игр">Игровые консоли</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=635&amp;utm_source=ftmenu"
+title="Головные Устройства, МФУ">Автомобильные устройства</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=763&amp;utm_source=ftmenu"
+title="Обсуждения носимых устройств.">Носимая электроника</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=817&amp;utm_source=ftmenu"
+title="Обсуждаем, все, что связано с видеосъемкой">Видео</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=910&amp;utm_source=ftmenu"
+title="Умный дом, устройства с дистанционным управлением, скутеры и квадрокоптеры, пылесосы, весы и пр. гаджеты.">Устройства
+для дома и развлечений</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showtopic=117392&amp;view=findpost&amp;p=2728692&amp;utm_source=ftmenu"
+title="10 заповедей новичка">10 заповедей новичка</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showtopic=89878&amp;utm_source=ftmenu"
+title="FAQ по форуму">FAQ по форуму</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=373&amp;utm_source=ftmenu"
+title="Сообщить об ошибке">Сообщить об ошибке</a></p>
+<p><a href="https://4pda.to/devdb/phones/?utm_source=ftmenu"
+title="Коммуникаторы">Телефоны</a></p>
+<p><a href="https://4pda.to/devdb/pad/?utm_source=ftmenu"
+title="Планшеты">Планшеты</a></p>
+<p><a href="https://4pda.to/devdb/ebook/?utm_source=ftmenu"
+title="Электронные книги">Электронные книги</a></p>
+<p><a href="https://4pda.to/devdb/smartwatch/?utm_source=ftmenu"
+title="Смарт часы">Смарт часы</a></p>
+<p><img src="https://4pda.to/s/QBvw4PU7JGSOtr8gnJdnKrOubP5IHbG243Ri.gif"
+alt="&gt;" /><a
+href="https://4pda.to/forum/index.php?act=idx">4PDA</a> &gt; <a
+href="https://4pda.to/forum/index.php?showforum=281">Android</a> &gt; <a
+href="https://4pda.to/forum/index.php?showforum=212">Android -
+Программы</a> &gt; <a
+href="https://4pda.to/forum/index.php?showforum=317">Системные
+утилиты</a></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td>3379 страниц <img
+src="https://4pda.to/s/QBvwSn7Gya4VltbRAer1WUSuGEo4z1Lrz2sCl4JAz2F5NK0Wv6XMP9hKT.gif"
+alt="V" />1<a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;st=20"
+title="2">2</a><a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;st=40"
+title="3">3</a><a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;st=60"
+title="4">4</a><a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;st=80"
+title="5">5</a><a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;st=100"
+title="6">6</a><a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;st=20"
+title="Следующая страница">&gt;</a><a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;st=67560"
+title="На последнюю страницу">»</a><br>Перейти к странице</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr>
+<td><img
+src="https://4pda.to/s/QBvwVMPCCQMBRpNT3a7ZAlftdIcM1vRs2hA2vCH.gif"
+alt="&gt;" /><strong>® Magisk</strong> | Рут-менеджер и внесистемная
+платформа</td>
+<td></td>
+<td><a
+href="https://4pda.to/forum/index.php?showtopic=774072#topicoptions">Опции</a><img
+src="https://4pda.to/s/QBvwSn7Gya4VltbRAer1WUSuGEo4z1Lrz2sCl4JAz2F5NK0Wv6XMP9hKT.gif"
+alt="V" /><br><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/menu_item.gif"
+alt="V" /><a
+href="https://4pda.to/forum/index.php?act=Print&amp;client=printer&amp;f=317&amp;t=774072">Версия
+для печати</a><br><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/menu_item.gif"
+alt="V" /><a
+href="https://4pda.to/forum/index.php?act=Print&amp;client=choose&amp;f=317&amp;t=774072">Скачать
+тему</a></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=3605778">Washerron</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=3605778">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=Washerron&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=Washerron&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=317&amp;topics%5B%5D=774072&amp;source=pst&amp;username=Washerron&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;view=findpost&amp;p=112985156"
+title="Ссылка на это сообщение">#1</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+04.02.22, 14:03</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=3605778"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvw1Bw8sM9aGvRaQKQH5z1bPNiNNfDqhrBZAjNMDXTSydLS0.gif" /></a><br>Aquila
+non captat muscas.<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Почётный
+форумчанин<br>Сообщений: 3457<br>Регистрация: 07.09.13<br><a
+href="https://4pda.to/devdb/realme_gt_neo5_se:16_1024"><strong>Realme GT
+Neo5 SE 8/256</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=3605778"
+title="Просмотреть репутацию">1179</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><strong>® Magisk</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Версия: 31.0</strong></p>
+<p><em>Последнее обновление программы в шапке:
+<strong>05.09.2026</strong></em></p>
+<p><a href="https://4pda.to/forum/index.php?showtopic=1087643"
+title="Ссылка">® Magisk Kitsune</a> | <a
+href="https://4pda.to/forum/index.php?showtopic=1071490"
+title="Ссылка"><strong>Magisk - FAQ</strong></a> | <a
+href="https://4pda.to/forum/index.php?showtopic=915158"
+title="Ссылка"><strong>Каталог модулей Magisk</strong></a> <a
+href="https://4pda.to/forum/index.php?showtopic=915158&amp;view=getnewpost"
+title="Ссылка"><strong>»</strong></a> | <a
+href="https://4pda.to/forum/index.php?showtopic=946260"
+title="Ссылка"><strong>Обсуждение модулей Magisk</strong></a> <a
+href="https://4pda.to/forum/index.php?showtopic=946260&amp;view=getnewpost"
+title="Ссылка"><strong>»</strong></a> | <a
+href="https://4pda.to/forum/index.php?showtopic=1067995"
+title="Ссылка"><strong>® KernelSU</strong></a> | <a
+href="https://4pda.to/forum/index.php?showtopic=1082492"
+title="Ссылка"><strong>® APatch</strong></a> | <a
+href="https://4pda.to/forum/index.php?showtopic=1108076"
+title="Ссылка">® SukiSU Ultra</a> | <a
+href="https://4pda.to/forum/index.php?showtopic=981642"
+title="Ссылка"><strong>Стол заказов модулей для Magisk</strong></a> <a
+href="https://4pda.to/forum/index.php?showtopic=981642&amp;view=getnewpost"
+title="Ссылка"><strong>»</strong></a> | <a
+href="https://4pda.to/forum/index.php?showtopic=161587"
+title="Ссылка"><strong>Каталог шрифтов для Android</strong></a> | <a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Fgithub.com%2FMagisk-Modules-Repo&amp;e=112985156"
+title="Ссылка"><strong>Подборка модулей на GitHube</strong></a> | <a
+href="https://4pda.to/forum/index.php?showtopic=946267"
+title="Ссылка"><strong>Клуб любителей Magisk</strong></a> <a
+href="https://4pda.to/forum/index.php?showtopic=946267&amp;view=getnewpost"
+title="Ссылка"><strong>»</strong></a> | <a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Fforum.xda-developers.com%2Ff%2Fmagisk.5903%2F&amp;e=112985156"
+title="Ссылка"><strong>Magisk на </strong>XDA****</a>» <a
+href="https://4pda.to/forum/index.php?showtopic=383300"
+title="Ссылка">ADB | fastboot - их использование</a> <a
+href="https://4pda.to/forum/index.php?showtopic=826244"
+title="Ссылка"><strong>Прохождение SafetyNet / Play Integrity API,
+скрытие Root</strong></a></p>
+<figure>
+<img src="https://4pda.to/s/QBvwB30mom2Uz0QByeMJz1Ancz2dEAz0QI47p8H.png"
+alt="Прикрепленное изображение" />
+<figcaption aria-hidden="true">Прикрепленное изображение</figcaption>
+</figure>
+<h1 id="section"></h1>
+<p><strong>Скриншоты</strong></p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr>
+<td><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/img-resized.png" /> 21%
+оригинала<br><a
+href="https://4pda.to/forum/dl/post/27946864/Screenshot_1.png"
+title="Screenshot_1.png - Размер: 156.86 КБ"><img
+src="https://4pda.to/s/QBvw60AYPvnWz0ReATcRIawqoQhpIbiuKX30nrEjWFEz1.png"
+alt="Прикрепленное изображение" /></a> <br>1080 x 2340 (156.86 КБ)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr>
+<td><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/img-resized.png" /> 21%
+оригинала<br><a
+href="https://4pda.to/forum/dl/post/27946865/Screenshot_2.png"
+title="Screenshot_2.png - Размер: 193.76 КБ"><img
+src="https://4pda.to/s/QBvw73Cj15NVz0R8w5wDrOyxgcDCIbiOavz2ckb6v2QFz0.png"
+alt="Прикрепленное изображение" /></a> <br>1080 x 2340 (193.76 КБ)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr>
+<td><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/img-resized.png" /> 21%
+оригинала<br><a
+href="https://4pda.to/forum/dl/post/27946867/Screenshot_3.png"
+title="Screenshot_3.png - Размер: 378.64 КБ"><img
+src="https://4pda.to/s/QBvw576yg7o6YhmsRf3k25qoQhJ2Deo5gHjy8hKlNIe.png"
+alt="Прикрепленное изображение" /></a> <br>1080 x 2340 (378.64 КБ)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr>
+<td><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/img-resized.png" /> 21%
+оригинала<br><a
+href="https://4pda.to/forum/dl/post/27946868/Screenshot_4.png"
+title="Screenshot_4.png - Размер: 181.84 КБ"><img
+src="https://4pda.to/s/QBvwAOs4cvHmrFAVS5DruiJkiytuaFEZrXrWUiu1S05.png"
+alt="Прикрепленное изображение" /></a> <br>1080 x 2340 (181.84 КБ)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr>
+<td><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/img-resized.png" /> 10%
+оригинала<br><a
+href="https://4pda.to/forum/dl/post/27946869/Screenshot_5.png"
+title="Screenshot_5.png - Размер: 354.19 КБ"><img
+src="https://4pda.to/s/QBvwBRmBz15tFrFgl4PRI4gSsGQ8uaFkJjTJz2EaiZ916.png"
+alt="Прикрепленное изображение" /></a> <br>1080 x 4869 (354.19 КБ)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr>
+<td><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/img-resized.png" /> 21%
+оригинала<br><a
+href="https://4pda.to/forum/dl/post/27946866/Screenshot_6.png"
+title="Screenshot_6.png - Размер: 159.57 КБ"><img
+src="https://4pda.to/s/QBvw440poxKvYhG63rL9z13xgcDi2DeIrojBZOZ0D2Jh.png"
+alt="Прикрепленное изображение" /></a> <br>1080 x 2340 (159.57 КБ)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Для функционирования программы необходимы права root
+пользователя.</strong></p>
+<p><strong>Краткое описание:</strong></p>
+<p>Платформа с открытым исходным кодом, для:</p>
+<ul>
+<li><p><strong>MagiskSU:</strong> Предоставления и управления
+рут-доступом с последующим скрытием вмешательства;</p></li>
+<li><p><strong>Magisk Modules:</strong> Внесистемной модификации системы
+“на лету” (оверлеем) посредством модулей;</p></li>
+<li><p><strong>Zygisk:</strong> Динамического внедрения стороннего кода
+в процессы приложений.</p></li>
+</ul>
+<h1 id="section-1"></h1>
+<p><strong>Описание</strong></p>
+<p>Magisk — современная платформа с открытым исходным кодом для:
+получения ROOT-прав и управления ими, применения различных модификаций
+системы модулями в systemless режиме (без нарушения целостности
+системных разделов) и запуска пользовательских скриптов на различных
+этапах загрузки устройства. Служит платформой для многих сторонних
+проектов (например LSPosed) благодаря компоненту “Zygisk”. Позволяет
+скрывать различные факторы вмешательства в устройство (например
+обнаружение ROOT-прав или разблокированного загрузчика) благодаря
+компоненту “DenyList”.</p>
+<h1 id="section-2"></h1>
+<p><strong>Правила темы</strong></p>
+<p><strong>1. В теме обсуждается непосредственно функционал самого
+Magisk, особенности и нюансы его работы, установки, удаления и отката. А
+также, возможные проблемы в его работе.</strong></p>
+<p><strong>2. Разблокировка загрузчиков, установка Recovery, замена
+ядер, бэкапы и перепрошивки обсуждаются исключительно в профильных темах
+Ваших устройств!</strong></p>
+<p><strong>3. Межтематические и около-magisk-овые вопросы обсуждаются в
+дочерних и соседних темах:</strong> <strong>- Каталог (репозиторий)
+модулей? Тут: <a href="https://4pda.to/forum/index.php?showtopic=915158"
+title="Ссылка">Каталог модулей для Magisk</a></strong></p>
+<p><strong>- Хотите найти/обсудить модули? Тут: <a
+href="https://4pda.to/forum/index.php?showtopic=946260"
+title="Ссылка">Обсуждение модулей для Magisk</a></strong></p>
+<p><strong>- Хотите заказать модули? Тут: <a
+href="https://4pda.to/forum/index.php?showtopic=981642"
+title="Ссылка">Стол заказов модулей для Magisk</a></strong></p>
+<p><strong>- Хотите поговорить/пофлудить? Тут: <a
+href="https://4pda.to/forum/index.php?showtopic=946267"
+title="Ссылка">Клуб любителей Magisk</a></strong> <strong>4. Обсуждение
+сторонних приложений и нюансы их работы ведётся исключительно в
+профильных темах этих приложений.</strong></p>
+<p><strong>5. Обсуждение особенностей установки/использования/работы,
+ровно как и проблемы/баги сторонних форков (модификаций) Magisk
+рекомендуется вести исключительно на собственных платформах поддержки
+таких модификаций (если существуют). Использование модификаций Magisk
+осуществляется Вами на добровольной основе, на Ваш страх и
+риск!</strong></p>
+<p><strong>6. Вопросы скрытия чего-либо от чего-либо, прохождения
+SafetyNet/Integrity API, получение сертификаций и т.п. обсуждаются в
+профильной теме: <a
+href="https://4pda.to/forum/index.php?showtopic=826244"
+title="Ссылка">Прохождение SafetyNet / Play Integrity API, скрытие
+Root</a></strong></p>
+<h1 id="section-3"></h1>
+<p><strong>Шаблоны публикации обновлений Magisk</strong></p>
+<p>Ввиду специфики разделения обновлений Magisk в различных его каналах,
+пожалуйста, придерживайтесь публикации обновлений согласно шаблону
+ниже.</p>
+<p>Выполнение этой рекомендации даст пользователям полную картину и
+понимание принадлежности определенной сборки, ее списка изменений и
+источника.</p>
+<h1 id="section-4"></h1>
+<p><strong>Обновление Magisk в (STABLE | BETA) каналах</strong></p>
+<p>[b]Magisk [[color=blue]25.1 (25100) (31)[/color]]
+[[color=green]STABLE[/color] | [color=green]OFFICIAL[/color]][/b]</p>
+<p>[i][b]Изменения:[/b][/i][spoiler][list]</p>
+<p>[*]Первое</p>
+<p>[*]Второе</p>
+<p>[*]Третье</p>
+<p>[/list][/spoiler]</p>
+<p>•
+[url=“https://ссылка_на_подробное_описание_обновления”][i]Развернутое
+описание[/i][/url]</p>
+<p>[color=blue][b]Скачать:[/b][/color] “*.apk файл сборки Magisk”</p>
+<p><strong>Где:</strong></p>
+<ul>
+<li><p>” <strong>25.1</strong>” — Укажите версию Magisk.</p></li>
+<li><p>” <strong>(25100)</strong>” — Укажите код сборки Magisk.
+Находится в самом приложении на главном экране, а так же в файле конфига
+канала обновлений. Конфиг для “<strong>STABLE</strong>” канала <a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Fgithub.com%2Ftopjohnwu%2Fmagisk-files%2Fblob%2Fmaster%2Fstable.json&amp;e=112985156"
+title="Ссылка">тут</a>. Конфиг для “<strong>BETA</strong>” канала <a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Fgithub.com%2Ftopjohnwu%2Fmagisk-files%2Fblob%2Fmaster%2Fbeta.json&amp;e=112985156"
+title="Ссылка">тут</a>.</p></li>
+<li><p>” <strong>(31)</strong>” — Укажите код версии “stub” компонента
+Magisk (компонент для скрытия). Находится в самом приложении на главном
+экране, а так же в файле конфига канала обновлений. Конфиг для
+“<strong>STABLE</strong>” канала <a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Fgithub.com%2Ftopjohnwu%2Fmagisk-files%2Fblob%2Fmaster%2Fstable.json&amp;e=112985156"
+title="Ссылка">тут</a>. Конфиг для “<strong>BETA</strong>” канала <a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Fgithub.com%2Ftopjohnwu%2Fmagisk-files%2Fblob%2Fmaster%2Fbeta.json&amp;e=112985156"
+title="Ссылка">тут</a>.</p></li>
+<li><p>“<strong>STABLE</strong>” или “<strong>BETA</strong>” — Укажите
+канал рассылки обновления. “<strong>STABLE</strong>” указывайте цветом
+“green”, “<strong>BETA</strong>” указывайте цветом “orange”.</p></li>
+<li><p>“<strong>OFFICIAL</strong>” — Указывается принадлежность сборки к
+официальному каналу распространения. То бишь, данная сборка не является
+каким-либо форком от сторонних разработчиков.</p></li>
+<li><p><strong>Спойлер “Изменения”</strong> — Укажите список изменений,
+опубликованный разработчиком. Список изменений для каждой версии
+находится <a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Ftopjohnwu.github.io%2FMagisk%2Fchanges.html&amp;e=112985156"
+title="Ссылка">тут</a>, просто скопируйте и поместите списком в данный
+спойлер. Пожалуйста, избегайте скриншотов.</p></li>
+<li><p><strong>Ссылка на “Развернутое описание” обновления</strong> —
+Укажите ссылку на подробное описание обновления, опубликованное
+разработчиком. Описание для каждой версии находится <a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Ftopjohnwu.github.io%2FMagisk%2Freleases%2F&amp;e=112985156"
+title="Ссылка">тут</a>.</p></li>
+<li><p><strong>“*.apk файл сборки Magisk”</strong> — Собственно,
+прикрепите сам “*.apk” файл.</p></li>
+</ul>
+<h1 id="section-5"></h1>
+<p><strong>Обновление Magisk в (CANARY | DEBUG) каналах</strong></p>
+<p>[b]Magisk [[color=Blue]25001 | (31)[/color]]
+[[color=Red]CANARY[/color] | [color=Red]DEBUG[/color] |
+[color=Green]OFFICIAL[/color]][/b]</p>
+<p>[spoiler=[color=Red][b]ПРОЧТИ
+МЕНЯ!!![/b][/color]][color=Red][b]Внимание: Это [u]официальные[/u],
+экспериментальные сборки из “CANARY | DEBUG” каналов обновлений на
+основе последних внесенных изменений (коммитов) в исходный код Magisk.
+Данные сборки содержит реализацию последних актуальных исправлений,
+возможностей и функционал в проекте, так же как и возможные ошибки,
+проблемы и баги. Устанавливайте данные сборки только если вы
+заинтересованы в использовании и тестировании нового функционала, не
+боитесь возникновения возможных проблем и готовы к их решению.</p>
+<p>При обнаружении каких-либо ошибок, проблем или багов, пожалуйста, не
+поленитесь сообщить о них разработчику используя DEBUG сборку,
+предварительно ознакомившись с
+[url=“https://github.com/topjohnwu/Magisk/issues/new?assignees=&amp;labels=&amp;template=bug_report.md&amp;title=”]инструкцией
+по правильной публикации отчётов об ошибках[/url].[/b][/color]</p>
+<p>[/spoiler]</p>
+<p>[i][b]Изменения:[/b][/i]</p>
+<p>Первое</p>
+<p>Второе</p>
+<p>Третье</p>
+<p>[color=blue][b]Скачать:[/b][/color]</p>
+<p>[b][[color=red]CANARY[/color]]:[/b] “*.apk файл сборки Magisk
+CANARY”[b][[color=red]DEBUG[/color]]:[/b] “*.apk файл сборки Magisk
+DEBUG”</p>
+<p><strong>Где:</strong></p>
+<ul>
+<li><p>” <strong>(25101)</strong>” — Укажите код сборки Magisk.
+Находится в самом приложении на главном экране, а так же в файле конфига
+канала обновлений. Конфиг для “<strong>CANARY</strong>” канала <a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Fgithub.com%2Ftopjohnwu%2Fmagisk-files%2Fblob%2Fmaster%2Fcanary.json&amp;e=112985156"
+title="Ссылка">тут</a>. Конфиг для “<strong>DEBUG</strong>” канала <a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Fgithub.com%2Ftopjohnwu%2Fmagisk-files%2Fblob%2Fmaster%2Fdebug.json&amp;e=112985156"
+title="Ссылка">тут</a>.</p></li>
+<li><p>” <strong>(31)</strong>” — Укажите код версии “stub” компонента
+Magisk (компонент для скрытия). Находится в самом приложении на главном
+экране, а так же в файле конфига канала обновлений. Конфиг для
+“<strong>CANARY</strong>” канала <a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Fgithub.com%2Ftopjohnwu%2Fmagisk-files%2Fblob%2Fmaster%2Fcanary.json&amp;e=112985156"
+title="Ссылка">тут</a>. Конфиг для “<strong>DEBUG</strong>” канала <a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Fgithub.com%2Ftopjohnwu%2Fmagisk-files%2Fblob%2Fmaster%2Fdebug.json&amp;e=112985156"
+title="Ссылка">тут</a>.</p></li>
+<li><p>“<strong>CANARY</strong> | <strong>DEBUG</strong>” — Укажите
+соответствующие каналы рассылки обновления.</p></li>
+<li><p>“<strong>OFFICIAL</strong>” — Указывается принадлежность сборки к
+официальному каналу распространения. То бишь, данная сборка не является
+каким-либо форком от сторонних разработчиков.</p></li>
+<li><p><strong>“Изменения”</strong> — Укажите список изменений,
+опубликованный разработчиком. Список изменений для актуальной версии
+находится <a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Fgithub.com%2Ftopjohnwu%2Fmagisk-files%2Fblob%2Fcanary%2Fnotes.md&amp;e=112985156"
+title="Ссылка">тут</a>, просто скопируйте и поместите списком в данный
+спойлер. Пожалуйста, избегайте скриншотов.</p></li>
+<li><p><strong>“*.apk файл сборки Magisk”</strong> — Собственно,
+прикрепите сами “*.apk” файлы.</p></li>
+</ul>
+<h1 id="section-6"></h1>
+<p><strong>Важная информация и объявление</strong></p>
+<ol type="1">
+<li><p><a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;view=findpost&amp;p=110545774"
+title="Ссылка">Анонс. Напутствие. На ближайшее будущее</a></p></li>
+<li><p><a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;view=findpost&amp;p=86606019"
+title="Ссылка">Android 10 Капсула времени!</a></p></li>
+<li><p>Некоторые старые приложения не поддерживают рут Magisk, и
+соответственно, не могут получить root-права. Пофиксить это могут только
+их разработчики.</p></li>
+<li><p>Некоторые приложения, допустим ” <a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=92132587&amp;anchor=Spoil-92132587-3"
+title="Ссылка">Дія</a>“, используют известную недоработку Magisk (утечка
+монтирования). Эту проблему можно решить с помощью модуля <a
+href="https://4pda.to/forum/index.php?showtopic=915158&amp;view=findpost&amp;p=107787422"
+title="Ссылка">riru-unshare</a> или с помощью модуля <a
+href="https://4pda.to/forum/index.php?showtopic=915158&amp;view=findpost&amp;p=108226592"
+title="Ссылка">Riru - MomoHider</a> Если данные модули не помогают, идём
+в тему своего приложения и ставим модификации.</p></li>
+<li><p>MagiskHide, как правило, не работает на аппаратах с ядрами Linux
+ниже 3.8, и пофиксить это нельзя из-за отсутствия в этих ядрах
+компонентов, необходимых для скрытия Magisk (исключения из этого правила
+возможны, если разработчик прошивки портирует эти компоненты в старое
+ядро; такое порой случается, например, на кастомах на базе
+AOSP).</p></li>
+<li><p>Magisk не полностью поддерживает установку на адаптированный
+накопитель (“adoptable storage” - SD-карта, отформатированная во
+внутреннюю память), в противном случае рут может не работать. При любых
+проблемах рекомендуется сначала переместить менеджер на внутренний
+накопитель и лишь после этого задавать вопрос в теме.</p></li>
+<li><p>Magisk и его оболочку (Magisk Manager) желательно обновлять
+одновременно. “Устаревание” одного компонента при обновлении другого
+приводит к проблемам.</p></li>
+<li><p>Бета, альфа и canary версии устанавливаются и удаляются по тому
+же принципу, что и стабильные.</p></li>
+<li><p>При переходе на бету или canary со стабильной версии, или
+наоборот, нужно полностью удалить текущую версию с помощью
+деинсталлятора и затем установить другую версию.</p></li>
+<li><p>Бета и canary версии часто обновляются, но, как любые
+нестабильные версии, они могут содержать баги. Помните об этом и всегда
+делайте бэкап перед установкой.</p></li>
+</ol>
+<h1 id="section-7"></h1>
+<p><strong>База знаний и FAQ</strong></p>
+<ul>
+<li><p><a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;view=findpost&amp;p=112815025"
+title="Ссылка"><strong>F.A.Q по Magisk 24.0+</strong></a></p></li>
+<li><p><a
+href="https://4pda.to/forum/index.php?showtopic=920159&amp;view=findpost&amp;p=53515726"
+title="Ссылка">База знаний (инструкции и полезности)</a></p></li>
+<li><p><a
+href="https://4pda.to/forum/index.php?s=&amp;showtopic=826244&amp;view=findpost&amp;p=98118061"
+title="Ссылка">Всё о HARDWARE аттестации (проверке)
+SafetyNet</a></p></li>
+<li><p><a
+href="https://4pda.to/forum/index.php?showtopic=1070715&amp;view=findpost&amp;p=130914134"
+title="Ссылка">Установка Magisk без ПК</a></p></li>
+</ul>
+<h1 id="section-8"></h1>
+<p><strong>О проекте | Системные требования</strong></p>
+<ul>
+<li><p><strong>Google Play: Не существует!</strong></p></li>
+<li><p><strong>Официальный сайт: Не существует!</strong></p></li>
+<li><p><strong>Имя пакета:</strong> com.topjohnwu.magisk</p></li>
+<li><p><strong>GitHub (исходный код):</strong> <a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Fgithub.com%2Ftopjohnwu%2FMagisk&amp;e=112985156"
+title="Ссылка">https://github.com/topjohnwu/Magisk</a></p></li>
+<li><p><strong>Документация:</strong> <a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Ftopjohnwu.github.io%2FMagisk%2F&amp;e=112985156"
+title="Ссылка">https://topjohnwu.github.io/Magisk/</a></p></li>
+<li><p><strong>Разработчики:</strong> <a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Fgithub.com%2Ftopjohnwu&amp;e=112985156"
+title="Ссылка">topjohnwu</a>, <a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Fgithub.com%2Fdiareuse&amp;e=112985156"
+title="Ссылка">diareuse</a>, <a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Fgithub.com%2Fvvb2060&amp;e=112985156"
+title="Ссылка">vvb2060</a>, <a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Fgithub.com%2Fosm0sis&amp;e=112985156"
+title="Ссылка">osm0sis</a>, <a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Fgithub.com%2Fyujincheng08&amp;e=112985156"
+title="Ссылка">yujincheng08</a>, <a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Fgithub.com%2FRikkaW&amp;e=112985156"
+title="Ссылка">RikkaW</a>, <a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Fgithub.com%2Fcanyie&amp;e=112985156"
+title="Ссылка">canyie</a> и многие другие (более 250
+участников)</p></li>
+<li><p><strong>Русский интерфейс:</strong> Поддерживается (перевели: <a
+href="https://4pda.to/forum/index.php?showuser=4238650"
+title="Ссылка">Displax</a>, <a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Fgithub.com%2FVladWinner&amp;e=112985156"
+title="Ссылка">VladWinner</a>, <a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Fgithub.com%2Fzertyuiop&amp;e=112985156"
+title="Ссылка">zertyuiop</a>, <a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Fgithub.com%2Fgroozchique&amp;e=112985156"
+title="Ссылка">groozchique</a>, <a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Fgithub.com%2FNoSayGoodbye&amp;e=112985156"
+title="Ссылка">NoSayGoodbye</a>, <a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Fgithub.com%2FExalm&amp;e=112985156"
+title="Ссылка">Exalm</a> )</p></li>
+<li><p><strong>Системные требования (для последней стабильной
+версии):</strong></p>
+<ul>
+<li><p><strong>Общее окружение: Android:</strong> 6.0+
+<strong>|</strong> <strong>ABI</strong>: armeabi-v7a, arm64-v8a, x86,
+x86_64</p></li>
+<li><p><strong>Поддержка DenyList:</strong> <strong>Ядро Linux:</strong>
+3.8+ <strong>|</strong> (<strong>Де-факто:</strong> 3.10+)</p></li>
+<li><p><strong>Поддержка Zygisk: Android:</strong> 6.0+
+<strong>|</strong> (<strong>Де-факто:</strong> 8.0+) <strong>|</strong>
+<strong>Ядро Linux (Рекомендовано):</strong> 3.19+</p></li>
+<li><p><strong>Поддержка изоляции компонентов: Ядро Linux:</strong> 4.7+
+<strong>|</strong> (<strong>Де-факто:</strong> 4.9+)</p></li>
+</ul></li>
+</ul>
+<p>Если у вас не работает zygisk при установленном Lsposed - замените
+его на <a
+href="https://4pda.to/forum/index.php?showtopic=915158&amp;view=findpost&amp;p=132866306"
+title="Ссылка">этот</a> форк!</p>
+<p><a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;view=findpost&amp;p=142215697"
+title="Ссылка">Прежде чем писать что зигиск и модули отвалились!</a></p>
+<p><strong>Скачать:</strong></p>
+<p><strong>Версия: 31.0</strong> <a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;view=findpost&amp;p=144943166"
+title="Ссылка">Debug c Github от 04.09.2026 (Fcvp)</a></p>
+<p><strong>[STABLE] Версия: 30.7</strong> <a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;view=findpost&amp;p=142111453"
+title="Ссылка">® Magisk (-DIO-)</a></p>
+<p><strong>[BETA] Версия: 31.0</strong> <a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;view=findpost&amp;p=144937105"
+title="Ссылка">® Magisk (Пост Number one’ #144937105)</a></p>
+<p><strong>[CANARY | DEBUG] Версия: 29001</strong> <a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;view=findpost&amp;p=137017163"
+title="Ссылка">® Magisk (Пост -DIO- #137017163)</a></p>
+<h1 id="section-9"></h1>
+<p><strong>Модификации | Форки</strong></p>
+<p><strong>Magisk Alpha:</strong> <a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;view=findpost&amp;p=125811748"
+title="Ссылка">® Magisk (Пост -DIO- #125811748)</a></p>
+<p><strong>Magisk Delta:</strong> <a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;view=findpost&amp;p=122213461"
+title="Ссылка">® Magisk (Пост Displax #122213461)</a></p>
+<p><strong>Lygisk:</strong> <a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;view=findpost&amp;p=122213627"
+title="Ссылка">® Magisk (Пост Displax #122213627)</a></p>
+<h1 id="section-10"></h1>
+<p><strong>Прошлые версии</strong></p>
+<p><strong>Архив прошлых версий тут:</strong> <a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;view=findpost&amp;p=113048686"
+title="Ссылка">® Magisk (Пост Washerron™ #113048686)</a></p>
+<p><em><strong>Тема <a
+href="https://4pda.to/forum/index.php?showtopic=739993&amp;view=findpost&amp;p=89279492"
+title="Ссылка">ищет куратора</a>.</strong></em></p>
+<p><em><strong>Если считаете, что обладаете знаниями по теме, имеете
+положительные отзывы из темы и достойны стать куратором, то Вам сюда -
+<a href="https://4pda.to/forum/index.php?showforum=958"
+title="Ссылка"><strong>Хочу стать
+куратором</strong></a>.</strong></em></p>
+<p><em><strong>Желающим, просьба, обратить внимание на <a
+href="https://4pda.to/forum/index.php?showtopic=346984"
+title="Ссылка"><strong>требования к кураторам в
+разделе</strong></a>.</strong></em></p>
+<p><a
+href="https://4pda.to/forum/index.php?s=&amp;act=Stats&amp;view=who&amp;t=774072"
+title="Ссылка"><em><strong>Активность пользователей в
+теме</strong></em></a></p>
+<p><strong>Beta-версии:</strong></p>
+<p><strong>Версия: 31.1</strong> <a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;view=findpost&amp;p=145670867"
+title="Ссылка">GitHub от 25.10.26 (Number one’)</a></p>
+<p>Сообщение отредактировал <a
+href="https://4pda.to/forum/index.php?showuser=1017942"><strong>iMiKED</strong></a>
+- 25.10.26, 08:56</p>
+<p>Причина редактирования: Обновление: beta 31.1 GitHub от 25.10.26 | |
+| | | |</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=1842043">Ka/|9ka
+Ma/|9ka</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=1842043">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=Ka%2F%26%23124%3B9ka+Ma%2F%26%23124%3B9ka&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=Ka%2F%26%23124%3B9ka+Ma%2F%26%23124%3B9ka&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=317&amp;topics%5B%5D=774072&amp;source=pst&amp;username=Ka%2F%26%23124%3B9ka+Ma%2F%26%23124%3B9ka&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;view=findpost&amp;p=53552745"
+title="Ссылка на это сообщение">#2</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+28.09.16, 07:06</td>
+</tr>
+<tr>
+<td>Местный<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 193<br>Регистрация: 29.11.11<br>Репутация:
+<img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=1842043"
+title="Просмотреть репутацию">6</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td>Пробовал, не помогло. Тест не проходил, красным цветом было
+написано, что ядро не поддерживает.<br>Но я решил проблему <a
+href="https://4pda.to/forum/index.php?s=&amp;showtopic=727150&amp;view=findpost&amp;p=53538994"
+title="Ссылка">другим способом.</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=1599806">PuTTYn</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=1599806">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=PuTTYn&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=PuTTYn&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=317&amp;topics%5B%5D=774072&amp;source=pst&amp;username=PuTTYn&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;view=findpost&amp;p=53586255"
+title="Ссылка на это сообщение">#3</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+29.09.16, 05:23</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=1599806"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvw7V4YOgdST4z1TRi87lz01Rmn252CtjQZdWCaeEdI4WH2uw.jpg" /></a><br>Старожил<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 1240<br>Регистрация: 30.06.11<br><a
+href="https://4pda.to/devdb/gome_u7"><strong>GOME
+U7</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=1599806"
+title="Просмотреть репутацию">62</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=53552745"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><strong>Ka/|9ka Ma/|9ka</strong>, если ядро не
+поддерживает, просто ставим переключатель в положение ON и юзаем. Этот
+тест на случай, вдруг у вас поддерживается и ничего включать не надо. У
+меня сейчас стоит там скриптик, задающий через iptables всем исходящим
+пакетам TTL 64, всё время подхватывается при загрузке и работает,
+проверял неоднократно. Ладно, мы от темы отошли. По вопросу несистемного
+Xposed, не знаю, сюда или в тему про Xposed. Сегодня фреймворк слетал. С
+системным такого не было. Смотрю, модули не работают. Захожу в
+инсталлер, а там жёлтеньким горит, что фреймворк загружен, но неактивен,
+мол, смотрите логи. Перезагрузил девайс, вроде, работает. Это может быть
+из-за того, что рут включал в Magisk Manager’е?<br>Сообщение
+отредактировал <a
+href="https://4pda.to/forum/index.php?showuser=1599806"><strong>PuTTYn</strong></a>
+- 29.09.16, 05:24<br>---—————–<br><a
+href="https://4pda.ru/forum/index.php?showtopic=936026"
+title="Ссылка"><strong>GOME U7</strong></a><br><a
+href="https://4pda.ru/forum/index.php?showtopic=996832"
+title="Ссылка"><strong>Владелец MiBand 4с NFC</strong></a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=925608">Svintus.TG</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=925608">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=Svintus.TG&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=Svintus.TG&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=317&amp;topics%5B%5D=774072&amp;source=pst&amp;username=Svintus.TG&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;view=findpost&amp;p=53769231"
+title="Ссылка на это сообщение">#4</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+04.10.16, 19:09</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=925608"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvwAGsFm8WefvTBIyWmseMS3S0HVcRS6F5jDTj1M9V3wgk.jpg" /></a><br>Ветеран<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[online]<br>Группа: Постоянный<br>Сообщений: 1776<br>Регистрация: 04.12.09<br><a
+href="https://4pda.to/devdb/honor_magic8_pro"><strong>Honor Magic8 Pro
+12/256/512</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=925608"
+title="Просмотреть репутацию">247</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><strong>Magisk v7</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>Fully open source</p></li>
+<li><p>Remove supolicy dependency, use my own
+sepolicy-injection</p></li>
+<li><p>Run everything in its own selinux domain, should fix all selinux
+issues</p></li>
+<li><p>Add Note 7 stock kernel hex patches</p></li>
+<li><p>Add support to install Magisk in Magisk Manager</p></li>
+<li><p>Add support for image merging for module flashing in Magisk
+Manager</p></li>
+<li><p>Add root helpers for SuperSU auto module-ize and auto upgrading
+legacy phh superuser</p></li>
+<li><p>New paths to toggle busybox, and support all root
+solutions</p></li>
+<li><p>Remove root management API; both SuperSU and phh has their own
+superior solutions</p></li>
+</ul>
+<h1 id="section-11"></h1>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr>
+<td><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/img-resized.png" /> 20%
+оригинала<br><a
+href="https://4pda.to/forum/dl/post/8841355/attachment.php.png"
+title="attachment.php.png - Размер: 89.02 КБ"><img
+src="https://4pda.to/s/QBvw7FapKdIz1Xz1wviVMvZGI2RWMM90oEG9xRWKhz2.png"
+alt="Прикрепленное изображение" /></a> <br>1440 x 2560 (89.02 КБ)</td>
+</tr>
+</tbody>
+</table>
+<h1 id="section-12"></h1>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr>
+<td><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/img-resized.png" /> 20%
+оригинала<br><a
+href="https://4pda.to/forum/dl/post/8841358/attachment.php%282%29.png"
+title="attachment.php(2).png - Размер: 248.58 КБ"><img
+src="https://4pda.to/s/QBvwAKUQpRKHfguSrWMv30w6HHjy8Za9SNeLRz1gy.png"
+alt="Прикрепленное изображение" /></a> <br>1440 x 2560 (248.58 КБ)</td>
+</tr>
+</tbody>
+</table>
+<h1 id="section-13"></h1>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr>
+<td><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/img-resized.png" /> 20%
+оригинала<br><a
+href="https://4pda.to/forum/dl/post/8841360/attachment.php%283%29.png"
+title="attachment.php(3).png - Размер: 254.81 КБ"><img
+src="https://4pda.to/s/QBvw28kYz2btdz1koDUYp0CuM8ABq383KnG9RhueDW.png"
+alt="Прикрепленное изображение" /></a> <br>1440 x 2560 (254.81 КБ)</td>
+</tr>
+</tbody>
+</table>
+<h1 id="section-14"></h1>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr>
+<td><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/img-resized.png" /> 20%
+оригинала<br><a
+href="https://4pda.to/forum/dl/post/8841362/attachment.php%284%29.png"
+title="attachment.php(4).png - Размер: 129.24 КБ"><img
+src="https://4pda.to/s/QBvw0CapKdIz1XUA10nz0RM1PGsjhJW7z1G3dGvL5WD.png"
+alt="Прикрепленное изображение" /></a> <br>1440 x 2560 (129.24 КБ)</td>
+</tr>
+</tbody>
+</table>
+<h1 id="section-15"></h1>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr>
+<td><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/img-resized.png" /> 26%
+оригинала<br><a
+href="https://4pda.to/forum/dl/post/8841371/attachment.php.jpg"
+title="attachment.php.jpg - Размер: 286.08 КБ"><img
+src="https://4pda.to/s/QBvw3FWv5CGRuXA1W15tuAhD3Sm9PesanQLGov6I.jpg"
+alt="Прикрепленное изображение" /></a> <br>1079 x 1918 (286.08 КБ)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Прикрепленные файлы</strong></p>
+<p><a href="https://4pda.to/forum/dl/post/8841262/Magisk-v7.zip"
+title="Скачать Magisk-v7.zip"><img
+src="https://4pda.to/s/QBvw2r0Hs1tQOCk9xz0SwmKhI9sz1baShqimi0h3z2UZUQqz0oqMER0xM9UPUQaC.gif"
+alt="Прикрепленный файл" />Magisk-v7.zip</a> ( 2.18 МБ )</p>
+<p><a
+href="https://4pda.to/forum/dl/post/8841263/Magisk-uninstaller-20161004.zip"
+title="Скачать Magisk-uninstaller-20161004.zip"><img
+src="https://4pda.to/s/QBvw2r0Hs1tQOCk9xz0SwmKhI9sz1baShqimi0h3z2UZUQqz0oqMER0xM9UPUQaC.gif"
+alt="Прикрепленный файл" />Magisk-uninstaller-20161004.zip</a> ( 412.81
+КБ )</p>
+<p><a
+href="https://4pda.to/forum/dl/post/8841283/MagiskManager-v2.0.apk"
+title="Скачать MagiskManager-v2.0.apk"><img
+src="https://4pda.to/s/QBvw2r0Hs1tQOCk9xz0SwmKhI9sz1baShqimi0h3z2UZUQqz0oqMER0xM9UPUQaC.gif"
+alt="Прикрепленный файл" />MagiskManager-v2.0.apk</a> ( 4.13 МБ )</p>
+<p><a
+href="https://4pda.to/forum/dl/post/8841348/phh-superuser-magisk-r259.zip"
+title="Скачать phh-superuser-magisk-r259.zip"><img
+src="https://4pda.to/s/QBvw2r0Hs1tQOCk9xz0SwmKhI9sz1baShqimi0h3z2UZUQqz0oqMER0xM9UPUQaC.gif"
+alt="Прикрепленный файл" />phh-superuser-magisk-r259.zip</a> ( 969.41 КБ
+)</p>
+<p>Сообщение отредактировал <a
+href="https://4pda.to/forum/index.php?showuser=925608"><strong>VHYWEBNOY</strong></a>
+- 04.10.16, 19:26</p>
+<p>---—————–</p>
+<p><a
+href="https://4pda.to/forum/index.php?showtopic=1121483&amp;view=findpost&amp;p=143179849"
+title="Ссылка"><strong>ProPDA</strong> · пользуйтесь форумом
+<strong>4PDA</strong> по-новому</a> | | | | | |</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=4045601">Gabby
+Freez</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=4045601">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=Gabby+Freez&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=Gabby+Freez&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=317&amp;topics%5B%5D=774072&amp;source=pst&amp;username=Gabby+Freez&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;view=findpost&amp;p=53770622"
+title="Ссылка на это сообщение">#5</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+04.10.16, 19:47</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=4045601"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvwBZmnHoTqw9Q0hlILEieq6HFfp8GkxgSoTLv3J0ete73.gif" /></a><br>Лал<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[online]<br>Группа: Постоянный<br>Сообщений: 616<br>Регистрация: 31.01.14<br><a
+href="https://4pda.to/devdb/lg_g3_s"><strong>LG G3
+S</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=4045601"
+title="Просмотреть репутацию">50</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td>Устанавливаем Magisk, затем модули для него. Модуль Xposed, затем
+модули для него. Рекурсия.<br>---—————–<br>I have spread my dreams under
+your feet; Tread softly because you tread on my dreams.(с) William
+Butler Yeats</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=3469364">ilfat12</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=3469364">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=ilfat12&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=ilfat12&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=317&amp;topics%5B%5D=774072&amp;source=pst&amp;username=ilfat12&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;view=findpost&amp;p=53771138"
+title="Ссылка на это сообщение">#6</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+04.10.16, 20:02</td>
+</tr>
+<tr>
+<td>Старожил<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 1004<br>Регистрация: 17.07.13<br><a
+href="https://4pda.to/devdb/oneplus_one"><strong>OnePlus
+One</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=3469364"
+title="Просмотреть репутацию">111</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=53770622"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><strong>Gabby Freez</strong>, рекурсия рекурсией, но
+делается это один раз)) Удобно)<br><strong>Добавлено 04.10.2016,
+20:02:</strong><br>Лично у меня не работает FlashFire. Ни на прошлых
+версиях не работал, ни на v7, ни с phh, ни с SuperSU. <br>При запуске
+задания уходит в черный экран, помогает только хард ребут. На любых
+других рутах без Magisk работает прекрасно. В принципе не критично, ведь
+есть TWRP, но все же, лучше бы он работал))<br>Как я понял это не у всех
+так, но встречается. <br>Если нужен только несистемный рут и несистемный
+xposed и как бонус 100% рабочий FlashFire, то на мой взгляд связка
+SuperSU + Xposed 86.2(несистемный для SuperSU от topjohnwu) + suhide +
+suhide GUI пока более предпочтительный вариант. Но с ростом количества
+модулей Magisk будет поинтереснее.<br>Сообщение отредактировал <a
+href="https://4pda.to/forum/index.php?showuser=3469364"><strong>ilfat12</strong></a>
+- 04.10.16, 20:06</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=1879499">zdrweb</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=1879499">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=zdrweb&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=zdrweb&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=317&amp;topics%5B%5D=774072&amp;source=pst&amp;username=zdrweb&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;view=findpost&amp;p=53774421"
+title="Ссылка на это сообщение">#7</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+04.10.16, 21:36</td>
+</tr>
+<tr>
+<td>…<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 3093<br>Регистрация: 16.12.11<br><a
+href="https://4pda.to/devdb/google_pixel_10_pro_xl68e53f614fb4f"><strong>Google
+Pixel 10 Pro</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=1879499"
+title="Просмотреть репутацию">342</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td>Блин, я что то торможу: а как в <strong>Magisk Manager 2</strong>
+теперь отключать root?<br>---—————–<br><del>Lenovo P780</del> | <del>Zuk
+Z1</del> | <del>OnePlus 6T (8/128)</del> | <strong>Pixel
+7</strong><br>Українізовано: <em>USSDDualWidget, Root Call SMS Manager,
+Jbak Keyboard, Jbak2 Keyboard, Jbak Browser</em></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=3469364">ilfat12</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=3469364">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=ilfat12&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=ilfat12&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=317&amp;topics%5B%5D=774072&amp;source=pst&amp;username=ilfat12&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;view=findpost&amp;p=53775271"
+title="Ссылка на это сообщение">#8</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+04.10.16, 21:57</td>
+</tr>
+<tr>
+<td>Старожил<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 1004<br>Регистрация: 17.07.13<br><a
+href="https://4pda.to/devdb/oneplus_one"><strong>OnePlus
+One</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=3469364"
+title="Просмотреть репутацию">111</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=53774421"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><strong>zdrweb</strong>, никак. Теперь это прерогатива
+разработчиков приложений супер пользователя. Например у SuperSU это
+suhide. Разработчик phh тоже работает над своим suhide, уже есть
+тестовая версия.<br>У меня например Кукуруза не видит несистемный su
+даже без всяких suhide. Если у вас пока с этим проблемы, то можете
+использовать оригинальный SuperSU+ suhide<br>Сообщение отредактировал <a
+href="https://4pda.to/forum/index.php?showuser=3469364"><strong>ilfat12</strong></a>
+- 04.10.16, 22:05</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=1879499">zdrweb</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=1879499">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=zdrweb&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=zdrweb&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=317&amp;topics%5B%5D=774072&amp;source=pst&amp;username=zdrweb&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;view=findpost&amp;p=53775878"
+title="Ссылка на это сообщение">#9</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+04.10.16, 22:15</td>
+</tr>
+<tr>
+<td>…<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 3093<br>Регистрация: 16.12.11<br><a
+href="https://4pda.to/devdb/google_pixel_10_pro_xl68e53f614fb4f"><strong>Google
+Pixel 10 Pro</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=1879499"
+title="Просмотреть репутацию">342</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=53775271"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><strong>ilfat12,</strong><br>та меня эти покемоны бесят,
+блин. Уже запутался. На 6.0 как то все поставилось, ползунок сдвинул и
+все ок - типа рута нету, а тут…<br>---—————–<br><del>Lenovo P780</del> |
+<del>Zuk Z1</del> | <del>OnePlus 6T (8/128)</del> | <strong>Pixel
+7</strong><br>Українізовано: <em>USSDDualWidget, Root Call SMS Manager,
+Jbak Keyboard, Jbak2 Keyboard, Jbak Browser</em></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=1137956">shaker74</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=1137956">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=shaker74&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=shaker74&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=317&amp;topics%5B%5D=774072&amp;source=pst&amp;username=shaker74&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;view=findpost&amp;p=53881517"
+title="Ссылка на это сообщение">#10</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+08.10.16, 02:09</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=1137956"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvw1tIbJZC6DaeQtMR1EX3VQm1ZONDajNLTfz0NkNgekAO1L.png" /></a><br>GW<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 880<br>Регистрация: 29.05.10<br>Репутация:
+<img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=1137956"
+title="Просмотреть репутацию">132</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td>Как в Magisk: 7 отключить рут….? Прочитав выше коментарий не понял
+ничего……? Плиз<br>---—————–</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=3469364">ilfat12</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=3469364">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=ilfat12&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=ilfat12&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=317&amp;topics%5B%5D=774072&amp;source=pst&amp;username=ilfat12&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;view=findpost&amp;p=53883658"
+title="Ссылка на это сообщение">#11</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+08.10.16, 08:36</td>
+</tr>
+<tr>
+<td>Старожил<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 1004<br>Регистрация: 17.07.13<br><a
+href="https://4pda.to/devdb/oneplus_one"><strong>OnePlus
+One</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=3469364"
+title="Просмотреть репутацию">111</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=53881517"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><strong>shaker74</strong>, в приложении выдающем Рут
+права, например в phh или SuperSU. Magisk с 7 версии этим не занимается.
+Описание в шапке касаемо сокрытия рута, xposed и изменения режима
+SELinux для Magisk v7 неверно.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=2286231">sncsnc</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=2286231">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=sncsnc&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=sncsnc&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=317&amp;topics%5B%5D=774072&amp;source=pst&amp;username=sncsnc&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;view=findpost&amp;p=53892430"
+title="Ссылка на это сообщение">#12</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+08.10.16, 15:00</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=2286231"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvw6OwQHBU387OYyz201kz0pVPND4Yz0iNpaBkNz1H1z2k2lfE6P.png" /></a><br>Бывалый<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 597<br>Регистрация: 11.06.12<br>Репутация:
+<img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=2286231"
+title="Просмотреть репутацию">22</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td>А если рут циановский, как его удалять?</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=5669802">Anonimec_</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=5669802">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=Anonimec_&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=Anonimec_&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=317&amp;topics%5B%5D=774072&amp;source=pst&amp;username=Anonimec_&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;view=findpost&amp;p=53892568"
+title="Ссылка на это сообщение">#13</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+08.10.16, 15:05</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=5669802"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvw5JUQoKQ28Mw8z2L7N8QZEFgZd82XrXJJg13UVbNiT9KD.gif" /></a><br>Ветеран<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 1323<br>Регистрация: 25.02.16<br><a
+href="https://4pda.to/devdb/samsung_galaxy_note10_lite"><strong>Samsung
+Galaxy Note10 Lite SM-N770F</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=5669802"
+title="Просмотреть репутацию">414</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td>sncsnc @ 8.10.16 15:00 <a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=53892430"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><br>А если рут циановский, как его удалять?<br>Так ведь на
+циане Рут включается и выключается в настройках.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=2286231">sncsnc</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=2286231">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=sncsnc&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=sncsnc&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=317&amp;topics%5B%5D=774072&amp;source=pst&amp;username=sncsnc&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;view=findpost&amp;p=53893056"
+title="Ссылка на это сообщение">#14</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+08.10.16, 15:23</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=2286231"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvw6OwQHBU387OYyz201kz0pVPND4Yz0iNpaBkNz1H1z2k2lfE6P.png" /></a><br>Бывалый<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 597<br>Регистрация: 11.06.12<br>Репутация:
+<img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=2286231"
+title="Просмотреть репутацию">22</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=53892568"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><strong>R05tik,</strong><br>Я в курсе. Этого
+достаточно?</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=2745034">jhonnk</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=2745034">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=jhonnk&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=jhonnk&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=317&amp;topics%5B%5D=774072&amp;source=pst&amp;username=jhonnk&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;view=findpost&amp;p=53920384"
+title="Ссылка на это сообщение">#15</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+09.10.16, 14:42</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=2745034"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvw5JkuFLftOUEhA5z2uZTTqcrl1tYHDDT8mOSk7vXRfRPm.jpg" /></a><br>Местный<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 312<br>Регистрация: 27.11.12<br>Репутация:
+<img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=2745034"
+title="Просмотреть репутацию">18</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td>Сбербанк онлайн все равно видит рут доступ на прошивке RR 5.7.4
+Magisk установлен по инструкции, режим суперпользователя выключал и
+включал, без толку, подскажите что не так делаю?<br>Сообщение
+отредактировал <a
+href="https://4pda.to/forum/index.php?showuser=2745034"><strong>jhonnk</strong></a>
+- 09.10.16, 14:42<br>---—————–<br>Galaxy J7 2017<br>Android 7.0
+Stock</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=3469364">ilfat12</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=3469364">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=ilfat12&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=ilfat12&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=317&amp;topics%5B%5D=774072&amp;source=pst&amp;username=ilfat12&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;view=findpost&amp;p=53920512"
+title="Ссылка на это сообщение">#16</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+09.10.16, 14:47</td>
+</tr>
+<tr>
+<td>Старожил<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 1004<br>Регистрация: 17.07.13<br><a
+href="https://4pda.to/devdb/oneplus_one"><strong>OnePlus
+One</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=3469364"
+title="Просмотреть репутацию">111</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=53920384"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><strong>jhonnk</strong>, дело скорее всего в том, что RR
+основана на ночнушке СМ, а это не релизная версия и подобные программы
+это видят. Вам возможно поможет патченая версия приложения, если таковая
+имеется.<br>Да и Рут в RR свой системный. <br>Сообщение отредактировал
+<a
+href="https://4pda.to/forum/index.php?showuser=3469364"><strong>ilfat12</strong></a>
+- 09.10.16, 14:52</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=380166">s710</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=380166">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=s710&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=s710&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=317&amp;topics%5B%5D=774072&amp;source=pst&amp;username=s710&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;view=findpost&amp;p=53994127"
+title="Ссылка на это сообщение">#17</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+11.10.16, 20:24</td>
+</tr>
+<tr>
+<td>Бывалый<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 680<br>Регистрация: 30.04.08<br><a
+href="https://4pda.to/devdb/samsung_galaxy_s23"><strong>Samsung Galaxy
+S23</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=380166"
+title="Просмотреть репутацию">29</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td>Добрый вечер! Давно ждал такую возможность, иметь рут с поддержкой
+ОТА. Но, так как на Нексус 5Х не использую рут из коробки (как то
+хочется стабильности) то интересует какие манипуляции надо сделать?
+<br>Как я понял - надо разлочить бут, поставить ТВРП и далее инструкция
+в шапке? Или есть еще какие то моменты? И как с разлоченным бутом можно
+будет получать ОТА?<br>Стоит сток Андроид 7.0 с последним патчем
+безопасности. <br>Заранее благодарю!</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=1594414">kirillbarnaul</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=1594414">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=kirillbarnaul&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=kirillbarnaul&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=317&amp;topics%5B%5D=774072&amp;source=pst&amp;username=kirillbarnaul&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;view=findpost&amp;p=53994590"
+title="Ссылка на это сообщение">#18</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+11.10.16, 20:39</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=1594414"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvw4u8TsIXpKVYBz1mysOFSkXQW0AubWd6UFa0oNu2iaxZhq.jpg" /></a><br>Ветеран<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 1301<br>Регистрация: 25.06.11<br><a
+href="https://4pda.to/devdb/realme_gt"><strong>Realme
+GT</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=1594414"
+title="Просмотреть репутацию">163</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=53994127"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><strong>s710</strong>, разлоченный бут не мешает ОТА. А
+так, вы все правильно описали. Единственное, ота с кастомным рекавери
+редко сочетается<br>---—————–<br>Xiaomi Mi A1; Acer Switch 10E 4/64;
+Acer Nitro 5 (Ryzen 5+RX560X);<br>Syma X5; MJX Bugs 3<br><a
+href="https://4pda.to/forum/index.php?showtopic=283227#sk"
+title="Ссылка"><strong>Выпускник курсов Школы кураторов</strong></a>
+4</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=3469364">ilfat12</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=3469364">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=ilfat12&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=ilfat12&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=317&amp;topics%5B%5D=774072&amp;source=pst&amp;username=ilfat12&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;view=findpost&amp;p=53994758"
+title="Ссылка на это сообщение">#19</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+11.10.16, 20:43</td>
+</tr>
+<tr>
+<td>Старожил<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 1004<br>Регистрация: 17.07.13<br><a
+href="https://4pda.to/devdb/oneplus_one"><strong>OnePlus
+One</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=3469364"
+title="Просмотреть репутацию">111</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=53994127"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><strong>s710</strong>, <a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=53994590"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><strong>kirillbarnaul</strong>, в этом случае ТВРП можно
+не устанавливать, а просто загрузиться в него командой fastboot boot
+ваш_ образ_twrp.img и сделать все необходимое. <br>Сообщение
+отредактировал <a
+href="https://4pda.to/forum/index.php?showuser=3469364"><strong>ilfat12</strong></a>
+- 11.10.16, 20:43</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=1138159">scile</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=1138159">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=scile&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=scile&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=317&amp;topics%5B%5D=774072&amp;source=pst&amp;username=scile&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;view=findpost&amp;p=53994793"
+title="Ссылка на это сообщение">#20</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+11.10.16, 20:44</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=1138159"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvw3JOKfcZDt95trqEYMQfUv66qTz1A8ZCFac5x0Subpz29gt.jpg" /></a><br>re-direct-er<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 11373<br>Регистрация: 29.05.10<br>Репутация:
+<img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=1138159"
+title="Просмотреть репутацию">876</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=53994758"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><strong>ilfat12</strong>, на моем смарте этого достаточно,
+чтобы не пройти проверку с OTA <img
+src="https://4pda.to/s/QBvw6bKkUH2vpW1/smile_good.gif"
+alt=":)" /><br>---—————–<br><strong>Призер премии в номинации <a
+href="https://4pda.to/forum/index.php?showtopic=1043001"
+title="Ссылка"><strong>Куратор</strong> 4</a> ’17</strong></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=3469364">ilfat12</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=3469364">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=ilfat12&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=ilfat12&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=317&amp;topics%5B%5D=774072&amp;source=pst&amp;username=ilfat12&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;view=findpost&amp;p=53994822"
+title="Ссылка на это сообщение">#21</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+11.10.16, 20:45</td>
+</tr>
+<tr>
+<td>Старожил<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 1004<br>Регистрация: 17.07.13<br><a
+href="https://4pda.to/devdb/oneplus_one"><strong>OnePlus
+One</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=3469364"
+title="Просмотреть репутацию">111</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=53994793"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><strong>scile</strong>, чего именно? не понял
+))<br>Сообщение отредактировал <a
+href="https://4pda.to/forum/index.php?showuser=3469364"><strong>ilfat12</strong></a>
+- 11.10.16, 20:45</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://4pda.to/forum/index.php?showforum=317">Системные
+утилиты</a></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td>3379 страниц <img
+src="https://4pda.to/s/QBvwSn7Gya4VltbRAer1WUSuGEo4z1Lrz2sCl4JAz2F5NK0Wv6XMP9hKT.gif"
+alt="V" />1<a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;st=20"
+title="2">2</a><a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;st=40"
+title="3">3</a><a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;st=60"
+title="4">4</a><a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;st=80"
+title="5">5</a><a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;st=100"
+title="6">6</a><a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;st=20"
+title="Следующая страница">&gt;</a><a
+href="https://4pda.to/forum/index.php?showtopic=774072&amp;st=67560"
+title="На последнюю страницу">»</a><br>Перейти к странице</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr>
+<td></td>
+<td><a
+href="https://4pda.to/forum/index.php?act=mb&amp;mb=1"><strong>Мобильная
+версия</strong></a> <a
+href="https://4pda.to/forum/lofiversion/index.php?t774072.html"><strong>Текстовая
+версия</strong></a></td>
+<td>Сейчас: 21.11.26, 10:47</td>
+</tr>
+</tbody>
+</table>
+<p>© 4PDA 2005-2026 г. Все права защищены.</p>
+<p>4PDA® - зарегистрированный товарный знак.</p>
+<p><a href="https://4pda.to/copyright_notice/">Условия использования
+информации</a>  |  <a href="https://4pda.to/disclaimer/">Отказ от
+ответственности</a>  |   <a href="https://4pda.to/advert/"
+title="Размещение рекламы"><strong>Размещение рекламы</strong></a></p>
+<p><a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Fwww.ibresource.ru%2F">Форум</a>
+<a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Fwww.invisionboard.com%2F">IP.Board</a>
+© 2026  <a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Fwww.invisionpower.com%2F">IPS,
+Inc</a>.</p>
+<p><a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Ftwitter.com%2F4pdaru"
+title="Следуйте за нами в Twitter">Следуйте за нами в Twitter</a><a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Fvk.com%2F4pdaru"
+title="Официальная группа 4pda">Официальная группа 4pda</a><a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Ft.me%2Freal4pda"
+title="Официальный канал в Telegram">Официальный канал в Telegram</a><a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Fwww.youtube.com%2Fuser%2F4pdaRU"
+title="Наш канал на YouTube">Наш канал на YouTube</a></p>
+<p><a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Fwww.liveinternet.ru%2Fclick"><img
+src="https://counter.yadro.ru/hit?t14.11;rhttps%3A//4pda.to/forum/index.php%3Fshowtopic%3D774072;s1920*1080*24;uhttps%3A//4pda.to/forum/index.php%3Fshowtopic%3D774072;0.9429558586241218" /></a></p>
+</body>
+</html>

@@ -19,3 +19,6 @@ Apply each correction at the synthesis pass, then delete the row.
 ## C4 — kernel notes (from census)
 - t.me/begoniaupdateindonesia posts show kernel builds using "Ubuntu Pure Linux Clang 14.0.1" (HYDRA PLUS kernel) — toolchain evidence for 03's toolchain section (community signal, medium).
 - Erfan treble GSIs used vendor image "begonia-user 10/QP1A.190711.020/20.5.14" (2.66 GiB) — historical GSI vendorbase data point for 02 (medium).
+
+## C6 — 07-RECOVERY-SAFETY.md : OrangeFox recovery missing
+- SourceForge census surfaced "TWRP-DYNAMIC-ORANGE-RECOVERY-BEGONIA" (sourceforge.net/projects/oneplus8t-brp-twrp-recovery) and begoniadump mentioning "orangefox redmi note 8 pro" — OrangeFox (or OrangeFox-recovery-style builds) exist for begonia but 07 covers only TWRP. At synthesis: verify the actual OrangeFox status for begonia (orangefox.download device page) and add a Recovery-landscape subsection (official TWRP / OrangeFox / LR.Team builds), each with links + date + status. Confidence: high that something exists; medium on which is current.

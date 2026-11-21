@@ -1,0 +1,2674 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.13" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Unbrick via SP Flash Tool without service account, old method (p=103570746) (offline extract)</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      color: light-dark(#1a1a1a, #fdfdfd);
+      background-color: #fdfdfd;
+      background-color: light-dark(#fdfdfd, #1a1a1a);
+      color-scheme: light dark;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        color-scheme: light only;
+      }
+      html, body, pre, code {
+        background-color: transparent;
+      }
+      body, a, a:visited, blockquote {
+        color: black;
+      }
+      pre, code {
+        padding: 0;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a, a:visited {
+      color: inherit;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid;
+      border-color: #e6e6e6;
+      border-color: light-dark(#e6e6e6, #4c4c4c);
+      color: #606060;
+      color: light-dark(#606060, #b6b6b6);
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid currentColor;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid currentColor;
+      border-bottom: 1px solid currentColor;
+    }
+    th {
+      border-top: 1px solid currentColor;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Unbrick via SP Flash Tool without service account, old
+method (p=103570746) (offline extract)</h1>
+</header>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a href="https://4pda.to/"><img
+src="https://4pda.to/s/QBvwTo0Sg7Yu99XlUmM92x8cRfPHWHoZctz08xTSoK2z2R6XwZtz0uw.png"
+alt="4PDA" /></a></td>
+<td><a href="https://4pda.to/2026/11/21/8149891/"><img
+src="https://4pda.to/s/QBvw5Vs7WwHmX68dYZ4I4MG2O3mu3Xz0472gJ5im1lITE5lIZAB3AkWPo.jpg" /></a><br><img
+src="https://4pda.to/s/QBvwBV8ybqB1FwLuuz1nLIuPGBtz1.gif" /></td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://4pda.to/forum/index.php?act=Help">Помощь</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?act=boardrules">Правила</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247">Поиск</a></p>
+<p>Искать только в этом форуме</p>
+<p>Результаты в виде тем</p>
+<p><a href="https://4pda.to/forum/index.php?act=search">Дополнительные
+параметры</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;st=7420#"
+title="Закрыть окно">[X]</a></p>
+<p>Помощник</p>
+<p><img
+src="https://4pda.to/s/QBvwVEgr0Wz1yP0HDDz0OO3uOIcUgz2G09wcejfkhutegeEwWDh.gif"
+alt="Загрузка. Пожалуйста, подождите…" />Загрузка. Пожалуйста,
+подождите…</p>
+<p><strong>Здравствуйте, гость</strong> ( <a
+href="https://4pda.to/forum/index.php?act=auth&amp;return=https%3A%2F%2F4pda.to%2Fforum%2Findex.php%3Fshowtopic%3D965629%26st%3D7420">Вход</a>
+| <a
+href="https://4pda.to/forum/index.php?act=auth&amp;return=https%3A%2F%2F4pda.to%2Fforum%2Findex.php%3Fshowtopic%3D965629%26st%3D7420#reg">Регистрация</a>
+)</p>
+<p><a href="https://4pda.to/forum/?showforum=281&amp;utm_source=ftmenu"
+title="Android">Android</a> <a
+href="https://4pda.to/forum/?showforum=295&amp;utm_source=ftmenu"
+title="iOS">iOS</a> <a
+href="https://4pda.to/forum/?showforum=442&amp;utm_source=ftmenu"
+title="Другие платформы">Другие</a> <a
+href="https://4pda.to/forum/?utm_source=ftmenu"
+title="Полезные ссылки">Полезное</a> <a
+href="https://4pda.to/devdb/?utm_source=ftmenu"
+title="DevDB - каталог устройств">Устройства</a> <a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Fdevfaq.ru%2F%3Futm_source%3Dftmenu"
+title="DevFAQ - база знаний об устройствах">База знаний</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=282&amp;utm_source=ftmenu"
+title="Первая помощь по Android">Первая помощь</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=283&amp;utm_source=ftmenu"
+title="FAQ по Android">FAQ</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showtopic=112220&amp;utm_source=ftmenu"
+title="Программы для Android">Программы</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=213&amp;utm_source=ftmenu"
+title="Игры для Android">Игры</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=139&amp;utm_source=ftmenu"
+title="Устройства Apple">Устройства</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=142&amp;utm_source=ftmenu"
+title="Первая помощь по iPod Touch, iPhone и iPad">Первая помощь</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=144&amp;utm_source=ftmenu"
+title="FAQ по iPod Touch, iPhone iPad">FAQ</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=140&amp;utm_source=ftmenu"
+title="Программы для iPod Touch, iPhone b iPad">Программы</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=141&amp;utm_source=ftmenu"
+title="Игры для iPod Touch, iPhone и iPad">Игры</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=4&amp;utm_source=ftmenu"
+title="Обсуждение кнопочных телефонов (раскладушек, слайдеров, моноблоков), программ, игр.">Кнопочные
+телефоны</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=48&amp;utm_source=ftmenu"
+title="Раздел для увлекающихся Фотографией. Делимся опытом съемки, выбора фотоаппарата.">Фото</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=103&amp;utm_source=ftmenu"
+title="Вопросы, ответы и советы по плеерам, медиа-приставкам, ТВ и проекторам.">Мультимедийные
+устройства</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=279&amp;utm_source=ftmenu"
+title="Обсуждение устройств для чтения электронных книг.">Электронные
+книги</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=645&amp;utm_source=ftmenu"
+title="Обсуждение игровых консолей и игр">Игровые консоли</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=635&amp;utm_source=ftmenu"
+title="Головные Устройства, МФУ">Автомобильные устройства</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=763&amp;utm_source=ftmenu"
+title="Обсуждения носимых устройств.">Носимая электроника</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=817&amp;utm_source=ftmenu"
+title="Обсуждаем, все, что связано с видеосъемкой">Видео</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=910&amp;utm_source=ftmenu"
+title="Умный дом, устройства с дистанционным управлением, скутеры и квадрокоптеры, пылесосы, весы и пр. гаджеты.">Устройства
+для дома и развлечений</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showtopic=117392&amp;view=findpost&amp;p=2728692&amp;utm_source=ftmenu"
+title="10 заповедей новичка">10 заповедей новичка</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showtopic=89878&amp;utm_source=ftmenu"
+title="FAQ по форуму">FAQ по форуму</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=373&amp;utm_source=ftmenu"
+title="Сообщить об ошибке">Сообщить об ошибке</a></p>
+<p><a href="https://4pda.to/devdb/phones/?utm_source=ftmenu"
+title="Коммуникаторы">Телефоны</a></p>
+<p><a href="https://4pda.to/devdb/pad/?utm_source=ftmenu"
+title="Планшеты">Планшеты</a></p>
+<p><a href="https://4pda.to/devdb/ebook/?utm_source=ftmenu"
+title="Электронные книги">Электронные книги</a></p>
+<p><a href="https://4pda.to/devdb/smartwatch/?utm_source=ftmenu"
+title="Смарт часы">Смарт часы</a></p>
+<p><img src="https://4pda.to/s/QBvw4PU7JGSOtr8gnJdnKrOubP5IHbG243Ri.gif"
+alt="&gt;" /><a
+href="https://4pda.to/forum/index.php?act=idx">4PDA</a> &gt; <a
+href="https://4pda.to/forum/index.php?showforum=281">Android</a> &gt; <a
+href="https://4pda.to/forum/index.php?showforum=268">Android -
+Прошивки</a> &gt; <a
+href="https://4pda.to/forum/index.php?showforum=1247">Redmi</a></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td>1110 страниц <img
+src="https://4pda.to/s/QBvwSn7Gya4VltbRAer1WUSuGEo4z1Lrz2sCl4JAz2F5NK0Wv6XMP9hKT.gif"
+alt="V" /><a href="https://4pda.to/forum/index.php?showtopic=965629"
+title="На первую страницу">«</a><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;st=7400"
+title="Предыдущая страница">&lt;</a><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;st=7380"
+title="370">370</a><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;st=7400"
+title="371">371</a>372<a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;st=7440"
+title="373">373</a><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;st=7460"
+title="374">374</a><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;st=7480"
+title="375">375</a><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;st=7440"
+title="Следующая страница">&gt;</a><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;st=22180"
+title="На последнюю страницу">»</a><br>Перейти к странице</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr>
+<td><img
+src="https://4pda.to/s/QBvwVMPCCQMBRpNT3a7ZAlftdIcM1vRs2hA2vCH.gif"
+alt="&gt;" /><strong>Redmi Note 8 Pro - Прошивки MIUI</strong> |
+[Смартфон][Note-series]</td>
+<td></td>
+<td><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;st=7420#topicoptions">Опции</a><img
+src="https://4pda.to/s/QBvwSn7Gya4VltbRAer1WUSuGEo4z1Lrz2sCl4JAz2F5NK0Wv6XMP9hKT.gif"
+alt="V" /><br><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/menu_item.gif"
+alt="V" /><a
+href="https://4pda.to/forum/index.php?act=Print&amp;client=printer&amp;f=1247&amp;t=965629">Версия
+для печати</a><br><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/menu_item.gif"
+alt="V" /><a
+href="https://4pda.to/forum/index.php?act=Print&amp;client=choose&amp;f=1247&amp;t=965629">Скачать
+тему</a></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=349568">SPIRITic</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=349568">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=SPIRITic&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=SPIRITic&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=965629&amp;source=pst&amp;username=SPIRITic&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=88821588"
+title="Ссылка на это сообщение">#1</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+12.09.19, 12:26</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=349568"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvw77KRtEhvC7z1TrOc7kgVPB82bDhcPFuHl8KQLKCMqk8R.jpg" /></a><br>Гуру<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 4992<br>Регистрация: 18.03.08<br><a
+href="https://4pda.to/devdb/pocophone_f2_pro"><strong>POCO F2 Pro
+6/128</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=349568"
+title="Просмотреть репутацию">1994</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><strong>Redmi Note 8 Pro - Прошивки MIUI</strong><br><img
+src="https://4pda.to/s/QBvwNohDxfUWAHqkY0M6RupI6EYB2DKl7Rpw0WgwrVPrmHsX.png"
+alt="Изображение" /><strong>begonia</strong><br><a
+href="https://4pda.to/devdb/redmi_note_8_pro"
+title="Ссылка">Описание</a> | <a
+href="https://4pda.to/forum/index.php?showtopic=963868"
+title="Ссылка">Обсуждение</a> <a
+href="https://4pda.to/forum/index.php?showtopic=963868&amp;view=getnewpost"
+title="Ссылка">»</a> | <a
+href="https://4pda.to/forum/index.php?showtopic=964251"
+title="Ссылка">Покупка</a> <a
+href="https://4pda.to/forum/index.php?showtopic=964251&amp;view=getnewpost"
+title="Ссылка">»</a> | <a
+href="https://4pda.to/forum/index.php?showtopic=966126"
+title="Ссылка">Аксессуары</a> <a
+href="https://4pda.to/forum/index.php?showtopic=966126&amp;view=getnewpost"
+title="Ссылка">»</a> | <a
+href="https://4pda.to/forum/index.php?showtopic=968357"
+title="Ссылка">Брак и ремонт</a> <a
+href="https://4pda.to/forum/index.php?showtopic=968357view=getnewpost"
+title="Ссылка">»</a> | <a
+href="https://4pda.to/forum/index.php?showtopic=469624&amp;view=findpost&amp;p=22578933"
+title="Ссылка">Клуб XIAOMI»</a> | <a
+href="https://4pda.to/forum/index.php?showtopic=967261"
+title="Ссылка">Клуб владельцев Xiaomi Redmi Note 8 Pro</a> <a
+href="https://4pda.to/forum/index.php?showtopic=967261&amp;view=getnewpost"
+title="Ссылка">»</a> | <a
+href="https://4pda.to/forum/index.php?showtopic=792504"
+title="Ссылка">Mi Аккаунт</a> <a
+href="https://4pda.to/forum/index.php?showtopic=792504&amp;view=getnewpost"
+title="Ссылка">»</a> | <a
+href="https://4pda.to/forum/index.php?showtopic=965700"
+title="Ссылка">Обсуждение камеры</a> <a
+href="https://4pda.to/forum/index.php?showtopic=965700&amp;view=getnewpost"
+title="Ссылка">»</a> | <a
+href="https://4pda.to/forum/index.php?showtopic=965704"
+title="Ссылка">Энергопотребление (автономность)</a> <a
+href="https://4pda.to/forum/index.php?showtopic=965704&amp;view=getnewpost"
+title="Ссылка">»</a> | <a
+href="https://4pda.to/forum/index.php?showtopic=976895"
+title="Ссылка">Модификация и украшательства</a> <a
+href="https://4pda.to/forum/index.php?showtopic=976895&amp;view=getnewpost"
+title="Ссылка">»</a> | <a
+href="https://4pda.to/forum/index.php?showtopic=721838"
+title="Ссылка">Разблокировка загрузчиков</a> <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=getnewpost"
+title="Ссылка">»</a> | <a
+href="https://4pda.to/forum/index.php?showtopic=974421"
+title="Ссылка">Неофициальные прошивки</a> <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=getnewpost"
+title="Ссылка">»</a> | <strong>Прошивки MIUI</strong> <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=getnewpost"
+title="Ссылка"><strong>»</strong></a><br><a
+href="https://4pda.to/forum/index.php?showtopic=732822&amp;view=findpost&amp;p=87257974"
+title="Ссылка"><strong>Решение Администрации 4PDA о запрете размещения и
+обсуждения контента Miuipro</strong></a><br># <br><strong>Важная
+информация!</strong><br>Актуальная информация (касается аппаратов с
+заблокированным загрузчиком):<br>1. Телефоны произведённые под китайский
+рынок - не могут быть прошиты Global - прошивками<br> <br>2. Телефоны
+произведенные под Глобальный рынок - не могут быть прошиты China -
+прошивками<br>Без разблокировки загрузчика прошивка в режиме fastboot,
+смена China/ Global/ Indonesia/ EEA и тд - не возможна.<br>Все прошивки
+возможные для заблокированного загрузчика - только прошивки recovery в
+пределах своего региона China/ Global/ Indonesia/ EEA и тд.<br>Нельзя
+блокировать загрузчик:<br>1. На разблокированных China - аппаратах
+прошитых глобальными прошивками<br>2. На разблокированных Global -
+аппаратах прошитых China - прошивками<br>Можно блокировать загрузчик:
+только на Global - аппаратах при прошивке на любую Global -
+прошивку.<br>Если при прошивке в режиме fastboot вы случайно прошили
+аппарат с блокировкой загрузчика (flash_all_lock), получив при этом
+бутлуп, либо перезагрузку в рекавери с надписью - <em>This Miui version
+cant be installed on this device</em>, проверьте есть ли возможность
+загрузить устройство в режим fastboot (кнопки “питание” + “громкость
+минус”). Если такая возможность есть, повторите процедуру разблокировки
+(профильная тема - <a
+href="https://4pda.to/forum/index.php?showtopic=721838"
+title="Ссылка"><strong>Разблокировка загрузчиков XIAOMI</strong></a>)
+<br><strong>Все данные при блокировке/ разблокировке загрузчиков
+удаляются!</strong><br>Нельзя ставить на MIUI 10 файлы BOOT и RECOVERY
+от MIUI 11 и наоборот!<br>100% HARDBRICK восстанавливается только через
+сервисный аккаунт!<br>В данной модели ARB (Anti-RollBack) отсутствует
+!!! ( <a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Fmi-faq.ru%2Fanti-rollback.html&amp;e=88821588"
+title="Ссылка">Источник</a>)<br>Нельзя понижать версию андроида через 10
+тврп, прошивайте через Фастбут.<br># <br><strong>Драйверы и
+утилиты</strong><br><a
+href="https://4pda.to/forum/index.php?s=&amp;showtopic=965629&amp;view=findpost&amp;p=90606164"
+title="Ссылка">Универсальный инсталлятор драйверов для MTK</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=889822"
+title="Ссылка">MiFlashPro</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=469340"
+title="Ссылка">SP Flash Tool - программа-прошивальщик для смартфонов на
+базе MTK.</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=678449"
+title="Ссылка">MauiMETA</a> - для восстановления IMEI и
+NVRAM<br># <br><strong>Прошивки</strong><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=94473664"
+title="Ссылка">Расшифровка версий прошивок</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=101237489"
+title="Ссылка">Обновленние стоковых прошивок при наличии TWRP, Magisk и
+тд.</a><br># <br><strong>Официальные прошивки</strong><br><strong>Важно
+- при обновлении системы ТВРП/рут-права стираются, и их надо
+устанавливать заново.</strong><br><a
+href="https://4pda.to/forum/index.php?s=&amp;showtopic=965629&amp;view=findpost&amp;p=89799763"
+title="Ссылка">Все прошивки в одном месте</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=102428975"
+title="Ссылка">Прошивки на MIUI 10</a><br>- <a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Fxmfirmwareupdater.com%2Fmiui%2Fbegonia%2F&amp;e=88821588"
+title="Ссылка">xmfirmwareupdater.com</a><br> <br>- <a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Fc.mi.com%2Foc%2Fmiuidownload%2Fdetail%3Fdevice%3D1900375&amp;e=88821588"
+title="Ссылка">c.mi.com</a><br> <br>- <a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Fmirom.ezbox.idv.tw%2Fen%2Fphone%2Fbegonia%2F&amp;e=88821588"
+title="Ссылка">mirom.ezbox.idv.tw</a><br> <br># <br>Android
+9<br><strong>Global Stable</strong><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=92998668"
+title="Ссылка">V11.0.6.0 - OTA</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=92913144"
+title="Ссылка">V11.0.6.0 - Recovery</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=95296399"
+title="Ссылка">V11.0.6.0 - Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=91739945"
+title="Ссылка">V11.0.2.0 - Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=91570235"
+title="Ссылка">V11.0.2.0 - Recovery</a><br> <br> <br> <br><strong>Europe
+(EEA)</strong><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=92702896"
+title="Ссылка">V11.0.3.0 - Recovery | OTA | Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=91555592"
+title="Ссылка">V11.0.2.0 - Recovery | OTA | Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=90975906"
+title="Ссылка">V11.0.1.0 - Recovery | OTA</a><br> <br> <br>
+<br><strong>Indonesia</strong><br> <br>- ; <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=92045886"
+title="Ссылка">V11.0.2.0 - Recovery</a> | <a
+href="https://4pda.to/forum/index.php?s=&amp;showtopic=965629&amp;view=findpost&amp;p=92279928"
+title="Ссылка">Fastboot</a><br> <br>- <a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Fbigota.d.miui.com%2FV11.0.1.0.PGGIDXM%2Fmiui_BEGONIAIDGlobal_V11.0.1.0.PGGIDXM_bbe347ffd3_9.0.zip&amp;e=88821588"
+title="Ссылка">V11.0.1.0 - Recovery</a><br> <br> <br>
+<br><strong>Russia</strong><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=92995473"
+title="Ссылка">V11.0.3.0 - OTA</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=91846197"
+title="Ссылка">V11.0.3.0 - Recovery</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=91026439"
+title="Ссылка">V11.0.1.0 - Recovery</a><br> <br> <br> <br><strong>China
+Stable</strong><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=94333101"
+title="Ссылка">V11.0.2.0</a><br> <br>- <a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Fbigota.d.miui.com%2FV11.0.1.0.PGGCNXM%2Fmiui_BEGONIA_V11.0.1.0.PGGCNXM_675d7b8a9e_9.0.zip&amp;e=88821588"
+title="Ссылка">V11.0.1.0 - Recovery</a> | <a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Fbigota.d.miui.com%2FV11.0.1.0.PGGCNXM%2Fbegonia_images_V11.0.1.0.PGGCNXM_20191031.0000.00_9.0_cn_8ddbbf5b63.tgz&amp;e=88821588"
+title="Ссылка">Fastboot</a><br> <br> <br> <br><strong>China
+Developer</strong><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=92306143"
+title="Ссылка">V9.12.26 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=92104044"
+title="Ссылка">V9.12.19 - TWRP</a><br> <br>- <a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Fbigota.d.miui.com%2F9.9.25%2Fmiui_BEGONIA_9.9.25_63b9ff3ba0_9.0.zip&amp;e=88821588"
+title="Ссылка">V9.9.25</a><br> <br>- <a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Fhugeota.d.miui.com%2F9.10.17%2Fmiui_BEGONIA_9.10.17_c37c9ef706_9.0.zip&amp;e=88821588"
+title="Ссылка">V9.10.17</a><br> <br># <br>Android 10<br><strong>Global
+Stable</strong><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=106868464"
+title="Ссылка">V12.0.8.0 - Recovery/Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=105284859"
+title="Ссылка">V12.0.7.0 - Recovery/Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=103809724"
+title="Ссылка">V12.0.6.0 - Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=103630907"
+title="Ссылка">V12.0.6.0 - Recovery</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=102067065"
+title="Ссылка">V12.0.5.0 - Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=101764250"
+title="Ссылка">V12.0.5.0 - Recovery</a><br> <br>- <a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Fmirom.ezbox.idv.tw%2Fen%2Fphone%2Fbegonia%2Froms-global-stable%2F%23info_21243&amp;e=88821588"
+title="Ссылка">V12.0.3.0 - Recovery</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=102105865"
+title="Ссылка">V12.0.3.0 - Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=98944178"
+title="Ссылка">V12.0.2.0 - Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=98365245"
+title="Ссылка">V12.0.2.0 - Recovery</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=98204029"
+title="Ссылка">V.12.0.0.4 - Recovery</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=98204029"
+title="Ссылка">V.11.0.5.0 - Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=97857554"
+title="Ссылка">V11.0.4.0 - Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=97626830"
+title="Ссылка">V11.0.5.0 - Recovery</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=96935703"
+title="Ссылка">V11.0.4.0- Recovery</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=94690688"
+title="Ссылка">V11.0.1.0 - TWRP</a><br> <br> <br> <br><strong>Europe
+(EEA)</strong><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=107679766"
+title="Ссылка">V12.0.6.0 - Recovery/Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=106868464"
+title="Ссылка">V12.0.5.0 - Recovery/Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=104545209"
+title="Ссылка">V12.0.4.0 - Recovery</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=104795467"
+title="Ссылка">V12.0.4.0 - Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=102841312"
+title="Ссылка">V12.0.3.0 - Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=102634554"
+title="Ссылка">V12.0.3.0 - Recovery</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=101206241"
+title="Ссылка">V12.0.2.0 - Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=100828929"
+title="Ссылка">V12.0.2.0 - Recovery</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=99215292"
+title="Ссылка">V12.0.1.0 - Recovery</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=97857554"
+title="Ссылка">V11.0.3.0 - Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=97067161"
+title="Ссылка">V11.0.3.0 - Recovery</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?s=&amp;showtopic=965629&amp;view=findpost&amp;p=94431570"
+title="Ссылка">V11.0.2.0 - Recovery</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=96935703"
+title="Ссылка">V11.0.3.0 - Recovery</a><br> <br> <br>
+<br><strong>Indonesia</strong><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=104751264"
+title="Ссылка">V12.0.4.0 - Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=104591497"
+title="Ссылка">V12.0.4.0 - Recovery</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=102353350"
+title="Ссылка">V12.0.3.0 - Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=102157341"
+title="Ссылка">V12.0.3.0 - Recovery</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=101138964"
+title="Ссылка">V12.0.2.0 - Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=100796050"
+title="Ссылка">V12.0.2.0 - Recovery</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=99215292"
+title="Ссылка">V12.0.1.0 - Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=98944178"
+title="Ссылка">V12.0.1.0 - Recovery</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=97067161"
+title="Ссылка">V11.0.2.0 - Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=96935703"
+title="Ссылка">V11.0.2.0 - Recovery</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=94691782"
+title="Ссылка">V11.0.1.0 Indonesia - Recovery</a><br> <br> <br>
+<br><strong>Russia</strong><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=106926264"
+title="Ссылка">V12.0.8.0 - Recovery/Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=104559965"
+title="Ссылка">V12.0.7.0 - Recovery</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=102841312"
+title="Ссылка">V12.0.6.0 - Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=102627902"
+title="Ссылка">V12.0.6.0 - Recovery</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=101217816"
+title="Ссылка">V12.0.5.0 - Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=101020278"
+title="Ссылка">V12.0.5.0 - Recovery</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=99215292"
+title="Ссылка">V12.0.3.0 - Recovery</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=97067161"
+title="Ссылка">V11.0.3.0 - Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=96935703"
+title="Ссылка">V11.0.3.0 - Recovery</a><br> <br> <br>
+<br><strong>India</strong><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=104795467"
+title="Ссылка">V12.0.4.0 - Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=104603338"
+title="Ссылка">V12.0.4.0 - Recovery</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=102353471"
+title="Ссылка">V12.0.3.0 - Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=102172538"
+title="Ссылка">V12.0.3.0 - Recovery</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=100085065"
+title="Ссылка">V12.0.2.0 - Recovery</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=98946612"
+title="Ссылка">V12.0.1.0 - Recovery</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=98547876"
+title="Ссылка">V12.0.0.3 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=97067161"
+title="Ссылка">V11.0.3.0 - Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=97067161"
+title="Ссылка">V11.0.3.0 - Recovery</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=94707832"
+title="Ссылка">V11.0.2.0 - TWRP</a><br> <br> <br> <br><strong>China
+Stable</strong><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=104104801"
+title="Ссылка">V12.0.5.0 - Recovery</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=102173594"
+title="Ссылка">V12.0.4.0 - Recovery\Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=97857554"
+title="Ссылка">V11.0.3.0 - Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=92690030"
+title="Ссылка">V11.0.1.0 - Recovery</a><br> <br> <br> <br><strong>China
+Developer</strong><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=92306143"
+title="Ссылка">V9.12.26 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=92104044"
+title="Ссылка">V9.12.19 - TWRP</a><br> <br> <br> <br><strong>China MIUI
+12</strong><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=102062902"
+title="Ссылка">V20.11.25 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=101801360"
+title="Ссылка">V20.11.18 TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=101179248"
+title="Ссылка">V20.10.29 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=100663838"
+title="Ссылка">V20.10.15 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=100111746"
+title="Ссылка">V20.9.24 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=99263380"
+title="Ссылка">V20.8.20 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=98547050"
+title="Ссылка">V20.7.27- TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=98071803"
+title="Ссылка">V20.7.9 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=97858273"
+title="Ссылка">V20.7.1 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=96033285"
+title="Ссылка">V20.4.28 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=96000050"
+title="Ссылка">V20.4.27 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=96100730"
+title="Ссылка">V20.4.30 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=96311776"
+title="Ссылка">V20.5.7 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=96478443"
+title="Ссылка">V20.5.13 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=96478443"
+title="Ссылка">V20.5.14 - TWRP</a><br> <br># <br>Android
+11<br><strong>Global Stable</strong> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=115441197"
+title="Ссылка">V12.5.8.0 - Recovery</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=112710642"
+title="Ссылка">V12.5.7.0 - Recovery</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=110646441"
+title="Ссылка">V12.5.5.0 - Recovery</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=109354406"
+title="Ссылка">V12.5.3.0 - Recovery/Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=107865965"
+title="Ссылка">V12.5.1.0 - Recovery/Fastboot</a><br> <br> <br>
+<br><strong>Russia</strong><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=110725036"
+title="Ссылка">V12.5.3.0 - Recovery/Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=109166729"
+title="Ссылка">V12.5.2.0 - Recovery/Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=114131518"
+title="Ссылка">V12.5.4.0 - Recovery</a><br> <br> <br>
+<br><strong>Indonesia</strong><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=115456717"
+title="Ссылка">V12.5.6.0 - Recovery/Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=113825642"
+title="Ссылка">V12.5.5.0 - Recovery/Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=111194804"
+title="Ссылка">V12.5.4.0 - Recovery/Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=109286759"
+title="Ссылка">V12.5.3.0 - Recovery/Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=108218329"
+title="Ссылка">V12.5.2.0 - Recovery/Fastboot</a><br> <br> <br>
+<br><strong>Europa (EEA)</strong><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=119575953"
+title="Ссылка">12.5.15.0 EEA</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=112530921"
+title="Ссылка">V12.5.6.0 - TWRP/Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=110724625"
+title="Ссылка">V12.5.4.0 - TWRP/Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=109244988"
+title="Ссылка">V12.5.3.0 - TWRP/Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=108217958"
+title="Ссылка">V12.5.2.0 - TWRP/Fastboot</a><br> <br> <br>
+<br><strong>India</strong><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=113962125"
+title="Ссылка">V12.5.8.0 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=112604507"
+title="Ссылка">V12.5.6.0 - TWRP/Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=110414424"
+title="Ссылка">V12.5.5.0 - TWRP/Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=109250688"
+title="Ссылка">V12.5.3.0 - TWRP/Fastboot</a><br> <br> <br>
+<br><strong>China Stable</strong><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=115453672"
+title="Ссылка">V12.5.6.0 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=112424183"
+title="Ссылка">V12.5.4.0 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=110410806"
+title="Ссылка">V12.5.3.0 - TWRP/Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=107466253"
+title="Ссылка">V12.5.1.0 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=109354925"
+title="Ссылка">V12.5.2.0 - TWRP/Fastboot</a><br> <br> <br>
+<br><strong>China MIUI 12</strong><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=110228918"
+title="Ссылка">V21.10.15 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=110137970"
+title="Ссылка">V21.10.13 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=110116568"
+title="Ссылка">V21.10.12 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=110097299"
+title="Ссылка">V21.10.11 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=110074333"
+title="Ссылка">V21.10.8 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=109807879"
+title="Ссылка">V21.9.28 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=109784455"
+title="Ссылка">V21.9.27 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=109757479"
+title="Ссылка">V21.9.24 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=109665985"
+title="Ссылка">V21.9.22 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=109639632"
+title="Ссылка">V21.9.18 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=109499404"
+title="Ссылка">V21.9.15 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=109474851"
+title="Ссылка">V21.9.14 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=109450157"
+title="Ссылка">V21.9.13 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=109442488"
+title="Ссылка">V21.9.10 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=109311720"
+title="Ссылка">V21.9.8 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=109294459"
+title="Ссылка">V21.9.7 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=109149770"
+title="Ссылка">V21.9.1 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=108967303"
+title="Ссылка">V21.8.25 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=108966093"
+title="Ссылка">V21.8.20 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=108144672"
+title="Ссылка">V21.7.27 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=107730693"
+title="Ссылка">V21.6.30 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=107584390"
+title="Ссылка">V21.6.23 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=107435189"
+title="Ссылка">V21.6.16 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=106998476"
+title="Ссылка">V21.5.26 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=106706783"
+title="Ссылка">V21.5.12 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=105242522"
+title="Ссылка">V21.3.16 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=105028345"
+title="Ссылка">V21.3.10 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=104824359"
+title="Ссылка">V21.3.3 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=103324098"
+title="Ссылка">V21.1.11 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=108876617"
+title="Ссылка">V21.1.11 - Fastboot</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=103518691"
+title="Ссылка">V21.1.15 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=103549450"
+title="Ссылка">V21.1.18 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=103629535"
+title="Ссылка">V21.1.20 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=103719381"
+title="Ссылка">V21.1.22 - TWRP</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=104621790"
+title="Ссылка">V21.2.24 - Recovery</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=103824065"
+title="Ссылка">V21.1.28 - Recovery</a><br> <br># <br>Авторские
+прошивки<br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=145710435"
+title="Ссылка">HyperOS_Repack 3.0.305.0 | R2 | V2 | Android 16 |
+UNOFFICIAL</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=144908940"
+title="Ссылка">HyperOS_Repack 2.0.200.0 | R9</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=144605566"
+title="Ссылка">MIUI 12.5.8.0 Enhanced R5 Final</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=144489783"
+title="Ссылка">HyperOS_Repack 3.0.304.0</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=144241374"
+title="Ссылка">Memeui based MIUI 12.5.15.0</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=144220125"
+title="Ссылка">HyperOS 3.0.304.0.WGGCNXM - R1</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=143520823"
+title="Ссылка">HyperOS_OS1.0.23.0 - R9</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=141869908"
+title="Ссылка">Xiaomi HyperOS 2.0.101.0.VGGCNXM - Beta2</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=138798230"
+title="Ссылка">Miui Mod v4 12.5.15</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=136259369"
+title="Ссылка">HyperOS OS2.0.103.0 Release 3</a> + <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=144351802"
+title="Ссылка">HOTFIX Updated: 03-07-2026</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=135939230"
+title="Ссылка">HyperOS OS1.0.23.0.UGGCNZM | Port RN 11T Pro</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=134278196"
+title="Ссылка">12.5.1(odex_Edition-2.9)Stable</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=133796211"
+title="Ссылка">MIUI 14.0.9</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=133793208"
+title="Ссылка">HyperOS_23.9.18_begonia_V13.0</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=109256092"
+title="Ссылка">Lite_mod_by_Urree begonia_Indonesia_MIUI 12.5.6.+15
+RGGIDXM</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=108653608"
+title="Ссылка">Miui Remastering China Beta 21.1.26</a><br><a
+href="https://4pda.to/forum/index.php?s=&amp;showtopic=965629&amp;view=findpost&amp;p=91315276"
+title="Ссылка">V11.0.1.0</a> от st.gaz<br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=99834435"
+title="Ссылка">MIUI Repack by greeshan</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=104066370"
+title="Ссылка">MIUI Repack by greeshan_MicroG EDITION Android
+10</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=105268678"
+title="Ссылка">Greeshan MIUI 12.0.4.0 Indonesia Android 10(Q)</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=105774023"
+title="Ссылка">Miui 11.0.7.0 PGGMIXM от ura512</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=106168114"
+title="Ссылка">Miui_MICROG_BEGONIAGlobal_V12.0.7.0_10.0</a><br># <br>Ядра<br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=137328276"
+title="Ссылка">PoWeR Kernel</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=111452029"
+title="Ссылка">Ядро Coconut Kernel для MIUI 12.5 Android 11,
+12</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=97901817"
+title="Ссылка">Ядро AkameKernel (NetHunter) для MIUI 12 Android
+10</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=101609237"
+title="Ссылка">Модифицированное Ядро для Андроид 9 MIUI
+11</a><br># <br><strong>Инструкции</strong><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=132345475"
+title="Ссылка">Инструкция по выходу из режима fastboot</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=122476275"
+title="Ссылка">Способ полного восстановления раздела NVRAM</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=111347904"
+title="Ссылка">Прошивание (и восстановление)</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=111315214"
+title="Ссылка">Самый простой и быстрый способ прошивания телефона с
+помощью компьютера в режиме FastBoot</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=110646530"
+title="Ссылка">Установка Global 12.5.5.0, сертификация Плей маркета и
+прохождение SafetyNet</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=109311334"
+title="Ссылка">Способ обновления для тех, кто установил тврп, рут и не
+хочет после обновления потерять их</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=109606933"
+title="Ссылка">Краткая инструкция по пришивке тврп через fastboot для
+android 11</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=109320447"
+title="Ссылка">Объединенная инструкция по прошивке MIUI</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=107611141"
+title="Ссылка">Прошивка China Weekly/Nightly (для China STABLE и Global
+Stable тоже подходит)</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=103326447"
+title="Ссылка">Инструкция по прошивке китайских прошивок
+(бета-версий)</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=103570746"
+title="Ссылка">Прошивка смартфона без сервисного аккаунта через SP Flash
+Tool</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=101067763"
+title="Ссылка">Прошивальщик для прошивки Redmi Note 8 Pro в режиме
+fastboot</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=105685212"
+title="Ссылка">Как вернуть IMEI (пошаговая инструкция)</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=101216993"
+title="Ссылка">Установщик VIPER4AndroidFX для TWRP</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=101883357"
+title="Ссылка">Способ снятия frp (google аккаунт) на Xiaomi</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=98613041"
+title="Ссылка">Инструкция по установке Global MIUI 12 на “чистый и
+девственный” девайс(с удалением всех данных)</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=102378978"
+title="Ссылка">Перепрошивка устройства через TWRP</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=97183901"
+title="Ссылка">Установка прошивки через TWRP</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=102227437"
+title="Ссылка">Установка ROOT и GPay на китайский аппарат, с
+индонезийской прошивкой (Android 9).</a><br><a
+href="https://4pda.to/forum/index.php?s=&amp;showtopic=965629&amp;view=findpost&amp;p=90550520"
+title="Ссылка">Установка ROOT и Google Pay на китайский
+аппарат</a><br><a
+href="https://4pda.to/forum/index.php?s=&amp;showtopic=965629&amp;view=findpost&amp;p=90018812"
+title="Ссылка">Установка TWRP, ROOT и Google Pay на Global
+телефоне</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=107898228"
+title="Ссылка">Получаем ROOT MIUI 12.5</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=963868&amp;view=findpost&amp;p=100452107"
+title="Ссылка">Как перейти с глобальной на индонезийскую
+прошивку</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=101695089"
+title="Ссылка">Установщик патченого ядра для TWRP</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=94143159"
+title="Ссылка">Патченый Загрузчик - освобождает от причины кирпичей,
+работает только когда телефон ЖИВ (только на MIUI 10 и 11 Android
+9)</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=94929391"
+title="Ссылка">Установка TWRP на Android 10</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=104069106"
+title="Ссылка">Быстрый бекап и восстановление прошивки</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=102245087"
+title="Ссылка">Как вытянуть (создать бекап) любого блока/образа из
+прошивки из под работающей системы.</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=92899852"
+title="Ссылка">Обновление через 3 точки вручную при заблокированном
+загрузчике</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=93553248"
+title="Ссылка">Решение проблем при прошивке через Fastboot</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=94626014"
+title="Ссылка">Если Flash Tool выдает ошибку Download DA 100%
+(решение)</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=91862316"
+title="Ссылка">Краткая инструкция для установки Xiaomi.eu и TWRP,
+магиск.</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=91182189"
+title="Ссылка">Прошивка или переход на Индонезию С MIUI 11. RU/MI/EU
+(Загрузчик разблокирован при переходе)</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=93699767"
+title="Ссылка">Переход на Индонезию с сохранением данных</a><br><a
+href="https://4pda.to/forum/index.php?s=&amp;showtopic=965629&amp;view=findpost&amp;p=89739718"
+title="Ссылка">Гайд по перепрошивке XiaoMiTool V2</a><br><a
+href="https://4pda.to/forum/index.php?s=&amp;showtopic=965629&amp;view=findpost&amp;p=90886980"
+title="Ссылка">Переход с MIUI Global EU 1.0.4.5 на MIUI 11 (RU или ID)
+без потери данных.</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=94970447"
+title="Ссылка">Самый легкий способ прошивки на ПК.</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=93336734"
+title="Ссылка">Если не получается получить ROOT</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=837533&amp;view=findpost&amp;p=73374785"
+title="Ссылка">Удаление встроенных приложений без рута на
+заблокированном загрузчике</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=90022165"
+title="Ссылка">Прошивка через ADB от Lyelik74</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=838678&amp;view=findpost&amp;p=72982671"
+title="Ссылка">Альтернативный метод прошивки через fastboot и adb без
+ПК</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=94524985"
+title="Ссылка">Восстановление NVRAM и
+IMEI</a><br># <br><strong>FirmWare, Vendor</strong><br><a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Fxmfirmwareupdater.com%2Ffirmware%2Fbegonia%2F&amp;e=88821588"
+title="Ссылка">xmfirmwareupdater.com (FirmWare)</a><br><a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Fxmfirmwareupdater.com%2Fvendor%2Fbegonia%2F&amp;e=88821588"
+title="Ссылка">xmfirmwareupdater.com
+(vendor)</a><br># <br><strong>Рекавери</strong><br><strong>После
+установки некоторых рекавери, если вы сделаете сброс к заводским, то
+можете получить бутлуп в рекавери. Не спешите ставить все подряд,
+попробуйте сначала <a
+href="https://4pda.to/forum/index.php?s=&amp;showtopic=974421&amp;view=findpost&amp;p=94388409"
+title="Ссылка">ЭТО</a></strong><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=110723127"
+title="Ссылка">Установка TWRP на прошивки android 11</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=109993921"
+title="Ссылка">Решение проблем с twrp и бэкапами</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=97321551"
+title="Ссылка">Решение проблем с бэкапом через TWRP</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=111411942"
+title="Ссылка">TWRP 3.5.2 v3 Android 11</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=107899317"
+title="Ссылка">TWRP для 12.5.1.0 Global</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=105380152"
+title="Ссылка">BLACK TWRP 3.5.1 V2 UNIFIED</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=98521479"
+title="Ссылка">PBRP-begonia-2.9.1</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=96101925"
+title="Ссылка">OrangeFox (MIUI 11 и MIUI 12, только Android 10) |
+Recovery</a><br> <br>- <a
+href="https://4pda.to/forum/dl/post/18999953/twrp_ifelixit_Begonia__10.zip"
+title="Ссылка">TWRP для 10 Андроида</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=94367993"
+title="Ссылка">OrangeFox-R10.1-Stable-begonia Android 9</a> от
+Xakep1993<br> <br>- <a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Fandroidfilehost.com%2F%3Ffid%3D4349826312261694141&amp;e=88821588"
+title="Ссылка">Для 9 андроида</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=101504220"
+title="Ссылка">TWRP для android 9 c русским языком</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=101507229"
+title="Ссылка">TWRP для android 10 c русским
+языком</a><br># <br><strong>Разное</strong><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=136982282"
+title="Ссылка">Альтернативный способ прохождения Bypass</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=110436173"
+title="Ссылка">Как войти в обновление Miui и активировать “Три точки” на
+глобалках 12.5</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=108589044"
+title="Ссылка">Установка прошивки на устройство с разблокированным
+загрузчиком с помощью второго девайса</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=107129325"
+title="Ссылка">Модуль Magisk для установки GApps</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=112900&amp;view=findpost&amp;p=2472314"
+title="Ссылка">Помощь в поиске программ для Android OS</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=102505131"
+title="Ссылка">Патч (звонилка и смс) для MIUI 12.0.5.0</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=101291972"
+title="Ссылка">ПАТЧИ СО ЗВОНИЛКОЙ ОТ MIUI + ПАТЧИ ВОЗВРАЩАЮЩИЕ ЗВОНИЛКУ
+ОТ GOOGLE</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=101830356"
+title="Ссылка">Использование Тотал Коммандер для бэкапа/копирования и
+редактирования файловой системы андроид прямо с ПК</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=100982025"
+title="Ссылка">Удаление модулей Magisk из TWRP без
+перепрошивки</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=99355057"
+title="Ссылка">Сборник Стоковых Модемов</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=99011529"
+title="Ссылка">Доработка MIUI 12 12.0.1.0 Indonesia</a><br><a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Fmi-faq.ru%2Fkak-otklyuchit-obnovleniya-miui-na-xiaomi.html&amp;e=88821588"
+title="Ссылка">Отключение обновления системы в Xiaomi Redmi Note 8
+Pro</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=101598032"
+title="Ссылка">Отключение кеширования мусорных файлов в
+галерее/камере</a><br><a
+href="https://4pda.to/forum/index.php?s=&amp;showtopic=965629&amp;view=findpost&amp;p=94049522"
+title="Ссылка">Как вернуть запись звонков, а так же звонилку, контакты и
+смс от MIUI</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=109007635"
+title="Ссылка">Способ зафиксировать TTL на 64 (magisk модуль
+nfqttl)</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=93667944"
+title="Ссылка">Резервное копирование разделов eMMC</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=92500933"
+title="Ссылка">Системный рабочий стол MIUI (MiuiHome) с меню
+приложений</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=92376270"
+title="Ссылка">ViPER4Android FX 2.4.0.1 Begonia Mod (Magisk
+module)</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=91613688"
+title="Ссылка">Создание ярлыка на главном экране для быстрого выбора
+платежной системы</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=91699820"
+title="Ссылка">Отключение рекламы в браузере</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=91487832"
+title="Ссылка">Увеличение максимальной громкости в наушниках и через
+внешний динамик</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=91160328"
+title="Ссылка">Отключение Системных Приложений, если нет root и
+заблокирован загрузчик</a><br><a
+href="https://4pda.to/forum/index.php?s=&amp;showtopic=965629&amp;view=findpost&amp;p=90909986"
+title="Ссылка">Установка EdXposed</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=109727000"
+title="Ссылка">Инструмент, удаляющий и отключающий мусор на MIUI (47
+приложений)</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=90417101"
+title="Ссылка">Удаление гуглохлама и встроенных приложений</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=921645&amp;view=findpost&amp;p=77962469"
+title="Ссылка">Еще про удаление и чистку</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=90112047"
+title="Ссылка">Как запустить Xposed</a><br><a
+href="https://4pda.to/forum/index.php?s=&amp;showtopic=965629&amp;view=findpost&amp;p=89852023"
+title="Ссылка">Какую прошивку я могу установить на свой телефон? (Пост
+Camerado #89852023)</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=94293099"
+title="Ссылка">Патч удаляющий Гугл Звонилку и СМС, и устанавливающий
+MIUI звонилку и СМС</a><br><a
+href="https://4pda.to/forum/index.php?s=&amp;showtopic=965629&amp;view=findpost&amp;p=90041102"
+title="Ссылка">Установка звонилки MiUI10 на глобальную
+прошивку</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=90897763"
+title="Ссылка">Звонилка, контакты и смс от MIUI 11 (P и Q
+андроид)</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=91044907"
+title="Ссылка">Ручная установка звонилки MiUI + сообщения</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=91307491"
+title="Ссылка">Установка ViPER4Android</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=94511721"
+title="Ссылка">После обновления значки стали квадратными</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=94429964"
+title="Ссылка">После обновления не работает Рабочий
+Стол</a><br><em>Куратор темы <strong><a
+href="https://4pda.to/forum/index.php?showuser=3146721"
+title="Ссылка">prusenkor</a></strong> : по всем вопросам и предложениям
+в <a href="https://4pda.to/forum/index.php?act=qms&amp;mid=3146721"
+title="Ссылка"><strong>QMS</strong></a></em><br>Сообщение отредактировал
+<a
+href="https://4pda.to/forum/index.php?showuser=9626422"><strong>sergrauber</strong></a>
+- 27.10.26, 19:01<br>Причина редактирования: HyperOS_Repack 3.0.305.0 |
+R2 | V2 | Android 16 | UNOFFICIAL</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=9741307">ura512</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=9741307">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=ura512&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=ura512&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=965629&amp;source=pst&amp;username=ura512&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=103543980"
+title="Ссылка на это сообщение">#7422</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+19.01.21, 13:08</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=9741307"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvwACU2Ecj4eT7I2JOLBtg9ryFmJ7bW7MshU9bJI3FoylLt.png" /></a><br>нету<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 2096<br>Регистрация: 06.07.20<br>Репутация:
+<img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=9741307"
+title="Просмотреть репутацию">265</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td>fmiak @ 19.01.21, 12:03 <a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=103543832"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><br>ADB не видит телефон в режиме FASTBOOT (./adb devices)
+- List of devices attached и пустота<br>Adb не будет видеть в режиме
+fastboot. В fastboot телефон видит fastboot.exe.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=7757246">HeTReI</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=7757246">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=HeTReI&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=HeTReI&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=965629&amp;source=pst&amp;username=HeTReI&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=103544000"
+title="Ссылка на это сообщение">#7423</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+19.01.21, 13:09</td>
+</tr>
+<tr>
+<td>Старожил<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 741<br>Регистрация: 11.02.18<br><a
+href="https://4pda.to/devdb/redmi_note_8_pro"><strong>Redmi Note 8 Pro
+6/64/128</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=7757246"
+title="Просмотреть репутацию">81</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=103543974"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><strong>fmiak</strong>, что вы подразумеваете под
+работать? Прошивку нужно поставить или вытянуть что-то?</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=1811789">fmiak</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=1811789">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=fmiak&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=fmiak&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=965629&amp;source=pst&amp;username=fmiak&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=103544093"
+title="Ссылка на это сообщение">#7424</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+19.01.21, 13:12</td>
+</tr>
+<tr>
+<td>Местный<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 129<br>Регистрация: 12.11.11<br>Репутация:
+<img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=1811789"
+title="Просмотреть репутацию">2</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td>да. и прошивку в том числе. До этой прошивки работало. Я не глубоко
+в теме разбираюсь. Возможна блокировка в ТВРП, магиск(hide)?</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=9741307">ura512</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=9741307">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=ura512&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=ura512&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=965629&amp;source=pst&amp;username=ura512&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=103544117"
+title="Ссылка на это сообщение">#7425</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+19.01.21, 13:13</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=9741307"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvwACU2Ecj4eT7I2JOLBtg9ryFmJ7bW7MshU9bJI3FoylLt.png" /></a><br>нету<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 2096<br>Регистрация: 06.07.20<br>Репутация:
+<img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=9741307"
+title="Просмотреть репутацию">265</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td>fmiak @ 19.01.21, 12:12 <a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=103544093"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><br>Возможна блокировка в ТВРП, магиск(hide)?<br>Что вы
+имеете ввиду? Удаление модуля?</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=7757246">HeTReI</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=7757246">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=HeTReI&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=HeTReI&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=965629&amp;source=pst&amp;username=HeTReI&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=103544155"
+title="Ссылка на это сообщение">#7426</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+19.01.21, 13:14</td>
+</tr>
+<tr>
+<td>Старожил<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 741<br>Регистрация: 11.02.18<br><a
+href="https://4pda.to/devdb/redmi_note_8_pro"><strong>Redmi Note 8 Pro
+6/64/128</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=7757246"
+title="Просмотреть репутацию">81</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=103544093"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><strong>fmiak</strong>, прошивка ставится не через адб, а
+через фастбут, легче всего это сделать <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=101067763"
+title="Ссылка">так</a><br>Сообщение отредактировал <a
+href="https://4pda.to/forum/index.php?showuser=7757246"><strong>HeTReI</strong></a>
+- 19.01.21, 13:14</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=1811789">fmiak</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=1811789">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=fmiak&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=fmiak&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=965629&amp;source=pst&amp;username=fmiak&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=103544175"
+title="Ссылка на это сообщение">#7427</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+19.01.21, 13:14</td>
+</tr>
+<tr>
+<td>Местный<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 129<br>Регистрация: 12.11.11<br>Репутация:
+<img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=1811789"
+title="Просмотреть репутацию">2</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td>модуль подключен только busybox. Не могу понять, почему перестало
+определяться устройство. возможно ли такое из-за магиска или модулей?
+или включения hide?<br><strong>HeTReI</strong> извиняюсь по прошивке, не
+так выразился.<br>Сообщение отредактировал <a
+href="https://4pda.to/forum/index.php?showuser=1811789"><strong>fmiak</strong></a>
+- 19.01.21, 13:19</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=9741307">ura512</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=9741307">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=ura512&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=ura512&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=965629&amp;source=pst&amp;username=ura512&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=103544333"
+title="Ссылка на это сообщение">#7428</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+19.01.21, 13:19</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=9741307"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvwACU2Ecj4eT7I2JOLBtg9ryFmJ7bW7MshU9bJI3FoylLt.png" /></a><br>нету<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 2096<br>Регистрация: 06.07.20<br>Репутация:
+<img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=9741307"
+title="Просмотреть репутацию">265</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=103544175"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><strong>fmiak</strong>, Что в диспетчере устройств?</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=1811789">fmiak</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=1811789">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=fmiak&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=fmiak&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=965629&amp;source=pst&amp;username=fmiak&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=103544387"
+title="Ссылка на это сообщение">#7429</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+19.01.21, 13:21</td>
+</tr>
+<tr>
+<td>Местный<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 129<br>Регистрация: 12.11.11<br>Репутация:
+<img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=1811789"
+title="Просмотреть репутацию">2</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td>сейчас с мака пишу. на вин в диспетчере было все ок! нужные драйвера
+стоят, проверка подписи выкл., да и адб в режиме фастбут работал.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=1811789">fmiak</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=1811789">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=fmiak&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=fmiak&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=965629&amp;source=pst&amp;username=fmiak&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=103544556"
+title="Ссылка на это сообщение">#7430</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+19.01.21, 13:27</td>
+</tr>
+<tr>
+<td>Местный<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 129<br>Регистрация: 12.11.11<br>Репутация:
+<img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=1811789"
+title="Просмотреть репутацию">2</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td>вот например <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=90018812"
+title="Ссылка">инструкция</a><br>“5. Отключаем тело от ПК и штатно
+выключаем его.<br>6. Переводим в фастбут<br>9. В командной строке
+вводим: fastboot devices+Enter для определения состояния тела”<br>Вот
+тело то и не видит<br>Хотя ранее видело. И по этой инструкции я тоже
+прошивал.<br>Сообщение отредактировал <a
+href="https://4pda.to/forum/index.php?showuser=1811789"><strong>fmiak</strong></a>
+- 19.01.21, 13:28</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=9741307">ura512</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=9741307">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=ura512&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=ura512&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=965629&amp;source=pst&amp;username=ura512&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=103544674"
+title="Ссылка на это сообщение">#7431</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+19.01.21, 13:31</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=9741307"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvwACU2Ecj4eT7I2JOLBtg9ryFmJ7bW7MshU9bJI3FoylLt.png" /></a><br>нету<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 2096<br>Регистрация: 06.07.20<br>Репутация:
+<img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=9741307"
+title="Просмотреть репутацию">265</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=103544556"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><strong>fmiak</strong>, Может из-за процесора или из-за
+разьёма куда телефон подключён. Попробуйте подключить в другой
+разьём.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=1811789">fmiak</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=1811789">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=fmiak&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=fmiak&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=965629&amp;source=pst&amp;username=fmiak&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=103544792"
+title="Ссылка на это сообщение">#7432</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+19.01.21, 13:35</td>
+</tr>
+<tr>
+<td>Местный<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 129<br>Регистрация: 12.11.11<br>Репутация:
+<img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=1811789"
+title="Просмотреть репутацию">2</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td>да уже все перепробовал. в том-то и дело, что с включенным все
+команды adb работают. <br>“Ничего не понимаю”©</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=2084209">Nuklein</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=2084209">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=Nuklein&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=Nuklein&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=965629&amp;source=pst&amp;username=Nuklein&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=103545542"
+title="Ссылка на это сообщение">#7433</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+19.01.21, 13:58</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=2084209"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvw1pAGdZa3ipiG9cPz1C91IaI4H1AO5U9c3wJyCYx3il1Ub.jpg" /></a><br>Местный<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 123<br>Регистрация: 10.03.12<br><a
+href="https://4pda.to/devdb/poco_f5_pro"><strong>POCO F5 Pro
+8/256</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=2084209"
+title="Просмотреть репутацию">5</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td>Здравтствуйте, погоите решить проблему. Поменял прошивку с русской
+на индонезию. Теперь ошибка NVRAM err = 0x10. Как исправить? дайте
+чёткую инструкции, пожалуйста.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=9741307">ura512</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=9741307">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=ura512&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=ura512&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=965629&amp;source=pst&amp;username=ura512&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=103545622"
+title="Ссылка на это сообщение">#7434</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+19.01.21, 14:01</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=9741307"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvwACU2Ecj4eT7I2JOLBtg9ryFmJ7bW7MshU9bJI3FoylLt.png" /></a><br>нету<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 2096<br>Регистрация: 06.07.20<br>Репутация:
+<img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=9741307"
+title="Просмотреть репутацию">265</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=103545542"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><strong>Nuklein</strong>, <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=101867024"
+title="Ссылка">Xiaomi Redmi Note 8 Pro - Неофициальные прошивки (Пост
+bugreporter #101867024)</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=1101796">kot6230</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=1101796">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=kot6230&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=kot6230&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=965629&amp;source=pst&amp;username=kot6230&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=103546317"
+title="Ссылка на это сообщение">#7435</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+19.01.21, 14:24</td>
+</tr>
+<tr>
+<td>Местный<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 373<br>Регистрация: 27.04.10<br><a
+href="https://4pda.to/devdb/redmi_note_8_pro"><strong>Redmi Note 8 Pro
+6/64/128</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=1101796"
+title="Просмотреть репутацию">45</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td>fmiak @ 19.01.21, 13:03 <a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=103543832"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><br>ADB не видит телефон в режиме FASTBOOT (./adb devices)
+- List of devices attached<br>Сталкивался с этим. Оказалось, что штатный
+кабель чудил, контакт слабый был.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=2590184">Largodim</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=2590184">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=Largodim&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=Largodim&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=965629&amp;source=pst&amp;username=Largodim&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=103547393"
+title="Ссылка на это сообщение">#7436</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+19.01.21, 15:00</td>
+</tr>
+<tr>
+<td>Бывалый<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 416<br>Регистрация: 10.10.12<br>Репутация:
+<img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=2590184"
+title="Просмотреть репутацию">5</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td>Извиняюсь кто-нибудь подскажите я сейчас на miui 12 с twrp я с неё
+устанавливаю miui 12 на 11 адройде и сверху не выходя ставлю
+тврп?<br>Подскажите какое тврп<br>И какие вайпы делать?</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=7757246">HeTReI</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=7757246">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=HeTReI&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=HeTReI&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=965629&amp;source=pst&amp;username=HeTReI&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=103547658"
+title="Ссылка на это сообщение">#7437</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+19.01.21, 15:09</td>
+</tr>
+<tr>
+<td>Старожил<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 741<br>Регистрация: 11.02.18<br><a
+href="https://4pda.to/devdb/redmi_note_8_pro"><strong>Redmi Note 8 Pro
+6/64/128</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=7757246"
+title="Просмотреть репутацию">81</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=103547393"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><strong>Largodim</strong>, тврп на 12.5 пока что нету, рут
+ставится до перезагрузки, инструкция <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=103326447"
+title="Ссылка">вот</a>. Подождите пару часов, я сейчас буду пробовать
+21.1.18 ставить, как поставлю выложу</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=965182">tolik5500</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=965182">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=tolik5500&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=tolik5500&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=965629&amp;source=pst&amp;username=tolik5500&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=103548092"
+title="Ссылка на это сообщение">#7438</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+19.01.21, 15:24</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=965182"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvw5xz1mIa2SrqFPypAfgpw7cBKibyTQ7d7lEnoJhS0S0z2.jpg" /></a><br>Ветеран<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 1879<br>Регистрация: 09.01.10<br><a
+href="https://4pda.to/devdb/redmi_note_8_pro:8_128"><strong>Redmi Note 8
+Pro 6/64/128</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=965182"
+title="Просмотреть репутацию">50</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td>Подскажите, стоит глобалка 12.0.5, хочу попробовать поставить бету
+12.5 ставить просто через ТВРП с Вайпами? и если можно ткните на
+последню бетку ссілкой</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=2168554">mcmaza</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=2168554">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=mcmaza&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=mcmaza&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=965629&amp;source=pst&amp;username=mcmaza&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=103548451"
+title="Ссылка на это сообщение">#7439</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+19.01.21, 15:35</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=2168554"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvw7z2KZSz2eN79gnrI1G4u8LLBiMp8mz1JE6h25nNnLfqEuZ.jpg" /></a><br>⚡𝕲𝖚𝖗𝖚⚡<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 1210<br>Регистрация: 14.04.12<br><a
+href="https://4pda.to/devdb/iqoo_neo9"><strong>iQOO Neo9
+12/256</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=2168554"
+title="Просмотреть репутацию">125</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=103548092"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><strong>tolik5500,</strong><br>Вот инструкция, не забудь
+после прошивки сделать формат дата обязательно!!! 6 пункт в
+инструкции..<br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=103326447"
+title="Ссылка">Инструкция!!!</a><br>Сообщение отредактировал <a
+href="https://4pda.to/forum/index.php?showuser=2168554"><strong>mcmaza</strong></a>
+- 19.01.21, 15:40<br>---—————–<br>Есть в наличии:Honor
+9x/RedmiNote8pro/Iphone 12mini/ipad air 3/SamsungS21(888/IQOO Neo
+9)/PC-32Gb-DDR5.i5-12400.RTX4060. Mc kr sistem</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=7757246">HeTReI</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=7757246">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=HeTReI&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=HeTReI&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=965629&amp;source=pst&amp;username=HeTReI&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=103549450"
+title="Ссылка на это сообщение">#7440</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+19.01.21, 16:08</td>
+</tr>
+<tr>
+<td>Старожил<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 741<br>Регистрация: 11.02.18<br><a
+href="https://4pda.to/devdb/redmi_note_8_pro"><strong>Redmi Note 8 Pro
+6/64/128</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=7757246"
+title="Просмотреть репутацию">81</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td>China 21.1.18<br>Android 11<br># <br>Описание<br>MIUI 12.5
+Nightly<br># <br>Способ установки<br>TWRP<br># <br>Дополнения<br><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=103326447"
+title="Ссылка">Инструкция по установке</a><br># <br>Скачать<br><a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Fbigota.d.miui.com%2F21.1.18%2Fmiui_BEGONIA_21.1.18_6f3dfad29f_11.0.zip&amp;e=103549450"
+title="Ссылка">Bigota</a><br><a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Fhugeota.d.miui.com%2F21.1.18%2Fmiui_BEGONIA_21.1.18_6f3dfad29f_11.0.zip&amp;e=103549450"
+title="Ссылка">Hugeota</a><br>Если скорость скачивания на файлообменнике
+или с облака низкая, воспользуйтесь темой - <a
+href="https://4pda.to/forum/index.php?showtopic=117304"
+title="Ссылка">Перезалейте…</a><br>Сообщение отредактировал <a
+href="https://4pda.to/forum/index.php?showuser=7757246"><strong>HeTReI</strong></a>
+- 19.01.21, 16:08</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=4357013">m929</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=4357013">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=m929&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=m929&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=965629&amp;source=pst&amp;username=m929&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=103570746"
+title="Ссылка на это сообщение">#7441</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+20.01.21, 10:49</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=4357013"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvw7z2439WMtuEsUvQFmsCUZY3skVcRScz2THhYDnELfqkeB.png" /></a><br>Гуру<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 8560<br>Регистрация: 20.06.14<br><a
+href="https://4pda.to/devdb/motorola_g34:8_128_256"><strong>Motorola G34
+5G 8/128/256</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=4357013"
+title="Просмотреть репутацию">1418</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td>Прошивка Redmi Note 8 Pro через SP Flash Tool без сервисного
+аккаунта!<br>Инструкция: <a
+href="https://4pda.to/forum/index.php?showtopic=907017&amp;view=findpost&amp;p=103559971"
+title="Ссылка">Xiaomi Redmi 6 - Прошивки MIUI</a><br>Windows метод: <a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=103559971&amp;anchor=Spoil-103559971-11"
+title="Ссылка">Файл универсальный!!!</a><br>Linux метод: <a
+href="https://4pda.to/forum/dl/post/21956639/Repair-Linux.zip"
+title="Скачать Repair-Linux.zip"><img
+src="https://4pda.to/s/QBvw2r0Hs1tQOCk9xz0SwmKhI9sz1baShqimi0h3z2UZUQqz0oqMER0xM9UPUQaC.gif"
+alt="Прикрепленный файл" />Repair-Linux.zip</a> ( 66.83 МБ
+)<br>Сообщение отредактировал <a
+href="https://4pda.to/forum/index.php?showuser=4357013"><strong>m929</strong></a>
+- 23.01.21, 16:24<br>---—————–<br><strong>Давайте жить
+дружно!</strong><br>Если что-то потеряли из файлов, которые я
+публиковал, не бойтесь, пишите мне!</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=1247">Redmi</a></p>
+<p><strong>Куратор: <a
+href="https://4pda.to/forum/index.php?showuser=3146721">prusenkor</a></strong></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td>1110 страниц <img
+src="https://4pda.to/s/QBvwSn7Gya4VltbRAer1WUSuGEo4z1Lrz2sCl4JAz2F5NK0Wv6XMP9hKT.gif"
+alt="V" /><a href="https://4pda.to/forum/index.php?showtopic=965629"
+title="На первую страницу">«</a><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;st=7400"
+title="Предыдущая страница">&lt;</a><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;st=7380"
+title="370">370</a><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;st=7400"
+title="371">371</a>372<a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;st=7440"
+title="373">373</a><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;st=7460"
+title="374">374</a><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;st=7480"
+title="375">375</a><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;st=7440"
+title="Следующая страница">&gt;</a><a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;st=22180"
+title="На последнюю страницу">»</a><br>Перейти к странице</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr>
+<td></td>
+<td><a
+href="https://4pda.to/forum/index.php?act=mb&amp;mb=1"><strong>Мобильная
+версия</strong></a> <a
+href="https://4pda.to/forum/lofiversion/index.php?t965629.html"><strong>Текстовая
+версия</strong></a></td>
+<td>Сейчас: 21.11.26, 10:47</td>
+</tr>
+</tbody>
+</table>
+<p>© 4PDA 2005-2026 г. Все права защищены.</p>
+<p>4PDA® - зарегистрированный товарный знак.</p>
+<p><a href="https://4pda.to/copyright_notice/">Условия использования
+информации</a>  |  <a href="https://4pda.to/disclaimer/">Отказ от
+ответственности</a>  |   <a href="https://4pda.to/advert/"
+title="Размещение рекламы"><strong>Размещение рекламы</strong></a></p>
+<p><a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Fwww.ibresource.ru%2F">Форум</a>
+<a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Fwww.invisionboard.com%2F">IP.Board</a>
+© 2026  <a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Fwww.invisionpower.com%2F">IPS,
+Inc</a>.</p>
+<p><a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Ftwitter.com%2F4pdaru"
+title="Следуйте за нами в Twitter">Следуйте за нами в Twitter</a><a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Fvk.com%2F4pdaru"
+title="Официальная группа 4pda">Официальная группа 4pda</a><a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Ft.me%2Freal4pda"
+title="Официальный канал в Telegram">Официальный канал в Telegram</a><a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Fwww.youtube.com%2Fuser%2F4pdaRU"
+title="Наш канал на YouTube">Наш канал на YouTube</a></p>
+<p><a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Fwww.liveinternet.ru%2Fclick"><img
+src="https://counter.yadro.ru/hit?t14.11;rhttps%3A//4pda.to/forum/index.php%3Fshowtopic%3D965629%26st%3D7420;s1920*1080*24;uhttps%3A//4pda.to/forum/index.php%3Fshowtopic%3D965629%26st%3D7420%23entry103570746;0.39245713164244533" /></a></p>
+</body>
+</html>

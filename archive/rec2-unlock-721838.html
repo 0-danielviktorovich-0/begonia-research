@@ -1,0 +1,2895 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.13" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>XIAOMI bootloader unlock thread (4PDA topic 721838) (offline extract)</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      color: light-dark(#1a1a1a, #fdfdfd);
+      background-color: #fdfdfd;
+      background-color: light-dark(#fdfdfd, #1a1a1a);
+      color-scheme: light dark;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        color-scheme: light only;
+      }
+      html, body, pre, code {
+        background-color: transparent;
+      }
+      body, a, a:visited, blockquote {
+        color: black;
+      }
+      pre, code {
+        padding: 0;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a, a:visited {
+      color: inherit;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid;
+      border-color: #e6e6e6;
+      border-color: light-dark(#e6e6e6, #4c4c4c);
+      color: #606060;
+      color: light-dark(#606060, #b6b6b6);
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid currentColor;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid currentColor;
+      border-bottom: 1px solid currentColor;
+    }
+    th {
+      border-top: 1px solid currentColor;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">XIAOMI bootloader unlock thread (4PDA topic 721838)
+(offline extract)</h1>
+</header>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a href="https://4pda.to/"><img
+src="https://4pda.to/s/QBvwTo0Sg7Yu99XlUmM92x8cRfPHWHoZctz08xTSoK2z2R6XwZtz0uw.png"
+alt="4PDA" /></a></td>
+<td><img src="https://4pda.to/s/QBvw5VM6509k3UZu6drE8DyrsX.gif" /></td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://4pda.to/forum/index.php?act=Help">Помощь</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?act=boardrules">Правила</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=768">Поиск</a></p>
+<p>Искать только в этом форуме</p>
+<p>Результаты в виде тем</p>
+<p><a href="https://4pda.to/forum/index.php?act=search">Дополнительные
+параметры</a></p>
+<p><a href="https://4pda.to/forum/index.php?showtopic=721838#"
+title="Закрыть окно">[X]</a></p>
+<p>Помощник</p>
+<p><img
+src="https://4pda.to/s/QBvwVEgr0Wz1yP0HDDz0OO3uOIcUgz2G09wcejfkhutegeEwWDh.gif"
+alt="Загрузка. Пожалуйста, подождите…" />Загрузка. Пожалуйста,
+подождите…</p>
+<p><strong>Здравствуйте, гость</strong> ( <a
+href="https://4pda.to/forum/index.php?act=auth&amp;return=https%3A%2F%2F4pda.to%2Fforum%2Findex.php%3Fshowtopic%3D721838">Вход</a>
+| <a
+href="https://4pda.to/forum/index.php?act=auth&amp;return=https%3A%2F%2F4pda.to%2Fforum%2Findex.php%3Fshowtopic%3D721838#reg">Регистрация</a>
+)</p>
+<p><a href="https://4pda.to/forum/?showforum=281&amp;utm_source=ftmenu"
+title="Android">Android</a> <a
+href="https://4pda.to/forum/?showforum=295&amp;utm_source=ftmenu"
+title="iOS">iOS</a> <a
+href="https://4pda.to/forum/?showforum=442&amp;utm_source=ftmenu"
+title="Другие платформы">Другие</a> <a
+href="https://4pda.to/forum/?utm_source=ftmenu"
+title="Полезные ссылки">Полезное</a> <a
+href="https://4pda.to/devdb/?utm_source=ftmenu"
+title="DevDB - каталог устройств">Устройства</a> <a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Fdevfaq.ru%2F%3Futm_source%3Dftmenu"
+title="DevFAQ - база знаний об устройствах">База знаний</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=282&amp;utm_source=ftmenu"
+title="Первая помощь по Android">Первая помощь</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=283&amp;utm_source=ftmenu"
+title="FAQ по Android">FAQ</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showtopic=112220&amp;utm_source=ftmenu"
+title="Программы для Android">Программы</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=213&amp;utm_source=ftmenu"
+title="Игры для Android">Игры</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=139&amp;utm_source=ftmenu"
+title="Устройства Apple">Устройства</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=142&amp;utm_source=ftmenu"
+title="Первая помощь по iPod Touch, iPhone и iPad">Первая помощь</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=144&amp;utm_source=ftmenu"
+title="FAQ по iPod Touch, iPhone iPad">FAQ</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=140&amp;utm_source=ftmenu"
+title="Программы для iPod Touch, iPhone b iPad">Программы</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=141&amp;utm_source=ftmenu"
+title="Игры для iPod Touch, iPhone и iPad">Игры</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=4&amp;utm_source=ftmenu"
+title="Обсуждение кнопочных телефонов (раскладушек, слайдеров, моноблоков), программ, игр.">Кнопочные
+телефоны</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=48&amp;utm_source=ftmenu"
+title="Раздел для увлекающихся Фотографией. Делимся опытом съемки, выбора фотоаппарата.">Фото</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=103&amp;utm_source=ftmenu"
+title="Вопросы, ответы и советы по плеерам, медиа-приставкам, ТВ и проекторам.">Мультимедийные
+устройства</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=279&amp;utm_source=ftmenu"
+title="Обсуждение устройств для чтения электронных книг.">Электронные
+книги</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=645&amp;utm_source=ftmenu"
+title="Обсуждение игровых консолей и игр">Игровые консоли</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=635&amp;utm_source=ftmenu"
+title="Головные Устройства, МФУ">Автомобильные устройства</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=763&amp;utm_source=ftmenu"
+title="Обсуждения носимых устройств.">Носимая электроника</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=817&amp;utm_source=ftmenu"
+title="Обсуждаем, все, что связано с видеосъемкой">Видео</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=910&amp;utm_source=ftmenu"
+title="Умный дом, устройства с дистанционным управлением, скутеры и квадрокоптеры, пылесосы, весы и пр. гаджеты.">Устройства
+для дома и развлечений</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showtopic=117392&amp;view=findpost&amp;p=2728692&amp;utm_source=ftmenu"
+title="10 заповедей новичка">10 заповедей новичка</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showtopic=89878&amp;utm_source=ftmenu"
+title="FAQ по форуму">FAQ по форуму</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=373&amp;utm_source=ftmenu"
+title="Сообщить об ошибке">Сообщить об ошибке</a></p>
+<p><a href="https://4pda.to/devdb/phones/?utm_source=ftmenu"
+title="Коммуникаторы">Телефоны</a></p>
+<p><a href="https://4pda.to/devdb/pad/?utm_source=ftmenu"
+title="Планшеты">Планшеты</a></p>
+<p><a href="https://4pda.to/devdb/ebook/?utm_source=ftmenu"
+title="Электронные книги">Электронные книги</a></p>
+<p><a href="https://4pda.to/devdb/smartwatch/?utm_source=ftmenu"
+title="Смарт часы">Смарт часы</a></p>
+<p><img src="https://4pda.to/s/QBvw4PU7JGSOtr8gnJdnKrOubP5IHbG243Ri.gif"
+alt="&gt;" /><a
+href="https://4pda.to/forum/index.php?act=idx">4PDA</a> &gt; <a
+href="https://4pda.to/forum/index.php?showforum=281">Android</a> &gt; <a
+href="https://4pda.to/forum/index.php?showforum=268">Android -
+Прошивки</a> &gt; <a
+href="https://4pda.to/forum/index.php?showforum=768">Xiaomi</a></p>
+<h3 id="внимание"><img
+src="https://4pda.to/s/QBvwVMPCCQMBRpNT3a7ZAlftdIcM1vRs2hA2vCH.gif"
+alt="&gt;" /> Внимание!</h3>
+<p><strong>Настоятельно рекомендуем прочитать <a
+href="https://4pda.to/forum/index.php?act=announce&amp;f=268&amp;st=273"
+title="Ссылка">Правила раздела “Android - прошивки”</a></strong></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td>4700 страниц <img
+src="https://4pda.to/s/QBvwSn7Gya4VltbRAer1WUSuGEo4z1Lrz2sCl4JAz2F5NK0Wv6XMP9hKT.gif"
+alt="V" />1<a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;st=20"
+title="2">2</a><a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;st=40"
+title="3">3</a><a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;st=60"
+title="4">4</a><a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;st=80"
+title="5">5</a><a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;st=100"
+title="6">6</a><a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;st=20"
+title="Следующая страница">&gt;</a><a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;st=93980"
+title="На последнюю страницу">»</a><br>Перейти к странице</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr>
+<td><img
+src="https://4pda.to/s/QBvwVMPCCQMBRpNT3a7ZAlftdIcM1vRs2hA2vCH.gif"
+alt="&gt;" /><strong>Разблокировка загрузчиков XIAOMI</strong> | Для
+всех смартфонов и планшетов XIAOMI (MediaTek &amp; Qualcomm)</td>
+<td></td>
+<td><a
+href="https://4pda.to/forum/index.php?showtopic=721838#topicoptions">Опции</a><img
+src="https://4pda.to/s/QBvwSn7Gya4VltbRAer1WUSuGEo4z1Lrz2sCl4JAz2F5NK0Wv6XMP9hKT.gif"
+alt="V" /><br><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/menu_item.gif"
+alt="V" /><a
+href="https://4pda.to/forum/index.php?act=Print&amp;client=printer&amp;f=768&amp;t=721838">Версия
+для печати</a><br><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/menu_item.gif"
+alt="V" /><a
+href="https://4pda.to/forum/index.php?act=Print&amp;client=choose&amp;f=768&amp;t=721838">Скачать
+тему</a></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=545174">varalex</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=545174">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=varalex&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=varalex&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=768&amp;topics%5B%5D=721838&amp;source=pst&amp;username=varalex&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=46637079"
+title="Ссылка на это сообщение">#1</a><br><img
+src="https://4pda.to/s/QBvw7ZvpDaxcqVViz0y7y4GyQPNQhqyDvGhTv666sXHM8eQOiz0BPMX93AaqQADUS.gif" /><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+29.01.16, 17:47</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=545174"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvwA86qz1HV18DD3gA9kbUDbj7oLrduAXp32bvtuPnpDXGd.png" /></a><br>I’m
+beside…<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br><strong>Куратор
+темы</strong><br>Группа: Почётный
+форумчанин<br>Сообщений: 8520<br>Регистрация: 14.11.08<br><a
+href="https://4pda.to/devdb/google_pixel_7_pro"><strong>Google Pixel 7
+Pro</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=545174"
+title="Просмотреть репутацию">1990</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><strong>Разблокировка загрузчика ( Unlock Bootloader ) XIAOMI /
+REDMI / POCO</strong><br><a href="https://4pda.to/devdb/phones/xiaomi"
+title="Ссылка">Модельный ряд Xiaomi</a> | <a
+href="https://4pda.to/forum/index.php?showtopic=792504"
+title="Ссылка">Mi аккаунт</a> <a
+href="https://4pda.to/forum/index.php?showtopic=792504&amp;view=getnewpost"
+title="Ссылка">Ссылка</a> | <a
+href="https://4pda.to/forum/index.php?showtopic=725345"
+title="Ссылка">FRP (Google аккаунт )</a> | <a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Fhyperos.fans%2Fen%2Fdevices&amp;e=46637079"
+title="Ссылка">Прошивки HyperOS</a> | <a
+href="https://4pda.to/forum/index.php?showtopic=814459"
+title="Ссылка">Mi Community |</a><br><a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=45909945&amp;anchor=Spoil-45909945-1"
+title="Ссылка"><strong>FAQ</strong></a><br><em>Тема общая для ВСЕХ
+моделей телефонов Xiaomi / Redmi / Poco, требующих разблокировки
+загрузчика. Придя в эту узкоспециализированную ветку, вы уже знаете для
+чего вам нужна разблокировка, имеете ми-аккаунт (или можете без проблем
+его создать), можете установить прошивку и разобраться с драйверами для
+телефона (на компьютере), знаете как пользоваться командной
+строкой.</em><br><em>Прежде чем задать свой вопрос в теме</em><br><em>-
+старайтесь воспользоваться поиском, возможно ответ давно уже есть и не
+раз обсуждался</em><br> <br><em>- укажите модель своего устройства,
+версию платформы ( MIUI, HyperOS1 ( 2,3 ), региональную версию ПО
+(Global, EEA,China и т,д)</em><br># <br><strong>Важная
+информация!</strong><br><a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=132427558"
+title="Ссылка">Читать</a><br># <br><strong>Драйвера и
+утилиты</strong><br>- Работа с устройством в режиме Fastboot<br> <br><a
+href="https://4pda.to/forum/dl/post/33166740/Platform-tools-r36.0.0-windows.zip"
+title="Скачать Platform-tools-r36.0.0-windows.zip"><img
+src="https://4pda.to/s/QBvw2r0Hs1tQOCk9xz0SwmKhI9sz1baShqimi0h3z2UZUQqz0oqMER0xM9UPUQaC.gif"
+alt="Прикрепленный файл" />Platform-tools-r36.0.0-windows.zip</a> ( 6.81
+МБ )<br> <br>- Драйвера для работы с устройством в режиме Fastboot <br>
+<br><a
+href="https://4pda.to/forum/dl/post/31005924/usb_driver_r13-windows.zip"
+title="Скачать usb_driver_r13-windows.zip"><img
+src="https://4pda.to/s/QBvw2r0Hs1tQOCk9xz0SwmKhI9sz1baShqimi0h3z2UZUQqz0oqMER0xM9UPUQaC.gif"
+alt="Прикрепленный файл" />usb_driver_r13-windows.zip</a> ( 8.28 МБ
+)<br> <br> <br> <br><a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=136692641"
+title="Ссылка">Устанавливаем правильный драйвер</a><br> <br>- Утилиты
+для разблокировки<br> <br><a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=125564217"
+title="Ссылка">Mi Unlock en-7.6.727.43</a><br> <br><a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=122721321"
+title="Ссылка">Mi Unlock en-6.6.510.37/en-6.5.810.9</a><br> <br><a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=112228706"
+title="Ссылка">Mi Unlock 5.5.224.24</a><br> <br><a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=136948222"
+title="Ссылка">MiUnlockTool</a> версия на базе Python<br> <br><a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=137137095"
+title="Ссылка">MiTool</a> - разблокировка загрузчика без использования
+ПК<br> <br><a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=137899966"
+title="Ссылка">XiaomiUnlockTool</a> от ув. <a
+href="https://4pda.to/forum/index.php?showuser=3746849"
+title="Ссылка">chemist.hplc</a><br> <br># <br><strong>Инструкции и
+другая полезная информация</strong><br>Для официальной разблокировки
+загрузчика, нужен полностью рабочий телефон(планшет), без каких либо
+оговорок.<br><a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=132942530"
+title="Ссылка">Разблокировка устройств для рынка Китая не работает!
+Xiaomi обновили политику!</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=141221193"
+title="Ссылка">Xiaomi прекратила разблокировку устройств региона
+China</a><br><strong>Официальная разблокировка загрузчика на
+MIUI:</strong> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=117144842"
+title="Ссылка">Актуальная версия инструкции по разблокировки загрузчика
+(Обновленная: Выпуск 31.08.22)</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?s=&amp;showtopic=721838&amp;view=findpost&amp;p=63359408"
+title="Ссылка">Актуальная версия инструкции по разблокировке(Старый
+способ: выпуск 20.07.17)</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=123863204"
+title="Ссылка">Разблокировка Загрузчика на Xiaomi Pad 6 Pro (Подходит
+для большинства моделей Pad, в которых нет поддержки SIM)</a><br> <br>-
+<a
+href="https://4pda.to/forum/index.php?s=&amp;showtopic=1055075&amp;view=findpost&amp;p=121601009"
+title="Ссылка">Разблокировка загрузчика на Xiaomi POCO C4</a> / <a
+href="https://4pda.to/forum/index.php?s=&amp;showtopic=1055075&amp;view=findpost&amp;p=121654194"
+title="Ссылка">2 вариант</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=125070954"
+title="Ссылка">Разблокировка загрузчика на Linux(Актуальный
+вариант)</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=127915408"
+title="Ссылка">Разблокировка загрузчика на Linux + Решение проблемы
+проброса USB в VirtualBox на Linux</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=125815009"
+title="Ссылка">Разблокировка загрузчика без ПК (для опытных
+пользователей)</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=128598650"
+title="Ссылка">Опыт по разблокировки загрузчика на Xiaomi Redmi Note
+7</a><br> <br><strong>Официальная разблокировка загрузчика на HYPER
+OS:</strong><br>-  # <br> <br>Скрипты, упрощающие подачу заявки на
+разблокировку в Mi Community <strong>для устройств Global</strong> на
+HyperOS<br> <br> <br> <br><a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=137792411"
+title="Ссылка">Мощный программный “комбайн”, упрощающий подачу заявки на
+разблокировку</a> от ув. <a
+href="https://4pda.to/forum/index.php?showuser=3746849"
+title="Ссылка">chemist.hplc</a><br> <br><a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=133301054"
+title="Ссылка">Скрипт автоматизированной подачи заявки на разблокировку
+загрузчика.</a> от ув. <a
+href="https://4pda.to/forum/index.php?showuser=4503180"
+title="Ссылка">Vierta</a><br> <br><a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=144359587"
+title="Ссылка">MiUnlockApp</a> для подачи заявки на разблокировку от <a
+href="https://4pda.to/forum/index.php?showuser=6717010"
+title="Ссылка">MatvPlay</a><br> <br><a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=143330559"
+title="Ссылка">Способ привязки</a> от <a
+href="https://4pda.to/forum/index.php?showuser=12163614"
+title="Ссылка">Ivashka99</a><br> <br><a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=145201115"
+title="Ссылка">XiaomiUnlockTool</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=132427558"
+title="Ссылка">Разблокировка Загрузчика для опытных и неопытных
+пользователей. OC HyperOS</a> + <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=132750428"
+title="Ссылка">Дополнение подачи заявки!</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=132219633"
+title="Ссылка">Разблокировка Загрузчика. Личный опыт пользователя
+форума, от А до Я.</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=130150210"
+title="Ссылка">Разблокировка Загрузчика с помощью BYPASS V2 или
+актуальная версия приложения Setting.apk</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=130277233"
+title="Ссылка">Разблокировка загрузчика для Xiaomi до 14 серии. Или
+BYPASS V2</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=128054773"
+title="Ссылка">Разблокировка загрузчика на Xiaomi 13 Pro</a><br> <br>-
+<a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=126440856"
+title="Ссылка">Метод обхода и разблокировки загрузчика HyperOS</a><br>
+<br>- <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=126490087"
+title="Ссылка">Разблокировка загрузчика на HyperOS</a><br>P.S на
+сегодняшний день разблокировка недоступна для устройств на HyperOS
+предназначенных для китайского рынка!<br><strong>Разблокировка
+загрузчика на аппаратах с чистым андроидом</strong><br><a
+href="https://4pda.to/forum/index.php?s=&amp;showtopic=911999&amp;view=findpost&amp;p=75671895"
+title="Ссылка">Разблокировка загрузчика на аппаратах с чистым
+андроидом</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=141796612"
+title="Ссылка"><strong>Платная разблокировка загрузчика</strong></a> (
+не хочется ждать,разбираться, устройство не активировано и
+т.д)<br><strong>Неофициальная разблокировка загрузчика:</strong> <br>-
+<a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=46782161&amp;anchor=Spoil-46782161-1"
+title="Ссылка">Неофициальные способы обхода блокировки
+загрузчика</a><br> <br><strong>Решение проблем:</strong><br><strong>“The
+place where the account is registered does not match the place where the
+phone is sold”</strong> - <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=136961687"
+title="Ссылка">ответ</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=142560664"
+title="Ссылка">Способ привязки устройства при ограниченном мобильном
+интернете</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=136628261"
+title="Ссылка">Получение разрешения на HyperOS без ПК и обход ошибок
+“Can’t add more accounts to this SIM Card” и “Couldn’t add. Please go to
+Mi Community to apply for authorization and try again”</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=135714228"
+title="Ссылка">Разблокировка на MIUI с обходом ошибки 20045 (регистрация
+Mi аккаунта с привязкой некитайского номера)</a> + <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=135778514"
+title="Ссылка">Вариант без sms</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=136885419"
+title="Ссылка">Простой вариант обхода ошибки 20045</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=133450462"
+title="Ссылка">Исправление ошибки Unknow Error. Try again
+later(1004)</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=132078944"
+title="Ссылка">Решение ошибки <strong>“get user region err”
+ДОПОЛНЕНИЕ</strong></a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=132473570"
+title="Ссылка">Решение ошибки при установке Settings.apk</a><br> <br>-
+<a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=132424407"
+title="Ссылка">Видео инструкция как добавить номер телефона если
+привязана только почта</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=131840064"
+title="Ссылка">Опыт решения проблемы “Account application area query
+failed” и “get user region error”</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=123923183"
+title="Ссылка">Все возможные ошибки, и способы их решения.</a><br> <br>-
+<a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=119719384"
+title="Ссылка">Для тех, у кого Windows 11 и не ставится драйвер</a><br>
+<br>- <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=117187544"
+title="Ссылка">Решения проблем, если не приходят смс</a> + <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=125182340"
+title="Ссылка">Дополнение</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?s=&amp;showtopic=721838&amp;view=findpost&amp;p=106491771"
+title="Ссылка">Как самому поправить анлокер</a><br>
+<br><strong>Полезное:</strong> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=142342437"
+title="Ссылка">Региональная проверка устройств Xiaomi</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=136311849"
+title="Ссылка">Разблокировка загрузчика без использования ПК</a><br>
+<br>- <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=136274979"
+title="Ссылка">Подача заявки методом разделения экрана</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=123506094"
+title="Ссылка">Расширенный ответ, на вопрос о потере гарантии при
+разблокировки загрузчика!</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=123268139&amp;anchor=Spoil-123268139-3"
+title="Ссылка">Механизм разблокировки (эксперимент)</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?s=&amp;showtopic=721838&amp;view=findpost&amp;p=77992558"
+title="Ссылка">Видеоинструкция и другие полезные картинки</a>.<br> <br>-
+<a
+href="https://4pda.to/forum/index.php?s=&amp;showtopic=721838&amp;view=findpost&amp;p=82992165"
+title="Ссылка">Разъяснение по поводу счетчика и ограничения на 1
+устройство в месяц</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=46841189&amp;anchor=Spoil-46841189-1"
+title="Ссылка">Механизм разблокировки</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=46748517&amp;anchor=Spoil-46748517-1"
+title="Ссылка">На каких устройствах загрузчик заблокирован</a><br>
+<br># <br><strong>Архив</strong><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=128005409"
+title="Ссылка">Внимание! Новый Актуальный способ разблокировки
+загрузчика.</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=123863204"
+title="Ссылка">Разблокировка загрузчика (Актуально для HyperOS и Xiaomi
+14 серии)</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?s=&amp;showtopic=721838&amp;view=findpost&amp;p=111094022"
+title="Ссылка">Разблокировка из-под Arch Linux</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?s=&amp;showtopic=721838&amp;view=findpost&amp;p=85384193"
+title="Ссылка">Продолжение (Debian Linux/Ubuntu 64bit // MacOS 64bit //
+Windows)</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?s=&amp;showtopic=721838&amp;view=findpost&amp;p=79465553"
+title="Ссылка">Разблокировка из-под Linux/Mac</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=59896368"
+title="Ссылка">Разблокировка Redmi Note 3 Pro Special Edition с
+установкой 6.7.14 через miflash</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?s=&amp;showtopic=721838&amp;view=findpost&amp;p=69270225"
+title="Ссылка">Разблокировка из-под Linux</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=46783936"
+title="Ссылка">Читаем обязательно (неактуальная информация)</a><br>
+<br>- <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=138805223"
+title="Ссылка">Для тех, кто мучается с созданием китайского аккаунта для
+разблокировки</a> инструкция от ув. <a
+href="https://4pda.to/forum/index.php?showuser=3746849"
+title="Ссылка">chemist.hplc</a><br> <br><em><strong>По вопросам
+наполнения шапки, обращайтесь к куратору темы <a
+href="https://4pda.to/forum/index.php?showuser=545174"
+title="Ссылка">varalex</a> в QMS</strong></em><br>Сообщение
+отредактировал <a
+href="https://4pda.to/forum/index.php?showuser=545174"><strong>varalex</strong></a>
+- 27.09.26, 08:36<br>Причина редактирования: MiUnlockApp</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=1213112">devserg</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=1213112">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=devserg&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=devserg&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=768&amp;topics%5B%5D=721838&amp;source=pst&amp;username=devserg&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=45909945"
+title="Ссылка на это сообщение">#2</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+06.01.16, 11:57</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=1213112"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvwA8csPywoMMpWQfJtS6hZSVfcL8TC9jywLReE7YyilXkT.gif" /></a><br>Вопросы?
+В Гваделупу!<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Почётный
+форумчанин<br>Сообщений: 8391<br>Регистрация: 28.07.10<br><a
+href="https://4pda.to/devdb/samsung_galaxy_s24_ultra"><strong>Samsung
+Galaxy S24 Ultra SM-S928B/DS</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=1213112"
+title="Просмотреть репутацию">2368</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td># <br>FAQ-Вопрос/Ответ<br>- <strong>Что такое Bootloader(загрузчик)
+и для чего он нужен?</strong><br>- Это программа, которая запускается
+при каждом включении/перезагрузке смартфона до момента старта
+операционной системы. Bootloader проверяет установленную операционную
+систему на наличие ошибок и критических изменений, затем запускает
+её.<br>- <strong>Для чего нужна разблокировка загрузчика?</strong><br>-
+Для установки кастомных рекавери, которые в свою очередь позволяют
+оперативно устанавливать и переустанавливать систему, ставить различные
+патчи, дополнения, улучшающие работу системы, добавляющие новые
+возможности, а также для создания и последующего восстановления
+резервных копий.<br>- <strong>Почему Xiaomi его
+заблокировала?</strong><br>- Это обязательно требование Google, а также
+для сохранности ваших данных в случае потери устройства.<br>-
+<strong>Влияет ли разблокировка загрузчика на гарантию?</strong><br>-
+Ответы на данный вопрос в тех-поддержке расходятся. Более развернутый
+ответ с пояснением, находится <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=123506094"
+title="Ссылка">здесь</a><br>- <strong>При попытке привязать аккаунт к
+устройству, он вроде как привязывается, но при выходе и заходе в меню
+привязки в настройках разработчиков, все как будто
+сбрасывается.</strong><br>- Не нужно привязывать устройство больше
+одного раза. Один раз зашли, связали аккаунт с устройством и переходим к
+программе MiUnlock. Попытки связать аккаунт с устройством больше одного
+раза, могут привести к тому, что аккаунт будет временно заблокирован,
+либо же количество часов увеличится до максимального времени<br>-
+<strong>При разблокировке происходит Hard Reset/Factory Reset (Сброс
+настроек до заводских, возвращение в первоначальный вид)</strong><br>-
+На старых моделях разблокировка происходит без потери данных. Начиная с
+Mi6, Mi Note 3, Mi Mix 2, Mi Mix 2s и более свежие модели происходит
+полный сброс. Программа, в большинстве случаев, показывает
+предупреждение, если данные будут удаляться. Но попадаются версии
+программы без предупреждения!<br>- <strong>У меня показал 168/368 и т.д.
+часов, т.е. через это время я могу разблокировать
+загрузчик?</strong><br>- Да. По истечению этого времени, следуйте
+указаниям в инструкции(ях), подключаете устройство к ПК (Компьютер) и
+осуществляете разблокировку.<br>- <strong>Я прочитал “где то”, что с
+аккаунтов, с телефона и с программы, нельзя выходить. Почему? Чем все
+это закончится?</strong><br>- Выход на телефоне из аккаунта сбросит
+счётчик часов, вследствие чего придётся заново ждать то время, что
+показала программа. В программе можно выйти из Аккаунта.<br>-
+<strong>Пока идет таймер -&gt; “пользуйтесь телефоном” - что это
+значит?</strong><br>- Необязательное, но желательное действие. После
+того как программа выдала вам выждать определенное количество часов
+(168/368 и т.д.), весь этот период телефоном нужно пользоваться, во
+избежании накрутки часов, либо же остановки таймера.<br>- <strong>При
+привязке аккаунта, могу использовать интернет с другой симки? Симка, к
+которой привязываю, тоже будет в телефоне.</strong><br>- Да, можете
+использовать мобильный интернет и с другой СИМ-карты. Привязка аккаунта
+к устройству, производится только через “Мобильный интернет”. Любые
+попытки привязать с помощью Wi-Fi(Вафля, вайфай) ни к чему не приведут,
+устройство не разрешит это осуществить!<br>- <strong>Если на ми-аккаунте
+2 устройства (планшет без сим карты и телефон), то разблокировка
+загрузчика планшета никак не повлияет на телефон?</strong><br>-
+Нет.<br>- <strong>Счетчик часов можно обойти? Обязательно ждать 168
+часов? Может есть варианты какие?</strong><br>- Нет, нету, и не
+существует!<br>- <strong>Как заблокировать загрузчик
+обратно</strong><br><a
+href="https://4pda.to/forum/index.php?s=&amp;showtopic=721838&amp;view=findpost&amp;p=53179476"
+title="Ссылка">Способ 1</a>. <a
+href="https://4pda.to/forum/index.php?s=&amp;showtopic=721838&amp;view=findpost&amp;p=61710114"
+title="Ссылка">Способ 2</a>.<br>- <strong>Как проверить статус
+загрузчика на своем телефоне</strong><br><a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=49082400"
+title="Ссылка">Способ</a> через fastboot, самый надежный вариант. <a
+href="https://4pda.to/forum/index.php?s=&amp;showtopic=721838&amp;view=findpost&amp;p=52269500"
+title="Ссылка">Проверка под Linux</a>.<br>- <strong>На компьютере с
+процессором Ryzen в 99% случаев не получится разблокировать загрузчик
+из-за плохой совместимости с adb режимом.</strong><br>- Можно
+попробовать сделать <a
+href="https://4pda.to/forum/index.php?s=&amp;showtopic=987191&amp;view=findpost&amp;p=98068711"
+title="Ссылка">так</a>.<br>- <strong>Какую прошивку необходимо
+предварительно установить для разблокировки</strong><br>С <strong>начала
+2017г</strong> разблокировка успешно проходит и на
+<strong>стабильных</strong> прошивках.<br>Раньше для раблокировки
+необходимо было ставить девелоперские (еженедельные) прошивки.<br>-
+<strong>Что означает пункт “заводская разблокировка” в меню для
+разработчиков?</strong><br>- Открывает или закрывает доступ к
+загрузчику, дополнительная мера безопасности. Это НЕ разблокировка.<br>-
+<strong>Можно ли разблокировать новый (другой) телефон, если с
+ми-аккаунта уже осуществлялась разблокировка?</strong><br>- Можно.
+Количество разблокировок не ограничено. Но каждый новый телефон будет
+иметь свой счетчик времени. И на 1 аккаунт -&gt;1 телефон в календарный
+месяц, т.е. с 1 числа каждого месяца можно разблокировать следующий
+аппарат.<br>- <strong>Если заблокировать загрузчик, то при повторной
+разблокировке опять ждать счетчик?</strong><br>- Один и тот же телефон
+на одном и том же ми-аккаунте, после первой разблокировки, можно
+разблокировать хоть каждые 5 минут. Но после выхода из аккаунта и смене
+прошивки, скорее всего, будет снова счетчик.<br>- <strong>При
+разблокировке я вижу сообщение, что часть функций, в том числе “Сканер
+пальца”,“Поиск устройства”, будет недоступна.</strong><br>Немного не
+правильное толкование (вина перевода с китайского на английский и
+дальше). Функционал весь останется и будет работать. Станут слабее его
+ЗАЩИТНЫЕ свойства, т.к. появится доступ к системе и возможность
+отключать этот функционал.<br>- <strong>Смогу ли после разблокировки
+загрузчика получать ОТА обновления?</strong><br>- Разблокировка
+загрузчика никак не влияет на механизм ОТА обновлений. Как было с
+заблокированным, так же будет и с разблокированным.<br>- <strong>Я забыл
+графический ключ на вход (телефон заблокирован по mi-аккаунту) и не могу
+зайти в систему.</strong><br>- Разблокировка загрузчика не имеет
+отношения к забытому графическому ключу, установленному на вход в
+телефон, и к сработавшей “противоугонке” (блокировка по mi-аккаунту).
+Сначала разберитесь с этими проблемами, а потом разблокируйте загрузчик
+(если в этом еще есть необходимость). И никак не наоборот.<br>-
+<strong>Можно ли заблокировать загрузчик, если у меня стоит
+локализованая прошивка и TWRP?</strong><br>- Блокировка загрузчика
+возможна только на официальной прошивке (Полная стоковая/заводская
+прошивка), и родном Recovery (Рекавери).<br>- <strong>Важна ли битность
+Windows при разблокировке?</strong><br>- Не важна. Можно разблокировать
+и на 32 и на 64-битной системе. Битность иногда важна при
+прошивании.<br>- <strong>Купил телефон, а он оказался с разблокированным
+Bootloader (Загрузчиком). Как так?</strong><br>- На телефонах, идущих с
+завода с китайской прошивкой, продавцы часто патчат загрузчик для
+установки глобальной или пересобранной прошивки. Но попадаются и с
+официально разблокированным загрузчиком (через сервисный аккаунт).<br>-
+<strong>Разблокировал загрузчик, установил TWRP, Root (рут-права). А
+сейчас телефон показывает, что загрузчик заблокирован.</strong><br>-
+Если в качестве Root (Рут-прав) используется “Magisk”, то он скрывает от
+системы реальное состояние загрузчика.<br>Сообщение отредактировал <a
+href="https://4pda.to/forum/index.php?showuser=8194481"><strong>Temnik_777</strong></a>
+- 20.09.23, 00:18<br>Причина редактирования: Ошибки<br>---—————–<br>Мы
+проверили - гандоны ненадёжны, не доверяйте им! (с) “Электроника”</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=5483447">ilya0103</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=5483447">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=ilya0103&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=ilya0103&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=768&amp;topics%5B%5D=721838&amp;source=pst&amp;username=ilya0103&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=45910388"
+title="Ссылка на это сообщение">#3</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+06.01.16, 12:14</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=5483447"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvw4CGOz2TLHXomGdxKBnwtiQz284z1LbVWGrrHBAz0GcNtedp.jpg" /></a><br>Страж
+галактики<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 1941<br>Регистрация: 19.12.15<br><a
+href="https://4pda.to/devdb/samsung_galaxy_s8:snapdragon"><strong>Samsung
+Galaxy S8 Snapdragon</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=5483447"
+title="Просмотреть репутацию">642</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><strong>В данный момент процедура получения одобрения упрощена.
+Заполнять заявку не требуется. Разрешение дается автоматом. Сразу
+скачиваете анлокер и приступаете к процессу разблокировки.</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong><del>Инструкция подачи заявки на разрешение разблокировки
+загрузчика:</del> Не актуально уже</strong></p>
+<p><strong>Внимание! Если у вас возникли проблемы с получением смс,
+вылетело окно с китайским текстом или не можете войти в аккаунт, решение
+вы найдете в шапке!</strong></p>
+<p>1. Заходим на сайт <a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Fwww.miui.com%2Funlock%2F&amp;e=45910388"
+title="Ссылка">Miui (Ссылка кликабельна)</a> ( <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;st=2100&amp;view=findpost&amp;p=47865038"
+title="Ссылка">Как зайти на английскую версию сайта</a>) Прямая <a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Fen.miui.com%2Funlock%2F&amp;e=45910388"
+title="Ссылка">ссылка</a> на англоязычную страницу.</p>
+<h1 id="section"></h1>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr>
+<td><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/img-resized.png" /> 29%
+оригинала<br><a
+href="https://4pda.to/forum/dl/post/7356684/%D1%ED%E8%EC%EE%EA+%FD%EA%F0%E0%ED%E0+2016-01-06+%E2+11.45.34.jpg"
+title="Снимок экрана 2016-01-06 в 11.45.34.jpg - Размер: 58.6 КБ"><img
+src="https://4pda.to/s/QBvw6uQvYNu5bpNSz1hwNeYldYFUYxz0tdtrz0KOuba.jpg"
+alt="Прикрепленное изображение" /></a> <br>1723 x 698 (58.6 КБ)</td>
+</tr>
+</tbody>
+</table>
+<p>2. Нажимаем на единственную кнопку и попадаем на страницу
+авторизации</p>
+<h1 id="section-1"></h1>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr>
+<td><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/img-resized.png" /> 58%
+оригинала<br><a
+href="https://4pda.to/forum/dl/post/7356692/%D1%ED%E8%EC%EE%EA+%FD%EA%F0%E0%ED%E0+2016-01-06+%E2+11.47.17.jpg"
+title="Снимок экрана 2016-01-06 в 11.47.17.jpg - Размер: 30.21 КБ"><img
+src="https://4pda.to/s/QBvw0mCUz11VPpKBAvd4KETFNQZmffGwQoSwusJ7n.jpg"
+alt="Прикрепленное изображение" /></a> <br>856 x 623 (30.21 КБ)</td>
+</tr>
+</tbody>
+</table>
+<p>3. Вводим данные своей учетной записи (номер писать с +7, а не с 8)
+нажимаем на кнопку входа и попадаем на страницу с формой для
+заполнения</p>
+<h1 id="section-2"></h1>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr>
+<td><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/img-resized.png" /> 29%
+оригинала<br><a
+href="https://4pda.to/forum/dl/post/7356699/%D1%ED%E8%EC%EE%EA+%FD%EA%F0%E0%ED%E0+2016-01-06+%E2+11.50.20.jpg"
+title="Снимок экрана 2016-01-06 в 11.50.20.jpg - Размер: 91.39 КБ"><img
+src="https://4pda.to/s/QBvwBde4dz1z2fheD51hQ706rz1TFU2hrZ5246z1vBxt.jpg"
+alt="Прикрепленное изображение" /></a> <br>1725 x 831 (91.39 КБ)</td>
+</tr>
+</tbody>
+</table>
+<p>4. Заходим на <a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Ftranslate.google.ru%2F&amp;e=45910388"
+title="Ссылка">Google Translate</a>, выставляем исходный текст как
+русский, а целевой язык Китайский (упрощённый). Вводим свое имя на
+русском.</p>
+<p><strong>Если страница подачи заявки открылась на английском,
+заполняем все на английском, а не на китайском!!!</strong></p>
+<h1 id="section-3"></h1>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr>
+<td><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/img-resized.png" /> 34%
+оригинала<br><a
+href="https://4pda.to/forum/dl/post/7356713/%D1%ED%E8%EC%EE%EA+%FD%EA%F0%E0%ED%E0+2016-01-06+%E2+11.54.25.jpg"
+title="Снимок экрана 2016-01-06 в 11.54.25.jpg - Размер: 43.6 КБ"><img
+src="https://4pda.to/s/QBvw1JQHcz0vcpKhwXxIpoR0Fc5FffGQggWSdcRJJ.jpg"
+alt="Прикрепленное изображение" /></a> <br>1454 x 487 (43.6 КБ)</td>
+</tr>
+</tbody>
+</table>
+<p>5. Копируем и вставляем в первую графу своё китайское имя. На
+англоязычном сайте пишем по английски. Имя должно состоять только из
+букв, без пробелов и других знаков.</p>
+<h1 id="section-4"></h1>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr>
+<td><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/img-resized.png" /> 65%
+оригинала<br><a
+href="https://4pda.to/forum/dl/post/7356728/%D1%ED%E8%EC%EE%EA+%FD%EA%F0%E0%ED%E0+2016-01-06+%E2+11.55.56.jpg"
+title="Снимок экрана 2016-01-06 в 11.55.56.jpg - Размер: 27.5 КБ"><img
+src="https://4pda.to/s/QBvwA8ctPz0PsxWvNCslsRSi1z0Vs61qW3ji2KueD0.jpg"
+alt="Прикрепленное изображение" /></a> <br>766 x 667 (27.5 КБ)</td>
+</tr>
+</tbody>
+</table>
+<p>6. Во второй графе выбираем вашу страну (н.р. Russia(+7))</p>
+<h1 id="section-5"></h1>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr>
+<td><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/img-resized.png" /> 65%
+оригинала<br><a
+href="https://4pda.to/forum/dl/post/7356747/%D1%ED%E8%EC%EE%EA+%FD%EA%F0%E0%ED%E0+2016-01-06+%E2+11.57.44.jpg"
+title="Снимок экрана 2016-01-06 в 11.57.44.jpg - Размер: 54.75 КБ"><img
+src="https://4pda.to/s/QBvw5FctPz0Psx09lWO4KkDdJGIB3epiTz12fsDv6o.jpg"
+alt="Прикрепленное изображение" /></a> <br>769 x 662 (54.75 КБ)</td>
+</tr>
+</tbody>
+</table>
+<p>7. В третей графе пишем свой номер (на пример 9159999999)</p>
+<h1 id="section-6"></h1>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr>
+<td><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/img-resized.png" /> 65%
+оригинала<br><a
+href="https://4pda.to/forum/dl/post/7356759/%D1%ED%E8%EC%EE%EA+%FD%EA%F0%E0%ED%E0+2016-01-06+%E2+12.00.05.jpg"
+title="Снимок экрана 2016-01-06 в 12.00.05.jpg - Размер: 29.6 КБ"><img
+src="https://4pda.to/s/QBvwBNOKlgTyghBAPNyuWMz0AlIhpGz2ok0Xz2HHlXk.jpg"
+alt="Прикрепленное изображение" /></a> <br>768 x 684 (29.6 КБ)</td>
+</tr>
+</tbody>
+</table>
+<p>8. Снова заходим в <a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Ftranslate.google.ru%2F&amp;e=45910388"
+title="Ссылка">Google Translate</a> и пишем “Для установки
+локализованной версии прошивки” или что-то подобное. Да, что угодно
+можно писать.</p>
+<h1 id="section-7"></h1>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr>
+<td><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/img-resized.png" /> 34%
+оригинала<br><a
+href="https://4pda.to/forum/dl/post/7356774/%D1%ED%E8%EC%EE%EA+%FD%EA%F0%E0%ED%E0+2016-01-06+%E2+12.02.48.jpg"
+title="Снимок экрана 2016-01-06 в 12.02.48.jpg - Размер: 58.63 КБ"><img
+src="https://4pda.to/s/QBvw64oLCyQmqu5npMz2z1lknqCayNgs5w24cEXtTe.jpg"
+alt="Прикрепленное изображение" /></a> <br>1468 x 491 (58.63 КБ)</td>
+</tr>
+</tbody>
+</table>
+<p>9. Вставляем в четвёртую графу формы, ставим галочку слева от надписи
+под формой и нажимаем на зеленую кнопку.</p>
+<h1 id="section-8"></h1>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr>
+<td><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/img-resized.png" /> 66%
+оригинала<br><a
+href="https://4pda.to/forum/dl/post/7356787/%D1%ED%E8%EC%EE%EA+%FD%EA%F0%E0%ED%E0+2016-01-06+%E2+12.05.11.jpg"
+title="Снимок экрана 2016-01-06 в 12.05.11.jpg - Размер: 27.06 КБ"><img
+src="https://4pda.to/s/QBvw5z2671Xl1l2CctyUDnz0z2lMz0Z7Y2tdNbrWArun.jpg"
+alt="Прикрепленное изображение" /></a> <br>759 x 675 (27.06 КБ)</td>
+</tr>
+</tbody>
+</table>
+<p>10. Далее на указанный вами телефон придет СМС с кодом, который нужно
+будет ввести в графу. После ввода нажимаем на зеленую кнопку.</p>
+<h1 id="section-9"></h1>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr>
+<td><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/img-resized.png" /> 65%
+оригинала<br><a
+href="https://4pda.to/forum/dl/post/7356798/%D1%ED%E8%EC%EE%EA+%FD%EA%F0%E0%ED%E0+2016-01-06+%E2+12.06.41.jpg"
+title="Снимок экрана 2016-01-06 в 12.06.41.jpg - Размер: 23.44 КБ"><img
+src="https://4pda.to/s/QBvwAaz1hlADqz1fkpMlm63WgkLRytQE9anw5O6hBF.jpg"
+alt="Прикрепленное изображение" /></a> <br>765 x 562 (23.44 КБ)</td>
+</tr>
+</tbody>
+</table>
+<h1 id="section-10"></h1>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr>
+<td><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/img-resized.png" /> 26%
+оригинала<br><a
+href="https://4pda.to/forum/dl/post/7356866/Screenshot_2016-01-06-12-15-49.png"
+title="Screenshot_2016-01-06-12-15-49.png - Размер: 76.1 КБ"><img
+src="https://4pda.to/s/QBvw440poz2ylaG1Ror9fha0F6rtbNpCDMcplIfkM.png"
+alt="Прикрепленное изображение" /></a> <br>1080 x 1920 (76.1 КБ)</td>
+</tr>
+</tbody>
+</table>
+<h1 id="section-11"></h1>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr>
+<td><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/img-resized.png" /> 65%
+оригинала<br><a
+href="https://4pda.to/forum/dl/post/7356845/%D1%ED%E8%EC%EE%EA+%FD%EA%F0%E0%ED%E0+2016-01-06+%E2+12.10.34.jpg"
+title="Снимок экрана 2016-01-06 в 12.10.34.jpg - Размер: 25.31 КБ"><img
+src="https://4pda.to/s/QBvw7BS55hz1gjdLv74IJYparloxx4TdFJFKpaz1gS.jpg"
+alt="Прикрепленное изображение" /></a> <br>764 x 596 (25.31 КБ)</td>
+</tr>
+</tbody>
+</table>
+<p>Все, вы успешно подали заявку на разблокировку загрузчика! Время
+ожидания составляет 3-15 дней. В последнее время (начиная с мая) заявки
+одобряют без всяких проблем в течение 12ч-3 дней.</p>
+<p><strong>Если вам пришёл отказ, делаем <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=46842679"
+title="Ссылка">так</a></strong></p>
+<p>После того, как вам придет смс с подтверждением, следуйте <a
+href="https://4pda.to/forum/index.php?s=&amp;showtopic=708289&amp;view=findpost&amp;p=46016961"
+title="Ссылка">этой инструкции</a>. СМС с подтверждением приходят не
+всегда, т.ч. параллельно проверяйте на <a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Fmiui.com%2Funlock%2Fapply.php&amp;e=45910388"
+title="Ссылка">сайте</a> и программой анлока (она не требует установки,
+работает в портабл режиме).</p>
+<p>Некоторым аккаунтам, в основном с высокой активностью и/или входящим
+в разные девелоп-группы, разрешение дается сразу, без запроса. Т.е. при
+попытке подать заявку, перекидывает на страницу закачки программы.</p>
+<p>Сообщение отредактировал <a
+href="https://4pda.to/forum/index.php?showuser=1836683"><strong>scsichnik</strong></a>
+- 15.12.20, 06:23</p>
+<p>---—————–</p>
+<p><a href="https://4pda.ru/forum/index.php?showtopic=248440"
+title="Ссылка">Spotify Music</a> - лучший бесплатный музыкальный сервис!
+| | | | | |</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=5483447">ilya0103</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=5483447">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=ilya0103&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=ilya0103&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=768&amp;topics%5B%5D=721838&amp;source=pst&amp;username=ilya0103&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=46016961"
+title="Ссылка на это сообщение">#4</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+09.01.16, 21:31</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=5483447"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvw4CGOz2TLHXomGdxKBnwtiQz284z1LbVWGrrHBAz0GcNtedp.jpg" /></a><br>Страж
+галактики<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 1941<br>Регистрация: 19.12.15<br><a
+href="https://4pda.to/devdb/samsung_galaxy_s8:snapdragon"><strong>Samsung
+Galaxy S8 Snapdragon</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=5483447"
+title="Просмотреть репутацию">642</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><strong>Первая, устаревшая версия инструкции.</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong><del>Инструкция по разблокировке загрузчика после получения
+разрешения.</del></strong></p>
+<p><strong>Для того, чтоб разблокировать загрузчик у вас должна стоять
+еженедельная (девелоперская) версия miui!</strong></p>
+<p>Стабильные прошивки - это прошивки, номер которых начинается с 8
+(miui8), н.р. 8.3 или 8.3.1</p>
+<p>Еженедельные (девелоперские) прошивки начинаются с года, в котором
+они выпущены, на пример 6.12.24 (24 декабря 2016 года)</p>
+<p>Если аккаунт достаточно старый, можно попробовать разблокировать и на
+стабильной прошивке, но это срабатывает очень редко! Если у вас не
+выходит, то <strong>шейте еженедельную</strong>! Не нужно спамить в теме
+с просьбами помочь разблокировать на стабильной прошивке!!!</p>
+<p>Для Mi4c и Mi Note Pro, имеющих с завода НЕзаблокированный загрузчик,
+надо шить только последние China Developer Version, блокирующие
+загрузчик, и только после этого разблокировать его. И только для них,
+после установки девелопки, ожидание составляет 4-8 дней, и все это время
+программа анлока будет показывать “Current account is different from the
+account info on the device”.</p>
+<ol type="1">
+<li><p>Привязываем свой телефон к Mi аккаунту, для которого получено
+разрешение (после входа в аккаунт можно сделать какие-либо действия с
+этим аккаунтом, на пример войти и найти свой телефон на сайте <a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Fi.mi.com%2F&amp;e=46016961"
+title="Ссылка">i.mi.com</a>, это желательно сделать чтоб избежать ошибку
+на 50% разблокировки)</p></li>
+<li><p>Скачиваем и разархивируем на компьютер MiFlashUnlock (ссылка в
+шапке под спойлером “драйвера и утилиты”)</p></li>
+<li><p>При открытии программы нажимаем на кнопку “Согласиться”</p>
+<p> #</p></li>
+</ol>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr>
+<td><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/img-resized.png" /> 61%
+оригинала<br><a
+href="https://4pda.to/forum/dl/post/7379490/%D1%ED%E8%EC%EE%EA+%F4%EB%E5%F8.png"
+title="Снимок флеш.png - Размер: 27.43 КБ"><img
+src="https://4pda.to/s/QBvw2qcFw4I46bmG08iGaSi1z0z26z1DA3LgWSd6hhz2.png"
+alt="Прикрепленное изображение" /></a> <br>818 x 560 (27.43 КБ)</td>
+</tr>
+</tbody>
+</table>
+<ol start="4" type="1">
+<li><p>Далее авторизуемся под своим MI аккаунтом, на который вы получили
+разрешение.</p>
+<p> #</p></li>
+</ol>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr>
+<td><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/img-resized.png" /> 61%
+оригинала<br><a
+href="https://4pda.to/forum/dl/post/7379496/%D1%ED%E8%EC%EE%EA+%ED%EE%EC%E5%F0.png"
+title="Снимок номер.png - Размер: 85.41 КБ"><img
+src="https://4pda.to/s/QBvw4uuy47qRMDqwXxo3ANz1imYJz2ECCDMcploPMw.png"
+alt="Прикрепленное изображение" /></a> <br>819 x 560 (85.41 КБ)</td>
+</tr>
+</tbody>
+</table>
+<ol start="5" type="1">
+<li><p>Полностью выключаем телефон. Зажимаем кнопку питания и кнопку
+громкости вниз, ждем появления зайца с андроидом. Подключаем телефон к
+компьютеру и нажимаем на кнопку разблокировки и ждём.</p>
+<p> #</p></li>
+</ol>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr>
+<td><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/img-resized.png" /> 60%
+оригинала<br><a href="https://4pda.to/forum/dl/post/7377908/1.png"
+title="1.png - Размер: 29.95 КБ"><img
+src="https://4pda.to/s/QBvwA0MSx0OLjdL9z28imKa0lsDRByHPi5eeLxk2O.png"
+alt="Прикрепленное изображение" /></a> <br>840 x 560 (29.95 КБ)</td>
+</tr>
+</tbody>
+</table>
+<ol start="6" type="1">
+<li><p>Если успешно загорелись все три галочки, вы успешно
+разблокировали загрузчик, если нет, то пишите на форум и приготовьтесь к
+пинанию.</p>
+<p> #</p></li>
+</ol>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr>
+<td><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/img-resized.png" /> 60%
+оригинала<br><a href="https://4pda.to/forum/dl/post/7377909/2.png"
+title="2.png - Размер: 17.14 КБ"><img
+src="https://4pda.to/s/QBvwB3GJZyz1gjdrvdKwNeYFtAhaByHvSTKEAhcMw.png"
+alt="Прикрепленное изображение" /></a> <br>840 x 559 (17.14 КБ)</td>
+</tr>
+</tbody>
+</table>
+<ol start="7" type="1">
+<li><p>Проверяем, все ли верно, идём в настройки &gt; об устройстве, 5
+раз тыкаем на версию ядра, в появившемся списке нажимаем на первую
+строчку и внизу ищем пункт fastboot lock state, если стоит unlock, вы
+все сделали правильно, ну а если lock, то нет. Такая проверка актуальна
+только для Redmi 3, Redmi Note 3.</p>
+<p> #</p></li>
+</ol>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr>
+<td><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/img-resized.png" /> 26%
+оригинала<br><a
+href="https://4pda.to/forum/dl/post/7380709/Screenshot_2016-01-08-16-23-28_com.longcheertel.cit.png"
+title="Screenshot_2016-01-08-16-23-28_com.longcheertel.cit.png - Размер: 152.66 КБ"><img
+src="https://4pda.to/s/QBvwB3mG3J8z0fjKnorfPpO6WknTaqbB1e5bez17ba.png"
+alt="Прикрепленное изображение" /></a> <br>1080 x 1920 (152.66 КБ)</td>
+</tr>
+</tbody>
+</table>
+<p>Сообщение отредактировал <a
+href="https://4pda.to/forum/index.php?showuser=1836683"><strong>scsichnik</strong></a>
+- 15.12.20, 06:24</p>
+<p>---—————–</p>
+<p><a href="https://4pda.ru/forum/index.php?showtopic=248440"
+title="Ссылка">Spotify Music</a> - лучший бесплатный музыкальный сервис!
+| | | | | |</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=1312704">kumek</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=1312704">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=kumek&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=kumek&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=768&amp;topics%5B%5D=721838&amp;source=pst&amp;username=kumek&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=46460526"
+title="Ссылка на это сообщение">#5</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+24.01.16, 03:55</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=1312704"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvw0CqJ3ukRIz0n5bkz0jagLek2ScKBR3n1In7s53w7bpz29gN.jpg" /></a><br>Местный<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 117<br>Регистрация: 05.10.10<br><a
+href="https://4pda.to/devdb/poco_f7_ultra:16_512"><strong>POCO F7 Ultra
+12/256</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=1312704"
+title="Просмотреть репутацию">16</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td>У меня получилось подать запрос на разблокировку загрузчика вот
+небольшой ФАК:<br>- Для начала ищем прокси <a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Fspys.ru%2Fproxys%2FCN%2F&amp;e=46460526"
+title="Ссылка">ТУТ</a> (желательно HTTPS)<br>- Потом настраиваем прокси
+согласно инструкции <a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Fbest-proxies.ru%2Farticles%2Fkak-nastroit-proksi-v-google-chrome%2F&amp;e=46460526"
+title="Ссылка">ТУТ</a> , Дальше слов “Если прокси, который Вы хотите
+использовать поддерживает все протоколы, или Вы не уверены, какие именно
+протоколы он поддерживает, закройте окно, нажав кнопку ОК, иначе,
+дополнительно, выполните одно из следующих действий.” настраивать не
+нужно.<br>- Проверяем сменился ли ИП через <a
+href="https://4pda.to/stat/go?url=https%3A%2F%2F2ip.ru%2F&amp;e=46460526"
+title="Ссылка">САЙТ</a><br>- Если все нормально тогда используем
+инструкцию по подаче запроса из шапки.<br>- После получения сообщения
+что запрос отправлен не забываем отключить прокси в настройках
+сети.<br>PS. так как при китайской прокси переводчик гугл не работает,
+советую изначально скопировать имя и причину запроса в блокнот на
+китайском, чтобы потом просто перенести в форму на сайте MIUI.<br>Если у
+кого еще сработает прошу поместить способ в шапку.<br><img
+src="https://4pda.to/s/QBvw00vIDjCRvYhUwS0XdUCI6ko3sz2fAz1qRUwfTkNAOM66IR.png"
+alt="Изображение" /><br>Сообщение отредактировал <a
+href="https://4pda.to/forum/index.php?showuser=5483447"><strong>ilya0103</strong></a>
+- 26.01.16, 21:02</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=5483447">ilya0103</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=5483447">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=ilya0103&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=ilya0103&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=768&amp;topics%5B%5D=721838&amp;source=pst&amp;username=ilya0103&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=46627629"
+title="Ссылка на это сообщение">#6</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+29.01.16, 12:45</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=5483447"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvw4CGOz2TLHXomGdxKBnwtiQz284z1LbVWGrrHBAz0GcNtedp.jpg" /></a><br>Страж
+галактики<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 1941<br>Регистрация: 19.12.15<br><a
+href="https://4pda.to/devdb/samsung_galaxy_s8:snapdragon"><strong>Samsung
+Galaxy S8 Snapdragon</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=5483447"
+title="Просмотреть репутацию">642</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><strong>На данный момент уже не актуально.</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>О том, как сильно увеличить свои шансы на разблокировку
+загрузчика и подзаработать MI кредитов!</strong></p>
+<p>Так как одобрение разблокировки загрузчика зависит от множества
+факторов, его получают не все.</p>
+<p>Одним из таким фактором и наверное самым главным является участие на
+официальном форуме Xiaomi. Находится он <a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Fen.miui.com%2Fforum.php&amp;e=46627629"
+title="Ссылка">тут</a></p>
+<h1 id="section-12"></h1>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr>
+<td><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/img-resized.png" /> 32%
+оригинала<br><a
+href="https://4pda.to/forum/dl/post/7488870/%D1%ED%E8%EC%EE%EA+%FD%EA%F0%E0%ED%E0+2016-01-28+%E2+21.15.24.jpg"
+title="Снимок экрана 2016-01-28 в 21.15.24.jpg - Размер: 223.38 КБ"><img
+src="https://4pda.to/s/QBvw2CMKW1r1lYiz0hfVkdwpn5JeLFlQAQu0HHlXE.jpg"
+alt="Прикрепленное изображение" /></a> <br>1562 x 921 (223.38 КБ)</td>
+</tr>
+</tbody>
+</table>
+<p>Для того, чтоб завоевать уважение со стороны Xiaomi, нужно как
+минимум потратить пару дней на осваивание и участие в форуме</p>
+<p>Итак, для начала входим. При первом входе может попросить создать
+ник-нейм на форуме, пишем свой ник (можно от 4pda)</p>
+<p>Перед нами открывается домашняя страница форума со списком недавних
+тем от пользователей.</p>
+<h1 id="section-13"></h1>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr>
+<td><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/img-resized.png" /> 51%
+оригинала<br><a
+href="https://4pda.to/forum/dl/post/7488872/%D1%ED%E8%EC%EE%EA+%FD%EA%F0%E0%ED%E0+2016-01-28+%E2+21.32.21.jpg"
+title="Снимок экрана 2016-01-28 в 21.32.21.jpg - Размер: 204.94 КБ"><img
+src="https://4pda.to/s/QBvw08S5B3GOmIKnrwHrz03yfvrt5dhmh9MB3y2CZ.jpg"
+alt="Прикрепленное изображение" /></a> <br>990 x 922 (204.94 КБ)</td>
+</tr>
+</tbody>
+</table>
+<p>И так, как же заработать Mi кредиты (непосредственно влияют на ход
+рассмотрения заявки)?</p>
+<p>Mi кредиты начисляются по формуле: <strong>количество
+сообщений</strong> (комментариев) Х0.5 + <strong>количество
+дайджестов</strong> Х5 + <strong>опыт</strong> +
+<strong>престиж</strong> Х10 + <strong>время онлайна</strong> (часы)
+Х0.5</p>
+<p>Очки престижа начисляются за: оценку ваших тем другими пользователями
+и за комментарии ваших тем другими пользователями (точно с престижем не
+разобрался, может кто подскажет)</p>
+<p>Количество дайджестов не знаю, что это такое (подсказки в QMS)</p>
+<p>Опыт начисляется за голосование в опросе (2 очка), установка аватара
+(5 очков), оценку темы (10 очков), за написание ответа (1) и за создание
+темы (2)</p>
+<p>Стоит учесть, что у каждой этой операции есть свой ограничитель по
+количеству повторов в день (около 50)</p>
+<p>Также желательно зайти в настройки и заполнить основную информацию
+профиля, включая установку аватара</p>
+<h1 id="section-14"></h1>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr>
+<td><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/img-resized.png" /> 47%
+оригинала<br><a
+href="https://4pda.to/forum/dl/post/7488863/%D1%ED%E8%EC%EE%EA+%FD%EA%F0%E0%ED%E0+2016-01-29+%E2+12.36.51.jpg"
+title="Снимок экрана 2016-01-29 в 12.36.51.jpg - Размер: 89.28 КБ"><img
+src="https://4pda.to/s/QBvw1FIUngtasTiz0BPd29n1imYpFs0Iz1e55usJ7H.jpg"
+alt="Прикрепленное изображение" /></a> <br>1061 x 894 (89.28 КБ)</td>
+</tr>
+</tbody>
+</table>
+<p>Как мы видим, на последнем скриншоте, Xiaomi знает не только, какой у
+вас телефон, но даже и <strong>версию Miui</strong>!</p>
+<p>Что делать далее зависит только от вас, заходите в разные темы,
+пишите комментарии, лайкате, и т.п. Комментарии желательно писать на
+английском. Те, кто английский знает хорошо, попробуйте создать пару
+тем.</p>
+<p>Сообщение отредактировал <a
+href="https://4pda.to/forum/index.php?showuser=1836683"><strong>scsichnik</strong></a>
+- 06.01.22, 09:38</p>
+<p>---—————–</p>
+<p><a href="https://4pda.ru/forum/index.php?showtopic=248440"
+title="Ссылка">Spotify Music</a> - лучший бесплатный музыкальный сервис!
+| | | | | |</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=484108">OrlDim</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=484108">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=OrlDim&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=OrlDim&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=768&amp;topics%5B%5D=721838&amp;source=pst&amp;username=OrlDim&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=46690057"
+title="Ссылка на это сообщение">#7</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+31.01.16, 15:32</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=484108"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvw2CsN8opldlyOSdgOJPft0QF93mSGOyRz1ZsFKNgfKz1Wz2.jpg" /></a><br>Гуру<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 15732<br>Регистрация: 22.09.08<br><a
+href="https://4pda.to/devdb/vivo_x300_ultra:16_512_1024"><strong>vivo
+X300 Ultra 16/512/1024</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=484108"
+title="Просмотреть репутацию">2309</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td>ilya0103 @ 29.01.2016, 11:45 <a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=46627629"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><br>Как то не очень действуют советы. Я зарегистрирован на
+форуме с 2003 года, информация заполнена на 100%, телефон активирован,
+посещения на форум были, на момент отказа был в статусе голд.<br>Смс не
+приходила, на сайте висит отказ. Подал заяки ещё с 3 аккаунтов, они ждут
+одобрения более 10 дней.<br>Судя по форуму миуи, голды, диаманты
+получают отказы, а только что зарегистрированые аккаунты получают
+разрешения.<br>Вообще не понятная ситуация с разблокировкой,
+заблокировали и фиг с ним, но дайтн нормальный способ анлока как на
+Nexus или HTC<br><a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=46690131"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><strong>ilya0103,</strong><br>Вообще не понятна система
+утверждения и отказа, да и га каком основании они отказывают. Мой
+телефон, что хочу то и делаю, хочу делаю анлок, хочу выкину и тд. Если
+человек подаёт заявку, то на 98% он осознаёт, для чего это.<br>И как
+обратится повторно тоже инфы нигде нет, я допустим не хочу заводить пару
+десятков аккаунтов, но они вынуждают.<br>---—————–<br><strong>iPhone
+12:</strong><br><strong>OnePlus 15</strong></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=1064898">Sevpilot</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=1064898">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=Sevpilot&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=Sevpilot&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=768&amp;topics%5B%5D=721838&amp;source=pst&amp;username=Sevpilot&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=46690591"
+title="Ссылка на это сообщение">#8</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+31.01.16, 15:52</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=1064898"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvw1t241z1nZy7HOz2nDj0Mn2n15IOArNqImy6FWyJWOFaPm.gif" /></a><br>Местный<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[online]<br>Группа: Постоянный<br>Сообщений: 253<br>Регистрация: 27.03.10<br><a
+href="https://4pda.to/devdb/samsung_galaxy_a54:8_128_256"><strong>Samsung
+Galaxy A54 5G 6/128</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=1064898"
+title="Просмотреть репутацию">14</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td>У меня на сайте выходит так</td>
+</tr>
+</tbody>
+</table>
+<h1 id="section-15"></h1>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr>
+<td><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/img-resized.png" /> 38%
+оригинала<br><a
+href="https://4pda.to/forum/dl/post/7501616/%D1%ED%E8%EC%EE%EA.png"
+title="Снимок.png - Размер: 59.68 КБ"><img
+src="https://4pda.to/s/QBvw4OOSyJO46b0nLAfPJez1C0wFf90oEGfhJK66o.png"
+alt="Прикрепленное изображение" /></a> <br>1310 x 580 (59.68 КБ)</td>
+</tr>
+</tbody>
+</table>
+<p>а в программе MiFlashUnlock вот так</p>
+<h1 id="section-16"></h1>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr>
+<td><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/img-resized.png" /> 66%
+оригинала<br><a
+href="https://4pda.to/forum/dl/post/7501621/1%D1%ED%E8%EC%EE%EA.png"
+title="1Снимок.png - Размер: 27.5 КБ"><img
+src="https://4pda.to/s/QBvw3ROSyJO465m9va2xcvrUjtoiW7z1G370nXND0.png"
+alt="Прикрепленное изображение" /></a> <br>757 x 478 (27.5 КБ)</td>
+</tr>
+</tbody>
+</table>
+<p>sms получил 12 января и все | | | | | |</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=5483447">ilya0103</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=5483447">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=ilya0103&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=ilya0103&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=768&amp;topics%5B%5D=721838&amp;source=pst&amp;username=ilya0103&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=46690675"
+title="Ссылка на это сообщение">#9</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+31.01.16, 15:55</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=5483447"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvw4CGOz2TLHXomGdxKBnwtiQz284z1LbVWGrrHBAz0GcNtedp.jpg" /></a><br>Страж
+галактики<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 1941<br>Регистрация: 19.12.15<br><a
+href="https://4pda.to/devdb/samsung_galaxy_s8:snapdragon"><strong>Samsung
+Galaxy S8 Snapdragon</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=5483447"
+title="Просмотреть репутацию">642</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=46690591"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><strong>Sevpilot,</strong><br>Попробуй зайти из инкогнито
+на сайт их<br>---—————–<br><a
+href="https://4pda.ru/forum/index.php?showtopic=248440"
+title="Ссылка">Spotify Music</a> - лучший бесплатный музыкальный
+сервис!</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=370551">Devilsoft</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=370551">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=Devilsoft&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=Devilsoft&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=768&amp;topics%5B%5D=721838&amp;source=pst&amp;username=Devilsoft&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=46690745"
+title="Ссылка на это сообщение">#10</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+31.01.16, 15:57</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=370551"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvw37GGZz2ubjJwHV6haAncRw9l4VUxvpTQ.jpg" /></a><br>Бывалый<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 411<br>Регистрация: 17.04.08<br><a
+href="https://4pda.to/devdb/xiaomi_redmi_3s:redmi_3s_pro"><strong>Xiaomi
+Redmi 3S Prime</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=370551"
+title="Просмотреть репутацию">25</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td>Раз они видят версию прошивки, то возможно нужно ставить
+девелоперскую?<br>---—————–<br><strong>Iconbit toucan stick
+G4</strong><br><strong>Xiaomi redmi 3s</strong></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=484108">OrlDim</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=484108">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=OrlDim&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=OrlDim&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=768&amp;topics%5B%5D=721838&amp;source=pst&amp;username=OrlDim&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=46690766"
+title="Ссылка на это сообщение">#11</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+31.01.16, 15:58</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=484108"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvw2CsN8opldlyOSdgOJPft0QF93mSGOyRz1ZsFKNgfKz1Wz2.jpg" /></a><br>Гуру<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 15732<br>Регистрация: 22.09.08<br><a
+href="https://4pda.to/devdb/vivo_x300_ultra:16_512_1024"><strong>vivo
+X300 Ultra 16/512/1024</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=484108"
+title="Просмотреть репутацию">2309</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td>ilya0103 @ 31.01.2016, 14:45 <a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=46690400"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><br>Есть ощущение, что одобрение/отказ дается по
+времени<br>Если так, то это бред понейший. Тем более у меня ещё три
+аккаунта ждут результат, время подачи разное<br><a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=46690745"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><strong>Devilsoft,</strong><br>На момент отказа стояла оф
+еженедельная. Да и многим дали добро вообще без наличия
+телефона.<br>Печально, что китайцы молчат, хоть что то написали бы по
+срокам и как дальше быть отказникам, а то пишите в теме, а в теме кроме
+ругательства и просьб ничего нет<br>Сообщение отредактировал <a
+href="https://4pda.to/forum/index.php?showuser=484108"><strong>OrlDim</strong></a>
+- 31.01.16, 16:02<br>---—————–<br><strong>iPhone
+12:</strong><br><strong>OnePlus 15</strong></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=1064898">Sevpilot</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=1064898">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=Sevpilot&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=Sevpilot&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=768&amp;topics%5B%5D=721838&amp;source=pst&amp;username=Sevpilot&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=46690958"
+title="Ссылка на это сообщение">#12</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+31.01.16, 16:05</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=1064898"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvw1t241z1nZy7HOz2nDj0Mn2n15IOArNqImy6FWyJWOFaPm.gif" /></a><br>Местный<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[online]<br>Группа: Постоянный<br>Сообщений: 253<br>Регистрация: 27.03.10<br><a
+href="https://4pda.to/devdb/samsung_galaxy_a54:8_128_256"><strong>Samsung
+Galaxy A54 5G 6/128</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=1064898"
+title="Просмотреть репутацию">14</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td>вот на странице <a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Fen.miui.com%2Fthread-216442-1-1.html&amp;e=46690958"
+title="Ссылка">http://en.miui.com/thread-216442-1-1.html</a> Unlock
+bootloader XRN3 видно у кого какая прошивка стоит<br># <br><img
+src="https://4pda.to/s/QBvw7NKARFEZQJNLlZE5bVAz1TJpIqsz1z1.png"
+alt="Прикрепленное изображение" /></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=484108">OrlDim</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=484108">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=OrlDim&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=OrlDim&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=768&amp;topics%5B%5D=721838&amp;source=pst&amp;username=OrlDim&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=46691132"
+title="Ссылка на это сообщение">#13</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+31.01.16, 16:12</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=484108"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvw2CsN8opldlyOSdgOJPft0QF93mSGOyRz1ZsFKNgfKz1Wz2.jpg" /></a><br>Гуру<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 15732<br>Регистрация: 22.09.08<br><a
+href="https://4pda.to/devdb/vivo_x300_ultra:16_512_1024"><strong>vivo
+X300 Ultra 16/512/1024</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=484108"
+title="Просмотреть репутацию">2309</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=46690958"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><strong>Sevpilot,</strong><br>Да видно, но если почитать
+форум га en.miui.com да и на 4pda, народ получал разрешение на анлок не
+имея телефона на руках, то есть купили тел, пока шёл от продавца
+зарегистрировали аккаунт, подали заявку и получили положительный ответ.
+Так что не факт, что прошивка влияет. Если так, то свой отказ вообще не
+пойму, все было по феншую. Разве что аватарка не
+понравилась<br>---—————–<br><strong>iPhone
+12:</strong><br><strong>OnePlus 15</strong></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=3931888">Straniero</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=3931888">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=Straniero&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=Straniero&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=768&amp;topics%5B%5D=721838&amp;source=pst&amp;username=Straniero&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=46692464"
+title="Ссылка на это сообщение">#14</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+31.01.16, 16:56</td>
+</tr>
+<tr>
+<td>Местный<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 191<br>Регистрация: 27.12.13<br>Репутация:
+<img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=3931888"
+title="Просмотреть репутацию">10</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td>Мне тоже отказали, одному аккаунту было 6 месяцев,а другому почти 2
+года,подал ещё раз с китайского прокси,набиваю кредиты на ми форуме,пока
+надпись зеленая уже 6 день<br>---—————–<br>Xiaomi Mi Max 3/32 Miui
+Global Stable 8.1.2.0 -Teclast X98 Air 3G (C9J7) DUALBOOT</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=4373504">sicmosh</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=4373504">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=sicmosh&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=sicmosh&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=768&amp;topics%5B%5D=721838&amp;source=pst&amp;username=sicmosh&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=46699592"
+title="Ссылка на это сообщение">#15</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+31.01.16, 20:53</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=4373504"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvw1F2z1i9fz1LglPHmeCspWz1FlUz0Ez1OJmpbQz2AOouIxMHq.jpg" /></a><br>Старожил<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 1184<br>Регистрация: 28.06.14<br><a
+href="https://4pda.to/devdb/redmi_note_11_pro_4g:8_128"><strong>Redmi
+Note 11 Pro 4G 8/128</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=4373504"
+title="Просмотреть репутацию">832</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td>По комментите и поплюсуйте там на миуи форуме в разделе прошивок для
+XRN3 в моих 4х темах по портам прошивок, я со своей стороны тоже по
+плюсую ваши комменты. <br>Так быстрей наберете ми кредиты.<br>Еще
+советую помимо ника по подробней заполнить личные данные в своем
+аккаунте на форуме.<br>Проявляйте больше активности.<br>P.S. свой
+суточный лимит кредитов, только что раздал… Завтра еще поплюсую,
+отписавшим…<br>Сообщение отредактировал <a
+href="https://4pda.to/forum/index.php?showuser=4373504"><strong>sicmosh</strong></a>
+- 31.01.16, 21:43</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=2760915">Dum4G</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=2760915">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=Dum4G&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=Dum4G&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=768&amp;topics%5B%5D=721838&amp;source=pst&amp;username=Dum4G&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=46699700"
+title="Ссылка на это сообщение">#16</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+31.01.16, 20:56</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=2760915"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvwBNuL3hA279wHX2nAyCsMpGqhMnz26VmbTLXhEk51GqnK.jpg" /></a><br>Ветеран<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 1430<br>Регистрация: 02.12.12<br><a
+href="https://4pda.to/devdb/vivo_x100_pro"><strong>vivo X100
+Pro</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=2760915"
+title="Просмотреть репутацию">269</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td>Если я поставлю локализованную девелоперскую прошивку (MultiROM),
+мне дадут возможность разблокировки?<br>---—————–<br><strong>Посещать
+форум удобнее с <a
+href="https://4pda.to/forum/index.php?showtopic=820313" title="Ссылка">4
+New</a></strong></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=572534">Bugogo</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=572534">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=Bugogo&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=Bugogo&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=768&amp;topics%5B%5D=721838&amp;source=pst&amp;username=Bugogo&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=46700144"
+title="Ссылка на это сообщение">#17</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+31.01.16, 21:11</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=572534"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvw7JCz2ZBYiiNs9R1JMk3Uhsz0x3oBMXZMQTL1xcAVuVCz0g.jpg" /></a><br>Генератор
+мысли, ветеран<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 432<br>Регистрация: 10.12.08<br>Репутация:
+<img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=572534"
+title="Просмотреть репутацию">122</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td>ваах @ 31.01.2016, 20:10 <a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=46698242"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><br>На оф сайте пишут через месяц после отказа повторно
+заявку подать можно, а пока типо набивайте ми кредиты<br>Я видел у них
+эту инфу, она пришла отсюда. Откуда она тут, не знаю.<br><a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=46699592"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><strong>sicmosh,</strong> пошёл флудить и плюсовать. Уже
+список вкладок с темами не помещается в окно.<br>---—————–<br>Разобрал и
+не собрал!</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=1437629">P@TROL</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=1437629">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=P%40TROL&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=P%40TROL&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=768&amp;topics%5B%5D=721838&amp;source=pst&amp;username=P%40TROL&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=46701928"
+title="Ссылка на это сообщение">#18</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+31.01.16, 22:10</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=1437629"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvw5xz1oLj7SydHmmq8ykF6sZeG9Z04CERduCUhkUTz0MRPm.jpg" /></a><br>Местный<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 121<br>Регистрация: 31.01.11<br><a
+href="https://4pda.to/devdb/redmi_note_7:4_64"><strong>Redmi Note 7
+3/32</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=1437629"
+title="Просмотреть репутацию">104</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td>Straniero @ 31.01.2016, 21:46 <a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=46701166"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><br>Чтобы поднять быстрей рейтинг,нужно
+голосовать,напишите там в поиске “vote” за каждый голос дают 2
+кредита<br>Только стоит ограничение на 10 опросов, остальные не
+учитываются. То бишь в день можно получить 20 кредитов за участие в
+опросах.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=572534">Bugogo</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=572534">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=Bugogo&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=Bugogo&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=768&amp;topics%5B%5D=721838&amp;source=pst&amp;username=Bugogo&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=46702617"
+title="Ссылка на это сообщение">#19</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+31.01.16, 22:34</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=572534"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvw7JCz2ZBYiiNs9R1JMk3Uhsz0x3oBMXZMQTL1xcAVuVCz0g.jpg" /></a><br>Генератор
+мысли, ветеран<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 432<br>Регистрация: 10.12.08<br>Репутация:
+<img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=572534"
+title="Просмотреть репутацию">122</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=46702229"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><strong>sicmosh,</strong> а ещё раз можно темы лайкать или
+только по 1 лайку на пост перманентно? У меня тоже кончилась десятка в
+день.</td>
+</tr>
+</tbody>
+</table>
+<p>Чувак Алмазный, с кучем медалей жаловался на 5 отказов <img
+src="https://4pda.to/s/QBvw6bKkUH2vpW1/smile_good.gif" alt=":)" /></p>
+<p>Там уже выяснили почему отказы идут:</p>
+<h1 id="section-17"></h1>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr>
+<td><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/img-resized.png" /> 63%
+оригинала<br><a
+href="https://4pda.to/forum/dl/post/7504134/delme-191450sqm2k2ow5e2oeoqk.jpg"
+title="delme-191450sqm2k2ow5e2oeoqk.jpg - Размер: 169.87 КБ"><img
+src="https://4pda.to/s/QBvw6Ko4bkz0z09TiVz18iG4C4bdcPEr6z0sStuTli7n.jpg"
+alt="Прикрепленное изображение" /></a> <br>800 x 447 (169.87 КБ)</td>
+</tr>
+</tbody>
+</table>
+<p>Сообщение отредактировал <a
+href="https://4pda.to/forum/index.php?showuser=572534"><strong>Bugogo</strong></a>
+- 31.01.16, 22:35</p>
+<p>---—————–</p>
+<p>Разобрал и не собрал! | | | | | |</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=1402267">Creeepy</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=1402267">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=Creeepy&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=Creeepy&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=768&amp;topics%5B%5D=721838&amp;source=pst&amp;username=Creeepy&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=46703247"
+title="Ссылка на это сообщение">#20</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+31.01.16, 22:56</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=1402267"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvwACz12fvDEPcDZvXvEofXZyl1hFoqhLxRcZiSyw7bJFn6P.jpg" /></a><br>Вне
+классификации<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 875<br>Регистрация: 02.01.11<br><a
+href="https://4pda.to/devdb/oppo_find_x9_ultra:16_1024"><strong>OPPO
+Find X9 Ultra 16/1024</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=1402267"
+title="Просмотреть репутацию">112</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td>За несколько дней догнал статус до бриллиантового. Толку от этого -
+ноль. Мне кажется, что в этом вопросе проявляется китайский менталитет:
+по большому счету им на всех наплевать, хоть и постоянно мило улыбаются
+- полная противоположность славянскому менталитету )))<br>Когда я
+покупал телефон, то четко осознавал, что русского языка не будет (тогда
+еще не знал про локализаторов), когда таки поставил русскую прошивку -
+обрадовался, а потом и привык )))<br>Вообще Сяоми не нацелена на
+постсоветсткий рынок, как я понимаю, поэтому приходится только ждать
+анлок и верить )))) <br>У меня далеко не сразу удалось послать запрос на
+разблокировку, поэтому жду всего 5 дней… А учитывая, что у них там
+праздники, продолжить говорить о чем-то можно будет только с первого
+марта. <img src="https://4pda.to/s/QBvw6bKkUH2vpW1/suicide.gif"
+alt=":suicide:" /><br>Да. Тут еще такой момент. Ну, разблокируем мы
+телефоны, по крайней мере, какая-то часть из нас, но стратегия наших
+ромоделов-локализаторов пока не ясна. что будут делать они и будут ли
+работать с MIUI для Xiaomi - не ясно….<br>Сообщение отредактировал <a
+href="https://4pda.to/forum/index.php?showuser=1402267"><strong>Creeepy</strong></a>
+- 31.01.16, 22:59<br>---—————–<br>Sony Ericsson k500 -&gt; Sony Ericsson
+P1 -&gt; Sony Ericsson x10 mini pro -&gt; Motorola Atrix 2 -&gt; HTC One
+M7 -&gt;Xiaomi Mi Note Pro -&gt;<br>Huawei Mate 9 -&gt; Huawei P20 -&gt;
+Huawei Mate 20 X -&gt; Honor magic 9 pro -&gt; Oppo find x9 ultra</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=450617">Stalkerus</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=450617">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=Stalkerus&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=Stalkerus&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=768&amp;topics%5B%5D=721838&amp;source=pst&amp;username=Stalkerus&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=findpost&amp;p=46703448"
+title="Ссылка на это сообщение">#21</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+31.01.16, 23:04</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=450617"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvw04KQmCez0BX7oIVKYUonBcvtDfHFz1pUEz20WeenLfqEu3.jpg" /></a><br>Good
+Day to Die<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 6430<br>Регистрация: 14.08.08<br><a
+href="https://4pda.to/devdb/redmi_k30_pro"><strong>Redmi K30
+Pro</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=450617"
+title="Просмотреть репутацию">747</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=46703247"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><strong>Creeepy,</strong><br>Ну как и делали так и будут
+делать, только для тех у кого разлоченый бут<br><strong>Добавлено
+31.01.2016, 23:04:</strong><br><a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=46703426"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><strong>crocodil2,</strong><br>Там насколько знаю щас с
+подменой бута.<br>---—————–<br>Xiaomi Mi 9 TE 8/256/ K30 Pro 8/256
+|</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=768">Xiaomi</a></p>
+<p><strong>Куратор: <a
+href="https://4pda.to/forum/index.php?showuser=545174">varalex</a></strong></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td>4700 страниц <img
+src="https://4pda.to/s/QBvwSn7Gya4VltbRAer1WUSuGEo4z1Lrz2sCl4JAz2F5NK0Wv6XMP9hKT.gif"
+alt="V" />1<a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;st=20"
+title="2">2</a><a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;st=40"
+title="3">3</a><a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;st=60"
+title="4">4</a><a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;st=80"
+title="5">5</a><a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;st=100"
+title="6">6</a><a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;st=20"
+title="Следующая страница">&gt;</a><a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;st=93980"
+title="На последнюю страницу">»</a><br>Перейти к странице</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr>
+<td></td>
+<td><a
+href="https://4pda.to/forum/index.php?act=mb&amp;mb=1"><strong>Мобильная
+версия</strong></a> <a
+href="https://4pda.to/forum/lofiversion/index.php?t721838.html"><strong>Текстовая
+версия</strong></a></td>
+<td>Сейчас: 21.11.26, 07:17</td>
+</tr>
+</tbody>
+</table>
+<p>© 4PDA 2005-2026 г. Все права защищены.</p>
+<p>4PDA® - зарегистрированный товарный знак.</p>
+<p><a href="https://4pda.to/copyright_notice/">Условия использования
+информации</a>  |  <a href="https://4pda.to/disclaimer/">Отказ от
+ответственности</a>  |   <a href="https://4pda.to/advert/"
+title="Размещение рекламы"><strong>Размещение рекламы</strong></a></p>
+<p><a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Fwww.ibresource.ru%2F">Форум</a>
+<a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Fwww.invisionboard.com%2F">IP.Board</a>
+© 2026  <a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Fwww.invisionpower.com%2F">IPS,
+Inc</a>.</p>
+<p><a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Ftwitter.com%2F4pdaru"
+title="Следуйте за нами в Twitter">Следуйте за нами в Twitter</a><a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Fvk.com%2F4pdaru"
+title="Официальная группа 4pda">Официальная группа 4pda</a><a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Ft.me%2Freal4pda"
+title="Официальный канал в Telegram">Официальный канал в Telegram</a><a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Fwww.youtube.com%2Fuser%2F4pdaRU"
+title="Наш канал на YouTube">Наш канал на YouTube</a></p>
+<p><a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Fwww.liveinternet.ru%2Fclick"><img
+src="https://counter.yadro.ru/hit?t14.11;rhttps%3A//4pda.to/forum/index.php%3Fshowtopic%3D721838;s1920*1080*24;uhttps%3A//4pda.to/forum/index.php%3Fshowtopic%3D721838;0.4959649502394631" /></a></p>
+</body>
+</html>
