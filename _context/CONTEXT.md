@@ -1,5 +1,7 @@
 # begonia-research — shared context pack (2026-11-21, JST)
 
+> **Post-wave access update (2026-11-21):** The early XDA/Anubis “blocked” notes below describe the worker's first fetch attempts, **not the final access status**. Hermes later captured the live XDA megathread first page (40 posts), XDA unlock/DT/MTK threads and Nura pages via Brave, plus selected 4PDA spoiler texts via the authenticated owner's browser. See [_context/HUMAN-ASSISTS.md](HUMAN-ASSISTS.md) and files in `_cache/` / `archive/`. **Coverage remains selective**; captures are not all pages or attachments. Try a real browser on bot walls before declaring inaccessible.
+
 Research-only task. DO NOT flash anything, do not run untrusted scripts, do not download ROM images.
 Deliverable: files in `/Users/danielviktorovich/begonia-research/` (UTF-8 Markdown/CSV/JSON, English).
 Every subagent writes ONLY its assigned files, plus appends source records to the shared sources log.
