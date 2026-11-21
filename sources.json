@@ -1,7 +1,7 @@
 {
  "generated": "2026-11-21",
  "record_semantics": "One record per unique source URL. observed_at = when WE last looked (research day; no intraday times were logged). source_last_change_observed = the source's OWN last-change date AS EXPOSED at observation (repo push, page/oldid/snapshot date, thread last-post date) or null when the source exposed nothing date-like. These are observations, not guarantees: any source may have changed after observed_at.",
- "count": 186,
+ "count": 189,
  "sources": [
   {
    "id": "xda-unlock-guide-3995919",
@@ -2274,6 +2274,40 @@
     "16 root recipes"
    ],
    "notes": "web-preview t.me/s/ readable as guest; related: @RedmiNote8ProOfficial @wuxinboys @begoniadump @danascapeprojects"
+  },
+  {
+   "url": "https://github.com/TTTT555/device_xiaomi_begonia",
+   "title": "TTTT555/device_xiaomi_begonia — device tree (A9)",
+   "type": "github-repo",
+   "observed_at": "2026-11-21",
+   "source_last_change_observed": null,
+   "used_for": [
+    "02 device-tree inventory",
+    "09 battery model"
+   ],
+   "notes": "found via plain web_search after prior NF; battery 4500 mAh in README"
+  },
+  {
+   "url": "https://github.com/begonia-dev-space/android_device_redmi_begonia",
+   "title": "begonia-dev-space device tree (A9)",
+   "type": "github-repo",
+   "observed_at": "2026-11-21",
+   "source_last_change_observed": null,
+   "used_for": [
+    "02"
+   ],
+   "notes": "via web_search"
+  },
+  {
+   "url": "https://github.com/xiaomi-begonia-dev/android_device_redmi_begonia",
+   "title": "xiaomi-begonia-dev device tree (A9)",
+   "type": "github-repo",
+   "observed_at": "2026-11-21",
+   "source_last_change_observed": null,
+   "used_for": [
+    "02"
+   ],
+   "notes": "via web_search"
   }
  ]
 }
