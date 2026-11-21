@@ -5,7 +5,7 @@ Read FIRST: _context/REQUIREMENTS.md (rows 33, 37), _context/CONTEXT.md, 00-READ
 04 (component IDs + gaps), 06 (why Halium works), 07 (host matrix: mtkclient native on macOS), 08 (P0/P1/P2 roadmap),
 13 (extras: F_HID=y, ath9k_htc monitor recipe, AkameKernel), 14 (mainline gaps per tree).
 Owner facts you MUST honor: Ghidra 12.1.4 + Craft Anything installed on his Mac (verified 2026-11-21);
-AkameKernel (github Anonym3310) = HIS OWN old kernel work, he has account access; original MIUI 12.5 fastboot ROM
+AkameKernel = a TRUSTED FIRST-PARTY kernel asset with private maintainer access (identity withheld from public docs); original MIUI 12.5 fastboot ROM
 = ground truth where everything works. ≤22 tool calls. English; titled links; verified/inferred + confidence;
 research-only: no flashing, no executing untrusted binaries; artifacts >50MB stay OUT of the repo.
 
@@ -33,7 +33,7 @@ per kalpakprod + heavy userspace), sensors glue, battery/charging (MT6360), touc
 Structured answer: fix UT on Halium-10 first → Halium-11 (AgentFabulous android-11.0 base) → mainline (pmOS
 path) with RE filling gaps — OR jump straight to newer stacks? Give a reasoned recommendation with effort
 estimates per stage, the 'Mali driver precedent' (panfrost pushed via RE + upstreaming) as the model for
-'reverse-engineer what does not work', and what AkameKernel's resurrection adds (owner-owned kernel: refresh
+'reverse-engineer what does not work', and what AkameKernel's resurrection adds (first-party kernel: refresh
 toolchain, KSU-Next/SUSFS, monitor-mode patches from 13 — a first-party testbed for kernel experiments).
 
 ### Section 4 — Test-resource checklist
