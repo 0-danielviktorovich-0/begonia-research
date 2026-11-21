@@ -101,9 +101,7 @@ Web preview note: `t.me/s/<channel>` is readable as guest — no joining require
   or via the ROM's own instructions.
 - **Modern A16 custom ROMs** → the ROM's bundled kernel root path (Evolution X-style: KSU-enabled
   kernel + matching manager); do NOT mix kernels across ROM bases.
-- **Undetectability needs (banking)** → kernel-level (KSU-Next+SUSFS or APatch-class) with a matching
-  kernel build — on begonia today that means Suzaku-based ROMs or a self-built kernel from
-  Nova-Kernels/cvnertnc template; no turnkey APatch/SukiSU guide exists for this device yet.
+- **Kernel-level root and filesystem experiments** → KernelSU-Next+SUSFS, APatch-class and NoMount each need a compatible build plus rollback. **None guarantees undetectability, banking-app support or Play Integrity.** For mount providers and their tradeoffs see [21-NOMOUNT-MOUNT-BACKENDS-RU.md](21-NOMOUNT-MOUNT-BACKENDS-RU.md); NoVA offers a concrete control case with/without KSU.
 - **Never** flash boot.img/recovery from a different firmware generation (MIUI10↔11 hard-brick rule) [V-verbatim].
 
 ## 5. Not-found ledger (searched, 2026-11-21)
