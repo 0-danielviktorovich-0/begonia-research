@@ -1,6 +1,6 @@
 # HUMAN-ASSISTS — pages only a human browser can open (2026-11-21)
 
-Agents could not access these (bot-walls survived browser + alternates). Даниил offered to pass checks
+Agents could not access these (bot-walls survived browser + alternates). The repo owner offered to pass checks manually
 manually. **How to help:** open the URL in your normal browser, wait out the challenge, then
 `Ctrl+S / Cmd+S` → "Web page, complete" into `archive/human/<same-slug>.html` inside the repo
 (autosync will push it). One sitting covers all rows.
