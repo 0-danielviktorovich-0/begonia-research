@@ -45,3 +45,22 @@ Safety images already on host: nvram/nvdata/nvcfg/persist/boot (A14-era, taken 2
   regional discipline) — pick after checking the adaptation README's install section + t.me/begonia_linux.
 - Droidian rootfs edition (bullseye vs trixie-era) matching the 2024-09 adaptation debs.
 - Whether halium-boot builds exist as CI artifacts (avoid local build for Phase 1; build only in Phase 2).
+
+
+## Update 2026-11-22 (owner decision: 4.14 now, 4.19 when ready; halium version question answered)
+
+- **Owner's halium-version question** ("why old halium when new exists"): the adaptation layer is the
+  bottleneck, not the halium number. Halium-14 expects an **A14 vendor** + generic-system-style setup;
+  begonia has **no halium-14 adaptation** — porters spent years building the halium-10 one (Droidian:
+  working mic/camera). The Axion **A16 vendor** would need a halium-16-era hybris — no ecosystem.
+  Staged answer: halium-10 now (adaptation exists) → halium-14 research as Phase C (we own the RE).
+- **Kernel-config jackpot**: the running Axion 4.19.325 kernel exposes `/proc/config.gz` — captured on
+  device (`begonia-flash/logs-axion/axion-4.19.325-config.txt`, 5500 lines): **CONFIG_ASHMEM=y,
+  BINDER_IPC/BINDERFS=y with "binder,hwbinder,vndbinder", OVERLAY_FS=y** already set — the future 4.19
+  halium kernel is config-wise 90% ready. Public 4.19 trees: LOS-24.0 (4.19.325), mtkpapa/Sakurajima07
+  (4.19.324); the exact `st20-PoWeR+` build source is not identified yet (registered).
+- **Host build workspace ready**: `~/halium-build/kernels/` — `saikrishna-4.14.357` (1.4G, Phase B
+  target), `halium-ref-4.14.141` (1.2G, droidian reference halium patches), `los-4.19.325` (1.5G,
+  future 4.19). Next: docker build container + halium.fragment drafting against the reference tree.
+- Skill created: **halium-kernel-patching** (ladder A/B/C, config checklist, docker build, fastboot-boot
+  iteration loop).
