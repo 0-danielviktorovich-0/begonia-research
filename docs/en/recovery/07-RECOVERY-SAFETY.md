@@ -255,3 +255,33 @@ Verbatim method: dead brick (LED only, no fastboot/recovery/vibration, PC sees *
 These are MIUI-10/11-era guides (2020 edits); they document the historical Magisk-19.4 path and confirm:
 per-firmware boot.img discipline, Close AVB2.0, and the no-teardown MTK unbrick route (battery drain +
 fastboot) — consistent with [mtkclient](https://github.com/bkerler/mtkclient) as the modern replacement.
+
+
+## N.2 Live flash session: MIUI-era A14 LOS → Axion 2.9 NOESIS (owner device, 2026-11-22T00:45+09:00)
+
+The audit's conditional-unbrick discipline (§N.1, [17](17-INDEPENDENT-AUDIT.md) A03) held in practice:
+read-only preflight first ([18](18-DEVICE-PREFLIGHT-READONLY.md) pattern via adb), then one write step at a time.
+
+- Preflight found: A14 LOS-lineage ROM on **4.14.336-perf** (2024-07-16 build), vendor fp spoofing
+  **MIUI V12.5.5.0.RGGMIXM**, `ro.boot.flash.locked=1`/`verifiedbootstate=green` — **both spoofed by the
+  custom ROM, not proof of a locked bootloader** (custom ROM on MT6785 implies unlocked BL); battery 92%.
+- Package: `axion-2.9-NOESIS-20261115-OFFICIAL-PICO-begonia.zip` (2,076,910,857 B; SHA256
+  `2aa00f3a21bd16ad29a03d0a266c3603e057841b535c067a21d7c7c4a627c861`; `unzip -t` clean). Recovery-flashable
+  (SignApk, brotli system/vendor via `block_image_update`, **non-A/B**), device-assert `begonia`,
+  **self-sufficient**: bundles per-region firmware (preloader_ufs[_in], audio_dsp, cam_vpu1-3; target FW
+  **V12.5.8.0.RGGMIXM**) and its own `twrp.img` — the updater-script flashes them itself ("Flashing begonia
+  (Global) Firmware...", "Flashing Prebuilt Recovery...").
+- Flow that worked (official [Axion wiki](https://github.com/AxionAOSP/official_devices/blob/main/Wiki/begonia.md)
+  clean-install sequence): TWRP dd-backups (nvram/nvdata/nvcfg/persist/boot → pulled to host) → push zip →
+  Advanced Wipe system/vendor/dalvik/cache (**data kept until after flash so the zip survives on /sdcard**)
+  → `twrp install` (script succeeded 1.000000) → reboot to **new recovery (product string changes
+  `twrp_begonia` → `omni_begonia`!)** → **Format Data** (in omni recovery: "Wipe data/factory reset") →
+  boot. First boot OK; on-device verification: Android 16, `ro.axion.build.version=2.9`, build
+  `BP4A.251205.006`, kernel **`4.19.325-cip136-st20-PoWeR+`** — a real 4.19 on the device, see the
+  device-verified row in [kernel-root-provenance.csv](kernel-root-provenance.csv).
+- Operational gotchas recorded for the next session: the device drops off USB entirely on every
+  transition into recovery (fix: replug + re-enumerate); in sideload mode `adb shell` is unavailable
+  (only `adb sideload`) — exit sideload before any shell work; the new recovery's product string is
+  `omni_begonia`, so don't mistake it for a wrong flash.
+- Root on this ROM: not applied yet; the Evolution X KSU recipe ([16 §2.2](16-ROOT-METHODS.md)) is
+  ROM-specific — for Axion, check the ROM's own notes before flashing any kernel.
