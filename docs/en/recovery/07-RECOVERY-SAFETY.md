@@ -227,7 +227,7 @@ Mined + re-fetched 2026-11-21 (guest view; threads verified from in-page links: 
 ## N.1 Verbatim: RU step-by-step guides captured with owner login (2026-11-21T14:55Z)
 
 Human-queue items resolved: the owner logged into 4PDA; spoiler contents of both guides captured
-full-text ([cache]( _cache/) + [archive/human-4pda-90018812-spoilers-full.html](../../../archive/human-4pda-90018812-spoilers-full.html),
+full-text ([cache](../../../_cache/) + [archive/human-4pda-90018812-spoilers-full.html](../../../archive/human-4pda-90018812-spoilers-full.html),
 [archive/human-4pda-90501329-spoilers-full.html](../../../archive/human-4pda-90501329-spoilers-full.html)).
 
 ### [p=90018812](https://4pda.to/forum/index.php?showtopic=965629&view=findpost&p=90018812) — TWRP+ROOT(Magisk)+GPay (MIUI10/11, by =NIKAS=)
