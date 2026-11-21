@@ -244,11 +244,14 @@ def audit_migration() -> None:
         if source.endswith(".json") and source == "sources.json":
             baseline = json.loads(old_content).get("sources", [])
             current_sources = json.loads(new_content).get("sources", [])
-            previous = {r["id"]: r["url"] for r in baseline}
-            updated = {r["id"]: r["url"] for r in current_sources}
-            lost_ids = [(i,u) for i,u in previous.items() if updated.get(i) != u]
-            if lost_ids:
-                error(f"source catalog lost/altered IDs or URLs: {lost_ids[:8]}")
+            previous_urls = {r["url"] for r in baseline}
+            current_urls = {r["url"] for r in current_sources}
+            lost_urls = previous_urls - current_urls
+            old_ids = {r["id"]: r["url"] for r in baseline if r.get("id")}
+            current_ids = {r["id"]: r["url"] for r in current_sources if r.get("id")}
+            changed_ids = [(i, u) for i, u in old_ids.items() if current_ids.get(i) != u]
+            if lost_urls or changed_ids:
+                error(f"source catalog lost URLs/altered old IDs: URLs={list(lost_urls)[:8]}, IDs={changed_ids[:8]}")
         if source.endswith(".json") and source == "index.json":
             before = {r.get("topic") or r.get("id") for r in json.loads(old_content).get("topics", [])}
             after = {r["topic"] for r in json.loads(new_content).get("topics", [])}
