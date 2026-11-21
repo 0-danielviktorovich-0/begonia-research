@@ -1,10 +1,10 @@
 # 01 — Sources: consolidated index (begonia-research)
 
-Machine twin: [sources.json](sources.json) (one record per unique URL, deduped from the append-only research log; **244 records**). Every record is **observation-anchored** (REQUIREMENTS row 36): `observed_at` = when we last looked (research day 2026-11-21), `source_last_change_observed` = the source's own last-change date **as exposed** at that moment (repo push, page/snapshot date, thread page date) or `null` when the source exposed nothing date-like — never guessed. **These are observations, not guarantees:** any source may have changed after `observed_at`.
+Machine twin: [sources.json](../../../data/catalog/sources.json) (one record per unique URL, deduped from the append-only research log; **244 records**). Every record is **observation-anchored** (REQUIREMENTS row 36): `observed_at` = when we last looked (research day 2026-11-21), `source_last_change_observed` = the source's own last-change date **as exposed** at that moment (repo push, page/snapshot date, thread page date) or `null` when the source exposed nothing date-like — never guessed. **These are observations, not guarantees:** any source may have changed after `observed_at`.
 
 Rendered per entry as: *As of 2026-11-21, the last change observed in this source was \<date\>* — or *no source-side change date was exposed*.
 
-Legend: **credibility** high/medium/low per the [evidence contract](_context/CONTEXT.md); **used by** = deliverable files whose claims rest on this source (02 firmware, 03 kernel, 04 hardware, 05 Ubuntu Touch, 06 pmOS/Droidian, 07 recovery/safety, 10 guide index, 13/14 extensions). Historical threads retain their original dates.
+Legend: **credibility** high/medium/low per the [evidence contract](../../../_context/CONTEXT.md); **used by** = deliverable files whose claims rest on this source (02 firmware, 03 kernel, 04 hardware, 05 Ubuntu Touch, 06 pmOS/Droidian, 07 recovery/safety, 10 guide index, 13/14 extensions). Historical threads retain their original dates.
 
 
 ## 1. Primary forum threads & pinned guides (4PDA / XDA)
@@ -108,7 +108,7 @@ MiCode drops, Android kernel forks, mainline MT6785 trees, and mainline-kernel d
 
 ## 5. ROM / device / vendor / manifest trees (per-ROM inventory)
 
-Development trees per ROM family from [02 §7](02-FIRMWARE-HISTORY.md); also UEFI (Mu-Silicium) and TWRP device trees.
+Development trees per ROM family from [02 §7](../android/02-FIRMWARE-HISTORY.md); also UEFI (Mu-Silicium) and TWRP device trees.
 
 - [Vendor blobs mirror](https://github.com/AndroidBlobs/vendor_redmi_begonia) — search (topics/begonia hit, not branch-listed) · credibility **medium** · “As of 2026-11-21, no source-side change date was exposed” · used by: —
 - [Axion device tree begonia (axion/bka/vic)](https://github.com/AxionAOSP-devices/android_device_redmi_begonia) — verified-direct (ls-remote) · credibility **high** · “As of 2026-11-21, no source-side change date was exposed” · used by: —
@@ -235,14 +235,14 @@ Lower-tier signals: Telegram channel logs, StackExchange, UBports forum sentimen
 
 ## 9. Census-only source classes (probe results without full log records)
 
-Classes verified during the source census ([_context/SOURCE-CENSUS.md](_context/SOURCE-CENSUS.md)); each was probed live 2026-11-21 and is a standing crawl class for future research. Community-mirror classes are **untrusted until hash-checked** (research-only: nothing downloaded).
+Classes verified during the source census ([_context/SOURCE-CENSUS.md](../../../_context/SOURCE-CENSUS.md)); each was probed live 2026-11-21 and is a standing crawl class for future research. Community-mirror classes are **untrusted until hash-checked** (research-only: nothing downloaded).
 
 - [SourceForge — miui-greeshan-repack begonia folder](https://sourceforge.net/projects/miui-greeshan-repack/files/MIUI/Xiaomi-Redmi-Note-8-Pro-begonia/) — regional MIUI repacks (community mirror, untrusted content).
 - [SourceForge — begoniadump](https://sourceforge.net/projects/begoniadump/) — partition dumps (community mirror, untrusted).
 - [SourceForge — begonia-projects](https://sourceforge.net/projects/begonia-projects/) — misc device projects (community mirror, untrusted).
-- [SourceForge — TWRP-DYNAMIC-ORANGE-RECOVERY-BEGONIA](https://sourceforge.net/projects/oneplus8t-brp-twrp-recovery) — OrangeFox-style dynamic recovery builds (untrusted mirror; feed for [07 §3.0](07-RECOVERY-SAFETY.md)).
-- [AndroidFileHost — begonia folder, flid=339073](https://www.androidfilehost.com/?w=files&flid=339073) — legacy + 2023 artifacts incl. the Bliss OS 16.9 native builds ([02 §3.11](02-FIRMWARE-HISTORY.md), firmware-matrix.csv row).
-- [AndroidFileHost — begonia Schematic.rar by TUSER HP](https://www.androidfilehost.com/?fid=8889791610682869402) — board-schematic-class artifact, untrusted, not downloaded (feed for [04](04-HARDWARE-DRIVERS.md)/[07 §4](07-RECOVERY-SAFETY.md)).
+- [SourceForge — TWRP-DYNAMIC-ORANGE-RECOVERY-BEGONIA](https://sourceforge.net/projects/oneplus8t-brp-twrp-recovery) — OrangeFox-style dynamic recovery builds (untrusted mirror; feed for [07 §3.0](../recovery/07-RECOVERY-SAFETY.md)).
+- [AndroidFileHost — begonia folder, flid=339073](https://www.androidfilehost.com/?w=files&flid=339073) — legacy + 2023 artifacts incl. the Bliss OS 16.9 native builds ([02 §3.11](../android/02-FIRMWARE-HISTORY.md), firmware-matrix.csv row).
+- [AndroidFileHost — begonia Schematic.rar by TUSER HP](https://www.androidfilehost.com/?fid=8889791610682869402) — board-schematic-class artifact, untrusted, not downloaded (feed for [04](../kernels/04-HARDWARE-DRIVERS.md)/[07 §4](../recovery/07-RECOVERY-SAFETY.md)).
 - [GSMarena — Xiaomi Redmi Note 8 Pro](https://www.gsmarena.com/xiaomi_redmi_note_8_pro-9812.php) — spec cross-check class.
 - [romdevelopers.com](https://www.romdevelopers.com/) — "begonia NvRam"/"begonia Dump" paid-service listings (2.61 GB dumps; class evidence only, NOT citable for procedures).
 - [forum.gsmhosting — begonia flashing success logs](https://forum.gsmhosting.com/vbb/f296/xiaomi-redmi-note-8-pro-begonia-flashing-success-2937215) — SP Flash flow logs (repair-shop ecosystem, low-medium).
@@ -252,13 +252,13 @@ Classes verified during the source census ([_context/SOURCE-CENSUS.md](_context/
 
 ## 10. Limitations (what could NOT be read, and why)
 
-- **Live xdaforums.com is bot-walled** (bunny.net challenge; tested 3× with fetcher and headless browser) — all XDA records above resolve to Wayback snapshots; XDA threads [t=3999013](https://xdaforums.com/t/resources-device-tree-for-redme-note-8-pro.3999013/) and [t=4428577](https://xdaforums.com/t/mtk-client-bootloader-unlock.4428577/) have **no snapshot** ([_context/HUMAN-ASSISTS.md](_context/HUMAN-ASSISTS.md) rows 6-7).
-- **gitlab.nura.eco / wiki.nura.eco** sit behind an Anubis bot-check for raw pages; facts were taken from the GitLab REST API JSON ([archive/files/](archive/files)) and the extractor; rendered pages pending human assist (HUMAN-ASSISTS rows 1-2).
+- **Live xdaforums.com is bot-walled** (bunny.net challenge; tested 3× with fetcher and headless browser) — all XDA records above resolve to Wayback snapshots; XDA threads [t=3999013](https://xdaforums.com/t/resources-device-tree-for-redme-note-8-pro.3999013/) and [t=4428577](https://xdaforums.com/t/mtk-client-bootloader-unlock.4428577/) have **no snapshot** ([_context/HUMAN-ASSISTS.md](../../../_context/HUMAN-ASSISTS.md) rows 6-7).
+- **gitlab.nura.eco / wiki.nura.eco** sit behind an Anubis bot-check for raw pages; facts were taken from the GitLab REST API JSON ([archive/files/](../../../archive/files)) and the extractor; rendered pages pending human assist (HUMAN-ASSISTS rows 1-2).
 - **4PDA** blocks plain curl (HTTP 403) but passes our server-side extractor; spoiler-block content is dropped by text extraction, and **attachment downloads are registration-walled** — never registered; such files are cited by URL only (REQUIREMENTS row 23).
 - **web.archive.org is blocked for `web_extract`** in this sandbox (curl works) — Wayback snapshots were pulled with curl.
-- **GitHub REST API** unauthenticated pool exhausts fast — `git ls-remote` + `raw.githubusercontent.com` preferred; a few per-branch commit dates are missing ([03 §7](03-KERNEL-HISTORY.md)).
+- **GitHub REST API** unauthenticated pool exhausts fast — `git ls-remote` + `raw.githubusercontent.com` preferred; a few per-branch commit dates are missing ([03 §7](../kernels/03-KERNEL-HISTORY.md)).
 - **Registration-walled downloads** (4PDA attachments, XDA downloads) and **multi-GB binaries** (ROMs, dumps, schematic .rar) are intentionally not in the repo; fetch URLs are cited in the deliverables.
-- Several mirror pages expose **no machine-readable last-change marker** (search snippets, API JSON without pushed_at) — their stamps are honestly `null` in [sources.json](sources.json).
+- Several mirror pages expose **no machine-readable last-change marker** (search snippets, API JSON without pushed_at) — their stamps are honestly `null` in [sources.json](../../../data/catalog/sources.json).
 - One-day run: observations are anchored to **2026-11-21**; nothing was re-verified after that date.
 
 
@@ -267,23 +267,23 @@ Classes verified during the source census ([_context/SOURCE-CENSUS.md](_context/
 
 ## Independent additions — root, NoMount and 4.19 (2026-11-21)
 
-The canonical machine list [sources.json](sources.json) now contains **206 unique URLs**. The eight newly indexed primary sources below were read directly or retrieved from their official GitHub repository pages on 2026-11-21. Their source-side modification dates are recorded only where explicit; source availability and runtime compatibility may change.
+The canonical machine list [sources.json](../../../data/catalog/sources.json) now contains **206 unique URLs**. The eight newly indexed primary sources below were read directly or retrieved from their official GitHub repository pages on 2026-11-21. Their source-side modification dates are recorded only where explicit; source availability and runtime compatibility may change.
 
-- [NoMount — original VFS redirection framework](https://github.com/maxsteeel/nomount) — primary project README; [21](21-NOMOUNT-MOUNT-BACKENDS-RU.md).
-- [NoMount release v2.3.1](https://github.com/maxsteeel/nomount/releases/tag/v2.3.1) — released 2026-11-19; driver protocol v23, self-reported performance improvements; [21](21-NOMOUNT-MOUNT-BACKENDS-RU.md).
-- [Mountify — OverlayFS metamodule](https://github.com/backslashxx/mountify) — real-mount backend and explicit kernel config prerequisites; [21](21-NOMOUNT-MOUNT-BACKENDS-RU.md).
-- [Hybrid Mount](https://github.com/Hybrid-Mount/meta-hybrid_mount) — per-path Overlay/Magic/VFS backends and provider compatibility; [21](21-NOMOUNT-MOUNT-BACKENDS-RU.md).
-- [KernelSU reference meta-overlayfs](https://github.com/KernelSU-Modules-Repo/meta-overlayfs) — developer reference implementation, not a compatibility guarantee; [21](21-NOMOUNT-MOUNT-BACKENDS-RU.md).
-- [MT6785 active 4.19 kernel tree](https://github.com/xiaomi-mt6785-dev/android_kernel_xiaomi_mt6785) — `lineage-24.0` Linux 4.19.325, same observed head SHA as the LineageOS MT6785 mirror; [20](20-KERNEL-419-ROOT-ECOSYSTEM-RU.md).
-- [KernelSU official metamodule specification](https://kernelsu.org/guide/metamodule.html) — mount architecture, one-active-metamodule rule; [21](21-NOMOUNT-MOUNT-BACKENDS-RU.md).
-- [APatch official FAQ](https://apatch.dev/faq.html) — direct kernel-patching approach versus Magisk and KernelSU; [21](21-NOMOUNT-MOUNT-BACKENDS-RU.md).
+- [NoMount — original VFS redirection framework](https://github.com/maxsteeel/nomount) — primary project README; [21](../../ru/kernels/21-NOMOUNT-MOUNT-BACKENDS-RU.md).
+- [NoMount release v2.3.1](https://github.com/maxsteeel/nomount/releases/tag/v2.3.1) — released 2026-11-19; driver protocol v23, self-reported performance improvements; [21](../../ru/kernels/21-NOMOUNT-MOUNT-BACKENDS-RU.md).
+- [Mountify — OverlayFS metamodule](https://github.com/backslashxx/mountify) — real-mount backend and explicit kernel config prerequisites; [21](../../ru/kernels/21-NOMOUNT-MOUNT-BACKENDS-RU.md).
+- [Hybrid Mount](https://github.com/Hybrid-Mount/meta-hybrid_mount) — per-path Overlay/Magic/VFS backends and provider compatibility; [21](../../ru/kernels/21-NOMOUNT-MOUNT-BACKENDS-RU.md).
+- [KernelSU reference meta-overlayfs](https://github.com/KernelSU-Modules-Repo/meta-overlayfs) — developer reference implementation, not a compatibility guarantee; [21](../../ru/kernels/21-NOMOUNT-MOUNT-BACKENDS-RU.md).
+- [MT6785 active 4.19 kernel tree](https://github.com/xiaomi-mt6785-dev/android_kernel_xiaomi_mt6785) — `lineage-24.0` Linux 4.19.325, same observed head SHA as the LineageOS MT6785 mirror; [20](../../ru/kernels/20-KERNEL-419-ROOT-ECOSYSTEM-RU.md).
+- [KernelSU official metamodule specification](https://kernelsu.org/guide/metamodule.html) — mount architecture, one-active-metamodule rule; [21](../../ru/kernels/21-NOMOUNT-MOUNT-BACKENDS-RU.md).
+- [APatch official FAQ](https://apatch.dev/faq.html) — direct kernel-patching approach versus Magisk and KernelSU; [21](../../ru/kernels/21-NOMOUNT-MOUNT-BACKENDS-RU.md).
 
 These are source-index observations, **not evidence that any given 4.19 kernel, NoMount or root method has been validated on the owner's phone**.
 
 
 ## Independent follow-up — kernel forward-port, pmOS Wi-Fi and payments (2026-11-21)
 
-The canonical [sources.json](sources.json) currently indexes **244 unique URL records**. The six additional records below distinguish direct reading of upstream code/docs from **author-reported hardware results**, which have not been independently reproduced on the owner's phone.
+The canonical [sources.json](../../../data/catalog/sources.json) currently indexes **244 unique URL records**. The six additional records below distinguish direct reading of upstream code/docs from **author-reported hardware results**, which have not been independently reproduced on the owner's phone.
 
 - [Third-party Linux 6.16.4 begonia pmOS build](https://github.com/criollojoel10/begonia-pmos-tianma) — author and logs report Wi-Fi success on 2026-09-27 using vendor `wlan_gen4m` + WMT firmware. **Not upstream-native mt76; not validated by this reviewer**.
 - [Google official Play Integrity verdicts](https://developer.android.com/google/play/integrity/verdicts) — BASIC/DEVICE/STRONG levels and OS/vendor security-patch rules.
@@ -292,18 +292,18 @@ The canonical [sources.json](sources.json) currently indexes **244 unique URL re
 - [Reverse Engineer Anything example upstream](https://github.com/axpie/reverse-engineer-anything) — inspect exact skill/tool source before installing.
 - [Redmi Note 8 Pro public updates](https://t.me/s/RedmiNote8ProUpdates) — author self-report of experimental begonia 4.19; exact source commit/build/hardware validation still missing.
 
-For interpretation and source-specific limitations see [22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md](22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md).
+For interpretation and source-specific limitations see [22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md](../../ru/kernels/22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md).
 
 
 ## Follow-up: Linux 4.19 begonia author and date correction (2026-11-21)
 
-The canonical [sources.json](sources.json) currently indexes **209 distinct URLs**. The additional **three** references record [@Saikrishna1504's GitHub profile](https://github.com/Saikrishna1504), his [public Telegram contact](https://t.me/saikrishna1504) and a [TG.ME channel archive index](https://tg.me/redminote8proupdates) of the [public Redmi Note 8 Pro UPDATES post](https://t.me/s/RedmiNote8ProUpdates).
+The canonical [sources.json](../../../data/catalog/sources.json) currently indexes **209 distinct URLs**. The additional **three** references record [@Saikrishna1504's GitHub profile](https://github.com/Saikrishna1504), his [public Telegram contact](https://t.me/saikrishna1504) and a [TG.ME channel archive index](https://tg.me/redminote8proupdates) of the [public Redmi Note 8 Pro UPDATES post](https://t.me/s/RedmiNote8ProUpdates).
 
 The author claims working Linux 4.19 on begonia and invites testers. **November 17, 2026** is the likely date shown by the **third-party aggregator**, not a verified primary Telegram timestamp. Previous references to **September 2026** for this particular 4.19 announcement were incorrect. Do **not** confuse it with the independently separate **September 27, 2026** Wi-Fi report in the experimental Linux 6.16.4 postmarketOS fork. Full provenance, missing post ID/attached screenshot and an unsent source request: [23-419-TELEGRAM-OUTREACH.md](23-419-TELEGRAM-OUTREACH.md).
 
 
 ## New source stack audit — Saikrishna1504 (2026-11-21)
 
-The canonical [sources.json](sources.json) now contains **244 unique URL records** (35 new URLs in this source-stack pass after deduplication). The public account search returned 103 repositories; **21 relevant, historical or misleading projects** were classified in [saikrishna-source-inventory.csv](saikrishna-source-inventory.csv). The evidence-led [English report 24](24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md) and [Russian digest](docs/ru/24-saikrishna-source-audit.md) document six **Nov 13–15, 2026** device-specific 4.19 migration commits, first-party [device tree](https://github.com/Saikrishna1504/device_redmi_begonia/tree/axion), [vendor](https://github.com/Saikrishna1504/vendor_redmi_begonia), [firmware bundle](https://github.com/Saikrishna1504/vendor_redmi_begonia-firmware) and [audio/IMS/camera patchsets](https://github.com/Saikrishna1504/device_redmi_begonia/tree/axion/blob-patches).
+The canonical [sources.json](../../../data/catalog/sources.json) now contains **244 unique URL records** (35 new URLs in this source-stack pass after deduplication). The public account search returned 103 repositories; **21 relevant, historical or misleading projects** were classified in [saikrishna-source-inventory.csv](../../../data/matrices/saikrishna-source-inventory.csv). The evidence-led [English report 24](24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md) and [Russian digest](../../ru/research/24-saikrishna-source-audit.md) document six **Nov 13–15, 2026** device-specific 4.19 migration commits, first-party [device tree](https://github.com/Saikrishna1504/device_redmi_begonia/tree/axion), [vendor](https://github.com/Saikrishna1504/vendor_redmi_begonia), [firmware bundle](https://github.com/Saikrishna1504/vendor_redmi_begonia-firmware) and [audio/IMS/camera patchsets](https://github.com/Saikrishna1504/device_redmi_begonia/tree/axion/blob-patches).
 
 **Not independently established:** complete source code for the announced 4.19 kernel, exact `vendor/begonia.config` fragment, successful flash/boot on the owner's begonia, and rights to redistribute proprietary firmware/Smali payloads. The [published mt6785 source manifest](https://github.com/Saikrishna1504/local_manifests/blob/udc/mt6785.xml) still points to 4.14-main kernel even as the axion device tree expects k419; report 24 explicitly records this discrepancy rather than inventing a source tree.
