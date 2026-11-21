@@ -4,7 +4,7 @@
 Reports, per file, URLs that appear as plain text (not wrapped in a titled markdown link).
 Exit code 1 if any bare URL is found in the target files (useful as a CI/pre-commit gate).
 
-Usage: python3 audit_bare_urls.py [paths...]   (default: *.md at repo root + _context/*.md)
+Usage: python3 audit_bare_urls.py [paths...]   (default: README.md, docs/**/*.md and _context/*.md)
 """
 import re
 import sys
@@ -25,8 +25,8 @@ def audit(path: str):
 
 def main(paths):
     files = []
-    for p in (paths or ["*.md", "_context/*.md", "archive/*.md"]):
-        files.extend(glob.glob(p))
+    for p in (paths or ["README.md", "docs/en/**/*.md", "docs/ru/**/*.md", "_context/*.md"]):
+        files.extend(glob.glob(p, recursive=True))
     files = sorted(set(files))
     total_bare = 0
     for f in files:

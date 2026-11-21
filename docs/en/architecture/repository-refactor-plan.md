@@ -1,6 +1,6 @@
 # Repository architecture RFC 001 — clean root, bilingual knowledge base and durable evidence
 
-**Status: PROPOSED / NOT YET MIGRATED.** Research snapshot: 2026-11-21.  
+**Status: CORE MIGRATION IMPLEMENTED IN A REVIEW BRANCH (2026-11-21); archive/cache/agent directory relocation DEFERRED.** Research snapshot: 2026-11-21.  
 **Languages:** [English (source)](repository-refactor-plan.md) · [Русский (summary)](../../ru/architecture/repository-refactor-plan.md).  
 **Repository:** [begonia-research](https://github.com/0-danielviktorovich-0/begonia-research).
 

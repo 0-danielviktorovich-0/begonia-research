@@ -52,10 +52,10 @@ def git_blob(path: str) -> str | None:
 
 catalog = load_json("i18n/catalog.json")
 topics = load_json("i18n/topics.json")
-canonical = load_json("index.json")
+canonical = load_json("data/catalog/index.json")
 
 for path in [
-    "README.md", "README.ru.md", "docs/en/README.md", "docs/ru/README.md",
+    "README.md", "docs/ru/overview.md", "docs/en/index.md", "docs/ru/index.md",
     "i18n/README.md", "i18n/TERMINOLOGY.md"
 ]:
     check_path(path, "required navigation")
@@ -131,13 +131,20 @@ def check_markdown_links(relative: str) -> None:
             errors.append(f"{relative}:{line}: broken local Markdown link to {target}")
 
 
-localized = ["README.md", "README.ru.md", "docs/en/README.md", "docs/ru/README.md",
+localized = ["README.md", "docs/ru/overview.md", "docs/en/index.md", "docs/ru/index.md",
              "i18n/README.md", "i18n/TERMINOLOGY.md"]
-localized += [str(p.relative_to(ROOT)) for p in (ROOT / "docs/en").glob("*.md")]
-localized += [str(p.relative_to(ROOT)) for p in (ROOT / "docs/ru").glob("*.md")]
+localized += [str(p.relative_to(ROOT)) for p in (ROOT / "docs/en").rglob("*.md")]
+localized += [str(p.relative_to(ROOT)) for p in (ROOT / "docs/ru").rglob("*.md")]
 for path in sorted(set(localized)):
     if (ROOT / path).exists():
         check_markdown_links(path)
+
+migration = load_json("data/catalog/path-migrations.json")
+for entry in migration.get("entries", []):
+    if entry.get("status") == "moved":
+        check_path(entry["new_path"], "migration destination")
+        if (ROOT / entry["old_path"]).exists():
+            errors.append("obsolete path still exists: " + entry["old_path"])
 
 if warnings:
     for warning in warnings:

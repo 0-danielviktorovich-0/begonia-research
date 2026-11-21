@@ -51,3 +51,7 @@ This is the primary international entry point for the Redmi Note 8 Pro (begonia,
 Search by *concept* (e.g. bootloader, загрузчик, preloader), by *component* (e.g. MT6359, NT36672A, wlan_gen4m), or by *stable topic ID* in the bilingual [topic index](../../i18n/topics.json). The canonical technical identifiers and evidence links are not translated. Machine-readable source data: [sources.json](../../data/catalog/sources.json), [index.json](../../data/catalog/index.json), [firmware-matrix.csv](../../data/matrices/firmware-matrix.csv), [kernel-matrix.csv](../../data/matrices/kernel-matrix.csv).
 
 For contributions and translation review follow the [localization rules](../../i18n/README.md), [controlled terminology](../../i18n/TERMINOLOGY.md) and [translation status catalog](../../i18n/catalog.json). Every translation must state its original source revision, review state and limitations.
+
+## Upstream kernel verification (2026)
+
+[Git-SHA-pinned begonia ROM and kernel source audit](research/begonia-kernel-and-rom-evidence-2026-11.md) — directly compares WuXing90, Saikrishna1504 and AxionAOSP. 

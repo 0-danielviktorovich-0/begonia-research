@@ -5,15 +5,13 @@ on:
     branches: [main]
     paths:
       - 'i18n/**'
-      - 'docs/en/**'
-      - 'docs/ru/**'
+      - 'docs/**'
+      - 'data/**'
+      - '_context/**'
       - 'README.md'
-      - 'README.ru.md'
-      - 'INDEX.md'
-      - 'index.json'
+      - 'NOTICE.md'
       - 'tools/check_i18n.py'
       - '.github/workflows/i18n-check.yml'
-      - '[0-9][0-9]-*.md'
   pull_request:
   workflow_dispatch:
 
@@ -31,5 +29,5 @@ jobs:
           persist-credentials: false
       - name: Python version
         run: python3 --version
-      - name: Check localized index, links and source revisions
+      - name: Validate bilingual references and source revisions
         run: python3 tools/check_i18n.py
