@@ -174,3 +174,8 @@ https://github.com/kalpakprod/mt6785-linux — created 2026-11-15, pushed **2026
 1. "Stock kernel 4.14.141" (UBports page) vs MiCode drops: 4.14.141 is the **Q-drop** sublevel; the shipping A9 device was 4.14.94-era and the final OEM drop was 4.14.186. Refinement, not a contradiction [V].
 2. pmOS wiki "mainline=yes" vs "no mt6785 in Linus master": both true — pmOS means *mainline-based fork with out-of-tree MT6785 support* [V].
 3. Context-pack "kernel-xiaomi-mt6785 last 2026-07-08" ✓ consistent with API (tip commit 2026-07-09T02:08+03:00 = 2026-07-08 UTC) [V].
+
+
+### 6.5 Fresh lead: community v4.19 port by @Saikrishna1504 (2026-11-21T14:05Z)
+
+[Channel post 2026-11-17](https://t.me/RedmiNote8ProUpdates/1657) (verbatim): "I've managed to properly port the v4.19 kernel… Things seem stable so far… What's new in v4.19? Better memory management, Easier BPF maintenance, New scheduler, Native C2 support, Native UClamp support… Also fixed the long-standing video playback issues… I've managed to get VoWiFi, ViLTE and stock MIUI Camera working on custom ROMs too. If anyone's interested in testing, let me know." [V-quote, high]. Status: **testing phase; tree/repo link not published in the post** (author maintains the active LOS-24.0 mt6785 kernel tree, §2.2). Impact if it ships: modern 4.19 with VoWiFi on custom ROMs — relevant to [05-UBUNTU-TOUCH.md](05-UBUNTU-TOUCH.md) (IMS) and [08-DEVELOPMENT-ROADMAP.md](08-DEVELOPMENT-ROADMAP.md) P0/P1. Not yet in any ROM release; watch the channel.

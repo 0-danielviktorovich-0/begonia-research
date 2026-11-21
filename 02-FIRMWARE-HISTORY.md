@@ -319,3 +319,8 @@ Per-ROM kernel (inferred): begonia-dev kernel @matching 11.0–14.0 branch for A
 5. Evolution X org renamed Evolution-X-Devices → Evolution-XYZ-Devices; only A10-era (`ten`) begonia trees present.
 6. web_extract refused github.com this session ("private or internal network address" — false positive); ls-remote/raw/HTML-curl used instead.
 7. `MaloyBegonia` crDroid tree references vendor repo `vendor_redmi_begonia` without owner; not found under that owner on GitHub.
+
+
+### 7.16 Telegram ROM-updates hub (freshness source, 2026-11-21T14:05Z)
+
+[@RedmiNote8ProUpdates](https://t.me/RedmiNote8ProUpdates) is the live release hub; web-preview `t.me/s/` readable as guest (snapshot: [archive/human-tg-redminote8proupdates-preview.html](archive/human-tg-redminote8proupdates-preview.html)). Releases visible there that post-date parts of this file: [Evolution X 11.6.2 A16 QPR2 (2026-03-23)](https://t.me/RedmiNote8ProUpdates/1613), [Lunaris-AOSP 3.8→3.12 EOL (2026-09-18)](https://t.me/RedmiNote8ProUpdates/1656), [LineageOS v23.2 A16 UNOFFICIAL (2026-03-30; XDA t=4783655)](https://t.me/RedmiNote8ProUpdates/1616), [MistOS 4.5 A16 (2026-04-07)](https://t.me/RedmiNote8ProUpdates/1617). Related channels: [@RedmiNote8ProOfficial](https://t.me/RedmiNote8ProOfficial) (chat), [@wuxinboys](https://t.me/wuxinboys) (wuxinG90 builds + Unified-TWRP), [@begoniadump](https://t.me/begoniadump) (support/SourceForge), [@danascapeprojects](https://t.me/danascapeprojects) (LOS support). For anything newer than this file's rows, the channel posts are the primary release notes.
