@@ -1,0 +1,2658 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.13" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>4PDA 974421 Custom ROMs — page 1 (offline extract)</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      color: light-dark(#1a1a1a, #fdfdfd);
+      background-color: #fdfdfd;
+      background-color: light-dark(#fdfdfd, #1a1a1a);
+      color-scheme: light dark;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        color-scheme: light only;
+      }
+      html, body, pre, code {
+        background-color: transparent;
+      }
+      body, a, a:visited, blockquote {
+        color: black;
+      }
+      pre, code {
+        padding: 0;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a, a:visited {
+      color: inherit;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid;
+      border-color: #e6e6e6;
+      border-color: light-dark(#e6e6e6, #4c4c4c);
+      color: #606060;
+      color: light-dark(#606060, #b6b6b6);
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid currentColor;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid currentColor;
+      border-bottom: 1px solid currentColor;
+    }
+    th {
+      border-top: 1px solid currentColor;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">4PDA 974421 Custom ROMs — page 1 (offline
+extract)</h1>
+</header>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a href="https://4pda.to/"><img
+src="https://4pda.to/s/QBvwTo0Sg7Yu99XlUmM92x8cRfPHWHoZctz08xTSoK2z2R6XwZtz0uw.png"
+alt="4PDA" /></a></td>
+<td><a href="https://4pda.to/2026/11/21/2806557/"><img
+src="https://4pda.to/s/QBvw5Vs7WwHmX68dYZ4I4MG2O3mu3Xz0472gJ5im1lITE5lIZAB3AkWPo.jpg" /></a><br><img
+src="https://4pda.to/s/QBvwBV8ybqB1FwLuuz1nLIuPGBtz1.gif" /></td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://4pda.to/forum/index.php?act=Help">Помощь</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?act=boardrules">Правила</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247">Поиск</a></p>
+<p>Искать только в этом форуме</p>
+<p>Результаты в виде тем</p>
+<p><a href="https://4pda.to/forum/index.php?act=search">Дополнительные
+параметры</a></p>
+<p><a href="https://4pda.to/forum/index.php?showtopic=974421#"
+title="Закрыть окно">[X]</a></p>
+<p>Помощник</p>
+<p><img
+src="https://4pda.to/s/QBvwVEgr0Wz1yP0HDDz0OO3uOIcUgz2G09wcejfkhutegeEwWDh.gif"
+alt="Загрузка. Пожалуйста, подождите…" />Загрузка. Пожалуйста,
+подождите…</p>
+<p><strong>Здравствуйте, гость</strong> ( <a
+href="https://4pda.to/forum/index.php?act=auth&amp;return=https%3A%2F%2F4pda.to%2Fforum%2Findex.php%3Fshowtopic%3D974421">Вход</a>
+| <a
+href="https://4pda.to/forum/index.php?act=auth&amp;return=https%3A%2F%2F4pda.to%2Fforum%2Findex.php%3Fshowtopic%3D974421#reg">Регистрация</a>
+)</p>
+<p><a href="https://4pda.to/forum/?showforum=281&amp;utm_source=ftmenu"
+title="Android">Android</a> <a
+href="https://4pda.to/forum/?showforum=295&amp;utm_source=ftmenu"
+title="iOS">iOS</a> <a
+href="https://4pda.to/forum/?showforum=442&amp;utm_source=ftmenu"
+title="Другие платформы">Другие</a> <a
+href="https://4pda.to/forum/?utm_source=ftmenu"
+title="Полезные ссылки">Полезное</a> <a
+href="https://4pda.to/devdb/?utm_source=ftmenu"
+title="DevDB - каталог устройств">Устройства</a> <a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Fdevfaq.ru%2F%3Futm_source%3Dftmenu"
+title="DevFAQ - база знаний об устройствах">База знаний</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=282&amp;utm_source=ftmenu"
+title="Первая помощь по Android">Первая помощь</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=283&amp;utm_source=ftmenu"
+title="FAQ по Android">FAQ</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showtopic=112220&amp;utm_source=ftmenu"
+title="Программы для Android">Программы</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=213&amp;utm_source=ftmenu"
+title="Игры для Android">Игры</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=139&amp;utm_source=ftmenu"
+title="Устройства Apple">Устройства</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=142&amp;utm_source=ftmenu"
+title="Первая помощь по iPod Touch, iPhone и iPad">Первая помощь</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=144&amp;utm_source=ftmenu"
+title="FAQ по iPod Touch, iPhone iPad">FAQ</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=140&amp;utm_source=ftmenu"
+title="Программы для iPod Touch, iPhone b iPad">Программы</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=141&amp;utm_source=ftmenu"
+title="Игры для iPod Touch, iPhone и iPad">Игры</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=4&amp;utm_source=ftmenu"
+title="Обсуждение кнопочных телефонов (раскладушек, слайдеров, моноблоков), программ, игр.">Кнопочные
+телефоны</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=48&amp;utm_source=ftmenu"
+title="Раздел для увлекающихся Фотографией. Делимся опытом съемки, выбора фотоаппарата.">Фото</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=103&amp;utm_source=ftmenu"
+title="Вопросы, ответы и советы по плеерам, медиа-приставкам, ТВ и проекторам.">Мультимедийные
+устройства</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=279&amp;utm_source=ftmenu"
+title="Обсуждение устройств для чтения электронных книг.">Электронные
+книги</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=645&amp;utm_source=ftmenu"
+title="Обсуждение игровых консолей и игр">Игровые консоли</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=635&amp;utm_source=ftmenu"
+title="Головные Устройства, МФУ">Автомобильные устройства</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=763&amp;utm_source=ftmenu"
+title="Обсуждения носимых устройств.">Носимая электроника</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=817&amp;utm_source=ftmenu"
+title="Обсуждаем, все, что связано с видеосъемкой">Видео</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=910&amp;utm_source=ftmenu"
+title="Умный дом, устройства с дистанционным управлением, скутеры и квадрокоптеры, пылесосы, весы и пр. гаджеты.">Устройства
+для дома и развлечений</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showtopic=117392&amp;view=findpost&amp;p=2728692&amp;utm_source=ftmenu"
+title="10 заповедей новичка">10 заповедей новичка</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showtopic=89878&amp;utm_source=ftmenu"
+title="FAQ по форуму">FAQ по форуму</a></p>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=373&amp;utm_source=ftmenu"
+title="Сообщить об ошибке">Сообщить об ошибке</a></p>
+<p><a href="https://4pda.to/devdb/phones/?utm_source=ftmenu"
+title="Коммуникаторы">Телефоны</a></p>
+<p><a href="https://4pda.to/devdb/pad/?utm_source=ftmenu"
+title="Планшеты">Планшеты</a></p>
+<p><a href="https://4pda.to/devdb/ebook/?utm_source=ftmenu"
+title="Электронные книги">Электронные книги</a></p>
+<p><a href="https://4pda.to/devdb/smartwatch/?utm_source=ftmenu"
+title="Смарт часы">Смарт часы</a></p>
+<p><img src="https://4pda.to/s/QBvw4PU7JGSOtr8gnJdnKrOubP5IHbG243Ri.gif"
+alt="&gt;" /><a
+href="https://4pda.to/forum/index.php?act=idx">4PDA</a> &gt; <a
+href="https://4pda.to/forum/index.php?showforum=281">Android</a> &gt; <a
+href="https://4pda.to/forum/index.php?showforum=268">Android -
+Прошивки</a> &gt; <a
+href="https://4pda.to/forum/index.php?showforum=1247">Redmi</a></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td>1234 страниц <img
+src="https://4pda.to/s/QBvwSn7Gya4VltbRAer1WUSuGEo4z1Lrz2sCl4JAz2F5NK0Wv6XMP9hKT.gif"
+alt="V" />1<a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;st=20"
+title="2">2</a><a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;st=40"
+title="3">3</a><a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;st=60"
+title="4">4</a><a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;st=80"
+title="5">5</a><a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;st=100"
+title="6">6</a><a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;st=20"
+title="Следующая страница">&gt;</a><a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;st=24660"
+title="На последнюю страницу">»</a><br>Перейти к странице</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr>
+<td><img
+src="https://4pda.to/s/QBvwVMPCCQMBRpNT3a7ZAlftdIcM1vRs2hA2vCH.gif"
+alt="&gt;" /><strong>Redmi Note 8 Pro - Неофициальные прошивки</strong>
+| [Смартфон][Note-series]</td>
+<td></td>
+<td><a
+href="https://4pda.to/forum/index.php?showtopic=974421#topicoptions">Опции</a><img
+src="https://4pda.to/s/QBvwSn7Gya4VltbRAer1WUSuGEo4z1Lrz2sCl4JAz2F5NK0Wv6XMP9hKT.gif"
+alt="V" /><br><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/menu_item.gif"
+alt="V" /><a
+href="https://4pda.to/forum/index.php?act=Print&amp;client=printer&amp;f=1247&amp;t=974421">Версия
+для печати</a><br><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/menu_item.gif"
+alt="V" /><a
+href="https://4pda.to/forum/index.php?act=Print&amp;client=choose&amp;f=1247&amp;t=974421">Скачать
+тему</a></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=2733256">Xakep1993</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=2733256">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=Xakep1993&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=Xakep1993&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=974421&amp;source=pst&amp;username=Xakep1993&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=91427572"
+title="Ссылка на это сообщение">#1</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+01.12.19, 12:50</td>
+</tr>
+<tr>
+<td>Тихий ядерщик<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[online]<br>Группа: Постоянный<br>Сообщений: 9474<br>Регистрация: 23.11.12<br><a
+href="https://4pda.to/devdb/t_mobile_revvl_7_pro"><strong>Revvl 7
+Pro</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=2733256"
+title="Просмотреть репутацию">1131</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><strong>Redmi Note 8 Pro - Неофициальные прошивки</strong><br><img
+src="https://4pda.to/s/QBvwNohDxfUWAHqkY0M6RupI6EYB2DKl7Rpw0WgwrVPrmHsX.png"
+alt="Изображение" />begonia<br><a
+href="https://4pda.to/devdb/redmi_note_8_pro"
+title="Ссылка">Описание</a> | <a
+href="https://4pda.to/forum/index.php?showtopic=963868"
+title="Ссылка">Обсуждение</a> <a
+href="https://4pda.to/forum/index.php?showtopic=963868&amp;view=getnewpost"
+title="Ссылка">»</a> | <a
+href="https://4pda.to/forum/index.php?showtopic=964251"
+title="Ссылка">Покупка</a> <a
+href="https://4pda.to/forum/index.php?showtopic=964251&amp;view=getnewpost"
+title="Ссылка">»</a> | <a
+href="https://4pda.to/forum/index.php?showtopic=966126"
+title="Ссылка">Аксессуары</a> <a
+href="https://4pda.to/forum/index.php?showtopic=966126&amp;view=getnewpost"
+title="Ссылка">»</a> | <a
+href="https://4pda.to/forum/index.php?showtopic=968357"
+title="Ссылка">Брак и ремонт</a> <a
+href="https://4pda.to/forum/index.php?showtopic=968357view=getnewpost"
+title="Ссылка">»</a> | <a
+href="https://4pda.to/forum/index.php?showtopic=469624&amp;view=findpost&amp;p=22578933"
+title="Ссылка">Клуб XIAOMI»</a> | <a
+href="https://4pda.to/forum/index.php?showtopic=967261"
+title="Ссылка">Клуб владельцев Xiaomi Redmi Note 8 Pro</a> <a
+href="https://4pda.to/forum/index.php?showtopic=967261&amp;view=getnewpost"
+title="Ссылка">»</a> | <a
+href="https://4pda.to/forum/index.php?showtopic=792504"
+title="Ссылка">Mi Аккаунт</a> <a
+href="https://4pda.to/forum/index.php?showtopic=792504&amp;view=getnewpost"
+title="Ссылка">»</a> | <a
+href="https://4pda.to/forum/index.php?showtopic=965700"
+title="Ссылка">Обсуждение камеры</a> <a
+href="https://4pda.to/forum/index.php?showtopic=965700&amp;view=getnewpost"
+title="Ссылка">»</a> | <a
+href="https://4pda.to/forum/index.php?showtopic=965704"
+title="Ссылка">Энергопотребление (автономность)</a> <a
+href="https://4pda.to/forum/index.php?showtopic=965704&amp;view=getnewpost"
+title="Ссылка">»</a> | <a
+href="https://4pda.to/forum/index.php?showtopic=976895"
+title="Ссылка">Модификация и украшательства</a> <a
+href="https://4pda.to/forum/index.php?showtopic=976895&amp;view=getnewpost"
+title="Ссылка">»</a> | <a
+href="https://4pda.to/forum/index.php?showtopic=721838"
+title="Ссылка">Разблокировка загрузчиков</a> <a
+href="https://4pda.to/forum/index.php?showtopic=721838&amp;view=getnewpost"
+title="Ссылка">»</a> | <a
+href="https://4pda.to/forum/index.php?showtopic=965629"
+title="Ссылка">Прошивки MIUI</a> <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=getnewpost"
+title="Ссылка">»</a> | <strong>Неофициальные прошивки</strong> <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=getnewpost"
+title="Ссылка"><strong>»</strong></a> | <a
+href="https://4pda.to/forum/index.php?showtopic=826244"
+title="Ссылка">Не запускается Android Pay</a> <a
+href="https://4pda.to/forum/index.php?showtopic=826244&amp;view=getnewpost"
+title="Ссылка">»</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=95638880"
+title="Ссылка"><strong>F.A.Q.</strong></a><br># <br><strong>Важная
+информация!</strong><br>- Перед тем, как приступить к выполнению
+каких-либо действий с устройством, обязательно прочитайте <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=95638880"
+title="Ссылка"><strong>F.A.Q.</strong></a>!<br> <br>- Не игнорируйте
+инструкции по установке прошивок, опубликованные в этой теме. Если вдруг
+вам попалась прошивка без инструкции, то лучше спросите на форуме, как
+ее установить.<br> <br>- Раскирпичивание устройства с недавних пор
+реализуемо без необходимости в авторизованном сервисном аккаунте Xiaomi
+— <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=103570746"
+title="Ссылка">Метод</a>.<br> <br>- На некоторых прошивках не работает
+фронтальная камера, это обозначает, что у вас свежая ревизия телефона с
+фронтальной камерой новой ревизии.<br># <br><strong>Драйверы и
+утилиты</strong><br><a
+href="https://4pda.to/forum/index.php?s=&amp;showtopic=965629&amp;view=findpost&amp;p=90606164"
+title="Ссылка">Универсальный инсталлятор драйверов для MTK</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=469340"
+title="Ссылка">SP Flash Tool - программа-прошивальщик для смартфонов на
+базе MTK</a><br># <br><strong>Прошивки</strong><br><a
+href="https://4pda.to/forum/index.php?showtopic=732822&amp;view=findpost&amp;p=49918710&amp;anchor=Spoil-49918710-1"
+title="Ссылка">Какая прошивка самая лучшая?</a><br>В настоящее время
+актуальны прошивки из раздела <strong>Non-CFW</strong> и
+<strong>Другое</strong>. <br><a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=104220383"
+title="Ссылка">Чем отличаются разные типы
+прошивок?</a><br><strong>Non-CFW</strong><br>Стандартные кастомные
+прошивки.<br># <br>Non-CFW Android 17<br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=146083465"
+title="Ссылка">ColorOS 17 - Stable Revision 17</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=146061439"
+title="Ссылка">ColorOS 17 - Stable Revision 13 |
+UNOFFICIAL</a><br># <br>Non-CFW Android 16<br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=146098392"
+title="Ссылка">EvolutionX 11.7 | UNOFFICIAL</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=146024411"
+title="Ссылка">AviumUI 16.2.1 | OFFICIAL</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=145985251"
+title="Ссылка">OriginOS 6 Port by tuser Stable Release 3 - Revision
+v22</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=145712732"
+title="Ссылка">LineageOS 23.2 | UNOFFICIAL</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=145668812"
+title="Ссылка">AxionOS | 2.9 Noesis | OFFICIAL</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=145618622"
+title="Ссылка">LineageOS 23.1 | UNOFFICIAL</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=145345569"
+title="Ссылка">ColorOS PLF100_16.0.10.501</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=145131057"
+title="Ссылка">Lunaris-AOSP 3.12 EOL | UNOFFICIAL</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=144980405"
+title="Ссылка">VoltageOS 5.11-EOL | UNOFFICIAL</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=144878394"
+title="Ссылка">Project Infinity X 3.12 | UNOFFICIAL</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=144870980"
+title="Ссылка">DerpFest 16.2 | UNOFFICIAL</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=144473382"
+title="Ссылка">ColorOS_REPACK | 16.0.9.402</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=144433439"
+title="Ссылка">ColorOs 16.0.9.402</a> + <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=144561342"
+title="Ссылка">от 06.08.26</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=144357321"
+title="Ссылка">PixelOS 16.2 | UNOFFICIAL</a> PixelOS 16.2 | UNOFFICIALby
+<span class="citation"
+data-cites="wuxinG90&lt;br">@wuxinG90&lt;br</span>&gt; <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=143929573"
+title="Ссылка">crDroid v12.11丨UNOFFICIAL</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=143770022"
+title="Ссылка">axion os 2.7</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=143064325"
+title="Ссылка">Evolution X 11.6.3 | Unofficial</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=142862082"
+title="Ссылка">MistOs 4.6 | UNOFFICIAL</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=142829970"
+title="Ссылка">Lunaris-AOSP 3.9 | UNOFFICIAL</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=142829941"
+title="Ссылка">MistOs 4.5 |UNOFFICIAL</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=142411724"
+title="Ссылка">Project Infinity X | 3.8 | OFFICIAL</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=142245755"
+title="Ссылка">Lunaris-AOSP 3.7丨UNOFFICIAL</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=142245568"
+title="Ссылка">PixelOS 16.2丨UNOFFICIAL</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=142232400"
+title="Ссылка">Project Infinity X 3.7 | OFFICIAL</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=142139906"
+title="Ссылка">Aviumui 16.2 official</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=141907803"
+title="Ссылка">crDroid v12.7</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=141675626"
+title="Ссылка">AxionAOSP v2.4 | OFFICIAL Gapps</a> + <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=141675834"
+title="Ссылка">Vanilla</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=141108876"
+title="Ссылка">AviumUI 16 | OFFICIAL</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=140991383"
+title="Ссылка">CherishOS v6.3 | OFFICIAL</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=140904812"
+title="Ссылка">PixelOS 16.1</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=140587657"
+title="Ссылка">VoltageOS v5.3 | UNOFFICIAL</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=140587541"
+title="Ссылка">AviumUI 16 | UNOFFICIAL</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=140587508"
+title="Ссылка">AxionAOSP v2.2.1 | OFFICIAL</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=140587410"
+title="Ссылка">Lunaris-AOSP 3.5 | UNOFFICIAL</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=140587349"
+title="Ссылка">crDroid v12.3 | UNOFFICIAL</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=140587298"
+title="Ссылка">Evolution X 11.4.1 | UNOFFICIAL</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=140587231"
+title="Ссылка">RisingOS-Revived 8.1.1-Arete | UNOFFICIAL</a><br> <br>-
+<a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=140587090"
+title="Ссылка">Project InfinityX 3.5 | OFFICIAL</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=140587004"
+title="Ссылка">LineageOS 23.0 | UNOFFICIAL</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=140532643"
+title="Ссылка">Project Infinity X 3.4</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=139862302"
+title="Ссылка">Project Infinity X 3.3 (October Release)</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=138579548"
+title="Ссылка">Project Infinity X 3.1</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=138304293"
+title="Ссылка">CherishOS 6.0</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=138251566"
+title="Ссылка">Evolution X 11.0 UNOFFICIAL</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=138203843"
+title="Ссылка">MistOS Sunshine OFFICIAL</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=138215195"
+title="Ссылка">Evolution X 11.0</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=136241130"
+title="Ссылка">PixelUI Pixel 6 Pro Port</a><br> <br># <br>Non-CFW
+Android 15<br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=145635495"
+title="Ссылка">LineageOS 22.2 Stable</a> by wuxinG90<br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=145608284"
+title="Ссылка">RisingOs 6.3</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=141749053"
+title="Ссылка">crDroid v11.7 UNOFFICIAL</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=138848161"
+title="Ссылка">Project Infinity X 2.9 (Stable July Update)</a><br> <br>-
+<a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=137671665"
+title="Ссылка">RisingOS Revived 7.1 Selene</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=137652577"
+title="Ссылка">YAAP Homemade</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=137456036"
+title="Ссылка">Evolution X 10.6 UNOFFICIAL</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=138284838"
+title="Ссылка">Infinity X</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=136959910"
+title="Ссылка">Project Infinity X 2.8</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=136906399"
+title="Ссылка">RisingOS-Revived 7.0</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=136740626"
+title="Ссылка">crDroid v11.4</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=136393297"
+title="Ссылка">LineageOS 22.2 - QPR2</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=136369978"
+title="Ссылка">Project Infinity X 2.6</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=136334659"
+title="Ссылка">VoltageOS v4.2 | UNOFFICIAL</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=136333822"
+title="Ссылка">AxionOS v1.2 | OFFICIAL</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=133667888"
+title="Ссылка">Halcyon Viola Beta</a><br> <br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=132325074"
+title="Ссылка">Styx Project 4.0.0+alpha1</a><br> <br># <br>Non-CFW
+Android 14<br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=141706486"
+title="Ссылка">ROGUI 14.0-R1 Port ROG Phone 6D</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=140136637"
+title="Ссылка">crDroid 10.6 (2024)</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=134414587"
+title="Ссылка">Origin OS 4 (Release 2)</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=131543971"
+title="Ссылка">OriginOS4.0 R1</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=130055523"
+title="Ссылка">Project-SakuraOS 9.0 Unofficial</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=129921932"
+title="Ссылка">PixelExperience UNOFFICIAL</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=130037735"
+title="Ссылка">LineageOs</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=129916721"
+title="Ссылка">AlphaDroid v2.0 UNOFFICIAL</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=129792004"
+title="Ссылка">Project Elixir 4.2 - OFFICIAL</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=129295273"
+title="Ссылка">AOSP</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=129274364"
+title="Ссылка">Halcyon Ursinia</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=128191584"
+title="Ссылка">OctaviOS V5.0</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=128191431"
+title="Ссылка">PixelBuilds - Unity</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=128191283"
+title="Ссылка">Project Elixir v4.0</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=128191141"
+title="Ссылка">DerpFest</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=128191020"
+title="Ссылка">VoltageOS v3.1</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=127444453"
+title="Ссылка">CherishOS</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=126149027"
+title="Ссылка">CrDroid 10.0</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=126147449"
+title="Ссылка">Evolution X Official</a><br># <br>Non-CFW Android 13<br>-
+<a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=143563437"
+title="Ссылка">OriginOS3.1 - Beta2</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=143523197"
+title="Ссылка">Flyme 10.3.0.0A - Port</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=126542230"
+title="Ссылка">crDroid v9.x - OFFICIAL by DarkJoker360dev</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=120005877"
+title="Ссылка">LineageOS 20 for microG</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=118676391"
+title="Ссылка">Pixel Experience Plus</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=118666735"
+title="Ссылка">Bliss</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=118421420"
+title="Ссылка">Corvus</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=118344953"
+title="Ссылка">Syberia</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=118200298"
+title="Ссылка">LineageOS 20</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=118140323"
+title="Ссылка">Derpfest Tango</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=118140083"
+title="Ссылка">Pixel Experience</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=118068742"
+title="Ссылка">Xtended v2</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=118063937"
+title="Ссылка">Spark OS</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=118002084"
+title="Ссылка">RiceDroid 7.0</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=117470982"
+title="Ссылка">CrDroid 9.x Official by Simone Esposito</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=129072969"
+title="Ссылка">ProjectAstera Thurisu - OFFICIAL</a><br># <br>Non-CFW
+Android 12<br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=145406321"
+title="Ссылка">Emui 14.2.0 Beta</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=116194628"
+title="Ссылка">RiceDroid 2.5</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=116181284"
+title="Ссылка">Cherish OS 3.8</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=112680853"
+title="Ссылка">OctaviOS</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=112628231"
+title="Ссылка">PixelExperience</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=112469277"
+title="Ссылка">KomodoOS</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=112425228"
+title="Ссылка">crDroid by Simone Esposito</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=116619121"
+title="Ссылка">Arrow OS - Unofficial by isegorka</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=112400857"
+title="Ссылка">ArrowOS</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=112343588"
+title="Ссылка">Bliss</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=112142877"
+title="Ссылка">POSP</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=112103357"
+title="Ссылка">NusantaraProject</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=111742773"
+title="Ссылка">Corvus</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=111393992"
+title="Ссылка">Fluid</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=111391488"
+title="Ссылка">Ancient</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=111378144"
+title="Ссылка">Voltage</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=111369873"
+title="Ссылка">Evolution X</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=111266667"
+title="Ссылка">Spark</a><br># <br>Non-CFW Android 11<br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=142195743"
+title="Ссылка">dotOS-R-v5.1.1 OFFICIAL</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=114818456"
+title="Ссылка">CrDroid 7.x Official by TTTT555</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=112676744"
+title="Ссылка">OriginOS Ocean 22.1.14 PORT</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=106217544"
+title="Ссылка">AncientOS (thesampbit)</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=106216267"
+title="Ссылка">BlissROM (thesampbit)</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=102841668"
+title="Ссылка">Project Sakura (abhixv)</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=106208216"
+title="Ссылка">Evolution X (TheMalachite)</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=104328069"
+title="Ссылка">dotOS (ios7jbpro)</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=106150320"
+title="Ссылка">Ten-X (BolaAlex)</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=110444538"
+title="Ссылка">ExTHmUI (TeraaBytee)</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=109049021"
+title="Ссылка">HyconOS (abhixv)</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=105313132"
+title="Ссылка">OctaviOS (NextWorksGFX)</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=105051063"
+title="Ссылка">CherishOS (HyperNotAryanX97)</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=110414885"
+title="Ссылка">CorvusOS (thesampbit)</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=104933535"
+title="Ссылка">HavocOS (himanshu1802)</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=102841984"
+title="Ссылка">ArrowOS (Santoshhh000)</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=104603905"
+title="Ссылка">Nusantara Project (nothingpeace)</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=104575429"
+title="Ссылка">POSP (fancypants)</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=103692172"
+title="Ссылка">PixysOS (KonohaHokage)</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=102986891"
+title="Ссылка">LegionOS (NextWorksGFX)</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=102952720"
+title="Ссылка">Pixel Extended (imanshu1802)</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=109101469"
+title="Ссылка">Xtended (TeraaBytee)</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=104330436"
+title="Ссылка">RevengeOS (NextWorksGFX)</a><br># <br>Non-CFW Android
+10<br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=97822397"
+title="Ссылка">CrDroid 6.27 FINAL by
+TTTT555</a><br><strong>Другое</strong><br>Прошивки, имеющие в основе GSI
+и подобное.<br># <br>Android 13<br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=145549738"
+title="Ссылка">Magic Os 7.1 Beta</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=121096835"
+title="Ссылка">CrDroid 9.x by timjosten (неофициальная, закрытый
+код)</a><br># <br>Android 12<br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=145551659"
+title="Ссылка">HarmonyOs 4.0.0.112</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=114061722"
+title="Ссылка">Bliss</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=112878843"
+title="Ссылка">Evolution X (by timjosten)</a><br># <br>Android 11<br>-
+<a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=106451290"
+title="Ссылка">LineageOS 18.1 (GSI-based)</a> от <a
+href="https://4pda.to/forum/index.php?showuser=4599953"
+title="Ссылка"><strong>bugreporter</strong></a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=110287291"
+title="Ссылка">crDroid 7.xx Mod (GSI)</a> от <a
+href="https://4pda.to/forum/index.php?showuser=7813617"
+title="Ссылка"><strong>User-_-Name</strong></a><br># <br>Android 10<br>-
+<a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=107855537"
+title="Ссылка">BlissROM (GSI)</a> от <a
+href="https://4pda.to/forum/index.php?showuser=7813617"
+title="Ссылка"><strong>rvtom1970</strong></a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=102565322"
+title="Ссылка">Resurrection Remix (GSI)</a> от <a
+href="https://4pda.to/forum/index.php?showuser=7813617"
+title="Ссылка"><strong>rvtom1970</strong></a><br><strong>CFW</strong><br>Устаревшие
+кастомные прошивки.<br># <br>Android 11<br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=101340561"
+title="Ссылка">crDroid 7.2</a> от <a
+href="https://4pda.to/forum/index.php?showuser=3775328"
+title="Ссылка"><strong>TTTT555</strong></a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=101209196"
+title="Ссылка">AOSP (ZIDAN44)</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=102820592"
+title="Ссылка">SuperiorOS (thesampbit)</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=101094777"
+title="Ссылка">CesiumOS (SahilSonar)</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=101519200"
+title="Ссылка">RevengeOS (NextWorksGFX)</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=101322296"
+title="Ссылка">PixysOS (KonohaHokage)</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=101638296"
+title="Ссылка">CorvusOS (tempyourdaddyl)</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=101638500"
+title="Ссылка">AOSP Extended (yaudahlahgpp)</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=102496545"
+title="Ссылка">Project Streak (himanshu1802)</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=102496736"
+title="Ссылка">Pixel Extended
+(himanshu1802)</a><br><strong>Linux</strong><br># <br>Линуксоидные
+сборки<br><a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=146080111"
+title="Ссылка">Ubuntu touch 24.04</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=145567744"
+title="Ссылка">postmarketOS</a><br><strong>UEFI</strong><br># <br>UEFI<br><a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=146118602"
+title="Ссылка">UEFI &amp;
+WinPE</a><br># <br><strong>Инструкции</strong><br><strong>Установка
+кастомных прошивок и др.</strong><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=93529098"
+title="Ссылка">Включение/отключение принудительного шифрования
+Data</a><br><strong>Раскирпичивание устройства</strong><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=122476275"
+title="Ссылка">Способ полного восстановления раздела NVRAM</a><br>- <a
+href="https://4pda.to/forum/index.php?s=&amp;showtopic=965629&amp;view=findpost&amp;p=111347904"
+title="Ссылка">Восстановление и прошивка устройства через SP Flash Tool
+без авторизованного сервисного аккаунта</a><br>- <a
+href="https://4pda.to/forum/index.php?s=&amp;showtopic=965629&amp;view=findpost&amp;p=103570746"
+title="Ссылка">Восстановление и прошивка устройства через SP Flash Tool
+без авторизованного сервисного аккаунта (старый вариант)</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=101867024"
+title="Ссылка">Исправление ошибки NVRAM WARNING: Err=0x10 в списке сетей
+Wi-Fi</a><br>- <a
+href="https://4pda.to/forum/index.php?s=&amp;showtopic=974421&amp;view=findpost&amp;p=113702662"
+title="Ссылка">Если есть проблемы с Bluetooth после некоторых
+прошивок</a><br><strong>Разное</strong><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=95325446"
+title="Ссылка">Альтернативный способ пробуждения экрана устройства (для
+некоторых GSI)</a><br># <br><strong>Рекавери</strong><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=144354114"
+title="Ссылка">Unified TWRP Recovery 3.7.1 By wuxinG90</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=125972431"
+title="Ссылка">TWRP 3.7.0_12 для кастомных прошивок на базе Android
+12-14</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=126123733"
+title="Ссылка">PitchBlack 4.0(Android 12+)</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=136151364"
+title="Ссылка">PitchBlack Recovery Project 4.1</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=122362174"
+title="Ссылка">OrangeFox (Android 12+)</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=122291401"
+title="Ссылка">TWRP 3.7.0 by timjosten (Android 12+)</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=118192304"
+title="Ссылка">TWRP v3.6.2_12-4 только для кастомных прошивок на базе
+Android 12.1/13</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=107899317"
+title="Ссылка">TWRP для Non-CFW/GSI прошивок, основанных на образах MIUI
+12.5 (Android 11/12)</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=105380152"
+title="Ссылка">TWRP для Non-CFW/GSI прошивок, основанных на образах MIUI
+12.0 (Android
+10)</a><br># <br><strong>Ядра</strong><br># <br>A11+<br>Ядра, указанные
+ниже, совместимы только с прошивками, основанными на образах MIUI 12.5.x
+(Android 11/12+).<br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=145668901"
+title="Ссылка">Power Kernel (А 11 - 16)</a> от 21.10.26<br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=144852836"
+title="Ссылка">Suzaku Kernel V2</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=140587695"
+title="Ссылка">PoWeR Kernel (A11 - 16)</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=140587177"
+title="Ссылка">NoVA Kernel (A11 - 16)</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=129924406"
+title="Ссылка">PoWeR Kernel (A11 - 14)</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=123613321"
+title="Ссылка">Nova Kernel (A11 - 13)</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=123608360"
+title="Ссылка">Coconut Kernel</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=122292944"
+title="Ссылка">Hydra Kernel</a><br># <br>A10<br>Ядра, указанные ниже,
+совместимы только с Non-CFW прошивками, основанными на образах MIUI
+11/12.0.x (Android 10).<br>Если у вас фронтальная камера новой ревизии,
+то на некоторых кастомных ядрах, вы можете лишиться работоспособности
+переднего модуля камеры и Google Camera!<br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=99720504"
+title="Ссылка">QuantumKiller, Neutrino (ZyCromerZ)</a> [Q-OSS]<br>- <a
+href="https://4pda.to/forum/index.php?s=&amp;showtopic=974421&amp;view=findpost&amp;p=103603411"
+title="Ссылка">Rave 1.8 (Peppe289, разработка прекращена)</a>
+[Q-OSS]<br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=106215865"
+title="Ссылка">UnicornHorn (TheMalachite)</a> [Q-OSS]<br><strong>Ядра с
+поддержкой функционала NetHunter:</strong><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=97901817"
+title="Ссылка">AkameKernel</a> от <a
+href="https://4pda.to/forum/index.php?showuser=8535495"
+title="Ссылка"><strong>Anonym3310@localhost</strong></a> [Q-OSS]<br><a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Fgithub.com%2FMiCode%2FXiaomi_Kernel_OpenSource%2Ftree%2Fbegonia-r-oss&amp;e=91427572"
+title="Ссылка">Исходный код ядра для Android 11
+(begonia-r-oss)</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=105817890"
+title="Ссылка">Инструкция по линковке внешних модулей к ядру</a><br><a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=105942017"
+title="Ссылка">Модули к адаптерам на базе чипсетов Atheros: AR9271,
+AR7010</a><br># <br><strong>Разное</strong><br><strong>Полезное:</strong><br>-
+<a href="https://4pda.to/forum/index.php?showtopic=774072"
+title="Ссылка">Профильная тема Magisk (root-права)</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=108407752"
+title="Ссылка">ViPER4Android, не требующий root-прав и отключения
+SELinux</a><br>- <a
+href="https://4pda.to/forum/index.php?s=&amp;showtopic=965629&amp;view=findpost&amp;p=99355057"
+title="Ссылка">Сборник стоковых модемов от разных версий MIUI</a><br>-
+<a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=102810490"
+title="Ссылка">Исправление фризов видеоискателя в Google
+Camera</a><br><strong>Для разработчиков:</strong><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=98459789"
+title="Ссылка">Патч для сканера отпечатков Goodix при использовании
+сервисного прелоадера</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=95104123"
+title="Ссылка">Разборка *.img образов</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=93523562"
+title="Ссылка">Патченный образ vbmeta.img (отключение проверки
+валидности образов)</a><br># <br>Неактуальное<br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=103667835"
+title="Ссылка">Стоковый прелоадер для CFW-прошивок (повышение
+производительности)</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=103206714"
+title="Ссылка">Исправление качества контента в Instagram и WhatsApp для
+CFW-прошивок</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=95251749"
+title="Ссылка">Патч вендора, восстанавливающий работу сети на некоторых
+GSI-прошивках</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=95162709"
+title="Ссылка">Патч, восстанавливающий работу звука/видео на
+GSI-прошивках</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=95198486"
+title="Ссылка">Исправление встроенной записи звонков для устаревших
+GSI-прошивок</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=101430602"
+title="Ссылка">Патч, исправляющий эхо при разговоре с использованием
+BT-гарнитуры на GSI-прошивках</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=94973835"
+title="Ссылка">Улучшение плавности скроллинга для устаревших
+GSI-прошивок</a><br>- <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=102044482"
+title="Ссылка">Патч, исправляющий зависание светодиода для устаревших
+GSI-прошивок</a><br><em><strong>В теме нет куратора. Если в теме есть
+пользователь, желающий стать Куратором и соответствующий <a
+href="https://4pda.to/forum/index.php?act=announce&amp;f=958&amp;st=363"
+title="Ссылка">Требованиям для кандидатов</a>, он может подать заявку,
+создав новую тему в разделе <a
+href="https://4pda.to/forum/index.php?showforum=958" title="Ссылка">Хочу
+стать Куратором</a> (предварительно изучив <a
+href="https://4pda.to/forum/index.php?act=announce&amp;f=958&amp;st=364"
+title="Ссылка">Правила и рекомендации для
+Кураторов</a>).</strong></em><br><em><strong>До назначения куратора, по
+вопросам наполнения шапки, обращайтесь к модераторам раздела через
+кнопку <img
+src="https://4pda.to/s/QBvw6HT9N4ZbL2t8T0McBmdmpVfvz28z0ehru8TrhvpmnnQGrd.gif"
+alt="Изображение" /> под сообщениями, на которые необходимо добавить
+ссылки.</strong></em><br>Сообщение отредактировал <a
+href="https://4pda.to/forum/index.php?showuser=9626422"><strong>sergrauber</strong></a>
+- Сегодня, 00:49<br>Причина редактирования: UEFI &amp; WinPE</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=2733256">Xakep1993</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=2733256">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=Xakep1993&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=Xakep1993&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=974421&amp;source=pst&amp;username=Xakep1993&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=91430570"
+title="Ссылка на это сообщение">#2</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+01.12.19, 14:22</td>
+</tr>
+<tr>
+<td>Тихий ядерщик<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[online]<br>Группа: Постоянный<br>Сообщений: 9474<br>Регистрация: 23.11.12<br><a
+href="https://4pda.to/devdb/t_mobile_revvl_7_pro"><strong>Revvl 7
+Pro</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=2733256"
+title="Просмотреть репутацию">1131</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td>Если кто будет тестировать всякие возможные варианты прошивок - и
+если они будут работать, то оформляем пост по принципу<br><a
+href="https://4pda.to/forum/index.php?act=announce&amp;f=268&amp;st=376"
+title="Ссылка">Объявление: Шаблон оформления сообщения с
+прошивкой</a><br>Перед тем - как что либо делать читаем в шапке - Важную
+информацию<br>Гайд по установке напишу в течении 1-2 часа.<br>Сообщение
+отредактировал <a
+href="https://4pda.to/forum/index.php?showuser=2733256"><strong>Xakep1993</strong></a>
+- 01.12.19, 14:24<br>---—————–<br>Телефоны: Sony Ericsson J300i &gt;
+Amoi N828 &gt; Elephone P6000 &gt; Oukitel K6 &gt; Xiaomi Redmi Note 8
+Pro &gt; Oukitel K6 &gt; Poco M3 Pro 5G &gt;Oukitel K6 &gt; Poco M5 &gt;
+Realme 8 Pro &gt; T-Mobile Revvl 7 pro</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=2733256">Xakep1993</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=2733256">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=Xakep1993&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=Xakep1993&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=974421&amp;source=pst&amp;username=Xakep1993&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=91432197"
+title="Ссылка на это сообщение">#3</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+01.12.19, 15:12</td>
+</tr>
+<tr>
+<td>Тихий ядерщик<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[online]<br>Группа: Постоянный<br>Сообщений: 9474<br>Регистрация: 23.11.12<br><a
+href="https://4pda.to/devdb/t_mobile_revvl_7_pro"><strong>Revvl 7
+Pro</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=2733256"
+title="Просмотреть репутацию">1131</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><strong>Инструкция по установки AOSP based GSI
+rom</strong><br>Внимание - все данные будут удалены ! Не забываем делать
+бекап System и Data<br><strong>Все делается на свой страх и риск ! Риск
+окирпичивания минимальный при условии соблюдения гайда ! Без установки
+MAGISK я не пробывал, но для дальнейшей восстановления работы GPAY он
+нужен !</strong><br>1) Разблокируем загрузчик<br>2) Ставим TWRP и ROOT -
+<a
+href="https://4pda.to/forum/index.php?s=&amp;showtopic=965629&amp;view=findpost&amp;p=90018812"
+title="Ссылка">Xiaomi Redmi Note 8 Pro - Прошивки MIUI (Пост =NIKAS=
+#90018812)</a><br>2.1) Если у вас китайский телефон ставим ROOT вот так
+<a
+href="https://4pda.to/forum/index.php?showtopic=965629&amp;view=findpost&amp;p=90348216"
+title="Ссылка">Xiaomi Redmi Note 8 Pro - Прошивки MIUI</a><br>3) Для
+сохранения бекапа DATA и SYSTEM нам понадобится MicroSD как минимум 32
+gb - сохраняем бекап на нее ! так как дата у нас будет отформатирована
+(для того чтобы восстановиться на MIUI, или в случае если чтото пошло не
+так). <br>3.1) Скаченную прошивку img формата кидаем на флешку, если
+файл называется .img.xz то нужно сначало распаковать архив !<br>4) После
+бекапа, заходим в Wipe - нажимаем Format Data. Вводим yes и
+подтверждаем. Далее выходим назад нажимаем Advanced Wipe - выбираем
+System и проводим Swipe to Wipe.<br>5) Далее нажимаем Install - справа
+сбоку нажимаем Install image. Выбираем флешку Select Storage - выбираем
+прошивку которую вы заранее уже закинули на MicroSD. Выбираем раздел
+System Image и проводим свайп Swipe to confim Flash.<br>6) После
+установки перезагружаемся и ждем минут 5. Не обращаем внимание что
+телефон в первую загрузку уйдет ребут (процесс рутирования Magisk). На
+экране стартовом не обращаем внимание на баг анимации ГУГЛ.<br>7) После
+первоначальной настройки качаем APK Magisk <a
+href="https://4pda.to/forum/index.php?s=&amp;showtopic=774072&amp;view=findpost&amp;p=90402504"
+title="Ссылка">® Magisk - The Universal Systemless Interface (Пост
+Displax #90402504)</a> . При запуске - магиск попросит обновится или что
+то сделать СОГЛАШАЕМСЯ. Произойдет перезагрузка ! Далее можно
+пользоваться установленной прошивкой.<br>8) <strong>Если вдруг что то
+пошло не так или не понравилось</strong> - в рекавери выбираем Restore -
+Select Storage - выбираем MicroSD. Дальше выбираем свой бекап и
+восстанавливаем !<br>Нивкоем случае не трогать BOOT файл - даже
+восстановление из бекапа (при помощи TWRP) ! За кирпичи связанные с BOOT
+файлом не отвечаю !<br>Сообщение отредактировал <a
+href="https://4pda.to/forum/index.php?showuser=2733256"><strong>Xakep1993</strong></a>
+- 01.12.19, 18:33<br>---—————–<br>Телефоны: Sony Ericsson J300i &gt;
+Amoi N828 &gt; Elephone P6000 &gt; Oukitel K6 &gt; Xiaomi Redmi Note 8
+Pro &gt; Oukitel K6 &gt; Poco M3 Pro 5G &gt;Oukitel K6 &gt; Poco M5 &gt;
+Realme 8 Pro &gt; T-Mobile Revvl 7 pro</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=1734186">nodfolk</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=1734186">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=nodfolk&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=nodfolk&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=974421&amp;source=pst&amp;username=nodfolk&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=91437148"
+title="Ссылка на это сообщение">#4</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+01.12.19, 17:46</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=1734186"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvwA0sUVMvNDz0OSLKcFmm0PhWwwS0aS6Fbz0bvtOf9z2Joz1C.jpg" /></a><br>Старожил<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 912<br>Регистрация: 30.09.11<br>Репутация:
+<img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=1734186"
+title="Просмотреть репутацию">31</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td>Че с автономность господа, есть прошивка с кастомным ядром?</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=2733256">Xakep1993</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=2733256">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=Xakep1993&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=Xakep1993&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=974421&amp;source=pst&amp;username=Xakep1993&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=91437278"
+title="Ссылка на это сообщение">#5</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+01.12.19, 17:50</td>
+</tr>
+<tr>
+<td>Тихий ядерщик<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[online]<br>Группа: Постоянный<br>Сообщений: 9474<br>Регистрация: 23.11.12<br><a
+href="https://4pda.to/devdb/t_mobile_revvl_7_pro"><strong>Revvl 7
+Pro</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=2733256"
+title="Просмотреть репутацию">1131</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=91437148"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><strong>nodfolk,</strong><br>Ну нафиг с этими кастом
+ядрами <img src="https://4pda.to/s/QBvw6bKkUH2vpW1/biggrin.gif"
+alt=":D" /> я боюсь что либо делать в сторону BOOT. Окирпичить
+запросто<br>---—————–<br>Телефоны: Sony Ericsson J300i &gt; Amoi N828
+&gt; Elephone P6000 &gt; Oukitel K6 &gt; Xiaomi Redmi Note 8 Pro &gt;
+Oukitel K6 &gt; Poco M3 Pro 5G &gt;Oukitel K6 &gt; Poco M5 &gt; Realme 8
+Pro &gt; T-Mobile Revvl 7 pro</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=4997112">Xamyt1002</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=4997112">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=Xamyt1002&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=Xamyt1002&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=974421&amp;source=pst&amp;username=Xamyt1002&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=91437398"
+title="Ссылка на это сообщение">#6</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+01.12.19, 17:54</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=4997112"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvw3B8l1N2aHoD3iz1Nz0frLQtz2Pz1fEIqbZdWiq0Aj3FIi7Hz0.jpg" /></a><br>Гуру<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 3442<br>Регистрация: 20.04.15<br><a
+href="https://4pda.to/devdb/xiaomi_mi_10t"><strong>Xiaomi Mi
+10T</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=4997112"
+title="Просмотреть репутацию">404</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td>Интересно когда потр будет?Я бы потестил его на 10 ведре.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="section"></h1>
+<p>Прикрепленные изображения</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr>
+<td><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/img-resized.png" /> 48%
+оригинала<br><a
+href="https://4pda.to/forum/dl/post/18085048/IMG_20191201_165317.jpg"
+title="IMG_20191201_165317.jpg - Размер: 17.09 КБ"><img
+src="https://4pda.to/s/QBvwAGckbkz0qHU72beYcKZBoQBZwXc9FRAt5d3mrEje.jpg"
+alt="Прикрепленное изображение" /></a> <br>1050 x 321 (17.09 КБ)</td>
+</tr>
+</tbody>
+</table>
+<p>---—————–</p>
+<p>iPhone 17 Pro Max | | | | | |</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=2733256">Xakep1993</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=2733256">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=Xakep1993&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=Xakep1993&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=974421&amp;source=pst&amp;username=Xakep1993&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=91438314"
+title="Ссылка на это сообщение">#7</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+01.12.19, 18:22</td>
+</tr>
+<tr>
+<td>Тихий ядерщик<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[online]<br>Группа: Постоянный<br>Сообщений: 9474<br>Регистрация: 23.11.12<br><a
+href="https://4pda.to/devdb/t_mobile_revvl_7_pro"><strong>Revvl 7
+Pro</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=2733256"
+title="Просмотреть репутацию">1131</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=91437398"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><strong>10-Vadxa-02,</strong><br><a
+href="https://4pda.to/forum/index.php?s=&amp;showtopic=892755&amp;view=findpost&amp;p=89884540"
+title="Ссылка">Разработка и портирование GSI-прошивок (Пост <span
+class="citation" data-cites="twsunset">@twsunset</span>
+#89884540)</a><br>Так то оно есть - и даже написано на AOSP собрано а не
+лосе. Так что запуститься должна с огромной вероятностью. Завтра на
+работу - поэтому переустанавливать телефон не
+хочу.<br>---—————–<br>Телефоны: Sony Ericsson J300i &gt; Amoi N828 &gt;
+Elephone P6000 &gt; Oukitel K6 &gt; Xiaomi Redmi Note 8 Pro &gt; Oukitel
+K6 &gt; Poco M3 Pro 5G &gt;Oukitel K6 &gt; Poco M5 &gt; Realme 8 Pro
+&gt; T-Mobile Revvl 7 pro</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=4997112">Xamyt1002</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=4997112">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=Xamyt1002&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=Xamyt1002&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=974421&amp;source=pst&amp;username=Xamyt1002&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=91438438"
+title="Ссылка на это сообщение">#8</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+01.12.19, 18:26</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=4997112"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvw3B8l1N2aHoD3iz1Nz0frLQtz2Pz1fEIqbZdWiq0Aj3FIi7Hz0.jpg" /></a><br>Гуру<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 3442<br>Регистрация: 20.04.15<br><a
+href="https://4pda.to/devdb/xiaomi_mi_10t"><strong>Xiaomi Mi
+10T</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=4997112"
+title="Просмотреть репутацию">404</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=91438314"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><strong>Xakep1993</strong>, ток формат не понятен.как шить
+и куда?</td>
+</tr>
+</tbody>
+</table>
+<h1 id="section-1"></h1>
+<p>Прикрепленные изображения</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr>
+<td><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/img-resized.png" /> 21%
+оригинала<br><a
+href="https://4pda.to/forum/dl/post/18085337/Screenshot_2019-12-01-17-25-43-831_com.opera.browser.jpg"
+title="Screenshot_2019-12-01-17-25-43-831_com.opera.browser.jpg - Размер: 169.58 КБ"><img
+src="https://4pda.to/s/QBvw5JUQtZW1Wbj3ckDEmP2bz1nATT0slBYJVUCefuwi.jpg"
+alt="Прикрепленное изображение" /></a> <br>1080 x 2340 (169.58 КБ)</td>
+</tr>
+</tbody>
+</table>
+<p>Сообщение отредактировал <a
+href="https://4pda.to/forum/index.php?showuser=4997112"><strong>Xamyt1002</strong></a>
+- 01.12.19, 18:27</p>
+<p>---—————–</p>
+<p>iPhone 17 Pro Max | | | | | |</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=2733256">Xakep1993</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=2733256">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=Xakep1993&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=Xakep1993&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=974421&amp;source=pst&amp;username=Xakep1993&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=91438456"
+title="Ссылка на это сообщение">#9</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+01.12.19, 18:26</td>
+</tr>
+<tr>
+<td>Тихий ядерщик<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[online]<br>Группа: Постоянный<br>Сообщений: 9474<br>Регистрация: 23.11.12<br><a
+href="https://4pda.to/devdb/t_mobile_revvl_7_pro"><strong>Revvl 7
+Pro</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=2733256"
+title="Просмотреть репутацию">1131</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=91438438"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><strong>10-Vadxa-02,</strong><br>Это обычный архив -
+распаковываем там простой IMG файл<br>кстати спасибо напомнил ) надо
+дополнить гайд<br>Сообщение отредактировал <a
+href="https://4pda.to/forum/index.php?showuser=2733256"><strong>Xakep1993</strong></a>
+- 01.12.19, 18:27<br>---—————–<br>Телефоны: Sony Ericsson J300i &gt;
+Amoi N828 &gt; Elephone P6000 &gt; Oukitel K6 &gt; Xiaomi Redmi Note 8
+Pro &gt; Oukitel K6 &gt; Poco M3 Pro 5G &gt;Oukitel K6 &gt; Poco M5 &gt;
+Realme 8 Pro &gt; T-Mobile Revvl 7 pro</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=4997112">Xamyt1002</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=4997112">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=Xamyt1002&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=Xamyt1002&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=974421&amp;source=pst&amp;username=Xamyt1002&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=91439010"
+title="Ссылка на это сообщение">#10</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+01.12.19, 18:43</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=4997112"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvw3B8l1N2aHoD3iz1Nz0frLQtz2Pz1fEIqbZdWiq0Aj3FIi7Hz0.jpg" /></a><br>Гуру<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 3442<br>Регистрация: 20.04.15<br><a
+href="https://4pda.to/devdb/xiaomi_mi_10t"><strong>Xiaomi Mi
+10T</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=4997112"
+title="Просмотреть репутацию">404</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=91432197"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><strong>Xakep1993</strong>, осталось только прикупить
+флешку на 32 гига.😅<br>---—————–<br>iPhone 17 Pro Max</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=2407373">StegroNN</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=2407373">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=StegroNN&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=StegroNN&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=974421&amp;source=pst&amp;username=StegroNN&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=91439510"
+title="Ссылка на это сообщение">#11</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+01.12.19, 18:56</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=2407373"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvwA4U8P1nJ0VYBPNyl4SmeDrOrTz2fz1qerjHnfjnL8z1YShK.jpg" /></a><br>Местный<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 127<br>Регистрация: 05.08.12<br><a
+href="https://4pda.to/devdb/samsung_galaxy_s20_fe:snapdragon"><strong>Samsung
+Galaxy S20 Fan Edition Snapdragon</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=2407373"
+title="Просмотреть репутацию">6</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=91437398"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><strong>10-Vadxa-02</strong>, связь не работает на
+PE.<br>На всех прошивках что я тестил, не работал звук ни уведомления ни
+мультимедиа, только разговорный динамик. Не работает анимация нормально,
+анимация прокручивания списка дёргается часто, а анимации связанные
+красивыми загрузками различных приложений, неадекватно себя
+ведут.<br>Кастомизации тоже не встречал, но я только тестил PE и AOSP от
+phh<br>Xakep1993 @ 1.12.19, 15:12 <a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=91432197"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><br>то нужно сначало распаковать архив <br>не забывайте
+md5 проверять, у меня с первые два раза не сошлось, только на третий раз
+скачал и только тогда сошлись<br>Сообщение отредактировал <a
+href="https://4pda.to/forum/index.php?showuser=2407373"><strong>StegroNN</strong></a>
+- 01.12.19, 19:06</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=965362">judis</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=965362">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=judis&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=judis&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=974421&amp;source=pst&amp;username=judis&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=91440418"
+title="Ссылка на это сообщение">#12</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+01.12.19, 19:22</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=965362"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvw60Q0BhIsvS2RG4G1Dod7vz07iQlieqo0aQvtO9PNt8tR.jpg" /></a><br>Старожил<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 1129<br>Регистрация: 09.01.10<br>Репутация:
+<img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=965362"
+title="Просмотреть репутацию">286</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td>10-Vadxa-02 @ 01.12.19, 18:43 <a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=91439010"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><br>осталось только прикупить флешку на 32 гига<br><img
+src="https://4pda.to/s/QBvw6bKkUH2vpW1/rofl.gif" alt=":rofl:" /> Я себе
+на 512 поставил.Очень здорово,что появилась тема с кастомами,так что
+привет завсегдатаям!<br>---—————–<br>Лучше быть умным и иногда
+тупить,чем быть тупым и постоянно умничать!</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=4997112">Xamyt1002</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=4997112">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=Xamyt1002&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=Xamyt1002&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=974421&amp;source=pst&amp;username=Xamyt1002&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=91441108"
+title="Ссылка на это сообщение">#13</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+01.12.19, 19:41</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=4997112"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvw3B8l1N2aHoD3iz1Nz0frLQtz2Pz1fEIqbZdWiq0Aj3FIi7Hz0.jpg" /></a><br>Гуру<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 3442<br>Регистрация: 20.04.15<br><a
+href="https://4pda.to/devdb/xiaomi_mi_10t"><strong>Xiaomi Mi
+10T</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=4997112"
+title="Просмотреть репутацию">404</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td>Нарыл дома карту на 32г🤣</td>
+</tr>
+</tbody>
+</table>
+<h1 id="section-2"></h1>
+<p>Прикрепленные изображения</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr>
+<td><img
+src="https://4pda.to/s/QBvw12yOCMkcGz2f3FO6KUTSSND0s/1/img-resized.png" /> 21%
+оригинала<br><a
+href="https://4pda.to/forum/dl/post/18086173/Screenshot_2019-12-01-18-40-36-522_com.asus.filemanager.jpg"
+title="Screenshot_2019-12-01-18-40-36-522_com.asus.filemanager.jpg - Размер: 292 КБ"><img
+src="https://4pda.to/s/QBvw1BAe9X5Oz2LLFODxv4Bl8JS7WuvPdV06UTAdnaiB.jpg"
+alt="Прикрепленное изображение" /></a> <br>1080 x 2340 (292 КБ)</td>
+</tr>
+</tbody>
+</table>
+<p>---—————–</p>
+<p>iPhone 17 Pro Max | | | | | |</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=2733256">Xakep1993</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=2733256">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=Xakep1993&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=Xakep1993&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=974421&amp;source=pst&amp;username=Xakep1993&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=91441438"
+title="Ссылка на это сообщение">#14</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+01.12.19, 19:49</td>
+</tr>
+<tr>
+<td>Тихий ядерщик<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[online]<br>Группа: Постоянный<br>Сообщений: 9474<br>Регистрация: 23.11.12<br><a
+href="https://4pda.to/devdb/t_mobile_revvl_7_pro"><strong>Revvl 7
+Pro</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=2733256"
+title="Просмотреть репутацию">1131</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=91439510"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><strong>StegroNN,</strong><br>Ну теперь можно пополнить
+баглист. проши на 9 не пробывал?<br>---—————–<br>Телефоны: Sony Ericsson
+J300i &gt; Amoi N828 &gt; Elephone P6000 &gt; Oukitel K6 &gt; Xiaomi
+Redmi Note 8 Pro &gt; Oukitel K6 &gt; Poco M3 Pro 5G &gt;Oukitel K6 &gt;
+Poco M5 &gt; Realme 8 Pro &gt; T-Mobile Revvl 7 pro</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=2733256">Xakep1993</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=2733256">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=Xakep1993&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=Xakep1993&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=974421&amp;source=pst&amp;username=Xakep1993&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=91442407"
+title="Ссылка на это сообщение">#15</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+01.12.19, 20:16</td>
+</tr>
+<tr>
+<td>Тихий ядерщик<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[online]<br>Группа: Постоянный<br>Сообщений: 9474<br>Регистрация: 23.11.12<br><a
+href="https://4pda.to/devdb/t_mobile_revvl_7_pro"><strong>Revvl 7
+Pro</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=2733256"
+title="Просмотреть репутацию">1131</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=91442323"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><strong>10-Vadxa-02</strong>, кого чего ? Если про mi
+globe - то как мне кажется это все равно остаётся MIUI, и не относится к
+этой теме<br>---—————–<br>Телефоны: Sony Ericsson J300i &gt; Amoi N828
+&gt; Elephone P6000 &gt; Oukitel K6 &gt; Xiaomi Redmi Note 8 Pro &gt;
+Oukitel K6 &gt; Poco M3 Pro 5G &gt;Oukitel K6 &gt; Poco M5 &gt; Realme 8
+Pro &gt; T-Mobile Revvl 7 pro</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=2407373">StegroNN</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=2407373">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=StegroNN&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=StegroNN&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=974421&amp;source=pst&amp;username=StegroNN&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=91442592"
+title="Ссылка на это сообщение">#16</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+01.12.19, 20:22</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=2407373"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvwA4U8P1nJ0VYBPNyl4SmeDrOrTz2fz1qerjHnfjnL8z1YShK.jpg" /></a><br>Местный<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 127<br>Регистрация: 05.08.12<br><a
+href="https://4pda.to/devdb/samsung_galaxy_s20_fe:snapdragon"><strong>Samsung
+Galaxy S20 Fan Edition Snapdragon</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=2407373"
+title="Просмотреть репутацию">6</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=91441438"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><strong>Xakep1993</strong>, 9ку не ставил, откатился на
+миюай 11 европейку</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=2733256">Xakep1993</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=2733256">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=Xakep1993&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=Xakep1993&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=974421&amp;source=pst&amp;username=Xakep1993&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=91442658"
+title="Ссылка на это сообщение">#17</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+01.12.19, 20:24</td>
+</tr>
+<tr>
+<td>Тихий ядерщик<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[online]<br>Группа: Постоянный<br>Сообщений: 9474<br>Регистрация: 23.11.12<br><a
+href="https://4pda.to/devdb/t_mobile_revvl_7_pro"><strong>Revvl 7
+Pro</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=2733256"
+title="Просмотреть репутацию">1131</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=91442592"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><strong>StegroNN</strong>, а то может быть из за вендора
+9, а прошивка 10 ) поживем увидим<br>---—————–<br>Телефоны: Sony
+Ericsson J300i &gt; Amoi N828 &gt; Elephone P6000 &gt; Oukitel K6 &gt;
+Xiaomi Redmi Note 8 Pro &gt; Oukitel K6 &gt; Poco M3 Pro 5G &gt;Oukitel
+K6 &gt; Poco M5 &gt; Realme 8 Pro &gt; T-Mobile Revvl 7 pro</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=2407373">StegroNN</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=2407373">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=StegroNN&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=StegroNN&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=974421&amp;source=pst&amp;username=StegroNN&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=91442761"
+title="Ссылка на это сообщение">#18</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+01.12.19, 20:27</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=2407373"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvwA4U8P1nJ0VYBPNyl4SmeDrOrTz2fz1qerjHnfjnL8z1YShK.jpg" /></a><br>Местный<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 127<br>Регистрация: 05.08.12<br><a
+href="https://4pda.to/devdb/samsung_galaxy_s20_fe:snapdragon"><strong>Samsung
+Galaxy S20 Fan Edition Snapdragon</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=2407373"
+title="Просмотреть репутацию">6</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=91442658"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><strong>Xakep1993</strong>, пока все сырое, там конечно
+есть костыли для регулировки яркости и анимацию вроде можно пофиксить,
+но звука нет и поэтому не остался</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=5111345">korotyshev</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=5111345">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=korotyshev&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=korotyshev&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=974421&amp;source=pst&amp;username=korotyshev&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=91443904"
+title="Ссылка на это сообщение">#19</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+01.12.19, 21:00</td>
+</tr>
+<tr>
+<td><a href="https://4pda.to/forum/index.php?showuser=5111345"
+title="Просмотр профиля"><img
+src="https://4pda.to/s/QBvw3tmZximZxuuomz2UwZ7O5dtz0TQoqhLxR6p4OshidsMksX.jpg" /></a><br>не
+сплю по ночам<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 2377<br>Регистрация: 23.06.15<br><a
+href="https://4pda.to/devdb/samsung_galaxy_s25_ultra"><strong>Samsung
+Galaxy S25 Ultra 12/256/512/1024</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=5111345"
+title="Просмотреть репутацию">253</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td>StegroNN @ 1.12.19, 18:56 <a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=91439510"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><br>Не работает анимация нормально<br>часто такое на мтк
+замечал… Такая же фигня на Umidigi One Pro. Лучше вообще исходников
+подождать, gsi всегда имеют какие то подводные камни<br>Сообщение
+отредактировал <a
+href="https://4pda.to/forum/index.php?showuser=5111345"><strong>korotyshev</strong></a>
+- 01.12.19, 21:01</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=2733256">Xakep1993</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=2733256">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=Xakep1993&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=Xakep1993&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=974421&amp;source=pst&amp;username=Xakep1993&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=91444631"
+title="Ссылка на это сообщение">#20</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+01.12.19, 21:19</td>
+</tr>
+<tr>
+<td>Тихий ядерщик<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[online]<br>Группа: Постоянный<br>Сообщений: 9474<br>Регистрация: 23.11.12<br><a
+href="https://4pda.to/devdb/t_mobile_revvl_7_pro"><strong>Revvl 7
+Pro</strong></a><br>Репутация: <img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=2733256"
+title="Просмотреть репутацию">1131</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td><a
+href="https://4pda.to/forum/index.php?act=findpost&amp;pid=91442592"
+title="Перейти к сообщению"><img
+src="https://4pda.to/s/QBvwPgKjUkPmdB6z2YlywfFHIPfJ0MS70PRKjGMtMdruYGMn7Qc.gif"
+alt="*" /></a><strong>StegroNN</strong>, кстати там был порт miui 11 на
+Андроиде 10 <img src="https://4pda.to/s/QBvw6bKkUH2vpW1/rofl.gif"
+alt=":rofl:" /> по сути Бут не меняем и получаем рабочую 10. Если что то
+и буду пробовать то только в конце недели<br><a
+href="https://4pda.to/forum/index.php?showtopic=892755&amp;view=findpost&amp;p=87789849"
+title="Ссылка">Разработка и портирование GSI-прошивок (Пост Ctarchik
+#87789849)</a><br>Как говорится на свой страх и риск<br>Сообщение
+отредактировал <a
+href="https://4pda.to/forum/index.php?showuser=2733256"><strong>Xakep1993</strong></a>
+- 01.12.19, 21:26<br>---—————–<br>Телефоны: Sony Ericsson J300i &gt;
+Amoi N828 &gt; Elephone P6000 &gt; Oukitel K6 &gt; Xiaomi Redmi Note 8
+Pro &gt; Oukitel K6 &gt; Poco M3 Pro 5G &gt;Oukitel K6 &gt; Poco M5 &gt;
+Realme 8 Pro &gt; T-Mobile Revvl 7 pro</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><a
+href="https://4pda.to/forum/index.php?showuser=6622301">narod163</a><br><img
+src="https://4pda.to/s/QBvwBA7YGofEaSeMnLgraOXVaaRuDKVJ2oKccz2z2SKNsdOTSGrt9XjpglZNThorOnqbmSz20QYf9z1fcsgN.png" /><a
+href="https://4pda.to/forum/index.php?showuser=6622301">Просмотр
+профиля</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=top&amp;username=narod163&amp;result=topics&amp;noform=1">Найти
+темы пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;source=pst&amp;username=narod163&amp;noform=1">Найти
+сообщения пользователя</a><br><img
+src="https://4pda.to/s/QBvw16rAjsb9bVVz0JjK4RsT6pbB2MfCp8Nvy5XDlz1DsJHeRMEI4JOUEKUjiz1GcqRyyI1MflxM4b.png" /><a
+href="https://4pda.to/forum/index.php?act=search&amp;forums%5B%5D=1247&amp;topics%5B%5D=974421&amp;source=pst&amp;username=narod163&amp;noform=1">Cообщения
+пользователя в теме</a></td>
+<td>Сообщение <a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;view=findpost&amp;p=91531191"
+title="Ссылка на это сообщение">#21</a><br><img
+src="https://4pda.to/s/QBvwKbc39aWBkGQfz1ez1lXQGnjlLE7Iiz1G6430QDnErPC26W.gif" />
+04.12.19, 11:57</td>
+</tr>
+<tr>
+<td>Бывалый<br><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><img
+src="https://4pda.to/s/QBvw2rWJIJQNl9kLnJ71CfEVPVAAj3l243xS.gif"
+alt="*" /><br>[offline]<br>Группа: Постоянный<br>Сообщений: 545<br>Регистрация: 25.12.16<br>Репутация:
+<img
+src="https://4pda.to/s/QBvw3Vam5ssxbIRMk2CdAJJXlss7z2EmHjNG4VUxP3bM.gif"
+alt="-" /><strong><a
+href="https://4pda.to/forum/index.php?act=rep&amp;view=history&amp;mid=6622301"
+title="Просмотреть репутацию">19</a></strong><img
+src="https://4pda.to/s/QBvw33Dxw99b5Nmsyd5NKAOH4TSI4gR1VUwZtz0uw.gif"
+alt="+" /></td>
+<td>Насколько понимаю у нас вообще проблем быть не должно. Есть раздел
+дров (вендор), есть системный раздел который нужно (всего-то)
+согласовать грамотно с вендором. Есть загрузочный раздел который трогать
+нельзя.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a
+href="https://4pda.to/forum/index.php?showforum=1247">Redmi</a></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td>1234 страниц <img
+src="https://4pda.to/s/QBvwSn7Gya4VltbRAer1WUSuGEo4z1Lrz2sCl4JAz2F5NK0Wv6XMP9hKT.gif"
+alt="V" />1<a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;st=20"
+title="2">2</a><a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;st=40"
+title="3">3</a><a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;st=60"
+title="4">4</a><a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;st=80"
+title="5">5</a><a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;st=100"
+title="6">6</a><a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;st=20"
+title="Следующая страница">&gt;</a><a
+href="https://4pda.to/forum/index.php?showtopic=974421&amp;st=24660"
+title="На последнюю страницу">»</a><br>Перейти к странице</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr>
+<td></td>
+<td><a
+href="https://4pda.to/forum/index.php?act=mb&amp;mb=1"><strong>Мобильная
+версия</strong></a> <a
+href="https://4pda.to/forum/lofiversion/index.php?t974421.html"><strong>Текстовая
+версия</strong></a></td>
+<td>Сейчас: 21.11.26, 09:16</td>
+</tr>
+</tbody>
+</table>
+<p>© 4PDA 2005-2026 г. Все права защищены.</p>
+<p>4PDA® - зарегистрированный товарный знак.</p>
+<p><a href="https://4pda.to/copyright_notice/">Условия использования
+информации</a>  |  <a href="https://4pda.to/disclaimer/">Отказ от
+ответственности</a>  |   <a href="https://4pda.to/advert/"
+title="Размещение рекламы"><strong>Размещение рекламы</strong></a></p>
+<p><a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Fwww.ibresource.ru%2F">Форум</a>
+<a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Fwww.invisionboard.com%2F">IP.Board</a>
+© 2026  <a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Fwww.invisionpower.com%2F">IPS,
+Inc</a>.</p>
+<p><a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Ftwitter.com%2F4pdaru"
+title="Следуйте за нами в Twitter">Следуйте за нами в Twitter</a><a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Fvk.com%2F4pdaru"
+title="Официальная группа 4pda">Официальная группа 4pda</a><a
+href="https://4pda.to/stat/go?url=https%3A%2F%2Ft.me%2Freal4pda"
+title="Официальный канал в Telegram">Официальный канал в Telegram</a><a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Fwww.youtube.com%2Fuser%2F4pdaRU"
+title="Наш канал на YouTube">Наш канал на YouTube</a></p>
+<p><a
+href="https://4pda.to/stat/go?url=http%3A%2F%2Fwww.liveinternet.ru%2Fclick"><img
+src="https://counter.yadro.ru/hit?t14.11;rhttps%3A//4pda.to/forum/index.php%3Fshowtopic%3D974421;s1920*1080*24;uhttps%3A//4pda.to/forum/index.php%3Fshowtopic%3D974421;0.07135781259967378" /></a></p>
+</body>
+</html>

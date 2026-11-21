@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.13" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>mtkclient README-USAGE (offline extract)</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      color: light-dark(#1a1a1a, #fdfdfd);
+      background-color: #fdfdfd;
+      background-color: light-dark(#fdfdfd, #1a1a1a);
+      color-scheme: light dark;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        color-scheme: light only;
+      }
+      html, body, pre, code {
+        background-color: transparent;
+      }
+      body, a, a:visited, blockquote {
+        color: black;
+      }
+      pre, code {
+        padding: 0;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a, a:visited {
+      color: inherit;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid;
+      border-color: #e6e6e6;
+      border-color: light-dark(#e6e6e6, #4c4c4c);
+      color: #606060;
+      color: light-dark(#606060, #b6b6b6);
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid currentColor;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid currentColor;
+      border-bottom: 1px solid currentColor;
+    }
+    th {
+      border-top: 1px solid currentColor;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">mtkclient README-USAGE (offline extract)</h1>
+</header>
+<h2 id="usage">Usage</h2>
+<h3 id="using-mtktools-via-the-graphical-user-interface">Using MTKTools
+via the graphical user interface:</h3>
+<p>For the ‘basics’ you can use the GUI interface. This supports dumping
+partitions or the full flash for now. Run the following command:</p>
+<pre class="shell"><code>python mtk_gui.py</code></pre>
+<h3 id="using-brom-mode-exploit">Using brom mode exploit :</h3>
+<pre class="shell"><code>python mtk.py --preloader [preloader]</code></pre>
+<p>Dump preloader via</p>
+<pre class="shell"><code>python mtk.py dumppreloader</code></pre>
+<p>Changing uart to usb logging to see more log details in DA (XML
+only):</p>
+<pre class="shell"><code>python mtk.py printgpt --logchannel=&quot;USB&quot;</code></pre>
+<p>alternatively take the preloader from firmware</p>
+<h3 id="using-preloader-mode-exploit">Using preloader mode exploit
+:</h3>
+<pre class="shell"><code>python mtk.py --loader [MTK_AllInOne.bin or DA_BR.bin or DALoader]</code></pre>
+<p>and for Xiaomi 13C using unpatched loader:</p>
+<pre class="shell"><code>python mtk.py --loader [MTK_AllInOne.bin or DA_BR.bin or DALoader] --stock</code></pre>
+<h3 id="using-stock-mtk-functionality-without-exploits">Using stock mtk
+functionality without exploits :</h3>
+<pre class="shell"><code>python mtk.py --stock</code></pre>
+<h3 id="list-supported-devices-here-show-only-xiaomi-devices">List
+supported devices (here: show only Xiaomi devices) :</h3>
+<pre class="shell"><code>python mtk.py devices --filter Xiaomi</code></pre>
+<h3 id="run-multiple-commands">Run multiple commands</h3>
+<pre class="shell"><code>python mtk.py script examples/run.example</code></pre>
+<p>or</p>
+<pre class="shell"><code>python mtk.py multi &quot;cmd1;cmd2&quot;</code></pre>
+<p>See the file “<a
+href="https://github.com/bkerler/mtkclient/blob/main/examples/run.example">run.example</a>”
+on how to structure the script file</p>
+<h3 id="root-the-phone-tested-with-android-9---12">Root the phone
+(Tested with android 9 - 12)</h3>
+<ol type="1">
+<li>Dump boot and vbmeta</li>
+</ol>
+<pre class="shell"><code>python mtk.py r boot,vbmeta boot.img,vbmeta.img</code></pre>
+<ol start="2" type="1">
+<li>Reboot the phone</li>
+</ol>
+<pre class="shell"><code>python mtk.py reset</code></pre>
+<ol start="3" type="1">
+<li><p>Download patched magisk for mtk: Download latest Magisk <a
+href="https://github.com/topjohnwu/Magisk/releases/latest">here</a></p></li>
+<li><p>Install on target phone</p></li>
+</ol>
+<ul>
+<li>you need to enable usb-debugging via Settings/About phone/Version,
+Tap 7x on build number</li>
+<li>Go to Settings/Additional settings/Developer options, enable “OEM
+unlock” and “USB Debugging”</li>
+<li>Install magisk apk</li>
+</ul>
+<pre class="shell"><code>adb install app-release.apk</code></pre>
+<ul>
+<li>accept auth rsa request on mobile screen of course to allow adb
+connection</li>
+<li>on Xiaomi phones if installation fails try to turn off MIUI
+optimization in Developer options, restart, and try again</li>
+</ul>
+<ol start="5" type="1">
+<li>Upload boot to /sdcard/Download</li>
+</ol>
+<pre class="shell"><code>adb push boot.img /sdcard/Download</code></pre>
+<ol start="6" type="1">
+<li>Start magisk, tap on Install, select boot.img from /sdcard/Download,
+then:</li>
+</ol>
+<pre class="shell"><code>adb pull /sdcard/Download/[displayed magisk patched boot filename here]
+mv [displayed magisk patched boot filename here] boot.patched</code></pre>
+<ol start="7" type="1">
+<li><p>Do the steps needed in section “Unlock bootloader below”</p></li>
+<li><p>Flash magisk-patched boot and disable verity + verification on
+vbmeta</p></li>
+</ol>
+<pre class="shell"><code>python mtk.py da vbmeta 3
+python mtk.py w boot boot.patched</code></pre>
+<ol start="9" type="1">
+<li>Reboot the phone</li>
+</ol>
+<pre class="shell"><code>python mtk.py reset</code></pre>
+<ol start="10" type="1">
+<li>Disconnect usb cable and enjoy your rooted phone :)</li>
+</ol>
+<h3 id="unlock-flow-for-stock-mtk-with-android-9">Unlock flow for stock
+mtk with android &gt;=9</h3>
+<ol type="1">
+<li>Unlock seccfg</li>
+</ol>
+<pre class="shell"><code>python mtk.py da seccfg unlock</code></pre>
+<ol start="2" type="1">
+<li>Wipe userdata,metadata,md_udc,cache partitions</li>
+</ol>
+<pre class="shell"><code>python mtk.py e userdata,metadata,md_udc,cache</code></pre>
+<ol start="2" type="1">
+<li>Disable verity + verification on vbmeta</li>
+</ol>
+<pre class="shell"><code>python mtk.py da vbmeta 3</code></pre>
+<h3 id="boot-to-meta-mode-via-payload">Boot to meta mode via
+payload</h3>
+<p>Example:</p>
+<pre class="shell"><code>python mtk.py payload --metamode FASTBOOT</code></pre>
+<h3 id="dump-preloader">Dump preloader</h3>
+<pre class="shell"><code>mtk.py r preloader preloader.bin --parttype boot1</code></pre>
+<h3 id="dump-serialnumber-special-partition">Dump serialnumber / special
+partition</h3>
+<pre class="shell"><code>mtk.py r preloader preloader.bin --parttype boot2</code></pre>
+<h3 id="read-efuses">Read efuses</h3>
+<p>Example:</p>
+<pre class="shell"><code>python mtk.py da efuse</code></pre>
+<h3 id="unlock-bootloader">Unlock bootloader</h3>
+<ol type="1">
+<li>Erase metadata and userdata (and md_udc if existing):</li>
+</ol>
+<pre class="shell"><code>python mtk.py e metadata,userdata,md_udc</code></pre>
+<ol start="2" type="1">
+<li>Unlock bootloader:</li>
+</ol>
+<pre class="shell"><code>python mtk.py da seccfg unlock</code></pre>
+<p>for relocking use:</p>
+<pre class="shell"><code>python mtk.py da seccfg lock</code></pre>
+<ol start="3" type="1">
+<li>Reboot the phone:</li>
+</ol>
+<pre class="shell"><code>python mtk.py reset</code></pre>
+<p>and disconnect usb cable to let the phone reboot.</p>
+<p>If you are getting a dm-verity error on Android 11, just press the
+power button, then the device should boot and show a yellow warning
+about unlocked bootloader and then the device should boot within 5
+seconds.</p>
+<h3 id="read-flash">Read flash</h3>
+<p>Dump boot partition to filename boot.bin via preloader</p>
+<pre class="shell"><code>python mtk.py r boot boot.bin</code></pre>
+<p>Dump boot partition to filename boot.bin via bootrom</p>
+<pre class="shell"><code>python mtk.py r boot boot.bin [--preloader=Loader/Preloader/your_device_preloader.bin]</code></pre>
+<p>Dump preloader partition to filename preloader.bin via bootrom</p>
+<pre class="shell"><code>python mtk.py r preloader preloader.bin --parttype=boot1 [--preloader=Loader/Preloader/your_device_preloader.bin]</code></pre>
+<p>Read full flash to filename flash.bin (use –preloader for brom)</p>
+<pre class="shell"><code>python mtk.py rf flash.bin</code></pre>
+<p>Read full flash to filename flash.bin (use –preloader for brom) for
+IoT devices (MT6261/MT2301):</p>
+<pre class="shell"><code>python mtk.py rf flash.bin --iot</code></pre>
+<p>Read flash offset 0x128000 with length 0x200000 to filename flash.bin
+(use –preloader for brom)</p>
+<pre class="shell"><code>python mtk.py ro 0x128000 0x200000 flash.bin</code></pre>
+<p>Dump all partitions to directory “out”. (use –preloader for brom)</p>
+<pre class="shell"><code>python mtk.py rl out</code></pre>
+<p>Show gpt (use –preloader for brom)</p>
+<pre class="shell"><code>python mtk.py printgpt</code></pre>
+<p>Mount the flash as a filesystem</p>
+<pre class="shell"><code>python mtk.py fs /mnt/mtk</code></pre>
+<h3 id="write-flash">Write flash</h3>
+<p>(use –preloader for brom)</p>
+<p>Write filename boot.bin to boot partition</p>
+<pre class="shell"><code>python mtk.py w boot boot.bin</code></pre>
+<p>Write filename flash.bin as full flash (currently only works in da
+mode)</p>
+<pre class="shell"><code>python mtk.py wf flash.bin</code></pre>
+<p>Write all files in directory “out” to the flash partitions</p>
+<pre class="shell"><code>python mtk.py wl out</code></pre>
+<p>write file flash.bin to flash offset 0x128000 with length 0x200000
+(use –preloader for brom)</p>
+<pre class="shell"><code>python mtk.py wo 0x128000 0x200000 flash.bin</code></pre>
+<h3 id="erase-flash">Erase flash</h3>
+<p>Erase boot partition</p>
+<pre class="shell"><code>python mtk.py e boot</code></pre>
+<p>Erase boot sectors</p>
+<pre class="shell"><code>python mtk.py es boot [sector count]</code></pre>
+<h3 id="da-commands">DA commands:</h3>
+<p>Peek memory</p>
+<pre class="shell"><code>python mtk.py da peek [addr in hex] [length in hex] [optional: -filename filename.bin for reading to file]</code></pre>
+<p>Poke memory</p>
+<pre class="shell"><code>python mtk.py da poke [addr in hex] [data as hexstring or -filename for reading from file]</code></pre>
+<p>Read rpmb (Only xflash for now)</p>
+<pre class="shell"><code>python mtk.py da rpmb r [will read to rpmb.bin]</code></pre>
+<p>Write rpmb [Currently broken, xflash only]</p>
+<pre class="shell"><code>python mtk.py da rpmb w filename</code></pre>
+<p>Generate and display rpmb1-3 key</p>
+<pre class="shell"><code>python mtk.py da generatekeys</code></pre>
+<p>Unlock / Lock bootloader</p>
+<pre class="shell"><code>python mtk.py da seccfg [lock or unlock]</code></pre>
+<hr />
+<h3 id="bypass-sla-daa-and-sbc-using-generic_patcher_payload">Bypass
+SLA, DAA and SBC (using generic_patcher_payload)</h3>
+<p><code>shell python mtk.py payload</code> If you want to use SP Flash
+tool afterwards, make sure you select “UART” in the settings, not
+“USB”.</p>
+<h3 id="dump-preloader-1">Dump preloader</h3>
+<ul>
+<li>Device has to be in bootrom mode and preloader has to be intact on
+the device</li>
+</ul>
+<pre class="shell"><code>python mtk.py dumppreloader [--ptype=[&quot;amonet&quot;,&quot;kamakiri&quot;,&quot;kamakiri2&quot;,&quot;hashimoto&quot;]] [--filename=preloader.bin]</code></pre>
+<h3 id="dump-brom">Dump brom</h3>
+<ul>
+<li>Device has to be in bootrom mode, or da mode has to be crashed to
+enter damode</li>
+<li>if no option is given, either kamakiri or da will be used (da for
+insecure targets)</li>
+<li>if “kamakiri” is used as an option, kamakiri is enforced</li>
+<li>Valid options are : “kamakiri” (via usb_ctrl_handler attack),
+“amonet” (via gcpu) and “hashimoto” (via cqdma)</li>
+</ul>
+<pre class="shell"><code>python mtk.py dumpbrom --ptype=[&quot;amonet&quot;,&quot;kamakiri&quot;,&quot;hashimoto&quot;] [--filename=brom.bin]</code></pre>
+<p>For to dump unknown bootroms, use brute option :</p>
+<pre class="shell"><code>python mtk.py brute</code></pre>
+<p>If it’s successful, please add an issue over here and append the
+bootrom in order to add full support.</p>
+<hr />
+<h3 id="crash-da-in-order-to-enter-brom">Crash da in order to enter
+brom</h3>
+<pre class="shell"><code>python mtk.py crash [--vid=vid] [--pid=pid] [--interface=interface]</code></pre>
+<h3 id="read-memory-using-patched-preloader">Read memory using patched
+preloader</h3>
+<ul>
+<li>Boot in Brom or crash to Brom</li>
+</ul>
+<pre class="shell"><code>python mtk.py peek [addr] [length] --preloader=patched_preloader.bin</code></pre>
+<h3 id="run-custom-payload">Run custom payload</h3>
+<pre class="shell"><code>python mtk.py payload --payload=payload.bin [--var1=var1] [--wdt=wdt] [--uartaddr=addr] [--da_addr=addr] [--brom_addr=addr]</code></pre>
+<hr />
+<h2 id="stage2-usage">Stage2 usage</h2>
+<h3 id="run-python-mtk.py-stage-brom-or-mtk-plstage-preloader">Run
+python mtk.py stage (brom) or mtk plstage (preloader)</h3>
+<h4 id="run-stage2-in-bootrom">Run stage2 in bootrom</h4>
+<p><code>shell python mtk.py stage</code></p>
+<h4 id="run-stage2-in-preloader">Run stage2 in preloader</h4>
+<p><code>shell python mtk.py plstage</code></p>
+<h4 id="run-stage2-plstage-in-bootrom">Run stage2 plstage in
+bootrom</h4>
+<ul>
+<li>Boot in Brom or crash to Brom</li>
+</ul>
+<pre class="shell"><code>python mtk.py plstage --preloader=preloader.bin</code></pre>
+<h3 id="use-stage2-tool">Use stage2 tool</h3>
+<h3 id="leave-stage2-and-reboot">Leave stage2 and reboot</h3>
+<p><code>shell python stage2.py reboot</code></p>
+<h3 id="read-rpmb-in-stage2-mode">Read rpmb in stage2 mode</h3>
+<p><code>shell python stage2.py rpmb</code></p>
+<h3 id="read-preloader-in-stage2-mode">Read preloader in stage2
+mode</h3>
+<p><code>shell python stage2.py preloader</code></p>
+<h3 id="read-memory-as-hex-data-in-stage2-mode">Read memory as hex data
+in stage2 mode</h3>
+<p><code>shell python stage2.py memread [start addr] [length]</code></p>
+<h3 id="read-memory-to-file-in-stage2-mode">Read memory to file in
+stage2 mode</h3>
+<p><code>shell python stage2.py memread [start addr] [length] --filename filename.bin</code></p>
+<h3 id="write-hex-data-to-memory-in-stage2-mode">Write hex data to
+memory in stage2 mode</h3>
+<p><code>shell python stage2.py memwrite [start addr] --data [data as hexstring]</code></p>
+<h3 id="write-memory-from-file-in-stage2-mode">Write memory from file in
+stage2 mode</h3>
+<p><code>shell python stage2.py memwrite [start addr] --filename filename.bin</code></p>
+<h3 id="extract-keys">Extract keys</h3>
+<p><code>shell python stage2.py keys --mode [sej, dxcc]</code> For dxcc,
+you need to use plstage instead of stage</p>
+</body>
+</html>
