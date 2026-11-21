@@ -66,32 +66,32 @@ Confidence: high for matrix values (page verified), but the matrix reflects main
 | Issue | Closed | Fix evidence |
 |---|---|---|
 | [#1 SD card not detected](https://gitlab.com/ubports/porting/community-ports/android10/xiaomi-redmi-note-8-pro/xiaomi-begonia/-/issues/1) | 2022-04-01 | "fixed by" MR !2 commit 61233a81 |
-| [#3 Anbox patch not complete](.../issues/3) | 2022-06-27 | gbinder bootloop resolved |
-| [#4 Video playback won't work](.../issues/4) | 2022-04-01 | MR !2 commit 7aa359b3 |
-| [#5 MTP and ADB not working](.../issues/5) | 2022-02-03 | MR !2 commits |
-| [#6 Cannot get ADB](.../issues/6) | 2022-05-13 | — |
-| [#15 Installation renders stock Android unusable](.../issues/15) | 2023-12-15 | imported from GitHub (iamshadow2008) |
-| [#16 Screen tearing/artifacts](.../issues/16) | 2023-12-15 | filed by rubencarneiro (xenial-era rootfs build) |
+| [#3 Anbox patch not complete](https://gitlab.com/ubports/porting/community-ports/android10/xiaomi-redmi-note-8-pro/xiaomi-begonia/-/issues/3) | 2022-06-27 | gbinder bootloop resolved |
+| [#4 Video playback won't work](https://gitlab.com/ubports/porting/community-ports/android10/xiaomi-redmi-note-8-pro/xiaomi-begonia/-/issues/4) | 2022-04-01 | MR !2 commit 7aa359b3 |
+| [#5 MTP and ADB not working](https://gitlab.com/ubports/porting/community-ports/android10/xiaomi-redmi-note-8-pro/xiaomi-begonia/-/issues/5) | 2022-02-03 | MR !2 commits |
+| [#6 Cannot get ADB](https://gitlab.com/ubports/porting/community-ports/android10/xiaomi-redmi-note-8-pro/xiaomi-begonia/-/issues/6) | 2022-05-13 | — |
+| [#15 Installation renders stock Android unusable](https://gitlab.com/ubports/porting/community-ports/android10/xiaomi-redmi-note-8-pro/xiaomi-begonia/-/issues/15) | 2023-12-15 | imported from GitHub (iamshadow2008) |
+| [#16 Screen tearing/artifacts](https://gitlab.com/ubports/porting/community-ports/android10/xiaomi-redmi-note-8-pro/xiaomi-begonia/-/issues/16) | 2023-12-15 | filed by rubencarneiro (xenial-era rootfs build) |
 
 ### Recent 2026 fix work (commits, verified-direct)
 - **2026-07-09 → 2026-07-14 (TheKit)**: dynamic-partition **LVM** adoption — `halium_lvm_vg=ubports`, dynparts ramdisk, LVM binaries/hooks imported, LVM migration via props, "[temp] WIP LVM migrator" — enables the noble-era dynparts/LVM data layout on the unified recovery.
 - **2026-07-09 (kernel, TheKit)**: `dtc -fcommon` build fix for current toolchains (kernel-side fix enabling 2026 rebuilds).
 - **2026-09-24**: `ramdisk-recovery-overlay: drop /cache partition from recovery.fstab`.
-- **2026-10-10 (TheKit, 2 commits)**: `overlay: use stock audio policy, disable fast output via deviceinfo` + `drop unused PulseAudio and upstart files` — this directly targets the long-standing **"audio stuck on earpiece after call"** bug (open issue [#10](.../issues/10)) per the `halium.yaml` comment `quirks=-output_fast`. *Analysis (medium confidence): the matrix was updated after this (page cached 2026-11-21 still shows voice-in-calls working); issue #10 remains formally open.*
+- **2026-10-10 (TheKit, 2 commits)**: `overlay: use stock audio policy, disable fast output via deviceinfo` + `drop unused PulseAudio and upstart files` — this directly targets the long-standing **"audio stuck on earpiece after call"** bug (open issue [#10](https://gitlab.com/ubports/porting/community-ports/android10/xiaomi-redmi-note-8-pro/xiaomi-begonia/-/issues/10)) per the `halium.yaml` comment `quirks=-output_fast`. *Analysis (medium confidence): the matrix was updated after this (page cached 2026-11-21 still shows voice-in-calls working); issue #10 remains formally open.*
 - **2026-10-19**: Apache-2.0 license added (repo hygiene).
 
 ### Open issues (9) — what is broken NOW per tracker
 | # | State/open since | Title | Note |
 |---|---|---|---|
-| [#2](.../issues/2) | open, 2021-11-16 | Data connection not working properly | "user must go to settings and select the data manually... maybe needs ofono tweaks" |
-| [#7](.../issues/7) | open, 2022-08-29 | Status bar behind edges | notch overlaps clock |
-| [#8](.../issues/8) | open, 2022-09-14 | Waydroid does not work | "container doesn't start" |
-| [#9](.../issues/9) | open, 2022-09-14 | Wi-Fi doesn't want to turn on | `wlan CONNAC: Direct firmware load for ...` failed |
-| [#10](.../issues/10) | open, 2022-10-03 | Audio stuck on earpiece after call | likely mitigated 2026-10-10 (above) |
-| [#11](.../issues/11) | open, 2023-03-17 | No OTA updates, can't change channels | user stuck on 2021-09-11 build (xenial-era symptom) |
-| [#12](.../issues/12) | open, 2022-09-15 | Bluetooth not working | contradicts matrix |
-| [#13](.../issues/13) | open, 2022-09-15 | WiFi and Hotspot issue | wifi off after sleep |
-| [#14](.../issues/14) | open, 2022-09-15 | NFC issue | NFC entry disappears from Settings over time |
+| [#2](https://gitlab.com/ubports/porting/community-ports/android10/xiaomi-redmi-note-8-pro/xiaomi-begonia/-/issues/2) | open, 2021-11-16 | Data connection not working properly | "user must go to settings and select the data manually... maybe needs ofono tweaks" |
+| [#7](https://gitlab.com/ubports/porting/community-ports/android10/xiaomi-redmi-note-8-pro/xiaomi-begonia/-/issues/7) | open, 2022-08-29 | Status bar behind edges | notch overlaps clock |
+| [#8](https://gitlab.com/ubports/porting/community-ports/android10/xiaomi-redmi-note-8-pro/xiaomi-begonia/-/issues/8) | open, 2022-09-14 | Waydroid does not work | "container doesn't start" |
+| [#9](https://gitlab.com/ubports/porting/community-ports/android10/xiaomi-redmi-note-8-pro/xiaomi-begonia/-/issues/9) | open, 2022-09-14 | Wi-Fi doesn't want to turn on | `wlan CONNAC: Direct firmware load for ...` failed |
+| [#10](https://gitlab.com/ubports/porting/community-ports/android10/xiaomi-redmi-note-8-pro/xiaomi-begonia/-/issues/10) | open, 2022-10-03 | Audio stuck on earpiece after call | likely mitigated 2026-10-10 (above) |
+| [#11](https://gitlab.com/ubports/porting/community-ports/android10/xiaomi-redmi-note-8-pro/xiaomi-begonia/-/issues/11) | open, 2023-03-17 | No OTA updates, can't change channels | user stuck on 2021-09-11 build (xenial-era symptom) |
+| [#12](https://gitlab.com/ubports/porting/community-ports/android10/xiaomi-redmi-note-8-pro/xiaomi-begonia/-/issues/12) | open, 2022-09-15 | Bluetooth not working | contradicts matrix |
+| [#13](https://gitlab.com/ubports/porting/community-ports/android10/xiaomi-redmi-note-8-pro/xiaomi-begonia/-/issues/13) | open, 2022-09-15 | WiFi and Hotspot issue | wifi off after sleep |
+| [#14](https://gitlab.com/ubports/porting/community-ports/android10/xiaomi-redmi-note-8-pro/xiaomi-begonia/-/issues/14) | open, 2022-09-15 | NFC issue | NFC entry disappears from Settings over time |
 
 ### Broken NOW — consolidated verdict (matrix + tracker)
 **Hard-broken (matrix)**: Microphone, RTC time, auto-brightness (repowerd#11), wireless external monitor, FM radio. **Global/blocked**: VoLTE (ubuntu-touch#1335), slow first GPS fix / no A-GPS (location-service#13).
