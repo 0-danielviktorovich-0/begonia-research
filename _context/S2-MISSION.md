@@ -78,3 +78,9 @@ each build variant with steps + source links, marking verified-steps vs pointers
   to short any pins"); SP Flash Tool path = cable + Windows or Linux host (+bypass utility); UART debugging =
   optional USB-TTL adapter, begonia pinout NOT found (open question); paid remote service = alternative.
   Present as a compact table: method | host | extra hardware | source.
+
+### D1b — source freshness ledger (REQUIREMENTS 36)
+sources.json records get: `fetched_at` (ISO 8601 UTC, when we last observed the source) and
+`source_last_updated` (when the SOURCE last changed, if exposed: repo pushed_at, page/oldid date,
+thread last-post date, release date). 01-SOURCES.md renders both; INDEX.md items carry verified-at dates.
+Where a source exposes nothing date-like, set source_last_updated: null (never invent).
