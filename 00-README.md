@@ -1,5 +1,7 @@
 # 00 — README: begonia-research executive summary
 
+> **Independent 2026-11-21 update:** The Linux 4.19.325 MT6785 tree checked in LineageOS contains **rosemary** board DTS/defconfig, so it is **not verified as a ready-to-flash begonia kernel**. Community reports a begonia 4.19 port but without independently checked full test logs. Further, a [postmarketOS-derived experimental begonia build](https://github.com/criollojoel10/begonia-pmos-tianma) reports **working onboard Wi-Fi on Linux 6.16.4** (2026-09-27) using ported MediaTek vendor WLAN drivers; the baseline pmOS Wi-Fi status below still describes the standard Dinolek/Nura package. See [22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md](22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md).
+
 Research knowledge base for the **Xiaomi Redmi Note 8 Pro** (`begonia`, MediaTek Helio G90T / MT6785, 2019), built 2026-11-21 in a single-day multi-agent run (6 core researchers + augmentation waves + synthesis pass) so that an agent or human unfamiliar with the device can start work from this repo alone.
 
 **Dual scope** (user requirement, [_context/REQUIREMENTS.md](_context/REQUIREMENTS.md) row 24):
