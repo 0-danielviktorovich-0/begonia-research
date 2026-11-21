@@ -6,6 +6,10 @@ All "verified" dates are observation stamps (REQUIREMENTS row 36): the day we la
 
 **[Русский словарь типов прошивок и технических терминов](19-ROM-TERMS-GLOSSARY-RU.md)** — начать здесь, если CFW, Non-CFW, GSI, vendor, Halium, mainline, recovery и номера версий пока неочевидны.
 
+**[Кастомные ядра 4.14/4.19 и KSU/Non-KSU](20-KERNEL-419-ROOT-ECOSYSTEM-RU.md)** — дерево источников, ветки, HEAD и родословная патчей; структурированный [реестр](kernel-root-provenance.csv).
+
+**[NoMount и сравнение root/mount-подходов](21-NOMOUNT-MOUNT-BACKENDS-RU.md)** — отличие root engine от SUSFS и metamodule, требования к legacy 4.14/4.19, совместимость и диагностика.
+
 ## Topic map
 
 | Topic | Where | What's there | Verified |
