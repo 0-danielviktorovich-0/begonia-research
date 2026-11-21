@@ -19,6 +19,13 @@ COVERAGE + regenerated archive index. `begonia-research.zip` is **dropped** per 
 
 Начинающим и новым ИИ-агентам: **[19-ROM-TERMS-GLOSSARY-RU.md](19-ROM-TERMS-GLOSSARY-RU.md)** — что означают CFW, Non-CFW, GSI, stock MIUI, native ROM, OEM port, Q-OSS/R-OSS, firmware/vendor blobs, Halium и mainline; как соотносятся версии Android, Linux-ядра и базы драйверов, и почему это критично при выборе образов для begonia.
 
+## Дополнительные технические исследования
+
+- [Русский справочник типов прошивок](19-ROM-TERMS-GLOSSARY-RU.md) — CFW/Non-CFW, GSI, vendor, Halium, mainline.
+- [Происхождение ядер 4.14/4.19 и root-экосистемы](20-KERNEL-419-ROOT-ECOSYSTEM-RU.md), [kernel-root-provenance.csv](kernel-root-provenance.csv) — KSU/Non-KSU, версии, форки, конфигурации.
+- [NoMount и варианты системной подмены файлов](21-NOMOUNT-MOUNT-BACKENDS-RU.md) — Magic Mount, OverlayFS, Mountify, NoMount, SUSFS, Hybrid Mount, плюсы/минусы и ограничения MT6785.
+- [Аудит достоверности и полноты](17-INDEPENDENT-AUDIT.md), [безопасная диагностика телефона](18-DEVICE-PREFLIGHT-READONLY.md).
+
 ## Deliverables (root)
 
 | File | Content | Status |
