@@ -87,3 +87,11 @@ own last-change date AS EXPOSED: repo pushed_at, page/oldid date, thread last-po
 change observed in this source was <date>" (RU: "на момент <observed_at> последнее зафиксированное изменение
 источника — <date>"). INDEX.md items carry verified-at dates. Where a source exposes nothing date-like, set
 source_last_change_observed: null — never invent.
+
+### D6 — packaging cleanup (REQUIREMENTS 4 amended, 22)
+- `begonia-research.zip` is DROPPED (owner: repo = distribution medium; collaborator has git access). Scrub
+  zip mentions from README.md / 00-README.md / 09-OPEN-QUESTIONS.md (keep the amendment history in REQUIREMENTS).
+- Add the flagged Bliss OS 16.9 row to firmware-matrix.csv (02 §3.11; columns per current 15-col header;
+  source: androidfilehost flid=339073; historical/community-mirror, hash-unverified).
+- Final root-README refresh at the END of your pass (row 22): statuses of every file incl. 11/12/13/14 +
+  ISO 8601 UTC stamp; keep hyperlinks, no bare URLs.
