@@ -1,0 +1,22 @@
+# file	original_url	type	cited_in
+pmos-wiki-begonia-extracted.html	https://wiki.nura.eco/wiki/Xiaomi_Redmi_Note_8_Pro_(xiaomi-begonia)	extracted md->html	04, 06, 07, 00
+ubports-begonia-extracted.html	https://devices.ubuntu-touch.io/device/begonia/	extracted md->html	05
+ubports-begonia.html	https://devices.ubuntu-touch.io/device/begonia/	raw html (unstyled offline)	05
+4pda-cfw-p1-extracted.html	https://4pda.to/forum/index.php?showtopic=974421	extracted md->html (curl 403; extractor passes)	01, 02, 10
+4pda-cfw-mid-extracted.html	https://4pda.to/forum/index.php?showtopic=974421&st=24360	extracted md->html	02, 03
+4pda-cfw-last-extracted.html	https://4pda.to/forum/index.php?showtopic=974421&st=24660	extracted md->html	02
+4pda-miui-p1-extracted.html	https://4pda.to/forum/index.php?showtopic=965629	extracted md->html	01, 02, 07
+4pda-miui-last-extracted.html	https://4pda.to/forum/index.php?showtopic=965629&st=22180	extracted md->html	02
+xda-megathread-wayback.html	http://web.archive.org/web/20260415164458/https://xdaforums.com/t/guide-info-psa-redmi-note-8-pro-megathread-cfw.4056527/	raw wayback html	01, 02, 10
+xda-unlock-guide-wayback.html	http://web.archive.org/web/20230316035523/https://forum.xda-developers.com/t/guide-begonia-unlock-bootloader-flash-twrp-and-root-proper.3995919/	raw wayback html	07, 10
+twrp-begonia-page.html	http://twrp.me/xiaomi/xiaomiredminote8pro.html	raw html (official TWRP page, 2026-11-20)	07
+twrp-begonia-dl.html	https://eu.dl.twrp.me/begonia/	raw html (TWRP download listing)	07
+orangefox-begonia.html	https://orangefox.download/device/begonia	raw html (official OrangeFox device page)	07
+github-agentfabulous-begonia.html	https://github.com/AgentFabulous/begonia	raw github html	03
+github-dinolek-mt6785-mainline.html	https://github.com/Dinolek/mt6785-mainline	raw github html	03, 06
+files/mtkclient-README-USAGE.html	https://raw.githubusercontent.com/bkerler/mtkclient/main/README-USAGE.md	md->html (pandoc)	07
+files/mtkclient-README-USAGE.md	https://raw.githubusercontent.com/bkerler/mtkclient/main/README-USAGE.md	raw markdown	07
+files/mt6785-scatter.txt	https://gist.githubusercontent.com/michaelskyf/eff1894ec531e659f2a2ec393ba61697/raw	text artifact (scatter)	07
+files/pmaports-device-xiaomi-begonia-tree.json	https://gitlab.nura.eco/api/v4/projects/nura%2Fpmaports/repository/tree?path=device/testing/device-xiaomi-begonia&ref=main&per_page=100	api json (Anubis wall for pages)	04, 06
+files/pmaports-mr1909.json	https://gitlab.nura.eco/api/v4/projects/nura%2Fpmaports/merge_requests/1909	api json	06
+files/pmaports-deviceinfo.txt	https://gitlab.nura.eco/api/v4/projects/nura%2Fpmaports/repository/files/device%2Ftesting%2Fdevice-xiaomi-begonia%2Fdeviceinfo/raw?ref=main	raw deviceinfo	04, 06
