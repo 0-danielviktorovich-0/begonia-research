@@ -12,13 +12,13 @@ TWRP backup explicitly skipped by owner.
 | UT official community port | exists, **Halium 10.0**, kernel 4.14.141, "under heavy development"; GitLab device+kernel sources; **microphone broken** ([device page](https://devices.ubuntu-touch.io/device/begonia/)) | [device source](https://gitlab.com/ubports/porting/community-ports/android10/xiaomi-redmi-note-8-pro/xiaomi-begonia), [kernel](https://gitlab.com/ubports/porting/community-ports/android10/xiaomi-redmi-note-8-pro/kernel-xiaomi-mt6785) (branches halium-10.0, halium-10.0-cfw, lineage-17.1) |
 | **Droidian adaptation (begonia-linux org)** | Halium-10 + Debian; release 2024-09-15 (3 adaptation .debs); hardware matrix from porter README: **microphone ✔, camera ✔, calls/data/SMS/dual-SIM/MMS ✔, fingerprint ✔, rotation ✔, BT ✔, NFC ✔, GPS partial, hotspot ✗, encryption ✗** | [adaptation repo (droidian branch)](https://github.com/begonia-linux/adaptation-xiaomi-begonia/tree/droidian), kernel: [begonia-linux/linux-android-begonia](https://github.com/begonia-linux/linux-android-begonia); porters Halhadus (main), rifux; support t.me/begonia_linux |
 | Halium-10 Android base | A10-era vendor required (MIUI 12.0.x A10 or LOS 17.1 — kernel repo carries a lineage-17.1 branch) | porter practice + repo branches [V] |
-| rubencarneiro halium-11 branch (cited in [15](15-RE-IMPROVEMENT-PLAN.md)) | **NOT FOUND** (git ls-remote empty) — correct 15 when reworked | [V-absence 2026-11-22] |
+| rubencarneiro halium-11 branch (cited in [15](../docs/en/linux/15-RE-IMPROVEMENT-PLAN.md)) | **NOT FOUND** (git ls-remote empty) — correct 15 when reworked | [V-absence 2026-11-22] |
 | Host build env | Docker 29.9.3 on the Mac — halium-boot/kernel builds runnable in containers (aarch64 target on arm64 host) | [V-host] |
 
 ## Route (decision: Droidian-first)
 
 1. **Phase 1 — Droidian baseline** (fastest working-Linux win; mic works):
-   a. Obtain MIUI 12.0.x A10 fastboot package for begonia (recipe: [15](15-RE-IMPROVEMENT-PLAN.md)
+   a. Obtain MIUI 12.0.x A10 fastboot package for begonia (recipe: [15](../docs/en/linux/15-RE-IMPROVEMENT-PLAN.md)
       unpacking; MD5-verified via XM Firmware Updater index) → flash stock system+vendor (A10 base).
    b. Flash halium-boot (begonia-linux/linux-android-begonia build) to boot.
    c. Flash Droidian rootfs (bullseye arm64 from droidian.org) to data; install the 3 adaptation .debs
@@ -29,19 +29,19 @@ TWRP backup explicitly skipped by owner.
    mixer_paths, audio_policy, fw files from the A10 vendor).
 3. **Phase 3 — UT rootfs on the same halium-boot**: reuse Phase-2 boot + A10 vendor; UT device tree from
    the GitLab community port as reference; fix the UT microphone using the Droidian audio diff
-   ([05 §](05-UBUNTU-TOUCH.md) mic row) — this was the 15-plan's first milestone anyway.
-4. **Phase 4 — pmOS mainline** ([15-RE](15-RE-IMPROVEMENT-PLAN.md) staging: Wi-Fi/BT mainline spike → audio driver).
+   ([05 §](../docs/en/linux/05-UBUNTU-TOUCH.md) mic row) — this was the 15-plan's first milestone anyway.
+4. **Phase 4 — pmOS mainline** ([15-RE](../docs/en/linux/15-RE-IMPROVEMENT-PLAN.md) staging: Wi-Fi/BT mainline spike → audio driver).
 5. **RE thread throughout**: A10 vendor unpack (simg2img + debugfs; never execute ELBs), Ghidra 12.1.4 +
-   Craft Anything ready on the host; blobs ledger → [11-BLOBS-FIRMWARE-SOURCES.md](11-BLOBS-FIRMWARE-SOURCES.md).
+   Craft Anything ready on the host; blobs ledger → [11-BLOBS-FIRMWARE-SOURCES.md](../docs/en/kernels/11-BLOBS-FIRMWARE-SOURCES.md).
 
 ## Return-to-Android path (kept intentionally cheap)
 
-Axion zip re-flash from TWRP (package carries FW+TWRP; [07 §N.2](07-RECOVERY-SAFETY.md)) — ~10 min.
+Axion zip re-flash from TWRP (package carries FW+TWRP; [07 §N.2](../docs/en/recovery/07-RECOVERY-SAFETY.md)) — ~10 min.
 Safety images already on host: nvram/nvdata/nvcfg/persist/boot (A14-era, taken 2026-11-22 pre-flash).
 
 ## Open items
 
-- Exact MIUI 12.0.x A10 fastboot package version for begonia (Global vs EEA — [17 A06](17-INDEPENDENT-AUDIT.md):
+- Exact MIUI 12.0.x A10 fastboot package version for begonia (Global vs EEA — [17 A06](../docs/en/research/17-INDEPENDENT-AUDIT.md):
   regional discipline) — pick after checking the adaptation README's install section + t.me/begonia_linux.
 - Droidian rootfs edition (bullseye vs trixie-era) matching the 2024-09 adaptation debs.
 - Whether halium-boot builds exist as CI artifacts (avoid local build for Phase 1; build only in Phase 2).
