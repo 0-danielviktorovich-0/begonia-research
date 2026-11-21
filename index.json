@@ -412,6 +412,18 @@
         "https://kernelsu.org/guide/metamodule.html"
       ],
       "status": "covered; primary upstream checked 2026-11-21; untested on target hardware"
+    },
+    {
+      "topic": "kernel-414-to-419-ai-porting-payment-integrity",
+      "file": "22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md",
+      "section_anchor": "1-linux-414--419-chto-oznachaet-perenos-na-dele",
+      "key_sources": [
+        "https://github.com/xiaomi-mt6785-dev/android_kernel_xiaomi_mt6785",
+        "https://github.com/criollojoel10/begonia-pmos-tianma",
+        "https://developer.android.com/google/play/integrity/verdicts",
+        "https://support.google.com/wallet/answer/12200245"
+      ],
+      "status": "covered; source files and official payment docs observed 2026-11-21; physical begonia 4.19 and Wi-Fi test independent reproduction pending"
     }
   ]
 }
