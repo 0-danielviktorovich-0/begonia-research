@@ -156,3 +156,157 @@ Pinned "Linux" section links Ubuntu Touch 24.04 (p=146080111) and postmarketOS (
 2. Global last 12.5: "Stable" (4PDA V12.5.8.0) vs "Stable Beta" + stable V12.5.1.0 (xmfwu).
 3. Russia last 12.5: V12.5.4.0 (4PDA) vs V12.5.3.0 stable / V12.5.5.0 stable-beta (xmfwu).
 4. CN weekly last: V21.10.15 (4PDA) vs 21.11.24 (xmfwu).
+
+---
+
+## 7. Per-ROM source inventory (appended 2026-11-21; user-mandated)
+
+Method: GitHub API NOT used (shared quota exhausted). Verification = `git ls-remote --symref` branch listings + raw.githubusercontent.com file fetches + github.com topics/tree HTML + web_search, all executed 2026-11-21. `verified-direct` = seen by this pass; `seed` = orchestrator-verified 2026-11-21; `inferred` = derived. Kernel deep-dive per kernel lives in 03-KERNEL-HISTORY.md (not duplicated). Ready-build links remain in §1–§3; this section adds development sources.
+
+⚠️ **Seed correction (verified-direct, high confidence):** orchestrator seeds attributed lineage-* kernel branches (lineage-17.1/21/22.2/23.0/24.0) to `AgentFabulous/begonia`. Live branch listing shows `AgentFabulous/begonia` has exactly **12 branches** (a10-rebase, android-9.0, android-10.0/-orig/-staging, android-11.0/-cfw/-old/-staging, android-12.0, mali-merge, staging; default `android-11.0`) and **no lineage-\* branches**. The lineage-* branches live in **`LineageOS/android_kernel_xiaomi_mt6785`** (lineage-17.1, lineage-20, lineage-21, lineage-22.2, lineage-23.0, lineage-23.2, lineage-24.0; default lineage-24.0). The seed's kernel-version claims (4.14.194/340-openela/356/356-openela-rc1, 4.19.325) stand, re-attributed to this repo.
+
+### 7.1 Official MIUI (all §1 rows; CSV rows 2–22)
+
+| component | URL | branch/ref | verified | confidence |
+|---|---|---|---|---|
+| kernel (A9 / PGG builds) | https://github.com/MiCode/Xiaomi_Kernel_OpenSource | `begonia-p-oss` @03ffbf5 (seed) | ls-remote 2026-11-21 + seed | high |
+| kernel (A10 / QGG builds) | https://github.com/MiCode/Xiaomi_Kernel_OpenSource | `begonia-q-oss` @4e3bb1f (seed) | ls-remote + seed | high |
+| kernel (A11 / RGG builds) | https://github.com/MiCode/Xiaomi_Kernel_OpenSource | `begonia-r-oss` @777ef5d (seed) | ls-remote + seed | high |
+| device tree | not found — Xiaomi publishes kernel source only; no begonia device tree in MiCode org | — | searched: MiCode org | high (absence) |
+| vendor | binaries only: https://xmfirmwareupdater.com/vendor/begonia/ + /firmware/begonia/; source-level community dumps: https://github.com/ZIDAN44/redmi_begonia_dump (15 branches, V11.0.4→V12.5.7 Global/CN/weeklies) and https://github.com/ZyCromerZ/redmi_begonia_dump (24 branches, A9 PGG → A11 RGG, IDXM/EUXM/RUXM/MIXM) | dump branches named per MIUI build | ls-remote | high |
+| manifest | n/a — prebuilt zips; install docs: 4PDA MIUI pinned p=88821588 | — | cached | high |
+
+### 7.2 Kernel / vendor base bundles (CSV rows 23–26)
+
+| entry | source | branch/ref | verified | confidence |
+|---|---|---|---|---|
+| MIUI 12.5 vendor base | MiCode `begonia-r-oss` @777ef5d + xmfwu vendor page | seed + ls-remote | verified-direct + seed | high |
+| Stock kernel 4.14.141 | MiCode `begonia-p-oss`/`begonia-q-oss` (4.14 line) | ls-remote; sublevel per devices.ubuntu-touch.io | verified-direct | high |
+| AgentFabulous kernel | https://github.com/AgentFabulous/begonia | 12 branches, see §7 intro; default android-11.0; Makefile VERSION=4 (raw) | verified-direct | high |
+| Power Kernel | https://github.com/Saikrishna1504/kernel_xiaomi_mt6785 | `main` (default), `kaeru` | ls-remote + pointer in cvnertnc/Begonia-Kernel-Builder README (raw-fetched) | high |
+| AkameKernel | https://github.com/Anonym3310/AkameKernel-begonia | `Q-OSS-SLMK` (default), `CFW` | ls-remote | high |
+| Pox Kernel | https://github.com/txorav/pox-kernel-begonia | `main`, `onyx` (Rock Editions Granite/Obsidian/Onyx per topics page) | ls-remote | high |
+| Kernel CI builder | https://github.com/cvnertnc/Begonia-Kernel-Builder (KernelSU-Next+SUSFS, archived) ← fork of https://github.com/PhamtomK12/Android-Kernel-Builder | main | raw README | high |
+| TWRP trees | https://github.com/HyperTeam/android_device_redmi_begonia-TWRP (`android-9.0`); https://github.com/BitsAndBytes-dev/twrp_device_redmi_begonia (`11`) | ls-remote | verified-direct | high |
+
+### 7.3 GSI rows (§2; CSV rows 27–37)
+
+| component | URL | branch/ref | verified | confidence |
+|---|---|---|---|---|
+| GSI framework (A10 era) | https://github.com/phhusson/treble_experimentations | master | ls-remote | high |
+| GSI framework (TrebleDroid, current) | https://github.com/TrebleDroid/treble_experimentations | master | ls-remote | high |
+| begonia GSI adaptation | https://github.com/reddxae/begonia-gsi-adaptation | main | ls-remote | high |
+| kernel/vendor under GSIs | stock MIUI vendor+kernel (§7.1–7.2) — GSI replaces system only | per base: q-oss/r-oss | inferred | high |
+| per-build sources (Bliss GSI, RR GSI, PE GSI, crDroid GSI by rvtom1970/timjosten/User-_-Name/bugreporter) | not found (searched: 4PDA posts p=107855537, 102565322, 112878843, 114061722, 121096835, 106451290, 110287291; GitHub) | — | — | — |
+| HarmonyOS 4.0.0.112 / MagicOS 7.1 Beta ports | not found (closed ports; searched: 4PDA p=145551659 / p=145549738, GitHub) | — | — | — |
+
+### 7.4 crDroid (§3.1)
+
+| ROM (CSV row) | kernel | device tree | vendor | manifest | verification |
+|---|---|---|---|---|---|
+| crDroid 6.27 FINAL A10 (38) | AgentFabulous/begonia @android-10.0 (inferred) | not found (crdroidandroid org starts at 12.0; searched: crdroidandroid org, GitHub, 4PDA p=97822397) | not found for A10 (crdroid vendor org starts 12.0) | https://github.com/crdroidandroid/android @10.0 (branch verified) | mixed |
+| crDroid 7.2/7.x A11 (39) | https://github.com/AgentFabulous/begonia @android-11.0 — **verified** via MaloyBegonia tree `lineage.dependencies` | https://github.com/MaloyBegonia/android_device_redmi_begonia_crDroid @11.0 (verified) | referenced as `vendor_redmi_begonia` in deps; MaloyBegonia/vendor_redmi_begonia **not found** (searched: GitHub) | https://github.com/crdroidandroid/android @11.0 (branch verified) | verified-direct |
+| crDroid 8.x A12 (40) | https://github.com/crdroidandroid/android_kernel_xiaomi_mt6785 @12.1 (org kernel branches 12.1/13.0/14.0; pairing to 12.0 inferred) | https://github.com/crdroidandroid/android_device_redmi_begonia @12.0 (verified; crdroid.dependencies 404 for 12.0) | https://github.com/crdroidandroid/android_vendor_redmi_begonia @12.0 + android_vendor_redmi_begonia-ims @12.0 (verified) | https://github.com/crdroidandroid/android @12.0 (verified) | verified-direct |
+| crDroid 9.x A13 (41) | crdroidandroid/android_kernel_xiaomi_mt6785 @13.0 (**verified** via crdroid.dependencies @13.0) | android_device_redmi_begonia @13.0 (verified) | android_vendor_redmi_begonia @13.0 + -ims @13.0 (verified) | crdroidandroid/android @13.0 (verified) | verified-direct |
+| crDroid 10 A14 (42) | crdroidandroid/android_kernel_xiaomi_mt6785 @14.0 (**verified** via crdroid.dependencies @14.0; deps also pull begonia-dev/android_packages_apps_RevampedFMRadio) | android_device_redmi_begonia @14.0 (verified) | android_vendor_redmi_begonia @14.0 (verified; -ims latest is 13.0) | crdroidandroid/android @14.0 (verified) | verified-direct |
+| crDroid v12.11 UNOFFICIAL A16 (43) | not found (crdroidandroid kernel max 14.0; LineageOS kernel lineage-23.x/24.0 pairing unconfirmed; searched: crdroidandroid org, LineageOS org, begonia-dev, GitHub, 4PDA p=143929573) | not found (crdroidandroid org max 14.0; searched: orgs, GitHub) | not found (no 15/16 vendor branches) | not found (unofficial; searched: GitHub) | not found |
+
+### 7.5 LineageOS (§3.2)
+
+| component | URL | branch/ref | verified | confidence |
+|---|---|---|---|---|
+| kernel for all LOS-based builds | https://github.com/LineageOS/android_kernel_xiaomi_mt6785 | lineage-17.1, lineage-20, lineage-21, lineage-22.2, lineage-23.0, lineage-23.2, lineage-24.0 (7 branches, default lineage-24.0) | ls-remote | high |
+| LOS org device tree | https://github.com/LineageOS/android_device_xiaomi_begonia + https://github.com/LineageOS/android_device_xiaomi_mt6785-common | lineage-17.1 only (deps → mt6785-common) | ls-remote + lineage.dependencies | high |
+| per-build trees (LOS 20 / 22.2 / 23.x unofficial) | not found (searched: LineageOS org — only 17.1; begonia-dev, xiaomi-begonia-dev, WuXing90 [avium-only], GitHub, 4PDA p=118200298, p=145635495, p=145712732) | — | — | — |
+
+### 7.6 PixelExperience / PixelOS (§3.3)
+
+| ROM | kernel | device tree | vendor | manifest |
+|---|---|---|---|---|
+| PE 11–14 (47) | https://github.com/PixelExperience-Devices/kernel_xiaomi_begonia — branches ten, eleven(+cfw/old), twelve(+old), thirteen, fourteen, q-oss (verified; default fourteen) | https://github.com/PixelExperience-Devices/device_xiaomi_begonia — ten…thirteen-plus (+wip/cfw) (verified) | not found (PixelExperience-Devices/vendor_xiaomi_begonia absent; searched: GitHub) | https://github.com/PixelExperience/manifest — ten…fourteen (+plus) (verified) |
+| PixelOS 16.2 (48) | not found (searched: PixelOS-AOSP org, GitHub, 4PDA p=144357321) | not found (PixelOS-AOSP/android_device_xiaomi_begonia absent; searched: GitHub) | not found | https://github.com/PixelOS-AOSP/manifest — eleven…sixteen (verified) |
+
+### 7.7 Evolution X (§3.5; CSV 51–53)
+
+| component | URL | branch/ref | verified |
+|---|---|---|---|
+| device tree | https://github.com/Evolution-X-Devices/device_redmi_begonia (org renamed → Evolution-XYZ-Devices; both URLs resolve) | `ten`, `ten-retrofit`, `elle` (default ten) — A10-era only | ls-remote |
+| vendor | https://github.com/Evolution-XYZ-Devices/vendor_redmi_begonia | `ten`, `elle` | ls-remote |
+| kernel | not found in EX org (searched: Evolution-X-Devices, Evolution-XYZ-Devices, GitHub); LOS-org kernel lineage-21/23.x is the likely base for A14/A16 builds (inferred, low) | — | — |
+| manifest | not found (EvolutionX/manifest, EvolutionX-Devices/manifest, EvolutionX/platform_manifest all absent; searched: GitHub) | — | — |
+
+A11/A14/A16 EX builds ride the same org repos only for the ten-era; newer per-build trees not found.
+
+### 7.8 AxionAOSP (§3.6; CSV 54–55)
+
+| component | URL | branch/ref | verified |
+|---|---|---|---|
+| device tree | https://github.com/AxionAOSP-devices/android_device_redmi_begonia | `axion` (default), `bka`, `vic` | ls-remote |
+| kernel | likely https://github.com/WuXing90/kernel_xiaomi_mt6785 @`bka` (branch-name match with device tree; pairing unverified) | bka, erofs | inferred (medium) |
+| vendor | not found (AxionAOSP-devices/vendor_redmi_begonia absent; searched: GitHub) | — | — |
+| manifest / build docs | manifest not found (AxionAOSP/manifest absent); install guide: https://github.com/AxionAOSP/official_devices @main `Wiki/begonia.md` (raw-fetched, verified) | — | mixed |
+
+### 7.9 AviumUI / WuXing90 MIUI-class ports (CSV 65)
+
+| component | URL | branch/ref | verified |
+|---|---|---|---|
+| device tree | https://github.com/WuXing90/device_redmi_begonia | `avium-16`, `avium-16.2` (default), `avium-17` | ls-remote |
+| kernel | not found per-build (searched: GitHub, 4PDA p=146024411) | — | — |
+| vendor / manifest | not found (searched: GitHub) | — | — |
+
+### 7.10 Other OEM ports (CSV 66–71: ColorOS 16/17, OriginOS 4/6/Ocean/3.1, EMUI 14.2, Flyme 10, ROGUI 14)
+All components **not found** (closed zip-only ports; searched: 4PDA posts p=144433439, 144473382, 145345569, 146083465, 146061439, 145985251, 131543971, 134414587, 143563437, 112676744, 143523197, 145406321, 141706486; GitHub). They repack the MIUI 12.5 vendor base (§1.3, §7.1–7.2).
+
+### 7.11 Long-tail AOSP ROMs (§3.8; CSV 49–50, 56–64)
+
+Shared, ls-remote-verified community infrastructure (per-ROM mapping not established):
+
+| org / repo | covers | branches |
+|---|---|---|
+| begonia-dev: android_kernel_xiaomi_mt6785 / android_device_redmi_begonia / android_vendor_redmi_begonia | A11–A14 kernel+device+vendor trio | 11.0, 12.0, 12.1, 13.0, 14.0 (kernel adds -bak/-staging/-data) |
+| xiaomi-begonia-dev: android_device_redmi_begonia (≡ android_device_xiaomi_begonia) / android_vendor_xiaomi_begonia | A13/A14 device+vendor (incl. Halcyon) | aosp-13, fourteen (default), halcyon, wip / aosp-13, fourteen, tmp |
+| Trinity-ROMS: android_device_redmi_begonia / android_vendor_redmi_begonia / android_vendor_redmi_begonia-ims | A13/A14/A16 | device 13, 14; vendor 13, 14, 16 (default) |
+| BitsAndBytes-dev: android_device_redmi_begonia | A11/A12 (incl. Spark OS) | eleven, spark, twelve (default) |
+| BlissRoms-Devices: android_device_xiaomi_begonia | Bliss A10/A13-era | q, typhoon (default) |
+| PotatoDevices: device_redmi_begonia | Potato releases | croquette/dumaloo/frico/gnocchi -release/-staging (default frico_mr1-release) |
+| theimpulson: android_device_xiaomi_begonia (+android_device_xiaomi_mt6785-common) | early LOS 17.1 dev | lineage-17.1(+parts/_final), rebase-final |
+| crdroidandroid: android_vendor_redmi_begonia-ims | A12–A13 IMS blobs | 12.0, 12.1, 13.0 |
+| blobs mirror: AndroidBlobs/vendor_redmi_begonia | vendor blobs dump | (search hit, not branch-listed this pass) |
+
+Per-ROM kernel (inferred): begonia-dev kernel @matching 11.0–14.0 branch for A11–A14; LineageOS kernel @lineage-22.2/23.x/24.0 for A15/A16 (branches verified, pairing inferred). Device/vendor/manifest per individual ROM: **not found** (searched: GitHub org naming per ROM, github.com/topics/begonia index, 4PDA posts).
+
+### 7.12 Ubuntu Touch (CSV 73)
+
+| component | URL | branch/ref | verified |
+|---|---|---|---|
+| kernel | https://gitlab.com/ubports/porting/community-ports/android10/xiaomi-redmi-note-8-pro/kernel-xiaomi-mt6785 | halium-10.0 | GitLab API tree fetch 2026-11-21 + shared context |
+| device/Halium config | https://gitlab.com/ubports/porting/community-ports/android10/xiaomi-redmi-note-8-pro/xiaomi-begonia | master (overlay/, ramdisk-overlay/, ramdisk-recovery-overlay/) | GitLab API tree fetch |
+| vendor | stock MIUI vendor via Halium — no separate repo found (searched: UBports porting group) | — | — |
+| manifest | not found (UBports halium tooling; no per-device local_manifest located) | — | — |
+
+### 7.13 postmarketOS (CSV 74)
+
+| component | URL | branch/ref | verified |
+|---|---|---|---|
+| mainline kernel | https://github.com/Dinolek/mt6785-mainline | 6.16, 7.1 (default), battery-downstream | ls-remote |
+| device package | gitlab.nura.eco/nura/pmaports → device/testing/device-xiaomi-begonia | main | context-verified; raw+API fetch blocked by Anubis bot-check this pass |
+| kernel package | gitlab.nura.eco/nura/pmaports → device/testing/linux-postmarketos-mediatek-mt6785 | main | same |
+| manifest | pmaports repo itself; initial MR https://gitlab.nura.eco/nura/pmaports/-/merge_requests/1909 | — | context |
+| vendor | n/a (mainline; no vendor blobs) | — | — |
+
+### 7.14 Mu-Silicium UEFI (CSV 72)
+
+| component | URL | branch/ref | verified |
+|---|---|---|---|
+| UEFI firmware source | https://github.com/Project-Silicium/Mu-Silicium | main (BootShim/Common/Platforms/Silicon tree verified) | ls-remote + tree HTML |
+| begonia device package | **not found** — searched Platforms/Xiaomi: 36 device packages (aliothPkg…willowPkg), **no begoniaPkg** → KiryxaMeow's begonia port sources not yet published in the main repo (matches §3.9 caveat, now verified absence) | — | verified absence |
+| build/install | 4PDA p=146118602 (KiryxaMeow: `fastboot flash boot UEFI.img`, WinPE from SD) | — | cached |
+
+### 7.15 Source-inventory contradictions & limitations
+1. Seed correction: lineage-* kernel branches are on `LineageOS/android_kernel_xiaomi_mt6785`, not `AgentFabulous/begonia` (§7 intro).
+2. crdroidandroid kernel/device/vendor branches start at 12.0/12.1 — official crDroid 6/7 (A10/A11) trees are not in the org (A11-era MaloyBegonia fork verified instead; TTTT555 originals not found).
+3. crdroidandroid/android_vendor_redmi_begonia-ims has no 14.0 branch although crdroid.dependencies@14.0 references it (repo default 13.0).
+4. gitlab.nura.eco (raw + API) behind Anubis bot-check for this toolset — pmaports file-level verification pending human browser; facts cited from orchestrator-verified context.
+5. Evolution X org renamed Evolution-X-Devices → Evolution-XYZ-Devices; only A10-era (`ten`) begonia trees present.
+6. web_extract refused github.com this session ("private or internal network address" — false positive); ls-remote/raw/HTML-curl used instead.
+7. `MaloyBegonia` crDroid tree references vendor repo `vendor_redmi_begonia` without owner; not found under that owner on GitHub.
