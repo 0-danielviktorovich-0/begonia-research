@@ -54,4 +54,4 @@ No multi-GB binaries are committed; fetch URLs are cited in the deliverables.
 5. One writer commits: agents write files, the orchestrator runs git (autosync every 15 min, attack-tested).
 6. Update this README + linked context files at every milestone — a stale root is a defect (REQUIREMENTS row 22).
 
-*Last updated: 2026-11-21 ~17:24 JST (synthesis pass — corrections applied, 00/08/09 written).*
+*Last updated: 2026-11-21T08:30:00Z (ISO 8601 UTC; all update stamps here use ISO 8601 UTC — see REQUIREMENTS row 34).*
