@@ -157,3 +157,19 @@ Origin: wiki user **Halhadus** (begonia-linux org member): *"running pmOS, using
 ## 6. Sources (full records in `sources.jsonl`)
 
 Key URLs are inline above; primary new fetches 2026-11-21: AkameKernel repo+2 defconfigs, AFB/MiCode defconfigs, connectivity Kconfig, gen4m Makefile, torvalds mt7615 Kconfig, linux-firmware `mt7663pr2hw.bin`, pmaports config fragment, [nethunter.kali.org/device-kernels.html](https://nethunter.kali.org/device-kernels.html), [nethunter.kali.org/kernels.html](https://nethunter.kali.org/kernels.html), [kali wireless-cards](https://www.kali.org/docs/nethunter/wireless-cards/), [kali installing-nethunter](https://www.kali.org/docs/nethunter/installing-nethunter/), [lkddb MT7663S](https://cateee.net/lkddb/web-lkddb/MT7663S.html), [kernelnewbies Linux 5.9](https://kernelnewbies.org/Linux_5.9), 4PDA posts p=97901817 / p=105942017, [Nura SoC page](https://wiki.nura.eco/wiki/MediaTek_Helio_G90T/G95_(MT6785)), [MediaTek G90 page](https://i.mediatek.com/g90series).
+
+## 1.5 Follow-up 2026-11-22 (owner-directed re-search; orchestrator)
+
+Fresh web_search pass found two NEW leads beyond §1.3's NF verdict:
+1. **XDA t=3591182** — "[Mediatek Wifi/BT/FM/GPS combo chips, hidden capabilities [MT6620/MT6628/MT6630]](https://xdaforums.com/t/mediatek-wifi-bt-fm-gps-combo-chips-hidden-capabilities-mt6620-mt6628-mt6630.3591182/)":
+   monitor mode + FM TX unlocked by patches on the OLD MTK combo driver lineage (gen4m's ancestor).
+   Action: capture the thread via the Brave lane (XDA is bunny-blocked for extractors) and check
+   whether the unlock technique (debug/OID command path) survived into gen4m.
+2. **gen4m source has RX radiotap plumbing** (verified in clones):
+   `nic_rx.c` carries `MONITOR_RADIOTAP` fill code (nicRxFillRadiotapMCS/VHT), BUT
+   `os/linux/gl_cfg80211.c` registers only STATION/ADHOC/AP — **NL80211_IFTYPE_MONITOR is not
+   registered**. Dev target for our unified kernel: register IFTYPE_MONITOR + wire it to the
+   internal capture path. Precedent for the vendor-driver approach:
+   [kimocoder/qualcomm_android_monitor_mode](https://github.com/kimocoder/qualcomm_android_monitor_mode)
+   (QCACLD: monitor flips on via `con_mode=4` sysfs, no patch, on modern kernels).
+Both leads are registered as the unified-kernel dev track (skill `unified-kernel-build`).
