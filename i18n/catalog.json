@@ -640,6 +640,32 @@
           "derived_from_blob": null
         }
       }
+    },
+    {
+      "id": "24",
+      "titles": {
+        "en": "Saikrishna1504 begonia source-stack audit and Linux 4.19 transition",
+        "ru": "Исходники begonia от Saikrishna1504 и переход на Linux 4.19"
+      },
+      "original": {
+        "path": "24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md",
+        "lang": "en",
+        "blob_sha": "f309ba60f429937c2beb0e61e361d6dcd99c318a"
+      },
+      "locales": {
+        "en": {
+          "path": "24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md",
+          "coverage": "source",
+          "review": "authoritative-source",
+          "derived_from_blob": null
+        },
+        "ru": {
+          "path": "docs/ru/24-saikrishna-source-audit.md",
+          "coverage": "digest",
+          "review": "abstract-only",
+          "derived_from_blob": "f309ba60f429937c2beb0e61e361d6dcd99c318a"
+        }
+      }
     }
   ]
 }
