@@ -1,0 +1,35 @@
+name: Multilingual documentation integrity
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'i18n/**'
+      - 'docs/en/**'
+      - 'docs/ru/**'
+      - 'README.md'
+      - 'README.ru.md'
+      - 'INDEX.md'
+      - 'index.json'
+      - 'tools/check_i18n.py'
+      - '.github/workflows/i18n-check.yml'
+      - '[0-9][0-9]-*.md'
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out sources
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Python version
+        run: python3 --version
+      - name: Check localized index, links and source revisions
+        run: python3 tools/check_i18n.py
