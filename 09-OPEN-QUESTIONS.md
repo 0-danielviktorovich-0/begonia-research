@@ -28,7 +28,7 @@ Everything this research could **not** resolve as of 2026-11-21, with what would
 - **Suzaku V2 kernel**: Linux base version unstated, **no public repo found** ([03 §2.3](03-KERNEL-HISTORY.md)).
 - **HYDRA PLUS kernel**: no public source tree; toolchain evidence only ("Ubuntu Pure Linux Clang 14.0.1", [t.me/begoniaupdateindonesia](https://t.me/s/begoniaupdateindonesia)) ([03 §6](03-KERNEL-HISTORY.md)).
 - **No mt6785 DTS in Linus master; no lore.kernel.org patch trail** — mainlining is fork-only ([03 §4](03-KERNEL-HISTORY.md), [_context/SOURCE-CENSUS.md](_context/SOURCE-CENSUS.md)).
-- **Battery model**: unknown — part of the device-repair outlook, first software step registered in [08](08-DEVELOPMENT-ROADMAP.md) (do not guess).
+- **Battery model**: PARTIALLY RESOLVED 2026-11-21 — device-tree READMEs state Non-removable Li-Po **4500 mAh** ([TTTT555/device_xiaomi_begonia](https://github.com/TTTT555/device_xiaomi_begonia) et al., found via plain web search) [V-README, medium]. Still open: health-check procedure + replacement-cost sources (row 25).
 - **Live XDA megathread newer posts** (post-2026-04-15): unverifiable by our tools (Wayback snapshot is the ceiling) — see §3.
 - **4PDA SP-Flash-Tool-dedicated unbrick guide**: not found (searched: all cached pages for кирпич/unbrick/SP Flash/тест-по patterns) ([07 §7](07-RECOVERY-SAFETY.md)).
 
