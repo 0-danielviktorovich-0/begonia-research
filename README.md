@@ -26,6 +26,10 @@ COVERAGE + regenerated archive index. `begonia-research.zip` is **dropped** per 
 - [NoMount и варианты системной подмены файлов](21-NOMOUNT-MOUNT-BACKENDS-RU.md) — Magic Mount, OverlayFS, Mountify, NoMount, SUSFS, Hybrid Mount, плюсы/минусы и ограничения MT6785.
 - [Аудит достоверности и полноты](17-INDEPENDENT-AUDIT.md), [безопасная диагностика телефона](18-DEVICE-PREFLIGHT-READONLY.md).
 
+- [Перенос Linux 4.14→4.19→6.x/7.x, REA/ИИ и платежная аттестация](22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md) — Rosemary vs begonia 4.19, план forward-port, проверенный пример Wi-Fi в mainline-based pmOS и ограничения Google Wallet.
+
+**Гигиена веток:** [GitHub Actions cleanup workflow](.github/workflows/branch-cleanup.yml) автоматически удаляет только уже проверенные устаревшие refs первой волны и ветки будущих успешно объединённых PR, если в них не появилось новых коммитов. После первого запуска список GitHub-веток содержал только `main`; рабочие ветки Hermes не затрагивались.
+
 ## Deliverables (root)
 
 | File | Content | Status |
@@ -48,7 +52,7 @@ COVERAGE + regenerated archive index. `begonia-research.zip` is **dropped** per 
 | `15-RE-IMPROVEMENT-PLAN.md` (not yet on disk at packaging time) | RE-driven improvement plan (unpacking recipe, per-subsystem matrix, sequencing, test checklist) | **delivered 2026-11-21 (W15)** (W15 mission: [_context/W15-MISSION.md](_context/W15-MISSION.md)) |
 | [16-ROOT-METHODS.md](16-ROOT-METHODS.md) | root-methods registry: Magisk / KernelSU-Next+SUSFS / APatch / SukiSU / custom kernels / mtkclient chain — matrix + begonia datapoints + TG channels | delivered 2026-11-21 (orchestrator, after W17 provider stall) |
 | [INDEX.md](INDEX.md) | Human master topic map (topic → file#section) + "how to search this repo" (file map, ripgrep recipes, CSV columns, archive usage) | **delivered 2026-11-21 (assembler)** |
-| [sources.json](sources.json) · [index.json](index.json) | Machine twins: 200 observation-stamped source records; 40-topic topic map | **delivered 2026-11-21 (assembler)** |
+| [sources.json](sources.json) · [index.json](index.json) | Machine twins: 206 observation-stamped source records; 41-topic topic map | **delivered 2026-11-21 (assembler)** |
 
 ## Data files
 
