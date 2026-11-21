@@ -212,3 +212,26 @@ the missing NL80211 surface, not the capability.
 - Kali MTK row: still USB dongles only; new MTK NetHunter community kernel (Realme C15, mt6765) = dongle-only.
 - PenMon (4PDA): Qualcomm-only [V].
 Full evidence: _context/W20-OUT-GEN4M-FEASIBILITY.md, _context/W21-OUT-COMMUNITY-SWEEP.md (19-row table).
+
+## 1.7 W19 addendum — XDA t=3591182 read fully + ATE TX lead (2026-11-22)
+
+Full thread captured via **r.jina.ai live fetch** (bunny shield blocked the browser session AND zero
+Wayback/archive.today captures existed — CDX checked; r.jina.ai is now the registered fallback-2 route
+for bunny-walled pages, after live-browser and before giving up). Snapshot:
+archive/jina-xda-3591182-p1-live-2026-11-22.md; full quotes: _context/W19-OUT-XDA-CAPABILITIES.md.
+
+Thread verdict (ogurets 2017, MT6620/28/30 era): research log only, no patch links. Real packet TX
+existed via the **hidden RF test mode** (`wifitesttool -t 0 -s 0 -R 11 …` + `RF_AT_FUNCID_PKTCONTENT`
+payload hook) — ATE test frames, not 802.11 monitor [I high]; monitor mode itself was never achieved
+in-thread. FM TX: MT6627/28 lack it; on begonia the MT6631 chip dir has zero TX ops → dead-end [I].
+
+**gen4m cross-check [V high]** (both clones): the whole ATE stack is alive — `gl_qa_agent.c`,
+`gl_ate_agent.c`, `rftest.h` with `RF_AT_FUNCID_PKTCONTENT` (L187), iwpriv
+`SET_TEST_MODE`/`SET_TEST_CMD`/`ACCESS_MCR` handlers (gl_wext_priv.c:4763/4816);
+`FM_IOCTL_TX_SUPPORT` byte-identical (fm_ioctl.h L54). The built-in `MONITOR` priv command (§1.6)
+is confirmed in-thread-independent; **`kwefjkmqf/Monitor_mode_NetHunter`** documents the iwpriv
+monitor method and cites a begonia-SoC tree — companion repo for our Path A/B.
+
+**Injection angle for W22**: the alive ATE/test-mode TX path (custom payload TX) is a candidate
+primitive for internal 802.11 TX injection — clunky (test-mode framing) but hardware-backed [I high].
+FM TX: dead-end on begonia.
