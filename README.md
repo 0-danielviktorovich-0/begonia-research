@@ -15,20 +15,24 @@ index) delivered; corrections C1–C4 + C6 applied at the synthesis pass (C5 ski
 COVERAGE + regenerated archive index. `begonia-research.zip` is **dropped** per the REQUIREMENTS row 4 amendment
 (2026-11-21): this GitHub repo itself is the distribution medium.
 
-## Термины без путаницы (русский справочник)
+## Languages · Языки
 
-Начинающим и новым ИИ-агентам: **[19-ROM-TERMS-GLOSSARY-RU.md](19-ROM-TERMS-GLOSSARY-RU.md)** — что означают CFW, Non-CFW, GSI, stock MIUI, native ROM, OEM port, Q-OSS/R-OSS, firmware/vendor blobs, Halium и mainline; как соотносятся версии Android, Linux-ядра и базы драйверов, и почему это критично при выборе образов для begonia.
+**[English (this README)](README.md) · [Русский / Russian](README.ru.md)**
 
-## Дополнительные технические исследования
+Topic directories: **[English](docs/en/README.md)** · **[Русский](docs/ru/README.md)**. Machine-readable bilingual [topic labels and search keywords](i18n/topics.json), [document translation statuses](i18n/catalog.json), [localization policy](i18n/README.md) and [controlled terminology](i18n/TERMINOLOGY.md).
 
-- [Русский справочник типов прошивок](19-ROM-TERMS-GLOSSARY-RU.md) — CFW/Non-CFW, GSI, vendor, Halium, mainline.
-- [Происхождение ядер 4.14/4.19 и root-экосистемы](20-KERNEL-419-ROOT-ECOSYSTEM-RU.md), [kernel-root-provenance.csv](kernel-root-provenance.csv) — KSU/Non-KSU, версии, форки, конфигурации.
-- [NoMount и варианты системной подмены файлов](21-NOMOUNT-MOUNT-BACKENDS-RU.md) — Magic Mount, OverlayFS, Mountify, NoMount, SUSFS, Hybrid Mount, плюсы/минусы и ограничения MT6785.
-- [Аудит достоверности и полноты](17-INDEPENDENT-AUDIT.md), [безопасная диагностика телефона](18-DEVICE-PREFLIGHT-READONLY.md).
+English is the default language for international documentation and stable technical identifiers. Russian is a first-class navigation/search language. Existing reports 00–18 were originally written in English; reports 19–22 were originally written in Russian. The [firmware glossary](docs/en/19-rom-terminology.md) now has a **full English translation draft**, while the English pages for 20–22 are searchable **digests, not full translations**. Incomplete coverage is clearly labelled and never represented as completed work.
 
-- [Перенос Linux 4.14→4.19→6.x/7.x, REA/ИИ и платежная аттестация](22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md) — Rosemary vs begonia 4.19, план forward-port, проверенный пример Wi-Fi в mainline-based pmOS и ограничения Google Wallet.
+## Additional technical research
 
-**Гигиена веток:** [GitHub Actions cleanup workflow](.github/workflows/branch-cleanup.yml) автоматически удаляет только уже проверенные устаревшие refs первой волны и ветки будущих успешно объединённых PR, если в них не появилось новых коммитов. После первого запуска список GitHub-веток содержал только `main`; рабочие ветки Hermes не затрагивались.
+- [19 — CFW, Non-CFW, GSI and firmware glossary](19-ROM-TERMS-GLOSSARY-RU.md) (Russian original) · [full English draft](docs/en/19-rom-terminology.md).
+- [20 — Linux kernel 4.19 and KSU/Non-KSU patch provenance](20-KERNEL-419-ROOT-ECOSYSTEM-RU.md) · [English digest](docs/en/20-kernel-root-ecosystem.md) · [structured evidence](kernel-root-provenance.csv).
+- [21 — NoMount, SUSFS, OverlayFS, Mountify and Hybrid Mount](21-NOMOUNT-MOUNT-BACKENDS-RU.md) · [English digest](docs/en/21-nomount-and-mount-backends.md).
+- [22 — Linux 4.14→4.19→6.x with AI and Play Integrity](22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md) · [English digest](docs/en/22-kernel-forward-port.md).
+- [23 — 4.19 developer announcement and source request](23-419-TELEGRAM-OUTREACH.md): public @Saikrishna1504 account and **likely Nov 17, 2026**, not the previously misreported September date. Exact post permalink and source SHA still missing.
+- [17 — independent source audit](17-INDEPENDENT-AUDIT.md) and [18 — read-only device preflight](18-DEVICE-PREFLIGHT-READONLY.md).
+
+**Branch hygiene:** [GitHub Actions cleanup](.github/workflows/branch-cleanup.yml) prunes only confirmed obsolete research branches and unchanged merged-PR branches. [Multilingual CI](.github/workflows/i18n-check.yml) checks topic IDs, local links and translation source revisions; it does not replace expert linguistic review.
 
 ## Deliverables (root)
 
@@ -52,7 +56,7 @@ COVERAGE + regenerated archive index. `begonia-research.zip` is **dropped** per 
 | `15-RE-IMPROVEMENT-PLAN.md` (not yet on disk at packaging time) | RE-driven improvement plan (unpacking recipe, per-subsystem matrix, sequencing, test checklist) | **delivered 2026-11-21 (W15)** (W15 mission: [_context/W15-MISSION.md](_context/W15-MISSION.md)) |
 | [16-ROOT-METHODS.md](16-ROOT-METHODS.md) | root-methods registry: Magisk / KernelSU-Next+SUSFS / APatch / SukiSU / custom kernels / mtkclient chain — matrix + begonia datapoints + TG channels | delivered 2026-11-21 (orchestrator, after W17 provider stall) |
 | [INDEX.md](INDEX.md) | Human master topic map (topic → file#section) + "how to search this repo" (file map, ripgrep recipes, CSV columns, archive usage) | **delivered 2026-11-21 (assembler)** |
-| [sources.json](sources.json) · [index.json](index.json) | Machine twins: 206 observation-stamped source records; 41-topic topic map | **delivered 2026-11-21 (assembler)** |
+| [sources.json](sources.json) · [index.json](index.json) | Machine twins: 209 observation-stamped source records; 42-topic topic map | **delivered 2026-11-21 (assembler)** |
 
 ## Data files
 
