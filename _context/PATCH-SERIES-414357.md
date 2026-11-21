@@ -31,3 +31,12 @@ CONFIG_VIRTUALIZATION/KVM/KVM_ARM_HOST/ARM64_VHE — задел под буду�
 
 ## Логи сборки
 build-logs/ (в контейнере /halium-build/build-logs/) — полный stdout каждого билда + счётчик варнингов.
+
+## P4 (ACTIVE): kernel/gen_kheaders.sh — x86 prebuilt cpio -> system cpio
+CONFIG_IKHEADERS тянул второй прекомпил x86_64 (`tools/build/cpio`). Заменён на системный cpio
+(добавлен в образ). [V — log kbuild-3]
+
+## P-KVM (DEFERRED with plan, NOT disabled-and-forgotten)
+KVM — наш аддон (vendor не собирал его никогда): virt/kvm/kvm_main.c:2690
+`current->pids[PIDTYPE_PID].pid` — в этом MTK-дереве `task_struct.pids` не массив (vendor-модификация).
+Закомментировано во фрагменте с планом: разобрать pids-layout -> патч kvm_main.c -> re-enable.
