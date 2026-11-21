@@ -7,6 +7,9 @@ confidence high/medium/low; observation stamps ISO 8601 UTC. Cross-refs:
 [07-RECOVERY-SAFETY.md](07-RECOVERY-SAFETY.md) (unlock/AVB), [03-KERNEL-HISTORY.md](03-KERNEL-HISTORY.md) (§2.3 kernel zips),
 [10-GUIDE-INDEX.md](10-GUIDE-INDEX.md) (§2 root threads), [13-NETHUNTER-WIFI-EXTRAS.md](13-NETHUNTER-WIFI-EXTRAS.md) (§2 NetHunter kernel needs).
 
+
+> **Independent update (2026-11-21):** Compare the root engines, Git source provenance and KSU/non-KSU defconfigs in [20-KERNEL-419-ROOT-ECOSYSTEM-RU.md](20-KERNEL-419-ROOT-ECOSYSTEM-RU.md). The distinct mount/backend technologies (NoMount, SUSFS, Mountify, OverlayFS, Magic Mount, Hybrid Mount) and their actual trade-offs are examined in [21-NOMOUNT-MOUNT-BACKENDS-RU.md](21-NOMOUNT-MOUNT-BACKENDS-RU.md). The broad support claims in the historical matrix below are developer reports, **not tested compatibility across all begonia Android versions**. Root-hiding does **not** guarantee banking app compatibility or Play Integrity.
+
 ---
 
 ## 1. Methods matrix
