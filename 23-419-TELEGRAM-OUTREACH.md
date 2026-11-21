@@ -18,6 +18,10 @@
 
 **Critical technical point:** [LineageOS MT6785 Linux 4.19.325 kernel tree](https://github.com/LineageOS/android_kernel_xiaomi_mt6785) has a verified rosemary board DTS/defconfig. This **does not establish** that the author's claimed **begonia** forward-port uses the same exact tree or is publicly available. The author's own older [Power source](https://github.com/Saikrishna1504/kernel_xiaomi_mt6785) (checked main Makefile) was Linux **4.14.357-openela**, not a verified published 4.19 branch on 2026-11-21. See [03](03-KERNEL-HISTORY.md) and [22](22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md).
 
+### GitHub source-release check (2026-11-21)
+
+The developer's publicly listed [kernel_xiaomi_mt6785 repository](https://github.com/Saikrishna1504/kernel_xiaomi_mt6785) currently exposes only **main** and **kaeru** branches in the directly checked GitHub branch listing. Their previously inspected Makefile identifies the 4.14.357-openela Power line; **there is no 4.19-named branch in this particular public repository at observation time**. This does **not** prove the 4.19 project is unpublished everywhere: it could live in a different repository, an unindexed branch, a private tree or as a pending patch series. Ask the author for the authoritative source rather than guessing from an unrelated MT6785/rosemary tree.
+
 ### Suggested short first DM in English (unsent)
 
 Hi Sai! I saw your post in @RedmiNote8ProUpdates about getting Linux 4.19 running on the Redmi Note 8 Pro (begonia). Great to see the progress, especially the video playback fixes!
