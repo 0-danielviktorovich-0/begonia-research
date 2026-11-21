@@ -650,7 +650,7 @@
       "original": {
         "path": "docs/en/research/24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md",
         "lang": "en",
-        "blob_sha": "512f61d13e363c51dffdae6a9d794f3cf8f0b173"
+        "blob_sha": "1e6c8202334cd7848953436795fc08c8e7feb082"
       },
       "locales": {
         "en": {
@@ -663,7 +663,7 @@
           "path": "docs/ru/research/24-saikrishna-source-audit.md",
           "coverage": "digest",
           "review": "abstract-only",
-          "derived_from_blob": "512f61d13e363c51dffdae6a9d794f3cf8f0b173"
+          "derived_from_blob": "1e6c8202334cd7848953436795fc08c8e7feb082"
         }
       }
     },
@@ -676,7 +676,7 @@
       "original": {
         "path": "docs/en/research/begonia-kernel-and-rom-evidence-2026-11.md",
         "lang": "en",
-        "blob_sha": "1c9cdfa6be2aa1e632385d6a3d1ba3a4a330141c"
+        "blob_sha": "a5e7735c36fa96d8fc5ceefb879ac208e4a24971"
       },
       "locales": {
         "en": {
