@@ -22,3 +22,10 @@ Apply each correction at the synthesis pass, then delete the row.
 
 ## C6 — 07-RECOVERY-SAFETY.md : OrangeFox recovery missing
 - SourceForge census surfaced "TWRP-DYNAMIC-ORANGE-RECOVERY-BEGONIA" (sourceforge.net/projects/oneplus8t-brp-twrp-recovery) and begoniadump mentioning "orangefox redmi note 8 pro" — OrangeFox (or OrangeFox-recovery-style builds) exist for begonia but 07 covers only TWRP. At synthesis: verify the actual OrangeFox status for begonia (orangefox.download device page) and add a Recovery-landscape subsection (official TWRP / OrangeFox / LR.Team builds), each with links + date + status. Confidence: high that something exists; medium on which is current.
+
+## C7 — 07-RECOVERY-SAFETY.md : explicit "what hardware do I need to unbrick" answer
+- User question: is a plain cable + phone enough, or must one buy gadgets? Answer from existing evidence:
+  mtkclient BROM route needs ONLY a USB-C cable and a host (Linux/macOS/Windows) — no disassembly
+  (megathread quote already in 07); SP Flash Tool route needs a Windows/Linux host; UART = optional USB-TTL
+  adapter (pinout unknown — open question). Add a short "Rescue hardware minimum" block to the host
+  workstation section. Editorial note only — no new research needed.
