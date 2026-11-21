@@ -72,6 +72,15 @@ Verified inputs: pmOS 6.16 ships **no MediaTek WLAN driver** ([04 §8](https://g
 
 Per [Installing NetHunter, kali.org](https://www.kali.org/docs/nethunter/installing-nethunter/): unsupported devices "can still use **Kali NetHunter Lite on any rooted device** with limited hardware features"; generic image "**Generic ARM64 Full installer: `kali-nethunter-20YY.X-generic-arm64-kalifs-full.zip`**"; "The preferred **custom recovery** for NetHunter is **TWRP**"; "The preferred software to **root** the device for NetHunter is **Magisk**"; the NetHunter image installs either via recovery (TWRP zip) or as a **Magisk module** [V, high]. Begonia mapping [I, medium-high]: TWRP is abundant ([10-GUIDE-INDEX §2](https://github.com/0-danielviktorovich-0/begonia-research/blob/main/10-GUIDE-INDEX.md): Unified TWRP 3.7.1 by wuxinG90 current), root paths Magisk/KernelSU/APatch/SukiSU all indexed there, so **NetHunter Lite via Magisk module works today; full NetHunter adds Akame-era kernel features (HID/BT-hci0/dongle drivers)**. Feature-by-feature kernel requirements: HID → already in AFB-based kernels (§3.4); Wi-Fi injection → external adapter only (§1.3); BT hci0 → Akame or equivalent patch [V/I as marked].
 
+
+
+### 2.4 Community hub: the RU NetHunter thread on 4PDA (supplement, not replacement)
+
+- [Kali NetHunter на ваши смартфоны | Вся информация по Nethunter — 4PDA t=952937](https://4pda.to/forum/index.php?showtopic=952937), first post by `l_cat_l` 2019-05-19 ([p=85416127](https://4pda.to/forum/index.php?showtopic=952937&view=findpost&p=85416127)), **511 pages, still active in Nov 2026** (recent posts discuss custom commands in the NetHunter manager) [V-cache 2026-11-21T13:10Z, high].
+- What the шапка adds beyond kali.org: a curated RU link index — NetHunter builds (incl. **`nethunter-generic-arm64-kalifs-full/minimal-rolling`** mirrors of build.nethunter.com nightlies), install requirements, and RU-language support Q&A across 10k+ posts [V-cache, high]. For begonia the operative item is the **generic ARM64 installer** = the same "NetHunter Lite on any rooted device" path as [§2.3](#23-install-paths-that-apply-today-from-kali-docs-verified-text) — the thread is the RU walk-through of that path.
+- Freshness caution: several шапка download links point to **2017-era rolling builds**; the current official artifacts remain kali.org / [images.kali.org](https://images.kali.org/nethunter/) — per REQUIREMENTS [#31](https://github.com/0-danielviktorovich-0/begonia-research/blob/main/_context/REQUIREMENTS.md) official sources stay primary, this thread is the community supplement (RU instructions, troubleshooting depth).
+- Permalink policy: deep-dive answers should be cited as `showtopic=952937&view=findpost&p=<pid>` permalinks once a specific post is identified (page-377 sample: [custom NetHunter-manager commands Q&A, Nov 2026](https://4pda.to/forum/index.php?showtopic=952937&st=7520)) [V-cache, medium].
+
 ---
 
 ## 3. Useful hacks & portables — the begonia developer toolbox
