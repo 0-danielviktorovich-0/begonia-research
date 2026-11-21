@@ -250,7 +250,7 @@ def audit_migration() -> None:
             if lost_ids:
                 error(f"source catalog lost/altered IDs or URLs: {lost_ids[:8]}")
         if source.endswith(".json") and source == "index.json":
-            before = {r["topic"] for r in json.loads(old_content).get("topics", [])}
+            before = {r.get("topic") or r.get("id") for r in json.loads(old_content).get("topics", [])}
             after = {r["topic"] for r in json.loads(new_content).get("topics", [])}
             if before - after:
                 error(f"topic index lost IDs: {sorted(before-after)}")
