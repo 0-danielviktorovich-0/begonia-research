@@ -20,3 +20,19 @@ files/mt6785-scatter.txt	https://gist.githubusercontent.com/michaelskyf/eff1894e
 files/pmaports-device-xiaomi-begonia-tree.json	https://gitlab.nura.eco/api/v4/projects/nura%2Fpmaports/repository/tree?path=device/testing/device-xiaomi-begonia&ref=main&per_page=100	api json (Anubis wall for pages)	04, 06
 files/pmaports-mr1909.json	https://gitlab.nura.eco/api/v4/projects/nura%2Fpmaports/merge_requests/1909	api json	06
 files/pmaports-deviceinfo.txt	https://gitlab.nura.eco/api/v4/projects/nura%2Fpmaports/repository/files/device%2Ftesting%2Fdevice-xiaomi-begonia%2Fdeviceinfo/raw?ref=main	raw deviceinfo	04, 06
+rec-4pda-cfw-lastpage-ubports-install-p146080111.html	https://4pda.to/forum/index.php?showtopic=974421&view=findpost&p=146080111	4pda page snapshot (extractor)	05, 07, 10
+rec-4pda-cfw-shapka-gsi-guide-p91427572.html	https://4pda.to/forum/index.php?showtopic=974421&view=findpost&p=91427572	4pda page snapshot (extractor)	02, 07, 10
+rec-4pda-miui-p2-unbrick-guide-p91002719.html	https://4pda.to/forum/index.php?showtopic=965629&view=findpost&p=91002719	4pda page snapshot (extractor)	07
+rec-4pda-miui-shapka-unlock-twrp-guide-p90018812.html	https://4pda.to/forum/index.php?showtopic=965629&view=findpost&p=90018812	4pda page snapshot (extractor)	07, 10
+rec2-cfw-faq-95638880.html	https://4pda.to/forum/index.php?showtopic=974421&view=findpost&p=95638880	4pda page snapshot (rec2 agent)	02, 07, 10
+rec2-cfw-twrp-unified-144354114.html	https://4pda.to/forum/index.php?showtopic=974421&view=findpost&p=144354114	4pda page snapshot (rec2 agent)	07, 10
+rec2-magisk-774072.html	https://4pda.to/forum/index.php?showtopic=774072	4pda topic snapshot (rec2 agent)	07, 10
+rec2-miui-twrp-miui125-107899317.html	https://4pda.to/forum/index.php?showtopic=965629&view=findpost&p=107899317	4pda page snapshot (rec2 agent)	07, 10
+rec2-miui-unbrick-new-111347904.html	https://4pda.to/forum/index.php?showtopic=965629&view=findpost&p=111347904	4pda page snapshot (rec2 agent)	02, 07, 10
+rec2-miui-unbrick-old-103570746.html	https://4pda.to/forum/index.php?showtopic=965629&view=findpost&p=103570746	4pda page snapshot (rec2 agent)	02, 07, 10
+rec2-spflash-469340.html	https://4pda.to/forum/index.php?showtopic=469340	4pda topic snapshot (rec2 agent)	07, 10
+rec2-unlock-721838.html	https://4pda.to/forum/index.php?showtopic=721838	4pda topic snapshot (rec2 agent)	07, 10
+rec2-xda-twrp-3972573.html	https://web.archive.org/web/2024/https://xdaforums.com/t/recovery-begonia-unofficial-twrp-recovery-for-redmi-note-8-pro.3972573/	wayback snapshot (curl)	07, 10
+rec2-xda-unbrick-preloader-4000433.html	https://web.archive.org/web/2024/https://xdaforums.com/t/guide-begonia-begoniain-how-to-unbrick-when-stuck-on-preloader-mode.4000433/	wayback snapshot (curl)	07, 10
+nura-pmaports-device-dir-full.html	https://gitlab.nura.eco/nura/pmaports/-/tree/main/device/testing/device-xiaomi-begonia	blocked-page capture (Anubis wall)	04, 06
+nura-pmaports-mr1909-full.html	https://gitlab.nura.eco/nura/pmaports/-/merge_requests/1909	blocked-page capture (Anubis wall)	06
