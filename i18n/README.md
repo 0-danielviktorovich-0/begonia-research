@@ -18,6 +18,8 @@
 - A mixed-language document with a few headings translated is not a "full translation".
 - **No personal device information:** neither locale includes real IMEI, serials, NVRAM, tokens, credentials or identifying logs. Bilingual text is not "personal data" replication; keep it documentation only.
 
+> **Architecture migration is planned, not yet applied (2026-11-21):** [EN RFC](../docs/en/architecture/repository-refactor-plan.md), [RU summary](../docs/ru/architecture/repository-refactor-plan.md), and the [old→new machine path manifest](../data/catalog/path-migrations.json). All existing file locations described below remain current until an actual tested move is committed.
+
 ## 3. File layout, migration and stable IDs
 
 - Root: **README.md (EN)**, **README.ru.md (RU)**, existing original reports 00–22, INDEX.md/index.json and sources.json.
