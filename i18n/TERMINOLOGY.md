@@ -1,13 +1,11 @@
 # Controlled technical terminology — English ↔ Русский
 
-**Status:** reviewed seed glossary for i18n/l10n, 2026-11-21. [English index](../docs/en/index.md) · [Русский указатель](../docs/ru/index.md).
+**Status:** reviewed EN↔RU technical terminology, 2026-11-21. [English index](../docs/en/index.md) · [Русский указатель](../docs/ru/index.md).
 
 Use the **preferred** Russian expression in continuous prose; preserve **English alias, command spelling and original identifiers** at first mention and whenever users are likely to search for them. In commands and file paths never translate the original spelling. This is a controlled term list, not a claim about device compatibility.
 
 | English term / searchable alias | Русский рекомендуемый эквивалент | Правило употребления |
 |---|---|---|
-| internationalization (i18n) | интернационализация (i18n) | Подготовка проекта к нескольким языкам; не путать с n8n |
-| localization (l10n) | локализация (l10n) | Перевод + адаптация терминов, поиска и навигации |
 | translation | перевод | Полный перевод отличается от аннотации/краткого обзора |
 | source of truth | первоисточник / основной источник фактов | Различать авторский источник и подтверждение независимым тестом |
 | kernel | ядро Linux | Версия Android ≠ версия ядра |

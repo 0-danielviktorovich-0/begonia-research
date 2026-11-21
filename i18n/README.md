@@ -2,14 +2,7 @@
 
 **Language entry points:** [English](../docs/en/index.md) · [Русский](../docs/ru/index.md). Machine registries: [catalog.json](catalog.json), [topics.json](topics.json).
 
-## 1. Terminology
-
-- **i18n** (*internationalization*, i + 18 letters + n): engineer a knowledge base so more than one language can be supported.
-- **l10n** (*localization*, l + 10 letters + n): adapt the actual text, terminology, search metadata and links to each language.
-- **n8n** is an automation/orchestration product, *not* the name of the translation architecture. It could optionally automate synchronization, but is not required.
-- **t9n** can informally mean translation, but is not a substitute for i18n/l10n workflow controls.
-
-## 2. Language contract
+## 1. Supported languages and content policy
 
 - The repository's **default international UI, machine identifiers and future documentation language is English (en)**. Every original research topic remains readable in its original language.
 - **Russian (ru) is a first-class supported language**: a complete navigable directory, localized titles, search terms, controlled vocabulary, and explicitly declared translation coverage.
@@ -18,20 +11,19 @@
 - A mixed-language document with a few headings translated is not a "full translation".
 - **No personal device information:** neither locale includes real IMEI, serials, NVRAM, tokens, credentials or identifying logs. Bilingual text is not "personal data" replication; keep it documentation only.
 
-> **Architecture migration is planned, not yet applied (2026-11-21):** [EN RFC](../docs/en/architecture/repository-refactor-plan.md), [RU summary](../docs/ru/architecture/repository-refactor-plan.md), and the [old→new machine path manifest](../data/catalog/path-migrations.json). All existing file locations described below remain current until an actual tested move is committed.
+The clean-root, bilingual repository layout is **already in use**. The [EN architecture plan](../docs/en/architecture/repository-refactor-plan.md), [RU architecture plan](../docs/ru/architecture/repository-refactor-plan.md), and [old→new file manifest](../data/catalog/path-migrations.json) document the completed migration and its original paths.
 
-## 3. File layout, migration and stable IDs
+## 2. File layout and stable IDs
 
-- Root: **README.md (EN)**, **README.ru.md (RU)**, existing original reports 00–22, INDEX.md/index.json and sources.json.
-- Human indexes: **docs/en/README.md** and **docs/ru/README.md**; each topic is discoverable in both languages even if its full translation is pending.
-- Full translations: **docs/{lang}/{id}-{stable-slug}.md**; English translation of chapter 19 is the first exemplar.
-- English digests for Russian originals (20–22) are in docs/en/; they carry prominent **DIGEST, NOT FULL TRANSLATION** notices and direct links to originals.
-- **catalog.json**: one entry per original report; original-language, Blob SHA of the source snapshot when known, all localized pages, translation status, review state.
-- **topics.json**: human-friendly titles/search aliases for every existing stable topic ID from root index.json, with the same IDs and original document pointers. These labels are not copies of the underlying claims.
-- Machine identifier format remains **lowercase ASCII / kebab-case** and is **never translated**. Filenames and Git refs are immutable interface identifiers. Changing a slug requires redirect or compatibility alias.
-- **Absolute URLs** and GitHub issue permalinks are preserved; adjust **relative Markdown links** after moving a translated page to docs/en or docs/ru.
+- Root: a short international **[README.md](../README.md)**, licenses and the project notice. Long technical chapters live under [docs/en/](../docs/en/index.md) or [docs/ru/](../docs/ru/index.md), grouped by domain.
+- Language indexes: **[docs/en/index.md](../docs/en/index.md)** and **[docs/ru/index.md](../docs/ru/index.md)**; each topic is discoverable in both languages, even when its full translation is still pending.
+- Full translated chapters and shorter digests live within `docs/{lang}/{domain}/`. Chapter 19 has a full English translation draft; English pages for chapters 20–22 are digests, **not full translations**.
+- **[catalog.json](catalog.json)** records source language, source Git Blob SHA when known, localized pages, translation coverage, and review state.
+- **[topics.json](topics.json)** uses the same stable topic IDs as **[data/catalog/index.json](../data/catalog/index.json)** and supplies localized names, search aliases, and source pointers. Search labels do not copy the underlying technical claims.
+- Machine IDs remain **lowercase ASCII / kebab-case** and are **never translated**. Changes to stable file paths require updating links, indexes and the migration map.
+- Preserve external source URLs and GitHub permalinks; ensure all **relative Markdown links and section anchors** resolve to the relocated pages.
 
-## 4. Professional translation requirements
+## 3. Professional translation requirements
 
 For every full translation:
 
@@ -46,7 +38,7 @@ For every full translation:
 9. **Review:** compare source and translation paragraph-by-paragraph; verify all numeric claims, exact code snippets and citations; if not reviewed, mark it **draft** and clearly label that on the page.
 10. **Source drift:** record the SHA-1 **Git Blob ID** (not commit SHA) of the source file used for translation. If it changes, translation becomes **outdated** until diffs are reviewed. This check can run automatically via scripts.
 
-## 5. Translation-state vocabulary (no implicit completion)
+## 4. Translation-state vocabulary (no implicit completion)
 
 - **source**: original, authoritative full technical text in that language.
 - **full-draft**: full translation prepared, not fully human/technical reviewed; content should remain labelled as draft.
@@ -57,7 +49,7 @@ For every full translation:
 
 Only **source** and **full-reviewed** may be described as complete and technically reviewed. A full-draft page should state its reviewer status and revision.
 
-## 6. Workflow for an AI contributor
+## 5. Workflow for an AI contributor
 
 1. Read [CONTEXT.md](../_context/CONTEXT.md), this policy, [TERMINOLOGY.md](TERMINOLOGY.md), [catalog.json](catalog.json) and the corresponding original file. A translator **must not** use a short digest as the only source for a full translation.
 2. Choose one topic ID. Pin exact source Git Blob SHA and last observed research source dates; write to its canonical locale path.
@@ -67,10 +59,10 @@ Only **source** and **full-reviewed** may be described as complete and technical
 6. Update catalog/topics, both language directories, README language switch; add a changelog entry when changing a reviewed translation. Avoid gratuitous edits to original evidence documents solely to reorganize translations.
 7. When the original changes, mark affected translation stale; no automatic silent updates of translations without human review.
 
-## 7. Quality gates
+## 6. Quality gates
 
 A scheduled or pull-request check can validate JSON schema-ish integrity, path existence, stable-ID uniqueness, language switch targets, source SHA currency and local Markdown links. **CI cannot determine whether a translation is idiomatic or factually equivalent**; reviewer evidence must be recorded separately.
 
-**Scope:** this is a foundation for multilingual documentation. It does **not** claim that all 23 long reports have already received complete two-language translations.
+**Scope:** this is a foundation for multilingual documentation. It does **not** claim that all research chapters have already received complete two-language translations.
 
 Established: 2026-11-21. Project language codes: BCP 47 en / ru.
