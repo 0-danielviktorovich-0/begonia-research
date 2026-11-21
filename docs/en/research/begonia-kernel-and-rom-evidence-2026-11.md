@@ -28,6 +28,6 @@
 4. Inspect recent commits and patches around display, touch, GPU, Wi-Fi, modem, cameras, clocks, regulators, power management, and boot chain.
 5. Require reproducible build steps, non-destructive test and serial/ramoops/earlycon logs before claiming a functional phone kernel.
 
-**Platform scope:** Apple Silicon, iOS 18, and generic unrelated SoC examples cannot serve as evidence for *begonia*. Device-specific source links, build logs, and verified commit IDs take priority.
+**Platform scope:** Only device-specific *begonia*/MT6785 upstream source links, build logs, and verified commit IDs can establish support claims; unrelated hardware/platform examples are out of scope.
 
 Related: [kernel history](../kernels/03-KERNEL-HISTORY.md), [hardware/driver map](../kernels/04-HARDWARE-DRIVERS.md), [kernel forward-port notes](../kernels/14-MAINLINE-UPGRADE-PATH.md), [Saikrishna device-stack audit](24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md).
