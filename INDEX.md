@@ -4,6 +4,8 @@ One-hop navigation for humans and agents. Every major topic → the file + secti
 
 All "verified" dates are observation stamps (REQUIREMENTS row 36): the day we last looked at the underlying source — **2026-11-21 for the whole research run** unless noted.
 
+**[Русский разбор KSU/Non-KSU и актуальных ядер 4.14/4.19](20-KERNEL-419-ROOT-ECOSYSTEM-RU.md)** — точные источники, SHA, источники интеграции KernelSU/Next/SUSFS, AnyKernel3, риски совместимости. Машинный перечень: [kernel-root-provenance.csv](kernel-root-provenance.csv).
+
 ## Topic map
 
 | Topic | Where | What's there | Verified |
