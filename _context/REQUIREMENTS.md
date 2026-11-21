@@ -8,7 +8,7 @@ Every collaborating agent (Hermes subagents, ChatGPT, future contributors) must 
 | 1 | Research-only: no device flashing, no execution of untrusted scripts | enforced |
 | 2 | Evidence contract: every important claim carries URL, title/author, date, forum permalink, repo branch/commit, verified-vs-inferred flag, confidence (high/medium/low) | enforced (CONTEXT.md) |
 | 3 | Never invent versions/URLs/compatibility; unfindable = explicit "not found (searched: …)"; inaccessible pages recorded as limitations | enforced (CONTEXT.md) |
-| 4 | Deliverable structure: 00-README … 09-OPEN-QUESTIONS + firmware/kernel/hardware CSVs + sources.json + begonia-research.zip | pending final assembly |
+| 4 | Deliverable structure: 00-README … 09-OPEN-QUESTIONS (+10-GUIDE-INDEX, 11, 13, 14…) + CSVs + sources.json. AMENDED 2026-11-21: `begonia-research.zip` DROPPED per owner — the GitHub repo itself is the distribution medium (collaborator has direct git access) | core files done; assembly in progress |
 | 5 | Private GitHub repo as shared hub for Hermes agents + ChatGPT: `0-danielviktorovich-0/begonia-research` | done (autosynced) |
 | 6 | Auto-sync to GitHub: cron every 15m, hardened script v2 (attack-tested: restricted env, push failure, lock race, repo-missing; loud non-zero exits) | done |
 | 7 | Study pinned/шапка posts of both 4PDA threads + XDA megathread post #1 | done (page-1 caches + extracts) |
