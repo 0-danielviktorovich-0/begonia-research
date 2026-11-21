@@ -2,7 +2,7 @@
 
 **[English directory](README.md) · [Полный оригинал на русском](../../22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md)**
 
-> **DIGEST ONLY — not a complete translation.** Source [Russian report 22](../../22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md), Git Blob 2ee320b35872b2f86580e0a3fae7205992e0bd65, observed 2026-11-21. Kernel functionality on the owner's device has not been independently tested. For all evidence, limitations and examples read the full Russian original.
+> **DIGEST ONLY — not a complete translation.** Source [Russian report 22](../../22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md), Git Blob 5bb882d1a43d89799f2ba5a0d0b4f0c6ea63245, observed and reconciled with the 2026-11-21 Telegram date correction. Kernel functionality on the owner's device has not been independently tested. For all evidence, limitations and examples read the full Russian original.
 
 ## What changed between kernel generations
 
