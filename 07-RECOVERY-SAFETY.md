@@ -220,3 +220,34 @@ Mined + re-fetched 2026-11-21 (guest view; threads verified from in-page links: 
 - **=NIKAS=**, post `p=90041102` (MIUI page 1): dialer/SMS/contacts patch zip flashed via TWRP — ancillary, inside the shapka snapshot.
 - **Dedicated 4PDA SP-Flash-Tool unbrick guide**: not found (searched: all 10 cached 4PDA pages, patterns 'кирпич|окирпич|unbrick|SP Flash|тест-по|test.?point|EDL|preloader|NVRAM'; only instruction-dense hits are the guides above). The only SP Flash walk-through pointer remains the pmOS-wiki-referenced video `youtube.com/watch?v=wm0UFvjSvVg`.
 - **mtkclient/test-point/EDL/NVRAM-specific 4PDA posts**: not found in cached pages (UART/USB-TTL pattern: 0 hits on all 10 pages; NVRAM mentions are TWRP-Mount checklist lines only).
+
+
+## N.1 Verbatim: RU step-by-step guides captured with owner login (2026-11-21T14:55Z)
+
+Human-queue items resolved: the owner logged into 4PDA; spoiler contents of both guides captured
+full-text ([cache]( _cache/) + [archive/human-4pda-90018812-spoilers-full.html](archive/human-4pda-90018812-spoilers-full.html),
+[archive/human-4pda-90501329-spoilers-full.html](archive/human-4pda-90501329-spoilers-full.html)).
+
+### [p=90018812](https://4pda.to/forum/index.php?showtopic=965629&view=findpost&p=90018812) — TWRP+ROOT(Magisk)+GPay (MIUI10/11, by =NIKAS=)
+Key verbatim steps (full text in archive):
+- Toolkit: MTK drivers `Driver_Auto_Installer_EXE_v5.1632.00`, ADB.rar, **stock boot.img per exact firmware**
+  («Стоковый boot.img от MIUI10 EU, прошивка этого файла на MIUI11 превращает телефон в КИРПИЧ»), `twrp-3.3.1-9-begonia.zip`.
+- Flow: USB debugging → drivers → fastboot (Vol- + Power) → `fastboot flash recovery recovery.img` → boot TWRP
+  (Power, then Vol+ at screen-off; password prompt = encrypted DATA → CANCEL).
+- In TWRP: Mount data/system/vendor/nvdata; **delete `system_root/system/recovery_fromboot.p`**;
+  **flash Close AVB2.0** («AVB2.0 снимает запрет на внесение изменений в данные»); flash
+  `SuperSu_installer.zip` (= Magisk 19.4, patches boot) — «должна пройти БЕЗ единой ошибки, в конце DONE».
+- Rescue path: `fastboot flash boot boot.img` + `fastboot flash recovery recovery.img` (stock per-firmware);
+  Mount check; optional Wipe→Format Data→yes.
+- GPay: Magisk Hide + `Crea GPay[1].zip` module.
+
+### [p=90501329](https://4pda.to/forum/index.php?showtopic=965629&view=findpost&p=90501329) — unbrick by battery drain (by =NIKAS=)
+Verbatim method: dead brick (LED only, no fastboot/recovery/vibration, PC sees **Mediatek USB PORT** with Vol+ held)
+→ let the battery fully drain (days) while on shelf → signs of life (LED blink + vibration) → charge from a
+**5V/2A adapter through a USB tester**: 0.5 A (coma) → LED steady, 0.9 A, screen shows Redmi + 3% →
+**enter fastboot while still on the charger** → `fastboot flash` stock `boot.img` + stock `recovery__V10.4.5.0.zip`
+→ reboot → charge (1.5 A → 1.85 A at 80%) → reflashing TWRP/root needed; apps survived.
+
+These are MIUI-10/11-era guides (2020 edits); they document the historical Magisk-19.4 path and confirm:
+per-firmware boot.img discipline, Close AVB2.0, and the no-teardown MTK unbrick route (battery drain +
+fastboot) — consistent with [mtkclient](https://github.com/bkerler/mtkclient) as the modern replacement.
