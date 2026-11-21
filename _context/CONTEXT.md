@@ -78,6 +78,46 @@ Other XDA URLs: resolve a snapshot via https://archive.org/wayback/available?url
 User's own desktop browser may still open live XDA — if a fact can ONLY come from live XDA, put it in your file's
 Limitations as "pending human-browser check" instead of guessing.
 
+## Bot-block escalation policy (user, 2026-11-21 — MANDATORY)
+On any bot-wall: 1) real browser first (isolated session via browser_exec session=...), 2) safe alternates
+(Wayback snapshot, official API endpoints, server-side extractor), 3) skill-based safe workarounds
+(reverse-engineering of the check is allowed ONLY passively: understand it, do not attack third-party infra).
+If still blocked after ~2 distinct approaches, STOP and log the URL into _context/HUMAN-ASSISTS.md —
+the human will pass the check in his own browser and drop the file into archive/human/.
+Auth-walled downloads: never register forum accounts; cite URL + log to HUMAN-ASSISTS.md for the human.
+Always hunt for sources beyond the obvious four (GitHub/4PDA/XDA/GitLab): SourceForge, kernel.org,
+lore.kernel.org, Xiaomi official mirrors, TWRP mirrors, public Telegram channels.
+
+## Format doctrine (user, 2026-11-21 — TOP PRIORITY)
+Optimize FIRST for AI agents, SECOND for humans: stable file/section naming, fixed table columns, CSV/JSON
+for structured data, explicit IDs and permalinks, no prose-only mush; human-readable INDEX/README ride on top.
+## Hyperlink & public-readiness rules (user, 2026-11-21 — MANDATORY)
+1. No bare plain-text URLs in deliverables: every source mention is a markdown link `[title](URL)`;
+   forum facts link to the post permalink; repo facts link to the exact branch/commit/file.
+2. The repo may go PUBLIC: format for an outside developer/agent — self-explaining navigation
+   (README, REQUIREMENTS.md, archive/index.html), privacy-clean content, explicit Limitations,
+   and a LICENSE decision before publishing.
+
+## Offline archive requirement (user/ChatGPT, 2026-11-21 — MANDATORY)
+Every important source page cited in the research gets an offline snapshot in /Users/danielviktorovich/begonia-research/archive/
+(full HTML, openable locally in a browser, links clickable) + a row in archive/index.html pairing
+original URL <-> offline copy <-> snapshot date. Raw markdown twins live in _cache/. Binary firmware/kernel
+images are NOT committed (repo weight); small text artifacts (scatter files, defconfigs, APKBUILDs) are OK.
+Orchestrator owns archive/index.html — subagents only fetch snapshots into archive/ with clear slugs and
+mention them in their sources.jsonl records.
+
+## Per-ROM source inventory requirement (user, 2026-11-21 — MANDATORY)
+For EVERY ROM/firmware listed in the research, do not stop at ready-made build links: find and attach ALL
+underlying sources so the entry is reusable for development — kernel source repo+branch, device tree,
+vendor tree/blobs source, manifest (local_manifests), build instructions, recovery/installer assets.
+Sources may live on official Xiaomi channels (MiCode/Xiaomi_Kernel_OpenSource), vendor mirrors, forums
+(4PDA/XDA posts with permalinks), GitHub/GitLab — anywhere; hunt them down and cite them.
+Firmware entries: extend 02-FIRMWARE-HISTORY.md with a "Per-ROM source inventory" section and add
+kernel_source_url,device_tree_source_url,vendor_source_url,manifest_url columns to firmware-matrix.csv.
+Custom kernels: catalog every quality custom kernel ever built for begonia (dev, repo, base version,
+Android compatibility, status, what made it good) — this belongs in 03-KERNEL-HISTORY.md.
+Anything unfindable gets an explicit "not found (searched: <where>)" marker — never a guess.
+
 ## Tool budget
 ≤ 20 tool calls each. Prefer web_search + web_extract + terminal curl (GitHub/GitLab APIs).
 GitHub API: https://api.github.com/repos/OWNER/REPO/... (unauthenticated ok, ~60 req/h).

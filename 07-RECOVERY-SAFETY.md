@@ -133,4 +133,66 @@ recovery(67.1MB), misc(4MB), **para**(524kB), expdb(21MB), frp(8.4MB), **vbmeta*
 - **LK verified-partition list**: pmOS wiki itself marks it TODO — unknown.
 - **PR #98 comment thread** (post-2023 developments in XiaoMiToolV2) not enumerated; only the PR body verified.
 - Fastboot-ROM mirrors (xmfirmwareupdater/xiaomirom/mifirm) are third-party re-hosts; no bigota URL was verified byte-for-byte. Do not flash unverified images (research-only).
-- 4PDA threads' unbrick pages were not re-mined for this dimension beyond the context pack (page 1 + last page caches on disk contain no test-point/UART specifics I could locate via search of the cached files).
+- 4PDA threads' unbrick pages were not re-mined for this dimension beyond the context pack (page 1 + last page caches on disk contain no test-point/UART specifics I could locate via search of the cached files). *(Superseded in the unbrick-guide dimension by §10 below — the MIUI shapka brick-recovery post was located and snapshotted on 2026-11-21; test-point/UART verdicts of §4 stand.)*
+
+---
+
+## Host workstation requirements (Linux / macOS / Windows)
+
+Appended 2026-11-21 (recovery/dev toolbox deep-dive; research-only). What host OS + hardware + software each begonia task needs. User's machine is macOS, so native-possible vs VM-required is called out explicitly. Cross-cutting hardware: one stable **USB data cable** (not charge-only); **USB2 port/hub recommended** (Nura/pmOS wiki author used USB2 ports for Mi Unlock in a VM, oldid=109575, verified-direct, high); **no test-point hardware** — BROM is reachable by key combo on MT6785 (§4).
+
+| Task | Linux native | Windows native | macOS native | macOS / non-Linux fallback |
+|---|---|---|---|---|
+| adb/fastboot (kernel test builds, recovery-zip push, `fastboot getvar product`) | ✔ `sudo apt install google-android-platform-tools-installer` (mtkclient README-INSTALL, verified-direct, high) or distro package | ✔ Google platform-tools zip + MediaTek VCOM drivers — 4PDA shapka ships `Driver_Auto_Installer_EXE_v5.1632.00` (p=90018812, verified-direct) | ✔ `brew install android-platform-tools` (formulae.brew.sh/formula/android-platform-tools — **URL unverified: brew metadata site returned a 404 page to our fetcher 2026-11-21**, medium) | — |
+| Bootloader unlock — official (Mi Unlock Tool) | ✖ tool is Windows-only → Windows VM (Nura wiki: Windows 10 in virt-manager, USB2 ports, driver-signing disabled, QR-code login — verified-direct, high) | ✔ Mi Unlock Tool + Mi account + 168 h wait (§1) | ✖ no macOS build → Windows VM (UTM/Parallels/VMware) with USB passthrough | same VM path |
+| Bootloader unlock — exploit (mtkclient `da seccfg unlock`) | ✔ python3 + pip deps + udev rules; patched kernel **not** needed for this flow — *"For linux, a patched kernel is only needed when using old kamakiri"* (mtkclient README, verified-direct, high) | ✔ Python + WinFsp + UsbDk 64-bit (§2); automated installer: github.com/codefl0w/mtkclient-windows-installer (README link, verified-direct) | ✔ **OFFICIALLY SUPPORTED — VERIFIED** in README-INSTALL.md §macOS (verified-direct, high): *"Install brew, macFUSE, OpenSSL"* → `brew install macfuse openssl`, python3.9 venv, `pip3 install --pre --no-binary capstone capstone`, `pip3 install PySide6 libusb`; plus dedicated **Apple Silicon (M1/M2/M3) notes**: *"Install Homebrew Python (3.10 or newer) instead of relying on the system Python"* → `brew install python@3.10` | — |
+| Full backup / unbrick via mtkclient (`rf`, `rl`, `r preloader --parttype=boot1`, GUI) | ✔ same setup as unlock row | ✔ same | ✔ same (GUI `mtk_gui.py` needs PySide6 — included in macOS install steps) | — |
+| Unbrick via SP Flash Tool + bypass_utility | ✔ SP Flash **Linux build exists** + bypass_utility in UART mode (§2/§3); wiki "tested with version 5.2208" | ✔ SP Flash Windows build (no kernel patch needed) | ✖ **no macOS SP Flash build exists** (spflashtool.com lists Windows + Linux 64-bit only, verified-direct) → Ubuntu VM — or skip SP Flash entirely and use native mtkclient (wiki footnote: SP Flash *"did not work for me. You can also use https://mtkclient.com/"*, verified-direct, high) | Ubuntu VM |
+| postmarketOS build + install (pmbootstrap) | ✔ *"pmbootstrap runs on pretty much any Linux distribution with python3.10 or newer, openssl and git installed. It uses Alpine Linux chroots internally"* (wiki.nura.eco Pmbootstrap/Installation, oldid=107533, verified-direct, high) | ✖ | ✖ | **Verbatim**: *"Running pmbootstrap on other operating systems than Linux is not supported. If you run another OS, consider setting up a virtual machine with Linux. Some people also made it work with WSL"* (same page, verified-direct, high) → Linux VM (UTM) or WSL |
+| Halium/UBports build (lineage/Halium trees, UT porting) | ✔ docs list **Linux distros only** — Debian Stretch+/Ubuntu 16.04/18.04/20.04+/Mageia 9 package recipes, Python 3.6+, i386 multilib on amd64 (docs.ubports.com/en/latest/porting/introduction/Setting_up.html, verified-direct, high) | ✖ | ✖ (no macOS/Windows section exists in the docs) | Ubuntu VM or Docker container |
+| Ubuntu Touch install on device (UBports Installer GUI) | ✔ | ✔ | ✔ — macOS .dmg exists (devices.ubuntu-touch.io cached device page, previously verified, high; 4PDA p=146080111 links installer release **0.11.2**) | — |
+| kamakiri / bypass_utility (legacy BROM exploit family) | ✔ + `kernel.patch` (disable-usb-checks) or FireISO (§2) | ✔ (UsbDk replaces the kernel patch) | ✖ not documented — README-INSTALL has no macOS kamakiri note; modern mtkclient MT6785 payloads supersede it (medium) | Linux VM |
+| UART debugging | ✖ | ✖ | ✖ | **not found (searched: all 10 cached 4PDA pages for 'UART|USB-TTL|переходник' — 0 content hits; web rounds in §4)** — no accessible source states a USB-TTL adapter workflow for begonia; treat as unknown, don't buy hardware on this basis |
+
+**Notes & contradictions**
+- `docs.postmarketos.org/pmulibpmbootstrap/` **404s** (2026-11-21; redirects to docs.nura.eco which lacks that path). pmbootstrap docs now live at `docs.nura.eco/pmbootstrap/main/` (docs.nura.eco index, verified-direct); the Nura wiki Installation page is the working host-requirements source.
+- `docs.ubports.com/en/latest/porting/build-and-install.html` **404s**; current host-requirements page is `docs.ubports.com/en/latest/porting/introduction/Setting_up.html` (verified-direct).
+- **SP Flash Tool version**: pmOS wiki says *"tested with version 5.2208"*; the spflashtool.com mirror lists only **≤5.1924** (Windows) and Linux 64-bit **5.1520.00.100** (verified-direct) → the 5.2208 build circulates through MTK community channels, not the public mirror (medium). Platform availability (Windows + Linux, **no macOS**) is confirmed by both.
+- **macOS bottom line**: bootloader unlock (exploit path), full flash backup, unbricking (mtkclient incl. GUI), adb/fastboot and UBports Installer all run **natively on macOS**; SP Flash Tool, pmbootstrap and Halium/UT *builds* require a **Linux VM (UTM/Parallels) or WSL**. mtkclient is the single critical native tool on macOS because it fully replaces SP Flash on begonia (pmOS wiki footnote).
+
+---
+
+## Community instructions preserved (4PDA)
+
+Mined + re-fetched 2026-11-21 (guest view; threads verified from in-page links: MIUI = `showtopic=965629`, CFW = `showtopic=974421`). Offline copies are full-page pandoc HTML in `archive/rec-*.html` built from the auto-saved web_extract markdown; raw markdown twins remain in the web cache. Permalink format: `https://4pda.to/forum/index.php?showtopic=<tid>&view=findpost&p=<pid>`.
+
+### Unlock + TWRP + root guide (MIUI шапка, post #10)
+- Permalink: `...showtopic=965629&view=findpost&p=90018812` — **=NIKAS=**, 21.10.19. Confidence **high** (verified-direct: live page re-fetched today; the guide is cross-referenced by users, e.g. *"По инструкции [=NIKAS=] … поставил TWRP"* with the exact findpost link on live page 1, and from the CFW шапка).
+- Offline copy: `archive/rec-4pda-miui-shapka-unlock-twrp-guide-p90018812.html` (full MIUI page 1 including this and the two guide posts below).
+- Key verbatim steps: *"Загрузчик должен быть разблокирован!"*; assets include *"twrp-3.3.1-9-begonia.zip"*; flashing: *"Далее вводим : **fastboot flash recovery recovery.img** … В конце будет OKAY!"*; post-flash hygiene: *"в самом низу есть файл recovery_fromboot.p удаляем его"*, *"выбираем **Close AVB2.0** и прошиваем архив свайпом вправо"*; root: *"в корне ищем папку supersu … Это архив с Magisk_19.4. он пропатчит boot"*; **brick warning**: *"Стоковый boot.img от MIUI10 EU, прошивка этого файла на MIUI11 превращает телефон в КИРПИЧ"*; restore path: *"**fastboot flash boot boot.img** … и **fastboot flash recovery recovery.img** … Мы прошили чистый boot и TWRP"*.
+
+### Brick-recovery instruction (MIUI шапка, post #20)
+- Permalink: `...showtopic=965629&view=findpost&p=90501329` — **=NIKAS=**, 05.11.19, *"ИНСТРУКЦИЯ ПО ВОССТАНОВЛЕНИЮ КИРПИЧА на прошивке GLOBAL V10.4.5.0.PGGEUXM."* Confidence **medium**: entry verified live today (findpost redirects to page 1 without the "post not found" error) and the cached page-1 extraction shows p=90501329 as this post's header permalink — but the steps sit in 4PDA spoiler blocks that our text extractor drops (**full steps pending human-browser check**).
+- Offline copy: title-level capture inside `archive/rec-4pda-miui-shapka-unlock-twrp-guide-p90018812.html`.
+- Key verbatim (title only): *"ИНСТРУКЦИЯ ПО ВОССТАНОВЛЕНИЮ КИРПИЧА на прошивке GLOBAL V10.4.5.0.PGGEUXM."*
+
+### Full fastboot reflash walk-through (MIUI page 1)
+- Permalink: `...showtopic=965629&view=findpost&p=90022165` — **Lyelik74**, 13.10.19 (edited 28.01.20). Confidence **high** (verified-direct: content live on page 1 today).
+- Key verbatim: *"качаем прошивку индонезия … нужен для фастбуда"*; unpack platform-tools into `c:\adb`; *"В окошке вводим команду **flash_all.bat** если не собираетесь лочить загрузчик или команду **flash_all_lock.bat** если загрузчик будете лочить ( ни в коем случае не вводить если у вас китайская прошивка )"*; *"Минут 10-20 будет писаться информация в этом окне,потом телефон сам перезагрузится."*
+- Offline copy: inside `archive/rec-4pda-miui-shapka-unlock-twrp-guide-p90018812.html`.
+- Preservation note: a neighboring PID seen in the earlier cache (`p=90007382`) now returns *"Пост #90007382 не найден"* — a deleted post; the guide itself (90022165) is intact. This is why the cached page-1 copy is also kept as evidence.
+
+### GSI install guide (CFW шапка, post #1)
+- Permalink: `...showtopic=974421&view=findpost&p=91427572` — **Xakep1993**, 01.12.19, *"Инструкция по установки AOSP based GSI rom"*. Confidence **high** (verified-direct: live CFW page 1 re-fetched today; the text references the =NIKAS= MIUI guide at p=90018812, confirming the cross-thread link).
+- Offline copy: `archive/rec-4pda-cfw-shapka-gsi-guide-p91427572.html`.
+
+### Ubuntu Touch install walk-through (CFW thread, page 1234, 2026)
+- Permalink: `...showtopic=974421&view=findpost&p=146080111` — **Xiaomi_T0P** (page offset st=24660, 2026 era). Confidence **high** (verified-direct: live fetch 2026-11-21).
+- Key verbatim: *"Прошиваете сток загружаетесь в bootloader если по-другому fastboot запускаете установщик и выбираете в нем begonia redmi note 8 pro устанавливайте выбирайте wipe data 24.04 stable не отключайте провод"*; *"Если из снг желательно ставить с впн"*; links `ubports.com/ubports-installer` and installer release **0.11.2** (github.com/ubports/ubports-installer/releases/tag/0.11.2).
+- Offline copy: `archive/rec-4pda-cfw-lastpage-ubports-install-p146080111.html`.
+
+### Located but not snapshotted / not found
+- **Spectrumist**, post `p=90482538` (MIUI page 1): *"Хочу прошить через fastboot. Где взять bat?"* — manual flash_all-style bat construction; body truncated by the extractor, not archived separately (pointer only).
+- **=NIKAS=**, post `p=90041102` (MIUI page 1): dialer/SMS/contacts patch zip flashed via TWRP — ancillary, inside the shapka snapshot.
+- **Dedicated 4PDA SP-Flash-Tool unbrick guide**: not found (searched: all 10 cached 4PDA pages, patterns 'кирпич|окирпич|unbrick|SP Flash|тест-по|test.?point|EDL|preloader|NVRAM'; only instruction-dense hits are the guides above). The only SP Flash walk-through pointer remains the pmOS-wiki-referenced video `youtube.com/watch?v=wm0UFvjSvVg`.
+- **mtkclient/test-point/EDL/NVRAM-specific 4PDA posts**: not found in cached pages (UART/USB-TTL pattern: 0 hits on all 10 pages; NVRAM mentions are TWRP-Mount checklist lines only).
