@@ -47,3 +47,6 @@ from sibling devices or GSIs. Search broadly: what do begonia/MT6785/MIUI-MTK de
 Write the file, append consulted sources to /Users/danielviktorovich/AI-OS/.hermes/cache/scratch/begonia-recon/sources.jsonl,
 and return ≤250 words: Wi-Fi chip verdict + monitor-mode verdict, NetHunter verdict, top-5 portable finds,
 not-found list. Do NOT touch any other research file. Do not run git.
+
+### Section 2 addendum (user emphasis)
+NetHunter section MUST lean on OFFICIAL sources first: kali.org (devices list, docs), gitlab.com/kalilinux/nethunter (official kernel repos + patches + build instructions), including historical/official pages (Wayback for dead ones). Forum posts only supplement; kernels related to NetHunter functionality also go into Section 3.
