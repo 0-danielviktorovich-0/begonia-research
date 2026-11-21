@@ -235,3 +235,13 @@ monitor method and cites a begonia-SoC tree — companion repo for our Path A/B.
 **Injection angle for W22**: the alive ATE/test-mode TX path (custom payload TX) is a candidate
 primitive for internal 802.11 TX injection — clunky (test-mode framing) but hardware-backed [I high].
 FM TX: dead-end on begonia.
+
+## 1.8 W19 follow-up: thread attachments CAPTURED (2026-11-22)
+
+Orchestrator's playwright-Brave lane (real profile) passed bunny where browser_exec/CDP-harness got
+challenged. Captured into archive/xda-3591182/: **wifitest.zip** (libwifitest source — the RF-test TX
+tool from the thread: custom-payload packet TX via ATE), **firmwares.zip** (WIFI_RAM_CODE + _E6,
+2014, MT6620-era), **something.dump** (4 MB, MCR dump per OP), **WIFI_RAM_CODE_6755** (2018, MT6755).
+hint1.png pending (403 on the request-context path — page-context only). These document the
+test-mode packet-TX technique referenced in §1.7 — historical MT6620/6755 generation, direct gen4m
+lineage for the ATE TX-injection angle.
