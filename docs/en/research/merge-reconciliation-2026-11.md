@@ -10,4 +10,4 @@ The original refactor was based on Git commit `563a710658a6600896809fc0bbc21b84f
 | `INDEX.md` | The new main contained nested conflict markers; retained the complete [clean master index](master-topic-index.md) and integrated Russian root/kernel links |
 | `README.md` | Preserved new Russian root-provenance navigation in the [clean landing page](../../../README.md) |
 
-The automatic migration audit compares all 41 moved files and pre-refactor blobs against the pinned original Git commit. Four byte-identical historical navigation snapshots are preserved in [archive/legacy](../../../archive/README.md). CI also rejects unresolved Git conflict markers in active Markdown. External URL reachability and device flashing are outside these checks.
+The automatic migration audit compares all 41 moved files and pre-refactor blobs against the pinned original Git commit. Seven byte-identical historical navigation and source snapshots are preserved in [archive/legacy](../../../archive/README.md). CI also rejects unresolved Git conflict markers in active Markdown. External URL reachability and device flashing are outside these checks.

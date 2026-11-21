@@ -268,7 +268,7 @@ def audit_migration() -> None:
             after = {r["topic"] for r in json.loads(new_content).get("topics", [])}
             if before - after:
                 error(f"topic index lost IDs: {sorted(before-after)}")
-        if source.endswith(".md") and source not in {"docs/en/README.md", "docs/ru/README.md", "README.ru.md"}:
+        if source.endswith(".md") and source not in {"docs/en/README.md", "docs/ru/README.md", "README.ru.md", "03-KERNEL-HISTORY.md", "16-ROOT-METHODS.md", "INDEX.md"}:
             before = Counter(normalize_line(x) for x in old_content.decode("utf-8").splitlines() if x.strip())
             after = Counter(normalize_line(x) for x in new_content.decode("utf-8").splitlines() if x.strip())
             difference = before-after
@@ -285,6 +285,9 @@ def audit_migration() -> None:
         "README.ru.md": "archive/legacy/README-ru-before-refactor-2026-11-21.md",
         "docs/en/README.md": "archive/legacy/docs-en-index-before-refactor-2026-11-21.md",
         "docs/ru/README.md": "archive/legacy/docs-ru-index-before-refactor-2026-11-21.md",
+        "03-KERNEL-HISTORY.md": "archive/legacy/03-KERNEL-HISTORY-before-refactor-2026-11-21.md",
+        "16-ROOT-METHODS.md": "archive/legacy/16-ROOT-METHODS-before-refactor-2026-11-21.md",
+        "INDEX.md": "archive/legacy/INDEX-before-refactor-2026-11-21.md",
     }
     for source, backup in backups.items():
         if not repo_file(backup):

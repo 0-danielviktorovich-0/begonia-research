@@ -17,4 +17,4 @@ Snapshot date: 2026-11-21. Regenerate index: final packaging pass.
 
 ## Pre-refactor navigation snapshots
 
-The byte-identical original root and English/Russian navigation READMEs are preserved in [`legacy/`](legacy/) for change auditing. These are historical snapshots; **links inside them target the old paths** and may no longer resolve. Use the current [`README.md`](../README.md) and language indexes for live navigation.
+The byte-identical original root and English/Russian navigation READMEs, plus the three pre-refactor documents superseded by concurrent-main reconciliation (kernel history, root methods, topic map), are preserved in [`legacy/`](legacy/) for change auditing. These are historical snapshots; **links inside them target the old paths** and may no longer resolve. Use the current [`README.md`](../README.md) and language indexes for live navigation.
