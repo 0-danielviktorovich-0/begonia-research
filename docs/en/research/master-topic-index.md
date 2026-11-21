@@ -6,9 +6,11 @@ All "verified" dates are observation stamps (REQUIREMENTS row 36): the day we la
 
 **Language:** [English topic directory](../index.md) · [Русский каталог](../../ru/index.md) · [English README](../../../README.md) · [README на русском](../../ru/overview.md).
 
-**Localized search:** [42 bilingual topic labels and aliases](../../../i18n/topics.json) · [translation coverage](../../../i18n/catalog.json) · [i18n/l10n policy](../../../i18n/README.md). Stable topic IDs remain in English; search labels support EN/RU independently.
+**Localized search:** [44 bilingual topic labels and aliases](../../../i18n/topics.json) · [translation coverage](../../../i18n/catalog.json) · [i18n/l10n policy](../../../i18n/README.md). Stable topic IDs remain in English; search labels support EN/RU independently.
 
 **New bilingual research routes:** [CFW, Non-CFW and GSI glossary](../android/19-rom-terminology.md) (full English draft; [RU original](../../ru/android/19-ROM-TERMS-GLOSSARY-RU.md)); [Linux 4.19 and KernelSU](../kernels/20-kernel-root-ecosystem.md); [NoMount and mount backends](../kernels/21-nomount-and-mount-backends.md); [AI kernel porting and Play Integrity](../kernels/22-kernel-forward-port.md); [4.19 developer announcement and contact](23-419-TELEGRAM-OUTREACH.md). English pages 20–22 are **digests**, not complete translations.
+
+**2026-11-21 source provenance update:** [Русский разбор 4.14/4.19, KSU/Non-KSU и root-патчей](../../ru/kernels/20-KERNEL-419-ROOT-ECOSYSTEM-RU.md) · [верифицированная таблица исходников](../../../data/matrices/kernel-root-provenance.csv). [NoMount и сравнение root/mount-бэкендов](../../ru/kernels/21-NOMOUNT-MOUNT-BACKENDS-RU.md) объясняет различия root engine, SUSFS, overlay and metamodules; device compatibility remains untested.
 
 **GitHub workflows:** [obsolete branch cleanup](../../../.github/workflows/branch-cleanup.yml), [multilingual QA](../../../.github/workflows/i18n-check.yml).
 

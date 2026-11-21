@@ -15,6 +15,8 @@ Research and evidence index for porting **Ubuntu Touch, Droidian, postmarketOS, 
 - [Linux porting roadmap](docs/en/linux/08-DEVELOPMENT-ROADMAP.md) · [Ubuntu Touch](docs/en/linux/05-UBUNTU-TOUCH.md) · [mainline roadmap](docs/en/kernels/14-MAINLINE-UPGRADE-PATH.md).
 - [Safety, recovery & preflight](docs/en/recovery/07-RECOVERY-SAFETY.md) · [Read-only device checks](docs/en/recovery/18-DEVICE-PREFLIGHT-READONLY.md).
 
+**Русские технические исследования:** [ядра Linux 4.14/4.19 и KSU/Non-KSU](docs/ru/kernels/20-KERNEL-419-ROOT-ECOSYSTEM-RU.md), [NoMount/SUSFS и другие способы systemless-подмены](docs/ru/kernels/21-NOMOUNT-MOUNT-BACKENDS-RU.md), [таблица происхождения ядер и root-патчей](data/matrices/kernel-root-provenance.csv). Эти материалы описывают проверенные исходники и ограничения, **не** доказывают работоспособность на конкретном телефоне.
+
 ## Repository layout
 
 | Directory | Purpose |

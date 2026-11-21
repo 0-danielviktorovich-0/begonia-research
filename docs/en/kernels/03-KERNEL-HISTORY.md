@@ -8,7 +8,7 @@ Research date: 2026-11-21 (JST). Dimension: kernels. Method: GitHub/GitLab APIs 
 Legend: **[V]** = verified directly (API/page/file fetched by this task, with URL+ref); **[I]** = inferred (marked with basis); confidence given per claim (high/medium/low).
 
 
-**Follow-up 2026-11-21:** [20-KERNEL-419-ROOT-ECOSYSTEM-RU.md](../../ru/kernels/20-KERNEL-419-ROOT-ECOSYSTEM-RU.md) records additional 4.19 repositories, their actual Makefile versions, the shared LineageOS/xiaomi-mt6785-dev head SHA, Saikrishna's 4.14.357-openela and a real NoVA KSU/non-KSU build example. See [kernel-root-provenance.csv](../../../data/matrices/kernel-root-provenance.csv). A source tree or successful build does **not** by itself confirm that a kernel boots reliably on begonia.
+**Independent follow-up (2026-11-21):** Additional MT6785 4.19 trees, the moved active `xiaomi-mt6785-dev/android_kernel_xiaomi_mt6785` repository, the exact `lineage-24.0` shared tip SHA with LineageOS, Saikrishna's 4.14.357-openela, and real NoVA KSU/non-KSU kernel build/defconfig evidence are documented in the [Russian 4.14/4.19 and root provenance audit](../../ru/kernels/20-KERNEL-419-ROOT-ECOSYSTEM-RU.md). The [kernel-root-provenance.csv](../../../data/matrices/kernel-root-provenance.csv) distinguishes source revision from on-device validation. Older sections remain historical snapshots, not exhaustive inventories. A source tree or successful build **does not prove reliable boot or hardware support on begonia**.
 
 ---
 

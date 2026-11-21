@@ -123,6 +123,9 @@ def audit_markdown() -> None:
         stats["markdown_files"] += 1
         previous_columns = None
         content = path.read_text(encoding="utf-8").splitlines()
+        for rawline_num, rawline in enumerate(content, 1):
+            if re.match(r"^(<<<<<<<(?: .+)?|=======|>>>>>>>(?: .+)?)$", rawline):
+                error(f"{path.relative_to(ROOT)}:{rawline_num}: unresolved Git merge conflict marker")
         for lineno, line in strip_fenced_and_inline(content):
             for link in re.findall(r"!?\[[^\]]*\]\(([^)]*)\)", line):
                 check_link(path, link, lineno, anchor_map)
