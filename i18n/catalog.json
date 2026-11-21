@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated": "2026-11-21",
+  "generated": "2026-11-22",
   "default_international_language": "en",
   "supported_languages": [
     "en",
@@ -689,6 +689,32 @@
           "path": "docs/ru/index.md",
           "coverage": "directory-only",
           "review": "navigation-only",
+          "derived_from_blob": null
+        }
+      }
+    },
+    {
+      "id": "26",
+      "titles": {
+        "en": "Begonia recovery projects: official and unofficial builds, sources, compatibility and UBports",
+        "ru": "Среды восстановления begonia: TWRP, PitchBlack, OrangeFox, UBports и совместимость"
+      },
+      "original": {
+        "path": "docs/en/recovery/recovery-projects-begonia-2026.md",
+        "lang": "en",
+        "blob_sha": null
+      },
+      "locales": {
+        "en": {
+          "path": "docs/en/recovery/recovery-projects-begonia-2026.md",
+          "coverage": "source",
+          "review": "authoritative-source",
+          "derived_from_blob": null
+        },
+        "ru": {
+          "path": "docs/ru/recovery/recovery-projects-begonia-2026.md",
+          "coverage": "digest",
+          "review": "abstract-only",
           "derived_from_blob": null
         }
       }

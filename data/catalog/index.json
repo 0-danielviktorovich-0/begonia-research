@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-21",
+  "generated": "2026-11-22",
   "note": "Human twin: docs/en/research/master-topic-index.md. section_anchor = GitHub-style slug of the owning heading (empty string = whole file). key_sources = URLs that carry the primary evidence for the topic. status includes the observation date (REQUIREMENTS row 36): as of 2026-11-21 unless stated otherwise.",
   "topics": [
     {
@@ -213,14 +213,17 @@
     },
     {
       "topic": "recovery-landscape",
-      "file": "docs/en/recovery/07-RECOVERY-SAFETY.md",
-      "section_anchor": "30-recovery-landscape-all-known-recovery-options-added-at-synthesis-pass-2026-11-21",
+      "file": "docs/en/recovery/recovery-projects-begonia-2026.md",
+      "section_anchor": "1-executive-verdict-and-dated-evidence",
       "key_sources": [
         "https://twrp.me/xiaomi/xiaomiredminote8pro.html",
-        "https://orangefox.download/device/begonia",
-        "https://4pda.to/forum/index.php?showtopic=974421&view=findpost&p=144354114"
+        "https://eu.dl.twrp.me/begonia/",
+        "https://pitchblackrecovery.com/begonia/",
+        "https://orangefox.download/device/5eef879f5a65e7146387c434",
+        "https://sourceforge.net/projects/infinity-x-begonia/files/begonia/recovery/",
+        "https://docs.ubports.com/en/latest/porting/finalize/UBports_recovery.html"
       ],
-      "status": "covered; official TWRP page 2026-11-20, official OrangeFox page exists; build freshness unverified; verified 2026-11-21"
+      "status": "covered; exact official vs current release vs 2026 unofficial source split; observed 2026-11-22; no handset tests"
     },
     {
       "topic": "recovery-builds",

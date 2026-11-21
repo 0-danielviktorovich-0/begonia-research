@@ -1,7 +1,7 @@
 {
-  "generated": "2026-11-21",
+  "generated": "2026-11-22",
   "record_semantics": "One record per unique source URL. observed_at = when WE last looked (research day; no intraday times were logged). source_last_change_observed = the source's OWN last-change date AS EXPOSED at observation (repo push, page/oldid/snapshot date, thread last-post date) or null when the source exposed nothing date-like. These are observations, not guarantees: any source may have changed after observed_at.",
-  "count": 251,
+  "count": 264,
   "sources": [
     {
       "id": "xda-unlock-guide-3995919",
@@ -3108,6 +3108,162 @@
       "used_for": "Unofficial Android 16.2 ROM listing Linux kernel 4.14",
       "observed_at": "2026-11-21",
       "source_last_change_observed": "2026-03-28"
+    },
+    {
+      "id": "recovery-twrp-begonia-current-20261122",
+      "url": "https://twrp.me/xiaomi/xiaomiredminote8pro.html",
+      "title": "TeamWin TWRP for Redmi Note 8 Pro; warnings",
+      "author": "TeamWin",
+      "date": null,
+      "access": "verified-direct",
+      "credibility": "high",
+      "used_for": "device listing Current; explicit hard-brick/decryption warnings",
+      "observed_at": "2026-11-22",
+      "source_last_change_observed": null
+    },
+    {
+      "id": "recovery-twrp-begonia-download-20261122",
+      "url": "https://eu.dl.twrp.me/begonia/",
+      "title": "TeamWin official begonia image directory",
+      "author": "TeamWin",
+      "date": null,
+      "access": "verified-direct",
+      "credibility": "high",
+      "used_for": "newest listed 3.7.0_9-0 2022-10-06",
+      "observed_at": "2026-11-22",
+      "source_last_change_observed": null
+    },
+    {
+      "id": "recovery-twrp-teamwin-source-20261122",
+      "url": "https://github.com/TeamWin/android_device_redmi_begonia",
+      "title": "TeamWin begonia recovery device tree",
+      "author": "TeamWin",
+      "date": null,
+      "access": "verified-direct",
+      "credibility": "high",
+      "used_for": "default android-9.0 pushed 2020-12-31",
+      "observed_at": "2026-11-22",
+      "source_last_change_observed": null
+    },
+    {
+      "id": "recovery-pbrp-begonia-page-20261122",
+      "url": "https://pitchblackrecovery.com/begonia/",
+      "title": "Official PitchBlack device listing",
+      "author": "PBRP Team",
+      "date": null,
+      "access": "verified-direct",
+      "credibility": "high",
+      "used_for": "maintainer Flamefusion; dynamic latest build list not validated",
+      "observed_at": "2026-11-22",
+      "source_last_change_observed": null
+    },
+    {
+      "id": "recovery-pbrp-org-tree-20261122",
+      "url": "https://github.com/PitchBlackRecoveryProject/android_device_redmi_begonia-pbrp",
+      "title": "PBRP organization begonia source tree",
+      "author": "PitchBlackRecoveryProject",
+      "date": null,
+      "access": "verified-direct",
+      "credibility": "high",
+      "used_for": "default android-9.0 last push 2020-09-25",
+      "observed_at": "2026-11-22",
+      "source_last_change_observed": null
+    },
+    {
+      "id": "recovery-orangefox-begonia-page-20261122",
+      "url": "https://orangefox.download/device/5eef879f5a65e7146387c434",
+      "title": "OrangeFox official begonia device page",
+      "author": "OrangeFox",
+      "date": null,
+      "access": "verified-direct",
+      "credibility": "high",
+      "used_for": "unmaintained; last CFW-only R11.0_0 Beta 2020-07-26",
+      "observed_at": "2026-11-22",
+      "source_last_change_observed": null
+    },
+    {
+      "id": "recovery-orangefox-building-20261122",
+      "url": "https://wiki.orangefox.tech/dev/building",
+      "title": "OrangeFox official build and source-code documentation",
+      "author": "OrangeFox",
+      "date": null,
+      "access": "verified-direct",
+      "credibility": "high",
+      "used_for": "source publication and recovery-specific build prerequisites",
+      "observed_at": "2026-11-22",
+      "source_last_change_observed": null
+    },
+    {
+      "id": "recovery-orangefox-warning-20261122",
+      "url": "https://wiki.orangefox.tech/warning-impersonators",
+      "title": "OrangeFox impersonation and download provenance warning",
+      "author": "OrangeFox",
+      "date": null,
+      "access": "verified-direct",
+      "credibility": "high",
+      "used_for": "official releases from official download portal only",
+      "observed_at": "2026-11-22",
+      "source_last_change_observed": null
+    },
+    {
+      "id": "recovery-krispgece-pbrp-20261011",
+      "url": "https://sourceforge.net/projects/infinity-x-begonia/files/begonia/recovery/",
+      "title": "PBRP 4.0 krispgece begonia image and SHA256",
+      "author": "krispgece",
+      "date": null,
+      "access": "verified-direct",
+      "credibility": "high",
+      "used_for": "unofficial 2026-10-11 67.1 MB static/dynamic claim scoped to own Infinity-X",
+      "observed_at": "2026-11-22",
+      "source_last_change_observed": null
+    },
+    {
+      "id": "recovery-krispgece-changelog-2026",
+      "url": "https://github.com/krispgece/infinity_ota/blob/16/changelog/begonia.md",
+      "title": "Infinity-X begonia recovery changelog",
+      "author": "krispgece",
+      "date": null,
+      "access": "verified-direct",
+      "credibility": "high",
+      "used_for": "PBRP 4.0 development noted 2026-10-06",
+      "observed_at": "2026-11-22",
+      "source_last_change_observed": null
+    },
+    {
+      "id": "recovery-ubports-unified-doc-20261122",
+      "url": "https://docs.ubports.com/en/latest/porting/finalize/UBports_recovery.html",
+      "title": "Unified UBports recovery integration and test docs",
+      "author": "UBports",
+      "date": null,
+      "access": "verified-direct",
+      "credibility": "high",
+      "used_for": "unified recovery fstab and system-image-upgrader; not generic TWRP",
+      "observed_at": "2026-11-22",
+      "source_last_change_observed": null
+    },
+    {
+      "id": "recovery-ubports-source-20261122",
+      "url": "https://github.com/ubports/halium_bootable_recovery",
+      "title": "UBports Halium recovery implementation",
+      "author": "UBports",
+      "date": null,
+      "access": "verified-direct",
+      "credibility": "high",
+      "used_for": "recovery source project distinct from Android TWRP forks",
+      "observed_at": "2026-11-22",
+      "source_last_change_observed": null
+    },
+    {
+      "id": "recovery-pox-begonia-docs-20261122",
+      "url": "https://github.com/POX-project/bego-docs",
+      "title": "POX project community begonia recovery reference",
+      "author": "POX project",
+      "date": null,
+      "access": "verified-direct",
+      "credibility": "high",
+      "used_for": "community lead includes PBRP OrangeFox TWRP; not upstream verification",
+      "observed_at": "2026-11-22",
+      "source_last_change_observed": null
     }
   ]
 }

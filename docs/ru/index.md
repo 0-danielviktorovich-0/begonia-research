@@ -37,6 +37,7 @@
 | Глава | Что можно найти | Документ |
 |---|---|---|
 | **07** | Разблокировка, BROM/mtkclient, TWRP и OrangeFox, безопасные резервные копии | [Восстановление и безопасность — EN](../en/recovery/07-RECOVERY-SAFETY.md) |
+| **26** | **Каталог TWRP, PBRP, OrangeFox, UBports Recovery: официальные и неофициальные сборки** | **[Русский конспект](recovery/recovery-projects-begonia-2026.md)** · [полный английский отчёт](../en/recovery/recovery-projects-begonia-2026.md) · [CSV](../../data/matrices/recovery-matrix.csv) |
 | **09** | Неизвестные компоненты, конфликты сведений, что нужно перепроверить | [Открытые вопросы — EN](../en/research/09-OPEN-QUESTIONS.md) |
 | **12** | Используемые инструменты, AI-агенты, автоматизация исследования | [Инструменты и навыки — EN](../en/tools/12-SKILLS-AND-REUSE.md) |
 | **13** | NetHunter, режим мониторинга Wi-Fi, USB Gadget и функциональность ядер | [Сетевые эксперименты — EN](../en/android/13-NETHUNTER-WIFI-EXTRAS.md) |

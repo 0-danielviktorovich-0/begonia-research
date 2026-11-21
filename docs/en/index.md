@@ -37,6 +37,7 @@ This is the primary international entry point for the Redmi Note 8 Pro (begonia,
 | ID | Subject | Source or English page |
 |---|---|---|
 | 07 | Bootloader, official recovery, BROM, backups and brick safety | [Recovery and safety](recovery/07-RECOVERY-SAFETY.md) |
+| 26 | **Recovery project status, builds, sources, compatibility, Ubuntu Touch** | [Full audit](recovery/recovery-projects-begonia-2026.md) · [comparison CSV](../../data/matrices/recovery-matrix.csv) · [RU digest](../ru/recovery/recovery-projects-begonia-2026.md) |
 | 09 | Open questions, contradictions and missing sources | [Open questions](research/09-OPEN-QUESTIONS.md) |
 | 12 | Tool reuse, agent workflows and technical skills | [Tools and skills](tools/12-SKILLS-AND-REUSE.md) |
 | 13 | NetHunter, Wi-Fi monitor mode and USB gadget support | [NetHunter extras](android/13-NETHUNTER-WIFI-EXTRAS.md) |

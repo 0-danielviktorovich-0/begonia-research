@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated": "2026-11-21",
+  "generated": "2026-11-22",
   "source_index": "data/catalog/index.json",
   "entries_count": 44,
   "description": "English immutable topic IDs; localized titles, search keywords and entry points. An entry point may be a directory or digest, not necessarily full translation; consult catalog.json for status.",
@@ -508,26 +508,41 @@
     {
       "id": "recovery-landscape",
       "title": {
-        "en": "Recovery options",
-        "ru": "Среды восстановления TWRP OrangeFox"
+        "en": "Begonia recovery projects and compatibility",
+        "ru": "Каталог recovery и совместимости для Begonia"
       },
       "keywords": {
         "en": [
+          "twrp",
+          "pbrp",
+          "pitchblack",
+          "orangefox",
+          "ubports",
           "recovery",
-          "options"
+          "dynamic",
+          "static",
+          "fbe",
+          "avb",
+          "begonia"
         ],
         "ru": [
-          "среды",
-          "восстановления",
-          "twrp",
-          "orangefox"
+          "твРП",
+          "питчблэк",
+          "оранжфокс",
+          "рекавери",
+          "восстановление",
+          "шифрование",
+          "динамические",
+          "статические",
+          "ubuntu touch",
+          "begonia"
         ]
       },
-      "source_file": "docs/en/recovery/07-RECOVERY-SAFETY.md",
-      "source_anchor": "30-recovery-landscape-all-known-recovery-options-added-at-synthesis-pass-2026-11-21",
+      "source_file": "docs/en/recovery/recovery-projects-begonia-2026.md",
+      "source_anchor": "1-executive-verdict-and-dated-evidence",
       "entry_point": {
-        "en": "docs/en/recovery/07-RECOVERY-SAFETY.md",
-        "ru": "docs/ru/index.md"
+        "en": "docs/en/recovery/recovery-projects-begonia-2026.md",
+        "ru": "docs/ru/recovery/recovery-projects-begonia-2026.md"
       }
     },
     {
