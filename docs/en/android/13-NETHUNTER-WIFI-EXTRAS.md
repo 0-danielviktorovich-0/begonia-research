@@ -287,3 +287,15 @@ RX-monitor lands (Path A/B of §1.6).
 **Modern adapter stack for the unified kernel [V/I]** (W22-OUT full table): ath9k_htc,
 rtl8188eus-via-in-tree-rtl8xxxu, rtl88xxau 5.6.4.2, rtw88-usb backport, mt76x2, rt2x00 (mt7921/7925
 need ≥5.x — unreachable on 4.14/4.19). Ordered patch stack from official sources in W22-OUT §4.
+
+## 1.10 W23 — ATE test-mode TX: ZERO-LOC injection experiment (2026-11-22)
+
+The captured 2017 ATE toolchain maps VERBATIM onto begonia's gen4m [V — file:line in W23-OUT]:
+PKTCONTENT=12 (rftest.h:187), transport byte-identical (ioctl +8/+9/+11, OIDs 0xFFA0C901/906/911,
+magic key 2011, PRIV_CMD_OID=15). Three userspace shells exist: `iwpriv wlan0 set_test_cmd <idx> <data>`,
+`/proc/wlan/driver` SET_TEST_CMD, and the ATE agent (`set ATE=TXFRAME`, ATEDA/ATESA). TX is
+**firmware-generated** (CMD_ID_TEST_CTRL=0x01, passthrough — bypasses nic_tx/TXD entirely);
+`testmode1.pcap` decoded: real on-air QoS-Data frames, NoAck, template MACs — custom payload is the
+testable gap [I]. Experiment ladder E1 (template TX) → E2 (header control DA/SA/FC/seq) →
+E3 (PKTCONTENT offset-chunking gate) is userspace-only, **ZERO kernel LOC**; W22's 600–1200 LOC LKM
+stands only if E3 fails at the gate. nvram dependency satisfied on-device.
