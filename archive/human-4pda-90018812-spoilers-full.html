@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.13" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>4PDA post 90018812 — full spoiler capture 2026-11-21</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      color: light-dark(#1a1a1a, #fdfdfd);
+      background-color: #fdfdfd;
+      background-color: light-dark(#fdfdfd, #1a1a1a);
+      color-scheme: light dark;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        color-scheme: light only;
+      }
+      html, body, pre, code {
+        background-color: transparent;
+      }
+      body, a, a:visited, blockquote {
+        color: black;
+      }
+      pre, code {
+        padding: 0;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a, a:visited {
+      color: inherit;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid;
+      border-color: #e6e6e6;
+      border-color: light-dark(#e6e6e6, #4c4c4c);
+      color: #606060;
+      color: light-dark(#606060, #b6b6b6);
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid currentColor;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid currentColor;
+      border-bottom: 1px solid currentColor;
+    }
+    th {
+      border-top: 1px solid currentColor;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">4PDA post 90018812 — full spoiler capture
+2026-11-21</h1>
+</header>
+<p>ИНСТРУКЦИЯ ПО УСТАНОВКЕ TWRP+ROOT(MAGISK)+GPay на прошивках MIUI10
+GLOBAL V10.4.5.0.PGGEUXM/V11.0.1.0.PGGEUXM/V11.0.1.0.PGGIDXM. TWRP
+подходит на MIUI10/11. Кирпичей нет,читать дважды!!! TWRP на Android 10
+НЕ подходит, искать в смежной теме!!!</p>
+<p>Данная инструкция проверена на моём телефоне 6/128 с прошивкой GLOBAL
+V10.4.5.0.PGGEUXM и подходит для китайцев(перешитых на Индонезию), а
+также для телефонов с индексом RU! … Всё делаете на свой страх и риск!
+ВСЕ ДАННЫЕ НА ТЕЛЕФОНЕ СТИРАЮТСЯ! Данная инструкция ориентирована на
+рядовых пользователей. Загрузчик должен быть разблокирован!</p>
+<p>ИНСТРУМЕНТАРИЙ (спойлер, раскрыт 2026-11-21): 1. Отключенная подпись
+драйверов на Windows. Обязательно установленные на комп драйвера для
+процессоров MTK Driver_Auto_Installer_EXE_v5.1632.00 из шапки. 2. Пакет
+ADB, распаковать в корневую папку на диске C. ADB.rar (1.44 МБ) [attach
+17680733] Внимание! Файлы из пунктов 3, 3.1 применяются, по
+необходимости, только для спойлера “Если что-то пошло не так” в конце
+данной инструкции! Если у Вас прошивка не EU, то нужно использовать
+boot.img ИМЕННО от своей текущей прошивки! 3. Стоковый boot.img от
+MIUI10 EU, прошивка этого файла на MIUI11 превращает телефон в КИРПИЧ:
+boot_V10.4.5.0.zip (9.88 МБ) [attach 17680781] 3.1. Стоковый boot.img от
+MIUI11 EU: boot_V11.0.1.0.zip (10.76 МБ) [attach 17979703] 4. Сам TWRP:
+twrp-3.3.1-9-begonia.zip (34.14 МБ) [attach 17680925] 5. Прямые руки и
+терпение.</p>
+<p>ПОРЯДОК ДЕЙСТВИЙ (спойлер, раскрыт 2026-11-21): 0. Зарядить телефон
+более чем на 30%. 1. Активируем меню разработчика. 2. Включаем Отладку
+по USB. 3. Устанавливаем драйвера из Driver_Auto_Installer_EXE. 4.
+Подключаем включенное тело к ПК для установки драйверов (ADB… и
+переносное устройство). 5. Отключаем и штатно выключаем. 6. Зажимаем
+Volume- и Power до “зайца в ушанке” и FASTBOOT; подключаем к ПК. Пункты
+7,8,9 — установка TWRP вручную. АВТОМАТИЧЕСКАЯ УСТАНОВКА TWRP:
+распаковываем ifelixit FLASHER TOOLKIT Begonia.bat на диск C, в окнах
+дважды “1”+Enter; в конце обязательно OKAY! Сразу отключаем телефон от
+ПК, иначе командой уйдёт в перезагрузку и восстановится стоковый
+recovery. [attach: ifelixit FLASHER TOOLKIT Begonia.zip 34.69 МБ] 7. В
+папку ADB копируем recovery.img. 8. Открываем cmd в папке ADB. 9.
+fastboot devices; затем: fastboot flash recovery recovery.img → OKAY!
+10. Отключаем от ПК, зажимаем Power, при погасшем экране сразу Volume+ и
+держим; через две заставки TWRP отпускаем. Свайп вправо. Китайский язык
+→ английский. Окно пароля = шифрование DATA → CANCEL. Монтирование:
+галки data, system, vendor, nvdata и MicroSD (если есть). Advanced →
+File Manager → system_root/system/ → в самом низу удаляем файл
+recovery_fromboot.p. Advanced → Close AVB2.0 → прошиваем архив свайпом
+(AVB2.0 снимает запрет на внесение изменений в данные). Install → Select
+Storage → Internal Storage OK → папка supersu → SuperSu_installer.zip →
+прошиваем свайпом. Это архив с Magisk_19.4, он пропатчит boot. Прошивка
+должна пройти БЕЗ единой ошибки, все строки белые, в конце DONE. Reboot
+→ System. Первая загрузка долгая. Запускаем Magisk_Manager, обновляем
+менеджер и Magisk.zip (прямая установка), источник — стабильный канал.
+ROOT ПОЛУЧЕН!</p>
+<p>ЕСЛИ ЧТО-ТО ПОШЛО НЕ ТАК (спойлер): 1. В папку ADB копируем
+распакованный boot.img (п.2;3;3.1). 2. Пункт 8. 3. fastboot flash boot
+boot.img и fastboot flash recovery recovery.img — прошили чистый boot и
+TWRP. 4. Пункт 10 (recovery_fromboot.p уже удалён). 5. В TWRP Mount
+проверяем галки data, system, vendor, nvdata — ставятся и снимаются. 6.
+Можно расшифровать DATA форматированием: Wipe → Format Data → yes. 7.
+Повторяем пункт 10.</p>
+<p>ЗАВОДИМ GPAY (спойлер): 1. Качаем Gpay из маркета, не запускаем. 2.
+Magisk Manager → Magisk Hide — галки как на скрине. 3. Модуль для Magisk
+Crea GPay[1].zip (8.24 МБ). 4. Перезагрузка и привязка карты.</p>
+<p>Автор =NIKAS= (Сообщение #10, 21.10.19), правки prusenkor 23.08.20
+«Пояснение о AVB»; материалы esleer, Xakep1993, SPIRITic, m3lbrunton,
+Lyelik74.</p>
+</body>
+</html>
