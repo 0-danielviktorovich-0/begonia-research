@@ -1,6 +1,6 @@
 # 01 — Sources: consolidated index (begonia-research)
 
-Machine twin: [sources.json](sources.json) (one record per unique URL, deduped from the append-only research log; **200 records**). Every record is **observation-anchored** (REQUIREMENTS row 36): `observed_at` = when we last looked (research day 2026-11-21), `source_last_change_observed` = the source's own last-change date **as exposed** at that moment (repo push, page/snapshot date, thread page date) or `null` when the source exposed nothing date-like — never guessed. **These are observations, not guarantees:** any source may have changed after `observed_at`.
+Machine twin: [sources.json](sources.json) (one record per unique URL, deduped from the append-only research log; **206 records**). Every record is **observation-anchored** (REQUIREMENTS row 36): `observed_at` = when we last looked (research day 2026-11-21), `source_last_change_observed` = the source's own last-change date **as exposed** at that moment (repo push, page/snapshot date, thread page date) or `null` when the source exposed nothing date-like — never guessed. **These are observations, not guarantees:** any source may have changed after `observed_at`.
 
 Rendered per entry as: *As of 2026-11-21, the last change observed in this source was \<date\>* — or *no source-side change date was exposed*.
 
@@ -267,7 +267,7 @@ Classes verified during the source census ([_context/SOURCE-CENSUS.md](_context/
 
 ## Independent additions — root, NoMount and 4.19 (2026-11-21)
 
-The canonical machine list [sources.json](sources.json) now contains **200 unique URLs**. The eight newly indexed primary sources below were read directly or retrieved from their official GitHub repository pages on 2026-11-21. Their source-side modification dates are recorded only where explicit; source availability and runtime compatibility may change.
+The canonical machine list [sources.json](sources.json) now contains **206 unique URLs**. The eight newly indexed primary sources below were read directly or retrieved from their official GitHub repository pages on 2026-11-21. Their source-side modification dates are recorded only where explicit; source availability and runtime compatibility may change.
 
 - [NoMount — original VFS redirection framework](https://github.com/maxsteeel/nomount) — primary project README; [21](21-NOMOUNT-MOUNT-BACKENDS-RU.md).
 - [NoMount release v2.3.1](https://github.com/maxsteeel/nomount/releases/tag/v2.3.1) — released 2026-11-19; driver protocol v23, self-reported performance improvements; [21](21-NOMOUNT-MOUNT-BACKENDS-RU.md).
@@ -279,3 +279,17 @@ The canonical machine list [sources.json](sources.json) now contains **200 uniqu
 - [APatch official FAQ](https://apatch.dev/faq.html) — direct kernel-patching approach versus Magisk and KernelSU; [21](21-NOMOUNT-MOUNT-BACKENDS-RU.md).
 
 These are source-index observations, **not evidence that any given 4.19 kernel, NoMount or root method has been validated on the owner's phone**.
+
+
+## Independent follow-up — kernel forward-port, pmOS Wi-Fi and payments (2026-11-21)
+
+The canonical [sources.json](sources.json) currently indexes **206 unique URL records**. The six additional records below distinguish direct reading of upstream code/docs from **author-reported hardware results**, which have not been independently reproduced on the owner's phone.
+
+- [Third-party Linux 6.16.4 begonia pmOS build](https://github.com/criollojoel10/begonia-pmos-tianma) — author and logs report Wi-Fi success on 2026-09-27 using vendor `wlan_gen4m` + WMT firmware. **Not upstream-native mt76; not validated by this reviewer**.
+- [Google official Play Integrity verdicts](https://developer.android.com/google/play/integrity/verdicts) — BASIC/DEVICE/STRONG levels and OS/vendor security-patch rules.
+- [Google Wallet official tap-to-pay help](https://support.google.com/wallet/answer/12200245) — certification, unlocked-bootloader and modified-Android restrictions.
+- [xiaomi-mt6785-dev 4.19 rosemary_defconfig](https://github.com/xiaomi-mt6785-dev/android_kernel_xiaomi_mt6785/blob/lineage-24.0/arch/arm64/configs/rosemary_defconfig) — confirmed rosemary in Linux 4.19.325 MT6785 family kernel. Do not infer complete begonia deployment from tree title.
+- [Reverse Engineer Anything example upstream](https://github.com/axpie/reverse-engineer-anything) — inspect exact skill/tool source before installing.
+- [Redmi Note 8 Pro public updates](https://t.me/s/RedmiNote8ProUpdates) — author self-report of experimental begonia 4.19; exact source commit/build/hardware validation still missing.
+
+For interpretation and source-specific limitations see [22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md](22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md).
