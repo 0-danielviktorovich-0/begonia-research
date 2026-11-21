@@ -20,7 +20,7 @@ Evidence-based work plan derived from files 02–07 (research date 2026-11-21; *
 
 ## P1 — Mainline leverage
 
-**State of the art** ([03 §4](03-KERNEL-HISTORY.md), [06](06-DROIDIAN-POSTMARKETOS.md)):
+**State of the art** ([03 §4](../kernels/03-KERNEL-HISTORY.md), [06](06-DROIDIAN-POSTMARKETOS.md)):
 
 | Tree | Version | Status (2026-11) |
 |---|---|---|
@@ -29,7 +29,7 @@ Evidence-based work plan derived from files 02–07 (research date 2026-11-21; *
 | [kalpakprod/mt6785-linux](https://github.com/kalpakprod/mt6785-linux) | 7.3.4 | new (created 2026-11-15, pushed 2026-11-20) — freshest mainline tree |
 | Linus master | — | **no mt6785 DTS, no lore.kernel.org patches** — mainlining is fork-only |
 
-**What a mainline-based userland (UT-style) would need** (gap list from [04](04-HARDWARE-DRIVERS.md)/[06](06-DROIDIAN-POSTMARKETOS.md)):
+**What a mainline-based userland (UT-style) would need** (gap list from [04](../kernels/04-HARDWARE-DRIVERS.md)/[06](06-DROIDIAN-POSTMARKETOS.md)):
 
 - **Audio**: MT6359 PMIC codec driver path — mainline has no working begonia audio stack; DTS-side sound nodes are the missing piece. pmOS wiki documents the breakage; no WIP patch located.
 - **Modem/telephony**: MT6785 modem (CCCI) is not mainlined; no oFono/ModemManager story on the mainline kernel for this device.
@@ -39,32 +39,32 @@ Evidence-based work plan derived from files 02–07 (research date 2026-11-21; *
 
 ## P2 — Android-side (custom-ROM) baseline
 
-- **Freshest native base**: LineageOS 24.0 line — kernel base 4.19.325 in the LOS kernel tree ([LineageOS/android_kernel_xiaomi_mt6785](https://github.com/LineageOS/android_kernel_xiaomi_mt6785), 7 lineage branches; per-ROM inventory in [02 §7](02-FIRMWARE-HISTORY.md)).
-- **Kernel choices for builders** ([03](03-KERNEL-HISTORY.md)): [Nova-Kernels/kernel_xiaomi_mt6785](https://github.com/Nova-Kernels/kernel_xiaomi_mt6785) (`main`, Linux 4.14.356, push 2026-10-03 — active); "Suzaku Kernel V2" (4PDA, A11–A17 claims, AOSP Clang 21 — **no public repo verified**, treat as unverified until source appears).
-- **Vendor baseline**: every ROM repacks the last official MIUI 12.5 vendor base ([02 §1.3/§7.2](02-FIRMWARE-HISTORY.md)); vendor image fingerprint precedent `begonia-user 10/QP1A.190711.020/20.5.14` (2.66 GiB, Erfan GSI era — [02 §2](02-FIRMWARE-HISTORY.md)).
-- **Recovery tooling**: official TWRP + official OrangeFox listings exist (2026-11 verified, [07 §3](07-RECOVERY-SAFETY.md)); community unified TWRP 3.7.1 (wuxinG90) is the 4PDA-current build.
+- **Freshest native base**: LineageOS 24.0 line — kernel base 4.19.325 in the LOS kernel tree ([LineageOS/android_kernel_xiaomi_mt6785](https://github.com/LineageOS/android_kernel_xiaomi_mt6785), 7 lineage branches; per-ROM inventory in [02 §7](../android/02-FIRMWARE-HISTORY.md)).
+- **Kernel choices for builders** ([03](../kernels/03-KERNEL-HISTORY.md)): [Nova-Kernels/kernel_xiaomi_mt6785](https://github.com/Nova-Kernels/kernel_xiaomi_mt6785) (`main`, Linux 4.14.356, push 2026-10-03 — active); "Suzaku Kernel V2" (4PDA, A11–A17 claims, AOSP Clang 21 — **no public repo verified**, treat as unverified until source appears).
+- **Vendor baseline**: every ROM repacks the last official MIUI 12.5 vendor base ([02 §1.3/§7.2](../android/02-FIRMWARE-HISTORY.md)); vendor image fingerprint precedent `begonia-user 10/QP1A.190711.020/20.5.14` (2.66 GiB, Erfan GSI era — [02 §2](../android/02-FIRMWARE-HISTORY.md)).
+- **Recovery tooling**: official TWRP + official OrangeFox listings exist (2026-11 verified, [07 §3](../recovery/07-RECOVERY-SAFETY.md)); community unified TWRP 3.7.1 (wuxinG90) is the 4PDA-current build.
 
 ---
 
 ## AI-assisted development architecture
 
-**Recommended toolchain per task** (host support in the table below; full details in [07](07-RECOVERY-SAFETY.md)):
+**Recommended toolchain per task** (host support in the table below; full details in [07](../recovery/07-RECOVERY-SAFETY.md)):
 
 | Task | Primary tool | Notes |
 |---|---|---|
 | Backup / unbrick / partition surgery | [mtkclient](https://github.com/bkerler/mtkclient) (`rf`, `rl`, `r … --parttype=boot1`, GUI `mtk_gui.py`) | runs natively on macOS incl. Apple Silicon; fully replaces SP Flash Tool here (pmOS wiki footnote) |
 | Unlock | `mtk da seccfg unlock` via BROM | no test point (hold Vol-Up); official Mi Unlock only if the bootloader state requires it (168 h, Windows) |
-| Kernel/test-build iteration | adb/fastboot loop + `fastboot boot`-style testing discipline | never flash boot without a verified restore path ([07 §5](07-RECOVERY-SAFETY.md)) |
+| Kernel/test-build iteration | adb/fastboot loop + `fastboot boot`-style testing discipline | never flash boot without a verified restore path ([07 §5](../recovery/07-RECOVERY-SAFETY.md)) |
 | pmOS builds / `pmbootstrap` | Linux VM or container only ("running pmbootstrap on other operating systems is not supported" — verbatim, wiki) | macOS host → UTM/Parallels Linux VM |
 | Halium/UT builds | Ubuntu VM or Docker (docs list Linux distros only) | i386 multilib on amd64 per UBports docs |
-| ROM builds | Linux + lineage/Halium trees from [02 §7](02-FIRMWARE-HISTORY.md) per-ROM inventory | manifest/vendor/device-tree links included there |
-| UART bring-up (if ever needed) | **unknown** — no accessible source documents a begonia UART pinout; do not buy hardware on this basis ([07 §4](07-RECOVERY-SAFETY.md)) | schematic artifact lead: [04](04-HARDWARE-DRIVERS.md) |
+| ROM builds | Linux + lineage/Halium trees from [02 §7](../android/02-FIRMWARE-HISTORY.md) per-ROM inventory | manifest/vendor/device-tree links included there |
+| UART bring-up (if ever needed) | **unknown** — no accessible source documents a begonia UART pinout; do not buy hardware on this basis ([07 §4](../recovery/07-RECOVERY-SAFETY.md)) | schematic artifact lead: [04](../kernels/04-HARDWARE-DRIVERS.md) |
 
-**Test/verification workflow** (translated from 4PDA/wiki discipline): back up preloader + full flash via mtkclient *before* any write ([07 §5](07-RECOVERY-SAFETY.md)); verify region via `fastboot getvar product` before cross-flashing; uncheck preloader/lk/lk2 when flashing foreign firmware (megathread recipe); keep vbmeta discipline (`mtk da vbmeta 3` or patched vbmeta — open question [09](09-OPEN-QUESTIONS.md)); change one variable per boot test.
+**Test/verification workflow** (translated from 4PDA/wiki discipline): back up preloader + full flash via mtkclient *before* any write ([07 §5](../recovery/07-RECOVERY-SAFETY.md)); verify region via `fastboot getvar product` before cross-flashing; uncheck preloader/lk/lk2 when flashing foreign firmware (megathread recipe); keep vbmeta discipline (`mtk da vbmeta 3` or patched vbmeta — open question [09](../research/09-OPEN-QUESTIONS.md)); change one variable per boot test.
 
 **Reproducible R&D repo layout** — this repo *is* the template: `_context/` (mission, requirements, corrections queue, source census, human-assists) + `_cache/` (raw markdown twins) + `archive/` (clickable offline copies paired in `archive/index.html`) + numbered deliverables + CSV matrices + `OUTBOUND-LINKS.csv` ledger + autosync discipline (single writer, cron push). Any future device research can clone this shape.
 
-### Host workstation summary (from [07](07-RECOVERY-SAFETY.md))
+### Host workstation summary (from [07](../recovery/07-RECOVERY-SAFETY.md))
 
 | Task | Linux | Windows | macOS | Fallback |
 |---|---|---|---|---|
@@ -75,7 +75,7 @@ Evidence-based work plan derived from files 02–07 (research date 2026-11-21; *
 | pmbootstrap | ✔ | ✖ | ✖ | Linux VM / WSL |
 | Halium / UT build | ✔ | ✖ | ✖ | Ubuntu VM / Docker |
 | UBports Installer (install to device) | ✔ | ✔ | ✔ (macOS .dmg) | — |
-| UART debugging | unknown | unknown | unknown | not found (searched: 4PDA caches, web) — see [09](09-OPEN-QUESTIONS.md) |
+| UART debugging | unknown | unknown | unknown | not found (searched: 4PDA caches, web) — see [09](../research/09-OPEN-QUESTIONS.md) |
 
 ---
 
@@ -85,7 +85,7 @@ The owner's begonia idles with **battery drain**. To make a future repair decisi
 
 - **Battery model: unknown** (searched: repo sources; not yet established — no source in this repo names the battery part). First step when a device is available: read it from software (`adb shell dumpsys battery`, or recovery/`*#*#4636#*#*` era menus) before opening the phone.
 - **Health-check procedures to register**: capacity/fill-cycle logging on a custom ROM (Battery Charge limit tools), idle-drain attribution (`dumpsys batterystats` after a full idle cycle), voltage/temperature sanity via `dumpsys battery`.
-- **Serviceability** (from this repo's findings): back cover/battery are standard teardown-class repairs (only video-grade teardown evidence exists for begonia — [07 §4](07-RECOVERY-SAFETY.md) test-point verdict); software-level recovery of the device is excellent (BROM reachable without test point + mtkclient = full-flash restore at home, [07 §6](07-RECOVERY-SAFETY.md)); NVRAM/persist partition backup before any battery-board work ([07 §5](07-RECOVERY-SAFETY.md)).
-- **Replacement-cost sources: TBD** (parts-market research pass not yet run — candidates: official Xiaomi parts channels, parts marketplaces, repair-shop quotes; see [09-OPEN-QUESTIONS.md](09-OPEN-QUESTIONS.md) §2).
+- **Serviceability** (from this repo's findings): back cover/battery are standard teardown-class repairs (only video-grade teardown evidence exists for begonia — [07 §4](../recovery/07-RECOVERY-SAFETY.md) test-point verdict); software-level recovery of the device is excellent (BROM reachable without test point + mtkclient = full-flash restore at home, [07 §6](../recovery/07-RECOVERY-SAFETY.md)); NVRAM/persist partition backup before any battery-board work ([07 §5](../recovery/07-RECOVERY-SAFETY.md)).
+- **Replacement-cost sources: TBD** (parts-market research pass not yet run — candidates: official Xiaomi parts channels, parts marketplaces, repair-shop quotes; see [09-OPEN-QUESTIONS.md](../research/09-OPEN-QUESTIONS.md) §2).
 
-*Written by the editor-in-chief pass, 2026-11-21 (JST). Evidence contract per [_context/CONTEXT.md](_context/CONTEXT.md).*
+*Written by the editor-in-chief pass, 2026-11-21 (JST). Evidence contract per [_context/CONTEXT.md](../../../_context/CONTEXT.md).*
