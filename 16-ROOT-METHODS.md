@@ -7,6 +7,9 @@ confidence high/medium/low; observation stamps ISO 8601 UTC. Cross-refs:
 [07-RECOVERY-SAFETY.md](07-RECOVERY-SAFETY.md) (unlock/AVB), [03-KERNEL-HISTORY.md](03-KERNEL-HISTORY.md) (§2.3 kernel zips),
 [10-GUIDE-INDEX.md](10-GUIDE-INDEX.md) (§2 root threads), [13-NETHUNTER-WIFI-EXTRAS.md](13-NETHUNTER-WIFI-EXTRAS.md) (§2 NetHunter kernel needs).
 
+
+> **2026-11-21 independent update:** [20-KERNEL-419-ROOT-ECOSYSTEM-RU.md](20-KERNEL-419-ROOT-ECOSYSTEM-RU.md) extends this registry with directly checked KSU-vs-Non-KSU NoVA defconfigs/build script, KernelSU-Next `legacy` submodule, a traced 4.19 source list, current official upstream compatibility constraints, and a source-of-patches map. Read [kernel-root-provenance.csv](kernel-root-provenance.csv) for verification status. Some broad compatibility language below (for example “all MIUI 9→17” and suggestions that root can be made undetectable) is **not sufficiently evidenced** and should not be taken as device-specific certification. Root != bootloader unlock; Android root frameworks are not required for native Linux/Ubuntu Touch porting.
+
 ---
 
 ## 1. Methods matrix
