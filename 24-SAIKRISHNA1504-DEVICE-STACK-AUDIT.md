@@ -1,6 +1,6 @@
 # 24 — Saikrishna1504: Redmi Note 8 Pro source-stack audit and Linux 4.19 migration evidence
 
-**Language:** [English (source)](24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md) · [Русский (review draft)](docs/ru/24-saikrishna-source-audit.md) · [English directory](docs/en/README.md).
+**Language:** [English (source)](24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md) · [Русский (подробный конспект)](docs/ru/24-saikrishna-source-audit.md) · [English directory](docs/en/README.md).
 
 **Observed:** 2026-11-21. **Evidence:** public GitHub metadata, trees, Makefiles, selected diffs/patches and manifests read directly; original Telegram announcement available in the [project's post record](23-419-TELEGRAM-OUTREACH.md). **No code compiled, firmware flashed, camera APK run, or boot image tested**. Public files and upstream claims are not hardware-validation results.
 
