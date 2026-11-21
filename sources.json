@@ -1,7 +1,7 @@
 {
  "generated": "2026-11-21",
  "record_semantics": "One record per unique source URL. observed_at = when WE last looked (research day; no intraday times were logged). source_last_change_observed = the source's OWN last-change date AS EXPOSED at observation (repo push, page/oldid/snapshot date, thread last-post date) or null when the source exposed nothing date-like. These are observations, not guarantees: any source may have changed after observed_at.",
- "count": 206,
+ "count": 209,
  "sources": [
   {
    "id": "xda-unlock-guide-3995919",
@@ -2515,14 +2515,53 @@
     "id": "begonia-419-port-field-note",
     "url": "https://t.me/s/RedmiNote8ProUpdates",
     "title": "Community Redmi Note 8 Pro updates, self-reported experimental begonia 4.19 port",
-    "author": "RedmiNote8ProUpdates",
-    "date": "2026-09",
+    "author": "@Saikrishna1504 (post self-identification)",
+    "date": "likely 2026-11-17 (third-party TG.ME channel index; original Telegram timestamp unverified)",
     "access": "verified-direct-or-author-report",
     "credibility": "medium",
-    "used_for": "22 §1",
+    "used_for": "22 §1; 23 (outreach)",
     "observed_at": "2026-11-21",
-    "source_last_change_observed": "2026-09",
-    "observation_note": "Community developer claim; exact per-post commit/build not independently established"
+    "source_last_change_observed": "2026-11-17",
+    "observation_note": "Likely 2026-11-17 from TG.ME channel entry; original Telegram post ID/time and screenshot not retrieved. Author reports a working 4.19 begonia kernel and invites testers. No source SHA/boot image independently verified; previous 2026-09 date was incorrect."
+  },
+  {
+    "id": "saikrishna-github-profile",
+    "url": "https://github.com/Saikrishna1504",
+    "title": "Saikrishna1504 public GitHub profile linking Telegram contact",
+    "author": "Saikrishna1504",
+    "date": "current profile read 2026-11-21",
+    "access": "verified-direct",
+    "credibility": "high",
+    "used_for": "23",
+    "observed_at": "2026-11-21",
+    "source_last_change_observed": null,
+    "observation_note": "Profile links Telegram @saikrishna1504; does not prove 4.19 public source branch."
+  },
+  {
+    "id": "saikrishna-telegram-profile",
+    "url": "https://t.me/saikrishna1504",
+    "title": "Developer's Telegram contact linked from public GitHub profile",
+    "author": "Saikrishna1504",
+    "date": "profile link observed 2026-11-21",
+    "access": "profile-link",
+    "credibility": "high",
+    "used_for": "23",
+    "observed_at": "2026-11-21",
+    "source_last_change_observed": null,
+    "observation_note": "Contact only; not a verified original announcement permalink."
+  },
+  {
+    "id": "tgme-redminote8pro-archive",
+    "url": "https://tg.me/redminote8proupdates",
+    "title": "Third-party index of Redmi Note 8 Pro UPDATES channel; kernel 4.19 post indexed Nov 17",
+    "author": "TG.ME",
+    "date": "likely 2026-11-17 for referenced post",
+    "access": "verified-direct",
+    "credibility": "medium",
+    "used_for": "23; 22 §1",
+    "observed_at": "2026-11-21",
+    "source_last_change_observed": "2026-11-17",
+    "observation_note": "Secondary aggregator displays Nov 17; exact timestamp and Telegram post ID not separately verified."
   }
  ]
 }
