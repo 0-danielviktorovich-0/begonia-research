@@ -126,7 +126,7 @@ Other mainline-MTK handset/enablement efforts to learn from (all fetched or sear
 **Ranked: A now · C in parallel (WiFi first) · B long-term or never.** (Assessment — medium confidence.)
 
 **Option A (keep UT usable, low risk) — first 3 work items:**
-1. No action needed to *keep* what works: pin current noble 24.04; file/track mic + RTC against the UT stack (matrix rows in [CONTEXT.md](\_context/CONTEXT.md) cache; issue links in [04](04-HARDWARE-DRIVERS.md)).
+1. No action needed to *keep* what works: pin current noble 24.04; file/track mic + RTC against the UT stack (matrix rows in [CONTEXT.md](_context/CONTEXT.md) cache; issue links in [04](04-HARDWARE-DRIVERS.md)).
 2. Evaluate a Halium-11 move only if a concrete gain appears: test-tree = `rubencarneiro/linux-android-begonia` branch `halium-11` ([06 §2.2](06-DROIDIAN-POSTMARKETOS.md)) + Android-11 vendor from [02-FIRMWARE-HISTORY.md](02-FIRMWARE-HISTORY.md); budget a full 10-row feature retest.
 3. Keep the UT kernel repo (`kernel-xiaomi-mt6785`, halium-10.0) as the known-good reference ([03 §3](03-KERNEL-HISTORY.md)); don't rebase what already ships stable.
 
@@ -144,7 +144,7 @@ Other mainline-MTK handset/enablement efforts to learn from (all fetched or sear
 - Halium "what ships today" was verified via the official UT porting-intro table + GitHub org activity; the Halium project's own docs pages returned 404s to plain fetches (docs.halium.org device pages render via JS/Sphinx paths differ) — treat "Halium 11/12/13 are valid current targets" as **high** (UT docs) and "Halium project healthy" as **high** (repo activity).
 - MAINTAINERS section parse was noisy for `mt76` and ASoC maintainers (medium confidence, flagged inline).
 - pmOS mt6768 APKBUILD raw fetch hit an Anubis bot-check on gitlab.postmarketos.org; cited from the package index pages instead [V-index].
-- No live XDA consulted (blocked per [CONTEXT.md](\_context/CONTEXT.md)); not needed for this file.
+- No live XDA consulted (blocked per [CONTEXT.md](_context/CONTEXT.md)); not needed for this file.
 - "Linux Edрота" (owner phrase, voice-input artifact) — interpretations logged in the session summary for owner confirmation; deliverable assumes it meant "a generic published Linux option" and covers all candidates (pmOS §2-C, generic mainline, EDK2/UEFI via Mu-Silicium per [03 §5](03-KERNEL-HISTORY.md) — Linux Boot ❔ in the only UEFI experiment).
 
 ## Sources (appended to sources.jsonl)
