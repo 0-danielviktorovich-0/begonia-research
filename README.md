@@ -1,113 +1,42 @@
-# begonia-research — Xiaomi Redmi Note 8 Pro (begonia) research knowledge base
+# begonia-research
 
-Research DB for the Xiaomi Redmi Note 8 Pro (`begonia`, MTK Helio G90T / MT6785) — built so an agent (or human)
-unfamiliar with the device can start work from this repo alone. Dual purpose: **Linux porting** (Ubuntu Touch,
-Droidian, postmarketOS, Halium/mainline — the north star is a modern Ubuntu Touch) AND the full **Android custom
-ecosystem** (ROMs, kernels, recoveries — TWRP/OrangeFox/others —, firmware, vendor trees): every instruction,
-artifact and forum finding for this device belongs here, with links to its sources/open code.
+**Xiaomi Redmi Note 8 Pro · `begonia` · MediaTek Helio G90T / MT6785**
 
-**Research run: 2026-11-21 (single-day multi-agent run: 6 core researchers + augmentation waves W13/W14/W15 +
-synthesis + assembler).** Status: core files 02–07 delivered; augmentation (per-ROM sources, host toolbox, guide
-index) delivered; corrections C1–C4 + C6 applied at the synthesis pass (C5 skip-verified — see
-[_context/S1-MISSION.md](_context/S1-MISSION.md)); synthesis files [00-README.md](00-README.md),
-[08-DEVELOPMENT-ROADMAP.md](08-DEVELOPMENT-ROADMAP.md), [09-OPEN-QUESTIONS.md](09-OPEN-QUESTIONS.md) delivered;
-**final assembly delivered 2026-11-21** (assembler pass): 01 + sources.json + INDEX/index.json + 11 + 12 +
-COVERAGE + regenerated archive index. `begonia-research.zip` is **dropped** per the REQUIREMENTS row 4 amendment
-(2026-11-21): this GitHub repo itself is the distribution medium.
+**Languages:** **[English — technical index](docs/en/index.md)** · **[Русский — каталог исследований](docs/ru/index.md)** · [Русский обзор проекта](docs/ru/overview.md)
 
-**Repository organization RFC:** [Clean-root, bilingual documentation architecture (EN)](docs/en/architecture/repository-refactor-plan.md) · [Проект рефакторинга (RU)](docs/ru/architecture/repository-refactor-plan.md). [Machine-readable old → new path plan](data/catalog/path-migrations.json). **Status: proposed, not yet migrated.** Existing root research files and README.ru.md remain at their current paths until link and agent checks pass.
+Research and evidence index for porting **Ubuntu Touch, Droidian, postmarketOS, Halium and mainline Linux** to begonia, together with Android ROMs, kernels, recovery, vendor blobs and device security. This is a **research repository, not a ready-to-flash image**.
 
-## Languages · Языки
+## Start here
 
-**[English (this README)](README.md) · [Русский / Russian](README.ru.md)**
+- [Executive research summary](docs/en/research/00-README.md) — device fundamentals, findings, open limitations.
+- [Master technical topic map](docs/en/research/master-topic-index.md) — precise topic → owner document + section navigation.
+- [Primary sources & provenance](docs/en/research/01-SOURCES.md) — source dates, credibility, developer repositories.
+- [November 2026 kernel/ROM source verification](docs/en/research/begonia-kernel-and-rom-evidence-2026-11.md) — pinned branches, Git SHAs, 4.14 vs. 4.19 findings.
+- [Linux porting roadmap](docs/en/linux/08-DEVELOPMENT-ROADMAP.md) · [Ubuntu Touch](docs/en/linux/05-UBUNTU-TOUCH.md) · [mainline roadmap](docs/en/kernels/14-MAINLINE-UPGRADE-PATH.md).
+- [Safety, recovery & preflight](docs/en/recovery/07-RECOVERY-SAFETY.md) · [Read-only device checks](docs/en/recovery/18-DEVICE-PREFLIGHT-READONLY.md).
 
-Topic directories: **[English](docs/en/README.md)** · **[Русский](docs/ru/README.md)**. Machine-readable bilingual [topic labels and search keywords](i18n/topics.json), [document translation statuses](i18n/catalog.json), [localization policy](i18n/README.md) and [controlled terminology](i18n/TERMINOLOGY.md).
+**Русские технические исследования:** [ядра Linux 4.14/4.19 и KSU/Non-KSU](docs/ru/kernels/20-KERNEL-419-ROOT-ECOSYSTEM-RU.md), [NoMount/SUSFS и другие способы systemless-подмены](docs/ru/kernels/21-NOMOUNT-MOUNT-BACKENDS-RU.md), [таблица происхождения ядер и root-патчей](data/matrices/kernel-root-provenance.csv). Эти материалы описывают проверенные исходники и ограничения, **не** доказывают работоспособность на конкретном телефоне.
 
-English is the default language for international documentation and stable technical identifiers. Russian is a first-class navigation/search language. Existing reports 00–18 were originally written in English; reports 19–22 were originally written in Russian. The [firmware glossary](docs/en/19-rom-terminology.md) now has a **full English translation draft**, while the English pages for 20–22 are searchable **digests, not full translations**. Incomplete coverage is clearly labelled and never represented as completed work.
+## Repository layout
 
-## Additional technical research
+| Directory | Purpose |
+|---|---|
+| [`docs/en/`](docs/en/index.md) and [`docs/ru/`](docs/ru/index.md) | Language-based topical documentation; originals and translations are distinguished |
+| [`data/catalog/`](data/catalog/) | Source/topic JSON, migration manifest and machine-readable indexes |
+| [`data/matrices/`](data/matrices/) | Kernel, firmware, driver and developer-source comparison tables |
+| [`i18n/`](i18n/README.md) | Translation review status, search labels, terminology and provenance |
+| [`archive/`](archive/README.md) | Offline evidence copies; third-party copyright remains with original authors |
+| [`_context/`](_context/CONTEXT.md), [`_cache/`](_cache/) | Original agent research context and captured material (relocation deferred) |
+| [`tools/`](tools/README.md) | Validation, link audit and archive generation scripts |
 
-- [19 — CFW, Non-CFW, GSI and firmware glossary](19-ROM-TERMS-GLOSSARY-RU.md) (Russian original) · [full English draft](docs/en/19-rom-terminology.md).
-- [20 — Linux kernel 4.19 and KSU/Non-KSU patch provenance](20-KERNEL-419-ROOT-ECOSYSTEM-RU.md) · [English digest](docs/en/20-kernel-root-ecosystem.md) · [structured evidence](kernel-root-provenance.csv).
-- [21 — NoMount, SUSFS, OverlayFS, Mountify and Hybrid Mount](21-NOMOUNT-MOUNT-BACKENDS-RU.md) · [English digest](docs/en/21-nomount-and-mount-backends.md).
-- [22 — Linux 4.14→4.19→6.x with AI and Play Integrity](22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md) · [English digest](docs/en/22-kernel-forward-port.md).
-- [23 — 4.19 developer announcement and source request](23-419-TELEGRAM-OUTREACH.md): public @Saikrishna1504 account and **likely Nov 17, 2026**, not the previously misreported September date. Exact post permalink and source SHA still missing.
-- [17 — independent source audit](17-INDEPENDENT-AUDIT.md) and [18 — read-only device preflight](18-DEVICE-PREFLIGHT-READONLY.md).
+## Evidence & caution
 
-**Branch hygiene:** [GitHub Actions cleanup](.github/workflows/branch-cleanup.yml) prunes only confirmed obsolete research branches and unchanged merged-PR branches. [Multilingual CI](.github/workflows/i18n-check.yml) checks topic IDs, local links and translation source revisions; it does not replace expert linguistic review.
+**Do not equate Android 16 / LineageOS 23.2 with Linux 4.19.** Public begonia kernel trees verified on 2026-11-21 include Linux **4.14**, while some 4.19 references concern configs or community-reported experimental ports. See the [pinned source audit](docs/en/research/begonia-kernel-and-rom-evidence-2026-11.md). No device was flashed by this research.
 
-- **[24 — Saikrishna1504 begonia device/vendor/firmware ecosystem audit](24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md)** — verified 2026-11-13–15 Linux 4.19 device-tree migration commits, IMS/VoWiFi and camera patches, firmware and Audio HAL inventory, 4.14 vs 4.19 manifest mismatch, [21-repository CSV](saikrishna-source-inventory.csv). [Подробный русский конспект](docs/ru/24-saikrishna-source-audit.md) (*digest, not full translation*).
+The previous root paths moved to `docs/` and `data/`. For old bookmarks, consult the [old→new path migration manifest](data/catalog/path-migrations.json); GitHub URL redirects are **not guaranteed**.
 
-## Новое: происхождение ядер 4.14/4.19 и root-патчей
+**Contributing:** keep English as the international default and Russian as a first-class language; always link original code, dates, SHAs, known limitations and translation states. Run `python3 tools/check_i18n.py` before sending changes.
 
-[20-KERNEL-419-ROOT-ECOSYSTEM-RU.md](20-KERNEL-419-ROOT-ECOSYSTEM-RU.md) — подробный русский разбор KSU/Non-KSU, Magisk, KernelSU-Next, SukiSU, APatch, SUSFS, AnyKernel3, реальных 4.19 деревьев MT6785 и проверенной NoVA build pipeline; [kernel-root-provenance.csv](kernel-root-provenance.csv) — источники, версии и степень проверки.
+## Licensing
 
-## Deliverables (root)
-
-| File | Content | Status |
-|------|---------|--------|
-| [00-README.md](00-README.md) | Executive summary: device facts, 14 major findings, file map, limitations | delivered (synthesis 2026-11-21) |
-| [01-SOURCES.md](01-SOURCES.md) | Consolidated source index: 8 titled-link classes + census classes + limitations, every entry observation-stamped | **delivered 2026-11-21 (assembler)** |
-| [02-FIRMWARE-HISTORY.md](02-FIRMWARE-HISTORY.md) | Official MIUI timeline (last build V12.5.15.0.RGGEUXM EEA, 2022-09-16), GSI era, native ROM catalog (project-official status differs by ROM (crDroid/Axion/EvolutionX); LineageOS begonia device support unverified; Android 16 builds indexed) | delivered; source inventory + Bliss OS 16.9 correction (C2) applied |
-| [03-KERNEL-HISTORY.md](03-KERNEL-HISTORY.md) | MiCode official drops (P=4.14.94, Q=4.14.141, R=4.14.186), AgentFabulous forks, LOS branch kernel table (17.1=4.14.194 … 24.0=4.19.325), Halium kernel, mainline forks (Dinolek 6.16.4/7.1, kalpakprod 7.3.4), toolchains | delivered |
-| [04-HARDWARE-DRIVERS.md](04-HARDWARE-DRIVERS.md) | Component IDs from mainline DTS (NT36672A panels CSOT/Tianma, NVT-TS touch, MT6360, BMI120, STK3310, AK09918, Goodix FP, MT6359), GPU stacks (Panfrost/panvk vs kbase), per-OS support matrix | delivered |
-| [05-UBUNTU-TOUCH.md](05-UBUNTU-TOUCH.md) | UT 24.04 noble port (Halium 10, kernel 4.14.141), active 2026-10, channels, issues, build system, upgrade-path analysis | delivered |
-| [06-DROIDIAN-POSTMARKETOS.md](06-DROIDIAN-POSTMARKETOS.md) | pmOS mainline port (6.16.4-r0; what works/broken and why), live Droidian port ([begonia-linux org](https://github.com/begonia-linux), nightly 2026-11-15), architecture comparison | delivered |
-| [07-RECOVERY-SAFETY.md](07-RECOVERY-SAFETY.md) | Unlock paths (Mi Unlock vs mtkclient), brick/unbrick recipe, backups, TWRP, vbmeta, partition map, host workstation matrix | delivered; toolbox + recovery-landscape/official-TWRP corrections (C1, C3, C6) applied |
-| [08-DEVELOPMENT-ROADMAP.md](08-DEVELOPMENT-ROADMAP.md) | P0/P1/P2 development paths, AI-assisted tooling, host matrix, device-repair outlook | delivered (synthesis 2026-11-21) |
-| [09-OPEN-QUESTIONS.md](09-OPEN-QUESTIONS.md) | 10 dated contradictions, not-found ledger, human-check queue, ranked next steps | delivered (synthesis 2026-11-21) |
-| [10-GUIDE-INDEX.md](10-GUIDE-INDEX.md) | Every mined guide/instruction post (4PDA t=974421/965629 + XDA via Wayback): permalinks, offline copies, confidence, used-by | delivered |
-| [11-BLOBS-FIRMWARE-SOURCES.md](11-BLOBS-FIRMWARE-SOURCES.md) | Blob/firmware provenance per artifact class + freshness column + RE entry points + build recipes (ROM/kernel/recovery/pmOS/UT) + rescue-hardware minimum | **delivered 2026-11-21 (assembler)** |
-| [12-SKILLS-AND-REUSE.md](12-SKILLS-AND-REUSE.md) | Skills/harnesses that built the repo, in-repo tools, authored reusable improvements, pre-release gaps | **delivered 2026-11-21 (assembler)** |
-| [13-NETHUNTER-WIFI-EXTRAS.md](13-NETHUNTER-WIFI-EXTRAS.md) | NetHunter, Wi-Fi monitor mode (MT7663-family verdict), root/kernel harnesses, USB-HID surface, sibling-device portables | delivered (W13) |
-| [14-MAINLINE-UPGRADE-PATH.md](14-MAINLINE-UPGRADE-PATH.md) | Mainline upgrade options A–D with defconfig-verified gap verdicts per tree | delivered (W14) |
-| `15-RE-IMPROVEMENT-PLAN.md` (not yet on disk at packaging time) | RE-driven improvement plan (unpacking recipe, per-subsystem matrix, sequencing, test checklist) | **delivered 2026-11-21 (W15)** (W15 mission: [_context/W15-MISSION.md](_context/W15-MISSION.md)) |
-| [16-ROOT-METHODS.md](16-ROOT-METHODS.md) | root-methods registry: Magisk / KernelSU-Next+SUSFS / APatch / SukiSU / custom kernels / mtkclient chain — matrix + begonia datapoints + TG channels | delivered 2026-11-21 (orchestrator, after W17 provider stall) |
-| [INDEX.md](INDEX.md) | Human master topic map (topic → file#section) + "how to search this repo" (file map, ripgrep recipes, CSV columns, archive usage) | **delivered 2026-11-21 (assembler)** |
-| [sources.json](sources.json) · [index.json](index.json) | Machine twins: 244 observation-stamped source records; 43-topic topic map | **delivered 2026-11-21 (assembler)** |
-
-## Data files
-
-- [firmware-matrix.csv](firmware-matrix.csv) — official/custom/GSI ROM matrix (74 data rows; 15 fixed columns; Bliss OS 16.9 row added at assembly)
-- [kernel-matrix.csv](kernel-matrix.csv) — 36 kernel tree/branch rows
-- [hardware-support-matrix.csv](hardware-support-matrix.csv) — 33 component rows × 4 OS columns
-
-## Context & governance ([_context/](_context))
-
-- [CONTEXT.md](_context/CONTEXT.md) — shared context pack: verified device facts, canonical sources, evidence contract, tool-access verdicts. **Every collaborating agent starts here.**
-- [REQUIREMENTS.md](_context/REQUIREMENTS.md) — numbered register of all user requirements (rows 1–36) with status.
-- [SOURCE-CENSUS.md](_context/SOURCE-CENSUS.md) — verified census of source classes beyond GitHub/4PDA/XDA (Xiaomi mirrors, official TWRP, SourceForge, AndroidFileHost, Telegram, GSMarena, repair ecosystem).
-- [CORRECTIONS.md](_context/CORRECTIONS.md) — correction queue: C1–C4 + C6 **applied** at the 2026-11-21 synthesis pass (C5 skip-verified); row history kept in-file.
-- [HUMAN-ASSISTS.md](_context/HUMAN-ASSISTS.md) — pages only a human browser can open (Anubis/bunny.net walls, registration-walled downloads), with instructions (7 rows).
-- [COVERAGE.md](_context/COVERAGE.md) — topic coverage inventory, consolidated gap ledger, ranked "what to search next" (**delivered 2026-11-21, assembler**).
-- Mission files (S1, S2, W13–W16) — the per-agent mission briefs; reusable templates ([12-SKILLS-AND-REUSE.md](12-SKILLS-AND-REUSE.md)).
-
-## Offline archive
-
-[archive/index.html](archive/index.html) pairs every offline copy with its original URL (offline copy | original | type | size | cited-in; regenerated 2026-11-21 with all 37 snapshots mapped — extracts, raw/Wayback HTML, `files/` text artifacts, OrangeFox device-page snapshot). Raw markdown twins: `_cache/`. No multi-GB binaries are committed; fetch URLs are cited in the deliverables.
-
-## Tools
-
-[tools/](tools) — [audit_bare_urls.py](tools/audit_bare_urls.py) (hyperlink-hygiene gate), [build_archive_html.sh](tools/build_archive_html.sh) (pandoc renderer), [gen_archive_index.py](tools/gen_archive_index.py) (archive index regenerator); usage in [tools/README.md](tools/README.md) and [12-SKILLS-AND-REUSE.md](12-SKILLS-AND-REUSE.md).
-
-## Collaboration rules (ChatGPT and any agent)
-
-1. Read [_context/CONTEXT.md](_context/CONTEXT.md) + [_context/REQUIREMENTS.md](_context/REQUIREMENTS.md) first; then [INDEX.md](INDEX.md) for one-hop navigation.
-2. Evidence contract: URL + title/author + date + permalink + verified-vs-inferred + confidence on every important claim; no invented data; freshness = observation stamps (REQUIREMENTS row 36).
-3. Research-only: no flashing, no untrusted scripts, no account registrations.
-4. Bot-walls: real browser first → safe alternates (Wayback/API/extractor) → log to HUMAN-ASSISTS.md for the human; agents never solve CAPTCHAs or register.
-5. One writer commits: agents write files, the orchestrator runs git (autosync every 15 min, attack-tested).
-6. Update this README + linked context files at every milestone — a stale root is a defect (REQUIREMENTS row 22).
-
-*Last updated: 2026-11-21T09:06:49Z (ISO 8601 UTC; all update stamps here use ISO 8601 UTC — see REQUIREMENTS row 34).*
-
-
-## License
-
-Dual licensing by content type:
-- **Code** (`tools/*`, scripts): [MIT](LICENSE)
-- **Research content** (`*.md`, `*.csv`, `*.json` — our own work): [CC BY-SA 4.0](LICENSE-DOCS)
-- **Quoted/archived third-party material** (forum guides, wiki pages, vendor docs): **not ours to license** — attribution + [takedown policy](NOTICE.md); copyright stays with the original authors (see full attribution list in [NOTICE.md](NOTICE.md)).
-
-Contributions: no CLA needed — a `Signed-off-by:` line in your commit (DCO) is enough.
-
+Code: [MIT](LICENSE). Original research text/data: [CC BY-SA 4.0](LICENSE-DOCS). Third-party source captures are not relicensed; see [NOTICE](NOTICE.md).

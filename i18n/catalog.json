@@ -15,7 +15,7 @@
     "digest": "localized summary only, not the complete translation",
     "directory-only": "localized title/search directory, full original remains in another language"
   },
-  "note": "English international-first applies to navigation and future contributions. Reports 19–22 were originally authored in Russian and remain authoritative in that language until complete reviewed English translations exist. Original file paths are retained for backward compatibility.",
+  "note": "English international-first applies to navigation and future contributions. Reports 19–22 were originally authored in Russian and remain authoritative in that language until complete reviewed English translations exist. Source paths reflect the clean-root migration; consult data/catalog/path-migrations.json for legacy GitHub links.",
   "documents": [
     {
       "id": "00",
@@ -24,19 +24,19 @@
         "ru": "Общий обзор и главные результаты"
       },
       "original": {
-        "path": "00-README.md",
+        "path": "docs/en/research/00-README.md",
         "lang": "en",
         "blob_sha": null
       },
       "locales": {
         "en": {
-          "path": "00-README.md",
+          "path": "docs/en/research/00-README.md",
           "coverage": "source",
           "review": "authoritative-source",
           "derived_from_blob": null
         },
         "ru": {
-          "path": "docs/ru/README.md",
+          "path": "docs/ru/index.md",
           "coverage": "directory-only",
           "review": "navigation-only",
           "derived_from_blob": null
@@ -50,19 +50,19 @@
         "ru": "Источники и происхождение сведений"
       },
       "original": {
-        "path": "01-SOURCES.md",
+        "path": "docs/en/research/01-SOURCES.md",
         "lang": "en",
         "blob_sha": null
       },
       "locales": {
         "en": {
-          "path": "01-SOURCES.md",
+          "path": "docs/en/research/01-SOURCES.md",
           "coverage": "source",
           "review": "authoritative-source",
           "derived_from_blob": null
         },
         "ru": {
-          "path": "docs/ru/README.md",
+          "path": "docs/ru/index.md",
           "coverage": "directory-only",
           "review": "navigation-only",
           "derived_from_blob": null
@@ -76,19 +76,19 @@
         "ru": "История MIUI, CFW и Android-прошивок"
       },
       "original": {
-        "path": "02-FIRMWARE-HISTORY.md",
+        "path": "docs/en/android/02-FIRMWARE-HISTORY.md",
         "lang": "en",
         "blob_sha": null
       },
       "locales": {
         "en": {
-          "path": "02-FIRMWARE-HISTORY.md",
+          "path": "docs/en/android/02-FIRMWARE-HISTORY.md",
           "coverage": "source",
           "review": "authoritative-source",
           "derived_from_blob": null
         },
         "ru": {
-          "path": "docs/ru/README.md",
+          "path": "docs/ru/index.md",
           "coverage": "directory-only",
           "review": "navigation-only",
           "derived_from_blob": null
@@ -102,19 +102,19 @@
         "ru": "История ядер Linux для MT6785"
       },
       "original": {
-        "path": "03-KERNEL-HISTORY.md",
+        "path": "docs/en/kernels/03-KERNEL-HISTORY.md",
         "lang": "en",
         "blob_sha": null
       },
       "locales": {
         "en": {
-          "path": "03-KERNEL-HISTORY.md",
+          "path": "docs/en/kernels/03-KERNEL-HISTORY.md",
           "coverage": "source",
           "review": "authoritative-source",
           "derived_from_blob": null
         },
         "ru": {
-          "path": "docs/ru/README.md",
+          "path": "docs/ru/index.md",
           "coverage": "directory-only",
           "review": "navigation-only",
           "derived_from_blob": null
@@ -128,19 +128,19 @@
         "ru": "Оборудование и драйверы"
       },
       "original": {
-        "path": "04-HARDWARE-DRIVERS.md",
+        "path": "docs/en/kernels/04-HARDWARE-DRIVERS.md",
         "lang": "en",
         "blob_sha": null
       },
       "locales": {
         "en": {
-          "path": "04-HARDWARE-DRIVERS.md",
+          "path": "docs/en/kernels/04-HARDWARE-DRIVERS.md",
           "coverage": "source",
           "review": "authoritative-source",
           "derived_from_blob": null
         },
         "ru": {
-          "path": "docs/ru/README.md",
+          "path": "docs/ru/index.md",
           "coverage": "directory-only",
           "review": "navigation-only",
           "derived_from_blob": null
@@ -154,19 +154,19 @@
         "ru": "Порт Ubuntu Touch"
       },
       "original": {
-        "path": "05-UBUNTU-TOUCH.md",
+        "path": "docs/en/linux/05-UBUNTU-TOUCH.md",
         "lang": "en",
         "blob_sha": null
       },
       "locales": {
         "en": {
-          "path": "05-UBUNTU-TOUCH.md",
+          "path": "docs/en/linux/05-UBUNTU-TOUCH.md",
           "coverage": "source",
           "review": "authoritative-source",
           "derived_from_blob": null
         },
         "ru": {
-          "path": "docs/ru/README.md",
+          "path": "docs/ru/index.md",
           "coverage": "directory-only",
           "review": "navigation-only",
           "derived_from_blob": null
@@ -180,19 +180,19 @@
         "ru": "Порты Droidian и postmarketOS"
       },
       "original": {
-        "path": "06-DROIDIAN-POSTMARKETOS.md",
+        "path": "docs/en/linux/06-DROIDIAN-POSTMARKETOS.md",
         "lang": "en",
         "blob_sha": null
       },
       "locales": {
         "en": {
-          "path": "06-DROIDIAN-POSTMARKETOS.md",
+          "path": "docs/en/linux/06-DROIDIAN-POSTMARKETOS.md",
           "coverage": "source",
           "review": "authoritative-source",
           "derived_from_blob": null
         },
         "ru": {
-          "path": "docs/ru/README.md",
+          "path": "docs/ru/index.md",
           "coverage": "directory-only",
           "review": "navigation-only",
           "derived_from_blob": null
@@ -206,19 +206,19 @@
         "ru": "Восстановление и безопасность прошивки"
       },
       "original": {
-        "path": "07-RECOVERY-SAFETY.md",
+        "path": "docs/en/recovery/07-RECOVERY-SAFETY.md",
         "lang": "en",
         "blob_sha": null
       },
       "locales": {
         "en": {
-          "path": "07-RECOVERY-SAFETY.md",
+          "path": "docs/en/recovery/07-RECOVERY-SAFETY.md",
           "coverage": "source",
           "review": "authoritative-source",
           "derived_from_blob": null
         },
         "ru": {
-          "path": "docs/ru/README.md",
+          "path": "docs/ru/index.md",
           "coverage": "directory-only",
           "review": "navigation-only",
           "derived_from_blob": null
@@ -232,19 +232,19 @@
         "ru": "Дорожная карта разработки"
       },
       "original": {
-        "path": "08-DEVELOPMENT-ROADMAP.md",
+        "path": "docs/en/linux/08-DEVELOPMENT-ROADMAP.md",
         "lang": "en",
         "blob_sha": null
       },
       "locales": {
         "en": {
-          "path": "08-DEVELOPMENT-ROADMAP.md",
+          "path": "docs/en/linux/08-DEVELOPMENT-ROADMAP.md",
           "coverage": "source",
           "review": "authoritative-source",
           "derived_from_blob": null
         },
         "ru": {
-          "path": "docs/ru/README.md",
+          "path": "docs/ru/index.md",
           "coverage": "directory-only",
           "review": "navigation-only",
           "derived_from_blob": null
@@ -258,19 +258,19 @@
         "ru": "Открытые вопросы и пробелы"
       },
       "original": {
-        "path": "09-OPEN-QUESTIONS.md",
+        "path": "docs/en/research/09-OPEN-QUESTIONS.md",
         "lang": "en",
         "blob_sha": null
       },
       "locales": {
         "en": {
-          "path": "09-OPEN-QUESTIONS.md",
+          "path": "docs/en/research/09-OPEN-QUESTIONS.md",
           "coverage": "source",
           "review": "authoritative-source",
           "derived_from_blob": null
         },
         "ru": {
-          "path": "docs/ru/README.md",
+          "path": "docs/ru/index.md",
           "coverage": "directory-only",
           "review": "navigation-only",
           "derived_from_blob": null
@@ -284,19 +284,19 @@
         "ru": "Указатель инструкций 4PDA/XDA"
       },
       "original": {
-        "path": "10-GUIDE-INDEX.md",
+        "path": "docs/en/android/10-GUIDE-INDEX.md",
         "lang": "en",
         "blob_sha": null
       },
       "locales": {
         "en": {
-          "path": "10-GUIDE-INDEX.md",
+          "path": "docs/en/android/10-GUIDE-INDEX.md",
           "coverage": "source",
           "review": "authoritative-source",
           "derived_from_blob": null
         },
         "ru": {
-          "path": "docs/ru/README.md",
+          "path": "docs/ru/index.md",
           "coverage": "directory-only",
           "review": "navigation-only",
           "derived_from_blob": null
@@ -310,19 +310,19 @@
         "ru": "Источники закрытых драйверов и firmware"
       },
       "original": {
-        "path": "11-BLOBS-FIRMWARE-SOURCES.md",
+        "path": "docs/en/kernels/11-BLOBS-FIRMWARE-SOURCES.md",
         "lang": "en",
         "blob_sha": null
       },
       "locales": {
         "en": {
-          "path": "11-BLOBS-FIRMWARE-SOURCES.md",
+          "path": "docs/en/kernels/11-BLOBS-FIRMWARE-SOURCES.md",
           "coverage": "source",
           "review": "authoritative-source",
           "derived_from_blob": null
         },
         "ru": {
-          "path": "docs/ru/README.md",
+          "path": "docs/ru/index.md",
           "coverage": "directory-only",
           "review": "navigation-only",
           "derived_from_blob": null
@@ -336,19 +336,19 @@
         "ru": "Инструменты ИИ и повторное использование"
       },
       "original": {
-        "path": "12-SKILLS-AND-REUSE.md",
+        "path": "docs/en/tools/12-SKILLS-AND-REUSE.md",
         "lang": "en",
         "blob_sha": null
       },
       "locales": {
         "en": {
-          "path": "12-SKILLS-AND-REUSE.md",
+          "path": "docs/en/tools/12-SKILLS-AND-REUSE.md",
           "coverage": "source",
           "review": "authoritative-source",
           "derived_from_blob": null
         },
         "ru": {
-          "path": "docs/ru/README.md",
+          "path": "docs/ru/index.md",
           "coverage": "directory-only",
           "review": "navigation-only",
           "derived_from_blob": null
@@ -362,19 +362,19 @@
         "ru": "NetHunter и сетевые эксперименты"
       },
       "original": {
-        "path": "13-NETHUNTER-WIFI-EXTRAS.md",
+        "path": "docs/en/android/13-NETHUNTER-WIFI-EXTRAS.md",
         "lang": "en",
         "blob_sha": null
       },
       "locales": {
         "en": {
-          "path": "13-NETHUNTER-WIFI-EXTRAS.md",
+          "path": "docs/en/android/13-NETHUNTER-WIFI-EXTRAS.md",
           "coverage": "source",
           "review": "authoritative-source",
           "derived_from_blob": null
         },
         "ru": {
-          "path": "docs/ru/README.md",
+          "path": "docs/ru/index.md",
           "coverage": "directory-only",
           "review": "navigation-only",
           "derived_from_blob": null
@@ -388,19 +388,19 @@
         "ru": "Переход к основной ветке Linux"
       },
       "original": {
-        "path": "14-MAINLINE-UPGRADE-PATH.md",
+        "path": "docs/en/kernels/14-MAINLINE-UPGRADE-PATH.md",
         "lang": "en",
         "blob_sha": null
       },
       "locales": {
         "en": {
-          "path": "14-MAINLINE-UPGRADE-PATH.md",
+          "path": "docs/en/kernels/14-MAINLINE-UPGRADE-PATH.md",
           "coverage": "source",
           "review": "authoritative-source",
           "derived_from_blob": null
         },
         "ru": {
-          "path": "docs/ru/README.md",
+          "path": "docs/ru/index.md",
           "coverage": "directory-only",
           "review": "navigation-only",
           "derived_from_blob": null
@@ -414,19 +414,19 @@
         "ru": "План улучшения через reverse engineering"
       },
       "original": {
-        "path": "15-RE-IMPROVEMENT-PLAN.md",
+        "path": "docs/en/linux/15-RE-IMPROVEMENT-PLAN.md",
         "lang": "en",
         "blob_sha": null
       },
       "locales": {
         "en": {
-          "path": "15-RE-IMPROVEMENT-PLAN.md",
+          "path": "docs/en/linux/15-RE-IMPROVEMENT-PLAN.md",
           "coverage": "source",
           "review": "authoritative-source",
           "derived_from_blob": null
         },
         "ru": {
-          "path": "docs/ru/README.md",
+          "path": "docs/ru/index.md",
           "coverage": "directory-only",
           "review": "navigation-only",
           "derived_from_blob": null
@@ -440,19 +440,19 @@
         "ru": "Реестр способов получения root"
       },
       "original": {
-        "path": "16-ROOT-METHODS.md",
+        "path": "docs/en/android/16-ROOT-METHODS.md",
         "lang": "en",
         "blob_sha": null
       },
       "locales": {
         "en": {
-          "path": "16-ROOT-METHODS.md",
+          "path": "docs/en/android/16-ROOT-METHODS.md",
           "coverage": "source",
           "review": "authoritative-source",
           "derived_from_blob": null
         },
         "ru": {
-          "path": "docs/ru/README.md",
+          "path": "docs/ru/index.md",
           "coverage": "directory-only",
           "review": "navigation-only",
           "derived_from_blob": null
@@ -466,19 +466,19 @@
         "ru": "Независимая проверка источников"
       },
       "original": {
-        "path": "17-INDEPENDENT-AUDIT.md",
+        "path": "docs/en/research/17-INDEPENDENT-AUDIT.md",
         "lang": "en",
         "blob_sha": null
       },
       "locales": {
         "en": {
-          "path": "17-INDEPENDENT-AUDIT.md",
+          "path": "docs/en/research/17-INDEPENDENT-AUDIT.md",
           "coverage": "source",
           "review": "authoritative-source",
           "derived_from_blob": null
         },
         "ru": {
-          "path": "docs/ru/README.md",
+          "path": "docs/ru/index.md",
           "coverage": "directory-only",
           "review": "navigation-only",
           "derived_from_blob": null
@@ -492,19 +492,19 @@
         "ru": "Диагностика устройства без прошивки"
       },
       "original": {
-        "path": "18-DEVICE-PREFLIGHT-READONLY.md",
+        "path": "docs/en/recovery/18-DEVICE-PREFLIGHT-READONLY.md",
         "lang": "en",
         "blob_sha": null
       },
       "locales": {
         "en": {
-          "path": "18-DEVICE-PREFLIGHT-READONLY.md",
+          "path": "docs/en/recovery/18-DEVICE-PREFLIGHT-READONLY.md",
           "coverage": "source",
           "review": "authoritative-source",
           "derived_from_blob": null
         },
         "ru": {
-          "path": "docs/ru/README.md",
+          "path": "docs/ru/index.md",
           "coverage": "directory-only",
           "review": "navigation-only",
           "derived_from_blob": null
@@ -518,19 +518,19 @@
         "ru": "Словарь прошивок и терминологии"
       },
       "original": {
-        "path": "19-ROM-TERMS-GLOSSARY-RU.md",
+        "path": "docs/ru/android/19-ROM-TERMS-GLOSSARY-RU.md",
         "lang": "ru",
-        "blob_sha": "b39c6c4d58fa47975195eae7e0e0d0f17f94bf03"
+        "blob_sha": "97bcdceb122f7ab4e5fce5115ba020d4aab47796"
       },
       "locales": {
         "en": {
-          "path": "docs/en/19-rom-terminology.md",
+          "path": "docs/en/android/19-rom-terminology.md",
           "coverage": "full-draft",
           "review": "technical-review-pending",
-          "derived_from_blob": "b39c6c4d58fa47975195eae7e0e0d0f17f94bf03"
+          "derived_from_blob": "97bcdceb122f7ab4e5fce5115ba020d4aab47796"
         },
         "ru": {
-          "path": "19-ROM-TERMS-GLOSSARY-RU.md",
+          "path": "docs/ru/android/19-ROM-TERMS-GLOSSARY-RU.md",
           "coverage": "source",
           "review": "authoritative-source",
           "derived_from_blob": null
@@ -544,19 +544,19 @@
         "ru": "Источники 4.19 и экосистема KernelSU"
       },
       "original": {
-        "path": "20-KERNEL-419-ROOT-ECOSYSTEM-RU.md",
+        "path": "docs/ru/kernels/20-KERNEL-419-ROOT-ECOSYSTEM-RU.md",
         "lang": "ru",
-        "blob_sha": "e21b0654cb71a9d69ac04bfc820f23a9c6e9033c"
+        "blob_sha": "81de94915cd4edeb05984d56eb4eb8b59f383208"
       },
       "locales": {
         "en": {
-          "path": "docs/en/20-kernel-root-ecosystem.md",
+          "path": "docs/en/kernels/20-kernel-root-ecosystem.md",
           "coverage": "digest",
           "review": "abstract-only",
-          "derived_from_blob": "e21b0654cb71a9d69ac04bfc820f23a9c6e9033c"
+          "derived_from_blob": "81de94915cd4edeb05984d56eb4eb8b59f383208"
         },
         "ru": {
-          "path": "20-KERNEL-419-ROOT-ECOSYSTEM-RU.md",
+          "path": "docs/ru/kernels/20-KERNEL-419-ROOT-ECOSYSTEM-RU.md",
           "coverage": "source",
           "review": "authoritative-source",
           "derived_from_blob": null
@@ -570,19 +570,19 @@
         "ru": "NoMount и механизмы подмены системных файлов"
       },
       "original": {
-        "path": "21-NOMOUNT-MOUNT-BACKENDS-RU.md",
+        "path": "docs/ru/kernels/21-NOMOUNT-MOUNT-BACKENDS-RU.md",
         "lang": "ru",
-        "blob_sha": "9da4ba4a9861959952f765c75417235328ca5c1d"
+        "blob_sha": "bb03e10de90a2544084833bb94352bfb8e7d41de"
       },
       "locales": {
         "en": {
-          "path": "docs/en/21-nomount-and-mount-backends.md",
+          "path": "docs/en/kernels/21-nomount-and-mount-backends.md",
           "coverage": "digest",
           "review": "abstract-only",
-          "derived_from_blob": "9da4ba4a9861959952f765c75417235328ca5c1d"
+          "derived_from_blob": "bb03e10de90a2544084833bb94352bfb8e7d41de"
         },
         "ru": {
-          "path": "21-NOMOUNT-MOUNT-BACKENDS-RU.md",
+          "path": "docs/ru/kernels/21-NOMOUNT-MOUNT-BACKENDS-RU.md",
           "coverage": "source",
           "review": "authoritative-source",
           "derived_from_blob": null
@@ -596,19 +596,19 @@
         "ru": "Перенос ядер, ИИ и платежная аттестация"
       },
       "original": {
-        "path": "22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md",
+        "path": "docs/ru/kernels/22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md",
         "lang": "ru",
-        "blob_sha": "5bb882d1a43d89799f2ba5a0d0b4f0c6ea63245c"
+        "blob_sha": "d004cf08f45de262a75e38d788de49a2a5e3f21e"
       },
       "locales": {
         "en": {
-          "path": "docs/en/22-kernel-forward-port.md",
+          "path": "docs/en/kernels/22-kernel-forward-port.md",
           "coverage": "digest",
           "review": "abstract-only",
-          "derived_from_blob": "5bb882d1a43d89799f2ba5a0d0b4f0c6ea63245c"
+          "derived_from_blob": "d004cf08f45de262a75e38d788de49a2a5e3f21e"
         },
         "ru": {
-          "path": "22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md",
+          "path": "docs/ru/kernels/22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md",
           "coverage": "source",
           "review": "authoritative-source",
           "derived_from_blob": null
@@ -622,19 +622,19 @@
         "ru": "Автор порта 4.19 и запрос исходников"
       },
       "original": {
-        "path": "23-419-TELEGRAM-OUTREACH.md",
+        "path": "docs/en/research/23-419-TELEGRAM-OUTREACH.md",
         "lang": "en",
         "blob_sha": null
       },
       "locales": {
         "en": {
-          "path": "23-419-TELEGRAM-OUTREACH.md",
+          "path": "docs/en/research/23-419-TELEGRAM-OUTREACH.md",
           "coverage": "source",
           "review": "authoritative-source",
           "derived_from_blob": null
         },
         "ru": {
-          "path": "23-419-TELEGRAM-OUTREACH.md#по-русски--контекст-и-запрос",
+          "path": "docs/en/research/23-419-TELEGRAM-OUTREACH.md#по-русски--контекст-и-запрос",
           "coverage": "digest",
           "review": "abstract-only",
           "derived_from_blob": null
@@ -648,22 +648,48 @@
         "ru": "Исходники begonia от Saikrishna1504 и переход на Linux 4.19"
       },
       "original": {
-        "path": "24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md",
+        "path": "docs/en/research/24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md",
         "lang": "en",
-        "blob_sha": "f309ba60f429937c2beb0e61e361d6dcd99c318a"
+        "blob_sha": "512f61d13e363c51dffdae6a9d794f3cf8f0b173"
       },
       "locales": {
         "en": {
-          "path": "24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md",
+          "path": "docs/en/research/24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md",
           "coverage": "source",
           "review": "authoritative-source",
           "derived_from_blob": null
         },
         "ru": {
-          "path": "docs/ru/24-saikrishna-source-audit.md",
+          "path": "docs/ru/research/24-saikrishna-source-audit.md",
           "coverage": "digest",
           "review": "abstract-only",
-          "derived_from_blob": "f309ba60f429937c2beb0e61e361d6dcd99c318a"
+          "derived_from_blob": "512f61d13e363c51dffdae6a9d794f3cf8f0b173"
+        }
+      }
+    },
+    {
+      "id": "25",
+      "titles": {
+        "en": "Pinned 2026 kernel and ROM source verification",
+        "ru": "Сверка ядра и прошивок по исходникам и Git SHA (2026)"
+      },
+      "original": {
+        "path": "docs/en/research/begonia-kernel-and-rom-evidence-2026-11.md",
+        "lang": "en",
+        "blob_sha": "1c9cdfa6be2aa1e632385d6a3d1ba3a4a330141c"
+      },
+      "locales": {
+        "en": {
+          "path": "docs/en/research/begonia-kernel-and-rom-evidence-2026-11.md",
+          "coverage": "source",
+          "review": "authoritative-source",
+          "derived_from_blob": null
+        },
+        "ru": {
+          "path": "docs/ru/index.md",
+          "coverage": "directory-only",
+          "review": "navigation-only",
+          "derived_from_blob": null
         }
       }
     }

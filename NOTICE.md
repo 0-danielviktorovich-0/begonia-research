@@ -67,5 +67,5 @@ endorsed by, or sponsored by Xiaomi, MediaTek, Google, Offensive Security, or
 any ROM team. Nothing in this repository is flashing instructions for your
 specific device state: the material is research documentation; flashing,
 unlocking, or modifying a device carries real risk (including irreversible
-damage — see [07-RECOVERY-SAFETY.md](07-RECOVERY-SAFETY.md)) and is done at
+damage — see [07-RECOVERY-SAFETY.md](docs/en/recovery/07-RECOVERY-SAFETY.md)) and is done at
 the owner's own risk.

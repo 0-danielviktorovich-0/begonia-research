@@ -1,6 +1,6 @@
 # Controlled technical terminology — English ↔ Русский
 
-**Status:** reviewed seed glossary for i18n/l10n, 2026-11-21. [English index](../docs/en/README.md) · [Русский указатель](../docs/ru/README.md).
+**Status:** reviewed seed glossary for i18n/l10n, 2026-11-21. [English index](../docs/en/index.md) · [Русский указатель](../docs/ru/index.md).
 
 Use the **preferred** Russian expression in continuous prose; preserve **English alias, command spelling and original identifiers** at first mention and whenever users are likely to search for them. In commands and file paths never translate the original spelling. This is a controlled term list, not a claim about device compatibility.
 

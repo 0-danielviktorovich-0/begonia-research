@@ -1,7 +1,7 @@
 # RFC 001 — рефакторинг структуры репозитория и двуязычной базы знаний
 
-**Статус: ПРОЕКТ АРХИТЕКТУРЫ; массовая миграция файлов ещё НЕ выполнена.** Проверка исходного состояния: 21 ноября 2026 года.  
-**Языки:** [Русский (этот документ)](repository-refactor-plan.md) · [English — original specification](../../../docs/en/architecture/repository-refactor-plan.md).
+**Статус: ОСНОВНАЯ МИГРАЦИЯ ВЫПОЛНЕНА В ВЕТКЕ ДЛЯ ПРОВЕРКИ (21.11.2026); перенос архивов, кэша и агентских данных ОТЛОЖЕН.** Проверка исходного состояния: 21 ноября 2026 года.  
+**Языки:** [Русский (этот документ)](repository-refactor-plan.md) · [English — original specification](../../en/architecture/repository-refactor-plan.md).
 
 ## 1. Что именно сейчас не так
 
@@ -113,7 +113,7 @@ begonia-research/
 - [`lineage-23.2`](https://github.com/LineageOS/android_kernel_xiaomi_mt6785/blob/lineage-23.2/Makefile): `VERSION=4`, `PATCHLEVEL=19`, `SUBLEVEL=325`.
 - [`lineage-24.0`](https://github.com/LineageOS/android_kernel_xiaomi_mt6785/blob/lineage-24.0/Makefile): также **4.19.325**.
 - [`rosemary_defconfig`](https://github.com/LineageOS/android_kernel_xiaomi_mt6785/blob/lineage-24.0/arch/arm64/configs/rosemary_defconfig) использует аппаратный вариант `mediatek/rosemary`, а [официальное описание устройства LineageOS](https://github.com/LineageOS/lineage_wiki/blob/main/_data/devices/rosemary_variant1.yml) относит это ядро к **Redmi Note 10S (rosemary)**. Большой список GitHub-файлов был обрезан по лимиту, поэтому полное отсутствие begonia-патчей где-либо внутри дерева этим не доказано.
-- [`Saikrishna1504/device_redmi_begonia@axion/BoardConfig.mk`](https://github.com/Saikrishna1504/device_redmi_begonia/blob/axion/BoardConfig.mk) указывает сборку begonia с конфигурацией **k419**, а коммиты 13–15 ноября документируют адаптацию `init`, SELinux, UClamp, питания и DTBO. Подробности — [исследование 24](../../../24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md). **Полный публичный kernel-tree 4.19 и обязательный `vendor/begonia.config` пока не найдены**, а старый манифест автора всё ещё указывает на ядро 4.14.357.
+- [`Saikrishna1504/device_redmi_begonia@axion/BoardConfig.mk`](https://github.com/Saikrishna1504/device_redmi_begonia/blob/axion/BoardConfig.mk) указывает сборку begonia с конфигурацией **k419**, а коммиты 13–15 ноября документируют адаптацию `init`, SELinux, UClamp, питания и DTBO. Подробности — [исследование 24](../../en/research/24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md). **Полный публичный kernel-tree 4.19 и обязательный `vendor/begonia.config` пока не найдены**, а старый манифест автора всё ещё указывает на ядро 4.14.357.
 
 То есть: **Linux 4.19 для MT6785 проверен**, работа по переносу на begonia проверена, но полная воспроизводимая сборка именно для begonia остаётся отдельной задачей.
 

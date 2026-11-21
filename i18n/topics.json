@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "generated": "2026-11-21",
-  "source_index": "index.json",
-  "entries_count": 43,
+  "source_index": "data/catalog/index.json",
+  "entries_count": 44,
   "description": "English immutable topic IDs; localized titles, search keywords and entry points. An entry point may be a directory or digest, not necessarily full translation; consult catalog.json for status.",
   "topics": [
     {
@@ -22,11 +22,11 @@
           "характеристики"
         ]
       },
-      "source_file": "00-README.md",
+      "source_file": "docs/en/research/00-README.md",
       "source_anchor": "the-device-verified-facts",
       "entry_point": {
-        "en": "00-README.md",
-        "ru": "docs/ru/README.md"
+        "en": "docs/en/research/00-README.md",
+        "ru": "docs/ru/index.md"
       }
     },
     {
@@ -48,11 +48,11 @@
           "miui"
         ]
       },
-      "source_file": "02-FIRMWARE-HISTORY.md",
+      "source_file": "docs/en/android/02-FIRMWARE-HISTORY.md",
       "source_anchor": "1-official-miui-historical--line-ended-2022",
       "entry_point": {
-        "en": "02-FIRMWARE-HISTORY.md",
-        "ru": "docs/ru/README.md"
+        "en": "docs/en/android/02-FIRMWARE-HISTORY.md",
+        "ru": "docs/ru/index.md"
       }
     },
     {
@@ -73,11 +73,11 @@
           "firmware"
         ]
       },
-      "source_file": "02-FIRMWARE-HISTORY.md",
+      "source_file": "docs/en/android/02-FIRMWARE-HISTORY.md",
       "source_anchor": "71-official-miui-all-1-rows-csv-rows-222",
       "entry_point": {
-        "en": "02-FIRMWARE-HISTORY.md",
-        "ru": "docs/ru/README.md"
+        "en": "docs/en/android/02-FIRMWARE-HISTORY.md",
+        "ru": "docs/ru/index.md"
       }
     },
     {
@@ -99,11 +99,11 @@
           "gsi"
         ]
       },
-      "source_file": "02-FIRMWARE-HISTORY.md",
+      "source_file": "docs/en/android/02-FIRMWARE-HISTORY.md",
       "source_anchor": "2-gsi-era-dec-2019--2020-historical",
       "entry_point": {
-        "en": "02-FIRMWARE-HISTORY.md",
-        "ru": "docs/ru/README.md"
+        "en": "docs/en/android/02-FIRMWARE-HISTORY.md",
+        "ru": "docs/ru/index.md"
       }
     },
     {
@@ -125,11 +125,11 @@
           "android-прошивок"
         ]
       },
-      "source_file": "02-FIRMWARE-HISTORY.md",
+      "source_file": "docs/en/android/02-FIRMWARE-HISTORY.md",
       "source_anchor": "3-native-custom-rom-catalog-current-state-as-of-2026-11-21-first-release-dates-historical",
       "entry_point": {
-        "en": "02-FIRMWARE-HISTORY.md",
-        "ru": "docs/ru/README.md"
+        "en": "docs/en/android/02-FIRMWARE-HISTORY.md",
+        "ru": "docs/ru/index.md"
       }
     },
     {
@@ -149,11 +149,11 @@
           "android-прошивки"
         ]
       },
-      "source_file": "02-FIRMWARE-HISTORY.md",
+      "source_file": "docs/en/android/02-FIRMWARE-HISTORY.md",
       "source_anchor": "7-per-rom-source-inventory-appended-2026-11-21-user-mandated",
       "entry_point": {
-        "en": "02-FIRMWARE-HISTORY.md",
-        "ru": "docs/ru/README.md"
+        "en": "docs/en/android/02-FIRMWARE-HISTORY.md",
+        "ru": "docs/ru/index.md"
       }
     },
     {
@@ -174,11 +174,11 @@
           "android-прошивок"
         ]
       },
-      "source_file": "11-BLOBS-FIRMWARE-SOURCES.md",
-      "source_anchor": "61-android-rom-build-lineageosaosp-trees",
+      "source_file": "docs/en/kernels/11-BLOBS-FIRMWARE-SOURCES.md",
+      "source_anchor": "61-android-rom-build-lineageosaosp-trees-pointer-manifests-verified",
       "entry_point": {
-        "en": "11-BLOBS-FIRMWARE-SOURCES.md",
-        "ru": "docs/ru/README.md"
+        "en": "docs/en/kernels/11-BLOBS-FIRMWARE-SOURCES.md",
+        "ru": "docs/ru/index.md"
       }
     },
     {
@@ -202,11 +202,11 @@
           "linux"
         ]
       },
-      "source_file": "03-KERNEL-HISTORY.md",
+      "source_file": "docs/en/kernels/03-KERNEL-HISTORY.md",
       "source_anchor": "2-android-kernel-forks",
       "entry_point": {
-        "en": "03-KERNEL-HISTORY.md",
-        "ru": "docs/ru/README.md"
+        "en": "docs/en/kernels/03-KERNEL-HISTORY.md",
+        "ru": "docs/ru/index.md"
       }
     },
     {
@@ -226,11 +226,11 @@
           "linux"
         ]
       },
-      "source_file": "11-BLOBS-FIRMWARE-SOURCES.md",
-      "source_anchor": "62-kernel-builds",
+      "source_file": "docs/en/kernels/11-BLOBS-FIRMWARE-SOURCES.md",
+      "source_anchor": "62-kernel-builds-pointer-defconfigs-verified",
       "entry_point": {
-        "en": "11-BLOBS-FIRMWARE-SOURCES.md",
-        "ru": "docs/ru/README.md"
+        "en": "docs/en/kernels/11-BLOBS-FIRMWARE-SOURCES.md",
+        "ru": "docs/ru/index.md"
       }
     },
     {
@@ -252,11 +252,11 @@
           "linux"
         ]
       },
-      "source_file": "03-KERNEL-HISTORY.md",
+      "source_file": "docs/en/kernels/03-KERNEL-HISTORY.md",
       "source_anchor": "4-mainline-effort-linux-on-mt6785",
       "entry_point": {
-        "en": "03-KERNEL-HISTORY.md",
-        "ru": "docs/ru/README.md"
+        "en": "docs/en/kernels/03-KERNEL-HISTORY.md",
+        "ru": "docs/ru/index.md"
       }
     },
     {
@@ -278,11 +278,11 @@
           "ядро"
         ]
       },
-      "source_file": "14-MAINLINE-UPGRADE-PATH.md",
+      "source_file": "docs/en/kernels/14-MAINLINE-UPGRADE-PATH.md",
       "source_anchor": "2-the-option-tree-analysis--reasoned-not-independently-tested",
       "entry_point": {
-        "en": "14-MAINLINE-UPGRADE-PATH.md",
-        "ru": "docs/ru/README.md"
+        "en": "docs/en/kernels/14-MAINLINE-UPGRADE-PATH.md",
+        "ru": "docs/ru/index.md"
       }
     },
     {
@@ -303,11 +303,11 @@
           "touch"
         ]
       },
-      "source_file": "05-UBUNTU-TOUCH.md",
+      "source_file": "docs/en/linux/05-UBUNTU-TOUCH.md",
       "source_anchor": "1-current-status",
       "entry_point": {
-        "en": "05-UBUNTU-TOUCH.md",
-        "ru": "docs/ru/README.md"
+        "en": "docs/en/linux/05-UBUNTU-TOUCH.md",
+        "ru": "docs/ru/index.md"
       }
     },
     {
@@ -328,11 +328,11 @@
           "touch"
         ]
       },
-      "source_file": "05-UBUNTU-TOUCH.md",
+      "source_file": "docs/en/linux/05-UBUNTU-TOUCH.md",
       "source_anchor": "5-build-instructions-for-begonia-specifically",
       "entry_point": {
-        "en": "05-UBUNTU-TOUCH.md",
-        "ru": "docs/ru/README.md"
+        "en": "docs/en/linux/05-UBUNTU-TOUCH.md",
+        "ru": "docs/ru/index.md"
       }
     },
     {
@@ -351,11 +351,11 @@
           "droidian"
         ]
       },
-      "source_file": "06-DROIDIAN-POSTMARKETOS.md",
+      "source_file": "docs/en/linux/06-DROIDIAN-POSTMARKETOS.md",
       "source_anchor": "2-droidian-port",
       "entry_point": {
-        "en": "06-DROIDIAN-POSTMARKETOS.md",
-        "ru": "docs/ru/README.md"
+        "en": "docs/en/linux/06-DROIDIAN-POSTMARKETOS.md",
+        "ru": "docs/ru/index.md"
       }
     },
     {
@@ -374,11 +374,11 @@
           "postmarketos"
         ]
       },
-      "source_file": "06-DROIDIAN-POSTMARKETOS.md",
+      "source_file": "docs/en/linux/06-DROIDIAN-POSTMARKETOS.md",
       "source_anchor": "1-postmarketos-port",
       "entry_point": {
-        "en": "06-DROIDIAN-POSTMARKETOS.md",
-        "ru": "docs/ru/README.md"
+        "en": "docs/en/linux/06-DROIDIAN-POSTMARKETOS.md",
+        "ru": "docs/ru/index.md"
       }
     },
     {
@@ -397,11 +397,11 @@
           "postmarketos"
         ]
       },
-      "source_file": "11-BLOBS-FIRMWARE-SOURCES.md",
-      "source_anchor": "64-postmarketos",
+      "source_file": "docs/en/kernels/11-BLOBS-FIRMWARE-SOURCES.md",
+      "source_anchor": "64-postmarketos-verified-steps-from-wikideviceinfo",
       "entry_point": {
-        "en": "11-BLOBS-FIRMWARE-SOURCES.md",
-        "ru": "docs/ru/README.md"
+        "en": "docs/en/kernels/11-BLOBS-FIRMWARE-SOURCES.md",
+        "ru": "docs/ru/index.md"
       }
     },
     {
@@ -421,11 +421,11 @@
           "устройства"
         ]
       },
-      "source_file": "04-HARDWARE-DRIVERS.md",
-      "source_anchor": null,
+      "source_file": "docs/en/kernels/04-HARDWARE-DRIVERS.md",
+      "source_anchor": "",
       "entry_point": {
-        "en": "04-HARDWARE-DRIVERS.md",
-        "ru": "docs/ru/README.md"
+        "en": "docs/en/kernels/04-HARDWARE-DRIVERS.md",
+        "ru": "docs/ru/index.md"
       }
     },
     {
@@ -446,11 +446,11 @@
           "экрана"
         ]
       },
-      "source_file": "04-HARDWARE-DRIVERS.md",
+      "source_file": "docs/en/kernels/04-HARDWARE-DRIVERS.md",
       "source_anchor": "2-touchscreen--works-everywhere",
       "entry_point": {
-        "en": "04-HARDWARE-DRIVERS.md",
-        "ru": "docs/ru/README.md"
+        "en": "docs/en/kernels/04-HARDWARE-DRIVERS.md",
+        "ru": "docs/ru/index.md"
       }
     },
     {
@@ -471,11 +471,11 @@
           "gpu"
         ]
       },
-      "source_file": "04-HARDWARE-DRIVERS.md",
+      "source_file": "docs/en/kernels/04-HARDWARE-DRIVERS.md",
       "source_anchor": "3-gpu--mali-g76-mc4-bifrost",
       "entry_point": {
-        "en": "04-HARDWARE-DRIVERS.md",
-        "ru": "docs/ru/README.md"
+        "en": "docs/en/kernels/04-HARDWARE-DRIVERS.md",
+        "ru": "docs/ru/index.md"
       }
     },
     {
@@ -498,11 +498,11 @@
           "nvram"
         ]
       },
-      "source_file": "07-RECOVERY-SAFETY.md",
+      "source_file": "docs/en/recovery/07-RECOVERY-SAFETY.md",
       "source_anchor": "partition-map-begonia-64-gb-unit-gpt-from-pmos-wiki-parted-dump-oldid109575-verified-direct-high",
       "entry_point": {
-        "en": "07-RECOVERY-SAFETY.md",
-        "ru": "docs/ru/README.md"
+        "en": "docs/en/recovery/07-RECOVERY-SAFETY.md",
+        "ru": "docs/ru/index.md"
       }
     },
     {
@@ -523,11 +523,11 @@
           "orangefox"
         ]
       },
-      "source_file": "07-RECOVERY-SAFETY.md",
+      "source_file": "docs/en/recovery/07-RECOVERY-SAFETY.md",
       "source_anchor": "30-recovery-landscape-all-known-recovery-options-added-at-synthesis-pass-2026-11-21",
       "entry_point": {
-        "en": "07-RECOVERY-SAFETY.md",
-        "ru": "docs/ru/README.md"
+        "en": "docs/en/recovery/07-RECOVERY-SAFETY.md",
+        "ru": "docs/ru/index.md"
       }
     },
     {
@@ -547,11 +547,11 @@
           "восстановления"
         ]
       },
-      "source_file": "11-BLOBS-FIRMWARE-SOURCES.md",
-      "source_anchor": "63-recovery-builds-twrp--orangefox",
+      "source_file": "docs/en/kernels/11-BLOBS-FIRMWARE-SOURCES.md",
+      "source_anchor": "63-recovery-builds-twrp--orangefox-pointer",
       "entry_point": {
-        "en": "11-BLOBS-FIRMWARE-SOURCES.md",
-        "ru": "docs/ru/README.md"
+        "en": "docs/en/kernels/11-BLOBS-FIRMWARE-SOURCES.md",
+        "ru": "docs/ru/index.md"
       }
     },
     {
@@ -570,11 +570,11 @@
           "загрузчика"
         ]
       },
-      "source_file": "07-RECOVERY-SAFETY.md",
+      "source_file": "docs/en/recovery/07-RECOVERY-SAFETY.md",
       "source_anchor": "2-exploit-unlock-path-mtkclient-brom",
       "entry_point": {
-        "en": "07-RECOVERY-SAFETY.md",
-        "ru": "docs/ru/README.md"
+        "en": "docs/en/recovery/07-RECOVERY-SAFETY.md",
+        "ru": "docs/ru/index.md"
       }
     },
     {
@@ -596,11 +596,11 @@
           "кирпича"
         ]
       },
-      "source_file": "07-RECOVERY-SAFETY.md",
+      "source_file": "docs/en/recovery/07-RECOVERY-SAFETY.md",
       "source_anchor": "6-brick-risks--unbricking",
       "entry_point": {
-        "en": "07-RECOVERY-SAFETY.md",
-        "ru": "docs/ru/README.md"
+        "en": "docs/en/recovery/07-RECOVERY-SAFETY.md",
+        "ru": "docs/ru/index.md"
       }
     },
     {
@@ -620,11 +620,11 @@
           "восстановления"
         ]
       },
-      "source_file": "11-BLOBS-FIRMWARE-SOURCES.md",
+      "source_file": "docs/en/kernels/11-BLOBS-FIRMWARE-SOURCES.md",
       "source_anchor": "7-rescue-hardware-minimum-is-a-cable-enough",
       "entry_point": {
-        "en": "11-BLOBS-FIRMWARE-SOURCES.md",
-        "ru": "docs/ru/README.md"
+        "en": "docs/en/kernels/11-BLOBS-FIRMWARE-SOURCES.md",
+        "ru": "docs/ru/index.md"
       }
     },
     {
@@ -646,11 +646,11 @@
           "разработчика"
         ]
       },
-      "source_file": "07-RECOVERY-SAFETY.md",
+      "source_file": "docs/en/recovery/07-RECOVERY-SAFETY.md",
       "source_anchor": "host-workstation-requirements-linux--macos--windows",
       "entry_point": {
-        "en": "07-RECOVERY-SAFETY.md",
-        "ru": "docs/ru/README.md"
+        "en": "docs/en/recovery/07-RECOVERY-SAFETY.md",
+        "ru": "docs/ru/index.md"
       }
     },
     {
@@ -673,11 +673,11 @@
           "xda"
         ]
       },
-      "source_file": "10-GUIDE-INDEX.md",
-      "source_anchor": null,
+      "source_file": "docs/en/android/10-GUIDE-INDEX.md",
+      "source_anchor": "",
       "entry_point": {
-        "en": "10-GUIDE-INDEX.md",
-        "ru": "docs/ru/README.md"
+        "en": "docs/en/android/10-GUIDE-INDEX.md",
+        "ru": "docs/ru/index.md"
       }
     },
     {
@@ -699,11 +699,11 @@
           "wi-fi"
         ]
       },
-      "source_file": "13-NETHUNTER-WIFI-EXTRAS.md",
+      "source_file": "docs/en/android/13-NETHUNTER-WIFI-EXTRAS.md",
       "source_anchor": "1-wi-fi-chip--monitor-mode",
       "entry_point": {
-        "en": "13-NETHUNTER-WIFI-EXTRAS.md",
-        "ru": "docs/ru/README.md"
+        "en": "docs/en/android/13-NETHUNTER-WIFI-EXTRAS.md",
+        "ru": "docs/ru/index.md"
       }
     },
     {
@@ -726,11 +726,11 @@
           "hid"
         ]
       },
-      "source_file": "13-NETHUNTER-WIFI-EXTRAS.md",
+      "source_file": "docs/en/android/13-NETHUNTER-WIFI-EXTRAS.md",
       "source_anchor": "34-usb-gadget--hid-attack-surface-w13-addendum-merged",
       "entry_point": {
-        "en": "13-NETHUNTER-WIFI-EXTRAS.md",
-        "ru": "docs/ru/README.md"
+        "en": "docs/en/android/13-NETHUNTER-WIFI-EXTRAS.md",
+        "ru": "docs/ru/index.md"
       }
     },
     {
@@ -751,11 +751,11 @@
           "разработки"
         ]
       },
-      "source_file": "11-BLOBS-FIRMWARE-SOURCES.md",
+      "source_file": "docs/en/kernels/11-BLOBS-FIRMWARE-SOURCES.md",
       "source_anchor": "4-reverse-engineering-entry-points-research-only",
       "entry_point": {
-        "en": "11-BLOBS-FIRMWARE-SOURCES.md",
-        "ru": "docs/ru/README.md"
+        "en": "docs/en/kernels/11-BLOBS-FIRMWARE-SOURCES.md",
+        "ru": "docs/ru/index.md"
       }
     },
     {
@@ -777,11 +777,11 @@
           "ремонт"
         ]
       },
-      "source_file": "08-DEVELOPMENT-ROADMAP.md",
+      "source_file": "docs/en/linux/08-DEVELOPMENT-ROADMAP.md",
       "source_anchor": "device-repair-outlook-requirements-row-25--registered-not-yet-researched",
       "entry_point": {
-        "en": "08-DEVELOPMENT-ROADMAP.md",
-        "ru": "docs/ru/README.md"
+        "en": "docs/en/linux/08-DEVELOPMENT-ROADMAP.md",
+        "ru": "docs/ru/index.md"
       }
     },
     {
@@ -800,11 +800,11 @@
           "вопросы"
         ]
       },
-      "source_file": "09-OPEN-QUESTIONS.md",
+      "source_file": "docs/en/research/09-OPEN-QUESTIONS.md",
       "source_anchor": "1-unresolved-contradictions-kept-dated--not-silenced",
       "entry_point": {
-        "en": "09-OPEN-QUESTIONS.md",
-        "ru": "docs/ru/README.md"
+        "en": "docs/en/research/09-OPEN-QUESTIONS.md",
+        "ru": "docs/ru/index.md"
       }
     },
     {
@@ -828,11 +828,11 @@
           "доказательства"
         ]
       },
-      "source_file": "09-OPEN-QUESTIONS.md",
+      "source_file": "docs/en/research/09-OPEN-QUESTIONS.md",
       "source_anchor": "2-not-found-ledger-explicit-searched-absent-markers--never-guessed",
       "entry_point": {
-        "en": "09-OPEN-QUESTIONS.md",
-        "ru": "docs/ru/README.md"
+        "en": "docs/en/research/09-OPEN-QUESTIONS.md",
+        "ru": "docs/ru/index.md"
       }
     },
     {
@@ -853,11 +853,11 @@
           "актуальность"
         ]
       },
-      "source_file": "01-SOURCES.md",
-      "source_anchor": null,
+      "source_file": "docs/en/research/01-SOURCES.md",
+      "source_anchor": "",
       "entry_point": {
-        "en": "01-SOURCES.md",
-        "ru": "docs/ru/README.md"
+        "en": "docs/en/research/01-SOURCES.md",
+        "ru": "docs/ru/index.md"
       }
     },
     {
@@ -879,10 +879,10 @@
         ]
       },
       "source_file": "archive/index.html",
-      "source_anchor": null,
+      "source_anchor": "",
       "entry_point": {
         "en": "archive/index.html",
-        "ru": "docs/ru/README.md"
+        "ru": "docs/ru/index.md"
       }
     },
     {
@@ -903,11 +903,11 @@
           "разработки"
         ]
       },
-      "source_file": "15-RE-IMPROVEMENT-PLAN.md",
-      "source_anchor": null,
+      "source_file": "docs/en/linux/15-RE-IMPROVEMENT-PLAN.md",
+      "source_anchor": "1-ground-truth--unpacking-recipe",
       "entry_point": {
-        "en": "15-RE-IMPROVEMENT-PLAN.md",
-        "ru": "docs/ru/README.md"
+        "en": "docs/en/linux/15-RE-IMPROVEMENT-PLAN.md",
+        "ru": "docs/ru/index.md"
       }
     },
     {
@@ -927,11 +927,11 @@
           "root"
         ]
       },
-      "source_file": "16-ROOT-METHODS.md",
-      "source_anchor": null,
+      "source_file": "docs/en/android/16-ROOT-METHODS.md",
+      "source_anchor": "1-methods-matrix",
       "entry_point": {
-        "en": "16-ROOT-METHODS.md",
-        "ru": "docs/ru/README.md"
+        "en": "docs/en/android/16-ROOT-METHODS.md",
+        "ru": "docs/ru/index.md"
       }
     },
     {
@@ -954,11 +954,11 @@
           "gsi"
         ]
       },
-      "source_file": "19-ROM-TERMS-GLOSSARY-RU.md",
-      "source_anchor": "0-glavnoe-za-30-sekund",
+      "source_file": "docs/ru/android/19-ROM-TERMS-GLOSSARY-RU.md",
+      "source_anchor": "0-главное-за-30-секунд",
       "entry_point": {
-        "en": "docs/en/19-rom-terminology.md",
-        "ru": "19-ROM-TERMS-GLOSSARY-RU.md"
+        "en": "docs/en/android/19-rom-terminology.md",
+        "ru": "docs/ru/android/19-ROM-TERMS-GLOSSARY-RU.md"
       }
     },
     {
@@ -983,11 +983,11 @@
           "ksu"
         ]
       },
-      "source_file": "20-KERNEL-419-ROOT-ECOSYSTEM-RU.md",
-      "source_anchor": "2-gde-brat-iskhodniki-iader-begonia--versii-i-dokazatelstva",
+      "source_file": "docs/ru/kernels/20-KERNEL-419-ROOT-ECOSYSTEM-RU.md",
+      "source_anchor": "2-где-брать-исходники-ядер-begonia--версии-и-доказательства",
       "entry_point": {
-        "en": "docs/en/20-kernel-root-ecosystem.md",
-        "ru": "20-KERNEL-419-ROOT-ECOSYSTEM-RU.md"
+        "en": "docs/en/kernels/20-kernel-root-ecosystem.md",
+        "ru": "docs/ru/kernels/20-KERNEL-419-ROOT-ECOSYSTEM-RU.md"
       }
     },
     {
@@ -1011,11 +1011,11 @@
           "файлов"
         ]
       },
-      "source_file": "21-NOMOUNT-MOUNT-BACKENDS-RU.md",
-      "source_anchor": "2-nomount--imenno-tot-submodule-iz-nova-kernels",
+      "source_file": "docs/ru/kernels/21-NOMOUNT-MOUNT-BACKENDS-RU.md",
+      "source_anchor": "2-nomount--именно-тот-submodule-из-nova-kernels",
       "entry_point": {
-        "en": "docs/en/21-nomount-and-mount-backends.md",
-        "ru": "21-NOMOUNT-MOUNT-BACKENDS-RU.md"
+        "en": "docs/en/kernels/21-nomount-and-mount-backends.md",
+        "ru": "docs/ru/kernels/21-NOMOUNT-MOUNT-BACKENDS-RU.md"
       }
     },
     {
@@ -1041,11 +1041,11 @@
           "платежи"
         ]
       },
-      "source_file": "22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md",
-      "source_anchor": "1-linux-414--419-chto-oznachaet-perenos-na-dele",
+      "source_file": "docs/ru/kernels/22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md",
+      "source_anchor": "1-linux-414--419-что-означает-перенос-на-деле",
       "entry_point": {
-        "en": "docs/en/22-kernel-forward-port.md",
-        "ru": "22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md"
+        "en": "docs/en/kernels/22-kernel-forward-port.md",
+        "ru": "docs/ru/kernels/22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md"
       }
     },
     {
@@ -1069,11 +1069,11 @@
           "4.19"
         ]
       },
-      "source_file": "23-419-TELEGRAM-OUTREACH.md",
+      "source_file": "docs/en/research/23-419-TELEGRAM-OUTREACH.md",
       "source_anchor": "public-announcement-what-was-actually-verified",
       "entry_point": {
-        "en": "23-419-TELEGRAM-OUTREACH.md",
-        "ru": "23-419-TELEGRAM-OUTREACH.md"
+        "en": "docs/en/research/23-419-TELEGRAM-OUTREACH.md",
+        "ru": "docs/en/research/23-419-TELEGRAM-OUTREACH.md"
       }
     },
     {
@@ -1114,11 +1114,43 @@
           "4.19"
         ]
       },
-      "source_file": "24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md",
+      "source_file": "docs/en/research/24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md",
       "source_anchor": "3-exact-419-transition-commits--newly-identified",
       "entry_point": {
-        "en": "24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md",
-        "ru": "docs/ru/24-saikrishna-source-audit.md"
+        "en": "docs/en/research/24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md",
+        "ru": "docs/ru/research/24-saikrishna-source-audit.md"
+      }
+    },
+    {
+      "id": "begonia-pinned-source-audit-2026",
+      "title": {
+        "en": "Pinned kernel and ROM upstream source audit (2026)",
+        "ru": "Проверка исходников ядер и прошивок begonia по Git-коммитам (2026)"
+      },
+      "keywords": {
+        "en": [
+          "kernel",
+          "commit",
+          "4.14",
+          "4.19",
+          "lineageos",
+          "axion",
+          "begonia"
+        ],
+        "ru": [
+          "ядро",
+          "коммиты",
+          "исходники",
+          "бегония",
+          "линейдж",
+          "версия ядра"
+        ]
+      },
+      "source_file": "docs/en/research/begonia-kernel-and-rom-evidence-2026-11.md",
+      "source_anchor": "findings-from-pinned-upstream-revisions",
+      "entry_point": {
+        "en": "docs/en/research/begonia-kernel-and-rom-evidence-2026-11.md",
+        "ru": "docs/ru/index.md"
       }
     }
   ]
