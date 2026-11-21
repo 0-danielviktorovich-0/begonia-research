@@ -435,6 +435,18 @@
         "https://t.me/saikrishna1504"
       ],
       "status": "covered; announcement indexed as likely 2026-11-17 via public aggregator; exact Telegram post ID, media, patchset and hardware reproduction unverified"
+    },
+    {
+      "topic": "saikrishna-begonia-source-stack-and-419-migration",
+      "file": "24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md",
+      "section_anchor": "3-exact-419-transition-commits--newly-identified",
+      "key_sources": [
+        "https://github.com/Saikrishna1504/device_redmi_begonia",
+        "https://github.com/Saikrishna1504/vendor_redmi_begonia",
+        "https://github.com/Saikrishna1504/vendor_redmi_begonia-firmware",
+        "https://github.com/Saikrishna1504/device_redmi_begonia/commit/d78e16d11686806b1f0b24c6b3c149255a950ac0"
+      ],
+      "status": "verified source architecture and 2026-11-13/15 4.19 begonia device-tree commits; full 4.19 kernel source and on-device test remain unverified; RU digest indexed"
     }
   ]
 }
