@@ -63,6 +63,21 @@ Do NOT rewrite the file; append only. Do not add records for the already-listed 
 - hardware-support-matrix.csv: component,ut_2404_status,droidian_status,pmos_6_16_status,android_custom_status,driver_or_hal,known_issues,source_url,confidence
   (status values: works | partial | broken | unknown; cite the feature table row you got it from)
 
+## Pinned/index posts (user emphasis: study them!)
+Both 4PDA threads have the "шапка" (pinned first posts) with guide indexes; XDA megathread post #1 is the
+guide/PSA index. ALWAYS read those first (cache files above contain page 1 = posts #1-#20; use search_files on the
+cache .md files to locate specific ROM guides/links inside, e.g. pattern "Lineage|crDroid|Evolution|Mu-Silicium").
+When you cite a forum fact, give the post permalink (4pda.to/forum/index.php?showtopic=<id>&view=findpost&p=<pid>).
+
+## XDA access verdict (2026-11-21, tested 3x)
+Live xdaforums.com is blocked for BOTH web_extract and the headless browser (bunny.net "Hold tight" challenge
+never resolves). Do NOT burn tool calls on live XDA: use these verified Wayback snapshots —
+megathread: http://web.archive.org/web/20260415164458/https://xdaforums.com/t/guide-info-psa-redmi-note-8-pro-megathread-cfw.4056527/
+unlock guide: http://web.archive.org/web/20230316035523/https://forum.xda-developers.com/t/guide-begonia-unlock-bootloader-flash-twrp-and-root-proper.3995919/
+Other XDA URLs: resolve a snapshot via https://archive.org/wayback/available?url=<url> (1 call), or record a limitation.
+User's own desktop browser may still open live XDA — if a fact can ONLY come from live XDA, put it in your file's
+Limitations as "pending human-browser check" instead of guessing.
+
 ## Tool budget
 ≤ 20 tool calls each. Prefer web_search + web_extract + terminal curl (GitHub/GitLab APIs).
 GitHub API: https://api.github.com/repos/OWNER/REPO/... (unauthenticated ok, ~60 req/h).
