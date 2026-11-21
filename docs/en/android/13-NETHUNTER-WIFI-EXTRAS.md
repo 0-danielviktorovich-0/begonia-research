@@ -245,3 +245,18 @@ tool from the thread: custom-payload packet TX via ATE), **firmwares.zip** (WIFI
 hint1.png pending (403 on the request-context path — page-context only). These document the
 test-mode packet-TX technique referenced in §1.7 — historical MT6620/6755 generation, direct gen4m
 lineage for the ATE TX-injection angle.
+
+### §1.8.1 Artifact first-pass analysis (orchestrator, 2026-11-22)
+- **wifitest/**: complete MTK ATE userspace toolchain (libwifitest wrapper over WIFI_TEST_set/RF_AT_FUNCID_*,
+  main.c, wifi_hw_test_tool, nvram dir) + **testmode1.pcap** — the thread author's own ATE-mode capture.
+  This documents the userspace→ATE→TX-engine API that ALSO exists in begonia's gen4m (rftest.h:187
+  RF_AT_FUNCID_PKTCONTENT [V]); primary reference for the internal-TX-injection experiment.
+- **something.dump**: NOT an MCR dump — 4 MB memory dump of the MT6582-era WiFi ROM/driver state
+  (source paths wifi/ROM/wifi_authen_6582.c, hal_hif_rom.c, driver/hif.c visible) — an architecture map
+  of the ROM-era stack (gen4m's ancestor).
+- **WIFI_RAM_CODE_6755** (2018): connsys FW for MT6755, chip string "A-Die MT6625L" — connsys lineage
+  datapoint (MT6625L is pre-CONNAC).
+- Lane matrix vs bunny (final): playwright_brave PASS; browser_exec (default+isolated) challenge; curl 403;
+  playwright standard (chrome-for-testing) not installed; Hermes desktop webview — no CDP port (driving it
+  needs an app restart — not done without owner's go).
+- Backlink pass on t=3591182: nothing new; bonus find — AOSP official gen3 wlan mirror (predecessor of gen4m).
