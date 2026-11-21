@@ -1,7 +1,7 @@
 # Repository architecture RFC 001 — clean root, bilingual knowledge base and durable evidence
 
 **Status: PROPOSED / NOT YET MIGRATED.** Research snapshot: 2026-11-21.  
-**Languages:** [English (source)](repository-refactor-plan.md) · [Русский (summary)](../../../docs/ru/architecture/repository-refactor-plan.md).  
+**Languages:** [English (source)](repository-refactor-plan.md) · [Русский (summary)](../../ru/architecture/repository-refactor-plan.md).  
 **Repository:** [begonia-research](https://github.com/0-danielviktorovich-0/begonia-research).
 
 ## Problem and verified starting point
@@ -113,7 +113,7 @@ Translation files already in `docs/en/` move into matching subject directories; 
 - [LineageOS kernel `lineage-23.2/Makefile`](https://github.com/LineageOS/android_kernel_xiaomi_mt6785/blob/lineage-23.2/Makefile): `VERSION = 4`, `PATCHLEVEL = 19`, `SUBLEVEL = 325` — **Linux 4.19.325**.
 - [LineageOS kernel `lineage-24.0/Makefile`](https://github.com/LineageOS/android_kernel_xiaomi_mt6785/blob/lineage-24.0/Makefile): also **Linux 4.19.325**.
 - [LineageOS `rosemary_defconfig`](https://github.com/LineageOS/android_kernel_xiaomi_mt6785/blob/lineage-24.0/arch/arm64/configs/rosemary_defconfig) sets DTBO image names to `mediatek/rosemary`. The upstream [LineageOS device record for Redmi Note 10S, rosemary](https://github.com/LineageOS/lineage_wiki/blob/main/_data/devices/rosemary_variant1.yml) explicitly selects the MT6785 4.19 kernel. A large recursive tree listing was **truncated**, so do not claim absolute proof that no begonia-related file exists anywhere in the whole repo.
-- [Saikrishna's begonia device tree](https://github.com/Saikrishna1504/device_redmi_begonia/blob/axion/BoardConfig.mk) uses the **k419** config and dated Nov 13–15 patch history (see [research 24](../../../24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md)); the public local manifest still pins a Power **4.14.357** kernel. **Hence confirmed 4.19 sources for MT6785 family + published begonia migration work do not automatically equal a complete, reproducible 4.19 begonia kernel source/binary**.
+- [Saikrishna's begonia device tree](https://github.com/Saikrishna1504/device_redmi_begonia/blob/axion/BoardConfig.mk) uses the **k419** config and dated Nov 13–15 patch history (see [research 24](../research/24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md)); the public local manifest still pins a Power **4.14.357** kernel. **Hence confirmed 4.19 sources for MT6785 family + published begonia migration work do not automatically equal a complete, reproducible 4.19 begonia kernel source/binary**.
 
 ## Decision
 

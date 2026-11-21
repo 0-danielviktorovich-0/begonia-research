@@ -1,6 +1,6 @@
 # 24 — GitHub @Saikrishna1504: исходники begonia, перенос Linux 4.19 и патчи компонентов
 
-**Русский язык:** [Эта страница](24-saikrishna-source-audit.md) · [Полный английский отчёт](../../24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md) · [Русский каталог](README.md).
+**Русский язык:** [Эта страница](24-saikrishna-source-audit.md) · [Полный английский отчёт](../../en/research/24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md) · [Русский каталог](../index.md).
 
 > **Статус перевода: подробный технический конспект (DIGEST), НЕ полный перевод.** Исходный английский документ содержит полную таблицу, даты, ссылки, пояснения и ограничения. Проверка по GitHub выполнена 21 ноября 2026 года; на физическом телефоне никакие тесты не проводились.
 
@@ -47,7 +47,7 @@
 | **Recovery** | [device_xiaomi_begonia-pbrp](https://github.com/Saikrishna1504/device_xiaomi_begonia-pbrp) | Исторический PBRP с prebuilt kernel/DTB/DTBO |
 | **Манифесты и OTA** | [local_manifests](https://github.com/Saikrishna1504/local_manifests), [OTA](https://github.com/Saikrishna1504/OTA) | Сборка компонентов и архив старых релизов |
 
-В машинном [реестре из 21 репозитория](../../saikrishna-source-inventory.csv) дополнительно указаны ветки, даты обновлений, назначение и степень подтверждения.
+В машинном [реестре из 21 репозитория](../../../data/matrices/saikrishna-source-inventory.csv) дополнительно указаны ветки, даты обновлений, назначение и степень подтверждения.
 
 Не следует путать: репозиторий автора [android_kernel_device_modules_6.1](https://github.com/Saikrishna1504/android_kernel_device_modules_6.1) относится к **другому MediaTek MT6897** и не доказывает наличие Linux 6.1 на begonia; [flashing_guide](https://github.com/Saikrishna1504/flashing_guide) пока описывает только **duchamp**; а [Begonia_OSS](https://github.com/Saikrishna1504/Begonia_OSS) содержит лишь небольшой набор Dolby EQ-настроек, не полное ядро.
 
@@ -74,4 +74,4 @@
 4. Исследовать переносимые идеи в SELinux, init и powerhint, но не переносить эти Android-настройки как есть в чистый mainline Linux.
 5. Низкоуровневые файлы preloader, LK, md1img, TEE не записывать без подтверждённой региональной совместимости и резервной копии уникальных разделов.
 
-**Источники и пределы проверки:** полные ссылки, полный список 21 проекта, timestamps и приоритеты находятся в [английском оригинале](../../24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md). Никаких сборок или тестов на устройстве не проводилось.
+**Источники и пределы проверки:** полные ссылки, полный список 21 проекта, timestamps и приоритеты находятся в [английском оригинале](../../en/research/24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md). Никаких сборок или тестов на устройстве не проводилось.
