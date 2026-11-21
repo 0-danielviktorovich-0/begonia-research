@@ -15,6 +15,10 @@ index) delivered; corrections C1–C4 + C6 applied at the synthesis pass (C5 ski
 COVERAGE + regenerated archive index. `begonia-research.zip` is **dropped** per the REQUIREMENTS row 4 amendment
 (2026-11-21): this GitHub repo itself is the distribution medium.
 
+## Новое: происхождение ядер 4.14/4.19 и root-патчей
+
+[20-KERNEL-419-ROOT-ECOSYSTEM-RU.md](20-KERNEL-419-ROOT-ECOSYSTEM-RU.md) — подробный русский разбор KSU/Non-KSU, Magisk, KernelSU-Next, SukiSU, APatch, SUSFS, AnyKernel3, реальных 4.19 деревьев MT6785 и проверенной NoVA build pipeline; [kernel-root-provenance.csv](kernel-root-provenance.csv) — источники, версии и степень проверки.
+
 ## Deliverables (root)
 
 | File | Content | Status |
