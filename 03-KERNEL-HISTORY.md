@@ -1,5 +1,7 @@
 # Begonia (Xiaomi Redmi Note 8 Pro, MT6785) — Kernel History
 
+> **2026-11-21 source-forensics follow-up:** [24 — Saikrishna1504 4.19 migration audit](24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md) establishes a **device-tree 4.19 target** in `Saikrishna1504/device_redmi_begonia@axion` and six Nov 13–15 commits adapting SELinux, init/UClamp, powerhint, DTBO, OTG/SD paths and Clang from rosemary. **The exact 4.19 kernel source and vendor/begonia.config fragment remain missing**, so do not mark 4.19 hardware support fully reproduced. Machine inventory: [saikrishna-source-inventory.csv](saikrishna-source-inventory.csv).
+
 > **Browser access reconciliation (2026-11-21):** Some worker-era “live XDA blocked” limitations below predate the later successful Hermes Brave captures. See [_context/HUMAN-ASSISTS.md](_context/HUMAN-ASSISTS.md); no assumption of a complete thread crawl.
 
 Research date: 2026-11-21 (JST). Dimension: kernels. Method: GitHub/GitLab APIs (curl/urllib), raw.githubusercontent Makefile heads, kernel.org cgit, Wayback snapshot of XDA megathread, cached 4PDA pages. No git commands; research-only.
