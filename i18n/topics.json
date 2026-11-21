@@ -422,7 +422,7 @@
         ]
       },
       "source_file": "docs/en/kernels/04-HARDWARE-DRIVERS.md",
-      "source_anchor": null,
+      "source_anchor": "",
       "entry_point": {
         "en": "docs/en/kernels/04-HARDWARE-DRIVERS.md",
         "ru": "docs/ru/index.md"
@@ -674,7 +674,7 @@
         ]
       },
       "source_file": "docs/en/android/10-GUIDE-INDEX.md",
-      "source_anchor": null,
+      "source_anchor": "",
       "entry_point": {
         "en": "docs/en/android/10-GUIDE-INDEX.md",
         "ru": "docs/ru/index.md"
@@ -854,7 +854,7 @@
         ]
       },
       "source_file": "docs/en/research/01-SOURCES.md",
-      "source_anchor": null,
+      "source_anchor": "",
       "entry_point": {
         "en": "docs/en/research/01-SOURCES.md",
         "ru": "docs/ru/index.md"
@@ -879,7 +879,7 @@
         ]
       },
       "source_file": "archive/index.html",
-      "source_anchor": null,
+      "source_anchor": "",
       "entry_point": {
         "en": "archive/index.html",
         "ru": "docs/ru/index.md"

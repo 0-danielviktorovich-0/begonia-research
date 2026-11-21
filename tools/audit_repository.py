@@ -181,7 +181,12 @@ def audit_catalogs() -> None:
         for uri in entry.get("key_sources", []):
             if not uri.startswith(("https://", "http://")) and not repo_file(uri):
                 error(f"topic {entry.get('topic')}: invalid key source {uri}")
+    topic_by_id = {entry.get("topic"): entry for entry in idx}
     for entry in bilingual:
+        expected = topic_by_id.get(entry.get("id"))
+        if expected and (expected.get("file") != entry.get("source_file") or
+                         (expected.get("section_anchor") or "") != (entry.get("source_anchor") or "")):
+            error(f"bilingual topic {entry.get('id')}: inconsistent file/anchor between topic indexes")
         file = entry.get("source_file")
         if not repo_file(file):
             error(f"bilingual topic {entry.get('id')}: missing source_file {file}")
