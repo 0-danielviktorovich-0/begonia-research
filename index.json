@@ -54,7 +54,7 @@
         "https://wiki.lineageos.org/devices/begonia/",
         "https://github.com/AxionAOSP/official_devices"
       ],
-      "status": "covered; crDroid = only official community ROM; LOS not official; verified 2026-11-21"
+      "status": "covered; project-official status must be verified separately for crDroid, Axion and EvolutionX; LineageOS begonia official status not established; observed 2026-11-21"
     },
     {
       "topic": "per-rom-source-inventory",
@@ -349,7 +349,7 @@
       "key_sources": [
         "sources.json"
       ],
-      "status": "covered; 185 observation-stamped records (69 with source_last_change_observed, 116 honestly null); 2026-11-21"
+      "status": "covered; 200 unique observation-stamped source URLs (as of 2026-11-21); source_last_change_observed is null where not established; new NoMount/4.19 evidence added 2026-11-21"
     },
     {
       "topic": "offline-archive",
