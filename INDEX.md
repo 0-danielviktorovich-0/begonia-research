@@ -4,24 +4,19 @@ One-hop navigation for humans and agents. Every major topic → the file + secti
 
 All "verified" dates are observation stamps (REQUIREMENTS row 36): the day we last looked at the underlying source — **2026-11-21 for the whole research run** unless noted.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 **[Русский словарь типов прошивок и технических терминов](19-ROM-TERMS-GLOSSARY-RU.md)** — начать здесь, если CFW, Non-CFW, GSI, vendor, Halium, mainline, recovery и номера версий пока неочевидны.
-=======
+
 **Language:** [English topic directory](docs/en/README.md) · [Русский каталог](docs/ru/README.md) · [English README](README.md) · [README на русском](README.ru.md).
->>>>>>> origin/main
 
 **Localized search:** [42 bilingual topic labels and aliases](i18n/topics.json) · [translation coverage](i18n/catalog.json) · [i18n/l10n policy](i18n/README.md). Stable topic IDs remain in English; search labels support EN/RU independently.
 
-**[NoMount и сравнение root/mount-подходов](21-NOMOUNT-MOUNT-BACKENDS-RU.md)** — отличие root engine от SUSFS и metamodule, требования к legacy 4.14/4.19, совместимость и диагностика.
-**[Русский разбор KSU/Non-KSU и актуальных ядер 4.14/4.19](20-KERNEL-419-ROOT-ECOSYSTEM-RU.md)** — точные источники, SHA, источники интеграции KernelSU/Next/SUSFS, AnyKernel3, риски совместимости. Машинный перечень: [kernel-root-provenance.csv](kernel-root-provenance.csv).
-=======
+**[NoMount и сравнение root/mount-подходов](21-NOMOUNT-MOUNT-BACKENDS-RU.md)** — отличие root engine от SUSFS и metamodule, требования к legacy 4.14/4.19, совместимость и диагностика. **[Русский разбор KSU/Non-KSU и актуальных ядер 4.14/4.19](20-KERNEL-419-ROOT-ECOSYSTEM-RU.md)** — точные источники, SHA, источники интеграции KernelSU/Next/SUSFS, AnyKernel3, риски совместимости. Машинный перечень: [kernel-root-provenance.csv](kernel-root-provenance.csv).
+
 **New bilingual research routes:** [CFW, Non-CFW and GSI glossary](docs/en/19-rom-terminology.md) (full English draft; [RU original](19-ROM-TERMS-GLOSSARY-RU.md)); [Linux 4.19 and KernelSU](docs/en/20-kernel-root-ecosystem.md); [NoMount and mount backends](docs/en/21-nomount-and-mount-backends.md); [AI kernel porting and Play Integrity](docs/en/22-kernel-forward-port.md); [4.19 developer announcement and contact](23-419-TELEGRAM-OUTREACH.md). English pages 20–22 are **digests**, not complete translations.
 
 **GitHub workflows:** [obsolete branch cleanup](.github/workflows/branch-cleanup.yml), [multilingual QA](.github/workflows/i18n-check.yml).
 
 **[24 — Saikrishna's begonia 4.19 migration and source-stack audit](24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md)** — actual Nov 13–15 2026 device-tree commits, Android HAL/vendor/firmware/IMS/camera provenance, build-manifest mismatch, [21-repo machine register](saikrishna-source-inventory.csv), [русский конспект](docs/ru/24-saikrishna-source-audit.md).
->>>>>>> origin/main
 
 ## Topic map
 
