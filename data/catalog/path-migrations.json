@@ -378,7 +378,7 @@
       "status": "moved",
       "operation": "merge-content-update-generated-index",
       "pre_move_blob_sha": "6b4ab1dfe38294328eb64f5399ee8066690d879a",
-      "post_move_blob_sha": "f75dd5a54f22e071eb6cbf9814fea0ebddb198d2",
+      "post_move_blob_sha": "a108be152c2a8fabd26ba33199c370cc0030b639",
       "checks": [
         "markdown-relative-links",
         "cross-locale-navigation",
