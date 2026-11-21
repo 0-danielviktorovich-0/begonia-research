@@ -260,3 +260,30 @@ lineage for the ATE TX-injection angle.
   playwright standard (chrome-for-testing) not installed; Hermes desktop webview — no CDP port (driving it
   needs an app restart — not done without owner's go).
 - Backlink pass on t=3591182: nothing new; bonus find — AOSP official gen3 wlan mirror (predecessor of gen4m).
+
+## 1.9 W22 — injection patch stack verified (2026-11-22)
+
+**Owner's Anonym3310 collection = verbatim Kali official patches [V]** (normalized diff: identical added
+lines, offsets only): Q-OSS-SLMK carries Kali's `add-wifi-injection-4.14.patch` (5 files) +
+`fix-ath9k-naming-conflict` + `fix-thread_info.h`; CFW branch has Re4son `u32-mntr_flags` + aircrack-ng
+`mac80211.compat08082009.wl_frag+ack_v1`; `additional-drivers-pack.zip` = 6 prebuilt OOT Realtek .ko
+(8188eu, 8192eu/8192fu, rtl8188fu, 88XXau, 8814au; vermagic 4.14.233-AkameKernel). The semi-amateur
+kernel actually shipped the official NetHunter patch set — good news for trust in the technique, config
+quality caveat still stands.
+
+**Kali official builder** `kali-nethunter-kernel-builder@main/patches/4.14` [V]: 12 patches — core
+injection; rtl8188eus→rtl8xxxu in-tree (yesimxev 2023); rtl88xxau 5.6.4.2 (Re4son 2020); rtw88-usb
+backport (yesimxev 2026-04); **qcacld-3.0 internal TX injection (kimocoder 2025-10)**; BT/build fixes.
+nethunter.kali.org/kernels.html: zero begonia entries [V].
+
+**Internal gen4m TX injection: NF after 22 rotations** — no public gen4m/CONNAC TX artifact. Precedents:
+qcacld-3.0 Kali patch (driver-layer, FW-dependent), hcxdumptool #531 raw-TX 0% ACKs ("firmware must
+support it too"), nexmon (Broadcom-only). Engineering estimate from begonia clones [I]: TX chain
+gl_init.c:1518 → gl_kal.c:2134 → wlan_lib.c:3951 → nic_tx.c:1126/1512 (TXD v2); monitor netdev lacks
+xmit (gl_init.c:1841); ~600–1200 LOC hook feasible; **FW acceptance unverifiable = blocking risk**.
+External adapters remain the injection path for the unified kernel; internal TX = research track after
+RX-monitor lands (Path A/B of §1.6).
+
+**Modern adapter stack for the unified kernel [V/I]** (W22-OUT full table): ath9k_htc,
+rtl8188eus-via-in-tree-rtl8xxxu, rtl88xxau 5.6.4.2, rtw88-usb backport, mt76x2, rt2x00 (mt7921/7925
+need ≥5.x — unreachable on 4.14/4.19). Ordered patch stack from official sources in W22-OUT §4.
