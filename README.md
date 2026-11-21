@@ -15,6 +15,8 @@ index) delivered; corrections C1–C4 + C6 applied at the synthesis pass (C5 ski
 COVERAGE + regenerated archive index. `begonia-research.zip` is **dropped** per the REQUIREMENTS row 4 amendment
 (2026-11-21): this GitHub repo itself is the distribution medium.
 
+**Repository organization RFC:** [Clean-root, bilingual documentation architecture (EN)](docs/en/architecture/repository-refactor-plan.md) · [Проект рефакторинга (RU)](docs/ru/architecture/repository-refactor-plan.md). [Machine-readable old → new path plan](data/catalog/path-migrations.json). **Status: proposed, not yet migrated.** Existing root research files and README.ru.md remain at their current paths until link and agent checks pass.
+
 ## Languages · Языки
 
 **[English (this README)](README.md) · [Русский / Russian](README.ru.md)**
