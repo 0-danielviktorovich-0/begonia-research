@@ -1,6 +1,6 @@
 # 01 — Sources: consolidated index (begonia-research)
 
-Machine twin: [sources.json](sources.json) (one record per unique URL, deduped from the append-only research log; **185 records**). Every record is **observation-anchored** (REQUIREMENTS row 36): `observed_at` = when we last looked (research day 2026-11-21), `source_last_change_observed` = the source's own last-change date **as exposed** at that moment (repo push, page/snapshot date, thread page date) or `null` when the source exposed nothing date-like — never guessed. **These are observations, not guarantees:** any source may have changed after `observed_at`.
+Machine twin: [sources.json](sources.json) (one record per unique URL, deduped from the append-only research log; **200 records**). Every record is **observation-anchored** (REQUIREMENTS row 36): `observed_at` = when we last looked (research day 2026-11-21), `source_last_change_observed` = the source's own last-change date **as exposed** at that moment (repo push, page/snapshot date, thread page date) or `null` when the source exposed nothing date-like — never guessed. **These are observations, not guarantees:** any source may have changed after `observed_at`.
 
 Rendered per entry as: *As of 2026-11-21, the last change observed in this source was \<date\>* — or *no source-side change date was exposed*.
 
@@ -263,3 +263,19 @@ Classes verified during the source census ([_context/SOURCE-CENSUS.md](_context/
 
 
 *Written by the assembler pass, 2026-11-21 (JST). Last updated: 2026-11-21T09:06:49Z (ISO 8601 UTC — REQUIREMENTS row 34).*
+
+
+## Independent additions — root, NoMount and 4.19 (2026-11-21)
+
+The canonical machine list [sources.json](sources.json) now contains **200 unique URLs**. The eight newly indexed primary sources below were read directly or retrieved from their official GitHub repository pages on 2026-11-21. Their source-side modification dates are recorded only where explicit; source availability and runtime compatibility may change.
+
+- [NoMount — original VFS redirection framework](https://github.com/maxsteeel/nomount) — primary project README; [21](21-NOMOUNT-MOUNT-BACKENDS-RU.md).
+- [NoMount release v2.3.1](https://github.com/maxsteeel/nomount/releases/tag/v2.3.1) — released 2026-11-19; driver protocol v23, self-reported performance improvements; [21](21-NOMOUNT-MOUNT-BACKENDS-RU.md).
+- [Mountify — OverlayFS metamodule](https://github.com/backslashxx/mountify) — real-mount backend and explicit kernel config prerequisites; [21](21-NOMOUNT-MOUNT-BACKENDS-RU.md).
+- [Hybrid Mount](https://github.com/Hybrid-Mount/meta-hybrid_mount) — per-path Overlay/Magic/VFS backends and provider compatibility; [21](21-NOMOUNT-MOUNT-BACKENDS-RU.md).
+- [KernelSU reference meta-overlayfs](https://github.com/KernelSU-Modules-Repo/meta-overlayfs) — developer reference implementation, not a compatibility guarantee; [21](21-NOMOUNT-MOUNT-BACKENDS-RU.md).
+- [MT6785 active 4.19 kernel tree](https://github.com/xiaomi-mt6785-dev/android_kernel_xiaomi_mt6785) — `lineage-24.0` Linux 4.19.325, same observed head SHA as the LineageOS MT6785 mirror; [20](20-KERNEL-419-ROOT-ECOSYSTEM-RU.md).
+- [KernelSU official metamodule specification](https://kernelsu.org/guide/metamodule.html) — mount architecture, one-active-metamodule rule; [21](21-NOMOUNT-MOUNT-BACKENDS-RU.md).
+- [APatch official FAQ](https://apatch.dev/faq.html) — direct kernel-patching approach versus Magisk and KernelSU; [21](21-NOMOUNT-MOUNT-BACKENDS-RU.md).
+
+These are source-index observations, **not evidence that any given 4.19 kernel, NoMount or root method has been validated on the owner's phone**.
