@@ -1,5 +1,7 @@
 # 07 — Recovery & Safety: bootloader unlock, unbricking, backups (Redmi Note 8 Pro / `begonia`, MT6785)
 
+> **Browser access reconciliation (2026-11-21):** The earlier XDA-bot-wall limitations below describe one worker's environment. Later Brave captures and logged-in 4PDA spoiler extracts are listed in [_context/HUMAN-ASSISTS.md](_context/HUMAN-ASSISTS.md). Do not treat sampled captures as all forum posts or a tested unbrick guarantee.
+
 > **RESEARCH-ONLY DOCUMENT.** Everything below is *documentation of publicly available procedures*, compiled 2026-11-21. Nothing here was executed, and none of it should be run against real hardware without independent verification. Unlocking the bootloader wipes userdata, may trip anti-rollback, and can hard-brick the device. "User-hostile" operations (flashing, erasing partitions, exploit payloads) are described for research purposes only.
 >
 > Citation contract: URL + title/author + date + verified/inferred + confidence (high/medium/low). Verbatim quotes preserved in `>` blocks.
