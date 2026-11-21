@@ -1,5 +1,7 @@
 # 06 — Droidian & postmarketOS on Xiaomi Redmi Note 8 Pro (`begonia`)
 
+> **2026-11-21 correction / build-specific status:** this report's `Wi-Fi broken` matrix concerns the original upstream-style pmOS/Dinolek package. A **separate third-party experimental** [begonia-pmos-tianma](https://github.com/criollojoel10/begonia-pmos-tianma) build documents 2026-09-27 working WLAN (`wlan_gen4m` vendor driver, WMT firmware, `wlan0`, 2.4/5GHz, DHCP). This report was **not reproduced by this auditor**. Wi-Fi still lacks an upstream-native driver integration for this board. [Porting and evidence details](22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md).
+
 Researched 2026-11-21 (JST). Research-only: nothing was flashed or downloaded. Citation style: URL + date + verified/inferred + confidence (high/medium/low). pmOS wiki = wiki.nura.eco (continuation of wiki.postmarketos.org; redirects verified 2026-11-21). Cached full pages: pmOS wiki `oldid=109575`, devices.ubuntu-touch.io (both fetched 2026-11-21, see shared context pack).
 
 ---

@@ -1,0 +1,675 @@
+{
+  "schema_version": 1,
+  "mode": "proposal-not-executed",
+  "planned_on": "2026-11-21",
+  "snapshot_branch": "main",
+  "description": "Paths are a migration proposal. Nothing in this file authorizes automatic deleting or moving files. Run link/crossref and document-language validation before and after applying.",
+  "root_file_count": 38,
+  "root_file_names": [
+    "00-README.md",
+    "01-SOURCES.md",
+    "02-FIRMWARE-HISTORY.md",
+    "03-KERNEL-HISTORY.md",
+    "04-HARDWARE-DRIVERS.md",
+    "05-UBUNTU-TOUCH.md",
+    "06-DROIDIAN-POSTMARKETOS.md",
+    "07-RECOVERY-SAFETY.md",
+    "08-DEVELOPMENT-ROADMAP.md",
+    "09-OPEN-QUESTIONS.md",
+    "10-GUIDE-INDEX.md",
+    "11-BLOBS-FIRMWARE-SOURCES.md",
+    "12-SKILLS-AND-REUSE.md",
+    "13-NETHUNTER-WIFI-EXTRAS.md",
+    "14-MAINLINE-UPGRADE-PATH.md",
+    "15-RE-IMPROVEMENT-PLAN.md",
+    "16-ROOT-METHODS.md",
+    "17-INDEPENDENT-AUDIT.md",
+    "18-DEVICE-PREFLIGHT-READONLY.md",
+    "19-ROM-TERMS-GLOSSARY-RU.md",
+    "20-KERNEL-419-ROOT-ECOSYSTEM-RU.md",
+    "21-NOMOUNT-MOUNT-BACKENDS-RU.md",
+    "22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md",
+    "23-419-TELEGRAM-OUTREACH.md",
+    "24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md",
+    "INDEX.md",
+    "LICENSE",
+    "LICENSE-DOCS",
+    "NOTICE.md",
+    "README.md",
+    "README.ru.md",
+    "firmware-matrix.csv",
+    "hardware-support-matrix.csv",
+    "index.json",
+    "kernel-matrix.csv",
+    "kernel-root-provenance.csv",
+    "saikrishna-source-inventory.csv",
+    "sources.json"
+  ],
+  "legacy_entries_count": 38,
+  "entries": [
+    {
+      "old_path": "00-README.md",
+      "new_path": "docs/en/research/00-README.md",
+      "status": "planned",
+      "operation": "git-mv-and-rewrite-references",
+      "pre_move_blob_sha": "aa171a504ee6087fcc3309350fe55886f1cb84f5",
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "cross-locale-navigation",
+        "metadata-source-paths"
+      ]
+    },
+    {
+      "old_path": "01-SOURCES.md",
+      "new_path": "docs/en/research/01-SOURCES.md",
+      "status": "planned",
+      "operation": "git-mv-and-rewrite-references",
+      "pre_move_blob_sha": "aa5317507ca809e292a31c23de0178f0b340e54e",
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "cross-locale-navigation",
+        "metadata-source-paths"
+      ]
+    },
+    {
+      "old_path": "02-FIRMWARE-HISTORY.md",
+      "new_path": "docs/en/android/02-FIRMWARE-HISTORY.md",
+      "status": "planned",
+      "operation": "git-mv-and-rewrite-references",
+      "pre_move_blob_sha": "c467681a4511579ff00adb109bba6c5e73f25470",
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "cross-locale-navigation",
+        "metadata-source-paths"
+      ]
+    },
+    {
+      "old_path": "03-KERNEL-HISTORY.md",
+      "new_path": "docs/en/kernels/03-KERNEL-HISTORY.md",
+      "status": "planned",
+      "operation": "git-mv-and-rewrite-references",
+      "pre_move_blob_sha": "fa00cfe3fb2019d6bdd396ee71b6384cf7a28584",
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "cross-locale-navigation",
+        "metadata-source-paths"
+      ]
+    },
+    {
+      "old_path": "04-HARDWARE-DRIVERS.md",
+      "new_path": "docs/en/kernels/04-HARDWARE-DRIVERS.md",
+      "status": "planned",
+      "operation": "git-mv-and-rewrite-references",
+      "pre_move_blob_sha": "9433aa919cb548d9bdd6a713da027d518d91a3c8",
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "cross-locale-navigation",
+        "metadata-source-paths"
+      ]
+    },
+    {
+      "old_path": "05-UBUNTU-TOUCH.md",
+      "new_path": "docs/en/linux/05-UBUNTU-TOUCH.md",
+      "status": "planned",
+      "operation": "git-mv-and-rewrite-references",
+      "pre_move_blob_sha": "63c5e7a1a47c2b316ecfa45efbb6de1a9801e156",
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "cross-locale-navigation",
+        "metadata-source-paths"
+      ]
+    },
+    {
+      "old_path": "06-DROIDIAN-POSTMARKETOS.md",
+      "new_path": "docs/en/linux/06-DROIDIAN-POSTMARKETOS.md",
+      "status": "planned",
+      "operation": "git-mv-and-rewrite-references",
+      "pre_move_blob_sha": "48fddd8af28543229d3a62110459686b3197049b",
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "cross-locale-navigation",
+        "metadata-source-paths"
+      ]
+    },
+    {
+      "old_path": "07-RECOVERY-SAFETY.md",
+      "new_path": "docs/en/recovery/07-RECOVERY-SAFETY.md",
+      "status": "planned",
+      "operation": "git-mv-and-rewrite-references",
+      "pre_move_blob_sha": "b1cea42ce4ff55886dd92853c0b05ea180986990",
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "cross-locale-navigation",
+        "metadata-source-paths"
+      ]
+    },
+    {
+      "old_path": "08-DEVELOPMENT-ROADMAP.md",
+      "new_path": "docs/en/linux/08-DEVELOPMENT-ROADMAP.md",
+      "status": "planned",
+      "operation": "git-mv-and-rewrite-references",
+      "pre_move_blob_sha": "d867ce7f9d3983df40c53cb7b5b3e95e111ea95f",
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "cross-locale-navigation",
+        "metadata-source-paths"
+      ]
+    },
+    {
+      "old_path": "09-OPEN-QUESTIONS.md",
+      "new_path": "docs/en/research/09-OPEN-QUESTIONS.md",
+      "status": "planned",
+      "operation": "git-mv-and-rewrite-references",
+      "pre_move_blob_sha": "ca8f9c3c67b4a2c78f115dc060d041fa6ea70679",
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "cross-locale-navigation",
+        "metadata-source-paths"
+      ]
+    },
+    {
+      "old_path": "10-GUIDE-INDEX.md",
+      "new_path": "docs/en/android/10-GUIDE-INDEX.md",
+      "status": "planned",
+      "operation": "git-mv-and-rewrite-references",
+      "pre_move_blob_sha": "1755eba8f6e7932c6d78520bb63563987070294f",
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "cross-locale-navigation",
+        "metadata-source-paths"
+      ]
+    },
+    {
+      "old_path": "11-BLOBS-FIRMWARE-SOURCES.md",
+      "new_path": "docs/en/kernels/11-BLOBS-FIRMWARE-SOURCES.md",
+      "status": "planned",
+      "operation": "git-mv-and-rewrite-references",
+      "pre_move_blob_sha": "d59cdeecdace1d991e7dc9d3589882e26feed72e",
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "cross-locale-navigation",
+        "metadata-source-paths"
+      ]
+    },
+    {
+      "old_path": "12-SKILLS-AND-REUSE.md",
+      "new_path": "docs/en/tools/12-SKILLS-AND-REUSE.md",
+      "status": "planned",
+      "operation": "git-mv-and-rewrite-references",
+      "pre_move_blob_sha": "2b53023d411a4ce45213879e366a6cb025114293",
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "cross-locale-navigation",
+        "metadata-source-paths"
+      ]
+    },
+    {
+      "old_path": "13-NETHUNTER-WIFI-EXTRAS.md",
+      "new_path": "docs/en/android/13-NETHUNTER-WIFI-EXTRAS.md",
+      "status": "planned",
+      "operation": "git-mv-and-rewrite-references",
+      "pre_move_blob_sha": "913a6902632f754a186c1e93cd10d4e21056b453",
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "cross-locale-navigation",
+        "metadata-source-paths"
+      ]
+    },
+    {
+      "old_path": "14-MAINLINE-UPGRADE-PATH.md",
+      "new_path": "docs/en/kernels/14-MAINLINE-UPGRADE-PATH.md",
+      "status": "planned",
+      "operation": "git-mv-and-rewrite-references",
+      "pre_move_blob_sha": "433b6427c9dd6424a4426ebf825705c944b5bcc6",
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "cross-locale-navigation",
+        "metadata-source-paths"
+      ]
+    },
+    {
+      "old_path": "15-RE-IMPROVEMENT-PLAN.md",
+      "new_path": "docs/en/linux/15-RE-IMPROVEMENT-PLAN.md",
+      "status": "planned",
+      "operation": "git-mv-and-rewrite-references",
+      "pre_move_blob_sha": "f23068cf5aa8ac6782b6f0010cd80892f31eab6d",
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "cross-locale-navigation",
+        "metadata-source-paths"
+      ]
+    },
+    {
+      "old_path": "16-ROOT-METHODS.md",
+      "new_path": "docs/en/android/16-ROOT-METHODS.md",
+      "status": "planned",
+      "operation": "git-mv-and-rewrite-references",
+      "pre_move_blob_sha": "7668d4dca668d96a726eba8818cb23e9f40ce998",
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "cross-locale-navigation",
+        "metadata-source-paths"
+      ]
+    },
+    {
+      "old_path": "17-INDEPENDENT-AUDIT.md",
+      "new_path": "docs/en/research/17-INDEPENDENT-AUDIT.md",
+      "status": "planned",
+      "operation": "git-mv-and-rewrite-references",
+      "pre_move_blob_sha": "18e29c7fe8fc3be0a18d307749b6099a3be55977",
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "cross-locale-navigation",
+        "metadata-source-paths"
+      ]
+    },
+    {
+      "old_path": "18-DEVICE-PREFLIGHT-READONLY.md",
+      "new_path": "docs/en/recovery/18-DEVICE-PREFLIGHT-READONLY.md",
+      "status": "planned",
+      "operation": "git-mv-and-rewrite-references",
+      "pre_move_blob_sha": "681bb4bf5cd7f5a8ad8415949f6b9a5e1dc642d7",
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "cross-locale-navigation",
+        "metadata-source-paths"
+      ]
+    },
+    {
+      "old_path": "19-ROM-TERMS-GLOSSARY-RU.md",
+      "new_path": "docs/ru/android/19-ROM-TERMS-GLOSSARY-RU.md",
+      "status": "planned",
+      "operation": "git-mv-and-rewrite-references",
+      "pre_move_blob_sha": "b39c6c4d58fa47975195eae7e0e0d0f17f94bf03",
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "cross-locale-navigation",
+        "metadata-source-paths"
+      ]
+    },
+    {
+      "old_path": "20-KERNEL-419-ROOT-ECOSYSTEM-RU.md",
+      "new_path": "docs/ru/kernels/20-KERNEL-419-ROOT-ECOSYSTEM-RU.md",
+      "status": "planned",
+      "operation": "git-mv-and-rewrite-references",
+      "pre_move_blob_sha": "e21b0654cb71a9d69ac04bfc820f23a9c6e9033c",
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "cross-locale-navigation",
+        "metadata-source-paths"
+      ]
+    },
+    {
+      "old_path": "21-NOMOUNT-MOUNT-BACKENDS-RU.md",
+      "new_path": "docs/ru/kernels/21-NOMOUNT-MOUNT-BACKENDS-RU.md",
+      "status": "planned",
+      "operation": "git-mv-and-rewrite-references",
+      "pre_move_blob_sha": "9da4ba4a9861959952f765c75417235328ca5c1d",
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "cross-locale-navigation",
+        "metadata-source-paths"
+      ]
+    },
+    {
+      "old_path": "22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md",
+      "new_path": "docs/ru/kernels/22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md",
+      "status": "planned",
+      "operation": "git-mv-and-rewrite-references",
+      "pre_move_blob_sha": "5bb882d1a43d89799f2ba5a0d0b4f0c6ea63245c",
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "cross-locale-navigation",
+        "metadata-source-paths"
+      ]
+    },
+    {
+      "old_path": "23-419-TELEGRAM-OUTREACH.md",
+      "new_path": "docs/en/research/23-419-TELEGRAM-OUTREACH.md",
+      "status": "planned",
+      "operation": "git-mv-and-rewrite-references",
+      "pre_move_blob_sha": "2e78691a5b3983f85ceec7adbbe55c7d38558fbc",
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "cross-locale-navigation",
+        "metadata-source-paths"
+      ]
+    },
+    {
+      "old_path": "24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md",
+      "new_path": "docs/en/research/24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md",
+      "status": "planned",
+      "operation": "git-mv-and-rewrite-references",
+      "pre_move_blob_sha": "f309ba60f429937c2beb0e61e361d6dcd99c318a",
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "cross-locale-navigation",
+        "metadata-source-paths"
+      ]
+    },
+    {
+      "old_path": "INDEX.md",
+      "new_path": "docs/en/index.md",
+      "status": "planned",
+      "operation": "merge-content-update-generated-index",
+      "pre_move_blob_sha": "6b4ab1dfe38294328eb64f5399ee8066690d879a",
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "cross-locale-navigation",
+        "metadata-source-paths"
+      ]
+    },
+    {
+      "old_path": "LICENSE",
+      "new_path": "LICENSE",
+      "status": "retain",
+      "operation": "keep",
+      "pre_move_blob_sha": "33de808b0fb342aa8c6e353ef7163e022dfdd459",
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "cross-locale-navigation",
+        "metadata-source-paths"
+      ]
+    },
+    {
+      "old_path": "LICENSE-DOCS",
+      "new_path": "LICENSE-DOCS",
+      "status": "retain",
+      "operation": "keep",
+      "pre_move_blob_sha": "0b2e3af1af90687db64cbd85628e8b69ee76bcdc",
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "cross-locale-navigation",
+        "metadata-source-paths"
+      ]
+    },
+    {
+      "old_path": "NOTICE.md",
+      "new_path": "NOTICE.md",
+      "status": "retain",
+      "operation": "keep",
+      "pre_move_blob_sha": "a1ac91f848bacbef04f79cfd2f0edac9cededb9d",
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "cross-locale-navigation",
+        "metadata-source-paths"
+      ]
+    },
+    {
+      "old_path": "README.md",
+      "new_path": "README.md",
+      "status": "retain",
+      "operation": "keep",
+      "pre_move_blob_sha": "960046d6fea634ab182b65b13b585d386f7e070c",
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "cross-locale-navigation",
+        "metadata-source-paths"
+      ]
+    },
+    {
+      "old_path": "README.ru.md",
+      "new_path": "docs/ru/index.md",
+      "status": "planned",
+      "operation": "merge-content-and-remove-old",
+      "pre_move_blob_sha": "69f435c4dbe999b1ce0d20895781c019d36dd484",
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "cross-locale-navigation",
+        "metadata-source-paths"
+      ]
+    },
+    {
+      "old_path": "firmware-matrix.csv",
+      "new_path": "data/matrices/firmware-matrix.csv",
+      "status": "planned",
+      "operation": "git-mv-and-rewrite-references",
+      "pre_move_blob_sha": "56b0b4e279c8d17daf0876d4c58ce4c05047f9f1",
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "cross-locale-navigation",
+        "metadata-source-paths"
+      ]
+    },
+    {
+      "old_path": "hardware-support-matrix.csv",
+      "new_path": "data/matrices/hardware-support-matrix.csv",
+      "status": "planned",
+      "operation": "git-mv-and-rewrite-references",
+      "pre_move_blob_sha": "2b9c97435e49ec45e1d951a96540bf133cc30e60",
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "cross-locale-navigation",
+        "metadata-source-paths"
+      ]
+    },
+    {
+      "old_path": "index.json",
+      "new_path": "data/catalog/index.json",
+      "status": "planned",
+      "operation": "git-mv-and-rewrite-references",
+      "pre_move_blob_sha": "d6bb029e272b755fff6302f886fc07c2bee2989c",
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "cross-locale-navigation",
+        "metadata-source-paths"
+      ]
+    },
+    {
+      "old_path": "kernel-matrix.csv",
+      "new_path": "data/matrices/kernel-matrix.csv",
+      "status": "planned",
+      "operation": "git-mv-and-rewrite-references",
+      "pre_move_blob_sha": "9db30c234df1bba4fa4e89c9de2c944021000c53",
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "cross-locale-navigation",
+        "metadata-source-paths"
+      ]
+    },
+    {
+      "old_path": "kernel-root-provenance.csv",
+      "new_path": "data/matrices/kernel-root-provenance.csv",
+      "status": "planned",
+      "operation": "git-mv-and-rewrite-references",
+      "pre_move_blob_sha": "09fb8e8c9065434ce4197e47c11b9e16d42bfe74",
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "cross-locale-navigation",
+        "metadata-source-paths"
+      ]
+    },
+    {
+      "old_path": "saikrishna-source-inventory.csv",
+      "new_path": "data/matrices/saikrishna-source-inventory.csv",
+      "status": "planned",
+      "operation": "git-mv-and-rewrite-references",
+      "pre_move_blob_sha": "d7da17902920dffcf610465e0e62915dbc3a0487",
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "cross-locale-navigation",
+        "metadata-source-paths"
+      ]
+    },
+    {
+      "old_path": "sources.json",
+      "new_path": "data/catalog/sources.json",
+      "status": "planned",
+      "operation": "git-mv-and-rewrite-references",
+      "pre_move_blob_sha": "af1f14ee466831289acd654c083bc4c6d3560ae1",
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "cross-locale-navigation",
+        "metadata-source-paths"
+      ]
+    },
+    {
+      "old_path": "docs/en/README.md",
+      "new_path": "docs/en/index.md",
+      "status": "planned",
+      "operation": "git-mv-and-rewrite-references",
+      "pre_move_blob_sha": null,
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "machine-consumers"
+      ]
+    },
+    {
+      "old_path": "docs/ru/README.md",
+      "new_path": "docs/ru/index.md",
+      "status": "planned",
+      "operation": "git-mv-and-rewrite-references",
+      "pre_move_blob_sha": null,
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "machine-consumers"
+      ]
+    },
+    {
+      "old_path": "docs/en/19-rom-terminology.md",
+      "new_path": "docs/en/android/19-rom-terminology.md",
+      "status": "planned",
+      "operation": "git-mv-and-rewrite-references",
+      "pre_move_blob_sha": null,
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "machine-consumers"
+      ]
+    },
+    {
+      "old_path": "docs/en/20-kernel-root-ecosystem.md",
+      "new_path": "docs/en/kernels/20-kernel-root-ecosystem.md",
+      "status": "planned",
+      "operation": "git-mv-and-rewrite-references",
+      "pre_move_blob_sha": null,
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "machine-consumers"
+      ]
+    },
+    {
+      "old_path": "docs/en/21-nomount-and-mount-backends.md",
+      "new_path": "docs/en/kernels/21-nomount-and-mount-backends.md",
+      "status": "planned",
+      "operation": "git-mv-and-rewrite-references",
+      "pre_move_blob_sha": null,
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "machine-consumers"
+      ]
+    },
+    {
+      "old_path": "docs/en/22-kernel-forward-port.md",
+      "new_path": "docs/en/kernels/22-kernel-forward-port.md",
+      "status": "planned",
+      "operation": "git-mv-and-rewrite-references",
+      "pre_move_blob_sha": null,
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "machine-consumers"
+      ]
+    },
+    {
+      "old_path": "docs/ru/24-saikrishna-source-audit.md",
+      "new_path": "docs/ru/research/24-saikrishna-source-audit.md",
+      "status": "planned",
+      "operation": "git-mv-and-rewrite-references",
+      "pre_move_blob_sha": null,
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "machine-consumers"
+      ]
+    },
+    {
+      "old_path": "_context/",
+      "new_path": "research/agent/",
+      "status": "planned",
+      "operation": "directory-relocation-after-agent-cutover",
+      "pre_move_blob_sha": null,
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "machine-consumers"
+      ]
+    },
+    {
+      "old_path": "_cache/",
+      "new_path": "research/cache/",
+      "status": "planned",
+      "operation": "directory-relocation-after-agent-cutover",
+      "pre_move_blob_sha": null,
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "machine-consumers"
+      ]
+    },
+    {
+      "old_path": "archive/",
+      "new_path": "research/evidence/",
+      "status": "planned",
+      "operation": "directory-relocation-after-agent-cutover",
+      "pre_move_blob_sha": null,
+      "post_move_blob_sha": null,
+      "checks": [
+        "markdown-relative-links",
+        "machine-consumers"
+      ]
+    }
+  ],
+  "post_move_required_checks": [
+    "all local Markdown and HTML links, including anchor fragments",
+    "original source file and translation Git Blob SHA revision links",
+    "data/catalog index/topic/source inventories and all CSV consumers",
+    "GitHub Actions path filters and scripts",
+    "Hermes/_context and archive/_cache readers and writers",
+    "no loss of source URLs or locale topic IDs",
+    "original Git history retained, no overwrite of vendor payloads"
+  ],
+  "breaking_change_note": "Existing GitHub blob/main/<old_path> URLs may 404 after moves; no unconditional path redirects. If necessary retain temporary compatibility stubs before a final clean-root stage."
+}

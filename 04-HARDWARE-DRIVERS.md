@@ -1,5 +1,7 @@
 # Begonia (Xiaomi Redmi Note 8 Pro) — Hardware & Driver Inventory
 
+> **Wi-Fi exception (2026-11-21 re-check):** “pmOS Wi-Fi broken” rows below describe the **baseline Dinolek/Nura 6.16.4 system**, not every independent fork. [criollojoel10/begonia-pmos-tianma](https://github.com/criollojoel10/begonia-pmos-tianma) claims an actual begonia test 2026-09-27 with `wlan_gen4m` MediaTek vendor-driver forward-port, `wlan0`, 5GHz association, DHCP and connectivity. This is **author-reported [D], not independent phone validation and not an upstream `mt76` driver**; see [22 §2](22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md).
+
 Dimension: hardware & drivers. Per-OS status: **UT 24.04** (Ubuntu Touch noble, Halium 10.0, kernel 4.14.141), **Droidian** (community port, Halium-based, kernel begonia-linux/linux-android-begonia), **pmOS 6.16** (mainline 6.16.4, Dinolek fork), **Android custom ROMs** (downstream 4.14 kernel + full vendor blobs).
 Method: components identified **only** from mainline DTS (Dinolek/mt6785-mainline, branch 7.1), vendor DTS (AgentFabulous/begonia, android-11.0), pmOS kernel config (pmaports), `/proc/iomem` + parted dumps (Nura wiki), and OS support matrices. Unverifiable part numbers are written `unknown`, never guessed.
 Status vocabulary: works | partial | broken | unknown. Machine-readable twin: `hardware-support-matrix.csv` (same rows).

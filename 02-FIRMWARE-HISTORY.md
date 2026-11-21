@@ -1,4 +1,6 @@
 # Xiaomi Redmi Note 8 Pro (`begonia`) — Firmware History
+
+> **New per-ROM source lead (2026-11-21):** [Saikrishna1504/device_redmi_begonia](https://github.com/Saikrishna1504/device_redmi_begonia) plus [vendor](https://github.com/Saikrishna1504/vendor_redmi_begonia), [firmware](https://github.com/Saikrishna1504/vendor_redmi_begonia-firmware), [Android source manifest](https://github.com/Saikrishna1504/local_manifests/blob/udc/mt6785.xml) and [IMS/camera patchsets](https://github.com/Saikrishna1504/device_redmi_begonia/tree/axion/blob-patches). **Manifest currently mixes a k419 device tree with 4.14-main kernel**, so exact modern build reproducibility is not established; [24](24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md).
 Dimension: firmware. Compiled 2026-11-21 (JST). Research-only; nothing was flashed or downloaded.
 Evidence rules: exact URL + author/date + 4PDA permalink where applicable; `verified` = seen directly in a fetched source; `inferred` = derived (e.g. from pid ordering); confidence high/medium/low. Historical sections are marked **[HISTORICAL]**; current status is marked **[CURRENT]**.
 

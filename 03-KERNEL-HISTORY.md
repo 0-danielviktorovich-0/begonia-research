@@ -1,5 +1,7 @@
 # Begonia (Xiaomi Redmi Note 8 Pro, MT6785) — Kernel History
 
+> **2026-11-21 source-forensics follow-up:** [24 — Saikrishna1504 4.19 migration audit](24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md) establishes a **device-tree 4.19 target** in `Saikrishna1504/device_redmi_begonia@axion` and six Nov 13–15 commits adapting SELinux, init/UClamp, powerhint, DTBO, OTG/SD paths and Clang from rosemary. **The exact 4.19 kernel source and vendor/begonia.config fragment remain missing**, so do not mark 4.19 hardware support fully reproduced. Machine inventory: [saikrishna-source-inventory.csv](saikrishna-source-inventory.csv).
+
 > **Browser access reconciliation (2026-11-21):** Some worker-era “live XDA blocked” limitations below predate the later successful Hermes Brave captures. See [_context/HUMAN-ASSISTS.md](_context/HUMAN-ASSISTS.md); no assumption of a complete thread crawl.
 
 Research date: 2026-11-21 (JST). Dimension: kernels. Method: GitHub/GitLab APIs (curl/urllib), raw.githubusercontent Makefile heads, kernel.org cgit, Wayback snapshot of XDA megathread, cached 4PDA pages. No git commands; research-only.
@@ -64,8 +66,8 @@ https://github.com/LineageOS/android_kernel_xiaomi_mt6785 [V] — 7 branches, SH
 | lineage-21 | 4.14.340-openela | LOS 21 (A14) |
 | lineage-22.2 | 4.14.356-openela-rc1 | LOS 22.2 (A15) |
 | lineage-23.0 | 4.14.356-openela-rc1 | LOS 23.0 |
-| lineage-23.2 | **4.19.325** | LOS 23.2 — moved begonia to 4.19 |
-| lineage-24.0 (default) | **4.19.325** | LOS 24.0 (A16-era); repo last push **2026-10-31** [V] |
+| lineage-23.2 | **4.19.325** | LOS 23.2 MT6785-family kernel tree (rosemary DTS/defconfig; begonia deployment NOT independently verified) |
+| lineage-24.0 (default) | **4.19.325** | LOS 24.0 MT6785-family (A16-era); begonia boot NOT confirmed by this tree alone; repo last push **2026-10-31** [V] |
 
 ("openela" = OpenELA LTS-continuation rebrand of stable sublevels [I].) Per-branch tip commit dates and the device-repo branch list could not be fetched — GitHub API rate limit hit mid-task (see Limitations); branch SHAs: lineage-17.1 `a48fdea8`, lineage-20 `81a4186a`, lineage-21 `b46a1098`, lineage-22.2 `262ad067`, lineage-23.0 `2e1ddbd7`, lineage-23.2 `b74ec728`, lineage-24.0 `30485853` [V].
 Cross-link: the UBports kernel repo's `lineage-17.1` branch tip `a48fdea8` is the **identical commit** to LOS `lineage-17.1` tip `a48fdea87dcf` [V — SHA equality].
@@ -81,11 +83,11 @@ Cross-link: the UBports kernel repo's `lineage-17.1` branch tip `a48fdea8` is th
 
 An Android 16/17-era ROM label does **not** imply a modern kernel — verified:
 
-- **LineageOS** (newest generation, kernel repo pushed 2026-10-31 [V]): LOS 23.2/24.0 (A16-era) run **Linux 4.19.325**; older LOS 20–23.0 ran 4.14.3xx (Makefile-verified [V]).
+- **LineageOS MT6785 kernel source** (pushed 2026-10-31 [V]): branches 23.2/24.0 contain **Linux 4.19.325** (and a `rosemary` board DTS/defconfig); older branches contain 4.14.x (Makefile-verified [V]). **This does not establish that a current ROM boots Linux 4.19 on begonia**; an independently linked begonia kernel/ROM build and device logs are still needed.
 - **EvolutionX "16.0"** (Android 16, `EvolutionX-16.0-20260525-begonia-11.7-Unofficial.zip`, posted 2026 on 4PDA [V-cache]) links its "Kernel" to the **Suzaku Kernel V2** post (p=144852836) [V].
 - **Project Infinity X 3.12** (Android 16, released 2026-08-25, post p=144878394): changelog item 12 — "Осуществлен переход на новейшее ядро Suzaku" ("moved to the newest Suzaku kernel") [V-cache-fresh].
 - **DerpFest 16.2** (Android 16, build 2026-04-03, post p=144870980, by @rabbiraihan789, begonia tree credits @Saikrishna1504/@WuxinG90): install flow says "Flash KSU kernel OR Magisk" — a 4.x custom kernel zip [V-cache-fresh]; exact base unverified [I].
-- Highest verified Linux base in any Android kernel tree for begonia: **4.19.325** (LOS 23.2/24.0). No begonia Android ROM or kernel tree runs 5.x/6.x/7.x [V-absence across all trees surveyed; high confidence]. Modern bases exist only for Linux-distro kernels (§4).
+- Highest observed Linux base in **MT6785-family Android vendor kernel sources indexed here**: **4.19.325** (LOS MT6785 branches 23.2/24.0). Begonia-specific, working 4.19 integration remains a community self-report, not a fully traced source-to-device claim. No begonia Android ROM or kernel tree runs 5.x/6.x/7.x [V-absence across all trees surveyed; high confidence]. Modern bases exist only for Linux-distro kernels (§4).
 
 ## 3. Halium kernel (Ubuntu Touch)
 

@@ -1,0 +1,83 @@
+name: Clean up completed research branches
+
+# Removes only verified already-integrated research branches from the first wave,
+# and automatically prunes branches of future merged PRs from THIS repository.
+# Never deletes main, changes a device, or touches external repositories.
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/branch-cleanup.yml
+  pull_request:
+    types: [closed]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  prune-first-wave:
+    name: Delete first-wave refs only if HEAD is unchanged
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check original branch SHAs and remove obsolete branches
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          delete_if_unchanged() {
+            local branch="$1" expected="$2" actual
+            [[ "$branch" != "main" ]] || return 1
+            actual="$(gh api "repos/${REPO}/git/ref/heads/${branch}" --jq '.object.sha' 2>/dev/null || true)"
+            if [[ -z "$actual" ]]; then
+              echo "Already absent: $branch"
+              return 0
+            fi
+            if [[ "$actual" != "$expected" ]]; then
+              echo "::warning::Preserving $branch: new commits since audit ($actual != $expected)"
+              return 0
+            fi
+            echo "Removing superseded branch $branch at $actual"
+            gh api --method DELETE "repos/${REPO}/git/refs/heads/${branch}" >/dev/null
+          }
+
+          # Original PRs #1, #2 merged; #3 closed superseded, its content
+          # manually committed to main and independently checked.
+          delete_if_unchanged "audit/independent-verification-2026-11-21" "071791dad18188f7e91815b92bb7077215979d81"
+          delete_if_unchanged "docs/ru-firmware-terminology-2026-11-21" "54827272a6cd223d0c64498024d18cc268958ef2"
+          delete_if_unchanged "research/kernel-419-root-provenance-2026-11-21" "dba032c5499b015011aaa5ffb5036b1ffeb68239"
+
+  prune-merged-pr:
+    name: Remove source branch after successful merge
+    if: >-
+      github.event_name == 'pull_request' &&
+      github.event.pull_request.merged == true &&
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      github.event.pull_request.head.ref != 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Delete unchanged source branch, leave newer commits intact
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          BRANCH: ${{ github.event.pull_request.head.ref }}
+          EXPECTED_SHA: ${{ github.event.pull_request.head.sha }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$BRANCH" != "main" ]] || exit 1
+          actual="$(gh api "repos/${REPO}/git/ref/heads/${BRANCH}" --jq '.object.sha' 2>/dev/null || true)"
+          if [[ -z "$actual" ]]; then
+            echo "Source branch already absent: $BRANCH"
+          elif [[ "$actual" != "$EXPECTED_SHA" ]]; then
+            echo "::warning::Preserving $BRANCH: it changed after PR merge"
+          else
+            gh api --method DELETE "repos/${REPO}/git/refs/heads/${BRANCH}" >/dev/null
+            echo "Deleted merged PR branch $BRANCH"
+          fi

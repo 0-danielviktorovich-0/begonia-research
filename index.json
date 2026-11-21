@@ -412,6 +412,41 @@
         "https://kernelsu.org/guide/metamodule.html"
       ],
       "status": "covered; primary upstream checked 2026-11-21; untested on target hardware"
+    },
+    {
+      "topic": "kernel-414-to-419-ai-porting-payment-integrity",
+      "file": "22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md",
+      "section_anchor": "1-linux-414--419-chto-oznachaet-perenos-na-dele",
+      "key_sources": [
+        "https://github.com/xiaomi-mt6785-dev/android_kernel_xiaomi_mt6785",
+        "https://github.com/criollojoel10/begonia-pmos-tianma",
+        "https://developer.android.com/google/play/integrity/verdicts",
+        "https://support.google.com/wallet/answer/12200245"
+      ],
+      "status": "covered; source files and official payment docs observed 2026-11-21; physical begonia 4.19 and Wi-Fi test independent reproduction pending"
+    },
+    {
+      "topic": "begonia-kernel-419-telegram-source-contact",
+      "file": "23-419-TELEGRAM-OUTREACH.md",
+      "section_anchor": "public-announcement-what-was-actually-verified",
+      "key_sources": [
+        "https://t.me/s/RedmiNote8ProUpdates",
+        "https://github.com/Saikrishna1504",
+        "https://t.me/saikrishna1504"
+      ],
+      "status": "covered; announcement indexed as likely 2026-11-17 via public aggregator; exact Telegram post ID, media, patchset and hardware reproduction unverified"
+    },
+    {
+      "topic": "saikrishna-begonia-source-stack-and-419-migration",
+      "file": "24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md",
+      "section_anchor": "3-exact-419-transition-commits--newly-identified",
+      "key_sources": [
+        "https://github.com/Saikrishna1504/device_redmi_begonia",
+        "https://github.com/Saikrishna1504/vendor_redmi_begonia",
+        "https://github.com/Saikrishna1504/vendor_redmi_begonia-firmware",
+        "https://github.com/Saikrishna1504/device_redmi_begonia/commit/d78e16d11686806b1f0b24c6b3c149255a950ac0"
+      ],
+      "status": "verified source architecture and 2026-11-13/15 4.19 begonia device-tree commits; full 4.19 kernel source and on-device test remain unverified; RU digest indexed"
     }
   ]
 }

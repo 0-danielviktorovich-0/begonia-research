@@ -1,5 +1,7 @@
 # Ubuntu Touch (24.04 noble) on Xiaomi Redmi Note 8 Pro (begonia) — Port Deep-Dive
 
+> **Potential microphone/audiopath lead (2026-11-21):** [Saikrishna's current begonia device tree](https://github.com/Saikrishna1504/device_redmi_begonia/tree/axion) includes [audio_policy_configuration.xml](https://github.com/Saikrishna1504/device_redmi_begonia/blob/axion/configs/audio/audio_policy_configuration.xml) mapping built-in front/back mic, Voice Call In and Echo Ref, a comprehensive `configs/audio/audio_param` directory, audio shim and blob fixups. Compare with Droidian and UT Halium 10 before swapping vendor images. [Detailed audit](24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md).
+
 > **Browser access reconciliation (2026-11-21):** Early fetch attempts to XDA/4PDA were blocked, but subsequent Hermes Brave/owner captures succeeded for selected pages (details in [_context/HUMAN-ASSISTS.md](_context/HUMAN-ASSISTS.md)); the feature matrix still needs physical begonia validation.
 
 Research date: 2026-11-21 (JST). Method: GitLab REST API (unauthenticated) against both port repos, cached devices.ubuntu-touch.io device page, docs.ubports.com porting docs, GitHub API repo search, forums.ubports.com (search API down — see Limitations). All dates UTC unless noted.
