@@ -155,3 +155,46 @@ No README exists in the device repo (raw fetch → HTTP 404, verified-direct). T
 
 ## Sources appended to shared log (new records this task)
 `ut-gitlab-device-repo`, `ut-gitlab-device-issues`, `ut-gitlab-device-commits`, `ut-gitlab-kernel-repo`, `ut-gitlab-raw-files` (deviceinfo/build.sh/halium.yaml/CI/Makefile), `docs-ubports-porting-intro`, `docs-ubports-build-and-boot`, `forums-topic-11798`, `forums-topic-8114`, `forums-category-113`, `github-jhuny-kernel-mt6785-halium`, `github-flamelab-halium-manifest`, `gitlab-volte-issue-1335-cited`, `gitlab-agsps-location-service-13-cited`, `gitlab-repowerd-11-cited`.
+
+
+---
+
+## Appendix — Droidian on begonia (the working-mic Halium sibling, added 2026-11-22)
+
+This file is UT-centric; Droidian deserves its own record because **its adaptation has the working
+microphone this port lacks**. Facts verified live 2026-11-22:
+
+- **Kernel**: [begonia-linux/linux-android-begonia](https://github.com/begonia-linux/linux-android-begonia),
+  branch `droidian` — Makefile **4.14.141** (stock MIUI-12-A10 base + Halium-10 patches). The UT GitLab
+  kernel (halium-10.0) is the same 4.14.141 base — the two ports share the Halium-10 plumbing.
+- **Adaptation**: [begonia-linux/adaptation-xiaomi-begonia (droidian branch)](https://github.com/begonia-linux/adaptation-xiaomi-begonia/tree/droidian),
+  release `latest` 2024-09-15 (3 .debs). Porter-claimed hardware matrix: **microphone ✔, camera ✔
+  (droidian-camera + gst), calls/data/SMS/dual-SIM/MMS ✔, fingerprint ✔, rotation ✔, proximity ✔,
+  vibration ✔, speaker/headphones/volume/BT-audio ✔, WiFi ✔, Bluetooth ✔, NFC ✔, SDcard ✔, Waydroid ✔,
+  MTP ✔; auto-brightness ✗, hotspot ✗ (fixable), GPS partial, encryption ✗.**
+- Porters: Halhadus (main), rifux; support t.me/begonia_linux. Full build route:
+  [_context/HALIUM-UT-BUILD-PLAN.md](_context/HALIUM-UT-BUILD-PLAN.md).
+
+### Kernel ladder for the Linux phase (owner's "latest kernel" ambition, mapped honestly)
+
+Halium-10 rootfs (Droidian AND UT) binds to the **A10 vendor** + a Halium-10-patched kernel. The newest
+public begonia kernels (4.19.325 PoWeR+ shipped in Axion 2.9 — device-verified; 4.14.357-openela on
+Saikrishna's `main`) are **not** Halium-patched. Ladder:
+
+1. **Baseline (ship as-is)**: 4.14.141 halium kernel from begonia-linux — install Droidian, walk the
+   hardware matrix on-device, compare against the porter table. Days, not weeks.
+2. **Modern 4.14**: backport Halium-10 patches (config fragment: paranoid networking off, binder/fs
+   bits) onto **Saikrishna's 4.14.357-openela** (`main`) — same 4.14 ABI keeps the A10 vendor happy;
+   this is the "latest working 4.14" the owner wants. Medium difficulty; the clean-upstream target for
+   the RE exercises ([15](15-RE-IMPROVEMENT-PLAN.md) unpacking recipe).
+3. **4.19+**: only with a Halium-11+ base (newer vendor) — that is the later stage of
+   [15]'s sequencing (mic fix → halium-11), not a Droidian-10 step. The 4.19.325 experience from Axion
+   informs this but cannot be dropped into Halium-10 directly.
+
+### Test plan (owner-approved)
+
+1. Droidian baseline on stock 4.14.141 halium kernel → hardware matrix on-device vs porter claims.
+2. Same device, compare battery/thermals against Axion 2.9 (current daily: A16, 4.19.325).
+3. Kernel experiments (ladder step 2) on Droidian first; UT port on the shared Halium-10 base after the
+   mic fix lands ([15] Stage 1). Reflash-to-older-version remains the fallback at any point
+   ([07 §N.2](../recovery/07-RECOVERY-SAFETY.md) return path).
