@@ -4,6 +4,8 @@ One-hop navigation for humans and agents. Every major topic → the file + secti
 
 All "verified" dates are observation stamps (REQUIREMENTS row 36): the day we last looked at the underlying source — **2026-11-21 for the whole research run** unless noted.
 
+**[Русский словарь типов прошивок и технических терминов](19-ROM-TERMS-GLOSSARY-RU.md)** — начать здесь, если CFW, Non-CFW, GSI, vendor, Halium, mainline, recovery и номера версий пока неочевидны.
+
 ## Topic map
 
 | Topic | Where | What's there | Verified |
