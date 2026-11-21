@@ -424,6 +424,17 @@
         "https://support.google.com/wallet/answer/12200245"
       ],
       "status": "covered; source files and official payment docs observed 2026-11-21; physical begonia 4.19 and Wi-Fi test independent reproduction pending"
+    },
+    {
+      "topic": "begonia-kernel-419-telegram-source-contact",
+      "file": "23-419-TELEGRAM-OUTREACH.md",
+      "section_anchor": "public-announcement-what-was-actually-verified",
+      "key_sources": [
+        "https://t.me/s/RedmiNote8ProUpdates",
+        "https://github.com/Saikrishna1504",
+        "https://t.me/saikrishna1504"
+      ],
+      "status": "covered; announcement indexed as likely 2026-11-17 via public aggregator; exact Telegram post ID, media, patchset and hardware reproduction unverified"
     }
   ]
 }
