@@ -28,6 +28,7 @@ This is the primary international entry point for the Redmi Note 8 Pro (begonia,
 | 08 | Prioritized engineering roadmap | [Development roadmap](../../08-DEVELOPMENT-ROADMAP.md) |
 | 14 | Mainline Linux 6.x/7.x approach, missing drivers and DT work | [Mainline upgrade path](../../14-MAINLINE-UPGRADE-PATH.md) |
 | 20 | KSU/Non-KSU, Linux 4.19 upstreams and patch provenance | [English digest](20-kernel-root-ecosystem.md) · [Full Russian original](../../20-KERNEL-419-ROOT-ECOSYSTEM-RU.md) |
+| 23 | **Linux 4.19 begonia developer announcement, contact and source-request draft** | [Developer outreach and evidence](../../23-419-TELEGRAM-OUTREACH.md) · [@Saikrishna1504](https://t.me/saikrishna1504) |
 | 22 | Kernel forward-port using AI/REA, payment integrity | [English digest](22-kernel-forward-port.md) · [Full Russian original](../../22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md) |
 
 ## Root, recovery, safety and reverse engineering
