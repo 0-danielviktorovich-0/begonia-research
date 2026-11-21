@@ -3,6 +3,9 @@
 Research date: 2026-11-21 (JST). Dimension: kernels. Method: GitHub/GitLab APIs (curl/urllib), raw.githubusercontent Makefile heads, kernel.org cgit, Wayback snapshot of XDA megathread, cached 4PDA pages. No git commands; research-only.
 Legend: **[V]** = verified directly (API/page/file fetched by this task, with URL+ref); **[I]** = inferred (marked with basis); confidence given per claim (high/medium/low).
 
+
+**Follow-up 2026-11-21:** [20-KERNEL-419-ROOT-ECOSYSTEM-RU.md](20-KERNEL-419-ROOT-ECOSYSTEM-RU.md) records additional 4.19 repositories, their actual Makefile versions, the shared LineageOS/xiaomi-mt6785-dev head SHA, Saikrishna's 4.14.357-openela and a real NoVA KSU/non-KSU build example. See [kernel-root-provenance.csv](kernel-root-provenance.csv). A source tree or successful build does **not** by itself confirm that a kernel boots reliably on begonia.
+
 ---
 
 ## 1. Stock kernel (Xiaomi/MIUI)
