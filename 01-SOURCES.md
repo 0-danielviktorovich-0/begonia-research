@@ -1,6 +1,6 @@
 # 01 — Sources: consolidated index (begonia-research)
 
-Machine twin: [sources.json](sources.json) (one record per unique URL, deduped from the append-only research log; **206 records**). Every record is **observation-anchored** (REQUIREMENTS row 36): `observed_at` = when we last looked (research day 2026-11-21), `source_last_change_observed` = the source's own last-change date **as exposed** at that moment (repo push, page/snapshot date, thread page date) or `null` when the source exposed nothing date-like — never guessed. **These are observations, not guarantees:** any source may have changed after `observed_at`.
+Machine twin: [sources.json](sources.json) (one record per unique URL, deduped from the append-only research log; **209 records**). Every record is **observation-anchored** (REQUIREMENTS row 36): `observed_at` = when we last looked (research day 2026-11-21), `source_last_change_observed` = the source's own last-change date **as exposed** at that moment (repo push, page/snapshot date, thread page date) or `null` when the source exposed nothing date-like — never guessed. **These are observations, not guarantees:** any source may have changed after `observed_at`.
 
 Rendered per entry as: *As of 2026-11-21, the last change observed in this source was \<date\>* — or *no source-side change date was exposed*.
 
@@ -283,7 +283,7 @@ These are source-index observations, **not evidence that any given 4.19 kernel, 
 
 ## Independent follow-up — kernel forward-port, pmOS Wi-Fi and payments (2026-11-21)
 
-The canonical [sources.json](sources.json) currently indexes **206 unique URL records**. The six additional records below distinguish direct reading of upstream code/docs from **author-reported hardware results**, which have not been independently reproduced on the owner's phone.
+The canonical [sources.json](sources.json) currently indexes **209 unique URL records**. The six additional records below distinguish direct reading of upstream code/docs from **author-reported hardware results**, which have not been independently reproduced on the owner's phone.
 
 - [Third-party Linux 6.16.4 begonia pmOS build](https://github.com/criollojoel10/begonia-pmos-tianma) — author and logs report Wi-Fi success on 2026-09-27 using vendor `wlan_gen4m` + WMT firmware. **Not upstream-native mt76; not validated by this reviewer**.
 - [Google official Play Integrity verdicts](https://developer.android.com/google/play/integrity/verdicts) — BASIC/DEVICE/STRONG levels and OS/vendor security-patch rules.
@@ -293,3 +293,10 @@ The canonical [sources.json](sources.json) currently indexes **206 unique URL re
 - [Redmi Note 8 Pro public updates](https://t.me/s/RedmiNote8ProUpdates) — author self-report of experimental begonia 4.19; exact source commit/build/hardware validation still missing.
 
 For interpretation and source-specific limitations see [22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md](22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md).
+
+
+## Follow-up: Linux 4.19 begonia author and date correction (2026-11-21)
+
+The canonical [sources.json](sources.json) currently indexes **209 distinct URLs**. The additional **three** references record [@Saikrishna1504's GitHub profile](https://github.com/Saikrishna1504), his [public Telegram contact](https://t.me/saikrishna1504) and a [TG.ME channel archive index](https://tg.me/redminote8proupdates) of the [public Redmi Note 8 Pro UPDATES post](https://t.me/s/RedmiNote8ProUpdates).
+
+The author claims working Linux 4.19 on begonia and invites testers. **November 17, 2026** is the likely date shown by the **third-party aggregator**, not a verified primary Telegram timestamp. Previous references to **September 2026** for this particular 4.19 announcement were incorrect. Do **not** confuse it with the independently separate **September 27, 2026** Wi-Fi report in the experimental Linux 6.16.4 postmarketOS fork. Full provenance, missing post ID/attached screenshot and an unsent source request: [23-419-TELEGRAM-OUTREACH.md](23-419-TELEGRAM-OUTREACH.md).
