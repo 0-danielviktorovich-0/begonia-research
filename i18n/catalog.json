@@ -666,6 +666,32 @@
           "derived_from_blob": "512f61d13e363c51dffdae6a9d794f3cf8f0b173"
         }
       }
+    },
+    {
+      "id": "25",
+      "titles": {
+        "en": "Pinned 2026 kernel and ROM source verification",
+        "ru": "Сверка ядра и прошивок по исходникам и Git SHA (2026)"
+      },
+      "original": {
+        "path": "docs/en/research/begonia-kernel-and-rom-evidence-2026-11.md",
+        "lang": "en",
+        "blob_sha": "941c806c31282dfc3113e817c3e36b83d17d6dcd"
+      },
+      "locales": {
+        "en": {
+          "path": "docs/en/research/begonia-kernel-and-rom-evidence-2026-11.md",
+          "coverage": "source",
+          "review": "authoritative-source",
+          "derived_from_blob": null
+        },
+        "ru": {
+          "path": "docs/ru/index.md",
+          "coverage": "directory-only",
+          "review": "navigation-only",
+          "derived_from_blob": null
+        }
+      }
     }
   ]
 }

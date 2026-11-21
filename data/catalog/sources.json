@@ -1,7 +1,7 @@
 {
   "generated": "2026-11-21",
   "record_semantics": "One record per unique source URL. observed_at = when WE last looked (research day; no intraday times were logged). source_last_change_observed = the source's OWN last-change date AS EXPOSED at observation (repo push, page/oldid/snapshot date, thread last-post date) or null when the source exposed nothing date-like. These are observations, not guarantees: any source may have changed after observed_at.",
-  "count": 244,
+  "count": 251,
   "sources": [
     {
       "id": "xda-unlock-guide-3995919",
@@ -3017,6 +3017,90 @@
       "observed_at": "2026-11-21",
       "source_last_change_observed": "2026-11-15T09:53:44Z",
       "observation_note": "GitHub commit API date and changed file list verified; code exists, kernel boot not independently tested."
+    },
+    {
+      "id": "begonia-wuxing90-suzaku-2026",
+      "url": "https://github.com/WuXing90/begonia_kernel_dev/blob/0d2ec0ae973ec500b559e282fcafb544d295ba5d/Makefile",
+      "title": "Suzaku-bka Linux kernel Makefile (4.14.356)",
+      "author": "WuXing90",
+      "date": "commit head 2026-08-07",
+      "access": "verified-direct",
+      "credibility": "high",
+      "used_for": "Begonia kernel version 4.14.356-openela-rc1",
+      "observed_at": "2026-11-21",
+      "source_last_change_observed": "2026-08-07"
+    },
+    {
+      "id": "begonia-saikrishna-kernel-openela-2026",
+      "url": "https://github.com/Saikrishna1504/kernel_xiaomi_mt6785/blob/a63454e153cd57f410c7f6f8565f05b943198be1/Makefile",
+      "title": "Saikrishna MT6785 Linux kernel Makefile (4.14.357)",
+      "author": "Saikrishna1504",
+      "date": null,
+      "access": "verified-direct",
+      "credibility": "high",
+      "used_for": "Public MT6785 branch is Linux 4.14.357, not 4.19",
+      "observed_at": "2026-11-21",
+      "source_last_change_observed": null
+    },
+    {
+      "id": "begonia-saikrishna-k419-boardconfig-2026",
+      "url": "https://github.com/Saikrishna1504/device_redmi_begonia/blob/0ce116f1e5cffd58953fc37c24fb600b6e003272/BoardConfig.mk",
+      "title": "Saikrishna begonia device BoardConfig.mk (k419 target)",
+      "author": "Saikrishna1504",
+      "date": null,
+      "access": "verified-direct",
+      "credibility": "high",
+      "used_for": "4.19-targeting defconfig reference requiring source confirmation",
+      "observed_at": "2026-11-21",
+      "source_last_change_observed": null
+    },
+    {
+      "id": "begonia-saikrishna-manifest-udc-2026",
+      "url": "https://github.com/Saikrishna1504/local_manifests/blob/079a599d2208192a3457f6cc2a2e490e2716da42/mt6785.xml",
+      "title": "Saikrishna local manifest mt6785.xml (kernel main)",
+      "author": "Saikrishna1504",
+      "date": null,
+      "access": "verified-direct",
+      "credibility": "high",
+      "used_for": "MT6785 kernel repository selected by published build manifest",
+      "observed_at": "2026-11-21",
+      "source_last_change_observed": null
+    },
+    {
+      "id": "begonia-axion-device-config-2026",
+      "url": "https://github.com/AxionAOSP-devices/android_device_redmi_begonia/blob/334810a4315a0fca3b250eebec0f5c69ff0ddab9/BoardConfig.mk",
+      "title": "AxionAOSP-devices begonia BoardConfig.mk",
+      "author": "AxionAOSP-devices",
+      "date": null,
+      "access": "verified-direct",
+      "credibility": "high",
+      "used_for": "begonia_user_defconfig independently checked; not assumed k419",
+      "observed_at": "2026-11-21",
+      "source_last_change_observed": null
+    },
+    {
+      "id": "begonia-axion-install-wiki-2026",
+      "url": "https://github.com/AxionAOSP/official_devices/blob/aa130566749d970c5537a7f4d3e3310d06403d4e/Wiki/begonia.md",
+      "title": "AxionAOSP begonia installation guide",
+      "author": "AxionAOSP",
+      "date": null,
+      "access": "verified-direct",
+      "credibility": "high",
+      "used_for": "ROM-specific installation and recovery rules; no kernel version",
+      "observed_at": "2026-11-21",
+      "source_last_change_observed": null
+    },
+    {
+      "id": "begonia-saalim-lineage23-2026",
+      "url": "https://squadri.me/devices/begonia-lineageos/",
+      "title": "LineageOS 23.2 - Redmi Note 8 pro (begonia)",
+      "author": "Saalim Quadri",
+      "date": "2026-03-28",
+      "access": "verified-direct",
+      "credibility": "high",
+      "used_for": "Unofficial Android 16.2 ROM listing Linux kernel 4.14",
+      "observed_at": "2026-11-21",
+      "source_last_change_observed": "2026-03-28"
     }
   ]
 }
