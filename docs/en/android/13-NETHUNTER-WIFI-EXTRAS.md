@@ -173,3 +173,42 @@ Fresh web_search pass found two NEW leads beyond §1.3's NF verdict:
    [kimocoder/qualcomm_android_monitor_mode](https://github.com/kimocoder/qualcomm_android_monitor_mode)
    (QCACLD: monitor flips on via `con_mode=4` sysfs, no patch, on modern kernels).
 Both leads are registered as the unified-kernel dev track (skill `unified-kernel-build`).
+
+## 1.6 RESEARCH WAVE RESULT 2026-11-22 (W20 source dive + W21 community sweep) — verdict FLIPPED
+
+**Internal-WiFi monitor on begonia: FEASIBLE.** Two concrete paths, both rooted in verified facts:
+
+### 1.6.1 Chip identity CORRECTED (supersedes §1.1 "MT7663-family suspected")
+begonia's WiFi/BT = **SoC-internal connsys, NOT a discrete MT7663S**: build exports `MTK_COMBO_CHIP=CONNAC`,
+`WLAN_CHIP_ID=6785`, `CONFIG_MTK_COMBO_WIFI_HIF=axi` (connectivity/Makefile:50-51, both clones) [V];
+dts: `wifi@18000000` + `consys@18002000 ("mediatek,mt6785-consys")`, no SDIO child, no chip part number [V].
+Implication: the mainline-mt76 route (§1.2, mt7663s) targets a DIFFERENT (discrete-SDIO) context —
+still relevant for the far pmOS phase, but not the phone's connsys.
+
+### 1.6.2 The capability already ships in gen4m [V — file:line evidence in W20-OUT]
+`CFG_SUPPORT_SNIFFER=1` compile-on (config.h:1087 saikrishna / :1163 los); full RX monitor pipeline
+(nicRxProcessMonitorPacket → radiotap%d netdev, ARPHRD_IEEE80211_RADIOTAP); armed by private command
+**`"MONITOR <en> <chan> <width> <sco>"`** (gl_wext_priv.c:2869/9962, procfs `/proc/wlan/driver` too)
+→ **FW command 0xFC CMD_ID_SET_MONITOR** (wsys_cmd_handler_fw.h:358). Kali's "unsupported" applies to
+the missing NL80211 surface, not the capability.
+
+### 1.6.3 Two implementation paths
+- **Path A (SMALL, ~3 patches)**: register `BIT(NL80211_IFTYPE_MONITOR)` (gl_init.c:2411), add MONITOR
+  branch in mtk_cfg80211_change_iface (gl_cfg80211.c:152-156 — currently -EINVAL), implement
+  .set_monitor_channel mapping onto CMD_MONITOR_SET_INFO fields. Sketch: W20-OUT-GEN4M-FEASIBILITY.md Q3/Q5.
+  Risk: FW-side 0xFC support unverifiable from source — test on device first via `/proc/wlan/driver`.
+- **Path B (proven recipe, port)**: [TheThunderstormX/mt6789-wifi-monitor](https://github.com/TheThunderstormX/mt6789-wifi-monitor)
+  (connac2, MT6789 emerald; verified on-device: 2.4 GHz capture 162 frames/6 APs/8 s) — kprobe on
+  nicRxProcessDataPacket/MgmtPacket + RFCR register write via priv_driver_set_mcr → /proc/monx4 → radiotap pcap.
+  All target symbols exist verbatim in begonia's gen4m [V]; RFCR address is connac2-empirical → relocate
+  for begonia CONNAC (repo's REGISTERS.md documents the snapshot-differencing method) [I, medium].
+- Both paths: **RX capture only** (radiotap0 has no ndo_start_xmit; monx is capture-only; WPA2 stays
+  encrypted). Injection → external OTG adapters (§1.3 table) or future TX work.
+
+### 1.6.4 Ledger updates (§4)
+- HYDRA kernel: CLOSED [V] — browser-rendered viperkernels.com/devices/begonia: USB-HID/AIRSPY/HACKRF +
+  dongle chipsets only, no internal monitor (A12/13, 2023-06 last build).
+- `mt7663 pca monitor`: re-run → 0 hits [NF stays].
+- Kali MTK row: still USB dongles only; new MTK NetHunter community kernel (Realme C15, mt6765) = dongle-only.
+- PenMon (4PDA): Qualcomm-only [V].
+Full evidence: _context/W20-OUT-GEN4M-FEASIBILITY.md, _context/W21-OUT-COMMUNITY-SWEEP.md (19-row table).

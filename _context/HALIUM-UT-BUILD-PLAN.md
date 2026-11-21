@@ -83,3 +83,10 @@ containers. Needs ROOT (KSU recommended) + kernel options (fragment:
   begonia" (pixeldrain links in-channel). Candidates for the Axion-era vendor without building.
 - Sequence: root Axion (KSU via kernel swap or Magisk boot patch) → install Droidspaces APK → Debian
   container → verify GPU/audio/network toggles. Then the same kernel serves the Halium track.
+
+### Unified-kernel bonus (2026-11-22): internal-WiFi monitor is IN
+gen4m ships a compile-enabled monitor stack (priv cmd "MONITOR", FW 0xFC, radiotap0; W20-OUT evidence)
++ a proven connac2 port recipe (mt6789-wifi-monitor; symbols verbatim in begonia trees; RFCR relocation
+needed). Add to the unified kernel build: either the 3-patch cfg80211 NL80211 surface (Path A) or the
+monx LKM port (Path B). Chip corrected: SoC-internal CONNAC (not MT7663S). RX-only; injection stays on
+external adapters. Details: docs/en/android/13-NETHUNTER-WIFI-EXTRAS.md §1.6.
