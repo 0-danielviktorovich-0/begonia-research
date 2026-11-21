@@ -1,10 +1,10 @@
 {
   "generated": "2026-11-21",
-  "note": "Human twin: INDEX.md. section_anchor = GitHub-style slug of the owning heading (empty string = whole file). key_sources = URLs that carry the primary evidence for the topic. status includes the observation date (REQUIREMENTS row 36): as of 2026-11-21 unless stated otherwise.",
+  "note": "Human twin: docs/en/research/master-topic-index.md. section_anchor = GitHub-style slug of the owning heading (empty string = whole file). key_sources = URLs that carry the primary evidence for the topic. status includes the observation date (REQUIREMENTS row 36): as of 2026-11-21 unless stated otherwise.",
   "topics": [
     {
       "topic": "device-overview",
-      "file": "00-README.md",
+      "file": "docs/en/research/00-README.md",
       "section_anchor": "the-device-verified-facts",
       "key_sources": [
         "https://wiki.nura.eco/wiki/Xiaomi_Redmi_Note_8_Pro_(xiaomi-begonia)",
@@ -14,7 +14,7 @@
     },
     {
       "topic": "official-miui-history",
-      "file": "02-FIRMWARE-HISTORY.md",
+      "file": "docs/en/android/02-FIRMWARE-HISTORY.md",
       "section_anchor": "1-official-miui-historical--line-ended-2022",
       "key_sources": [
         "https://xmfirmwareupdater.com/miui/begonia/",
@@ -25,7 +25,7 @@
     },
     {
       "topic": "vendor-base-per-miui-build",
-      "file": "02-FIRMWARE-HISTORY.md",
+      "file": "docs/en/android/02-FIRMWARE-HISTORY.md",
       "section_anchor": "71-official-miui-all-1-rows-csv-rows-222",
       "key_sources": [
         "https://github.com/ZIDAN44/redmi_begonia_dump",
@@ -36,7 +36,7 @@
     },
     {
       "topic": "gsi-era",
-      "file": "02-FIRMWARE-HISTORY.md",
+      "file": "docs/en/android/02-FIRMWARE-HISTORY.md",
       "section_anchor": "2-gsi-era-dec-2019--2020-historical",
       "key_sources": [
         "https://github.com/phhusson/treble_experimentations",
@@ -47,7 +47,7 @@
     },
     {
       "topic": "native-custom-rom-catalog",
-      "file": "02-FIRMWARE-HISTORY.md",
+      "file": "docs/en/android/02-FIRMWARE-HISTORY.md",
       "section_anchor": "3-native-custom-rom-catalog-current-state-as-of-2026-11-21-first-release-dates-historical",
       "key_sources": [
         "https://crdroid.net/downloads",
@@ -58,7 +58,7 @@
     },
     {
       "topic": "per-rom-source-inventory",
-      "file": "02-FIRMWARE-HISTORY.md",
+      "file": "docs/en/android/02-FIRMWARE-HISTORY.md",
       "section_anchor": "7-per-rom-source-inventory-appended-2026-11-21-user-mandated",
       "key_sources": [
         "https://github.com/crdroidandroid/android_device_redmi_begonia",
@@ -69,7 +69,7 @@
     },
     {
       "topic": "rom-build-recipes",
-      "file": "11-BLOBS-FIRMWARE-SOURCES.md",
+      "file": "docs/en/kernels/11-BLOBS-FIRMWARE-SOURCES.md",
       "section_anchor": "61-android-rom-build-lineageosaosp-trees",
       "key_sources": [
         "https://github.com/crdroidandroid/android",
@@ -80,7 +80,7 @@
     },
     {
       "topic": "kernels-per-branch",
-      "file": "03-KERNEL-HISTORY.md",
+      "file": "docs/en/kernels/03-KERNEL-HISTORY.md",
       "section_anchor": "2-android-kernel-forks",
       "key_sources": [
         "https://github.com/MiCode/Xiaomi_Kernel_OpenSource",
@@ -92,7 +92,7 @@
     },
     {
       "topic": "kernel-build-recipes",
-      "file": "11-BLOBS-FIRMWARE-SOURCES.md",
+      "file": "docs/en/kernels/11-BLOBS-FIRMWARE-SOURCES.md",
       "section_anchor": "62-kernel-builds",
       "key_sources": [
         "https://github.com/AgentFabulous/begonia/blob/android-11.0/arch/arm64/configs/begonia_user_defconfig",
@@ -102,7 +102,7 @@
     },
     {
       "topic": "mainline-effort",
-      "file": "03-KERNEL-HISTORY.md",
+      "file": "docs/en/kernels/03-KERNEL-HISTORY.md",
       "section_anchor": "4-mainline-effort-linux-on-mt6785",
       "key_sources": [
         "https://github.com/Dinolek/mt6785-mainline",
@@ -113,7 +113,7 @@
     },
     {
       "topic": "mainline-upgrade-path",
-      "file": "14-MAINLINE-UPGRADE-PATH.md",
+      "file": "docs/en/kernels/14-MAINLINE-UPGRADE-PATH.md",
       "section_anchor": "2-the-option-tree-analysis--reasoned-not-independently-tested",
       "key_sources": [
         "https://raw.githubusercontent.com/Dinolek/mt6785-mainline/7.1/arch/arm64/configs/defconfig",
@@ -123,7 +123,7 @@
     },
     {
       "topic": "ubuntu-touch-port",
-      "file": "05-UBUNTU-TOUCH.md",
+      "file": "docs/en/linux/05-UBUNTU-TOUCH.md",
       "section_anchor": "1-current-status",
       "key_sources": [
         "https://devices.ubuntu-touch.io/device/begonia/",
@@ -133,7 +133,7 @@
     },
     {
       "topic": "ubuntu-touch-build",
-      "file": "05-UBUNTU-TOUCH.md",
+      "file": "docs/en/linux/05-UBUNTU-TOUCH.md",
       "section_anchor": "5-build-instructions-for-begonia-specifically",
       "key_sources": [
         "https://gitlab.com/ubports/porting/community-ports/android10/xiaomi-redmi-note-8-pro/xiaomi-begonia/-/raw/master/build.sh",
@@ -143,7 +143,7 @@
     },
     {
       "topic": "droidian-port",
-      "file": "06-DROIDIAN-POSTMARKETOS.md",
+      "file": "docs/en/linux/06-DROIDIAN-POSTMARKETOS.md",
       "section_anchor": "2-droidian-port",
       "key_sources": [
         "https://github.com/begonia-linux/droidian-xiaomi-begonia/releases",
@@ -153,7 +153,7 @@
     },
     {
       "topic": "postmarketos-port",
-      "file": "06-DROIDIAN-POSTMARKETOS.md",
+      "file": "docs/en/linux/06-DROIDIAN-POSTMARKETOS.md",
       "section_anchor": "1-postmarketos-port",
       "key_sources": [
         "https://gitlab.nura.eco/nura/pmaports/-/tree/main/device/testing/device-xiaomi-begonia",
@@ -163,7 +163,7 @@
     },
     {
       "topic": "pmos-build",
-      "file": "11-BLOBS-FIRMWARE-SOURCES.md",
+      "file": "docs/en/kernels/11-BLOBS-FIRMWARE-SOURCES.md",
       "section_anchor": "64-postmarketos",
       "key_sources": [
         "https://wiki.nura.eco/wiki/Pmbootstrap/Installation",
@@ -173,7 +173,7 @@
     },
     {
       "topic": "hardware-components",
-      "file": "04-HARDWARE-DRIVERS.md",
+      "file": "docs/en/kernels/04-HARDWARE-DRIVERS.md",
       "section_anchor": "",
       "key_sources": [
         "https://github.com/Dinolek/mt6785-mainline/tree/7.1/arch/arm64/boot/dts/mediatek",
@@ -183,7 +183,7 @@
     },
     {
       "topic": "touchscreen-firmware",
-      "file": "04-HARDWARE-DRIVERS.md",
+      "file": "docs/en/kernels/04-HARDWARE-DRIVERS.md",
       "section_anchor": "2-touchscreen--works-everywhere",
       "key_sources": [
         "https://gitlab.nura.eco/nura/pmaports/-/tree/main/device/testing/device-xiaomi-begonia",
@@ -193,7 +193,7 @@
     },
     {
       "topic": "gpu-stacks",
-      "file": "04-HARDWARE-DRIVERS.md",
+      "file": "docs/en/kernels/04-HARDWARE-DRIVERS.md",
       "section_anchor": "3-gpu--mali-g76-mc4-bifrost",
       "key_sources": [
         "https://gitlab.nura.eco/nura/pmaports/-/raw/main/device/testing/linux-postmarketos-mediatek-mt6785/APKBUILD",
@@ -203,7 +203,7 @@
     },
     {
       "topic": "modem-nvram-partitions",
-      "file": "07-RECOVERY-SAFETY.md",
+      "file": "docs/en/recovery/07-RECOVERY-SAFETY.md",
       "section_anchor": "partition-map-begonia-64-gb-unit-gpt-from-pmos-wiki-parted-dump-oldid109575-verified-direct-high",
       "key_sources": [
         "https://wiki.nura.eco/wiki/Xiaomi_Redmi_Note_8_Pro_(xiaomi-begonia)",
@@ -213,7 +213,7 @@
     },
     {
       "topic": "recovery-landscape",
-      "file": "07-RECOVERY-SAFETY.md",
+      "file": "docs/en/recovery/07-RECOVERY-SAFETY.md",
       "section_anchor": "30-recovery-landscape-all-known-recovery-options-added-at-synthesis-pass-2026-11-21",
       "key_sources": [
         "https://twrp.me/xiaomi/xiaomiredminote8pro.html",
@@ -224,7 +224,7 @@
     },
     {
       "topic": "recovery-builds",
-      "file": "11-BLOBS-FIRMWARE-SOURCES.md",
+      "file": "docs/en/kernels/11-BLOBS-FIRMWARE-SOURCES.md",
       "section_anchor": "63-recovery-builds-twrp--orangefox",
       "key_sources": [
         "https://github.com/HyperTeam/android_device_redmi_begonia-TWRP",
@@ -234,7 +234,7 @@
     },
     {
       "topic": "unlock-paths",
-      "file": "07-RECOVERY-SAFETY.md",
+      "file": "docs/en/recovery/07-RECOVERY-SAFETY.md",
       "section_anchor": "2-exploit-unlock-path-mtkclient-brom",
       "key_sources": [
         "https://raw.githubusercontent.com/bkerler/mtkclient/main/README-USAGE.md",
@@ -245,7 +245,7 @@
     },
     {
       "topic": "unbrick-rescue",
-      "file": "07-RECOVERY-SAFETY.md",
+      "file": "docs/en/recovery/07-RECOVERY-SAFETY.md",
       "section_anchor": "6-brick-risks--unbricking",
       "key_sources": [
         "https://4pda.to/forum/index.php?showtopic=965629&view=findpost&p=111347904",
@@ -255,7 +255,7 @@
     },
     {
       "topic": "rescue-hardware-minimum",
-      "file": "11-BLOBS-FIRMWARE-SOURCES.md",
+      "file": "docs/en/kernels/11-BLOBS-FIRMWARE-SOURCES.md",
       "section_anchor": "7-rescue-hardware-minimum-is-a-cable-enough",
       "key_sources": [
         "http://web.archive.org/web/20260415164458/https://xdaforums.com/t/guide-info-psa-redmi-note-8-pro-megathread-cfw.4056527/",
@@ -265,7 +265,7 @@
     },
     {
       "topic": "host-toolchain",
-      "file": "07-RECOVERY-SAFETY.md",
+      "file": "docs/en/recovery/07-RECOVERY-SAFETY.md",
       "section_anchor": "host-workstation-requirements-linux--macos--windows",
       "key_sources": [
         "https://raw.githubusercontent.com/bkerler/mtkclient/main/README-INSTALL.md",
@@ -276,7 +276,7 @@
     },
     {
       "topic": "guides-index",
-      "file": "10-GUIDE-INDEX.md",
+      "file": "docs/en/android/10-GUIDE-INDEX.md",
       "section_anchor": "",
       "key_sources": [
         "https://4pda.to/forum/index.php?showtopic=974421&view=findpost&p=91427572",
@@ -287,7 +287,7 @@
     },
     {
       "topic": "nethunter-wifi-monitor",
-      "file": "13-NETHUNTER-WIFI-EXTRAS.md",
+      "file": "docs/en/android/13-NETHUNTER-WIFI-EXTRAS.md",
       "section_anchor": "1-wi-fi-chip--monitor-mode",
       "key_sources": [
         "https://github.com/torvalds/linux/blob/master/drivers/net/wireless/mediatek/mt76/mt7615/Kconfig",
@@ -298,7 +298,7 @@
     },
     {
       "topic": "usb-gadget-hid",
-      "file": "13-NETHUNTER-WIFI-EXTRAS.md",
+      "file": "docs/en/android/13-NETHUNTER-WIFI-EXTRAS.md",
       "section_anchor": "34-usb-gadget--hid-attack-surface-w13-addendum-merged",
       "key_sources": [
         "https://github.com/AgentFabulous/begonia/blob/android-11.0/arch/arm64/configs/begonia_user_defconfig",
@@ -308,7 +308,7 @@
     },
     {
       "topic": "re-entry-points",
-      "file": "11-BLOBS-FIRMWARE-SOURCES.md",
+      "file": "docs/en/kernels/11-BLOBS-FIRMWARE-SOURCES.md",
       "section_anchor": "4-reverse-engineering-entry-points-research-only",
       "key_sources": [
         "https://github.com/bkerler/mtkclient",
@@ -318,7 +318,7 @@
     },
     {
       "topic": "repair-outlook-battery",
-      "file": "08-DEVELOPMENT-ROADMAP.md",
+      "file": "docs/en/linux/08-DEVELOPMENT-ROADMAP.md",
       "section_anchor": "device-repair-outlook-requirements-row-25--registered-not-yet-researched",
       "key_sources": [
         "https://4pda.to/forum/index.php?showtopic=974421&view=findpost&p=94388409"
@@ -327,7 +327,7 @@
     },
     {
       "topic": "open-questions-contradictions",
-      "file": "09-OPEN-QUESTIONS.md",
+      "file": "docs/en/research/09-OPEN-QUESTIONS.md",
       "section_anchor": "1-unresolved-contradictions-kept-dated--not-silenced",
       "key_sources": [
         "https://twrp.me/xiaomi/xiaomiredminote8pro.html",
@@ -337,17 +337,17 @@
     },
     {
       "topic": "not-found-ledger",
-      "file": "09-OPEN-QUESTIONS.md",
+      "file": "docs/en/research/09-OPEN-QUESTIONS.md",
       "section_anchor": "2-not-found-ledger-explicit-searched-absent-markers--never-guessed",
       "key_sources": [],
       "status": "covered; explicit searched-absent markers; 2026-11-21"
     },
     {
       "topic": "sources-and-freshness",
-      "file": "01-SOURCES.md",
+      "file": "docs/en/research/01-SOURCES.md",
       "section_anchor": "",
       "key_sources": [
-        "sources.json"
+        "data/catalog/sources.json"
       ],
       "status": "covered; 200 unique observation-stamped source URLs (as of 2026-11-21); source_last_change_observed is null where not established; new NoMount/4.19 evidence added 2026-11-21"
     },
@@ -362,7 +362,7 @@
       "id": "re-improvement-plan",
       "title": "RE-driven improvement plan",
       "files": [
-        "15-RE-IMPROVEMENT-PLAN.md"
+        "docs/en/linux/15-RE-IMPROVEMENT-PLAN.md"
       ],
       "anchors": [
         "Ground truth firmware",
@@ -374,7 +374,7 @@
       "id": "root-methods",
       "title": "Root methods registry",
       "files": [
-        "16-ROOT-METHODS.md"
+        "docs/en/android/16-ROOT-METHODS.md"
       ],
       "anchors": [
         "Methods matrix",
@@ -384,7 +384,7 @@
     },
     {
       "topic": "android-firmware-terminology-ru",
-      "file": "19-ROM-TERMS-GLOSSARY-RU.md",
+      "file": "docs/ru/android/19-ROM-TERMS-GLOSSARY-RU.md",
       "section_anchor": "0-glavnoe-za-30-sekund",
       "key_sources": [
         "https://developer.android.com/topic/generic-system-image",
@@ -394,7 +394,7 @@
     },
     {
       "topic": "mt6785-kernel-419-and-root-patch-provenance",
-      "file": "20-KERNEL-419-ROOT-ECOSYSTEM-RU.md",
+      "file": "docs/ru/kernels/20-KERNEL-419-ROOT-ECOSYSTEM-RU.md",
       "section_anchor": "2-gde-brat-iskhodniki-iader-begonia--versii-i-dokazatelstva",
       "key_sources": [
         "https://github.com/LineageOS/android_kernel_xiaomi_mt6785",
@@ -404,7 +404,7 @@
     },
     {
       "topic": "nomount-systemless-mount-backends",
-      "file": "21-NOMOUNT-MOUNT-BACKENDS-RU.md",
+      "file": "docs/ru/kernels/21-NOMOUNT-MOUNT-BACKENDS-RU.md",
       "section_anchor": "2-nomount--imenno-tot-submodule-iz-nova-kernels",
       "key_sources": [
         "https://github.com/maxsteeel/nomount",
@@ -415,7 +415,7 @@
     },
     {
       "topic": "kernel-414-to-419-ai-porting-payment-integrity",
-      "file": "22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md",
+      "file": "docs/ru/kernels/22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md",
       "section_anchor": "1-linux-414--419-chto-oznachaet-perenos-na-dele",
       "key_sources": [
         "https://github.com/xiaomi-mt6785-dev/android_kernel_xiaomi_mt6785",
@@ -427,7 +427,7 @@
     },
     {
       "topic": "begonia-kernel-419-telegram-source-contact",
-      "file": "23-419-TELEGRAM-OUTREACH.md",
+      "file": "docs/en/research/23-419-TELEGRAM-OUTREACH.md",
       "section_anchor": "public-announcement-what-was-actually-verified",
       "key_sources": [
         "https://t.me/s/RedmiNote8ProUpdates",
@@ -438,7 +438,7 @@
     },
     {
       "topic": "saikrishna-begonia-source-stack-and-419-migration",
-      "file": "24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md",
+      "file": "docs/en/research/24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md",
       "section_anchor": "3-exact-419-transition-commits--newly-identified",
       "key_sources": [
         "https://github.com/Saikrishna1504/device_redmi_begonia",
