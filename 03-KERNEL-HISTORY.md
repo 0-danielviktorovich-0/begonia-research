@@ -136,7 +136,7 @@ https://github.com/kalpakprod/mt6785-linux — created 2026-11-15, pushed **2026
 ### 4.4 Other / upstreaming status
 
 - Screaming-Bird/mt6785-mainline — created & last pushed 2025-06-05, no description; dormant early tree, role unclear [V-metadata; low confidence on purpose].
-- Upstream/lore: an `site:lore.kernel.org mt6785` web search returned no results [V-weak-negative]; linux-next could not be checked (cgit path 404 — see Limitations). Verdict: **MT6785 mainline support remains out-of-tree; whether patch series are on the mailing lists is unknown** (commit-subject style of Dinolek's tree is mainline-track [I]).
+- Upstream/lore: `site:lore.kernel.org mt6785` web search returned no results [V-weak-negative]; RESOLVED via Brave 2026-11-21T10:05Z — live lore search finds exactly 4 hits for 'mt6785', all 'phy: mediatek: tphy: Add software role switching' (Igor Belwon / Arseniy Velikanov, 2025-08) — relevant to USB role-switch, not device bring-up; linux-next verified live at Linux 7.4.0-rc3 (Makefile, 'Baby Opossum Posse'), still zero mt6785 DTS. Verdict: **MT6785 mainline support remains out-of-tree; whether patch series are on the mailing lists is unknown** (commit-subject style of Dinolek's tree is mainline-track [I]).
 
 ## 5. Mu-Silicium (UEFI firmware — NOT a kernel)
 
@@ -162,8 +162,8 @@ https://github.com/kalpakprod/mt6785-linux — created 2026-11-15, pushed **2026
 
 - **XDA live blocked** (bunny.net challenge; per context pack) — used Wayback snapshot `web.archive.org/web/20260415164458/` of the megathread (fetched fresh, 337,017 bytes, parsed) [V-Wayback]. Other XDA pages not consulted.
 - **GitHub API rate limit exhausted** (shared unauthenticated pool) partway through: per-branch tip commit *dates* for the LOS kernel repo, LOS device-repo branch list, and kalpakprod/LOS latest-commit dates were not fetched (SHAs + Makefile heads were obtained before the limit). Repo-level `pushed_at` values are verified.
-- **linux-next** cgit path returned 404 → MT6785 status in linux-next unverified.
-- **lore.kernel.org**: backend search returned no mt6785 hits (weak negative only — not proof of absence on the lists).
+- **linux-next** RESOLVED 2026-11-21T10:05Z (Brave): live at Linux 7.4.0-rc3; MT6785 status unchanged — no mt6785 DTS in the tree per 03 §4 checks.
+- **lore.kernel.org**: RESOLVED 2026-11-21T10:05Z (Brave): exactly 4 hits for 'mt6785' — all tphy USB role-switch patch discussion, none device bring-up.
 - **ishan-parihar/begonia_kernel_dev**: surfaced by web search but GitHub API returns 404 → repo deleted/private; contents unknown.
 - **Suzaku/Power kernel**: no public repo found; Linux base version unstated; kernel-zip downloads (pixeldrain) not fetched per research-only rule. Exact base = "pending human-browser check".
 - **Retail MIUI OTA kernel sublevels** cannot be verified from OSS drops alone.
