@@ -1,7 +1,7 @@
 {
  "generated": "2026-11-21",
  "record_semantics": "One record per unique source URL. observed_at = when WE last looked (research day; no intraday times were logged). source_last_change_observed = the source's OWN last-change date AS EXPOSED at observation (repo push, page/oldid/snapshot date, thread last-post date) or null when the source exposed nothing date-like. These are observations, not guarantees: any source may have changed after observed_at.",
- "count": 200,
+ "count": 206,
  "sources": [
   {
    "id": "xda-unlock-guide-3995919",
@@ -2445,6 +2445,84 @@
     "observed_at": "2026-11-21",
     "source_last_change_observed": null,
     "observation_note": "Source-side last-change date was not established; no date inferred"
+  },
+  {
+    "id": "pmos-begonia-tianma-wlan",
+    "url": "https://github.com/criollojoel10/begonia-pmos-tianma",
+    "title": "Experimental pmOS begonia Linux 6.16.4: author-reported working MTK WMT/wlan_gen4m Wi-Fi 2026-09-27",
+    "author": "criollojoel10",
+    "date": "2026-09-27",
+    "access": "verified-direct-or-author-report",
+    "credibility": "high",
+    "used_for": "22 §2; 04 06 14 note",
+    "observed_at": "2026-11-21",
+    "source_last_change_observed": "2026-09-27",
+    "observation_note": "Repository and logs read; functionality is author-reported, not independently reproduced"
+  },
+  {
+    "id": "google-play-integrity-verdicts",
+    "url": "https://developer.android.com/google/play/integrity/verdicts",
+    "title": "Official Google Play Integrity verdict levels, requirements for Strong/Device/Basic labels",
+    "author": "Google Android Developers",
+    "date": "last source-side change not established",
+    "access": "verified-direct-or-author-report",
+    "credibility": "high",
+    "used_for": "22 §4",
+    "observed_at": "2026-11-21",
+    "source_last_change_observed": null,
+    "observation_note": "Read primary page; source-side last update date not established"
+  },
+  {
+    "id": "google-wallet-security",
+    "url": "https://support.google.com/wallet/answer/12200245",
+    "title": "Official Google Wallet security requirements for contactless payments",
+    "author": "Google Wallet Help",
+    "date": "last source-side change not established",
+    "access": "verified-direct-or-author-report",
+    "credibility": "high",
+    "used_for": "22 §4",
+    "observed_at": "2026-11-21",
+    "source_last_change_observed": null,
+    "observation_note": "Read primary page; source-side last update date not established"
+  },
+  {
+    "id": "lineage-419-rosemary-defconfig",
+    "url": "https://github.com/xiaomi-mt6785-dev/android_kernel_xiaomi_mt6785/blob/lineage-24.0/arch/arm64/configs/rosemary_defconfig",
+    "title": "MT6785 Linux 4.19.325 rosemary board kernel defconfig (not verified begonia boot)",
+    "author": "xiaomi-mt6785-dev",
+    "date": "2026-10-31",
+    "access": "verified-direct-or-author-report",
+    "credibility": "high",
+    "used_for": "22 §1",
+    "observed_at": "2026-11-21",
+    "source_last_change_observed": "2026-10-31",
+    "observation_note": "Developer release date claimed: 2026-10-31"
+  },
+  {
+    "id": "rea-ai-mcp",
+    "url": "https://github.com/axpie/reverse-engineer-anything",
+    "title": "Example Reverse Engineer Anything (REA) tooling; verify installed skill source before running",
+    "author": "axpie",
+    "date": "last source-side change not established",
+    "access": "verified-direct-or-author-report",
+    "credibility": "high",
+    "used_for": "22 §3",
+    "observed_at": "2026-11-21",
+    "source_last_change_observed": null,
+    "observation_note": "Read primary page; source-side last update date not established"
+  },
+  {
+    "id": "begonia-419-port-field-note",
+    "url": "https://t.me/s/RedmiNote8ProUpdates",
+    "title": "Community Redmi Note 8 Pro updates, self-reported experimental begonia 4.19 port",
+    "author": "RedmiNote8ProUpdates",
+    "date": "2026-09",
+    "access": "verified-direct-or-author-report",
+    "credibility": "medium",
+    "used_for": "22 §1",
+    "observed_at": "2026-11-21",
+    "source_last_change_observed": "2026-09",
+    "observation_note": "Community developer claim; exact per-post commit/build not independently established"
   }
  ]
 }
