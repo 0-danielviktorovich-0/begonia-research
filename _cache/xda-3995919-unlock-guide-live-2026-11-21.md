@@ -1,0 +1,720 @@
+Home
+Forums
+Devices
+Guides
+What's new
+Log in
+Register
+New posts
+ 
+Manufacturers
+ 
+What's new
+ 
+Members
+TOPICS
+Hot Deals
+3D Printing
+Android Auto
+Android Mods
+Android TV
+Apps & Games
+Themes
+Wear OS
+Smartwatches
+Windows 11
+XDA Computing
+Terms and rules Privacy 
+[GUIDE][BEGONIA]Unlock Bootloader, Flash TWRP and Root[PROPER]
+ 
+Thread starter
+pritish1998  
+Start date
+Nov 2, 2019
+Forums
+Xiaomi
+Redmi Note 8 Pro
+Redmi Note 8 Pro Guides, News, & Discussion
+1
+	
+2
+	
+3
+	
+…
+	
+16
+Next
+pritish1998
+Senior Member
+Apr 30, 2016
+391
+454
+IIT Dhanbad
+pritish.stag-os.org
+Moto G 2015
+Asus ZenFone Max Pro M1
+Nov 2, 2019
+#1
+Code:
+/*
+* Your warranty is now void.
+*
+* I am not responsible for bricked devices, dead SD cards,
+* thermonuclear war, or you getting fired because the alarm app failed. Please
+* do some research if you have any concerns about features included in this ROM
+* before flashing it! YOU are choosing to make these modifications, and if
+* you point the finger at me for messing up your device, I will laugh at you.
+*/
+
+CLICK HERE TO READ THE MEGATHREAD BEFORE DOING ANYTHING TO YOUR DEVICE
+
+Here we are guys... After searching here and there i found some working ways to Root this device without getting bricked. So let's discuss about these :
+
+1. UNLOCKING BOOTLOADER :
+
+- Download the Mi Unlock app to PC, and sign in with your Mi Account;
+- Enable Developer Option in your phone by tapping the "Build Number" 7 times
+- Go to Developer Options "Settings > Additional Settings > Developer Options
+- Enable USB Debugging and OEM Unlocking
+- Aslo add account in Mi Unlock Status (Can be found in Developer Options
+- Install all the required drivers (adb drivers, vcom drivers etc.) In your PC [I'll link these below]
+- Shut down your phone manually, and hold Volume down key and Power button to enter Fastboot mode
+- Connect your phone to PC using USB cable and click "Unlock". In Mi Unlock Tool
+- You will be given a specific time (168 hours mostly)
+- Wait until that and redo Unlock process
+- Woah you have Unlocked your device 
+
+2. FLASHING TWRP :
+
+- Install Minimal ADB and fastboot on your PC [Link will be provided below]
+- Download LR Team TWRP [This work for now, I'll provide link below and will update it after we have another proper TWRP]
+- Put that TWRP in the file location of ADB and Fastboot (Right click on Minimal ADB and Fastboot icon on desktop and click on Open file location)
+- rename that recovery to "twrp" for convenience (optional)
+- Now Connect your phone to PC With USB Debugging on (keep phone on).
+- Type
+Code:
+adb devices
+and accept the pop up on phone's screen.
+- Now reboot your phone to Fastboot mode
+- Type
+Code:
+fastboot devices
+- Your device ID will be visible on Screen.
+- Then type
+Code:
+fastboot flash recovery twrp.img
+- When it's done, Remove cable and Hold Power + Vol. Up when phone starts turning on leave the power button but keep pressing Vol. UP until TWRP splash Screen shows up.
+- Done U did it 
+
+3. ROOTING :
+
+- In TWRP mount System
+- Go to Advanced > file manager
+- then go to system_root > system and delete "recovery-from-boot.p"
+- Go home and again go to advanced and Select "Close AVB2.0" swipe to confirm.
+- Go back and select "Install Root"
+- Here you go magisk 19.4 will be installed (U can chose any other versions afterwards.)
+- Reboot the device to system.
+- Ah Yes you did it
+
+In case anything goes wrong ask me here or in official telegram group
+
+LINKS
+
+1. Mi Unlock tool
+2. Minimal ADB and Fastboot
+3. ADB Drivers for MTK
+4. MTK USB Drivers
+5. LR Team TWRP
+
+If this helped you then hit the Thanks Button. Good Luck 
+ 
+Last edited: Feb 2, 2021
+ 
+Reactions:
+E_G_P, Shiva_Shaan_5, toty250 and 49 others
+K
+Kediraksith
+Senior Member
+Aug 24, 2015
+112
+20
+Nov 2, 2019
+#2
+Does it work for the china edition of the phone?
+ 
+ 
+Reactions:
+polfrank
+donkyshot
+Senior Member
+Dec 19, 2011
+449
+215
+Redmi Note 8 Pro
+Nov 2, 2019
+#3
+These are the the same instructions as found here https://xdaforums.com/showpost.php?p=80604223&postcount=2
+Why create a new thread without giving any credits. It's cluttering the forum.
+
+
+In case anything goes wrong ask me here or in official telegram group
+Reported, read the FAQ about telegram.
+ 
+Last edited: Nov 2, 2019
+ 
+Reactions:
+roberto_1986, HKlOM8 and Foreal_Bruh
+pritish1998
+Senior Member
+Apr 30, 2016
+391
+454
+IIT Dhanbad
+pritish.stag-os.org
+Moto G 2015
+Asus ZenFone Max Pro M1
+Nov 2, 2019
+#4
+donkyshot said:
+These are the the same instructions as found here https://xdaforums.com/showpost.php?p=80604223&postcount=2
+Why create a new thread without giving any credits. It's cluttering the forum.
+
+
+Reported, read the FAQ about telegram.
+Ah ok...i didn't check that thread... I just searched here and there and created a simple guide...
+ 
+ 
+Reactions:
+roberto_1986, Photopuppet and Foreal_Bruh
+pritish1998
+Senior Member
+Apr 30, 2016
+391
+454
+IIT Dhanbad
+pritish.stag-os.org
+Moto G 2015
+Asus ZenFone Max Pro M1
+Nov 4, 2019
+#5
+Robstir said:
+Yes it does, I just rooted mine, Chinese 8gb RAM with Chinese ROM (no Google) only problem I just found was - can't make a TWRP back up on either storage, says can't make the folder, key unavailable.
+I tried a couple of other methods which didn't work, so great stuff for posting here, I don't use Telegram, so it's really helped me, even if it is a duplicate, wind your neck in with the reporting Donkeywhatever!
+Thanks OP
+
+I'm glad to hear that it helped you...
+ 
+ 
+Reactions:
+roberto_1986
+pritish1998
+Senior Member
+Apr 30, 2016
+391
+454
+IIT Dhanbad
+pritish.stag-os.org
+Moto G 2015
+Asus ZenFone Max Pro M1
+Nov 4, 2019
+#6
+Robstir said:
+Thanks, it did brilliantly, any advice on the TWRP can't make the backup folder?
+I'm keen to start pruning the system of the useless Xiaomi bloatware but not without a backup, flashed Magisk 20.1 also, working perfectly.
+
+Wait for a proper TWRP. Cuz devs are already working on it
+ 
+ 
+Reactions:
+roberto_1986, Photopuppet and (deleted member)
+harmakhis
+Senior Member
+Jun 5, 2010
+85
+13
+Nov 4, 2019
+#7
+anybody tried that with chinese phone swapped to global rom?
+ 
+ 
+Reactions:
+roberto_1986
+K
+Kediraksith
+Senior Member
+Aug 24, 2015
+112
+20
+Nov 5, 2019
+#8
+Robstir said:
+Yes it does, I just rooted mine, Chinese 8gb RAM with Chinese ROM (no Google) only problem I just found was - can't make a TWRP back up on either storage, says can't make the folder, key unavailable.
+I tried a couple of other methods which didn't work, so great stuff for posting here, I don't use Telegram, so it's really helped me, even if it is a duplicate, wind your neck in with the reporting Donkeywhatever!
+Thanks OP
+
+Erm the issue i have with ChinaRom is that I cant use my own homescreen launcher... even with root I cant bypass it... so I have to be on Global ROM... but china variant with global rom causes boot loop.... and seeing that you are using the only TWRP available i think the results are the same...
+
+---------- Post added at 05:42 AM ---------- Previous post was at 05:42 AM ----------
+
+
+pritish1998 said:
+Wait for a proper TWRP. Cuz devs are already working on it
+
+
+Oo really? Gee can't wait.... 
+ 
+ 
+Reactions:
+roberto_1986
+harmakhis
+Senior Member
+Jun 5, 2010
+85
+13
+Nov 5, 2019
+#9
+so always bootloop issue with china/global device?
+ 
+ 
+Reactions:
+roberto_1986
+S
+snarl
+Member
+Dec 7, 2010
+6
+3
+Nov 17, 2019
+#10
+Bricked my China Rom Phone
+
+I just bricked my phone - story here:
+https://xdaforums.com/redmi-note-8-pro/help/help-to-unbrick-china-redmi-note-8-pro-t4004681
+
+So does anyone have any idea how I can unbrick? Should I REM out the antirollback check lines in flash_all.bat?
+Any help is much appreciated! Thank you!
+ 
+S
+SunnyTee
+Member
+Sep 15, 2013
+48
+12
+Lahore
+Nov 17, 2019
+#11
+My phone came with the Global EU (EEA) version ROM, i have flashed Global (MI) version. Will this method still work or will it cause bootloop? I don't want to brick my device so asking in advance. I was lucky to just get stuck in bootloop with my previous try using a different recovery.
+
+P.S. I used MiFlash Tool and flashed the ROM through Fastboot.
+ 
+Last edited: Nov 17, 2019
+ 
+Reactions:
+roberto_1986
+G
+gigahurts
+Senior Member
+Feb 4, 2013
+90
+58
+Nov 21, 2019
+#12
+Hey Pritish1998,
+
+I must admit, I was a little leery, after reading all the other threads about installing twrp and rooting and the horror stories they contained. Well, your instructions seemed fairly simple. I followed them EXACTLY... and I lost my ass, everything got wiped, my imei, everything!!!
+
+Totally kidding, everything worked perfectly, I followed your steps exactly as stated. I did not loose any data, nothing, every app, all my downloads, everything is still on my phone. THANK YOU SO MUCH!
+
+Also, TWRP, is still installed, didn't get wiped out by the stock recovery. I have root, and oh, I am on MIUI Global, on the United States phone I ordered off of Amazon. More Specifically, MIUI Global 11.0.1.0(PGGMIXM) Android Version 9 PPR1.180610.011. I received the MIUI 11 update about 3 days ago, and was still waiting the 160 some hours out for the bootloader unlock. I just got the bootloader unlocked about 3 hours ago. Went through numerous instructions and posts and this one seemed to make the most sense. I wasn't sure about MIUI 11 working, but fudge it, I thought I would just return the phone if I had a problem, but nope, you're instructions were clear and precise and I followed them to a tee and its working great and I have Magisk and did the safetynet update, and I'm all good.
+
+I haven't updated Magisk to 20.1 though. Didn't want to press my luck.
+
+Thanks so much bro, really, thank you.
+ 
+ 
+Reactions:
+roberto_1986, HKlOM8, ghackofer and 1 other person
+A
+astrakid
+Senior Member
+Nov 28, 2008
+112
+14
+Ruhrgebiet
+Nov 24, 2019
+#13
+this procedure worked as well on an indonesian 11.0.1. rom!!!
+thx!
+ 
+ 
+Reactions:
+roberto_1986
+A
+AlejandroOS
+New member
+Nov 25, 2019
+2
+1
+Nov 25, 2019
+#14
+Hello good day! I have a question about TRWP:
+1) Is it safe to install this TRWP f I am on 11.0.1.0 PGGEUXM?
+Has anyone else done it since rom EEA instead of Gobal (MI)?
+Thank you
+ 
+ 
+Reactions:
+roberto_1986
+X
+xpx11
+Member
+Sep 6, 2010
+9
+2
+Nov 25, 2019
+#15
+Thank you very much, magisk works perfectly
+ 
+ 
+Reactions:
+roberto_1986
+N
+neoxcool
+Senior Member
+Mar 20, 2017
+75
+14
+Nov 27, 2019
+#16
+donkyshot said:
+These are the the same instructions as found here https://xdaforums.com/showpost.php?p=80604223&postcount=2
+Why create a new thread without giving any credits. It's cluttering the forum.
+
+
+Reported, read the FAQ about telegram.
+
+NOTHING WRONG WITH THE ABOVE POST BUT MORE INFORMATIVE. The link you claimed to be original is for the Chinese device only not for the Global. TWRP is also different. Check the files.
+ 
+ 
+Reactions:
+roberto_1986
+donkyshot
+Senior Member
+Dec 19, 2011
+449
+215
+Redmi Note 8 Pro
+Nov 28, 2019
+#17
+neoxcool said:
+NOTHING WRONG WITH THE ABOVE POST BUT MORE INFORMATIVE. The link you claimed to be original is for the Chinese device only not for the Global. TWRP is also different. Check the files.
+
+No need for caps lock. We can read.
+It was initially a double post he just edited it later and changed it to a guide, which is fine.
+It's the same procedure like initial Chinese twrp which was and is already posted here.
+ 
+Last edited: Nov 28, 2019
+ 
+Reactions:
+roberto_1986
+Imariano
+Senior Member
+Feb 5, 2016
+106
+27
+29
+Nov 30, 2019
+#18
+I'm on xiaomi.eu beta Android 10 but now i can't boot the recovery, any ideas?
+ 
+ 
+Reactions:
+roberto_1986
+D
+Deleted member 4914386
+Guest
+Nov 30, 2019
+#19
+.
+ 
+Last edited by a moderator: Feb 5, 2021
+ 
+Reactions:
+roberto_1986
+Imariano
+Senior Member
+Feb 5, 2016
+106
+27
+29
+Nov 30, 2019
+#20
+Martin213 said:
+You can't boot to stock recovery?
+Be careful now i think you're one step ahead brick...
+
+Phone is working normally but i want to change to stable, but the recovery is not booting.
+ 
+ 
+Reactions:
+roberto_1986
+1
+	
+2
+	
+3
+	
+…
+	
+16
+Next
+You must log in or register to reply here.
+Share:
+Facebook
+Twitter
+Reddit
+WhatsApp
+Email
+Link
+Similar threads
+	
+[GUIDE] [begonia/begoniain] How to UNBRICK when stuck on preloader mode
+polfrank Nov 9, 2019 16 17 18
+	
+Replies 359
+Views 168K
+	
+	Jul 24, 2024
+Kirasu2080
+	
+Redmi Note 8 Pro Guide [Firmwares | ROOT CN/GLOBAL | TWRP Recovery]
+madsponge26 Oct 20, 2019 13 14 15
+	
+Replies 285
+Views 188K
+	
+	Jan 18, 2026
+Ritesh123456
+	
+[GUIDE][INFO][PSA] Redmi Note 8 Pro - Megathread + CFW
+Agent_fabulous Feb 24, 2020 37 38 39
+	
+Replies 774
+Views 244K
+	
+	May 17, 2025
+ItsNotLazar
+F
+	
+[RECOVERY][begonia][UNOFFICIAL] TWRP recovery for Redmi Note 8 Pro
+fi4tch Sep 25, 2019 7 8 9
+	
+Replies 167
+Views 96K
+	
+P
+	Dec 23, 2025
+polaknabat
+O
+	
+Poll
+[GUIDE]Unlock/Lock MI bootloader | NO WAITING | No mobile data
+ozoku Oct 1, 2024 2 3 4
+	
+Replies 67
+Views 89K
+	
+M
+	Nov 11, 2026
+mawli
+Forums
+Xiaomi
+Redmi Note 8 Pro
+Redmi Note 8 Pro Guides, News, & Discussion
+TOP LIKED POSTS
+24 Hours All time
+52
+pritish1998
+Code:
+/*
+* Your warranty is now void.
+*
+* I am not responsible for bricked devices, dead SD cards,
+* thermonuclear war, or you getting fired because the alarm app failed. Please
+* do some research if you have any concerns about features included in this ROM
+* before flashing it! YOU are choosing to make these modifications, and if
+* you point the finger at me for messing up your device, I will laugh at you.
+*/
+
+CLICK HERE TO READ THE MEGATHREAD BEFORE DOING ANYTHING TO YOUR DEVICE
+
+Here we are guys... After searching here and there i found some working ways to Root this device without getting bricked. So let's discuss about these :
+
+1. UNLOCKING BOOTLOADER :
+
+- Download the Mi Unlock app to PC, and sign in with your Mi Account;
+- Enable Developer Option in your phone by tapping the "Build Number" 7 times
+- Go to Developer Options "Settings > Additional Settings > Developer Options
+- Enable USB Debugging and OEM Unlocking
+- Aslo add account in Mi Unlock Status (Can be found in Developer Options
+- Install all the required drivers (adb drivers, vcom drivers etc.) In your PC [I'll link these below]
+- Shut down your phone manually, and hold Volume down key and Power button to enter Fastboot mode
+- Connect your phone to PC using USB cable and click "Unlock". In Mi Unlock Tool
+- You will be given a specific time (168 hours mostly)
+- Wait until that and redo Unlock process
+- Woah you have Unlocked your device 
+
+2. FLASHING TWRP :
+
+- Install Minimal ADB and fastboot on your PC [Link will be provided below]
+- Download LR Team TWRP [This work for now, I'll provide link below and will update it after we have another proper TWRP]
+- Put that TWRP in the file location of ADB and Fastboot (Right click on Minimal ADB and Fastboot icon on desktop and click on Open file location)
+- rename that recovery to "twrp" for convenience (optional)
+- Now Connect your phone to PC With USB Debugging on (keep phone on).
+- Type
+Code:
+adb devices
+and accept the pop up on phone's screen.
+- Now reboot your phone to Fastboot mode
+- Type
+Code:
+fastboot devices
+- Your device ID will be visible on Screen.
+- Then type
+Code:
+fastboot flash recovery twrp.img
+- When it's done, Remove cable and Hold Power + Vol. Up when phone starts turning on leave the power button but keep pressing Vol. UP until TWRP splash Screen shows up.
+- Done U did it 
+
+3. ROOTING :
+
+- In TWRP mount System
+- Go to Advanced > file manager
+- then go to system_root > system and delete "recovery-from-boot.p"
+- Go home and again go to advanced and Select "Close AVB2.0" swipe to confirm.
+- Go back and select "Install Root"
+- Here you go magisk 19.4 will be installed (U can chose any other versions afterwards.)
+- Reboot the device to system.
+- Ah Yes you did it
+
+In case anything goes wrong ask me here or in official telegram group
+
+LINKS
+
+1. Mi Unlock tool
+2. Minimal ADB and Fastboot
+3. ADB Drivers for MTK
+4. MTK USB Drivers
+5. LR Team TWRP
+
+If this helped you then hit the Thanks Button. Good Luck 
+Nov 2, 2019
+View
+4
+P
+pmesolution.ca
+Fastboot not working --> solution
+
+Hi everyone,
+
+I follow this tutorial and I face a twrp boot loop, I then try to install another TWRP and BAMM ... no more able to access recovery and fastboot. So here's what saved my day and my phone: flashing back Team LR TWRP using adb. YESSSS you've read well 
+
+Please share this solution everywhere because that really did a miracle.
+
+(1) Flash recovery using adb YESSSSS
+
+Source: blog[dot]matt[dot]wf
+
+Enable your USB debugging bridge in switch via adb to the terminal:
+
+./adb shell
+Then you should be able to find your recovery partion with:
+
+DEV=$(ls /dev/block/platform/*/by-name/recovery); echo $DEV
+that should output something like this:
+
+/dev/block/platform/7824900.sdhci/by-name/recovery
+If this is the case you only have to put the recovery.img on your sd-card or the internal storage and you are one command from flashing:
+
+dd of=$DEV if=/external_sd/recovery.img
+Thats it! No binaries you have to install. No ****ty fastboot udev rules :S
+
+You can enter into your new recovery system with:
+
+./adb reboot recovery
+
+2) Good now I was able to be back in the LR Team TWRP. From there I removed root and thus magisk, make sure to disabled DM Verify again and a miracle happenned, I was able to boot my phone and Fastboot is back !
+Jan 24, 2020
+View
+4
+G
+gigahurts
+Hey Pritish1998,
+
+I must admit, I was a little leery, after reading all the other threads about installing twrp and rooting and the horror stories they contained. Well, your instructions seemed fairly simple. I followed them EXACTLY... and I lost my ass, everything got wiped, my imei, everything!!!
+
+Totally kidding, everything worked perfectly, I followed your steps exactly as stated. I did not loose any data, nothing, every app, all my downloads, everything is still on my phone. THANK YOU SO MUCH!
+
+Also, TWRP, is still installed, didn't get wiped out by the stock recovery. I have root, and oh, I am on MIUI Global, on the United States phone I ordered off of Amazon. More Specifically, MIUI Global 11.0.1.0(PGGMIXM) Android Version 9 PPR1.180610.011. I received the MIUI 11 update about 3 days ago, and was still waiting the 160 some hours out for the bootloader unlock. I just got the bootloader unlocked about 3 hours ago. Went through numerous instructions and posts and this one seemed to make the most sense. I wasn't sure about MIUI 11 working, but fudge it, I thought I would just return the phone if I had a problem, but nope, you're instructions were clear and precise and I followed them to a tee and its working great and I have Magisk and did the safetynet update, and I'm all good.
+
+I haven't updated Magisk to 20.1 though. Didn't want to press my luck.
+
+Thanks so much bro, really, thank you.
+Nov 21, 2019
+View
+3
+donkyshot
+These are the the same instructions as found here https://xdaforums.com/showpost.php?p=80604223&postcount=2
+Why create a new thread without giving any credits. It's cluttering the forum.
+
+
+In case anything goes wrong ask me here or in official telegram group
+Reported, read the FAQ about telegram.
+Nov 2, 2019
+View
+3
+pritish1998
+Robstir said:
+Thanks, it did brilliantly, any advice on the TWRP can't make the backup folder?
+I'm keen to start pruning the system of the useless Xiaomi bloatware but not without a backup, flashed Magisk 20.1 also, working perfectly.
+
+Wait for a proper TWRP. Cuz devs are already working on it
+Nov 4, 2019
+View
+NEW POSTS
+K
+[ROM][13.0][ LineageOS 20 - Huawei MediaPad M3 8.4 (Beethoven) ][ Update 23/06/2026 ]
+Latest: Kosta2k9 A moment ago
+Huawei Mediapad M3 ROMs, Kernels, Recoveries, & Ot
+[ANDROID 9.0+] How to install LineageOS 17 Treble on SM-J330FN and other Exynos 7570 devices
+Latest: fixisunreal A moment ago
+Samsung Galaxy J3 (2017) ROMs, Kernels, Recoveries
+M
+Question What Should Developers Consider When Integrating UAE Pass into Android Apps?
+Latest: mrymg 2 minutes ago
+General Questions and Answers
+[ROM][17][OFFICIAL] LineageOS 24.0 for Amazon Fire Max 11 [sunstone]
+Latest: janma8 2 minutes ago
+Fire HD 8 and HD 10 Original Android Development
+[MODULE] Play Integrity Fork (PIFork)
+Latest: zgfg 2 minutes ago
+Magisk
+
+XDA Developers was founded by developers, for developers. It is now a valuable resource for people who want to make the most of their mobile devices, from customizing the look and feel to adding new functionality.
+
+Crafted by Audentio
+MORE INFO
+Contact Us (Forum Issues)
+Advertise
+Terms and rules
+Suggest Content
+USEFUL LINKS
+Best Phones
+Tutorials
+Recognized Developer Program
+Recognized Themer / Contributor Program
+Admin & Moderators
+Delete XDA Forums Account
+XDA - Dark
