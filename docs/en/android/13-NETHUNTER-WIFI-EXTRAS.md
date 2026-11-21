@@ -299,3 +299,14 @@ magic key 2011, PRIV_CMD_OID=15). Three userspace shells exist: `iwpriv wlan0 se
 testable gap [I]. Experiment ladder E1 (template TX) → E2 (header control DA/SA/FC/seq) →
 E3 (PKTCONTENT offset-chunking gate) is userspace-only, **ZERO kernel LOC**; W22's 600–1200 LOC LKM
 stands only if E3 fails at the gate. nvram dependency satisfied on-device.
+
+## Appendix: zstd×clang18 resolution (2026-11-22, builds 12-25)
+
+Root cause chain: vendor defconfig leaves `NETWORK_FILESYSTEMS` off (silently dropping CIFS/NFS);
+BTRFS=m unconditionally `select`s ZSTD_COMPRESS→m while SQUASHFS=y forces ZSTD_DECOMPRESS=y — the
+=m/y split duplicates zstd_common.o into vmlinux AND a module; vmlinux on arm64 4.14 links `-shared
+-Bsymbolic` (KASLR), so lld≥13 rejects absolute MOVW_UABS refs to those symbols.
+Fix series: P5f `ccflags-y += -fno-stack-protector -fPIC` on lib/zstd (built-in only — BTRFS=y kills
+the =m select-pressure); static-ify ZSTD_stackAlloc/Free (AllocAll stays global, extern decl);
+P8 btrfs timespec64 fixes (file.c/inode.c — vendor btrfs never compiled before). Lesson: 4.14
+`scripts/config` has no `--file`; `#`-inline comments after CONFIG values leak into kconfig parsing.
