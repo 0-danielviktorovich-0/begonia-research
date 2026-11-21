@@ -34,6 +34,8 @@ English is the default language for international documentation and stable techn
 
 **Branch hygiene:** [GitHub Actions cleanup](.github/workflows/branch-cleanup.yml) prunes only confirmed obsolete research branches and unchanged merged-PR branches. [Multilingual CI](.github/workflows/i18n-check.yml) checks topic IDs, local links and translation source revisions; it does not replace expert linguistic review.
 
+- **[24 — Saikrishna1504 begonia device/vendor/firmware ecosystem audit](24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md)** — verified 2026-11-13–15 Linux 4.19 device-tree migration commits, IMS/VoWiFi and camera patches, firmware and Audio HAL inventory, 4.14 vs 4.19 manifest mismatch, [21-repository CSV](saikrishna-source-inventory.csv). [Подробный русский конспект](docs/ru/24-saikrishna-source-audit.md) (*digest, not full translation*).
+
 ## Deliverables (root)
 
 | File | Content | Status |
@@ -56,7 +58,7 @@ English is the default language for international documentation and stable techn
 | `15-RE-IMPROVEMENT-PLAN.md` (not yet on disk at packaging time) | RE-driven improvement plan (unpacking recipe, per-subsystem matrix, sequencing, test checklist) | **delivered 2026-11-21 (W15)** (W15 mission: [_context/W15-MISSION.md](_context/W15-MISSION.md)) |
 | [16-ROOT-METHODS.md](16-ROOT-METHODS.md) | root-methods registry: Magisk / KernelSU-Next+SUSFS / APatch / SukiSU / custom kernels / mtkclient chain — matrix + begonia datapoints + TG channels | delivered 2026-11-21 (orchestrator, after W17 provider stall) |
 | [INDEX.md](INDEX.md) | Human master topic map (topic → file#section) + "how to search this repo" (file map, ripgrep recipes, CSV columns, archive usage) | **delivered 2026-11-21 (assembler)** |
-| [sources.json](sources.json) · [index.json](index.json) | Machine twins: 209 observation-stamped source records; 42-topic topic map | **delivered 2026-11-21 (assembler)** |
+| [sources.json](sources.json) · [index.json](index.json) | Machine twins: 244 observation-stamped source records; 43-topic topic map | **delivered 2026-11-21 (assembler)** |
 
 ## Data files
 
