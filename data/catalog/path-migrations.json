@@ -92,7 +92,7 @@
       "status": "moved",
       "operation": "git-mv-and-rewrite-references",
       "pre_move_blob_sha": "fa00cfe3fb2019d6bdd396ee71b6384cf7a28584",
-      "post_move_blob_sha": "c0cf836ca920060c3e7bb80e873496aa3f27b9ed",
+      "post_move_blob_sha": "7fc56d23d8368fb87ec6d4c859e146bc2cf3ad58",
       "checks": [
         "markdown-relative-links",
         "cross-locale-navigation",
@@ -261,7 +261,7 @@
       "status": "moved",
       "operation": "git-mv-and-rewrite-references",
       "pre_move_blob_sha": "7668d4dca668d96a726eba8818cb23e9f40ce998",
-      "post_move_blob_sha": "fec6f042fd681b12ec7c805b6e9888dcac8b235e",
+      "post_move_blob_sha": "0e834971f1d0e2ce98b91ec01d662d0ea1849898",
       "checks": [
         "markdown-relative-links",
         "cross-locale-navigation",
@@ -378,7 +378,7 @@
       "status": "moved",
       "operation": "merge-content-update-generated-index",
       "pre_move_blob_sha": "6b4ab1dfe38294328eb64f5399ee8066690d879a",
-      "post_move_blob_sha": "b941c9fa1d1084f34464515961ba016d1a80bba8",
+      "post_move_blob_sha": "f75dd5a54f22e071eb6cbf9814fea0ebddb198d2",
       "checks": [
         "markdown-relative-links",
         "cross-locale-navigation",
