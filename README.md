@@ -32,7 +32,7 @@ COVERAGE + regenerated archive index. `begonia-research.zip` is **dropped** per 
 |------|---------|--------|
 | [00-README.md](00-README.md) | Executive summary: device facts, 14 major findings, file map, limitations | delivered (synthesis 2026-11-21) |
 | [01-SOURCES.md](01-SOURCES.md) | Consolidated source index: 8 titled-link classes + census classes + limitations, every entry observation-stamped | **delivered 2026-11-21 (assembler)** |
-| [02-FIRMWARE-HISTORY.md](02-FIRMWARE-HISTORY.md) | Official MIUI timeline (last build V12.5.15.0.RGGEUXM EEA, 2022-09-16), GSI era, native ROM catalog (crDroid = only official community ROM; LOS/Axion/EvolutionX unofficial up to Android 16) | delivered; source inventory + Bliss OS 16.9 correction (C2) applied |
+| [02-FIRMWARE-HISTORY.md](02-FIRMWARE-HISTORY.md) | Official MIUI timeline (last build V12.5.15.0.RGGEUXM EEA, 2022-09-16), GSI era, native ROM catalog (project-official status differs by ROM (crDroid/Axion/EvolutionX); LineageOS begonia device support unverified; Android 16 builds indexed) | delivered; source inventory + Bliss OS 16.9 correction (C2) applied |
 | [03-KERNEL-HISTORY.md](03-KERNEL-HISTORY.md) | MiCode official drops (P=4.14.94, Q=4.14.141, R=4.14.186), AgentFabulous forks, LOS branch kernel table (17.1=4.14.194 … 24.0=4.19.325), Halium kernel, mainline forks (Dinolek 6.16.4/7.1, kalpakprod 7.3.4), toolchains | delivered |
 | [04-HARDWARE-DRIVERS.md](04-HARDWARE-DRIVERS.md) | Component IDs from mainline DTS (NT36672A panels CSOT/Tianma, NVT-TS touch, MT6360, BMI120, STK3310, AK09918, Goodix FP, MT6359), GPU stacks (Panfrost/panvk vs kbase), per-OS support matrix | delivered |
 | [05-UBUNTU-TOUCH.md](05-UBUNTU-TOUCH.md) | UT 24.04 noble port (Halium 10, kernel 4.14.141), active 2026-10, channels, issues, build system, upgrade-path analysis | delivered |
@@ -48,7 +48,7 @@ COVERAGE + regenerated archive index. `begonia-research.zip` is **dropped** per 
 | `15-RE-IMPROVEMENT-PLAN.md` (not yet on disk at packaging time) | RE-driven improvement plan (unpacking recipe, per-subsystem matrix, sequencing, test checklist) | **delivered 2026-11-21 (W15)** (W15 mission: [_context/W15-MISSION.md](_context/W15-MISSION.md)) |
 | [16-ROOT-METHODS.md](16-ROOT-METHODS.md) | root-methods registry: Magisk / KernelSU-Next+SUSFS / APatch / SukiSU / custom kernels / mtkclient chain — matrix + begonia datapoints + TG channels | delivered 2026-11-21 (orchestrator, after W17 provider stall) |
 | [INDEX.md](INDEX.md) | Human master topic map (topic → file#section) + "how to search this repo" (file map, ripgrep recipes, CSV columns, archive usage) | **delivered 2026-11-21 (assembler)** |
-| [sources.json](sources.json) · [index.json](index.json) | Machine twins: 185 observation-stamped source records; 35-topic topic map | **delivered 2026-11-21 (assembler)** |
+| [sources.json](sources.json) · [index.json](index.json) | Machine twins: 200 observation-stamped source records; 40-topic topic map | **delivered 2026-11-21 (assembler)** |
 
 ## Data files
 
