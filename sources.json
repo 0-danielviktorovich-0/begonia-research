@@ -1,7 +1,7 @@
 {
  "generated": "2026-11-21",
  "record_semantics": "One record per unique source URL. observed_at = when WE last looked (research day; no intraday times were logged). source_last_change_observed = the source's OWN last-change date AS EXPOSED at observation (repo push, page/oldid/snapshot date, thread last-post date) or null when the source exposed nothing date-like. These are observations, not guarantees: any source may have changed after observed_at.",
- "count": 192,
+ "count": 200,
  "sources": [
   {
    "id": "xda-unlock-guide-3995919",
@@ -2341,6 +2341,110 @@
     "16 §2.3"
    ],
    "notes": null
+  },
+  {
+    "id": "nomount-maxsteeel",
+    "url": "https://github.com/maxsteeel/nomount",
+    "title": "NoMount primary repository and VFS path redirection README",
+    "author": "maxsteeel",
+    "date": "not exposed in consulted page",
+    "access": "verified-direct",
+    "credibility": "high",
+    "used_for": "21 §2-4",
+    "observed_at": "2026-11-21",
+    "source_last_change_observed": null,
+    "observation_note": "Source-side last-change date was not established; no date inferred"
+  },
+  {
+    "id": "nomount-release-v231",
+    "url": "https://github.com/maxsteeel/nomount/releases/tag/v2.3.1",
+    "title": "NoMount v2.3.1 release (protocol v23)",
+    "author": "maxsteeel",
+    "date": "2026-11-19",
+    "access": "verified-direct",
+    "credibility": "high",
+    "used_for": "21 §2",
+    "observed_at": "2026-11-21",
+    "source_last_change_observed": "2026-11-19",
+    "observation_note": "Source-side release/commit date observed: 2026-11-19"
+  },
+  {
+    "id": "mountify-backslashxx",
+    "url": "https://github.com/backslashxx/mountify",
+    "title": "Mountify primary README (OverlayFS, TMPFS_XATTR requirements)",
+    "author": "backslashxx",
+    "date": "not exposed in consulted page",
+    "access": "verified-direct",
+    "credibility": "high",
+    "used_for": "21 §4",
+    "observed_at": "2026-11-21",
+    "source_last_change_observed": null,
+    "observation_note": "Source-side last-change date was not established; no date inferred"
+  },
+  {
+    "id": "hybrid-mount-upstream",
+    "url": "https://github.com/Hybrid-Mount/meta-hybrid_mount",
+    "title": "Hybrid Mount VFS/Overlay/Magic primary README",
+    "author": "Hybrid Mount Developers",
+    "date": "not exposed in consulted page",
+    "access": "verified-direct",
+    "credibility": "high",
+    "used_for": "21 §4",
+    "observed_at": "2026-11-21",
+    "source_last_change_observed": null,
+    "observation_note": "Source-side last-change date was not established; no date inferred"
+  },
+  {
+    "id": "meta-overlayfs-upstream",
+    "url": "https://github.com/KernelSU-Modules-Repo/meta-overlayfs",
+    "title": "KernelSU reference Meta OverlayFS module README",
+    "author": "KernelSU Modules Repo",
+    "date": "not exposed in consulted page",
+    "access": "verified-direct",
+    "credibility": "high",
+    "used_for": "21 §4",
+    "observed_at": "2026-11-21",
+    "source_last_change_observed": null,
+    "observation_note": "Source-side last-change date was not established; no date inferred"
+  },
+  {
+    "id": "xiaomi-mt6785-dev-active",
+    "url": "https://github.com/xiaomi-mt6785-dev/android_kernel_xiaomi_mt6785",
+    "title": "Active MT6785 source tree LineageOS 4.19.325 lineage-24.0",
+    "author": "xiaomi-mt6785-dev",
+    "date": "2026-10-31",
+    "access": "verified-direct",
+    "credibility": "high",
+    "used_for": "20 §2",
+    "observed_at": "2026-11-21",
+    "source_last_change_observed": "2026-10-31",
+    "observation_note": "Source-side release/commit date observed: 2026-10-31"
+  },
+  {
+    "id": "kernelsu-metamodule-doc",
+    "url": "https://kernelsu.org/guide/metamodule.html",
+    "title": "KernelSU official metamodule API and single active metamodule policy",
+    "author": "KernelSU developers",
+    "date": "not exposed in consulted page",
+    "access": "verified-direct",
+    "credibility": "high",
+    "used_for": "21 §1-4",
+    "observed_at": "2026-11-21",
+    "source_last_change_observed": null,
+    "observation_note": "Source-side last-change date was not established; no date inferred"
+  },
+  {
+    "id": "apatch-faq-official",
+    "url": "https://apatch.dev/faq.html",
+    "title": "APatch official FAQ KernelPatch vs Magisk vs KernelSU",
+    "author": "APatch developers",
+    "date": "not exposed in consulted page",
+    "access": "verified-direct",
+    "credibility": "high",
+    "used_for": "21 §3",
+    "observed_at": "2026-11-21",
+    "source_last_change_observed": null,
+    "observation_note": "Source-side last-change date was not established; no date inferred"
   }
  ]
 }
