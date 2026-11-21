@@ -3,7 +3,7 @@
 Small, dependency-light scripts that power this repository's workflow, so any agent (or human) can
 reproduce the whole system independently. Everything here is sanitized: no tokens, no personal paths
 beyond `$HOME` fallbacks; third-party tools are NOT bundled — they are linked in
-[12-SKILLS-AND-REUSE.md](../12-SKILLS-AND-REUSE.md) and [_context/SOURCE-CENSUS.md](_context/SOURCE-CENSUS.md).
+[12-SKILLS-AND-REUSE.md](../docs/en/tools/12-SKILLS-AND-REUSE.md) and [_context/SOURCE-CENSUS.md](_context/SOURCE-CENSUS.md).
 
 | Script | What it does | Needs |
 |--------|--------------|-------|
@@ -28,4 +28,4 @@ beyond `$HOME` fallbacks; third-party tools are NOT bundled — they are linked 
 
 Full methodology lives in [_context/REQUIREMENTS.md](_context/REQUIREMENTS.md) (rows 1–36) and
 [_context/CONTEXT.md](_context/CONTEXT.md); the skills layer that orchestrates this is described in
-[12-SKILLS-AND-REUSE.md](../12-SKILLS-AND-REUSE.md).
+[12-SKILLS-AND-REUSE.md](../docs/en/tools/12-SKILLS-AND-REUSE.md).

@@ -1,6 +1,6 @@
 # Localization and translation policy — begonia-research
 
-**Language entry points:** [English](../docs/en/README.md) · [Русский](../docs/ru/README.md). Machine registries: [catalog.json](catalog.json), [topics.json](topics.json).
+**Language entry points:** [English](../docs/en/index.md) · [Русский](../docs/ru/index.md). Machine registries: [catalog.json](catalog.json), [topics.json](topics.json).
 
 ## 1. Terminology
 
