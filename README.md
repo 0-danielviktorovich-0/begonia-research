@@ -15,6 +15,10 @@ index) delivered; corrections C1–C4 + C6 applied at the synthesis pass (C5 ski
 COVERAGE + regenerated archive index. `begonia-research.zip` is **dropped** per the REQUIREMENTS row 4 amendment
 (2026-11-21): this GitHub repo itself is the distribution medium.
 
+## Термины без путаницы (русский справочник)
+
+Начинающим и новым ИИ-агентам: **[19-ROM-TERMS-GLOSSARY-RU.md](19-ROM-TERMS-GLOSSARY-RU.md)** — что означают CFW, Non-CFW, GSI, stock MIUI, native ROM, OEM port, Q-OSS/R-OSS, firmware/vendor blobs, Halium и mainline; как соотносятся версии Android, Linux-ядра и базы драйверов, и почему это критично при выборе образов для begonia.
+
 ## Deliverables (root)
 
 | File | Content | Status |
