@@ -165,6 +165,10 @@ Controller: `mediatek,mt6785-mtu3` + `mt6785-xhci`, **dual role** (`CONFIG_USB_M
 - Droidian statuses come from the adaptation README (no date stamp); treat Droidian "works" as single-source medium confidence.
 - Mu-Silicium **UEFI** experiment (4PDA post #24679, p=146118602, 2026-11-19/20): display ✅, SD ✅, buttons ✅, USB entirely ❌ — firmware demo, not a daily OS; cited only as mainline-activity evidence.
 
+### Board-schematic artifact on an untrusted mirror (added at synthesis pass 2026-11-21, C3)
+
+**Evidence that board-level documentation for begonia is available:** AndroidFileHost hosts **"Xiaomi Redmi Note 8 Pro (begonia) Schematic.rar" by TUSER HP** ([androidfilehost.com/?fid=8889791610682869402](https://www.androidfilehost.com/?fid=8889791610682869402)) — a schematic/boardview-class artifact in the community-mirror ecosystem. Per the research-only policy it was **not downloaded** and is **untrusted until hash-checked** (medium confidence; census 2026-11-21). Relevance: such schematics are the primary lead for settling the open test-point/UART questions (see [07 §4](07-RECOVERY-SAFETY.md)) and for component-level RE beyond the DTS-derived inventory in this file.
+
 ## 20. Sources (also appended to sources.jsonl)
 
 1. Dinolek/mt6785-mainline DTS (branch 7.1): github.com/Dinolek/mt6785-mainline/tree/7.1/arch/arm64/boot/dts/mediatek — verified-direct, high.

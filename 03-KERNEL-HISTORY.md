@@ -152,6 +152,7 @@ https://github.com/kalpakprod/mt6785-linux — created 2026-11-15, pushed **2026
 | Suzaku Kernel V2 (4PDA) | **AOSP Clang 21** [V-post] | WuxinG90 (base: Saikrishna1504) [V] |
 | LineageOS android_kernel_xiaomi_mt6785 | built by LOS with its Android clang toolchain; no toolchain manifest in repo [I] | LineageOS team [V-repo] |
 | AgentFabulous/begonia | Android ROM builds 2020–22; toolchain unspecified in repo [unknown] | Agent_fabulous [V-XDA] |
+| HYDRA PLUS kernel (community zip builds, [t.me/begoniaupdateindonesia](https://t.me/s/begoniaupdateindonesia)) | **"Ubuntu Pure Linux Clang 14.0.1"** (verbatim from kernel-build posts, t.me/s web preview) [V-post, community channel log] | HYDRA PLUS channel team — no public source tree verified (medium, census 2026-11-21) |
 | UBports kernel-xiaomi-mt6785 | GCC-based Halium/UT build (2026 commit adds `-fcommon` for host dtc — GCC symptom) [I, low-medium] | TheKit, Rúben Carneiro [V-commits] |
 | cvnertnc builder | GitHub Actions CI (badge) [V-README]; details unread [unknown] | cvnertnc [V] |
 | kalpakprod/mt6785-linux | "README, build config: as of the latest test kernel" — configs in repo [V-commit]; specifics unread [unknown] | kalpakprod [V] |

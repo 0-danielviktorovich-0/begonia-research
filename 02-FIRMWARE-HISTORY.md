@@ -94,6 +94,8 @@ Thread origin: the 4PDA custom-ROM thread was created **2019-12-01** by Xakep199
 
 Era assessment: GSIs were the only custom option from Dec 2019; the pinned guide rates them "все сырое" (all raw). Native ROMs began appearing while GSIs were still current (first native build listed under "Non-CFW Android 10": **crDroid 6.27 FINAL by TTTT555**, p=97822397 — date inferred early-2020 from pid ordering, medium confidence); fully native A11 builds by ~spring 2020 (AOSP ZIDAN44 p=101209196, crDroid 7.2 p=101340561 — inferred from pid ordering vs known MIUI build dates).
 
+**GSI vendor-base data point (added at synthesis pass 2026-11-21, C4):** Erfan's treble GSI builds for begonia shipped a vendor image tagged **`begonia-user 10/QP1A.190711.020/20.5.14` (2.66 GiB)** — an Android-10-era vendor base (Android build fingerprint `QP1A.190711.020`, MIUI build stamp `20.5.14`) for the early treble wave. Source class: public Telegram channel log via [t.me/s/ProjectTreble_Updates](https://t.me/s/ProjectTreble_Updates) web preview (community signal — citable as evidence of what existed, not as primary docs; census 2026-11-21, medium).
+
 ---
 
 ## 3. Native custom-ROM catalog **[CURRENT state as of 2026-11-21; first-release dates historical]**
@@ -135,6 +137,13 @@ DerpFest 16.2 p=144870980 (and DerpFest A13 p=128191141, Derpfest Tango p=118140
 Pinned "Linux" section links Ubuntu Touch 24.04 (p=146080111) and postmarketOS (p=145567744) — matching the other dimension's findings (UT stable 24.04-1.4 2026-07-13; pmOS mainline 6.16.4, maintainer Dinolek).
 
 ---
+
+### 3.11 Bliss OS 16.9 — unofficial native build, 2023 (catalog gap closed at synthesis pass, C2)
+
+- **Artifact:** `Bliss-v16.9-begonia-UNOFFICIAL-vanilla-20230808.zip` (+ sibling build `…20230809.zip`) in the [AndroidFileHost begonia folder, flid=339073](https://www.androidfilehost.com/?w=files&flid=339073) — an Android-13-era unofficial **native** Bliss OS build for begonia. It was absent from the pinned-index-derived catalog above, which lists only Bliss *GSIs* (§2).
+- **Classification:** community mirror, **hash-unverified** (research-only policy: not downloaded); provenance/maintainer of the 2023 build not verified (medium, census 2026-11-21).
+- **Status:** historical (Aug 2023); no current Bliss thread or maintainer verified for begonia — treat as "exists on mirrors, unverified provenance".
+- **CSV flag:** a matching `firmware-matrix.csv` row is left to the assembler agent (category `custom-rom`, status `unofficial-historical`, source `androidfilehost.com/?w=files&flid=339073`) — CSVs are outside this file's write scope.
 
 ## 4. Latest-by-date vs latest-driver-base **[CURRENT — explicit separation]**
 - **Latest by release date (verified, Nov 2026):** custom ROMs up to **Android 16/17** — EvolutionX 11.7 UNOFFICIAL (highest pid, p=146098392), ColorOS 17 Rev 17 (p=146083465), LineageOS 23.2 UNOFFICIAL (p=145712732), AxionOS 2.9 Noesis OFFICIAL (p=145668812), crDroid v12.11 UNOFFICIAL (p=143929573), AviumUI 16.2.1 OFFICIAL (p=146024411). Thread itself is active (last-page timestamps 19–21.11.26). Linux-side newest: UT noble stable 24.04-1.4 (2026-07-13), pmOS mainline 6.16.4, Mu-Silicium UEFI/WinPE port (2026-11-20).
