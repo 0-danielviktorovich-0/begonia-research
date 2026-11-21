@@ -4,6 +4,7 @@ Research-only task. DO NOT flash anything, do not run untrusted scripts, do not 
 Deliverable: files in `/Users/danielviktorovich/begonia-research/` (UTF-8 Markdown/CSV/JSON, English).
 Every subagent writes ONLY its assigned files, plus appends source records to the shared sources log.
 
+SCOPE (user 2026-11-21): dual-purpose DB — Linux ports (north star: modern Ubuntu Touch) AND the full Android custom ecosystem (ROMs/kernels/recoveries incl. TWRP & OrangeFox/firmware). Telegram sources: t.me/s/<channel> previews, no subscription. Every artifact gets source/open-code links; agents attempt discovery themselves.
 ## Device (verified facts)
 Xiaomi Redmi Note 8 Pro, codename `begonia` (xiaomi-begonia), released Sept 24, 2019.
 SoC MediaTek Helio G90T (MT6785), octa 2x Cortex-A76 + 6x A55, GPU Mali-G76 MC4, 6.53" 1080x2340 IPS,
@@ -42,6 +43,8 @@ Stock kernel 4.14.141 (per devices.ubuntu-touch.io). aarch64.
 - gitlab.nura.eco/nura/pmaports — id 226, branch main, last activity 2026-11-21 (active today);
   device/testing/device-xiaomi-begonia and device/testing/linux-postmarketos-mediatek-mt6785 packages.
 - pmOS wiki MR: https://gitlab.nura.eco/nura/pmaports/-/merge_requests/1909 (initial begonia MR).
+
+Timestamps: all 'last updated'/'applied at' stamps use ISO 8601 UTC (YYYY-MM-DDTHH:MM:SSZ); JST optional in parentheses.
 
 ## Output contract (per research task spec)
 For every important technical claim include: exact URL; source title/author when available; publication/update date;
