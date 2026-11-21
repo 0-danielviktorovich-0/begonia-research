@@ -4,15 +4,13 @@ One-hop navigation for humans and agents. Every major topic → the file + secti
 
 All "verified" dates are observation stamps (REQUIREMENTS row 36): the day we last looked at the underlying source — **2026-11-21 for the whole research run** unless noted.
 
-**[Русский словарь типов прошивок и технических терминов](19-ROM-TERMS-GLOSSARY-RU.md)** — начать здесь, если CFW, Non-CFW, GSI, vendor, Halium, mainline, recovery и номера версий пока неочевидны.
+**Language:** [English topic directory](docs/en/README.md) · [Русский каталог](docs/ru/README.md) · [English README](README.md) · [README на русском](README.ru.md).
 
-**[Кастомные ядра 4.14/4.19 и KSU/Non-KSU](20-KERNEL-419-ROOT-ECOSYSTEM-RU.md)** — дерево источников, ветки, HEAD и родословная патчей; структурированный [реестр](kernel-root-provenance.csv).
+**Localized search:** [42 bilingual topic labels and aliases](i18n/topics.json) · [translation coverage](i18n/catalog.json) · [i18n/l10n policy](i18n/README.md). Stable topic IDs remain in English; search labels support EN/RU independently.
 
-**[NoMount и сравнение root/mount-подходов](21-NOMOUNT-MOUNT-BACKENDS-RU.md)** — отличие root engine от SUSFS и metamodule, требования к legacy 4.14/4.19, совместимость и диагностика.
+**New bilingual research routes:** [CFW, Non-CFW and GSI glossary](docs/en/19-rom-terminology.md) (full English draft; [RU original](19-ROM-TERMS-GLOSSARY-RU.md)); [Linux 4.19 and KernelSU](docs/en/20-kernel-root-ecosystem.md); [NoMount and mount backends](docs/en/21-nomount-and-mount-backends.md); [AI kernel porting and Play Integrity](docs/en/22-kernel-forward-port.md); [4.19 developer announcement and contact](23-419-TELEGRAM-OUTREACH.md). English pages 20–22 are **digests**, not complete translations.
 
-**[Как перенести ядро 4.14→4.19→6.x с ИИ и почему платежи чувствительны к root](22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md)** — реальная архитектура семейства MT6785, разница rosemary/begonia, root обнаружение, Play Integrity, Wi-Fi 6.16.4 в стороннем pmOS-порте.
-
-**[Автоматическая уборка завершённых веток](.github/workflows/branch-cleanup.yml)** — удаление проверенных старых refs по точному SHA, удаление ветки после успешного PR merge; пропуск ветки, если в ней появились новые коммиты.
+**GitHub workflows:** [obsolete branch cleanup](.github/workflows/branch-cleanup.yml), [multilingual QA](.github/workflows/i18n-check.yml).
 
 ## Topic map
 
@@ -48,7 +46,8 @@ All "verified" dates are observation stamps (REQUIREMENTS row 36): the day we la
 | RE entry points & improvement plan | [11-BLOBS-FIRMWARE-SOURCES.md](11-BLOBS-FIRMWARE-SOURCES.md) §4 + plan per [_context/W15-MISSION.md](_context/W15-MISSION.md) (15-RE-IMPROVEMENT-PLAN.md in flight) | Ghidra 12.1.4 + Craft Anything (owner host), mtkclient extraction, unpackers; per-subsystem RE matrix | 2026-11-21 |
 | Device-repair outlook (battery) | [08-DEVELOPMENT-ROADMAP.md](08-DEVELOPMENT-ROADMAP.md) §Device-repair | Battery model unknown (do not guess), health-check procedures, serviceability verdicts | 2026-11-21 |
 | Open questions & not-found ledger | [09-OPEN-QUESTIONS.md](09-OPEN-QUESTIONS.md) | 10 dated contradictions, explicit "searched, absent" list, human-assist queue | 2026-11-21 |
-| Sources & freshness | [01-SOURCES.md](01-SOURCES.md) + [sources.json](sources.json) | 206 deduped records with observation stamps; census classes; limitations | 2026-11-21 |
+| 4.19 begonia port developer (Saikrishna1504) | [23-419-TELEGRAM-OUTREACH.md](23-419-TELEGRAM-OUTREACH.md) | Original post text, likely Nov 17 2026 date (unverified message ID), developer contacts, source-request draft | 2026-11-21 |
+| Sources & freshness | [01-SOURCES.md](01-SOURCES.md) + [sources.json](sources.json) | 209 deduped records with observation stamps; census classes; limitations | 2026-11-21 |
 | Coverage audit & next searches | [_context/COVERAGE.md](_context/COVERAGE.md) | Per-topic completeness verdicts + ranked "what to search next" | 2026-11-21 |
 | Offline archive | [archive/index.html](archive/index.html) (+ [archive/README.md](archive/README.md)) | original ↔ copy ↔ type ↔ size ↔ cited-in for every snapshot | 2026-11-21 |
 
@@ -79,7 +78,7 @@ rg -n "twrp" archive/index-manifest.tsv
 
 **Archive usage.** [archive/index.html](archive/index.html) pairs every offline copy with its original URL (columns: offline copy | original | type | size | cited-in). `*-extracted.html` = canonical pandoc extracts (what the deliverables quote); raw `*.html` = verbatim server/Wayback HTML; `archive/files/` = small text artifacts (scatter, deviceinfo, API JSON, mtkclient docs). Raw markdown twins of the same fetches: `_cache/`. Multi-GB binaries are intentionally not committed — fetch URLs are cited in the deliverables.
 
-**Machine consumption.** [sources.json](sources.json) (206 records, observation-stamped), [index.json](index.json) (this topic map), stable section headings in every file, CSVs with fixed headers — written AI-first per REQUIREMENTS row 19.
+**Machine consumption.** [sources.json](sources.json) (209 records, observation-stamped), [index.json](index.json) (this topic map), stable section headings in every file, CSVs with fixed headers — written AI-first per REQUIREMENTS row 19.
 
 ---
 *Generated by the assembler pass, 2026-11-21 (JST). Last updated: 2026-11-21T09:06:49Z (ISO 8601 UTC — REQUIREMENTS row 34).*
