@@ -1,5 +1,7 @@
 # 23 — Begonia Linux 4.19: Telegram source provenance and developer contact
 
+> **New GitHub evidence (2026-11-21):** the developer's [device_redmi_begonia@axion](https://github.com/Saikrishna1504/device_redmi_begonia/tree/axion) contains six **dated 13–15 Nov** transition commits documented in [24](24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md), including [switch to k419 + vendor/begonia.config](https://github.com/Saikrishna1504/device_redmi_begonia/commit/d78e16d11686806b1f0b24c6b3c149255a950ac0). The [public manifest](https://github.com/Saikrishna1504/local_manifests/blob/udc/mt6785.xml) still pins `kernel_xiaomi_mt6785@main` **4.14.357**, while the actual `vendor/begonia.config` fragment was not found in the checked LineageOS 4.19 tree. **Ask specifically for his working 4.19 kernel repo/commit and config fragment**; the existence of userspace patches is stronger evidence than the earlier post alone but not a complete reproducible kernel package.
+
 **Language:** English primary · [Раздел на русском](#по-русски--контекст-и-запрос).  
 **Research date:** 2026-11-21. **Nothing was sent to the developer.** The author has not provided source code/boot image to this project yet.
 
