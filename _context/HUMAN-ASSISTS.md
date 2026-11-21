@@ -20,3 +20,5 @@ manually. **How to help:** open the URL in your normal browser, wait out the cha
 - kernel.org / GitHub / raw.githubusercontent — open.
 
 > Note: files dropped into `archive/human/` get indexed into `archive/index.html` at the final pass.
+| 6 | https://xdaforums.com/t/xiaomi-mt6785-begonia-device-tree-source-releases.3999013/ | bunny.net | Device-tree source releases thread — no Wayback snapshot found; matters for kernel/DT lineage | `human-xda-dt-sources.html` |
+| 7 | https://xdaforums.com/t/unlock-mtk-bootloader.4428577/ | bunny.net | MTK unlock method thread (mtkclient era) — no snapshot; recovery/dev context | `human-xda-mtk-unlock.html` |
