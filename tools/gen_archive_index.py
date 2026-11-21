@@ -28,7 +28,7 @@ if os.path.exists(MANIFEST):
 on_disk = set()
 for root, _dirs, files in os.walk(A):
     for f in files:
-        if f.endswith((".html", ".md", ".txt", ".json")) and f != "index.html":
+        if f.endswith((".html", ".md", ".txt", ".json")) and f != "index.html" and not (root == A and f == "README.md"):
             rel = os.path.relpath(os.path.join(root, f), A)
             on_disk.add(rel)
 

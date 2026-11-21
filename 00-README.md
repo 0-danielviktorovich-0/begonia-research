@@ -45,7 +45,7 @@ Research knowledge base for the **Xiaomi Redmi Note 8 Pro** (`begonia`, MediaTek
 | File | Content | Status |
 |---|---|---|
 | [00-README.md](00-README.md) | This executive summary | delivered 2026-11-21 |
-| 01-SOURCES.md | Consolidated source index | **pending** (assembler agent) |
+| [01-SOURCES.md](01-SOURCES.md) | Consolidated source index (class-grouped, observation-stamped) | delivered 2026-11-21 (assembler) |
 | [02-FIRMWARE-HISTORY.md](02-FIRMWARE-HISTORY.md) | Official MIUI timeline, GSI era, native ROM catalog, per-ROM source inventory (§7) | delivered |
 | [03-KERNEL-HISTORY.md](03-KERNEL-HISTORY.md) | MiCode drops, AgentFabulous forks, LOS kernel table, Halium kernel, mainline forks, toolchains | delivered |
 | [04-HARDWARE-DRIVERS.md](04-HARDWARE-DRIVERS.md) | Component IDs from mainline DTS, GPU stacks, per-OS support matrix | delivered |
@@ -55,8 +55,8 @@ Research knowledge base for the **Xiaomi Redmi Note 8 Pro** (`begonia`, MediaTek
 | [08-DEVELOPMENT-ROADMAP.md](08-DEVELOPMENT-ROADMAP.md) | P0/P1/P2 development paths, AI-assisted tooling, host matrix, device-repair outlook | delivered 2026-11-21 |
 | [09-OPEN-QUESTIONS.md](09-OPEN-QUESTIONS.md) | Unresolved contradictions, not-found ledger, human checks, ranked next steps | delivered 2026-11-21 |
 | [10-GUIDE-INDEX.md](10-GUIDE-INDEX.md) | Every guide/instruction post, permalinks + offline copies | delivered |
-| [firmware-matrix.csv](firmware-matrix.csv) · [kernel-matrix.csv](kernel-matrix.csv) · [hardware-support-matrix.csv](hardware-support-matrix.csv) | 73 ROM rows · 36 kernel rows · 33 components × 4 OS columns | delivered (Bliss 16.9 CSV row flagged for assembler) |
-| `sources.json` · `INDEX.md` · `index.json` · `begonia-research.zip` | Master indexes + packaging | **pending** (assembler agent) |
+| [firmware-matrix.csv](firmware-matrix.csv) · [kernel-matrix.csv](kernel-matrix.csv) · [hardware-support-matrix.csv](hardware-support-matrix.csv) | 73 ROM rows · 36 kernel rows · 33 components × 4 OS columns | delivered (Bliss 16.9 CSV row added at assembly 2026-11-21) |
+| [sources.json](sources.json) · [INDEX.md](INDEX.md) · [index.json](index.json) | Master source index + human/machine topic map | delivered 2026-11-21 (assembler) |
 | [_context/](_context) | [CONTEXT.md](_context/CONTEXT.md) · [REQUIREMENTS.md](_context/REQUIREMENTS.md) · [SOURCE-CENSUS.md](_context/SOURCE-CENSUS.md) · [CORRECTIONS.md](_context/CORRECTIONS.md) · [HUMAN-ASSISTS.md](_context/HUMAN-ASSISTS.md) · [OUTBOUND-LINKS.csv](_context/OUTBOUND-LINKS.csv) · [S1-MISSION.md](_context/S1-MISSION.md) | governance pack |
 | [archive/index.html](archive/index.html) | Offline archive index (original ↔ copy ↔ date) | delivered, regenerated at final pass |
 
@@ -66,7 +66,7 @@ Research knowledge base for the **Xiaomi Redmi Note 8 Pro** (`begonia`, MediaTek
 - **gitlab.nura.eco / wiki.nura.eco** sit behind an Anubis bot-check — data came from the GitLab REST API (JSON in `archive/files/`) and the extractor.
 - **4PDA** allows our server-side extractor (full-page snapshots in `archive/`), but spoiler-block content is dropped by text extraction and attachment downloads are registration-walled (never registered; logged for human assist).
 - **GitHub API** unauthenticated pool exhausts fast — `git ls-remote` + `raw.githubusercontent.com` were preferred; a few per-branch commit dates are missing ([03 §6 limitations](03-KERNEL-HISTORY.md)).
-- **Official TWRP / OrangeFox pages**: listings verified-direct 2026-11-21, but the freshness/version of the current downloadable builds was **not** verified; the OrangeFox page has no offline snapshot yet (orchestrator action).
+- **Official TWRP / OrangeFox pages**: listings verified-direct 2026-11-21, but the freshness/version of the current downloadable builds was **not** verified; the OrangeFox page snapshot is [archive/orangefox-begonia.html](archive/orangefox-begonia.html) (verified 2026-11-21).
 - One-day run: no on-device verification of anything; wiki rows and forum claims are cited, not re-tested.
 
 ## Corrections & governance

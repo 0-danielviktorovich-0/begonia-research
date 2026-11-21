@@ -1,6 +1,6 @@
 # 11 — Blobs, firmware & per-component sources (begonia): provenance, freshness, RE entry points, build recipes
 
-REQUIREMENTS rows 27 (provenance & RE reuse), 36 (observation-anchored freshness) and the 2026-11-21 build-recipe user request. **Research-only:** nothing here was flashed, downloaded as a binary, or executed; every "how it is extracted" is documented public knowledge with sources. Facts come from the research files (02-07, 10, 13, 14) — this file only consolidates WHERE each reusable artifact class lives, HOW it is re-extracted, and WHERE the LATEST version appears first. Source-level detail: [01-SOURCES.md](01-SOURCES.md); per-ROM inventory: [02 §7](02-FIRMWARE-HISTORY.md); kernel detail: [03](03-KERNEL-HISTORY.md); planned RE work: [_context/W15-MISSION.md](_context/W15-MISSION.md) → [15-RE-IMPROVEMENT-PLAN.md](15-RE-IMPROVEMENT-PLAN.md).
+REQUIREMENTS rows 27 (provenance & RE reuse), 36 (observation-anchored freshness) and the 2026-11-21 build-recipe user request. **Research-only:** nothing here was flashed, downloaded as a binary, or executed; every "how it is extracted" is documented public knowledge with sources. Facts come from the research files (02-07, 10, 13, 14) — this file only consolidates WHERE each reusable artifact class lives, HOW it is re-extracted, and WHERE the LATEST version appears first. Source-level detail: [01-SOURCES.md](01-SOURCES.md); per-ROM inventory: [02 §7](02-FIRMWARE-HISTORY.md); kernel detail: [03](03-KERNEL-HISTORY.md); planned RE work: [_context/W15-MISSION.md](_context/W15-MISSION.md) → `15-RE-IMPROVEMENT-PLAN.md` (in flight at writing time).
 
 ## 1. Vendor blobs & dumps
 
@@ -47,13 +47,13 @@ REQUIREMENTS rows 27 (provenance & RE reuse), 36 (observation-anchored freshness
 
 - **Local host (owner-verified):** Ghidra 12.1.4 + Craft Anything are installed on the owner's Mac (stated 2026-11-21; REQUIREMENTS row 27). Use for ELF-class blobs (camera HAL, audio HAL, gen4m firmware glue) once extracted.
 - **Partition extraction:** [mtkclient](https://github.com/bkerler/mtkclient) — `mtk printgpt`, `mtk r <part>`, `mtk rl out`, `mtk rf flash.bin`, preloader via `mtk r preloader ... --parttype boot1` ([README-USAGE, archived copy](archive/files/mtkclient-README-USAGE.md)).
-- **Image unpacking:** `simg2img` (sparse images), `payload-dumper-go` (OTA `payload.bin`), 7z/mount for ext4, `strings`/Ghidra for ELF blobs — the planned recipe is written up in [_context/W15-MISSION.md](_context/W15-MISSION.md) (deliverable: [15-RE-IMPROVEMENT-PLAN.md](15-RE-IMPROVEMENT-PLAN.md)).
+- **Image unpacking:** `simg2img` (sparse images), `payload-dumper-go` (OTA `payload.bin`), 7z/mount for ext4, `strings`/Ghidra for ELF blobs — the planned recipe is written up in [_context/W15-MISSION.md](_context/W15-MISSION.md) (deliverable: `15-RE-IMPROVEMENT-PLAN.md`, in flight at writing time).
 - **Kernel-side RE model:** the Mali precedent — panfrost exists because the community reverse-engineered and upstreamed; applied to MT6785 the first targets are audio (mt6797-template AFE/machine driver) and Wi-Fi chip confirmation ([14 §2 Option D](14-MAINLINE-UPGRADE-PATH.md)).
 - **Boundary (REQUIREMENTS row 1):** document, do not execute. No flashing, no untrusted binaries, artifacts >50 MB stay out of the repo; extraction results live in scratch, never committed.
 
 ## 5. Freshness — where the latest version of each artifact appears first
 
-Observation-anchored ([REQUIREMENTS row 36](REQUIREMENTS-row-36): as of 2026-11-21; a source may have changed after we looked).
+Observation-anchored ([_context/REQUIREMENTS.md](_context/REQUIREMENTS.md) row 36: as of 2026-11-21; a source may have changed after we looked).
 
 | Artifact class | Freshest source observed 2026-11-21 | Last change observed |
 |---|---|---|
