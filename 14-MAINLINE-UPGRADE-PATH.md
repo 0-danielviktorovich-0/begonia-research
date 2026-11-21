@@ -1,5 +1,7 @@
 # 14 — Mainline upgrade path & open-driver development (begonia / MT6785)
 
+> **Newly checked exception (2026-11-21):** [criollojoel10/begonia-pmos-tianma](https://github.com/criollojoel10/begonia-pmos-tianma) reports working built-in Wi-Fi on an actual begonia with Linux 6.16.4 (27 Sep 2026), using **ported MediaTek vendor driver `wlan_gen4m` and WMT firmware**. This is not upstream mt76, and it does not mean the standard Dinolek/Nura image supports WLAN. The analysis below about missing `CONFIG_MT7663S`, SDIO/DTS and upstream-native WLAN still applies to the **unmodified mainline approach**, not every downstream vendor-driver port. Compare [22](22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md).
+
 Researched 2026-11-21 (JST). Research-only: nothing flashed, nothing downloaded except small text artifacts (defconfigs, Makefiles). Companion files: kernel landscape → [03-KERNEL-HISTORY.md](03-KERNEL-HISTORY.md) §4; per-component status + driver gaps → [04-HARDWARE-DRIVERS.md](04-HARDWARE-DRIVERS.md); pmOS/Droidian/UT ports → [06-DROIDIAN-POSTMARKETOS.md](06-DROIDIAN-POSTMARKETOS.md). Per repo single-source rule, already-recorded facts are linked, not restated.
 
 Legend: **[V]** verified directly this session (URL fetched); **[I]** inferred (basis given); confidence high/medium/low per claim.
