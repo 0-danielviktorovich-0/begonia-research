@@ -118,3 +118,11 @@ monitor mode IFTYPE_MONITOR patch github`, `"MT6630" OR "MT6628" monitor injecti
   for W19; permalinks recorded: `/attachments/firmwares-zip.4119971/`, `/attachments/something-zip.4124274/`,
   `/attachments/wifitest-zip.4121659/`, `/attachments/wifi_ram_code_6755-zip.4645924/`.
 - No git commits made (repo read+write files only, per mission).
+
+## Addendum 2026-11-22 (orchestrator link inventory from the r.jina.ai snapshot)
+All 33 external URLs extracted. GitHub trail: bq/aquaris-E5 (old combo driver tree),
+luckasfb/Development_Documents (MTK Alps docs incl. MT6628 datasheets + "Android wifi development
+process and key points.pdf"). XDA attachments (bunny 403 for automation — owner-assisted capture
+pending): wifitest.zip.4121659, firmwares.zip.4119971, something.zip.4124274,
+wifi_ram_code_6755.zip.4645924, hint1.png.4120336. Post permalinks: 71905049/71905132/71973656/
+78191037/78193443 (posts #4/#6 deleted).
