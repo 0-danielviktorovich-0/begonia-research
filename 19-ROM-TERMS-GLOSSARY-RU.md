@@ -132,7 +132,7 @@ BROM → preloader → LK → kernel; vbmeta/AVB, модем, PMIC,
 2. **«Non-CFW = без firmware»** — неверно. Non-CFW означает отсутствие требований **старой CFW-схемы**.
 3. **«GSI — более новая Non-CFW»** — неверно; GSI описывает универсальность system, а Non-CFW — платформенную совместимость begonia.
 4. **«Версия ОС = версия Linux-ядра»** — неверно: Ubuntu Touch 24.04 работает на Linux 4.14, если порт построен на Halium 10.
-5. **«Есть официальная страница recovery, значит бинарник новый и подходит к Android 16»** — неверно. См. [17-INDEPENDENT-AUDIT.md](17-INDEPENDENT-AUDIT.md), отдельную ветку [PR #1](https://github.com/0-danielviktorovich-0/begonia-research/pull/1): сайт TWRP обновлён в 2026, а официальный последний образ датируется 2022; OrangeFox begonia официально не поддерживается, последний перечисленный beta рассчитан на CFW.
+5. **«Есть официальная страница recovery, значит бинарник новый и подходит к Android 16»** — неверно. См. [независимый аудит recovery (PR #1)](https://github.com/0-danielviktorovich-0/begonia-research/pull/1), отдельную ветку [PR #1](https://github.com/0-danielviktorovich-0/begonia-research/pull/1): сайт TWRP обновлён в 2026, а официальный последний образ датируется 2022; OrangeFox begonia официально не поддерживается, последний перечисленный beta рассчитан на CFW.
 6. **«mtkclient всегда гарантирует unbrick»** — неверно: зависит от конкретного аппаратного/программного состояния и сохранённых заводских данных.
 7. **«Достаточно включить CONFIG_… в ядре»** — неверно: для реального драйвера также нужны DT nodes/pinctrl/regulators, firmware, совместимый интерфейс и userspace. Подробно в [14 §0](14-MAINLINE-UPGRADE-PATH.md).
 8. **«OSS = все драйверы открыты»** — неверно: vendor blobs могут остаться проприетарными.
