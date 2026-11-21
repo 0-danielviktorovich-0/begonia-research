@@ -33,6 +33,8 @@ Research and evidence index for porting **Ubuntu Touch, Droidian, postmarketOS, 
 
 **Do not equate Android 16 / LineageOS 23.2 with Linux 4.19.** Public begonia kernel trees verified on 2026-11-21 include Linux **4.14**, while some 4.19 references concern configs or community-reported experimental ports. See the [pinned source audit](docs/en/research/begonia-kernel-and-rom-evidence-2026-11.md). No device was flashed by this research.
 
+**2026-11-22 device test update:** A real Redmi Note 8 Pro booted the **Axion 2.9 NOESIS** build, and an on-device `uname -r` check reported **`4.19.325-cip136-st20-PoWeR+`**. This confirms a shipped bootable 4.19 kernel on the tested unit; **the exact kernel source and reproducible build instructions remain unavailable**. The previous 2026-11-21 source audit describes what was public at that time, not a denial of this subsequent hardware result. See [device test record](docs/en/recovery/07-RECOVERY-SAFETY.md#n2-live-flash-session-miui-era-a14-los--axion-29-noesis-owner-device-2026-11-22t00450900) and [kernel provenance matrix](data/matrices/kernel-root-provenance.csv).
+
 The previous root paths moved to `docs/` and `data/`. For old bookmarks, consult the [old→new path migration manifest](data/catalog/path-migrations.json); GitHub URL redirects are **not guaranteed**.
 
 **Contributing:** keep English as the international default and Russian as a first-class language; always link original code, dates, SHAs, known limitations and translation states. Run `python3 tools/check_i18n.py` before sending changes.
