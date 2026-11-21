@@ -16,6 +16,8 @@ All "verified" dates are observation stamps (REQUIREMENTS row 36): the day we la
 
 **[24 — Saikrishna's begonia 4.19 migration and source-stack audit](24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md)** — actual Nov 13–15 2026 device-tree commits, Android HAL/vendor/firmware/IMS/camera provenance, build-manifest mismatch, [21-repo machine register](../../../data/matrices/saikrishna-source-inventory.csv), [русский конспект](../../ru/research/24-saikrishna-source-audit.md).
 
+**Для русскоязычных читателей:** начните с [терминологического словаря CFW, Non-CFW, GSI и Linux](../../ru/android/19-ROM-TERMS-GLOSSARY-RU.md), затем перейдите к [источникам ядра 4.14/4.19 и KSU](../../ru/kernels/20-KERNEL-419-ROOT-ECOSYSTEM-RU.md) и [сравнению NoMount, SUSFS, OverlayFS](../../ru/kernels/21-NOMOUNT-MOUNT-BACKENDS-RU.md).
+
 ## Topic map
 
 | Topic | Where | What's there | Verified |
