@@ -381,6 +381,37 @@
         "Method details",
         "Telegram channels"
       ]
+    },
+    {
+      "topic": "android-firmware-terminology-ru",
+      "file": "19-ROM-TERMS-GLOSSARY-RU.md",
+      "section_anchor": "0-glavnoe-za-30-sekund",
+      "key_sources": [
+        "https://developer.android.com/topic/generic-system-image",
+        "https://4pda.to/forum/index.php?showtopic=974421"
+      ],
+      "status": "covered; observation 2026-11-21; ROM classes and hardware layers"
+    },
+    {
+      "topic": "mt6785-kernel-419-and-root-patch-provenance",
+      "file": "20-KERNEL-419-ROOT-ECOSYSTEM-RU.md",
+      "section_anchor": "2-gde-brat-iskhodniki-iader-begonia--versii-i-dokazatelstva",
+      "key_sources": [
+        "https://github.com/LineageOS/android_kernel_xiaomi_mt6785",
+        "https://github.com/Nova-Kernels/kernel_xiaomi_mt6785"
+      ],
+      "status": "covered; version/commit checked 2026-11-21; not boot-tested on user's begonia"
+    },
+    {
+      "topic": "nomount-systemless-mount-backends",
+      "file": "21-NOMOUNT-MOUNT-BACKENDS-RU.md",
+      "section_anchor": "2-nomount--imenno-tot-submodule-iz-nova-kernels",
+      "key_sources": [
+        "https://github.com/maxsteeel/nomount",
+        "https://github.com/backslashxx/mountify",
+        "https://kernelsu.org/guide/metamodule.html"
+      ],
+      "status": "covered; primary upstream checked 2026-11-21; untested on target hardware"
     }
   ]
 }
