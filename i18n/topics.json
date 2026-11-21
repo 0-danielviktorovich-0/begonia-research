@@ -2,7 +2,7 @@
   "schema_version": 1,
   "generated": "2026-11-21",
   "source_index": "index.json",
-  "entries_count": 42,
+  "entries_count": 43,
   "description": "English immutable topic IDs; localized titles, search keywords and entry points. An entry point may be a directory or digest, not necessarily full translation; consult catalog.json for status.",
   "topics": [
     {
@@ -1074,6 +1074,51 @@
       "entry_point": {
         "en": "23-419-TELEGRAM-OUTREACH.md",
         "ru": "23-419-TELEGRAM-OUTREACH.md"
+      }
+    },
+    {
+      "id": "saikrishna-begonia-source-stack-and-419-migration",
+      "title": {
+        "en": "Saikrishna begonia source stacks and Linux 4.19 migration",
+        "ru": "Исходники Saikrishna для begonia и перенос Linux 4.19"
+      },
+      "keywords": {
+        "en": [
+          "begonia",
+          "Saikrishna",
+          "4.19",
+          "kernel",
+          "rosemary",
+          "IMS",
+          "VoWiFi",
+          "Camera",
+          "Codec2",
+          "firmware",
+          "source",
+          "port",
+          "device",
+          "vendor"
+        ],
+        "ru": [
+          "бегония",
+          "Сайкришна",
+          "ядро",
+          "перенос",
+          "исходники",
+          "камера",
+          "микрофон",
+          "звук",
+          "модем",
+          "прошивка",
+          "vendor",
+          "4.19"
+        ]
+      },
+      "source_file": "24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md",
+      "source_anchor": "3-exact-419-transition-commits--newly-identified",
+      "entry_point": {
+        "en": "24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md",
+        "ru": "docs/ru/24-saikrishna-source-audit.md"
       }
     }
   ]
