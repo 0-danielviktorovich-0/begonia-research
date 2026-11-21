@@ -84,3 +84,14 @@ COVERAGE + regenerated archive index. `begonia-research.zip` is **dropped** per 
 6. Update this README + linked context files at every milestone — a stale root is a defect (REQUIREMENTS row 22).
 
 *Last updated: 2026-11-21T09:06:49Z (ISO 8601 UTC; all update stamps here use ISO 8601 UTC — see REQUIREMENTS row 34).*
+
+
+## License
+
+Dual licensing by content type:
+- **Code** (`tools/*`, scripts): [MIT](LICENSE)
+- **Research content** (`*.md`, `*.csv`, `*.json` — our own work): [CC BY-SA 4.0](LICENSE-DOCS)
+- **Quoted/archived third-party material** (forum guides, wiki pages, vendor docs): **not ours to license** — attribution + [takedown policy](NOTICE.md); copyright stays with the original authors (see full attribution list in [NOTICE.md](NOTICE.md)).
+
+Contributions: no CLA needed — a `Signed-off-by:` line in your commit (DCO) is enough.
+
