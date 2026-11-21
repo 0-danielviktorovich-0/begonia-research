@@ -28,6 +28,7 @@
 | **08** | Приоритеты разработки Ubuntu Touch, экспериментального 4.19 и современного Linux | [Дорожная карта — EN](../../08-DEVELOPMENT-ROADMAP.md) |
 | **14** | Какие драйверы отсутствуют в mainline, DTS, Wi-Fi, Audio и возможные пути исправления | [Переход к mainline — EN](../../14-MAINLINE-UPGRADE-PATH.md) |
 | **20** | **Исходники KernelSU, Non-KSU, KSU-Next, SukiSU, APatch, точные ветки 4.19** | **[20 — полный русский текст](../../20-KERNEL-419-ROOT-ECOSYSTEM-RU.md)** · [English summary](../en/20-kernel-root-ecosystem.md) |
+| **23** | **Разработчик @Saikrishna1504, работающий Linux 4.19, источники, дата и запрос на патчи** | **[23 — двуязычное исследование и сообщение для автора](../../23-419-TELEGRAM-OUTREACH.md)** |
 | **22** | **Как перенести 4.14 → 4.19 → 6.x с ИИ, Ghidra и REA; Google Play Integrity** | **[22 — полный русский текст](../../22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md)** · [English summary](../en/22-kernel-forward-port.md) |
 
 ## Root, безопасность и инструменты разработки
