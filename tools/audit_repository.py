@@ -33,7 +33,10 @@ def json_file(path: str):
         return {}
 
 def repo_file(path: str) -> bool:
-    if not path or path.startswith("/") or ".." in Path(path).parts:
+    if not path:
+        return False
+    path = path.split("#", 1)[0]
+    if path.startswith("/") or ".." in Path(path).parts:
         return False
     return (ROOT / path).is_file()
 
@@ -176,7 +179,7 @@ def audit_catalogs() -> None:
             if anchor not in anchor_map[file]:
                 error(f"topic {entry.get('topic')}: unknown catalog anchor #{anchor} in {file}")
         for uri in entry.get("key_sources", []):
-            if not uri.startswith(("https://", "http://")):
+            if not uri.startswith(("https://", "http://")) and not repo_file(uri):
                 error(f"topic {entry.get('topic')}: invalid key source {uri}")
     for entry in bilingual:
         file = entry.get("source_file")

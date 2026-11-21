@@ -175,7 +175,7 @@
         ]
       },
       "source_file": "docs/en/kernels/11-BLOBS-FIRMWARE-SOURCES.md",
-      "source_anchor": "61-android-rom-build-lineageosaosp-trees",
+      "source_anchor": "61-android-rom-build-lineageosaosp-trees-pointer-manifests-verified",
       "entry_point": {
         "en": "docs/en/kernels/11-BLOBS-FIRMWARE-SOURCES.md",
         "ru": "docs/ru/index.md"
@@ -227,7 +227,7 @@
         ]
       },
       "source_file": "docs/en/kernels/11-BLOBS-FIRMWARE-SOURCES.md",
-      "source_anchor": "62-kernel-builds",
+      "source_anchor": "62-kernel-builds-pointer-defconfigs-verified",
       "entry_point": {
         "en": "docs/en/kernels/11-BLOBS-FIRMWARE-SOURCES.md",
         "ru": "docs/ru/index.md"
@@ -398,7 +398,7 @@
         ]
       },
       "source_file": "docs/en/kernels/11-BLOBS-FIRMWARE-SOURCES.md",
-      "source_anchor": "64-postmarketos",
+      "source_anchor": "64-postmarketos-verified-steps-from-wikideviceinfo",
       "entry_point": {
         "en": "docs/en/kernels/11-BLOBS-FIRMWARE-SOURCES.md",
         "ru": "docs/ru/index.md"
@@ -548,7 +548,7 @@
         ]
       },
       "source_file": "docs/en/kernels/11-BLOBS-FIRMWARE-SOURCES.md",
-      "source_anchor": "63-recovery-builds-twrp--orangefox",
+      "source_anchor": "63-recovery-builds-twrp--orangefox-pointer",
       "entry_point": {
         "en": "docs/en/kernels/11-BLOBS-FIRMWARE-SOURCES.md",
         "ru": "docs/ru/index.md"
@@ -904,7 +904,7 @@
         ]
       },
       "source_file": "docs/en/linux/15-RE-IMPROVEMENT-PLAN.md",
-      "source_anchor": null,
+      "source_anchor": "1-ground-truth--unpacking-recipe",
       "entry_point": {
         "en": "docs/en/linux/15-RE-IMPROVEMENT-PLAN.md",
         "ru": "docs/ru/index.md"
@@ -928,7 +928,7 @@
         ]
       },
       "source_file": "docs/en/android/16-ROOT-METHODS.md",
-      "source_anchor": null,
+      "source_anchor": "1-methods-matrix",
       "entry_point": {
         "en": "docs/en/android/16-ROOT-METHODS.md",
         "ru": "docs/ru/index.md"
@@ -955,7 +955,7 @@
         ]
       },
       "source_file": "docs/ru/android/19-ROM-TERMS-GLOSSARY-RU.md",
-      "source_anchor": "0-glavnoe-za-30-sekund",
+      "source_anchor": "0-главное-за-30-секунд",
       "entry_point": {
         "en": "docs/en/android/19-rom-terminology.md",
         "ru": "docs/ru/android/19-ROM-TERMS-GLOSSARY-RU.md"
@@ -984,7 +984,7 @@
         ]
       },
       "source_file": "docs/ru/kernels/20-KERNEL-419-ROOT-ECOSYSTEM-RU.md",
-      "source_anchor": "2-gde-brat-iskhodniki-iader-begonia--versii-i-dokazatelstva",
+      "source_anchor": "2-где-брать-исходники-ядер-begonia--версии-и-доказательства",
       "entry_point": {
         "en": "docs/en/kernels/20-kernel-root-ecosystem.md",
         "ru": "docs/ru/kernels/20-KERNEL-419-ROOT-ECOSYSTEM-RU.md"
@@ -1012,7 +1012,7 @@
         ]
       },
       "source_file": "docs/ru/kernels/21-NOMOUNT-MOUNT-BACKENDS-RU.md",
-      "source_anchor": "2-nomount--imenno-tot-submodule-iz-nova-kernels",
+      "source_anchor": "2-nomount--именно-тот-submodule-из-nova-kernels",
       "entry_point": {
         "en": "docs/en/kernels/21-nomount-and-mount-backends.md",
         "ru": "docs/ru/kernels/21-NOMOUNT-MOUNT-BACKENDS-RU.md"
@@ -1042,7 +1042,7 @@
         ]
       },
       "source_file": "docs/ru/kernels/22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md",
-      "source_anchor": "1-linux-414--419-chto-oznachaet-perenos-na-dele",
+      "source_anchor": "1-linux-414--419-что-означает-перенос-на-деле",
       "entry_point": {
         "en": "docs/en/kernels/22-kernel-forward-port.md",
         "ru": "docs/ru/kernels/22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md"

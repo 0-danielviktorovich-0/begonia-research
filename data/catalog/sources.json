@@ -2273,7 +2273,8 @@
         "03 v4.19 port lead",
         "16 root recipes"
       ],
-      "notes": "web-preview t.me/s/ readable as guest; related: @RedmiNote8ProOfficial @wuxinboys @begoniadump @danascapeprojects"
+      "notes": "web-preview t.me/s/ readable as guest; related: @RedmiNote8ProOfficial @wuxinboys @begoniadump @danascapeprojects",
+      "id": "telegram-redmi-note-8-pro-updates"
     },
     {
       "url": "https://github.com/TTTT555/device_xiaomi_begonia",
@@ -2285,7 +2286,8 @@
         "02 device-tree inventory",
         "09 battery model"
       ],
-      "notes": "found via plain web_search after prior NF; battery 4500 mAh in README"
+      "notes": "found via plain web_search after prior NF; battery 4500 mAh in README",
+      "id": "github-tttt555-device-begonia"
     },
     {
       "url": "https://github.com/begonia-dev-space/android_device_redmi_begonia",
@@ -2296,7 +2298,8 @@
       "used_for": [
         "02"
       ],
-      "notes": "via web_search"
+      "notes": "via web_search",
+      "id": "github-begonia-dev-space-device-begonia"
     },
     {
       "url": "https://github.com/xiaomi-begonia-dev/android_device_redmi_begonia",
@@ -2307,7 +2310,8 @@
       "used_for": [
         "02"
       ],
-      "notes": "via web_search"
+      "notes": "via web_search",
+      "id": "github-xiaomi-begonia-dev-device-begonia"
     },
     {
       "url": "https://github.com/topjohnwu/Magisk/releases",
@@ -2318,7 +2322,8 @@
       "used_for": [
         "16 §2.1"
       ],
-      "notes": "Android 17 sepolicy support commit"
+      "notes": "Android 17 sepolicy support commit",
+      "id": "magisk-releases-2026"
     },
     {
       "url": "https://github.com/KernelSU-Next/KernelSU-Next",
@@ -2329,7 +2334,8 @@
       "used_for": [
         "16 §2.2"
       ],
-      "notes": null
+      "notes": null,
+      "id": "kernelsu-next-releases-2026"
     },
     {
       "url": "https://sukisu.org/",
@@ -2340,7 +2346,8 @@
       "used_for": [
         "16 §2.3"
       ],
-      "notes": null
+      "notes": null,
+      "id": "sukisu-nova-site"
     },
     {
       "id": "nomount-maxsteeel",

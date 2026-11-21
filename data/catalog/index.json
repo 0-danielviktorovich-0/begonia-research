@@ -70,7 +70,7 @@
     {
       "topic": "rom-build-recipes",
       "file": "docs/en/kernels/11-BLOBS-FIRMWARE-SOURCES.md",
-      "section_anchor": "61-android-rom-build-lineageosaosp-trees",
+      "section_anchor": "61-android-rom-build-lineageosaosp-trees-pointer-manifests-verified",
       "key_sources": [
         "https://github.com/crdroidandroid/android",
         "https://github.com/PixelExperience/manifest",
@@ -93,7 +93,7 @@
     {
       "topic": "kernel-build-recipes",
       "file": "docs/en/kernels/11-BLOBS-FIRMWARE-SOURCES.md",
-      "section_anchor": "62-kernel-builds",
+      "section_anchor": "62-kernel-builds-pointer-defconfigs-verified",
       "key_sources": [
         "https://github.com/AgentFabulous/begonia/blob/android-11.0/arch/arm64/configs/begonia_user_defconfig",
         "https://github.com/Dinolek/mt6785-mainline"
@@ -164,7 +164,7 @@
     {
       "topic": "pmos-build",
       "file": "docs/en/kernels/11-BLOBS-FIRMWARE-SOURCES.md",
-      "section_anchor": "64-postmarketos",
+      "section_anchor": "64-postmarketos-verified-steps-from-wikideviceinfo",
       "key_sources": [
         "https://wiki.nura.eco/wiki/Pmbootstrap/Installation",
         "https://gitlab.nura.eco/nura/pmaports/-/raw/main/device/testing/device-xiaomi-begonia/deviceinfo"
@@ -225,7 +225,7 @@
     {
       "topic": "recovery-builds",
       "file": "docs/en/kernels/11-BLOBS-FIRMWARE-SOURCES.md",
-      "section_anchor": "63-recovery-builds-twrp--orangefox",
+      "section_anchor": "63-recovery-builds-twrp--orangefox-pointer",
       "key_sources": [
         "https://github.com/HyperTeam/android_device_redmi_begonia-TWRP",
         "https://github.com/BitsAndBytes-dev/twrp_device_redmi_begonia"
@@ -368,7 +368,12 @@
         "Ground truth firmware",
         "Top RE targets",
         "Sequencing"
-      ]
+      ],
+      "topic": "re-improvement-plan",
+      "file": "docs/en/linux/15-RE-IMPROVEMENT-PLAN.md",
+      "key_sources": [],
+      "status": "covered; source migration verified 2026-11-21",
+      "section_anchor": "1-ground-truth--unpacking-recipe"
     },
     {
       "id": "root-methods",
@@ -380,12 +385,17 @@
         "Methods matrix",
         "Method details",
         "Telegram channels"
-      ]
+      ],
+      "topic": "root-methods",
+      "file": "docs/en/android/16-ROOT-METHODS.md",
+      "key_sources": [],
+      "status": "covered; source migration verified 2026-11-21",
+      "section_anchor": "1-methods-matrix"
     },
     {
       "topic": "android-firmware-terminology-ru",
       "file": "docs/ru/android/19-ROM-TERMS-GLOSSARY-RU.md",
-      "section_anchor": "0-glavnoe-za-30-sekund",
+      "section_anchor": "0-главное-за-30-секунд",
       "key_sources": [
         "https://developer.android.com/topic/generic-system-image",
         "https://4pda.to/forum/index.php?showtopic=974421"
@@ -395,7 +405,7 @@
     {
       "topic": "mt6785-kernel-419-and-root-patch-provenance",
       "file": "docs/ru/kernels/20-KERNEL-419-ROOT-ECOSYSTEM-RU.md",
-      "section_anchor": "2-gde-brat-iskhodniki-iader-begonia--versii-i-dokazatelstva",
+      "section_anchor": "2-где-брать-исходники-ядер-begonia--версии-и-доказательства",
       "key_sources": [
         "https://github.com/LineageOS/android_kernel_xiaomi_mt6785",
         "https://github.com/Nova-Kernels/kernel_xiaomi_mt6785"
@@ -405,7 +415,7 @@
     {
       "topic": "nomount-systemless-mount-backends",
       "file": "docs/ru/kernels/21-NOMOUNT-MOUNT-BACKENDS-RU.md",
-      "section_anchor": "2-nomount--imenno-tot-submodule-iz-nova-kernels",
+      "section_anchor": "2-nomount--именно-тот-submodule-из-nova-kernels",
       "key_sources": [
         "https://github.com/maxsteeel/nomount",
         "https://github.com/backslashxx/mountify",
@@ -416,7 +426,7 @@
     {
       "topic": "kernel-414-to-419-ai-porting-payment-integrity",
       "file": "docs/ru/kernels/22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md",
-      "section_anchor": "1-linux-414--419-chto-oznachaet-perenos-na-dele",
+      "section_anchor": "1-linux-414--419-что-означает-перенос-на-деле",
       "key_sources": [
         "https://github.com/xiaomi-mt6785-dev/android_kernel_xiaomi_mt6785",
         "https://github.com/criollojoel10/begonia-pmos-tianma",
