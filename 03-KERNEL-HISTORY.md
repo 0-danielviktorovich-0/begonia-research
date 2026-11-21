@@ -1,5 +1,7 @@
 # Begonia (Xiaomi Redmi Note 8 Pro, MT6785) — Kernel History
 
+> **Browser access reconciliation (2026-11-21):** Some worker-era “live XDA blocked” limitations below predate the later successful Hermes Brave captures. See [_context/HUMAN-ASSISTS.md](_context/HUMAN-ASSISTS.md); no assumption of a complete thread crawl.
+
 Research date: 2026-11-21 (JST). Dimension: kernels. Method: GitHub/GitLab APIs (curl/urllib), raw.githubusercontent Makefile heads, kernel.org cgit, Wayback snapshot of XDA megathread, cached 4PDA pages. No git commands; research-only.
 Legend: **[V]** = verified directly (API/page/file fetched by this task, with URL+ref); **[I]** = inferred (marked with basis); confidence given per claim (high/medium/low).
 
