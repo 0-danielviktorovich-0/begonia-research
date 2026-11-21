@@ -17,8 +17,9 @@ PAT_BARE = re.compile(r"(?<!\]\()(?<!href=\")(?<!<)(https?://[^\s\)\]>,\"'`]+)")
 def audit(path: str):
     txt = open(path, encoding="utf-8", errors="replace").read()
     linked = PAT_LINK.findall(txt)
-    linked_prefixes = {u[:60] for u in linked}
-    bare = [u for u in PAT_BARE.findall(txt) if not any(u.startswith(p) for p in linked_prefixes)]
+    # substring match (not prefix): a URL nested INSIDE a linked destination
+    # (e.g. the real URL inside a web.archive.org href) is not plain text.
+    bare = [u for u in PAT_BARE.findall(txt) if not any(u in dest for dest in linked)]
     return len(linked), bare
 
 

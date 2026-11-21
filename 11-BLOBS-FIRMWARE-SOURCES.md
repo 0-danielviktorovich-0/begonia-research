@@ -104,7 +104,7 @@ Legend: **[verified-steps]** = the steps/manifests are verified in the linked tr
 ### 6.5 Ubuntu Touch (Halium) **[verified-steps from device repo]**
 
 - Host: Linux (Debian/Ubuntu per [UBports Setting-up docs](https://docs.ubports.com/en/latest/porting/introduction/Setting_up.html)); macOS/Windows → VM/Docker ([07 host matrix](07-RECOVERY-SAFETY.md)).
-- Device repo root [`build.sh`](https://gitlab.com/ubports/porting/community-ports/android10/xiaomi-redmi-note-8-pro/xiaomi-begonia) = `git clone https://gitlab.com/ubports/community-ports/halium-generic-adaptation-build-tools build && ./build/build.sh "$@"`; CI runs `gsi-port-ci.yml` (`halium.yaml` tooling) — [05 §5](05-UBUNTU-TOUCH.md).
+- Device repo root [`build.sh`](https://gitlab.com/ubports/porting/community-ports/android10/xiaomi-redmi-note-8-pro/xiaomi-begonia) = a two-liner: `git clone` of [halium-generic-adaptation-build-tools](https://gitlab.com/ubports/community-ports/halium-generic-adaptation-build-tools) into `./build`, then `./build/build.sh "$@"`; CI runs `gsi-port-ci.yml` (`halium.yaml` tooling) — [05 §5](05-UBUNTU-TOUCH.md).
 - Kernel: clone [kernel-xiaomi-mt6785](https://gitlab.com/ubports/porting/community-ports/android10/xiaomi-redmi-note-8-pro/kernel-xiaomi-mt6785) @`halium-10.0`, build `begonia_user_defconfig` with clang; boot.img header v2, DTB `mediatek/mt6785.dtb` ([05 §5](05-UBUNTU-TOUCH.md)).
 - Vendor: stock MIUI vendor via Halium (no separate repo found — [02 §7.12](02-FIRMWARE-HISTORY.md)); install end-user path = UBports Installer 0.11.2 ([device page](https://devices.ubuntu-touch.io/device/begonia/)).
 
