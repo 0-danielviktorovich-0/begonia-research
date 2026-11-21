@@ -18,7 +18,13 @@
 
 - [Saalim Quadri's LineageOS 23.2 begonia release notes](https://squadri.me/devices/begonia-lineageos/) (posted 2026-03-28) explicitly list **Android 16.2 + Linux kernel 4.14**, with links to a [specific XDA release thread](https://xdaforums.com/t/rom-unofficial-lineageos-23-2-redmi-note-8-pro-begonia.4783655/) and the WuXing90 kernel source.
 - The XDA page could not be fetched directly in this research session (HTTP 502). Its content, subsequent posts, and change logs are **not independently validated** here.
-- Other community reports mention experimentation with a begonia Linux 4.19 port. Such a claim should remain **unverified as a usable port** until an accessible exact commit, 4.19 Makefile, begonia DTS/defconfig, build configuration, boot logs, and tested functionality matrix are available.
+- Other community reports mention experimentation with a begonia Linux 4.19 port. At this **2026-11-21 snapshot**, these claims were not yet supported by a locally observed device boot. The **2026-11-22 addendum** below separately establishes a successful boot, while source code and build reproducibility remain open.
+
+## 2026-11-22 addendum: physical boot confirmed; sources still unpublished
+
+After the 2026-11-21 source-only snapshot, a real **Redmi Note 8 Pro (begonia)** completed an Axion 2.9 NOESIS installation and boot. The kernel string captured via on-device ADB/`uname -r` was **`4.19.325-cip136-st20-PoWeR+`**. This supersedes the earlier *hardware boot unverified* status, **but not** the earlier observation that the public Saikrishna kernel `main` tree was 4.14 at the cited commit. Both findings can be true: the shipped device kernel and publicly available source tree are different artifacts.
+
+The exact 4.19 source tree, source-to-image equivalence, DTS/DTBO patchset and reproducible build have **not** been established. Read the [dated recovery/installation record](../recovery/07-RECOVERY-SAFETY.md) and [kernel provenance matrix](../../../data/matrices/kernel-root-provenance.csv); do not attribute every 4.19 patch to one public repository merely from the kernel's release string.
 
 ## Review checklist for a candidate 4.19 port
 
