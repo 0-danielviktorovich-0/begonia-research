@@ -1,7 +1,7 @@
-# 10-GUIDE-INDEX — every begonia (Redmi Note 8 Pro) guide/instruction post, indexed
+# 10-GUIDE-INDEX — curated begonia (Redmi Note 8 Pro) installation, recovery and development guides
 
 Device: Xiaomi Redmi Note 8 Pro (`begonia`, MT6785/Helio G90T). Built 2026-11-21 by the indexer agent.
-Scope: ALL guide posts from the two 4PDA threads (шапки fully mined: [custom-ROM thread 974421](https://4pda.to/forum/index.php?showtopic=974421), [MIUI thread 965629](https://4pda.to/forum/index.php?showtopic=965629)) + XDA (wayback) + Phase-C discoveries. Full outbound-link inventory with dispositions: `_context/OUTBOUND-LINKS.csv` (1083 unique URLs).
+Scope: Guide posts discovered from pinned first-post indexes, selected first/middle/last forum pages, individually fetched 4PDA posts and available live/archived XDA captures. **This is NOT a crawl of all ~1,235 + ~1,110 forum pages**, and it is not guaranteed to include every later discussion or attachment. The outbound-link list `_context/OUTBOUND-LINKS.csv` indexes links found in those captured materials, not every link ever posted (1083 unique URL observations in the initial run).
 
 **Conventions.** Permalinks are `showtopic=<id>&view=findpost&p=<pid>`. Offline copies live in `archive/` (`4pda-*-extracted.html` = pandoc extracts of cached pages; `rec2-*.html` = snapshots made by this agent; `*-wayback.html` = Wayback saves). Confidence: high = title/pid read directly from cached шапка or fetched page; medium = inferred from anchor text/search. "Used-by" names the research file the entry feeds (02 firmware, 03 kernel, 05 UBports, 06 pmOS/Droidian, 07 recovery/safety).
 
