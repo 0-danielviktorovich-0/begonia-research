@@ -66,7 +66,7 @@
       "status": "moved",
       "operation": "git-mv-and-rewrite-references",
       "pre_move_blob_sha": "aa5317507ca809e292a31c23de0178f0b340e54e",
-      "post_move_blob_sha": "0900e352665e22563a9e08c207f6c1811a0676d0",
+      "post_move_blob_sha": "5be4a138ea598d57720c54c154aa6ef8793d5274",
       "checks": [
         "markdown-relative-links",
         "cross-locale-navigation",
@@ -144,7 +144,7 @@
       "status": "moved",
       "operation": "git-mv-and-rewrite-references",
       "pre_move_blob_sha": "b1cea42ce4ff55886dd92853c0b05ea180986990",
-      "post_move_blob_sha": "fd803545420c080f5eba52eb4c010458a394fd50",
+      "post_move_blob_sha": "0394a415064020662354072ef441773f2d78e6be",
       "checks": [
         "markdown-relative-links",
         "cross-locale-navigation",
@@ -235,7 +235,7 @@
       "status": "moved",
       "operation": "git-mv-and-rewrite-references",
       "pre_move_blob_sha": "433b6427c9dd6424a4426ebf825705c944b5bcc6",
-      "post_move_blob_sha": "d216ee56957e562bc3bac5c0843110480fcf1932",
+      "post_move_blob_sha": "f253245c5a82183eaf30c39c7d7b25bb0820c349",
       "checks": [
         "markdown-relative-links",
         "cross-locale-navigation",
@@ -378,7 +378,7 @@
       "status": "moved",
       "operation": "merge-content-update-generated-index",
       "pre_move_blob_sha": "6b4ab1dfe38294328eb64f5399ee8066690d879a",
-      "post_move_blob_sha": "1ba77b322016feb10ae183f8ae12351d54312b39",
+      "post_move_blob_sha": "b941c9fa1d1084f34464515961ba016d1a80bba8",
       "checks": [
         "markdown-relative-links",
         "cross-locale-navigation",
@@ -443,7 +443,7 @@
       "status": "moved",
       "operation": "merge-content-and-remove-old",
       "pre_move_blob_sha": "c51529af15f1496aa538451029ae4d28c35e4087",
-      "post_move_blob_sha": "418422433fec613c4bf42e204a60d630b066ec95",
+      "post_move_blob_sha": "67a9ac3b3b7298e60293e3cf4ca6130d0cfda59a",
       "checks": [
         "markdown-relative-links",
         "cross-locale-navigation",
@@ -482,7 +482,7 @@
       "status": "moved",
       "operation": "git-mv-and-rewrite-references",
       "pre_move_blob_sha": "d6bb029e272b755fff6302f886fc07c2bee2989c",
-      "post_move_blob_sha": "d6bb029e272b755fff6302f886fc07c2bee2989c",
+      "post_move_blob_sha": "cc6116ce04bf2e5261cc728180832f7bea5f8c0e",
       "checks": [
         "markdown-relative-links",
         "cross-locale-navigation",
@@ -534,7 +534,7 @@
       "status": "moved",
       "operation": "git-mv-and-rewrite-references",
       "pre_move_blob_sha": "af1f14ee466831289acd654c083bc4c6d3560ae1",
-      "post_move_blob_sha": "af1f14ee466831289acd654c083bc4c6d3560ae1",
+      "post_move_blob_sha": "c96347fe9ba528024a1a7986acb499686dc54830",
       "checks": [
         "markdown-relative-links",
         "cross-locale-navigation",
@@ -547,7 +547,7 @@
       "status": "moved",
       "operation": "git-mv-and-rewrite-references",
       "pre_move_blob_sha": "88d3151758f9940c9b8e5b17d65d29d521306856",
-      "post_move_blob_sha": "e1d7e53cf3a4ba7af6c6ca25fb92d8d1539f7463",
+      "post_move_blob_sha": "1fed0023d9ba97c8cffb793af0d315ce2cbf22bd",
       "checks": [
         "markdown-relative-links",
         "machine-consumers"
@@ -559,7 +559,7 @@
       "status": "moved",
       "operation": "git-mv-and-rewrite-references",
       "pre_move_blob_sha": "d9996d3bc7288561e727e2c587183e24d640d46c",
-      "post_move_blob_sha": "baa91f93ae206c191fcb1e796618717a12f463a4",
+      "post_move_blob_sha": "7ef89b9be27218ddf53828f46186832b079aeb0a",
       "checks": [
         "markdown-relative-links",
         "machine-consumers"
@@ -673,5 +673,6 @@
   ],
   "breaking_change_note": "Existing GitHub blob/main/<old_path> URLs may 404 after moves; no unconditional path redirects. If necessary retain temporary compatibility stubs before a final clean-root stage.",
   "implemented_on": "2026-11-21",
-  "implemented_branch": "refactor/clean-root-bilingual-20261121"
+  "implemented_branch": "refactor/clean-root-bilingual-20261121",
+  "snapshot_commit": "563a710658a6600896809fc0bbc21b84f768d6b0"
 }

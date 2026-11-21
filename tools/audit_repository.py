@@ -239,6 +239,9 @@ def audit_migration() -> None:
         if entry.get("pre_move_blob_sha") != old_sha:
             error(f"source blob SHA mismatch: {source}")
         new_content = (ROOT / dest).read_bytes()
+        new_sha = subprocess.check_output(["git", "hash-object", dest], cwd=ROOT, text=True).strip()
+        if entry.get("post_move_blob_sha") != new_sha:
+            error(f"destination blob SHA mismatch: {dest}; refresh migration manifest")
         if source.endswith(".csv") and old_content != new_content:
             error(f"CSV data changed during move: {source} -> {dest}")
         if source.endswith(".json") and source == "sources.json":
@@ -261,6 +264,10 @@ def audit_migration() -> None:
             before = Counter(normalize_line(x) for x in old_content.decode("utf-8").splitlines() if x.strip())
             after = Counter(normalize_line(x) for x in new_content.decode("utf-8").splitlines() if x.strip())
             difference = before-after
+            # Appending a new table cell or an explanatory suffix preserves the old text.
+            difference = Counter({line: n for line, n in difference.items()
+                                  if not any(new_line.startswith(line) and len(new_line) > len(line)
+                                             for new_line in after)})
             if difference:
                 examples = [f"{n}x {line[:105]}" for line,n in difference.items()]
                 error(f"changed non-link content in move {source} -> {dest}: {examples[:4]}")
