@@ -24,7 +24,7 @@
 | Диагностика и восстановление | [07](../en/recovery/07-RECOVERY-SAFETY.md) · [18 — диагностика без прошивки](../en/recovery/18-DEVICE-PREFLIGHT-READONLY.md) |
 | Контакт разработчика ядра Linux 4.19 и запрос исходников | [23 — двуязычное исследование и готовый текст запроса](../en/research/23-419-TELEGRAM-OUTREACH.md) |
 | Новое исследование исходников @Saikrishna1504: ядро 4.19, firmware, IMS/VoWiFi и камера | [24 — русский подробный конспект](research/24-saikrishna-source-audit.md) · [полный английский отчёт](../en/research/24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md) |
-| Полный указатель по-русски || Полный указатель по-русски | **[docs/ru/README.md](index.md)** |
+| Полный указатель по-русски | **[docs/ru/index.md](index.md)** |
 | Каталог оригиналов, веток и ссылок | [INDEX.md](../en/research/master-topic-index.md) · [index.json](../../data/catalog/index.json) · [sources.json](../../data/catalog/sources.json) |
 
 ## Как устроена мультиязычность

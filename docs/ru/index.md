@@ -30,7 +30,7 @@
 | **20** | **Исходники KernelSU, Non-KSU, KSU-Next, SukiSU, APatch, точные ветки 4.19** | **[20 — полный русский текст](kernels/20-KERNEL-419-ROOT-ECOSYSTEM-RU.md)** · [English summary](../en/kernels/20-kernel-root-ecosystem.md) |
 | **23** | **Разработчик @Saikrishna1504, работающий Linux 4.19, источники, дата и запрос на патчи** | **[23 — двуязычное исследование и сообщение для автора](../en/research/23-419-TELEGRAM-OUTREACH.md)** |
 | **24** | **Дерево устройства begonia, патчи Linux 4.19, аудио, IMS/VoWiFi, камера и firmware от Saikrishna1504** | **[Русский подробный конспект](research/24-saikrishna-source-audit.md)** · [английский полный отчёт](../en/research/24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md) |
-| **22** | **Как перенести 4.14 → 4.19 → 6.x с ИИ, Ghidra и REA; Google Play Integrity**| **22** | **Как перенести 4.14 → 4.19 → 6.x с ИИ, Ghidra и REA; Google Play Integrity** | **[22 — полный русский текст](kernels/22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md)** · [English summary](../en/kernels/22-kernel-forward-port.md) |
+| **22** | **Как перенести 4.14 → 4.19 → 6.x с ИИ, Ghidra и REA; Google Play Integrity** | **[22 — полный русский текст](kernels/22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md)** · [English summary](../en/kernels/22-kernel-forward-port.md) |
 
 ## Root, безопасность и инструменты разработки
 
