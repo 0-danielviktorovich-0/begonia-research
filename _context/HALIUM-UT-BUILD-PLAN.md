@@ -64,3 +64,22 @@ Safety images already on host: nvram/nvdata/nvcfg/persist/boot (A14-era, taken 2
   future 4.19). Next: docker build container + halium.fragment drafting against the reference tree.
 - Skill created: **halium-kernel-patching** (ladder A/B/C, config checklist, docker build, fastboot-boot
   iteration loop).
+
+
+## Track D — Droidspaces: Linux containers on the CURRENT Android (owner find, 2026-11-22)
+
+[ravindu644/droidspaces-oss](https://github.com/ravindu644/droidspaces-oss) (GPLv3, active 2026-11-21):
+LXC-like runtime — real distros (Ubuntu/Debian/Fedora/Arch…) boot their own init as PID 1 **on the
+phone's own kernel**, no VM/chroot; NAT networking, GPU (VirGL/Turnip), PulseAudio, Docker/Podman inside
+containers. Needs ROOT (KSU recommended) + kernel options (fragment:
+`~/halium-build/droidspaces-kernel-fragment.conf`, from their Kernel-Configuration guide).
+
+- **Why it matters here**: owner's "test Linuxes alongside the working system" — zero reflashing, runs
+  on Axion as-is (after rooting). Complements Halium (which replaces Android): Halium = native Linux,
+  Droidspaces = Linux-in-Android. Union of kernel options (halium ∪ droidspaces) goes into ONE fragment
+  — overlap is large (namespaces/SYSVIPC/OVERLAY_FS/PARANOID_NETWORK=n/USER_NS) + droidspaces adds
+  NET_NS/VETH/BRIDGE/NAT/cgroups.
+- **Ready kernel exists**: Saikrishna sai_hub post 795 area — "KSU kernel with droidspace support for
+  begonia" (pixeldrain links in-channel). Candidates for the Axion-era vendor without building.
+- Sequence: root Axion (KSU via kernel swap or Magisk boot patch) → install Droidspaces APK → Debian
+  container → verify GPU/audio/network toggles. Then the same kernel serves the Halium track.
