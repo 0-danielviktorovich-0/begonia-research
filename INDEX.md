@@ -4,11 +4,15 @@ One-hop navigation for humans and agents. Every major topic → the file + secti
 
 All "verified" dates are observation stamps (REQUIREMENTS row 36): the day we last looked at the underlying source — **2026-11-21 for the whole research run** unless noted.
 
+<<<<<<< HEAD
 **[Русский словарь типов прошивок и технических терминов](19-ROM-TERMS-GLOSSARY-RU.md)** — начать здесь, если CFW, Non-CFW, GSI, vendor, Halium, mainline, recovery и номера версий пока неочевидны.
 
 **[Кастомные ядра 4.14/4.19 и KSU/Non-KSU](20-KERNEL-419-ROOT-ECOSYSTEM-RU.md)** — дерево источников, ветки, HEAD и родословная патчей; структурированный [реестр](kernel-root-provenance.csv).
 
 **[NoMount и сравнение root/mount-подходов](21-NOMOUNT-MOUNT-BACKENDS-RU.md)** — отличие root engine от SUSFS и metamodule, требования к legacy 4.14/4.19, совместимость и диагностика.
+=======
+**[Русский разбор KSU/Non-KSU и актуальных ядер 4.14/4.19](20-KERNEL-419-ROOT-ECOSYSTEM-RU.md)** — точные источники, SHA, источники интеграции KernelSU/Next/SUSFS, AnyKernel3, риски совместимости. Машинный перечень: [kernel-root-provenance.csv](kernel-root-provenance.csv).
+>>>>>>> origin/research/kernel-419-root-provenance-2026-11-21
 
 ## Topic map
 

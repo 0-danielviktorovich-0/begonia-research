@@ -8,7 +8,7 @@ confidence high/medium/low; observation stamps ISO 8601 UTC. Cross-refs:
 [10-GUIDE-INDEX.md](10-GUIDE-INDEX.md) (§2 root threads), [13-NETHUNTER-WIFI-EXTRAS.md](13-NETHUNTER-WIFI-EXTRAS.md) (§2 NetHunter kernel needs).
 
 
-> **Independent update (2026-11-21):** Compare the root engines, Git source provenance and KSU/non-KSU defconfigs in [20-KERNEL-419-ROOT-ECOSYSTEM-RU.md](20-KERNEL-419-ROOT-ECOSYSTEM-RU.md). The distinct mount/backend technologies (NoMount, SUSFS, Mountify, OverlayFS, Magic Mount, Hybrid Mount) and their actual trade-offs are examined in [21-NOMOUNT-MOUNT-BACKENDS-RU.md](21-NOMOUNT-MOUNT-BACKENDS-RU.md). The broad support claims in the historical matrix below are developer reports, **not tested compatibility across all begonia Android versions**. Root-hiding does **not** guarantee banking app compatibility or Play Integrity.
+> **2026-11-21 independent update:** [20-KERNEL-419-ROOT-ECOSYSTEM-RU.md](20-KERNEL-419-ROOT-ECOSYSTEM-RU.md) extends this registry with directly checked KSU-vs-Non-KSU NoVA defconfigs/build script, KernelSU-Next `legacy` submodule, a traced 4.19 source list, current official upstream compatibility constraints, and a source-of-patches map. Read [kernel-root-provenance.csv](kernel-root-provenance.csv) for verification status. Some broad compatibility language below (for example “all MIUI 9→17” and suggestions that root can be made undetectable) is **not sufficiently evidenced** and should not be taken as device-specific certification. Root != bootloader unlock; Android root frameworks are not required for native Linux/Ubuntu Touch porting.
 
 ---
 

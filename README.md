@@ -26,6 +26,10 @@ COVERAGE + regenerated archive index. `begonia-research.zip` is **dropped** per 
 - [NoMount и варианты системной подмены файлов](21-NOMOUNT-MOUNT-BACKENDS-RU.md) — Magic Mount, OverlayFS, Mountify, NoMount, SUSFS, Hybrid Mount, плюсы/минусы и ограничения MT6785.
 - [Аудит достоверности и полноты](17-INDEPENDENT-AUDIT.md), [безопасная диагностика телефона](18-DEVICE-PREFLIGHT-READONLY.md).
 
+## Новое: происхождение ядер 4.14/4.19 и root-патчей
+
+[20-KERNEL-419-ROOT-ECOSYSTEM-RU.md](20-KERNEL-419-ROOT-ECOSYSTEM-RU.md) — подробный русский разбор KSU/Non-KSU, Magisk, KernelSU-Next, SukiSU, APatch, SUSFS, AnyKernel3, реальных 4.19 деревьев MT6785 и проверенной NoVA build pipeline; [kernel-root-provenance.csv](kernel-root-provenance.csv) — источники, версии и степень проверки.
+
 ## Deliverables (root)
 
 | File | Content | Status |

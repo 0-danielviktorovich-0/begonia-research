@@ -1,7 +1,11 @@
 # 20 — Происхождение ядер 4.14/4.19 и экосистема root: KernelSU, Non-KSU, Magisk, APatch, SUSFS
 
 **Begonia / Redmi Note 8 Pro (MediaTek MT6785)**  
+<<<<<<< HEAD
 Дата проверки: **2026-11-21**. Независимое дополнение к [03-KERNEL-HISTORY.md](03-KERNEL-HISTORY.md), [16-ROOT-METHODS.md](16-ROOT-METHODS.md) и [19-ROM-TERMS-GLOSSARY-RU.md](19-ROM-TERMS-GLOSSARY-RU.md). Все проверки выполнены **без телефона**, по исходным файлам, веткам и документации. Исходные версии не скачивались и не запускались.
+=======
+Дата проверки: **2026-11-21**. Независимое дополнение к [03-KERNEL-HISTORY.md](03-KERNEL-HISTORY.md), [16-ROOT-METHODS.md](16-ROOT-METHODS.md) и [19-ROM-TERMS-GLOSSARY-RU.md (PR #2)](https://github.com/0-danielviktorovich-0/begonia-research/pull/2). Все проверки выполнены **без телефона**, по исходным файлам, веткам и документации. Исходные версии не скачивались и не запускались.
+>>>>>>> origin/research/kernel-419-root-provenance-2026-11-21
 
 Статусы доказательств: **[V]** — непосредственно получен/прочитан файл или метаданные upstream 2026-11-21; **[D]** — утверждение разработчика/README/поста (не тестировалось на устройстве); **[I]** — логический вывод; **[U]** — не удалось проверить. **Важно:** подтверждённое наличие исходников / успешно компилируемый kernel ≠ подтверждённая стабильная работа с экраном, камерой, зарядкой и мобильной связью на конкретном begonia.
 
@@ -124,7 +128,11 @@ Nova-Kernels/kernel_xiaomi_mt6785 (4.14.356)
 5. **SUSFS**: fork/branch/patch revision и формат менеджера/пользовательского модуля; потенциальные конфликты `fs` с современными Android-ядрами.
 6. **Security / updates**: статус OpenELA и бэкпортов CVE для выбранной 4.14/4.19, CONFIG_SECURITY_SELINUX, CONFIG_KPROBES/KALLSYMS, vendor-module ABI, доверие к сторонним builder-пайплайнам.
 
+<<<<<<< HEAD
 **Для будущих экспериментов на реальном телефоне:** сначала [18-DEVICE-PREFLIGHT-READONLY.md](18-DEVICE-PREFLIGHT-READONLY.md), резервные копии и идентификация текущего ROM. Не ставить root/ядро просто потому, что оно обозначено “KSU” и “begonia”.
+=======
+**Для будущих экспериментов на реальном телефоне:** сначала [18-DEVICE-PREFLIGHT-READONLY.md (PR #1)](https://github.com/0-danielviktorovich-0/begonia-research/pull/1), резервные копии и идентификация текущего ROM. Не ставить root/ядро просто потому, что оно обозначено “KSU” и “begonia”.
+>>>>>>> origin/research/kernel-419-root-provenance-2026-11-21
 
 ## Primary sources and audit trail
 
