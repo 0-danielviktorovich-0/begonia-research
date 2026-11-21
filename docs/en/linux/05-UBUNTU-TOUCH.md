@@ -173,7 +173,7 @@ microphone this port lacks**. Facts verified live 2026-11-22:
   vibration ✔, speaker/headphones/volume/BT-audio ✔, WiFi ✔, Bluetooth ✔, NFC ✔, SDcard ✔, Waydroid ✔,
   MTP ✔; auto-brightness ✗, hotspot ✗ (fixable), GPS partial, encryption ✗.**
 - Porters: Halhadus (main), rifux; support t.me/begonia_linux. Full build route:
-  [_context/HALIUM-UT-BUILD-PLAN.md](_context/HALIUM-UT-BUILD-PLAN.md).
+  [Halium / Ubuntu Touch build plan](../../../_context/HALIUM-UT-BUILD-PLAN.md).
 
 ### Kernel ladder for the Linux phase (owner's "latest kernel" ambition, mapped honestly)
 
