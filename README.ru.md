@@ -21,7 +21,8 @@
 | Ubuntu Touch / Droidian / postmarketOS | [05](05-UBUNTU-TOUCH.md) · [06](06-DROIDIAN-POSTMARKETOS.md) |
 | Диагностика и восстановление | [07](07-RECOVERY-SAFETY.md) · [18 — диагностика без прошивки](18-DEVICE-PREFLIGHT-READONLY.md) |
 | Контакт разработчика ядра Linux 4.19 и запрос исходников | [23 — двуязычное исследование и готовый текст запроса](23-419-TELEGRAM-OUTREACH.md) |
-| Полный указатель по-русски | **[docs/ru/README.md](docs/ru/README.md)** |
+| Новое исследование исходников @Saikrishna1504: ядро 4.19, firmware, IMS/VoWiFi и камера | [24 — русский подробный конспект](docs/ru/24-saikrishna-source-audit.md) · [полный английский отчёт](24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md) |
+| Полный указатель по-русски || Полный указатель по-русски | **[docs/ru/README.md](docs/ru/README.md)** |
 | Каталог оригиналов, веток и ссылок | [INDEX.md](INDEX.md) · [index.json](index.json) · [sources.json](sources.json) |
 
 ## Как устроена мультиязычность
