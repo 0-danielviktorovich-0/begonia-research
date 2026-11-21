@@ -80,7 +80,10 @@ each build variant with steps + source links, marking verified-steps vs pointers
   Present as a compact table: method | host | extra hardware | source.
 
 ### D1b — source freshness ledger (REQUIREMENTS 36)
-sources.json records get: `fetched_at` (ISO 8601 UTC, when we last observed the source) and
-`source_last_updated` (when the SOURCE last changed, if exposed: repo pushed_at, page/oldid date,
-thread last-post date, release date). 01-SOURCES.md renders both; INDEX.md items carry verified-at dates.
-Where a source exposes nothing date-like, set source_last_updated: null (never invent).
+sources.json records get OBSERVATION-anchored stamps (NOT guarantees — the source may have changed after
+we looked): `observed_at` (ISO 8601 UTC, when we last looked) and `source_last_change_observed` (the source's
+own last-change date AS EXPOSED: repo pushed_at, page/oldid date, thread last-post date), plus
+`observation_note` where framing needs words. Render in 01-SOURCES.md as: "As of <observed_at>, the last
+change observed in this source was <date>" (RU: "на момент <observed_at> последнее зафиксированное изменение
+источника — <date>"). INDEX.md items carry verified-at dates. Where a source exposes nothing date-like, set
+source_last_change_observed: null — never invent.
