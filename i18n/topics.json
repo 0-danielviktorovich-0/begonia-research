@@ -1,0 +1,1080 @@
+{
+  "schema_version": 1,
+  "generated": "2026-11-21",
+  "source_index": "index.json",
+  "entries_count": 42,
+  "description": "English immutable topic IDs; localized titles, search keywords and entry points. An entry point may be a directory or digest, not necessarily full translation; consult catalog.json for status.",
+  "topics": [
+    {
+      "id": "device-overview",
+      "title": {
+        "en": "Device overview",
+        "ru": "Устройство и характеристики"
+      },
+      "keywords": {
+        "en": [
+          "device",
+          "overview"
+        ],
+        "ru": [
+          "устройство",
+          "и",
+          "характеристики"
+        ]
+      },
+      "source_file": "00-README.md",
+      "source_anchor": "the-device-verified-facts",
+      "entry_point": {
+        "en": "00-README.md",
+        "ru": "docs/ru/README.md"
+      }
+    },
+    {
+      "id": "official-miui-history",
+      "title": {
+        "en": "MIUI release history",
+        "ru": "История заводских прошивок MIUI"
+      },
+      "keywords": {
+        "en": [
+          "miui",
+          "release",
+          "history"
+        ],
+        "ru": [
+          "история",
+          "заводских",
+          "прошивок",
+          "miui"
+        ]
+      },
+      "source_file": "02-FIRMWARE-HISTORY.md",
+      "source_anchor": "1-official-miui-historical--line-ended-2022",
+      "entry_point": {
+        "en": "02-FIRMWARE-HISTORY.md",
+        "ru": "docs/ru/README.md"
+      }
+    },
+    {
+      "id": "vendor-base-per-miui-build",
+      "title": {
+        "en": "Vendor compatibility",
+        "ru": "Совместимость vendor и firmware"
+      },
+      "keywords": {
+        "en": [
+          "vendor",
+          "compatibility"
+        ],
+        "ru": [
+          "совместимость",
+          "vendor",
+          "и",
+          "firmware"
+        ]
+      },
+      "source_file": "02-FIRMWARE-HISTORY.md",
+      "source_anchor": "71-official-miui-all-1-rows-csv-rows-222",
+      "entry_point": {
+        "en": "02-FIRMWARE-HISTORY.md",
+        "ru": "docs/ru/README.md"
+      }
+    },
+    {
+      "id": "gsi-era",
+      "title": {
+        "en": "Generic System Images",
+        "ru": "Универсальные образы Android GSI"
+      },
+      "keywords": {
+        "en": [
+          "generic",
+          "system",
+          "images"
+        ],
+        "ru": [
+          "универсальные",
+          "образы",
+          "android",
+          "gsi"
+        ]
+      },
+      "source_file": "02-FIRMWARE-HISTORY.md",
+      "source_anchor": "2-gsi-era-dec-2019--2020-historical",
+      "entry_point": {
+        "en": "02-FIRMWARE-HISTORY.md",
+        "ru": "docs/ru/README.md"
+      }
+    },
+    {
+      "id": "native-custom-rom-catalog",
+      "title": {
+        "en": "Custom Android ROM catalog",
+        "ru": "Каталог кастомных Android-прошивок"
+      },
+      "keywords": {
+        "en": [
+          "custom",
+          "android",
+          "rom",
+          "catalog"
+        ],
+        "ru": [
+          "каталог",
+          "кастомных",
+          "android-прошивок"
+        ]
+      },
+      "source_file": "02-FIRMWARE-HISTORY.md",
+      "source_anchor": "3-native-custom-rom-catalog-current-state-as-of-2026-11-21-first-release-dates-historical",
+      "entry_point": {
+        "en": "02-FIRMWARE-HISTORY.md",
+        "ru": "docs/ru/README.md"
+      }
+    },
+    {
+      "id": "per-rom-source-inventory",
+      "title": {
+        "en": "Per-ROM sources",
+        "ru": "Исходники каждой Android-прошивки"
+      },
+      "keywords": {
+        "en": [
+          "per-rom",
+          "sources"
+        ],
+        "ru": [
+          "исходники",
+          "каждой",
+          "android-прошивки"
+        ]
+      },
+      "source_file": "02-FIRMWARE-HISTORY.md",
+      "source_anchor": "7-per-rom-source-inventory-appended-2026-11-21-user-mandated",
+      "entry_point": {
+        "en": "02-FIRMWARE-HISTORY.md",
+        "ru": "docs/ru/README.md"
+      }
+    },
+    {
+      "id": "rom-build-recipes",
+      "title": {
+        "en": "Android ROM build recipes",
+        "ru": "Сборка Android-прошивок"
+      },
+      "keywords": {
+        "en": [
+          "android",
+          "rom",
+          "build",
+          "recipes"
+        ],
+        "ru": [
+          "сборка",
+          "android-прошивок"
+        ]
+      },
+      "source_file": "11-BLOBS-FIRMWARE-SOURCES.md",
+      "source_anchor": "61-android-rom-build-lineageosaosp-trees",
+      "entry_point": {
+        "en": "11-BLOBS-FIRMWARE-SOURCES.md",
+        "ru": "docs/ru/README.md"
+      }
+    },
+    {
+      "id": "kernels-per-branch",
+      "title": {
+        "en": "Kernel versions and branches",
+        "ru": "Версии и ветки ядер Linux"
+      },
+      "keywords": {
+        "en": [
+          "kernel",
+          "versions",
+          "and",
+          "branches"
+        ],
+        "ru": [
+          "версии",
+          "и",
+          "ветки",
+          "ядер",
+          "linux"
+        ]
+      },
+      "source_file": "03-KERNEL-HISTORY.md",
+      "source_anchor": "2-android-kernel-forks",
+      "entry_point": {
+        "en": "03-KERNEL-HISTORY.md",
+        "ru": "docs/ru/README.md"
+      }
+    },
+    {
+      "id": "kernel-build-recipes",
+      "title": {
+        "en": "Kernel compilation",
+        "ru": "Компиляция ядра Linux"
+      },
+      "keywords": {
+        "en": [
+          "kernel",
+          "compilation"
+        ],
+        "ru": [
+          "компиляция",
+          "ядра",
+          "linux"
+        ]
+      },
+      "source_file": "11-BLOBS-FIRMWARE-SOURCES.md",
+      "source_anchor": "62-kernel-builds",
+      "entry_point": {
+        "en": "11-BLOBS-FIRMWARE-SOURCES.md",
+        "ru": "docs/ru/README.md"
+      }
+    },
+    {
+      "id": "mainline-effort",
+      "title": {
+        "en": "Mainline Linux efforts",
+        "ru": "Разработка современного ядра Linux"
+      },
+      "keywords": {
+        "en": [
+          "mainline",
+          "linux",
+          "efforts"
+        ],
+        "ru": [
+          "разработка",
+          "современного",
+          "ядра",
+          "linux"
+        ]
+      },
+      "source_file": "03-KERNEL-HISTORY.md",
+      "source_anchor": "4-mainline-effort-linux-on-mt6785",
+      "entry_point": {
+        "en": "03-KERNEL-HISTORY.md",
+        "ru": "docs/ru/README.md"
+      }
+    },
+    {
+      "id": "mainline-upgrade-path",
+      "title": {
+        "en": "Mainline upgrade path",
+        "ru": "Переход на современное ядро"
+      },
+      "keywords": {
+        "en": [
+          "mainline",
+          "upgrade",
+          "path"
+        ],
+        "ru": [
+          "переход",
+          "на",
+          "современное",
+          "ядро"
+        ]
+      },
+      "source_file": "14-MAINLINE-UPGRADE-PATH.md",
+      "source_anchor": "2-the-option-tree-analysis--reasoned-not-independently-tested",
+      "entry_point": {
+        "en": "14-MAINLINE-UPGRADE-PATH.md",
+        "ru": "docs/ru/README.md"
+      }
+    },
+    {
+      "id": "ubuntu-touch-port",
+      "title": {
+        "en": "Ubuntu Touch port",
+        "ru": "Порт Ubuntu Touch"
+      },
+      "keywords": {
+        "en": [
+          "ubuntu",
+          "touch",
+          "port"
+        ],
+        "ru": [
+          "порт",
+          "ubuntu",
+          "touch"
+        ]
+      },
+      "source_file": "05-UBUNTU-TOUCH.md",
+      "source_anchor": "1-current-status",
+      "entry_point": {
+        "en": "05-UBUNTU-TOUCH.md",
+        "ru": "docs/ru/README.md"
+      }
+    },
+    {
+      "id": "ubuntu-touch-build",
+      "title": {
+        "en": "Build Ubuntu Touch",
+        "ru": "Сборка Ubuntu Touch"
+      },
+      "keywords": {
+        "en": [
+          "build",
+          "ubuntu",
+          "touch"
+        ],
+        "ru": [
+          "сборка",
+          "ubuntu",
+          "touch"
+        ]
+      },
+      "source_file": "05-UBUNTU-TOUCH.md",
+      "source_anchor": "5-build-instructions-for-begonia-specifically",
+      "entry_point": {
+        "en": "05-UBUNTU-TOUCH.md",
+        "ru": "docs/ru/README.md"
+      }
+    },
+    {
+      "id": "droidian-port",
+      "title": {
+        "en": "Droidian port",
+        "ru": "Порт Droidian"
+      },
+      "keywords": {
+        "en": [
+          "droidian",
+          "port"
+        ],
+        "ru": [
+          "порт",
+          "droidian"
+        ]
+      },
+      "source_file": "06-DROIDIAN-POSTMARKETOS.md",
+      "source_anchor": "2-droidian-port",
+      "entry_point": {
+        "en": "06-DROIDIAN-POSTMARKETOS.md",
+        "ru": "docs/ru/README.md"
+      }
+    },
+    {
+      "id": "postmarketos-port",
+      "title": {
+        "en": "postmarketOS port",
+        "ru": "Порт postmarketOS"
+      },
+      "keywords": {
+        "en": [
+          "postmarketos",
+          "port"
+        ],
+        "ru": [
+          "порт",
+          "postmarketos"
+        ]
+      },
+      "source_file": "06-DROIDIAN-POSTMARKETOS.md",
+      "source_anchor": "1-postmarketos-port",
+      "entry_point": {
+        "en": "06-DROIDIAN-POSTMARKETOS.md",
+        "ru": "docs/ru/README.md"
+      }
+    },
+    {
+      "id": "pmos-build",
+      "title": {
+        "en": "Build postmarketOS",
+        "ru": "Сборка postmarketOS"
+      },
+      "keywords": {
+        "en": [
+          "build",
+          "postmarketos"
+        ],
+        "ru": [
+          "сборка",
+          "postmarketos"
+        ]
+      },
+      "source_file": "11-BLOBS-FIRMWARE-SOURCES.md",
+      "source_anchor": "64-postmarketos",
+      "entry_point": {
+        "en": "11-BLOBS-FIRMWARE-SOURCES.md",
+        "ru": "docs/ru/README.md"
+      }
+    },
+    {
+      "id": "hardware-components",
+      "title": {
+        "en": "Hardware support",
+        "ru": "Аппаратная поддержка устройства"
+      },
+      "keywords": {
+        "en": [
+          "hardware",
+          "support"
+        ],
+        "ru": [
+          "аппаратная",
+          "поддержка",
+          "устройства"
+        ]
+      },
+      "source_file": "04-HARDWARE-DRIVERS.md",
+      "source_anchor": null,
+      "entry_point": {
+        "en": "04-HARDWARE-DRIVERS.md",
+        "ru": "docs/ru/README.md"
+      }
+    },
+    {
+      "id": "touchscreen-firmware",
+      "title": {
+        "en": "Touchscreen firmware",
+        "ru": "Прошивка тачскрина и экрана"
+      },
+      "keywords": {
+        "en": [
+          "touchscreen",
+          "firmware"
+        ],
+        "ru": [
+          "прошивка",
+          "тачскрина",
+          "и",
+          "экрана"
+        ]
+      },
+      "source_file": "04-HARDWARE-DRIVERS.md",
+      "source_anchor": "2-touchscreen--works-everywhere",
+      "entry_point": {
+        "en": "04-HARDWARE-DRIVERS.md",
+        "ru": "docs/ru/README.md"
+      }
+    },
+    {
+      "id": "gpu-stacks",
+      "title": {
+        "en": "GPU drivers",
+        "ru": "Драйверы графики и GPU"
+      },
+      "keywords": {
+        "en": [
+          "gpu",
+          "drivers"
+        ],
+        "ru": [
+          "драйверы",
+          "графики",
+          "и",
+          "gpu"
+        ]
+      },
+      "source_file": "04-HARDWARE-DRIVERS.md",
+      "source_anchor": "3-gpu--mali-g76-mc4-bifrost",
+      "entry_point": {
+        "en": "04-HARDWARE-DRIVERS.md",
+        "ru": "docs/ru/README.md"
+      }
+    },
+    {
+      "id": "modem-nvram-partitions",
+      "title": {
+        "en": "Modem and NVRAM",
+        "ru": "Модем и уникальные данные NVRAM"
+      },
+      "keywords": {
+        "en": [
+          "modem",
+          "and",
+          "nvram"
+        ],
+        "ru": [
+          "модем",
+          "и",
+          "уникальные",
+          "данные",
+          "nvram"
+        ]
+      },
+      "source_file": "07-RECOVERY-SAFETY.md",
+      "source_anchor": "partition-map-begonia-64-gb-unit-gpt-from-pmos-wiki-parted-dump-oldid109575-verified-direct-high",
+      "entry_point": {
+        "en": "07-RECOVERY-SAFETY.md",
+        "ru": "docs/ru/README.md"
+      }
+    },
+    {
+      "id": "recovery-landscape",
+      "title": {
+        "en": "Recovery options",
+        "ru": "Среды восстановления TWRP OrangeFox"
+      },
+      "keywords": {
+        "en": [
+          "recovery",
+          "options"
+        ],
+        "ru": [
+          "среды",
+          "восстановления",
+          "twrp",
+          "orangefox"
+        ]
+      },
+      "source_file": "07-RECOVERY-SAFETY.md",
+      "source_anchor": "30-recovery-landscape-all-known-recovery-options-added-at-synthesis-pass-2026-11-21",
+      "entry_point": {
+        "en": "07-RECOVERY-SAFETY.md",
+        "ru": "docs/ru/README.md"
+      }
+    },
+    {
+      "id": "recovery-builds",
+      "title": {
+        "en": "Recovery compilation",
+        "ru": "Сборка среды восстановления"
+      },
+      "keywords": {
+        "en": [
+          "recovery",
+          "compilation"
+        ],
+        "ru": [
+          "сборка",
+          "среды",
+          "восстановления"
+        ]
+      },
+      "source_file": "11-BLOBS-FIRMWARE-SOURCES.md",
+      "source_anchor": "63-recovery-builds-twrp--orangefox",
+      "entry_point": {
+        "en": "11-BLOBS-FIRMWARE-SOURCES.md",
+        "ru": "docs/ru/README.md"
+      }
+    },
+    {
+      "id": "unlock-paths",
+      "title": {
+        "en": "Bootloader unlock",
+        "ru": "Разблокировка загрузчика"
+      },
+      "keywords": {
+        "en": [
+          "bootloader",
+          "unlock"
+        ],
+        "ru": [
+          "разблокировка",
+          "загрузчика"
+        ]
+      },
+      "source_file": "07-RECOVERY-SAFETY.md",
+      "source_anchor": "2-exploit-unlock-path-mtkclient-brom",
+      "entry_point": {
+        "en": "07-RECOVERY-SAFETY.md",
+        "ru": "docs/ru/README.md"
+      }
+    },
+    {
+      "id": "unbrick-rescue",
+      "title": {
+        "en": "Unbrick and rescue",
+        "ru": "Восстановление телефона из кирпича"
+      },
+      "keywords": {
+        "en": [
+          "unbrick",
+          "and",
+          "rescue"
+        ],
+        "ru": [
+          "восстановление",
+          "телефона",
+          "из",
+          "кирпича"
+        ]
+      },
+      "source_file": "07-RECOVERY-SAFETY.md",
+      "source_anchor": "6-brick-risks--unbricking",
+      "entry_point": {
+        "en": "07-RECOVERY-SAFETY.md",
+        "ru": "docs/ru/README.md"
+      }
+    },
+    {
+      "id": "rescue-hardware-minimum",
+      "title": {
+        "en": "Recovery hardware",
+        "ru": "Оборудование для восстановления"
+      },
+      "keywords": {
+        "en": [
+          "recovery",
+          "hardware"
+        ],
+        "ru": [
+          "оборудование",
+          "для",
+          "восстановления"
+        ]
+      },
+      "source_file": "11-BLOBS-FIRMWARE-SOURCES.md",
+      "source_anchor": "7-rescue-hardware-minimum-is-a-cable-enough",
+      "entry_point": {
+        "en": "11-BLOBS-FIRMWARE-SOURCES.md",
+        "ru": "docs/ru/README.md"
+      }
+    },
+    {
+      "id": "host-toolchain",
+      "title": {
+        "en": "Development host toolchain",
+        "ru": "Компьютер и инструменты разработчика"
+      },
+      "keywords": {
+        "en": [
+          "development",
+          "host",
+          "toolchain"
+        ],
+        "ru": [
+          "компьютер",
+          "и",
+          "инструменты",
+          "разработчика"
+        ]
+      },
+      "source_file": "07-RECOVERY-SAFETY.md",
+      "source_anchor": "host-workstation-requirements-linux--macos--windows",
+      "entry_point": {
+        "en": "07-RECOVERY-SAFETY.md",
+        "ru": "docs/ru/README.md"
+      }
+    },
+    {
+      "id": "guides-index",
+      "title": {
+        "en": "Forum guides and instructions",
+        "ru": "Инструкции 4PDA и XDA"
+      },
+      "keywords": {
+        "en": [
+          "forum",
+          "guides",
+          "and",
+          "instructions"
+        ],
+        "ru": [
+          "инструкции",
+          "4pda",
+          "и",
+          "xda"
+        ]
+      },
+      "source_file": "10-GUIDE-INDEX.md",
+      "source_anchor": null,
+      "entry_point": {
+        "en": "10-GUIDE-INDEX.md",
+        "ru": "docs/ru/README.md"
+      }
+    },
+    {
+      "id": "nethunter-wifi-monitor",
+      "title": {
+        "en": "NetHunter Wi-Fi monitoring",
+        "ru": "NetHunter и мониторинг Wi-Fi"
+      },
+      "keywords": {
+        "en": [
+          "nethunter",
+          "wi-fi",
+          "monitoring"
+        ],
+        "ru": [
+          "nethunter",
+          "и",
+          "мониторинг",
+          "wi-fi"
+        ]
+      },
+      "source_file": "13-NETHUNTER-WIFI-EXTRAS.md",
+      "source_anchor": "1-wi-fi-chip--monitor-mode",
+      "entry_point": {
+        "en": "13-NETHUNTER-WIFI-EXTRAS.md",
+        "ru": "docs/ru/README.md"
+      }
+    },
+    {
+      "id": "usb-gadget-hid",
+      "title": {
+        "en": "USB Gadget and HID",
+        "ru": "USB Gadget и HID"
+      },
+      "keywords": {
+        "en": [
+          "usb",
+          "gadget",
+          "and",
+          "hid"
+        ],
+        "ru": [
+          "usb",
+          "gadget",
+          "и",
+          "hid"
+        ]
+      },
+      "source_file": "13-NETHUNTER-WIFI-EXTRAS.md",
+      "source_anchor": "34-usb-gadget--hid-attack-surface-w13-addendum-merged",
+      "entry_point": {
+        "en": "13-NETHUNTER-WIFI-EXTRAS.md",
+        "ru": "docs/ru/README.md"
+      }
+    },
+    {
+      "id": "re-entry-points",
+      "title": {
+        "en": "Reverse engineering targets",
+        "ru": "Цели обратной разработки"
+      },
+      "keywords": {
+        "en": [
+          "reverse",
+          "engineering",
+          "targets"
+        ],
+        "ru": [
+          "цели",
+          "обратной",
+          "разработки"
+        ]
+      },
+      "source_file": "11-BLOBS-FIRMWARE-SOURCES.md",
+      "source_anchor": "4-reverse-engineering-entry-points-research-only",
+      "entry_point": {
+        "en": "11-BLOBS-FIRMWARE-SOURCES.md",
+        "ru": "docs/ru/README.md"
+      }
+    },
+    {
+      "id": "repair-outlook-battery",
+      "title": {
+        "en": "Battery replacement and repair",
+        "ru": "Аккумулятор и ремонт"
+      },
+      "keywords": {
+        "en": [
+          "battery",
+          "replacement",
+          "and",
+          "repair"
+        ],
+        "ru": [
+          "аккумулятор",
+          "и",
+          "ремонт"
+        ]
+      },
+      "source_file": "08-DEVELOPMENT-ROADMAP.md",
+      "source_anchor": "device-repair-outlook-requirements-row-25--registered-not-yet-researched",
+      "entry_point": {
+        "en": "08-DEVELOPMENT-ROADMAP.md",
+        "ru": "docs/ru/README.md"
+      }
+    },
+    {
+      "id": "open-questions-contradictions",
+      "title": {
+        "en": "Open questions",
+        "ru": "Открытые вопросы"
+      },
+      "keywords": {
+        "en": [
+          "open",
+          "questions"
+        ],
+        "ru": [
+          "открытые",
+          "вопросы"
+        ]
+      },
+      "source_file": "09-OPEN-QUESTIONS.md",
+      "source_anchor": "1-unresolved-contradictions-kept-dated--not-silenced",
+      "entry_point": {
+        "en": "09-OPEN-QUESTIONS.md",
+        "ru": "docs/ru/README.md"
+      }
+    },
+    {
+      "id": "not-found-ledger",
+      "title": {
+        "en": "Missing sources and evidence",
+        "ru": "Не найденные исходники и доказательства"
+      },
+      "keywords": {
+        "en": [
+          "missing",
+          "sources",
+          "and",
+          "evidence"
+        ],
+        "ru": [
+          "не",
+          "найденные",
+          "исходники",
+          "и",
+          "доказательства"
+        ]
+      },
+      "source_file": "09-OPEN-QUESTIONS.md",
+      "source_anchor": "2-not-found-ledger-explicit-searched-absent-markers--never-guessed",
+      "entry_point": {
+        "en": "09-OPEN-QUESTIONS.md",
+        "ru": "docs/ru/README.md"
+      }
+    },
+    {
+      "id": "sources-and-freshness",
+      "title": {
+        "en": "Sources and freshness",
+        "ru": "Источники и актуальность"
+      },
+      "keywords": {
+        "en": [
+          "sources",
+          "and",
+          "freshness"
+        ],
+        "ru": [
+          "источники",
+          "и",
+          "актуальность"
+        ]
+      },
+      "source_file": "01-SOURCES.md",
+      "source_anchor": null,
+      "entry_point": {
+        "en": "01-SOURCES.md",
+        "ru": "docs/ru/README.md"
+      }
+    },
+    {
+      "id": "offline-archive",
+      "title": {
+        "en": "Offline forum archive",
+        "ru": "Локальный архив страниц"
+      },
+      "keywords": {
+        "en": [
+          "offline",
+          "forum",
+          "archive"
+        ],
+        "ru": [
+          "локальный",
+          "архив",
+          "страниц"
+        ]
+      },
+      "source_file": "archive/index.html",
+      "source_anchor": null,
+      "entry_point": {
+        "en": "archive/index.html",
+        "ru": "docs/ru/README.md"
+      }
+    },
+    {
+      "id": "re-improvement-plan",
+      "title": {
+        "en": "Reverse engineering plan",
+        "ru": "План обратной разработки"
+      },
+      "keywords": {
+        "en": [
+          "reverse",
+          "engineering",
+          "plan"
+        ],
+        "ru": [
+          "план",
+          "обратной",
+          "разработки"
+        ]
+      },
+      "source_file": "15-RE-IMPROVEMENT-PLAN.md",
+      "source_anchor": null,
+      "entry_point": {
+        "en": "15-RE-IMPROVEMENT-PLAN.md",
+        "ru": "docs/ru/README.md"
+      }
+    },
+    {
+      "id": "root-methods",
+      "title": {
+        "en": "Root methods",
+        "ru": "Способы получения root"
+      },
+      "keywords": {
+        "en": [
+          "root",
+          "methods"
+        ],
+        "ru": [
+          "способы",
+          "получения",
+          "root"
+        ]
+      },
+      "source_file": "16-ROOT-METHODS.md",
+      "source_anchor": null,
+      "entry_point": {
+        "en": "16-ROOT-METHODS.md",
+        "ru": "docs/ru/README.md"
+      }
+    },
+    {
+      "id": "android-firmware-terminology-ru",
+      "title": {
+        "en": "CFW Non-CFW GSI glossary",
+        "ru": "Словарь CFW Non-CFW GSI"
+      },
+      "keywords": {
+        "en": [
+          "cfw",
+          "non-cfw",
+          "gsi",
+          "glossary"
+        ],
+        "ru": [
+          "словарь",
+          "cfw",
+          "non-cfw",
+          "gsi"
+        ]
+      },
+      "source_file": "19-ROM-TERMS-GLOSSARY-RU.md",
+      "source_anchor": "0-glavnoe-za-30-sekund",
+      "entry_point": {
+        "en": "docs/en/19-rom-terminology.md",
+        "ru": "19-ROM-TERMS-GLOSSARY-RU.md"
+      }
+    },
+    {
+      "id": "mt6785-kernel-419-and-root-patch-provenance",
+      "title": {
+        "en": "Linux 4.19 and KSU sources",
+        "ru": "Исходники Linux 4.19 и KSU"
+      },
+      "keywords": {
+        "en": [
+          "linux",
+          "4.19",
+          "and",
+          "ksu",
+          "sources"
+        ],
+        "ru": [
+          "исходники",
+          "linux",
+          "4.19",
+          "и",
+          "ksu"
+        ]
+      },
+      "source_file": "20-KERNEL-419-ROOT-ECOSYSTEM-RU.md",
+      "source_anchor": "2-gde-brat-iskhodniki-iader-begonia--versii-i-dokazatelstva",
+      "entry_point": {
+        "en": "docs/en/20-kernel-root-ecosystem.md",
+        "ru": "20-KERNEL-419-ROOT-ECOSYSTEM-RU.md"
+      }
+    },
+    {
+      "id": "nomount-systemless-mount-backends",
+      "title": {
+        "en": "NoMount and systemless mounts",
+        "ru": "NoMount и механизмы подмены файлов"
+      },
+      "keywords": {
+        "en": [
+          "nomount",
+          "and",
+          "systemless",
+          "mounts"
+        ],
+        "ru": [
+          "nomount",
+          "и",
+          "механизмы",
+          "подмены",
+          "файлов"
+        ]
+      },
+      "source_file": "21-NOMOUNT-MOUNT-BACKENDS-RU.md",
+      "source_anchor": "2-nomount--imenno-tot-submodule-iz-nova-kernels",
+      "entry_point": {
+        "en": "docs/en/21-nomount-and-mount-backends.md",
+        "ru": "21-NOMOUNT-MOUNT-BACKENDS-RU.md"
+      }
+    },
+    {
+      "id": "kernel-414-to-419-ai-porting-payment-integrity",
+      "title": {
+        "en": "AI kernel porting and payments",
+        "ru": "Перенос ядер с ИИ и платежи"
+      },
+      "keywords": {
+        "en": [
+          "ai",
+          "kernel",
+          "porting",
+          "and",
+          "payments"
+        ],
+        "ru": [
+          "перенос",
+          "ядер",
+          "с",
+          "ии",
+          "и",
+          "платежи"
+        ]
+      },
+      "source_file": "22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md",
+      "source_anchor": "1-linux-414--419-chto-oznachaet-perenos-na-dele",
+      "entry_point": {
+        "en": "docs/en/22-kernel-forward-port.md",
+        "ru": "22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md"
+      }
+    },
+    {
+      "id": "begonia-kernel-419-telegram-source-contact",
+      "title": {
+        "en": "Linux 4.19 developer contact",
+        "ru": "Контакт автора работающего порта 4.19"
+      },
+      "keywords": {
+        "en": [
+          "linux",
+          "4.19",
+          "developer",
+          "contact"
+        ],
+        "ru": [
+          "контакт",
+          "автора",
+          "работающего",
+          "порта",
+          "4.19"
+        ]
+      },
+      "source_file": "23-419-TELEGRAM-OUTREACH.md",
+      "source_anchor": "public-announcement-what-was-actually-verified",
+      "entry_point": {
+        "en": "23-419-TELEGRAM-OUTREACH.md",
+        "ru": "23-419-TELEGRAM-OUTREACH.md"
+      }
+    }
+  ]
+}
