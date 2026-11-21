@@ -1,8 +1,8 @@
 # 20 — MT6785 kernel provenance and root frameworks (English digest)
 
-**[English directory](README.md) · [Полный оригинал на русском](../../20-KERNEL-419-ROOT-ECOSYSTEM-RU.md) · [Русский каталог](../ru/README.md)**
+**[English directory](../index.md) · [Полный оригинал на русском](../../ru/kernels/20-KERNEL-419-ROOT-ECOSYSTEM-RU.md) · [Русский каталог](../../ru/index.md)**
 
-> **DIGEST ONLY — not a complete translation.** For full source-by-source evidence, forks, exact build settings, citations and limitations, consult the [authoritative Russian report](../../20-KERNEL-419-ROOT-ECOSYSTEM-RU.md). Based on source Git Blob e21b0654cb71a9d69ac04bfc820f23a9c6e9033c observed 2026-11-21. Not tested on a physical begonia.
+> **DIGEST ONLY — not a complete translation.** For full source-by-source evidence, forks, exact build settings, citations and limitations, consult the [authoritative Russian report](../../ru/kernels/20-KERNEL-419-ROOT-ECOSYSTEM-RU.md). Based on source Git Blob e21b0654cb71a9d69ac04bfc820f23a9c6e9033c observed 2026-11-21. Not tested on a physical begonia.
 
 ## Main distinctions
 
@@ -19,7 +19,7 @@ In [Nova-Kernels/kernel_xiaomi_mt6785](https://github.com/Nova-Kernels/kernel_xi
 | [Saikrishna1504 main](https://github.com/Saikrishna1504/kernel_xiaomi_mt6785) | Linux 4.14.357-openela | An active Power-kernel source, **not** a checked 4.19 tree |
 | [Nova-Kernels main](https://github.com/Nova-Kernels/kernel_xiaomi_mt6785) | Linux 4.14.356 | Separate KSU and Non-KSU build pipeline |
 
-A developer's later public Telegram message about a working begonia 4.19 port is recorded in the [dedicated outreach and evidence note](../../23-419-TELEGRAM-OUTREACH.md). That claim requires a reproducible kernel revision, device tree, exact vendor base, boot logs and real hardware tests. **Do not substitute rosemary boot images on begonia.**
+A developer's later public Telegram message about a working begonia 4.19 port is recorded in the [dedicated outreach and evidence note](../research/23-419-TELEGRAM-OUTREACH.md). That claim requires a reproducible kernel revision, device tree, exact vendor base, boot logs and real hardware tests. **Do not substitute rosemary boot images on begonia.**
 
 ## Root projects and roles
 
@@ -32,6 +32,6 @@ A developer's later public Telegram message about a working begonia 4.19 port is
 | [SUSFS](https://gitlab.com/simonpunk/susfs4ksu) | Kernel filesystem extension | Selective filesystem/mount visibility features | Requires matching patches; not independent root |
 | [NoMount](https://github.com/maxsteeel/nomount) | VFS file-injection backend | File replacement without traditional mounts | Legacy kernels need integrated hooks or custom LKM |
 
-For the complete source and reproducibility checklist (Makefile versions, branch names, SHAs, defconfigs and module upstreams), read the [Russian original](../../20-KERNEL-419-ROOT-ECOSYSTEM-RU.md) and the structured [provenance CSV](../../kernel-root-provenance.csv). For mount-provider trade-offs use [21 — English digest](21-nomount-and-mount-backends.md).
+For the complete source and reproducibility checklist (Makefile versions, branch names, SHAs, defconfigs and module upstreams), read the [Russian original](../../ru/kernels/20-KERNEL-419-ROOT-ECOSYSTEM-RU.md) and the structured [provenance CSV](../../../data/matrices/kernel-root-provenance.csv). For mount-provider trade-offs use [21 — English digest](21-nomount-and-mount-backends.md).
 
 **Scope:** no binaries tested or flashed, no claim of guaranteed successful root or banking app compatibility.

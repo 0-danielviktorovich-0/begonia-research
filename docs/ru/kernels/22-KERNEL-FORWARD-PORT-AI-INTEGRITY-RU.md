@@ -1,6 +1,6 @@
 # 22 — От Linux 4.14 к 4.19, далее к 6.x/7.x: инженерный план и пределы AI-портирования; Android root vs платежи
 
-**Дата независимой проверки:** 2026-11-21. Устройство: Xiaomi Redmi Note 8 Pro (begonia, MT6785). **Это исследование исходников и документации, а не проверка на телефоне пользователя**. Ссылки на связанные отчёты: [03-KERNEL-HISTORY.md](03-KERNEL-HISTORY.md), [14-MAINLINE-UPGRADE-PATH.md](14-MAINLINE-UPGRADE-PATH.md), [20-KERNEL-419-ROOT-ECOSYSTEM-RU.md](20-KERNEL-419-ROOT-ECOSYSTEM-RU.md), [21-NOMOUNT-MOUNT-BACKENDS-RU.md](21-NOMOUNT-MOUNT-BACKENDS-RU.md).
+**Дата независимой проверки:** 2026-11-21. Устройство: Xiaomi Redmi Note 8 Pro (begonia, MT6785). **Это исследование исходников и документации, а не проверка на телефоне пользователя**. Ссылки на связанные отчёты: [03-KERNEL-HISTORY.md](../../en/kernels/03-KERNEL-HISTORY.md), [14-MAINLINE-UPGRADE-PATH.md](../../en/kernels/14-MAINLINE-UPGRADE-PATH.md), [20-KERNEL-419-ROOT-ECOSYSTEM-RU.md](20-KERNEL-419-ROOT-ECOSYSTEM-RU.md), [21-NOMOUNT-MOUNT-BACKENDS-RU.md](21-NOMOUNT-MOUNT-BACKENDS-RU.md).
 
 ## 1. Linux 4.14 → 4.19: что означает перенос на деле
 
@@ -12,11 +12,11 @@
 
 ### Подтверждённые исходники для первых двух пунктов
 
-- [MiCode/Xiaomi_Kernel_OpenSource](https://github.com/MiCode/Xiaomi_Kernel_OpenSource) P/Q/R begonia 4.14.xx (значения и ветки в [03 §1](03-KERNEL-HISTORY.md)).
+- [MiCode/Xiaomi_Kernel_OpenSource](https://github.com/MiCode/Xiaomi_Kernel_OpenSource) P/Q/R begonia 4.14.xx (значения и ветки в [03 §1](../../en/kernels/03-KERNEL-HISTORY.md)).
 - [Saikrishna1504/kernel_xiaomi_mt6785](https://github.com/Saikrishna1504/kernel_xiaomi_mt6785) `main`: Makefile **4.14.357-openela**. Более высокий sublevel 4.14 **не** значит 4.19.
 - [LineageOS/android_kernel_xiaomi_mt6785](https://github.com/LineageOS/android_kernel_xiaomi_mt6785) `lineage-24.0` и [xiaomi-mt6785-dev/android_kernel_xiaomi_mt6785](https://github.com/xiaomi-mt6785-dev/android_kernel_xiaomi_mt6785) `lineage-24.0`: Makefile **4.19.325**, один и тот же наблюдаемый Git HEAD **`30485853fa89`** на 2026-11-21.
 - **Важная граница:** в этом 4.19 дереве найдены `arch/arm64/configs/rosemary_defconfig`, `arch/arm64/boot/dts/mediatek/rosemary.dts` и ссылки на `rosemary`; GitHub code search по этому дереву на слово `begonia` не дал совпадений. Следовательно, **оно не признано готовым begonia kernel**. [rosemary_defconfig](https://github.com/xiaomi-mt6785-dev/android_kernel_xiaomi_mt6785/blob/lineage-24.0/arch/arm64/configs/rosemary_defconfig), [rosemary.dts](https://github.com/xiaomi-mt6785-dev/android_kernel_xiaomi_mt6785/blob/lineage-24.0/arch/arm64/boot/dts/mediatek/rosemary.dts). Отрицательный результат поиска не исключает неиндексированные файлы; лучше подтвердить локальным полным git tree diff.
-- **Уточнение даты и автора (2026-11-21):** [Saikrishna1504](https://t.me/saikrishna1504) опубликовал в [Redmi Note 8 Pro Updates](https://t.me/s/RedmiNote8ProUpdates) сообщение, что **портировал 4.19 и тестировал его 1–2 недели**. Сторонний публичный индекс [TG.ME](https://tg.me/redminote8proupdates) датирует запись **17 ноября 2026 года**, но оригинальный номер поста и точное время пока не проверены; **сентябрь в старой версии отчёта был ошибочной датой для этого сообщения**. Это developer self-report [D], не независимая проверка: SHA исходников, образа и полная аппаратная матрица ещё неизвестны. См. [23 — источник и черновик запроса автору](23-419-TELEGRAM-OUTREACH.md).
+- **Уточнение даты и автора (2026-11-21):** [Saikrishna1504](https://t.me/saikrishna1504) опубликовал в [Redmi Note 8 Pro Updates](https://t.me/s/RedmiNote8ProUpdates) сообщение, что **портировал 4.19 и тестировал его 1–2 недели**. Сторонний публичный индекс [TG.ME](https://tg.me/redminote8proupdates) датирует запись **17 ноября 2026 года**, но оригинальный номер поста и точное время пока не проверены; **сентябрь в старой версии отчёта был ошибочной датой для этого сообщения**. Это developer self-report [D], не независимая проверка: SHA исходников, образа и полная аппаратная матрица ещё неизвестны. См. [23 — источник и черновик запроса автору](../../en/research/23-419-TELEGRAM-OUTREACH.md).
 
 ### Как доказать, что «4.19 для begonia работает»
 
@@ -33,13 +33,13 @@
 
 ## 2. Переход на современный mainline-based Linux — уже есть задел
 
-Исследование [14-MAINLINE-UPGRADE-PATH.md](14-MAINLINE-UPGRADE-PATH.md) фиксирует [Dinolek/mt6785-mainline](https://github.com/Dinolek/mt6785-mainline) с форками на 6.16/7.1 и [kalpakprod/mt6785-linux](https://github.com/kalpakprod/mt6785-linux) на Linux 7.3.4. «Основано на mainline» **не означает** включение изменений MT6785 в `torvalds/linux`: поддержка SoC в этих форках остаётся out-of-tree, как объяснено в [03 §4](03-KERNEL-HISTORY.md).
+Исследование [14-MAINLINE-UPGRADE-PATH.md](../../en/kernels/14-MAINLINE-UPGRADE-PATH.md) фиксирует [Dinolek/mt6785-mainline](https://github.com/Dinolek/mt6785-mainline) с форками на 6.16/7.1 и [kalpakprod/mt6785-linux](https://github.com/kalpakprod/mt6785-linux) на Linux 7.3.4. «Основано на mainline» **не означает** включение изменений MT6785 в `torvalds/linux`: поддержка SoC в этих форках остаётся out-of-tree, как объяснено в [03 §4](../../en/kernels/03-KERNEL-HISTORY.md).
 
 ### Новое важное уточнение: Wi-Fi уже доказательно запущен в сторонней mainline-based сборке
 
 [criollojoel10/begonia-pmos-tianma README](https://github.com/criollojoel10/begonia-pmos-tianma/blob/main/README.md) [V, читаемый source и авторский отчёт] **утверждает испытание на физическом begonia 27 сентября 2026 года** с **Linux 6.16.4**, MediaTek vendor wireless modules `mtk-vendor-btif` + `wmt_drv` + `wlan_gen4m`, и корректным комплектом `WMT_SOC.cfg`/firmware. По логам автора создаётся `wlan0`, обнаруживаются сети 2.4/5 GHz, получаются DHCP, DNS, ping, HTTPS; приложены boot/build traces и проектные конфигурации. Это **авторская проверка [D], не тестировалась независимым ревьюером на устройстве пользователя**, и **не является upstream поддержкой WLAN через чистый mt76**. Остальные mainline / чистые pmOS сборки могут иметь Wi-Fi broken.
 
-**Вывод:** не повторять безоговорочно в [00](00-README.md)/[04](04-HARDWARE-DRIVERS.md)/[06](06-DROIDIAN-POSTMARKETOS.md) «никакая mainline begonia сборка не имеет Wi-Fi». Правильно: **базовая Dinolek/Nura-матрица сообщала об отсутствии Wi-Fi**, но сторонний пакет от criollojoel10 демонстрирует **частично/практически работоспособную vendor-driver-based WLAN интеграцию**. Для upstream mt76 путь отдельный, с определением фактического RF chip ID и SDIO/power sequencing. Vendor wireless stack также не равен полностью открытым драйверам.
+**Вывод:** не повторять безоговорочно в [00](../../en/research/00-README.md)/[04](../../en/kernels/04-HARDWARE-DRIVERS.md)/[06](../../en/linux/06-DROIDIAN-POSTMARKETOS.md) «никакая mainline begonia сборка не имеет Wi-Fi». Правильно: **базовая Dinolek/Nura-матрица сообщала об отсутствии Wi-Fi**, но сторонний пакет от criollojoel10 демонстрирует **частично/практически работоспособную vendor-driver-based WLAN интеграцию**. Для upstream mt76 путь отдельный, с определением фактического RF chip ID и SDIO/power sequencing. Vendor wireless stack также не равен полностью открытым драйверам.
 
 Это прекрасный пример гибридной техники: **современное ядро + перенос устаревшего MTK-драйвера + firmware + systemd/scripts + реальные логи**. Он особенно полезен как образец работы для AI-агентов.
 

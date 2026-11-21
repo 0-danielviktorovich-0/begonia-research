@@ -1,7 +1,7 @@
 # 21 — NoMount, Metamodules, Magic Mount и OverlayFS: сравнительный аудит Android root-экосистемы
 
 **Redmi Note 8 Pro (begonia, MT6785) / применимо и к другим Android-устройствам.**  
-Дата проверки: **2026-11-21**. **Исходники проверены**, но **NoMount и другие root-модули на телефоне владельца не запускались**. Этот материал — дополнение к [16-ROOT-METHODS.md](16-ROOT-METHODS.md), [20-KERNEL-419-ROOT-ECOSYSTEM-RU.md](20-KERNEL-419-ROOT-ECOSYSTEM-RU.md) и [03-KERNEL-HISTORY.md](03-KERNEL-HISTORY.md), не замена исходным источникам. В этой документации «поддерживает» означает заявление upstream, **не успешный тест на begonia**.
+Дата проверки: **2026-11-21**. **Исходники проверены**, но **NoMount и другие root-модули на телефоне владельца не запускались**. Этот материал — дополнение к [16-ROOT-METHODS.md](../../en/android/16-ROOT-METHODS.md), [20-KERNEL-419-ROOT-ECOSYSTEM-RU.md](20-KERNEL-419-ROOT-ECOSYSTEM-RU.md) и [03-KERNEL-HISTORY.md](../../en/kernels/03-KERNEL-HISTORY.md), не замена исходным источникам. В этой документации «поддерживает» означает заявление upstream, **не успешный тест на begonia**.
 
 ## 1. Сначала разделяем три независимых слоя
 
@@ -122,7 +122,7 @@
 | File reads, `stat`, mmap, whiteout, readdir | baseline | проверить | проверить | проверить |
 | Crash/dmesg/pstore и rollback | baseline | проверить | проверить | проверить |
 
-Вносить **только одну переменную за эксперимент** и не менять вместе поколение 4.14→4.19, vendor, bootloader и root stack. Перед любыми тестами — [18-DEVICE-PREFLIGHT-READONLY.md](18-DEVICE-PREFLIGHT-READONLY.md) и резервные копии уникальных разделов.
+Вносить **только одну переменную за эксперимент** и не менять вместе поколение 4.14→4.19, vendor, bootloader и root stack. Перед любыми тестами — [18-DEVICE-PREFLIGHT-READONLY.md](../../en/recovery/18-DEVICE-PREFLIGHT-READONLY.md) и резервные копии уникальных разделов.
 
 ## 6. Проверенные первоисточники и степень уверенности
 

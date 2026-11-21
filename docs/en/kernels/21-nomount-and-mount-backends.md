@@ -1,8 +1,8 @@
 # 21 — NoMount, OverlayFS and systemless modification backends (English digest)
 
-**[English directory](README.md) · [Полный оригинал на русском](../../21-NOMOUNT-MOUNT-BACKENDS-RU.md)**
+**[English directory](../index.md) · [Полный оригинал на русском](../../ru/kernels/21-NOMOUNT-MOUNT-BACKENDS-RU.md)**
 
-> **DIGEST ONLY, NOT A COMPLETE TRANSLATION.** Source: [Russian technical report](../../21-NOMOUNT-MOUNT-BACKENDS-RU.md), Git Blob 9da4ba4a9861959952f765c75417235328ca5c1d, observed 2026-11-21. All runtime behavior is upstream-reported; no test was carried out on the owner's Redmi Note 8 Pro.
+> **DIGEST ONLY, NOT A COMPLETE TRANSLATION.** Source: [Russian technical report](../../ru/kernels/21-NOMOUNT-MOUNT-BACKENDS-RU.md), Git Blob 9da4ba4a9861959952f765c75417235328ca5c1d, observed 2026-11-21. All runtime behavior is upstream-reported; no test was carried out on the owner's Redmi Note 8 Pro.
 
 ## Three independent layers
 
@@ -39,4 +39,4 @@ The latest release observed in the original audit was [NoMount v2.3.1, 2026-11-1
 
 For Android kernel experiments, maintain a reproducible **Non-KSU control build**, compare KSU in isolation, then add SUSFS or NoMount one at a time. Record exact submodule and kernel SHAs, boot logs, performance and systemless module behavior. For Ubuntu Touch and postmarketOS, Android root/NoMount is not a requirement for the Linux port; upstreamable kernel drivers, DTS and stable hardware initialization are the real priority.
 
-Read the [full Russian report](../../21-NOMOUNT-MOUNT-BACKENDS-RU.md) for code-level details, the per-feature tests and risks. See [terminology](../../i18n/TERMINOLOGY.md) for EN↔RU search aliases.
+Read the [full Russian report](../../ru/kernels/21-NOMOUNT-MOUNT-BACKENDS-RU.md) for code-level details, the per-feature tests and risks. See [terminology](../../../i18n/TERMINOLOGY.md) for EN↔RU search aliases.

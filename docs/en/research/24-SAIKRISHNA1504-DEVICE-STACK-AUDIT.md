@@ -1,6 +1,6 @@
 # 24 — Saikrishna1504: Redmi Note 8 Pro source-stack audit and Linux 4.19 migration evidence
 
-**Language:** [English (source)](24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md) · [Русский (подробный конспект)](docs/ru/24-saikrishna-source-audit.md) · [English directory](docs/en/README.md).
+**Language:** [English (source)](24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md) · [Русский (подробный конспект)](../../ru/research/24-saikrishna-source-audit.md) · [English directory](../index.md).
 
 **Observed:** 2026-11-21. **Evidence:** public GitHub metadata, trees, Makefiles, selected diffs/patches and manifests read directly; original Telegram announcement available in the [project's post record](23-419-TELEGRAM-OUTREACH.md). **No code compiled, firmware flashed, camera APK run, or boot image tested**. Public files and upstream claims are not hardware-validation results.
 
@@ -108,7 +108,7 @@ The [axion device tree](https://github.com/Saikrishna1504/device_redmi_begonia/t
 5. **IMS:** evaluate 10 patches as an *Android telephony* compatibility series with precise test conditions (carrier, region, LTE/VoWiFi provisioning). Never equate an APK patch with certified VoLTE on Linux.
 6. **Firmware safety:** inventory partitions and hashes in the low-level image bundle; verify provenance/region and check licenses; keep **NVRAM/NVDATA/IMEI** private and untouched.
 7. **Recovery comparison:** compare 2024 PBRP tree with official TWRP/OrangeFox and current recovery requirements; README’s checked boxes are **historical maintainer assertions**.
-8. **Machine-readable inventory:** see [saikrishna-source-inventory.csv](saikrishna-source-inventory.csv) for exact repo, branch, role, status and test gaps.
+8. **Machine-readable inventory:** see [saikrishna-source-inventory.csv](../../../data/matrices/saikrishna-source-inventory.csv) for exact repo, branch, role, status and test gaps.
 
 ## Evidence summary
 
@@ -118,4 +118,4 @@ The [axion device tree](https://github.com/Saikrishna1504/device_redmi_begonia/t
 
 **Not established:** exact published Linux 4.19 kernel patchset and `vendor/begonia.config`, successful end-to-end reproduction/boot on the owner’s device, hardware support of all panel revisions, full legality of distributing third-party binaries, current OTA/certified payment compatibility.
 
-**No phone operations or binary copying were undertaken.** Use [18](18-DEVICE-PREFLIGHT-READONLY.md) before any hands-on work.
+**No phone operations or binary copying were undertaken.** Use [18](../recovery/18-DEVICE-PREFLIGHT-READONLY.md) before any hands-on work.
