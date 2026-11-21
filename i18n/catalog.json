@@ -598,14 +598,14 @@
       "original": {
         "path": "22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md",
         "lang": "ru",
-        "blob_sha": "5bb882d1a43d89799f2ba5a0d0b4f0c6ea63245"
+        "blob_sha": "5bb882d1a43d89799f2ba5a0d0b4f0c6ea63245c"
       },
       "locales": {
         "en": {
           "path": "docs/en/22-kernel-forward-port.md",
           "coverage": "digest",
           "review": "abstract-only",
-          "derived_from_blob": "5bb882d1a43d89799f2ba5a0d0b4f0c6ea63245"
+          "derived_from_blob": "5bb882d1a43d89799f2ba5a0d0b4f0c6ea63245c"
         },
         "ru": {
           "path": "22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md",
