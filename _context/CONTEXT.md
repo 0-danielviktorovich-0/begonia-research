@@ -1,9 +1,13 @@
 # begonia-research — shared context pack (2026-11-21, JST)
 
+> **Language contract (2026-11-21):** English is the international/default metadata language; Russian is first-class for navigation, search and professionally reviewed translation. Start at [EN](../docs/en/README.md) / [RU](../docs/ru/README.md); obey [i18n policy](../i18n/README.md), [terminology](../i18n/TERMINOLOGY.md), [catalog](../i18n/catalog.json), [topic labels](../i18n/topics.json) and [translation checks](../tools/check_i18n.py). Reports 19–22 were originally authored in Russian; the English 19 translation is a full draft, 20–22 are digests, never claim full translated coverage. New technical terminology may not change immutable IDs, SHAs or code paths.
+
+> **4.19 provenance correction:** [@Saikrishna1504](https://t.me/saikrishna1504) reports a working begonia Linux 4.19 forward-port; a third-party channel index dates the public post **likely 2026-11-17**, not September. Exact post ID/media and source/patchset remain unverified; [evidence and unsent DM](../23-419-TELEGRAM-OUTREACH.md). Do not confuse with 2026-09-27 Linux 6.16.4 Wi-Fi experimental result.
+
 > **Post-wave access update (2026-11-21):** The early XDA/Anubis “blocked” notes below describe the worker's first fetch attempts, **not the final access status**. Hermes later captured the live XDA megathread first page (40 posts), XDA unlock/DT/MTK threads and Nura pages via Brave, plus selected 4PDA spoiler texts via the authenticated owner's browser. See [_context/HUMAN-ASSISTS.md](HUMAN-ASSISTS.md) and files in `_cache/` / `archive/`. **Coverage remains selective**; captures are not all pages or attachments. Try a real browser on bot walls before declaring inaccessible.
 
 Research-only task. DO NOT flash anything, do not run untrusted scripts, do not download ROM images.
-Deliverable: files in `/Users/danielviktorovich/begonia-research/` (UTF-8 Markdown/CSV/JSON, English).
+Deliverable: files in `/Users/danielviktorovich/begonia-research/` (UTF-8 Markdown/CSV/JSON; English main metadata with Russian first-class navigation and explicitly tracked translation coverage).
 Every subagent writes ONLY its assigned files, plus appends source records to the shared sources log.
 
 SCOPE (user 2026-11-21): dual-purpose DB — Linux ports (north star: modern Ubuntu Touch) AND the full Android custom ecosystem (ROMs/kernels/recoveries incl. TWRP & OrangeFox/firmware). Telegram sources: t.me/s/<channel> previews, no subscription. Every artifact gets source/open-code links; agents attempt discovery themselves.
