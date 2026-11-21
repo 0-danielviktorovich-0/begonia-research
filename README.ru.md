@@ -20,6 +20,7 @@
 | NoMount, Magic Mount, OverlayFS, Mountify | [21 — на русском](21-NOMOUNT-MOUNT-BACKENDS-RU.md) |
 | Ubuntu Touch / Droidian / postmarketOS | [05](05-UBUNTU-TOUCH.md) · [06](06-DROIDIAN-POSTMARKETOS.md) |
 | Диагностика и восстановление | [07](07-RECOVERY-SAFETY.md) · [18 — диагностика без прошивки](18-DEVICE-PREFLIGHT-READONLY.md) |
+| Контакт разработчика ядра Linux 4.19 и запрос исходников | [23 — двуязычное исследование и готовый текст запроса](23-419-TELEGRAM-OUTREACH.md) |
 | Полный указатель по-русски | **[docs/ru/README.md](docs/ru/README.md)** |
 | Каталог оригиналов, веток и ссылок | [INDEX.md](INDEX.md) · [index.json](index.json) · [sources.json](sources.json) |
 
