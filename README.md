@@ -35,6 +35,7 @@ COVERAGE + regenerated archive index. `begonia-research.zip` is **dropped** per 
 | [13-NETHUNTER-WIFI-EXTRAS.md](13-NETHUNTER-WIFI-EXTRAS.md) | NetHunter, Wi-Fi monitor mode (MT7663-family verdict), root/kernel harnesses, USB-HID surface, sibling-device portables | delivered (W13) |
 | [14-MAINLINE-UPGRADE-PATH.md](14-MAINLINE-UPGRADE-PATH.md) | Mainline upgrade options A–D with defconfig-verified gap verdicts per tree | delivered (W14) |
 | `15-RE-IMPROVEMENT-PLAN.md` (not yet on disk at packaging time) | RE-driven improvement plan (unpacking recipe, per-subsystem matrix, sequencing, test checklist) | **delivered 2026-11-21 (W15)** (W15 mission: [_context/W15-MISSION.md](_context/W15-MISSION.md)) |
+| [16-ROOT-METHODS.md](16-ROOT-METHODS.md) | root-methods registry: Magisk / KernelSU-Next+SUSFS / APatch / SukiSU / custom kernels / mtkclient chain — matrix + begonia datapoints + TG channels | delivered 2026-11-21 (orchestrator, after W17 provider stall) |
 | [INDEX.md](INDEX.md) | Human master topic map (topic → file#section) + "how to search this repo" (file map, ripgrep recipes, CSV columns, archive usage) | **delivered 2026-11-21 (assembler)** |
 | [sources.json](sources.json) · [index.json](index.json) | Machine twins: 185 observation-stamped source records; 35-topic topic map | **delivered 2026-11-21 (assembler)** |
 

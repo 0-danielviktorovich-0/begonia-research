@@ -369,6 +369,18 @@
         "Top RE targets",
         "Sequencing"
       ]
+    },
+    {
+      "id": "root-methods",
+      "title": "Root methods registry",
+      "files": [
+        "16-ROOT-METHODS.md"
+      ],
+      "anchors": [
+        "Methods matrix",
+        "Method details",
+        "Telegram channels"
+      ]
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
  "generated": "2026-11-21",
  "record_semantics": "One record per unique source URL. observed_at = when WE last looked (research day; no intraday times were logged). source_last_change_observed = the source's OWN last-change date AS EXPOSED at observation (repo push, page/oldid/snapshot date, thread last-post date) or null when the source exposed nothing date-like. These are observations, not guarantees: any source may have changed after observed_at.",
- "count": 189,
+ "count": 192,
  "sources": [
   {
    "id": "xda-unlock-guide-3995919",
@@ -2308,6 +2308,39 @@
     "02"
    ],
    "notes": "via web_search"
+  },
+  {
+   "url": "https://github.com/topjohnwu/Magisk/releases",
+   "title": "Magisk v31.1 (2026-10-25) — releases",
+   "type": "github-releases",
+   "observed_at": "2026-11-21",
+   "source_last_change_observed": "2026-11-10 (latest commit)",
+   "used_for": [
+    "16 §2.1"
+   ],
+   "notes": "Android 17 sepolicy support commit"
+  },
+  {
+   "url": "https://github.com/KernelSU-Next/KernelSU-Next",
+   "title": "KernelSU-Next v3.4.2 (2026-10-13); SUSFS LKM 2026-10-12",
+   "type": "github-repo",
+   "observed_at": "2026-11-21",
+   "source_last_change_observed": "2026-11-17 (kernel commit)",
+   "used_for": [
+    "16 §2.2"
+   ],
+   "notes": null
+  },
+  {
+   "url": "https://sukisu.org/",
+   "title": "SukiSU Nova — kernel-level root, KPM modules",
+   "type": "website",
+   "observed_at": "2026-11-21",
+   "source_last_change_observed": null,
+   "used_for": [
+    "16 §2.3"
+   ],
+   "notes": null
   }
  ]
 }
