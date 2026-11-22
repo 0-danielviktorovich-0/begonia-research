@@ -37,6 +37,7 @@
 | Тема | Документация |
 |---|---|
 | Kernel Lab: сохранение первого сбоя, recovery, SD-карта, USB без перевтыкания, Kconfig, UART | **[Подробный русский конспект](tools/kernel-lab-autonomous-debugging.md)** · [Полная архитектура EN](../en/tools/kernel-lab-autonomous-debugging.md) — **пока проект, а не испытанная система** |
+| Существующие профессиональные инструменты: labgrid, LAVA, syzkaller и другие | [Каталог EN](../en/tools/kernel-lab-tool-ecosystem.md) |
 | Инвентаризация ADB/Fastboot и USB на Mac | [Пошаговая инструкция EN](../en/tools/kernel-lab-macos-inventory.md) |
 | Готовое безопасное задание для агента | [Agent Mission EN](../en/tools/kernel-lab-agent-mission.md) |
 
