@@ -32,6 +32,14 @@
 | **24** | **Дерево устройства begonia, патчи Linux 4.19, аудио, IMS/VoWiFi, камера и firmware от Saikrishna1504** | **[Русский подробный конспект](research/24-saikrishna-source-audit.md)** · [английский полный отчёт](../en/research/24-SAIKRISHNA1504-DEVICE-STACK-AUDIT.md) |
 | **22** | **Как перенести 4.14 → 4.19 → 6.x с ИИ, Ghidra и REA; Google Play Integrity** | **[22 — полный русский текст](kernels/22-KERNEL-FORWARD-PORT-AI-INTEGRITY-RU.md)** · [English summary](../en/kernels/22-kernel-forward-port.md) |
 
+## Автономная разработка и отладка ядра (исследовательский проект)
+
+| Тема | Документация |
+|---|---|
+| Kernel Lab: сохранение первого сбоя, recovery, SD-карта, USB без перевтыкания, Kconfig, UART | **[Подробный русский конспект](tools/kernel-lab-autonomous-debugging.md)** · [Полная архитектура EN](../en/tools/kernel-lab-autonomous-debugging.md) — **пока проект, а не испытанная система** |
+| Инвентаризация ADB/Fastboot и USB на Mac | [Пошаговая инструкция EN](../en/tools/kernel-lab-macos-inventory.md) |
+| Готовое безопасное задание для агента | [Agent Mission EN](../en/tools/kernel-lab-agent-mission.md) |
+
 ## Root, безопасность и инструменты разработки
 
 | Глава | Что можно найти | Документ |
