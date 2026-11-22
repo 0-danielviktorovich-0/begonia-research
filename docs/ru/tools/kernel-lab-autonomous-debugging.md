@@ -2,7 +2,7 @@
 
 **Статус:** проект архитектуры, а не запущенная система. **Дата исследования:** 2026-11-23. **Устройство:** begonia / MT6785. **Целевая платформа управления:** Mac. **Ядра:** Linux 4.14, отдельно экспериментальное 4.19.
 
-**Статус перевода:** подробный русский конспект (не дословный полный перевод). Полный англоязычный технический документ: [Autonomous Kernel Lab](../../../en/tools/kernel-lab-autonomous-debugging.md). Конкретное задание для агентов: [Agent Mission (EN)](../../../en/tools/kernel-lab-agent-mission.md). Команды диагностики macOS: [Mac runbook (EN)](../../../en/tools/kernel-lab-macos-inventory.md).
+**Статус перевода:** подробный русский конспект (не дословный полный перевод). Полный англоязычный технический документ: [Autonomous Kernel Lab](../../en/tools/kernel-lab-autonomous-debugging.md). Конкретное задание для агентов: [Agent Mission (EN)](../../en/tools/kernel-lab-agent-mission.md). Команды диагностики macOS: [Mac runbook (EN)](../../en/tools/kernel-lab-macos-inventory.md).
 
 ## Цель
 
