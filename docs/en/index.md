@@ -47,6 +47,14 @@ This is the primary international entry point for the Redmi Note 8 Pro (begonia,
 | 18 | Read-only phone inventory, prerequisites before flashing | [Device preflight](recovery/18-DEVICE-PREFLIGHT-READONLY.md) |
 | 21 | NoMount, SUSFS, OverlayFS, Mountify, Hybrid Mount | [English digest](kernels/21-nomount-and-mount-backends.md) · [Full Russian original](../ru/kernels/21-NOMOUNT-MOUNT-BACKENDS-RU.md) |
 
+## Autonomous kernel development lab (research proposal)
+
+| Topic | Source / status |
+|---|---|
+| Kernel Lab: panic-proof crash archiving, recovery, MTK AEE, UART and agent-supervised test architecture | [Canonical English design](tools/kernel-lab-autonomous-debugging.md) · [Russian digest](../ru/tools/kernel-lab-autonomous-debugging.md) — **proposed, not device-tested** |
+| macOS: ADB, fastboot, USB re-enumeration and uhubctl | [Read-only Mac runbook](tools/kernel-lab-macos-inventory.md) |
+| AI agent onboarding and evidence-first tasks | [Bounded mission](tools/kernel-lab-agent-mission.md) · [AGENTS.md](../../AGENTS.md) |
+
 ## Find information without knowing its original language
 
 Search by *concept* (e.g. bootloader, загрузчик, preloader), by *component* (e.g. MT6359, NT36672A, wlan_gen4m), or by *stable topic ID* in the bilingual [topic index](../../i18n/topics.json). The canonical technical identifiers and evidence links are not translated. Machine-readable source data: [sources.json](../../data/catalog/sources.json), [index.json](../../data/catalog/index.json), [firmware-matrix.csv](../../data/matrices/firmware-matrix.csv), [kernel-matrix.csv](../../data/matrices/kernel-matrix.csv).
