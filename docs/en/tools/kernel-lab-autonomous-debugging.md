@@ -134,4 +134,6 @@ All links below are **original references checked by search on 2026-11-23**; no 
 - [Linux upstream AI coding assistant policy](https://github.com/torvalds/linux/blob/master/Documentation/process/coding-assistants.rst) — verified upstream guidance, applicable when submitting patches upstream; **high**.
 - [Begonia hardware and recovery audit](../recovery/07-RECOVERY-SAFETY.md) — local historical research, test procedures still require verification.
 
+**Reuse existing tools:** see [professional tool ecosystem: labgrid, LAVA, syzkaller, KUnit and more](kernel-lab-tool-ecosystem.md).
+
 **Next:** read the companion [agent mission](kernel-lab-agent-mission.md) and [macOS inventory](kernel-lab-macos-inventory.md). This is a feasibility plan, not a report that any autonomous recovery cycle already works.
