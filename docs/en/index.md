@@ -52,6 +52,7 @@ This is the primary international entry point for the Redmi Note 8 Pro (begonia,
 | Topic | Source / status |
 |---|---|
 | Kernel Lab: panic-proof crash archiving, recovery, MTK AEE, UART and agent-supervised test architecture | [Canonical English design](tools/kernel-lab-autonomous-debugging.md) · [Russian digest](../ru/tools/kernel-lab-autonomous-debugging.md) — **proposed, not device-tested** |
+| Existing professional automation: labgrid, LAVA, syzkaller, KUnit, ftrace and tools to reuse | [Kernel Lab tool ecosystem](tools/kernel-lab-tool-ecosystem.md) |
 | macOS: ADB, fastboot, USB re-enumeration and uhubctl | [Read-only Mac runbook](tools/kernel-lab-macos-inventory.md) |
 | AI agent onboarding and evidence-first tasks | [Bounded mission](tools/kernel-lab-agent-mission.md) · [AGENTS.md](../../AGENTS.md) |
 
